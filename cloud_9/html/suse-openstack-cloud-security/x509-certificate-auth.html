@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuring keystone and horizon to use X.509 Client Certificates | Security Guide | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Security Guide" /><meta name="chapter-title" content="Chapter 7. Configuring keystone and horizon to use X.509 Client Certificates" /><meta name="description" content="The keystone service supports X.509 SSL cerificate authentication and authorization for accessing the horizon dashboard in SUSE OpenStack Cloud. This feature is disabled by default, and must be manually configured and enabled by running a number of Ansible playbooks." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-security.html" title="Security Guide" /><link rel="prev" href="sg-logging.html" title="Chapter 6. Enabling Network Security Group Logging" /><link rel="next" href="tls30overview.html" title="Chapter 8. Transport Layer Security (TLS) Overview" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-security.html">Security Guide</a><span> › </span><a class="crumb" href="x509-certificate-auth.html">Configuring keystone and horizon to use X.509 Client Certificates</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Security Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="newsecurity.html"><span class="number">1 </span><span class="name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Security Planning and Features</span></a></li><li class="inactive"><a href="barbican.html"><span class="number">2 </span><span class="name">Key Management with the barbican Service</span></a></li><li class="inactive"><a href="barbicanAdmin.html"><span class="number">3 </span><span class="name">Key Management Service Administration</span></a></li><li class="inactive"><a href="roleSegregation.html"><span class="number">4 </span><span class="name">Service Admin Role Segregation in the Identity Service</span></a></li><li class="inactive"><a href="cha-security-rbac.html"><span class="number">5 </span><span class="name">Role-Based Access Control in neutron</span></a></li><li class="inactive"><a href="sg-logging.html"><span class="number">6 </span><span class="name">Enabling Network Security Group Logging</span></a></li><li class="inactive"><a href="x509-certificate-auth.html"><span class="number">7 </span><span class="name">Configuring keystone and horizon to use X.509 Client Certificates</span></a></li><li class="inactive"><a href="tls30overview.html"><span class="number">8 </span><span class="name">Transport Layer Security (TLS) Overview</span></a></li><li class="inactive"><a href="header-poisoning.html"><span class="number">9 </span><span class="name">Preventing Host Header Poisoning</span></a></li><li class="inactive"><a href="password-encryption.html"><span class="number">10 </span><span class="name">Encryption of Passwords and Sensitive Data</span></a></li><li class="inactive"><a href="encryption-ephemeral.html"><span class="number">11 </span><span class="name">Encryption of Ephemeral Volumes</span></a></li><li class="inactive"><a href="topic-rmq-j1v-4t.html"><span class="number">12 </span><span class="name">Refining Access Control with AppArmor</span></a></li><li class="inactive"><a href="dar.html"><span class="number">13 </span><span class="name">Data at Rest Encryption</span></a></li><li class="inactive"><a href="glance-rate-limit.html"><span class="number">14 </span><span class="name">glance-API Rate Limit (CVE-2016-8611)</span></a></li><li class="inactive"><a href="idg-all-security-middleware-auditing-xml-1.html"><span class="number">15 </span><span class="name">Security Audit Logs</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 6. Enabling Network Security Group Logging" href="sg-logging.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Transport Layer Security (TLS) Overview" href="tls30overview.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-security.html">Security Guide</a><span> › </span><a class="crumb" href="x509-certificate-auth.html">Configuring keystone and horizon to use X.509 Client Certificates</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 6. Enabling Network Security Group Logging" href="sg-logging.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Transport Layer Security (TLS) Overview" href="tls30overview.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="x509-certificate-auth"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring keystone and horizon to use X.509 Client Certificates</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>x509-certificate-auth</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="x509-certificate-auth.html#id-1.4.9.4"><span class="number">7.1 </span><span class="name">Keystone Configuration</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-p5j-4lq-mx"><span class="number">7.2 </span><span class="name">HAProxy Configuration</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-mqr-m2p-hx"><span class="number">7.3 </span><span class="name">Create CA and client certificates</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-qjc-42p-hx"><span class="number">7.4 </span><span class="name">Horizon Configuration</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-chx-42p-hx"><span class="number">7.5 </span><span class="name">Browser configuration</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-u54-p2p-hx"><span class="number">7.6 </span><span class="name">User accounts</span></a></span></dt><dt><span class="section"><a href="x509-certificate-auth.html#section-hbf-q2p-hx"><span class="number">7.7 </span><span class="name">How it works</span></a></span></dt></dl></div></div><p>
+  The keystone service supports X.509 SSL cerificate authentication and
+  authorization for accessing the horizon dashboard in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. This
+  feature is disabled by default, and must be manually configured and enabled
+  by running a number of Ansible playbooks.
+ </p><div id="id-1.4.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   Enabling client SSL certificate authentication and authorization for the
+   horizon dashboard is a non-core feature in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+   
+   
+  </p></div><div class="sect1" id="id-1.4.9.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Keystone Configuration</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#id-1.4.9.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To configure and enable X.509 SSL authentication and authorization support
+   for the keystone service, perform the following steps.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Create a new configuration file named <code class="filename">x509auth.yml</code> and
+     place it in any directory in your deployer node. For example, perform the
+     following command to create the file in the <code class="filename">/tmp</code>
+     directory:
+    </p><div class="verbatim-wrap"><pre class="screen">touch /tmp/x509auth.yml</pre></div></li><li class="step " id="st-horizon-authenticate-configure-yaml"><p>
+     Edit the new file to include the following text. Note that YAML files are
+     whitespace-sensitive. Preserve the indentation format of the
+     following text.
+    </p><div class="verbatim-wrap"><pre class="screen">keystone_x509auth_conf:
+    identity_provider:
+        id: intermediateca
+        description: This is the trusted issuer HEX Id.
+    mapping:
+        id: x509_mapping1
+        rules_file: /tmp/x509auth_mapping.json
+    protocol:
+        id: x509
+    remote_id: intermediateca
+    ca_file: /tmp/cacert.pem</pre></div><p>
+     The preceding example sets a number of configuration parameters for the
+     X.509/keystone configuration. The following are detailed descriptions of
+     each parameter.
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <span class="bold"><strong>identity_provider</strong></span> This section
+       identifies and describes an outside identity provider.
+      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         <span class="bold"><strong>id</strong></span>: Any unique, readable string that
+         identifies the identitiy provider.
+        </p></li><li class="listitem "><p>
+         <span class="bold"><strong>description</strong></span>: A description of the
+         identity provider.
+        </p></li></ul></div></li><li class="listitem "><p>
+       <span class="bold"><strong>mapping</strong></span>: This section describes a
+       JSON-format file that maps X.509 client certificate attributes to a
+       local keystone user.
+      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         <span class="bold"><strong>id</strong></span>: Any unique, readable string that
+         identifies the user-certificate mapping.
+        </p></li><li class="listitem "><p>
+         <span class="bold"><strong>rules_file</strong></span>: The filepath to a JSON
+         file that contains the client certificate attributes mapping.
+        </p></li></ul></div></li><li class="listitem "><p>
+       <span class="bold"><strong>protocol</strong></span>: This section sets the
+       cryptographic protocol to be used.
+      </p><div class="itemizedlist " id="ul-cbr-shp-hx"><ul class="itemizedlist"><li class="listitem "><p>
+         <span class="bold"><strong>id</strong></span>: The cryptographic protocol used
+         for the certificate-based authentication/authorization.
+        </p></li></ul></div></li><li class="listitem "><p>
+       <span class="bold"><strong>remote_id</strong></span>: By default, this field
+       expects the client certificate's issuer's common name (CN) as a value.
+       The expected value is set in the <code class="literal">keystone.conf</code> file,
+       where the default setting is:
+      </p><div class="verbatim-wrap"><pre class="screen">remote_id_attribute = SSL_CLIENT_I_DN_CN</pre></div></li><li class="listitem "><p>
+       <span class="bold"><strong>ca_file</strong></span>: The file that contains the
+       client certificate's related intermediary and root CA certificates.
+      </p></li></ul></div><p>
+     Note: In the <code class="filename">/tmp/x509auth.yml</code> file, the
+     <code class="literal">ca_file</code> value should be a file that contains both the
+     root and signing CA certificates (often found in
+     <code class="filename">/home/pki/cacert.pem</code>).
+    </p></li><li class="step " id="st-horizon-authenticate-configure-json"><p>
+     Create a JSON-formatted mapping file. To do so, edit the
+     <code class="filename">x509auth.yml</code> file you created in
+     <a class="xref" href="x509-certificate-auth.html#st-horizon-authenticate-configure-yaml" title="Step 2">Step 2</a>
+     to reference this file in the
+     <span class="bold"><strong>mapping</strong></span>→
+     <span class="bold"><strong>rules_file</strong></span> parameter. You can create the
+     file with the following example command:
+    </p><div class="verbatim-wrap"><pre class="screen">touch /tmp/x509auth_mapping.json</pre></div></li><li class="step "><p>
+     Edit the JSON file you created in
+     <a class="xref" href="x509-certificate-auth.html#st-horizon-authenticate-configure-json" title="Step 3">Step 3</a>
+     to include the following content:
+    </p><div class="verbatim-wrap"><pre class="screen">[
+                 {
+                     "local": [
+                         {
+                            "user": {
+                                "name": "{0}",
+                                "domain": {
+                                    "name": "{1}"
+                                },
+                                "type": "local"
+                            }
+                         }
+                    ],
+                    "remote": [
+                        {
+                            "type": "SSL_CLIENT_S_DN_CN"
+                        },
+                        {
+                            "type": "SSL_CLIENT_S_DN_O"
+                        },
+                        {
+                            "type": "SSL_CLIENT_I_DN",
+                            "any_one_of": [
+                            ]
+                        }
+                    ]
+                }
+]</pre></div></li><li class="step "><p>
+     Enter the distinguished name(s) (DN) of the certificate issuer(s) that
+     issued your client certificates into the
+     <span class="bold"><strong>any_one_of</strong></span> field in the
+     <span class="bold"><strong>remote</strong></span> block. The
+     <span class="bold"><strong>any_one_of</strong></span> field is a comma-separated
+     list of all certificate issuers that you want the keystone service to
+     trust.
+    </p><p>
+     All DNs in the <span class="bold"><strong>any_one_of</strong></span> field must
+     adhere to the following format:
+     A descending list of DN elements, with each element separated by a
+     forward slash (<code class="literal">/</code>).
+    </p><p>
+     The following is an example of a properly formatted DN for a certificate
+     issuer named <code class="literal">intermedia</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">/C=US/ST=California/O=EXAMPLE/OU=Engineering/CN=intermediateca/emailAddress=user@example.com</pre></div><p>
+     The following example file illustrates an
+     <code class="filename">x509auth_mapping.json</code> file with the
+     <code class="literal">intermedia</code> certificate issuer added to the
+     <span class="bold"><strong>any_one_of</strong></span> field. Note that the DN string
+     is in quotes.
+    </p><div class="verbatim-wrap"><pre class="screen">[
+                 {
+                     "local": [
+                         {
+                            "user": {
+                                "name": "{0}",
+                                "domain": {
+                                    "name": "{1}"
+                                },
+                                "type": "local"
+                            }
+                         }
+                    ],
+                    "remote": [
+                        {
+                            "type": "SSL_CLIENT_S_DN_CN"
+                        },
+                        {
+                            "type": "SSL_CLIENT_S_DN_O"
+                        },
+                        {
+                            "type": "SSL_CLIENT_I_DN",
+                            "any_one_of": [
+                                "/C=US/ST=California/O=EXAMPLE/OU=Engineering/CN=intermediateca/emailAddress=user@example.com"
+                            ]
+                        }
+                    ]
+                }
+]</pre></div><p>
+     The keystone service will trust all client certificates issued by any of
+     the certificate issuers listed in the
+     <span class="bold"><strong>any_one_of</strong></span> field.
+    </p></li><li class="step "><p>
+     Run the following commands to enable the new X.509/keystone settings.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml -e@/tmp/x509auth.yml</pre></div></li></ol></div></div></div><div class="sect1" id="section-p5j-4lq-mx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HAProxy Configuration</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-p5j-4lq-mx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-p5j-4lq-mx</li></ul></div></div></div></div><p>
+   Because of the experimental nature of the HAProxy feature, it is important
+   to minimize the risk of impacting other services. If you have implemented,
+   or wish to implement the HAProxy feature alongside client SSL certificate
+   login to the horizon dashboard in your cloud, please complete the following
+   steps to make the necessary manual configuration changes.
+  </p><div id="id-1.4.9.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    You must perform the keystone configuration steps in the previous section
+    before performing the following HAProxy configuration changes.
+   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Locate and open the
+     <code class="literal">~/openstack/ardana/ansible/roles/haproxy/templates/haproxy.cfg</code>
+     file.
+    </p></li><li class="step "><p>
+     Locate the following line in the <code class="literal">haproxy.cfg</code> file.
+    </p><div class="verbatim-wrap"><pre class="screen">listen {{ network.vip }}-{{ port }}</pre></div><p>
+     Enter the following codeblock in the open space immediately preceding the
+     <code class="literal">listen {{ network.vip }}-{{ port }}</code> line.
+    </p><div class="verbatim-wrap"><pre class="screen">{%- if service == 'KEY_API' and port == '5000' %}
+    {% set bind_defaults = 'ca-file /etc/ssl/private/cacert.pem verify optional' %}
+{%- endif %}</pre></div><p>
+     After entering the preceding code, your <code class="literal">haproxy.cfg</code>
+     file should look like the following example.
+    </p><div class="verbatim-wrap"><pre class="screen">{%- if network.terminate_tls is defined and network.terminate_tls and port == '80' %}
+    {% set port = '443' %}
+{%- endif %}
+
+{%- if service == 'KEY_API' and port == '5000' %}
+    {% set bind_defaults = 'ca-file /etc/ssl/private/cacert.pem verify optional' %}
+{%- endif %}
+
+listen {{ network.vip }}-{{ port }}
+    {%- set options = network.vip_options | default(vip_options_defaults) %}
+      {%- if options &gt; 0 %}
+        {%- for option in options %}
+    {{ option }}
+        {%- endfor %}
+      {%- endif %}
+    bind {{ network.vip }}:{{ port }} {% if network.terminate_tls is defined and network.terminate_tls %} ssl crt {{ frontend_server_cert_directory }}/{{ network.cert_file }} {{ bind_defaults }} {% endif %}</pre></div></li><li class="step "><p>
+     Commit the changes to your local git repository.
+    </p><div class="verbatim-wrap"><pre class="screen">git add -A
+git commit -m "Added HAProxy configuration changes"</pre></div></li><li class="step "><p>
+     Run the configuration processor and ready-deployment Ansible playbooks.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Implement the HAProxy configuration changes.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts FND-CLU-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect1" id="section-mqr-m2p-hx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create CA and client certificates</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-mqr-m2p-hx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-mqr-m2p-hx</li></ul></div></div></div></div><p>
+   An X.509 client certificate can be issued from any certificate authority
+   (CA). You can use the openssl command-line tool to generate certificate
+   signing requests (CSRs). Once a CA has signed your CSR, the CA will return a
+   signed certificate that you can use to authenticate to horizon.
+  </p><p>
+   Read more about openssl here: <a class="link" href="https://www.openssl.org/" target="_blank">https://www.openssl.org/</a>
+  </p><div id="id-1.4.9.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Your cloud's load balancer will reject any self-signed client SSL
+    certificates. Ensure that all client certificates are signed by a
+    certificate authority that your cloud recognizes.
+   </p></div></div><div class="sect1" id="section-qjc-42p-hx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Horizon Configuration</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-qjc-42p-hx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-qjc-42p-hx</li></ul></div></div></div></div><p>
+   Complete the following steps to configure horizon to support SSL certificate
+   authorization and authentication.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Edit the
+     <code class="literal">~/openstack/ardana/ansible/roles/HZN-WEB/defaults/main.yml</code>
+     file and set the following parameter to <code class="literal">True</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">horizon_websso_enabled: True</pre></div></li><li class="step "><p>
+     Locate the last line in the
+     <code class="literal">~/openstack/ardana/ansible/roles/HZN-WEB/defaults/main.yml</code>
+     file. The default configuration for this line should look like the
+     following.
+    </p><div class="verbatim-wrap"><pre class="screen">horizon_websso_choices:
+  - {protocol: saml2, description: "ADFS Credentials"}</pre></div><div class="itemizedlist " id="ul-jg3-g2r-mx"><ul class="itemizedlist"><li class="listitem "><p>
+       If your cloud <span class="bold"><strong>does not</strong></span> have AD FS
+       enabled, then replace the preceding
+       <code class="literal">horizon_websso_choices:</code> parameter with the following.
+      </p><div class="verbatim-wrap"><pre class="screen">- {protocol: x509, description: "X.509 SSL Certificate"}</pre></div><p>
+       The resulting block should look like the following.
+      </p><div class="verbatim-wrap"><pre class="screen">horizon_websso_choices:
+    - {protocol: x509, description: "X.509 SSL Certificate"}</pre></div></li><li class="listitem "><p>
+       If your cloud <span class="bold"><strong>does</strong></span> have AD FS enabled,
+       then simply add the following parameter to the
+       <code class="literal">horizon_websso_choices:</code> section. Do not replace the
+       default parameter, add the following line to the existing block.
+      </p><div class="verbatim-wrap"><pre class="screen">- {protocol: saml2, description: "ADFS Credentials"}</pre></div><p>
+       If your cloud has AD FS enabled, the final block of your
+       <code class="literal">~/openstack/ardana/ansible/roles/HZN-WEB/defaults/main.yml</code>
+       should have the following entries.
+      </p><div class="verbatim-wrap"><pre class="screen">horizon_websso_choices:
+    - {protocol: x509, description: "X.509 SSL Certificate"}
+    - {protocol: saml2, description: "ADFS Credentials"}</pre></div></li></ul></div></li><li class="step "><p>
+     Run the following commands to add your changes to the local git
+     repository, and reconfigure the horizon service, enabling the changes made
+     in <span class="bold"><strong>Step 1</strong></span>:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack
+git add -A
+git commit -m "my commit message"
+cd ~/openstack/ardana/ansible/
+ansible-playbook -i hosts/localhost config-processor-run.yml
+ansible-playbook -i hosts/localhost ready-deployment.yml
+cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect1" id="section-chx-42p-hx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Browser configuration</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-chx-42p-hx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-chx-42p-hx</li></ul></div></div></div></div><p>
+   To enable your web browser to present a certificate to the horizon dashboard
+   upon login, you first need to import the certificate. The steps to complete
+   this action will vary from browser to browser. Please refer to your
+   browser's documentation for specific instructions.
+  </p><div class="procedure " id="ol-oyb-rxp-hx"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Import the desired certificate into your web browser's certificate store.
+    </p></li><li class="step "><p>
+     After importing the certificate, verify that it appears in your browser's
+     certificate manager.
+    </p></li></ol></div></div></div><div class="sect1" id="section-u54-p2p-hx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User accounts</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-u54-p2p-hx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-u54-p2p-hx</li></ul></div></div></div></div><p>
+   For the keystone service to use X.509 certificates to grant users access to
+   horizon, there must be a keystone user account associated with each
+   certificate. keystone associates user accounts with certificates by matching
+   the common name (CN) and organization (O) of a presented certificate with
+   the username and domain of an existing keystone user.
+  </p><p>
+   When an X.509 certificate is presented to horizon for
+   authentication/authorization, horizon passes the certificate information
+   along to the keystone service. keystone attempts to match the CN and O of
+   the certificate with the username and domain of an existing local user
+   account. For this operation to be successful, there must be a keystone user
+   account and domain that match the CN and O of the certificate.
+  </p><p>
+   For example, if a user named Sam presents a certificate to horizon with the
+   following information,
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     CN=sam
+    </p></li><li class="listitem "><p>
+     O=EXAMPLE
+    </p></li></ul></div><p>
+   Then there must be an existing keystone user account with the following
+   values,
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Username=sam
+    </p></li><li class="listitem "><p>
+     Domain=EXAMPLE
+    </p></li></ul></div><p>
+   Further, Sam's client certificate must have been issued by one of the
+   certificate issuers listed in the
+   <span class="bold"><strong>any_one_of</strong></span> field in the
+   <code class="literal">x509auth_mapping.json</code> file.
+  </p><p>
+   Also, when creating a local keystone user, you must assign the user account
+   a project scope. Without a project scope, the authorization portion of the
+   sign-on process will fail.
+  </p><p>
+   The following steps illustrate how to use the CLI to create a domain, create
+   and manage a user, and assign a permissions role to the new user.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Create a new domain, named <code class="literal">EXAMPLE</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack domain create EXAMPLE</pre></div></li><li class="step " id="st-horizon-auth-create-project"><p>
+     Create a new project named <code class="literal">xyz</code>, under the
+     <code class="literal">EXAMPLE</code> domain.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack project create --domain EXAMPLE xyz</pre></div></li><li class="step "><p>
+     Create a new user named <code class="literal">Sam</code> in the
+     <code class="literal">EXAMPLE</code> domain. Set the password and
+     email for the new account.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack user create --domain EXAMPLE --password pass \
+  --email sam@example.com --enable sam</pre></div></li><li class="step "><p>
+     Create a new role named <code class="literal">role1</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role create role1</pre></div></li><li class="step "><p>
+     Grant the new role, <code class="literal">role1</code> to the new user
+     <code class="literal">Sam</code> from the <code class="literal">EXAMPLE</code> domain.
+     Note that both the user account and domain must be referenced by their
+     unique ID numbers rather than their friendly names.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user 04f3db9e7f3f45dc82e1d5f20b4acfcc \
+  --domain 6b64021839774991b5e0df16077f11eb role1</pre></div></li><li class="step "><p>
+     Add the user <code class="literal">Sam</code> to the newly-created project from
+     <a class="xref" href="x509-certificate-auth.html#st-horizon-auth-create-project" title="Step 2">Step 2</a>. Note that the
+     project and user account must be referenced by their respective unique ID
+     numbers rather than their friendly names.
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --project 4e2ad14406b247c7a9fc0a48c0b1713e \
+  --user 04f3db9e7f3f45dc82e1d5f20b4acfcc role1</pre></div></li></ol></div></div></div><div class="sect1" id="section-hbf-q2p-hx"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How it works</span> <a title="Permalink" class="permalink" href="x509-certificate-auth.html#section-hbf-q2p-hx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-horizon_ssl_auth.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-horizon_ssl_auth.xml</li><li><span class="ds-label">ID: </span>section-hbf-q2p-hx</li></ul></div></div></div></div><p>
+   The SSL authentication and authorization process is detailed in the
+   following steps.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     User directs a web browser to the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> horizon login landing page.
+    </p></li><li class="listitem "><p>
+     The user selects the "X.509 Certificate" login option from the dropdown
+     menu.
+    </p></li><li class="listitem "><p>
+     horizon responds with an HTTP 302 redirect, redirecting the browser to the
+     SSL-protected keystone (federated) authentication endpoint.
+    </p></li><li class="listitem "><p>
+     The browser then prompts user to select the certificate to use for the
+     login (if there is more than one certificate for the given trusted
+     Certificate Authority (CA)).
+    </p></li><li class="listitem "><p>
+     The web browser establishes a 2-way SSL handshake with the keystone
+     service.
+    </p></li><li class="listitem "><p>
+     keystone, utilizing federation mapping, maps the user to a federated
+     persona and issues an (federated) unscoped token.
+    </p></li><li class="listitem "><p>
+     The token is then passed to the browser, along with JavaScript code that
+     redirects the browser back to the horizon dashboard.
+    </p></li><li class="listitem "><p>
+     The browser then logs into the horizon dashboard using the newly issued
+     unscoped token to authenticate the user.
+    </p></li><li class="listitem "><p>
+     horizon queries the keystone service for the list of federated projects
+     the authenticated user has access to.
+    </p></li><li class="listitem "><p>
+     horizon then rescopes the token to the first project, granting the user
+     authorization.
+    </p></li><li class="listitem "><p>
+     The login process is completed.
+    </p></li></ol></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-security-Horizon-SSL-Keystone.png" target="_blank"><img src="images/media-security-Horizon-SSL-Keystone.png" width="" /></a></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="tls30overview.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span>Transport Layer Security (TLS) Overview</span></a><a class="nav-link" href="sg-logging.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 6 </span>Enabling Network Security Group Logging</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

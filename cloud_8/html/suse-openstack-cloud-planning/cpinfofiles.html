@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuration Processor Information Files | Planning an Installation with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Planning an Installation with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 8. Configuration Processor Information Files" /><meta name="description" content="In addition to producing all of the data needed to deploy and configure the cloud, the configuration processor also creates a number of information files that provide details of the resulting configuration." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="prev" href="othertopics.html" title="Chapter 7. Other Topics" /><link rel="next" href="example-configurations.html" title="Chapter 9. Example Configurations" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-planning.html">Planning an Installation with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="cpinfofiles.html">Configuration Processor Information Files</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Planning an Installation with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 7. Other Topics" href="othertopics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Example Configurations" href="example-configurations.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-planning.html">Planning an Installation with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="cpinfofiles.html">Configuration Processor Information Files</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 7. Other Topics" href="othertopics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Example Configurations" href="example-configurations.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cpinfofiles"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration Processor Information Files</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-cpinfofiles.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-cpinfofiles.xml</li><li><span class="ds-label">ID: </span>cpinfofiles</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cpinfofiles.html#address-info-yml"><span class="number">8.1 </span><span class="name">address_info.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#firewall-info-yml"><span class="number">8.2 </span><span class="name">firewall_info.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#route-info-yml"><span class="number">8.3 </span><span class="name">route_info.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#server-info-yml"><span class="number">8.4 </span><span class="name">server_info.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#service-info-yml"><span class="number">8.5 </span><span class="name">service_info.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#control-plane-topology-yml"><span class="number">8.6 </span><span class="name">control_plane_topology.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#network-topology-yml"><span class="number">8.7 </span><span class="name">network_topology.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#region-topology-yml"><span class="number">8.8 </span><span class="name">region_topology.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#service-topology-yml"><span class="number">8.9 </span><span class="name">service_topology.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#private-data-metadata-ccp-yml"><span class="number">8.10 </span><span class="name">private_data_metadata_ccp.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#password-change-yml"><span class="number">8.11 </span><span class="name">password_change.yml</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#explain-txt"><span class="number">8.12 </span><span class="name">explain.txt</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#clouddiagram-txt"><span class="number">8.13 </span><span class="name">CloudDiagram.txt</span></a></span></dt><dt><span class="section"><a href="cpinfofiles.html#html-representation"><span class="number">8.14 </span><span class="name">HTML Representation</span></a></span></dt></dl></div></div><p>
+  In addition to producing all of the data needed to deploy and configure the
+  cloud, the configuration processor also creates a number of information files
+  that provide details of the resulting configuration.
+ </p><p>
+  These files can be found in <code class="filename">~/openstack/my_cloud/info</code>
+  after the first configuration processor run. This directory is also rebuilt
+  each time the Configuration Processor is run.
+ </p><p>
+  Most of the files are in YAML format, allowing them to be used in further
+  automation tasks if required.
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col1" /><col class="col2" /></colgroup><thead><tr><th>File</th><th>Provides details of</th></tr></thead><tbody><tr><td><code class="filename">address_info.yml</code>
+     </td><td>
+      IP address assignments on each network. See
+      <a class="xref" href="cpinfofiles.html#address-info-yml" title="8.1. address_info.yml">Section 8.1, “address_info.yml”</a>
+     </td></tr><tr><td><code class="filename">firewall_info.yml</code>
+     </td><td>
+      All ports that are open on each network by the firewall configuration.
+      Can be used if you want to configure an additional firewall in front of
+      the API network, for example. See <a class="xref" href="cpinfofiles.html#firewall-info-yml" title="8.2. firewall_info.yml">Section 8.2, “firewall_info.yml”</a>
+     </td></tr><tr><td><code class="filename">route_info.yml</code>
+     </td><td>
+      Routes that need to be configured between networks. See
+      <a class="xref" href="cpinfofiles.html#route-info-yml" title="8.3. route_info.yml">Section 8.3, “route_info.yml”</a>
+     </td></tr><tr><td><code class="filename">server_info.yml</code>
+     </td><td>
+      How servers have been allocated, including their network configuration.
+      Allows details of a server to be found from its ID. See
+      <a class="xref" href="cpinfofiles.html#server-info-yml" title="8.4. server_info.yml">Section 8.4, “server_info.yml”</a>
+     </td></tr><tr><td><code class="filename">service_info.yml</code>
+     </td><td>
+      Details of where components of each service are deployed. See
+      <a class="xref" href="cpinfofiles.html#service-info-yml" title="8.5. service_info.yml">Section 8.5, “service_info.yml”</a>
+     </td></tr><tr><td><code class="filename">control_plane_topology.yml</code>
+     </td><td>
+      Details the structure of the cloud from the perspective of each
+      control-plane. See <a class="xref" href="cpinfofiles.html#control-plane-topology-yml" title="8.6. control_plane_topology.yml">Section 8.6, “control_plane_topology.yml”</a>
+     </td></tr><tr><td><code class="filename">network_topology.yml</code>
+     </td><td>
+      Details the structure of the cloud from the perspective of each
+      control-plane. See <a class="xref" href="cpinfofiles.html#network-topology-yml" title="8.7. network_topology.yml">Section 8.7, “network_topology.yml”</a>
+     </td></tr><tr><td><code class="filename">region_topology.yml</code>
+     </td><td>
+      Details the structure of the cloud from the perspective of each region.
+      See <a class="xref" href="cpinfofiles.html#region-topology-yml" title="8.8. region_topology.yml">Section 8.8, “region_topology.yml”</a>
+     </td></tr><tr><td><code class="filename">service_topology.yml</code>
+     </td><td>
+      Details the structure of the cloud from the perspective of each
+      service. See <a class="xref" href="cpinfofiles.html#service-topology-yml" title="8.9. service_topology.yml">Section 8.9, “service_topology.yml”</a>
+     </td></tr><tr><td><code class="filename">private_data_metadata_ccp.yml</code>
+     </td><td>
+      Details the secrets that are generated by the configuration processor –
+      the names of the secrets, along with the service(s) that use each
+      secret and a list of the clusters on which the service that consumes
+      the secret is deployed. See <a class="xref" href="cpinfofiles.html#private-data-metadata-ccp-yml" title="8.10. private_data_metadata_ccp.yml">Section 8.10, “private_data_metadata_ccp.yml”</a>
+     </td></tr><tr><td><code class="filename">password_change.yml</code>
+     </td><td>
+      Details the secrets that have been changed by the configuration
+      processor – information for each secret is the same as for
+      <code class="literal">private_data_metadata_ccp.yml</code>. See
+      <a class="xref" href="cpinfofiles.html#password-change-yml" title="8.11. password_change.yml">Section 8.11, “password_change.yml”</a>
+     </td></tr><tr><td><code class="filename">explain.txt</code>
+     </td><td>
+      An explanation of the decisions the configuration processor has made
+      when allocating servers and networks. See <a class="xref" href="cpinfofiles.html#explain-txt" title="8.12. explain.txt">Section 8.12, “explain.txt”</a>
+     </td></tr><tr><td><code class="filename">CloudDiagram.txt</code>
+     </td><td>A pictorial representation of the cloud. See <a class="xref" href="cpinfofiles.html#clouddiagram-txt" title="8.13. CloudDiagram.txt">Section 8.13, “CloudDiagram.txt”</a>
+     </td></tr></tbody></table></div><p>
+  The examples are taken from the <code class="literal">entry-scale-kvm</code>
+  example configuration.
+ </p><div class="sect1" id="address-info-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">address_info.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#address-info-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-address_info_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-address_info_yml.xml</li><li><span class="ds-label">ID: </span>address-info-yml</li></ul></div></div></div></div><p>
+  This file provides details of all the IP addresses allocated by the
+  Configuration Processor:
+ </p><div class="verbatim-wrap"><pre class="screen">  <em class="replaceable ">NETWORK GROUPS</em>
+     <em class="replaceable ">LIST OF NETWORKS</em>
+        <em class="replaceable ">IP ADDRESS</em>
+           <em class="replaceable ">LIST OF ALIASES</em></pre></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">  EXTERNAL-API:
+     EXTERNAL-API-NET:
+        10.0.1.2:
+           - ardana-cp1-c1-m1-extapi
+        10.0.1.3:
+           - ardana-cp1-c1-m2-extapi
+        10.0.1.4:
+           - ardana-cp1-c1-m3-extapi
+        10.0.1.5:
+           - ardana-cp1-vip-public-SWF-PRX-extapi
+           - ardana-cp1-vip-public-FRE-API-extapi
+           - ardana-cp1-vip-public-GLA-API-extapi
+           - ardana-cp1-vip-public-HEA-ACW-extapi
+           - ardana-cp1-vip-public-HEA-ACF-extapi
+           - ardana-cp1-vip-public-NEU-SVR-extapi
+           - ardana-cp1-vip-public-KEY-API-extapi
+           - ardana-cp1-vip-public-MON-API-extapi
+           - ardana-cp1-vip-public-HEA-API-extapi
+           - ardana-cp1-vip-public-NOV-API-extapi
+           - ardana-cp1-vip-public-CND-API-extapi
+           - ardana-cp1-vip-public-CEI-API-extapi
+           - ardana-cp1-vip-public-SHP-API-extapi
+           - ardana-cp1-vip-public-OPS-WEB-extapi
+           - ardana-cp1-vip-public-HZN-WEB-extapi
+           - ardana-cp1-vip-public-NOV-VNC-extapi
+  EXTERNAL-VM:
+     EXTERNAL-VM-NET: {}
+  GUEST:
+     GUEST-NET:
+        10.1.1.2:
+           - ardana-cp1-c1-m1-guest
+        10.1.1.3:
+           - ardana-cp1-c1-m2-guest
+        10.1.1.4:
+           - ardana-cp1-c1-m3-guest
+        10.1.1.5:
+           - ardana-cp1-comp0001-guest
+  MANAGEMENT:
+  ...</pre></div></div><div class="sect1" id="firewall-info-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">firewall_info.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#firewall-info-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-firewall_info_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-firewall_info_yml.xml</li><li><span class="ds-label">ID: </span>firewall-info-yml</li></ul></div></div></div></div><p>
+  This file provides details of all the network ports that will be opened on
+  the deployed cloud. Data is ordered by network. If you want to configure an
+  external firewall in front of the External API network, then you would need
+  to open the ports listed in that section.
+ </p><div class="verbatim-wrap"><pre class="screen">  <em class="replaceable ">NETWORK NAME</em>
+     List of:
+        <em class="replaceable ">PORT</em>
+        <em class="replaceable ">PROTOCOL</em>
+        <em class="replaceable ">LIST OF IP ADDRESSES</em>
+        <em class="replaceable ">LIST OF COMPONENTS</em></pre></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">  EXTERNAL-API:
+  -   addresses:
+      - 10.0.1.5
+      components:
+      - horizon
+      port: '443'
+      protocol: tcp
+  -   addresses:
+      - 10.0.1.5
+      components:
+      - keystone-api
+      port: '5000'
+      protocol: tcp</pre></div><p>
+  <span class="emphasis"><em>Port 443 (tcp) is open on network EXTERNAL-API for address 10.0.1.5
+  because it is used by Horizon</em></span>
+ </p><p>
+  <span class="emphasis"><em>Port 5000 (tcp) is open on network EXTERNAL-API for address
+  10.0.1.5 because it is used by Keystone API</em></span>
+ </p></div><div class="sect1" id="route-info-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">route_info.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#route-info-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-route_info_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-route_info_yml.xml</li><li><span class="ds-label">ID: </span>route-info-yml</li></ul></div></div></div></div><p>
+  This file provides details of routes between networks that need to be
+  configured. Available routes are defined in the input model as part of the
+  <span class="guimenu ">network-groups</span> data; this file shows which routes will
+  actually be used. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> will reconfigure routing rules on the servers, you
+  must configure the corresponding routes within your physical network. Routes
+  must be configured to be symmetrical -- only the direction in which a
+  connection is initiated is captured in this file.
+ </p><p>
+  Note that simple models may not require any routes, with all servers being
+  attached to common L3 networks. The following example is taken from the
+  <code class="literal">tech-preview/mid-scale-kvm</code> example.
+ </p><div class="verbatim-wrap"><pre class="screen">  <em class="replaceable ">SOURCE-NETWORK-NAME</em>
+      <em class="replaceable ">TARGET-NETWORK-NAME</em>
+           default:   <em class="replaceable ">TRUE IF THIS IS THIS THE RESULT OF A "DEFAULT" ROUTE RULE</em>
+           used_by:
+                <em class="replaceable ">SOURCE-SERVICE</em>
+                     <em class="replaceable ">TARGET-SERVICE</em>
+                     <em class="replaceable ">LIST OF HOSTS USING THIS ROUTE</em></pre></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">MANAGEMENT-NET-RACK1:
+    INTERNAL-API-NET:
+         default: false
+         used_by:
+            ceilometer-client:
+            ceilometer-api:
+            - ardana-cp1-mtrmon-m1
+            keystone-api:
+            - ardana-cp1-mtrmon-m1
+     MANAGEMENT-NET-RACK2:
+         default: false
+         used_by:
+            cinder-backup:
+            rabbitmq:
+            - ardana-cp1-core-m1</pre></div><p>
+  A route is required from network
+  <span class="bold"><strong>MANAGEMENT-NET-RACK1</strong></span> to network
+  <span class="bold"><strong>INTERNAL-API-NET</strong></span> so that
+  <span class="bold"><strong>ceilometer-client</strong></span> can connect to
+  <span class="bold"><strong>ceilometer-api</strong></span> from server
+  <span class="bold"><strong>ardana-cp1-mtrmon-m1</strong></span> and to
+  <span class="bold"><strong>keystone-api</strong></span> from the same server.
+ </p><p>
+  A route is required from network
+  <span class="bold"><strong>MANAGEMENT-NET-RACK1</strong></span> to network
+  <span class="bold"><strong>MANAGEMENT-NET-RACK2</strong></span> so that
+  <span class="bold"><strong>cinder-backup</strong></span> can connect to
+  <span class="bold"><strong>rabbitmq</strong></span> from server
+  <span class="bold"><strong>ardana-cp1-core-m1</strong></span>
+ </p></div><div class="sect1" id="server-info-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">server_info.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#server-info-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-server_info_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-server_info_yml.xml</li><li><span class="ds-label">ID: </span>server-info-yml</li></ul></div></div></div></div><p>
+  This file provides details of how servers have been allocated by the
+  Configuration Processor. This provides the easiest way to find where a
+  specific physical server (identified by <code class="literal">server-id</code>) is
+  being used.
+ </p><div class="verbatim-wrap"><pre class="screen">   <em class="replaceable ">SERVER-ID</em>
+         failure-zone: <em class="replaceable ">FAILURE ZONE THAT THE SERVER WAS ALLOCATED FROM</em>
+         hostname: <em class="replaceable ">HOSTNAME OF THE SERVER</em>
+         net_data: <em class="replaceable ">NETWORK CONFIGURATION</em>
+         state: <em class="replaceable "> "allocated" | "available" </em></pre></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">   controller1:
+         failure-zone: AZ1
+         hostname: ardana-cp1-c1-m1-mgmt
+         net_data:
+              BOND0:
+                   EXTERNAL-API-NET:
+                       addr: 10.0.1.2
+                       tagged-vlan: true
+                       vlan-id: 101
+                   EXTERNAL-VM-NET:
+                       addr: null
+                       tagged-vlan: true
+                       vlan-id: 102
+                   GUEST-NET:
+                       addr: 10.1.1.2
+                       tagged-vlan: true
+                       vlan-id: 103
+                   MANAGEMENT-NET:
+                       addr: 192.168.10.3
+                       tagged-vlan: false
+                       vlan-id: 100
+         state: allocated</pre></div></div><div class="sect1" id="service-info-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">service_info.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#service-info-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-service_info_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-service_info_yml.xml</li><li><span class="ds-label">ID: </span>service-info-yml</li></ul></div></div></div></div><p>
+  This file provides details of how services are distributed across the cloud.
+ </p><div class="verbatim-wrap"><pre class="screen">  <em class="replaceable ">CONTROL-PLANE</em>
+      <em class="replaceable ">SERVICE</em>
+          <em class="replaceable ">SERVICE COMPONENT</em>
+               <em class="replaceable ">LIST OF HOSTS</em></pre></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">  control-plane-1:
+        neutron:
+             neutron-client:
+                - ardana-cp1-c1-m1-mgmt
+                - ardana-cp1-c1-m2-mgmt
+                - ardana-cp1-c1-m3-mgmt
+             neutron-dhcp-agent:
+                - ardana-cp1-c1-m1-mgmt
+                - ardana-cp1-c1-m2-mgmt
+                - ardana-cp1-c1-m3-mgmt
+             neutron-l3-agent:
+                 - ardana-cp1-comp0001-mgmt
+             neutron-lbaasv2-agent:
+                 - ardana-cp1-comp0001-mgmt
+        ...</pre></div></div><div class="sect1" id="control-plane-topology-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">control_plane_topology.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#control-plane-topology-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-control_plane_topology_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-control_plane_topology_yml.xml</li><li><span class="ds-label">ID: </span>control-plane-topology-yml</li></ul></div></div></div></div><p>
+  This file provides details of the topology of the cloud from the perspective
+  of each control plane:
+ </p><div class="verbatim-wrap"><pre class="screen">control_planes:
+  <em class="replaceable ">CONTROL-PLANE-NAME</em>
+      load-balancers:
+         <em class="replaceable ">LOAD-BALANCER-NAME</em>:
+             address:  <em class="replaceable ">IP ADDRESS OF VIP</em>
+             cert-file:  <em class="replaceable ">NAME OF CERT FILE</em>
+             external-name: <em class="replaceable ">NAME TO USED FOR ENDPOINTS</em>
+             network: <em class="replaceable ">NAME OF THE NETWORK THIS LB IS CONNECTED TO</em>
+             network_group: <em class="replaceable ">NAME OF THE NETWORK GROUP THIS LB IS CONNECT TO</em>
+             provider: <em class="replaceable ">SERVICE COMPONENT PROVIDING THE LB</em>
+             roles:  <em class="replaceable ">LIST OF ROLES OF THIS LB</em>
+             services:
+                <em class="replaceable ">SERVICE-NAME</em>:
+                    <em class="replaceable ">COMPONENT-NAME</em>:
+                        aliases:
+                           <em class="replaceable ">ROLE</em>:  <em class="replaceable ">NAME IN /etc/hosts</em>
+                        host-tls:  <em class="replaceable ">BOOLEAN, TRUE IF CONNECTION FROM LB USES TLS</em>
+                        hosts:  <em class="replaceable ">LIST OF HOSTS FOR THIS SERVICE</em>
+                        port:  <em class="replaceable ">PORT USED FOR THIS COMPONENT</em>
+                        vip-tls: <em class="replaceable ">BOOLEAN, TRUE IF THE VIP TERMINATES TLS</em>
+      clusters:
+          <em class="replaceable ">CLUSTER-NAME</em>
+              failure-zones:
+                 <em class="replaceable ">FAILURE-ZONE-NAME</em>:
+                    <em class="replaceable ">LIST OF HOSTS</em>
+              services:
+                 <em class="replaceable ">SERVICE NAME</em>:
+                     components:
+                        <em class="replaceable ">LIST OF SERVICE COMPONENTS</em>
+                     regions:
+                        <em class="replaceable ">LIST OF REGION NAMES</em>
+      resources:
+         <em class="replaceable ">RESOURCE-NAME</em>:
+             <em class="replaceable ">AS FOR CLUSTERS ABOVE</em></pre></div><p>
+  <span class="bold"><strong>Example:</strong></span>
+ </p><div class="verbatim-wrap"><pre class="screen">    control_planes:
+    control-plane-1:
+        clusters:
+            cluster1:
+                failure_zones:
+                    AZ1:
+                    - ardana-cp1-c1-m1-mgmt
+                    AZ2:
+                    - ardana-cp1-c1-m2-mgmt
+                    AZ3:
+                    - ardana-cp1-c1-m3-mgmt
+                services:
+                    barbican:
+                        components:
+                        - barbican-api
+                        - barbican-worker
+                        regions:
+                        - region1
+                                               …
+        load-balancers:
+            extlb:
+                address: 10.0.1.5
+                cert-file: my-public-entry-scale-kvm-cert
+                external-name: ''
+                network: EXTERNAL-API-NET
+                network-group: EXTERNAL-API
+                provider: ip-cluster
+                roles:
+                - public
+                services:
+                    barbican:
+                        barbican-api:
+                            aliases:
+                                public: ardana-cp1-vip-public-KEYMGR-API-extapi
+                            host-tls: true
+                            hosts:
+                            - ardana-cp1-c1-m1-mgmt
+                            - ardana-cp1-c1-m2-mgmt
+                            - ardana-cp1-c1-m3-mgmt
+                            port: '9311'
+                            vip-tls: true</pre></div></div><div class="sect1" id="network-topology-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">network_topology.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#network-topology-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-network_topology_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-network_topology_yml.xml</li><li><span class="ds-label">ID: </span>network-topology-yml</li></ul></div></div></div></div><p>
+  This file provides details of the topology of the cloud from the perspective
+  of each network_group:
+ </p><div class="verbatim-wrap"><pre class="screen">network-groups:
+  <em class="replaceable ">NETWORK-GROUP-NAME</em>:
+      <em class="replaceable ">NETWORK-NAME</em>:
+          control-planes:
+              <em class="replaceable ">CONTROL-PLANE-NAME</em>:
+                  clusters:
+                     <em class="replaceable ">CLUSTER-NAME</em>:
+                         servers:
+                            <em class="replaceable ">ARDANA-SERVER-NAME</em>: <em class="replaceable ">ip address</em>
+                         vips:
+                            <em class="replaceable ">IP ADDRESS</em>: <em class="replaceable ">load balancer name</em>
+                  resources:
+                     <em class="replaceable ">RESOURCE-GROUP-NAME</em>:
+                         servers:
+                            <em class="replaceable ">ARDANA-SERVER-NAME</em>: <em class="replaceable ">ip address</em></pre></div><p>
+  <span class="bold"><strong>Example:</strong></span>
+ </p><div class="verbatim-wrap"><pre class="screen">   network_groups:
+    EXTERNAL-API:
+        EXTERNAL-API-NET:
+            control_planes:
+                control-plane-1:
+                    clusters:
+                        cluster1:
+                            servers:
+                                ardana-cp1-c1-m1: 10.0.1.2
+                                ardana-cp1-c1-m2: 10.0.1.3
+                                ardana-cp1-c1-m3: 10.0.1.4
+                            vips:
+                                10.0.1.5: extlb
+    EXTERNAL-VM:
+        EXTERNAL-VM-NET:
+            control_planes:
+                control-plane-1:
+                    clusters:
+                        cluster1:
+                            servers:
+                                ardana-cp1-c1-m1: null
+                                ardana-cp1-c1-m2: null
+                                ardana-cp1-c1-m3: null
+                    resources:
+                        compute:
+                            servers:
+                                ardana-cp1-comp0001: null</pre></div></div><div class="sect1" id="region-topology-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">region_topology.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#region-topology-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-region_topology_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-region_topology_yml.xml</li><li><span class="ds-label">ID: </span>region-topology-yml</li></ul></div></div></div></div><p>
+  This file provides details of the topology of the cloud from the perspective
+  of each region.  In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, multiple regions are not supported. Only
+  <code class="literal">Region0</code> is valid.
+ </p><div class="verbatim-wrap"><pre class="screen">regions:
+  <em class="replaceable ">REGION-NAME</em>:
+      control-planes:
+          <em class="replaceable ">CONTROL-PLANE-NAME</em>:
+              services:
+                 <em class="replaceable ">SERVICE-NAME</em>:
+                     <em class="replaceable ">LIST OF SERVICE COMPONENTS</em></pre></div><p>
+  <span class="bold"><strong>Example:</strong></span>
+ </p><div class="verbatim-wrap"><pre class="screen">regions:
+    region0:
+        control-planes:
+            control-plane-1:
+                services:
+                    barbican:
+                    - barbican-api
+                    - barbican-worker
+                    ceilometer:
+                    - ceilometer-common
+                    - ceilometer-agent-notification
+                    - ceilometer-api
+                    - ceilometer-polling
+                    cinder:
+                    - cinder-api
+                    - cinder-volume
+                    - cinder-scheduler
+                    - cinder-backup</pre></div></div><div class="sect1" id="service-topology-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">service_topology.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#service-topology-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-service_topology_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-service_topology_yml.xml</li><li><span class="ds-label">ID: </span>service-topology-yml</li></ul></div></div></div></div><p>
+  This file provides details of the topology of the cloud from the perspective
+  of each service:
+ </p><div class="verbatim-wrap"><pre class="screen">services:
+    <em class="replaceable ">SERVICE-NAME</em>:
+        components:
+            <em class="replaceable ">COMPONENT-NAME</em>:
+                control-planes:
+                    <em class="replaceable ">CONTROL-PLANE-NAME</em>:
+                        clusters:
+                            <em class="replaceable ">CLUSTER-NAME</em>:
+                                <em class="replaceable ">LIST OF SERVERS</em>
+                        resources:
+                            <em class="replaceable ">RESOURCE-GROUP-NAME</em>:
+                                <em class="replaceable ">LIST OF SERVERS</em>
+                        regions:
+                            <em class="replaceable ">LIST OF REGIONS</em></pre></div><p>
+  <span class="bold"><strong>Example:</strong></span>
+ </p><div class="verbatim-wrap"><pre class="screen">services:
+    freezer:
+        components:
+            freezer-agent:
+                control_planes:
+                    control-plane-1:
+                        clusters:
+                            cluster1:
+                            - ardana-cp1-c1-m1-mgmt
+                            - ardana-cp1-c1-m2-mgmt
+                            - ardana-cp1-c1-m3-mgmt
+                        regions:
+                        - region1
+                        resources:
+                            compute:
+                            - ardana-cp1-comp0001-mgmt
+                        regions:
+                        - region1</pre></div></div><div class="sect1" id="private-data-metadata-ccp-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">private_data_metadata_ccp.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#private-data-metadata-ccp-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-private_data_metadata_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-private_data_metadata_yml.xml</li><li><span class="ds-label">ID: </span>private-data-metadata-ccp-yml</li></ul></div></div></div></div><p>
+  This file provide details of the secrets that are generated by the
+  configuration processor. The details include:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    The names of each secret
+   </p></li><li class="listitem "><p>
+    Metadata about each secret. This is a list where each element contains
+    details about each <code class="literal">component</code> service that uses the
+    secret.
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      The <code class="literal">component</code> service that uses the secret, and if
+      applicable the service that this component "consumes" when using the
+      secret
+     </p></li><li class="listitem "><p>
+      The list of clusters on which the <code class="literal">component</code> service is
+      deployed
+     </p></li><li class="listitem "><p>
+      The control plane <code class="literal">cp</code> on which the services are
+      deployed
+     </p></li></ul></div></li><li class="listitem "><p>
+    A version number (the model version number)
+   </p></li></ul></div><div class="verbatim-wrap"><pre class="screen">  <em class="replaceable ">SECRET</em>
+      <em class="replaceable ">METADATA</em>
+           <em class="replaceable ">LIST OF METADATA</em>
+               <em class="replaceable ">CLUSTERS</em>
+                   <em class="replaceable ">LIST OF CLUSTERS</em>
+               <em class="replaceable ">COMPONENT</em>
+               <em class="replaceable ">CONSUMES</em>
+               <em class="replaceable ">CONTROL-PLANE</em>
+       <em class="replaceable ">VERSION</em></pre></div><p>
+  For example:
+ </p><div class="verbatim-wrap"><pre class="screen">barbican_admin_password:
+    metadata:
+    -   clusters:
+        - cluster1
+        component: barbican-api
+        cp: ccp
+    version: '2.0'
+keystone_swift_password:
+    metadata:
+    -   clusters:
+        - cluster1
+        component: swift-proxy
+        consumes: keystone-api
+        cp: ccp
+    version: '2.0'
+metadata_proxy_shared_secret:
+    metadata:
+    -   clusters:
+        - cluster1
+        component: nova-metadata
+        cp: ccp
+    -   clusters:
+        - cluster1
+        - compute
+        component: neutron-metadata-agent
+        cp: ccp
+    version: '2.0'
+    …</pre></div></div><div class="sect1" id="password-change-yml"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">password_change.yml</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#password-change-yml">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-password_change_yml.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-password_change_yml.xml</li><li><span class="ds-label">ID: </span>password-change-yml</li></ul></div></div></div></div><p>
+  This file provides details equivalent to those in private_data_metadata_ccp.yml
+  for passwords which have been changed from their original values, using the
+  procedure outlined in the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> documentation
+ </p></div><div class="sect1" id="explain-txt"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">explain.txt</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#explain-txt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-explain_txt.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-explain_txt.xml</li><li><span class="ds-label">ID: </span>explain-txt</li></ul></div></div></div></div><p>
+  This file provides details of the server allocation and network configuration
+  decisions the configuration processor has made. The sequence of information
+  recorded is:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Any service components that are automatically added
+   </p></li><li class="listitem "><p>
+    Allocation of servers to clusters and resource groups
+   </p></li><li class="listitem "><p>
+    Resolution of the network configuration for each server
+   </p></li><li class="listitem "><p>
+    Resolution of the network configuration of each load balancer
+   </p></li></ul></div><p>
+  Example:
+ </p><div class="verbatim-wrap"><pre class="screen">        Add required services to control plane control-plane-1
+        ======================================================
+        control-plane-1: Added nova-metadata required by nova-api
+        control-plane-1: Added swift-common required by swift-proxy
+        control-plane-1: Added swift-rsync required by swift-account
+
+        Allocate Servers for control plane control-plane-1
+        ==================================================
+
+        cluster: cluster1
+        -----------------
+          Persisted allocation for server 'controller1' (AZ1)
+          Persisted allocation for server 'controller2' (AZ2)
+          Searching for server with role ['CONTROLLER-ROLE'] in zones: set(['AZ3'])
+          Allocated server 'controller3' (AZ3)
+
+        resource: compute
+        -----------------
+          Persisted allocation for server 'compute1' (AZ1)
+          Searching for server with role ['COMPUTE-ROLE'] in zones: set(['AZ1', 'AZ2', 'AZ3'])
+
+        Resolve Networks for Servers
+        ============================
+        server: ardana-cp1-c1-m1
+        ------------------------
+          add EXTERNAL-API for component ip-cluster
+          add MANAGEMENT for component ip-cluster
+          add MANAGEMENT for lifecycle-manager (default)
+          add MANAGEMENT for ntp-server (default)
+          ...
+          add MANAGEMENT for swift-rsync (default)
+          add GUEST for tag neutron.networks.vxlan (neutron-openvswitch-agent)
+          add EXTERNAL-VM for tag neutron.l3_agent.external_network_bridge (neutron-vpn-agent)
+          Using persisted address 10.0.1.2 for server ardana-cp1-c1-m1 on network EXTERNAL-API-NET
+          Using address 192.168.10.3 for server ardana-cp1-c1-m1 on network MANAGEMENT-NET
+          Using persisted address 10.1.1.2 for server ardana-cp1-c1-m1 on network GUEST-NET
+
+        …
+        Define load balancers
+        =====================
+
+        Load balancer: extlb
+        --------------------
+          Using persisted address 10.0.1.5 for vip extlb ardana-cp1-vip-extlb-extapi on network EXTERNAL-API-NET
+          Add nova-api for roles ['public'] due to 'default'
+          Add glance-api for roles ['public'] due to 'default'
+          ...
+
+        Map load balancers to providers
+        ===============================
+
+        Network EXTERNAL-API-NET
+        ------------------------
+          10.0.1.5: ip-cluster nova-api roles: ['public'] vip-port: 8774 host-port: 8774
+          10.0.1.5: ip-cluster glance-api roles: ['public'] vip-port: 9292 host-port: 9292
+          10.0.1.5: ip-cluster keystone-api roles: ['public'] vip-port: 5000 host-port: 5000
+          10.0.1.5: ip-cluster swift-proxy roles: ['public'] vip-port: 8080 host-port: 8080
+          10.0.1.5: ip-cluster monasca-api roles: ['public'] vip-port: 8070 host-port: 8070
+          10.0.1.5: ip-cluster heat-api-cfn roles: ['public'] vip-port: 8000 host-port: 8000
+          10.0.1.5: ip-cluster ops-console-web roles: ['public'] vip-port: 9095 host-port: 9095
+          10.0.1.5: ip-cluster heat-api roles: ['public'] vip-port: 8004 host-port: 8004
+          10.0.1.5: ip-cluster nova-novncproxy roles: ['public'] vip-port: 6080 host-port: 6080
+          10.0.1.5: ip-cluster neutron-server roles: ['public'] vip-port: 9696 host-port: 9696
+          10.0.1.5: ip-cluster heat-api-cloudwatch roles: ['public'] vip-port: 8003 host-port: 8003
+          10.0.1.5: ip-cluster ceilometer-api roles: ['public'] vip-port: 8777 host-port: 8777
+          10.0.1.5: ip-cluster freezer-api roles: ['public'] vip-port: 9090 host-port: 9090
+          10.0.1.5: ip-cluster horizon roles: ['public'] vip-port: 443 host-port: 80
+          10.0.1.5: ip-cluster cinder-api roles: ['public'] vip-port: 8776 host-port: 8776</pre></div></div><div class="sect1" id="clouddiagram-txt"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">CloudDiagram.txt</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#clouddiagram-txt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-clouddiagram_txt.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-clouddiagram_txt.xml</li><li><span class="ds-label">ID: </span>clouddiagram-txt</li></ul></div></div></div></div><p>
+  This file provides a pictorial representation of the cloud. Although this
+  file is still produced, it is superseded by the HTML output described in the
+  following section.
+ </p></div><div class="sect1" id="html-representation"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HTML Representation</span> <a title="Permalink" class="permalink" href="cpinfofiles.html#html-representation">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-input_model-cpinfofiles-html_representation.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-cpinfofiles-html_representation.xml</li><li><span class="ds-label">ID: </span>html-representation</li></ul></div></div></div></div><p>
+  An HTML representation of the cloud can be found in
+  <code class="filename">~/openstack/my_cloud/html</code> after the first Configuration
+  Processor run. This directory is also rebuilt each time the Configuration
+  Processor is run. These files combine the data in the input model with
+  allocation decisions made by the Configuration processor to allow the
+  configured cloud to be viewed from a number of different perspectives.
+ </p><p>
+  Most of the entries on the HTML pages provide either links to other parts of
+  the HTML output or additional details via hover text.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-html_representation_1.png" target="_blank"><img src="images/media-inputmodel-html_representation_1.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-html_representation_2.png" target="_blank"><img src="images/media-inputmodel-html_representation_2.png" width="" /></a></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="example-configurations.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 9 </span>Example Configurations</span></a><a class="nav-link" href="othertopics.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 7 </span>Other Topics</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

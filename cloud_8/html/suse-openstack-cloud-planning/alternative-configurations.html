@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Alternative Configurations | Planning an Installation with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Planning an Installation with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 12. Alternative Configurations" /><meta name="description" content="In SUSE OpenStack Cloud 8 there are alternative configurations that we recommend for specific purposes." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="prev" href="modify-input-model.html" title="Chapter 11. Modifying Example Configurations for Object Storage using Swift" /><link rel="next" href="book-installation.html" title="Installing with Cloud Lifecycle Manager" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-planning.html">Planning an Installation with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="alternative-configurations.html">Alternative Configurations</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Planning an Installation with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 11. Modifying Example Configurations for Object Storage using Swift" href="modify-input-model.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-planning.html">Planning an Installation with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="alternative-configurations.html">Alternative Configurations</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 11. Modifying Example Configurations for Object Storage using Swift" href="modify-input-model.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="alternative-configurations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Alternative Configurations</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-alternative_configurations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-alternative_configurations.xml</li><li><span class="ds-label">ID: </span>alternative-configurations</li></ul></div></div><div><div class="abstract"><p>
+    In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> there are alternative configurations that we recommend
+    for specific purposes.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="alternative-configurations.html#standalone-deployer"><span class="number">12.1 </span><span class="name">Using a Dedicated Cloud Lifecycle Manager Node</span></a></span></dt><dt><span class="section"><a href="alternative-configurations.html#without-dvr"><span class="number">12.2 </span><span class="name">Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> without DVR</span></a></span></dt><dt><span class="section"><a href="alternative-configurations.html#without-l3agent"><span class="number">12.3 </span><span class="name">Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with Provider VLANs and Physical Routers Only</span></a></span></dt><dt><span class="section"><a href="alternative-configurations.html#twosystems"><span class="number">12.4 </span><span class="name">Considerations When Installing Two Systems on One Subnet</span></a></span></dt></dl></div></div><div class="sect1" id="standalone-deployer"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using a Dedicated Cloud Lifecycle Manager Node</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#standalone-deployer">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-standalone_deployer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-standalone_deployer.xml</li><li><span class="ds-label">ID: </span>standalone-deployer</li></ul></div></div></div></div><p>
+  All of the example configurations included host the Cloud Lifecycle Manager on the first
+  Control Node. It is also possible to deploy this service on a dedicated
+  node. One use case for wanting to run the dedicated Cloud Lifecycle Manager is to be able to
+  test the deployment of different configurations without having to re-install
+  the first server. Some administrators prefer the additional security of
+  keeping all of the configuration data on a separate server from those that
+  users of the cloud connect to (although all of the data can be encrypted and
+  SSH keys can be password protected).
+ </p><p>
+  Here is a graphical representation of this setup:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-examples-entry_scale_kvm.png" target="_blank"><img src="images/media-examples-entry_scale_kvm.png" width="" /></a></div></div><div class="sect2" id="sec-specify-lifecycle-manager"><div class="titlepage"><div><div><h3 class="title"><span class="number">12.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Specifying a dedicated Cloud Lifecycle Manager in your input model</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#sec-specify-lifecycle-manager">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-standalone_deployer.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-standalone_deployer.xml</li><li><span class="ds-label">ID: </span>sec-specify-lifecycle-manager</li></ul></div></div></div></div><p>
+   To specify a dedicated Cloud Lifecycle Manager in your input model, make the following edits
+   to your configuration files.
+  </p><div id="id-1.3.4.10.3.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    The indentation of each of the input files is important and will cause
+    errors if not done correctly. Use the existing content in each of these
+    files as a reference when adding additional content for your Cloud Lifecycle Manager.
+   </p></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Update <code class="filename">control_plane.yml</code> to add the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Update <code class="filename">server_roles.yml</code> to add the Cloud Lifecycle Manager role.
+    </p></li><li class="listitem "><p>
+     Update <code class="filename">net_interfaces.yml</code> to add the interface
+     definition for the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Create a <code class="filename">disks_lifecycle_manager.yml</code> file to define
+     the disk layout for the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Update <code class="filename">servers.yml</code> to add the dedicated Cloud Lifecycle Manager node.
+    </p></li></ul></div><p>
+   <code class="filename">Control_plane.yml</code>: The snippet below shows the addition
+   of a single node cluster into the control plane to host the Cloud Lifecycle Manager service.
+   Note that, in addition to adding the new cluster, you also have to remove
+   the Cloud Lifecycle Manager component from the <code class="literal">cluster1</code> in the examples:
+  </p><div class="verbatim-wrap"><pre class="screen">  clusters:
+<span class="bold"><strong>     - name: cluster0
+       cluster-prefix: c0
+       server-role: LIFECYCLE-MANAGER-ROLE
+       member-count: 1
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager</strong></span>
+         - ntp-client
+     - name: cluster1
+       cluster-prefix: c1
+       server-role: CONTROLLER-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager
+         - ntp-server
+         - tempest</pre></div><p>
+   This specifies a single node of role
+   <code class="literal">LIFECYCLE-MANAGER-ROLE</code> hosting the Cloud Lifecycle Manager.
+  </p><p>
+   <code class="filename">Server_roles.yml</code>: The snippet below shows the insertion
+   of the new server roles definition:
+  </p><div class="verbatim-wrap"><pre class="screen">   server-roles:
+
+<span class="bold"><strong>      - name: LIFECYCLE-MANAGER-ROLE
+        interface-model: LIFECYCLE-MANAGER-INTERFACES
+        disk-model: LIFECYCLE-MANAGER-DISKS</strong></span>
+
+      - name: CONTROLLER-ROLE</pre></div><p>
+   This defines a new server role which references a new interface-model and
+   disk-model to be used when configuring the server.
+  </p><p>
+   <code class="filename">net-interfaces.yml</code>: The snippet below shows the
+   insertion of the network-interface info:
+  </p><div class="verbatim-wrap"><pre class="screen"><span class="bold"><strong>    - name: LIFECYCLE-MANAGER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+             name: bond0
+          bond-data:
+             options:
+                 mode: active-backup
+                 miimon: 200
+                 primary: hed3
+             provider: linux
+             devices:
+                 - name: hed3
+                 - name: hed4
+          network-groups:
+             - MANAGEMENT</strong></span></pre></div><p>
+   This assumes that the server uses the same physical networking layout as the
+   other servers in the example.
+   
+   
+  </p><p>
+   <code class="filename">disks_lifecycle_manager.yml</code>: In the examples,
+   disk-models are provided as separate files (this is just a convention, not a
+   limitation) so the following should be added as a new file named
+   <code class="filename">disks_lifecycle_manager.yml</code>:
+  </p><div class="verbatim-wrap"><pre class="screen">---
+   product:
+      version: 2
+
+   disk-models:
+<span class="bold"><strong>   - name: LIFECYCLE-MANAGER-DISKS
+     # Disk model to be used for Cloud Lifecycle Managers nodes
+     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+     # sda_root is a templated value to align with whatever partition is really used
+     # This value is checked in os config and replaced by the partition actually used
+     # on sda e.g. sda1 or sda5
+
+     volume-groups:
+       - name: ardana-vg
+         physical-volumes:
+           - /dev/sda_root
+
+       logical-volumes:
+       # The policy is not to consume 100% of the space of each volume group.
+       # 5% should be left free for snapshots and to allow for some flexibility.
+          - name: root
+            size: 80%
+            fstype: ext4
+            mount: /
+          - name: crash
+            size: 15%
+            mount: /var/crash
+            fstype: ext4
+            mkfs-opts: -O large_file
+        consumer:
+              name: os</strong></span></pre></div><p>
+   <code class="filename">Servers.yml</code>: The snippet below shows the insertion of an
+   additional server used for hosting the Cloud Lifecycle Manager. Provide the address
+   information here for the server you are running on, that is, the node where
+   you have installed the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> ISO.
+  </p><div class="verbatim-wrap"><pre class="screen">  servers:
+     # NOTE: Addresses of servers need to be changed to match your environment.
+     #
+     #       Add additional servers as required
+
+<span class="bold"><strong>     #Lifecycle-manager
+     - id: lifecycle-manager
+       ip-addr: <em class="replaceable ">YOUR IP ADDRESS HERE</em>
+       role: LIFECYCLE-MANAGER-ROLE
+       server-group: RACK1
+       nic-mapping: HP-SL230-4PORT
+       mac-addr: 8c:dc:d4:b5:c9:e0
+       # ipmi information is not needed </strong></span>
+
+     # Controllers
+     - id: controller1
+       ip-addr: 192.168.10.3
+       role: CONTROLLER-ROLE</pre></div><div id="id-1.3.4.10.3.5.18" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    With a stand-alone deployer, the OpenStack CLI and other clients will not
+    be installed automatically. You need to install <span class="productname">OpenStack</span> clients to get the
+    desired <span class="productname">OpenStack</span> capabilities. For more information and installation
+    instructions, consult <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 28 “Installing OpenStack Clients”</span>.
+   </p></div></div></div><div class="sect1" id="without-dvr"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> without DVR</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#without-dvr">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-without_dvr.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-without_dvr.xml</li><li><span class="ds-label">ID: </span>without-dvr</li></ul></div></div></div></div><p>
+  By default in the KVM model, the Neutron service utilizes distributed routing
+  (DVR). This is the recommended setup because it allows for high availability.
+  However, if you would like to disable this feature, here are the steps to
+  achieve this.
+ </p><p>
+  On your Cloud Lifecycle Manager, make the following changes:
+ </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/neutron.conf.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">router_distributed = {{ router_distributed }}</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">router_distributed = False</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/ml2_conf.ini.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_distributed_routing = True</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_distributed_routing = False</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/l3_agent.ini.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">agent_mode = {{ neutron_l3_agent_mode }}</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">agent_mode = legacy</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>
+    file, remove the following values from the Compute resource
+    <code class="literal">service-components</code> list:
+   </p><div class="verbatim-wrap"><pre class="screen">- neutron-l3-agent
+   - neutron-metadata-agent</pre></div><div id="id-1.3.4.10.4.4.4.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+     If you fail to remove the above values from the Compute resource
+     service-components list from file
+     <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>,
+     you will end up with routers (non_DVR routers) being deployed in the
+     compute host, even though the lifecycle manager is configured for
+     non_distributed routers.
+    </p></div></li><li class="step "><p>
+    Commit your changes to your local git repository:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+    Run the configuration processor:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+    Run the ready deployment playbook:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+    Continue installation. More information on cloud deployments are available
+    in the <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 7 “Overview”</span>
+   </p></li></ol></div></div></div><div class="sect1" id="without-l3agent"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with Provider VLANs and Physical Routers Only</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#without-l3agent">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-without_l3agent.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-without_l3agent.xml</li><li><span class="ds-label">ID: </span>without-l3agent</li></ul></div></div></div></div><p>
+  Another option for configuring Neutron is to use provider VLANs and physical
+  routers only, here are the steps to achieve this.
+ </p><p>
+  On your Cloud Lifecycle Manager, make the following changes:
+ </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/neutron.conf.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">router_distributed = {{ router_distributed }}</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">router_distributed = False</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/ml2_conf.ini.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_distributed_routing = True</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_distributed_routing = False</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/config/neutron/dhcp_agent.ini.j2</code>
+    file, change the line below from:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_isolated_metadata = {{ neutron_enable_isolated_metadata }}</pre></div><p>
+    to:
+   </p><div class="verbatim-wrap"><pre class="screen">enable_isolated_metadata = True</pre></div></li><li class="step "><p>
+    In the
+    <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>
+    file, remove the following values from the Compute resource
+    <code class="literal">service-components</code> list:
+   </p><div class="verbatim-wrap"><pre class="screen">- neutron-l3-agent
+  - neutron-metadata-agent</pre></div></li></ol></div></div></div><div class="sect1" id="twosystems"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations When Installing Two Systems on One Subnet</span> <a title="Permalink" class="permalink" href="alternative-configurations.html#twosystems">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/planning-architecture-alternative-twosystems.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-alternative-twosystems.xml</li><li><span class="ds-label">ID: </span>twosystems</li></ul></div></div></div></div><p>
+  If you wish to install two separate <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> systems using a single
+  subnet, you will need to consider the following notes.
+ </p><p>
+  The <code class="literal">ip_cluster</code> service includes the
+  <code class="literal">keepalived</code> daemon which maintains virtual IPs (VIPs) on
+  cluster nodes. In order to maintain VIPs, it communicates between cluster
+  nodes over the VRRP protocol.
+ </p><p>
+  A VRRP virtual routerid identifies a particular VRRP cluster and must be
+  unique for a subnet. If you have two VRRP clusters with the same virtual
+  routerid, causing a clash of VRRP traffic, the VIPs are unlikely to be up or
+  pingable and you are likely to get the following signature in your
+  <code class="literal">/etc/keepalived/keepalived.log</code>:
+ </p><div class="verbatim-wrap"><pre class="screen">Dec 16 15:43:43 ardana-cp1-c1-m1-mgmt Keepalived_vrrp[2218]: ip address
+  associated with VRID not present in received packet : 10.2.1.11
+Dec 16 15:43:43 ardana-cp1-c1-m1-mgmt Keepalived_vrrp[2218]: one or more VIP
+  associated with VRID mismatch actual MASTER advert
+Dec 16 15:43:43 ardana-cp1-c1-m1-mgmt Keepalived_vrrp[2218]: bogus VRRP packet
+  received on br-bond0 !!!
+Dec 16 15:43:43 ardana-cp1-c1-m1-mgmt Keepalived_vrrp[2218]: VRRP_Instance(VI_2)
+  ignoring received advertisment...</pre></div><p>
+  To resolve this issue, our recommendation is to install your separate
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> systems with VRRP traffic on different subnets.
+ </p><p>
+  If this is not possible, you may also assign a unique routerid to your
+  separate <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> system by changing the
+  <code class="literal">keepalived_vrrp_offset</code> service configurable. The routerid
+  is currently derived using the <code class="literal">keepalived_vrrp_index</code> which
+  comes from a configuration processor variable and the
+  <code class="literal">keepalived_vrrp_offset</code>.
+ </p><p>
+  For example,
+ </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    Log in to your Cloud Lifecycle Manager.
+   </p></li><li class="step "><p>
+    Edit your
+    <code class="filename">~/openstack/my_cloud/config/keepalived/defaults.yml</code>
+    file and change the value of the following line:
+   </p><div class="verbatim-wrap"><pre class="screen">keepalived_vrrp_offset: 0</pre></div><p>
+    Change the off value to a number that uniquely identifies a separate vrrp
+    cluster. For example:
+   </p><p>
+    <code class="literal">keepalived_vrrp_offset: 0</code> for the 1st vrrp cluster on
+    this subnet.
+   </p><p>
+    <code class="literal">keepalived_vrrp_offset: 1</code> for the 2nd vrrp cluster on
+    this subnet.
+   </p><p>
+    <code class="literal">keepalived_vrrp_offset: 2</code> for the 3rd vrrp cluster on
+    this subnet.
+   </p><div id="symlinks" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+     You should be aware that the files in the
+     <code class="filename">~/openstack/my_cloud/config/</code> directory are symlinks
+     to the <code class="filename">~/openstack/ardana/ansible/</code> directory. For
+     example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls -al ~/openstack/my_cloud/config/keepalived/defaults.yml
+lrwxrwxrwx 1 stack stack 55 May 24 20:38 /var/lib/ardana/openstack/my_cloud/config/keepalived/defaults.yml -&gt;
+    ../../../ardana/ansible/roles/keepalived/defaults/main.yml</pre></div><p>
+     If you are using a tool like <code class="literal">sed</code> to make edits to files
+     in this directory, you might break the symbolic link and create a new copy
+     of the file. To maintain the link, you will need to force
+     <code class="literal">sed</code> to follow the link:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sed -i <span class="bold"><strong>--follow-symlinks</strong></span> \
+  's$keepalived_vrrp_offset: 0$keepalived_vrrp_offset: 2$' \
+  ~/openstack/my_cloud/config/keepalived/defaults.yml</pre></div><p>
+     Alternatively, directly edit the target of the link
+     <code class="filename">~/openstack/ardana/ansible/roles/keepalived/defaults/main.yml</code>.
+    </p></div></li><li class="step "><p>
+    Commit your configuration to the Git repository (see
+    <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "changing Admin password"</pre></div></li><li class="step "><p>
+    Run the configuration processor with this command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+    Use the playbook below to create a deployment directory:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+    If you are making this change after your initial install, run the following
+    reconfigure playbook to make this change in your environment:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts FND-CLU-reconfigure.yml</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="modify-input-model.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 11 </span>Modifying Example Configurations for Object Storage using Swift</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

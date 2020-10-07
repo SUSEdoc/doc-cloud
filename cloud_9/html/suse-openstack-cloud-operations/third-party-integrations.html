@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Third-Party Integrations | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 4. Third-Party Integrations" /><meta name="description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 9 centralized logging solution and Splunk including the steps to set up and forward logs." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="clm-admin-ui.html" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" /><link rel="next" href="ops-managing-identity.html" title="Chapter 5. Managing Identity" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="third-party-integrations.html">Third-Party Integrations</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" href="clm-admin-ui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Managing Identity" href="ops-managing-identity.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="third-party-integrations.html">Third-Party Integrations</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" href="clm-admin-ui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Managing Identity" href="ops-managing-identity.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="third-party-integrations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Third-Party Integrations</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-thirdparty_integrations.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-thirdparty_integrations.xml</li><li><span class="ds-label">ID: </span>third-party-integrations</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="third-party-integrations.html#splunk-integration"><span class="number">4.1 </span><span class="name">Splunk Integration</span></a></span></dt><dt><span class="section"><a href="third-party-integrations.html#topic-kyf-brv-vw"><span class="number">4.2 </span><span class="name">Operations Bridge Integration</span></a></span></dt><dt><span class="section"><a href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca"><span class="number">4.3 </span><span class="name">Monitoring Third-Party Components With Monasca</span></a></span></dt></dl></div></div><div class="sect1" id="splunk-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Splunk Integration</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#splunk-integration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>splunk-integration</li></ul></div></div></div></div><p>
+  This documentation demonstrates the possible integration between the
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 centralized logging solution and Splunk including the steps
+  to set up and forward logs.
+ </p><p>
+  The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 logging solution provides a flexible and extensible
+  framework to centralize the collection and processing of logs from all of
+  the nodes in a cloud. The logs are shipped to a highly available and fault
+  tolerant cluster where they are transformed and stored for better searching
+  and reporting. The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 logging solution uses the ELK stack
+  (Elasticsearch, Logstash and Kibana) as a production grade implementation
+  and can support other storage and indexing technologies. The Logstash
+  pipeline can be configured to forward the logs to an alternative target if
+  you wish.
+ </p><p>
+  This documentation demonstrates the possible integration between the
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 centralized logging solution and Splunk including the steps
+  to set up and forward logs.
+ </p><div class="sect2" id="idg-all-operations-integrating-splunk-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What is Splunk?</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-splunk-xml-5</li></ul></div></div></div></div><p>
+   Splunk is software for searching, monitoring, and analyzing
+   <a class="link" href="https://en.wikipedia.org/wiki/Machine-generated_data" target="_blank">machine-generated
+   big data</a>, via a web-style interface. Splunk captures, indexes and
+   correlates real-time data in a searchable repository from which it can
+   generate graphs, reports, alerts, dashboards and visualizations. It is
+   commercial software (unlike Elasticsearch) and more details about Splunk
+   can be found at <a class="link" href="https://www.splunk.com" target="_blank">https://www.splunk.com</a>.
+  </p></div><div class="sect2" id="idg-all-operations-integrating-splunk-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Splunk to receive log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-splunk-xml-6</li></ul></div></div></div></div><p>
+   This documentation assumes that you already have Splunk set up and running.
+   For help with installing and setting up Splunk, refer to
+   <a class="link" href="http://docs.splunk.com/Documentation/Splunk/latest/SearchTutorial/Systemrequirements" target="_blank">Splunk
+   Tutorial</a>.
+  </p><p>
+   There are different ways in which a log message (or "event" in Splunk's
+   terminology) can be sent to Splunk. These steps will set up a TCP port where
+   Splunk will listen for messages.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     On the Splunk web UI, click on the Settings menu in the upper right-hand
+     corner.
+    </p></li><li class="listitem "><p>
+     In the <span class="guimenu ">Data</span> section of the Settings menu, click <span class="guimenu ">Data Inputs</span>.
+    </p></li><li class="listitem "><p>
+     Choose the <span class="guimenu ">TCP</span> option.
+    </p></li><li class="listitem "><p>
+     Click the <span class="guimenu ">New</span> button to add an input.
+    </p></li><li class="listitem "><p>
+     In the <span class="guimenu ">Port</span> field, enter the port number you want to use.
+    </p><div id="id-1.5.6.2.6.4.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      If you are on a less secure network and want to restrict connections to
+      this port, use the <span class="guimenu ">Only accept connection from</span> field
+      to restrict the traffic to a specific IP address.
+     </p></div></li><li class="listitem "><p>
+     Click the <span class="guimenu ">Next</span> button.
+    </p></li><li class="listitem "><p>
+     Specify the Source Type by clicking on the <span class="guimenu ">Select</span> button and choosing
+     <code class="literal">linux_messages_syslog</code> from the list.
+    </p></li><li class="listitem "><p>
+     Click the <span class="guimenu ">Review</span> button.
+    </p></li><li class="listitem "><p>
+     Review the configuration and click the <span class="guimenu ">Submit</span> button.
+    </p></li><li class="listitem "><p>
+     A success message will be displayed.
+    </p></li></ol></div></div><div class="sect2" id="id-1.5.6.2.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Forwarding log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 Centralized Logging to Splunk</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.5.6.2.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   When you have Splunk set up and configured to receive log messages, you can
+   configure <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 to forward the logs to Splunk.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Check the status of the logging service:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts logging-status.yml</pre></div><p>
+     If everything is up and running, continue to the next step.
+    </p></li><li class="step "><p>
+     Edit the logstash config file at the location below:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/logging-server/templates/logstash.conf.j2</pre></div><p>
+     At the bottom of the file will be a section for the Logstash outputs. Add
+     details about your Splunk environment details.
+    </p><p>
+     Below is an example, showing the placement in bold:
+    </p><div class="verbatim-wrap"><pre class="screen"># Logstash outputs
+#------------------------------------------------------------------------------
+output {
+  # Configure Elasticsearch output
+  # http://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html
+  elasticsearch {
+    index =&gt; %{[@metadata][es_index]}
+    hosts =&gt; ["{{ elasticsearch_http_host }}:{{ elasticsearch_http_port }}"]
+    flush_size =&gt; {{ logstash_flush_size }}
+    idle_flush_time =&gt; 5
+    workers =&gt; {{ logstash_threads }}
+  }
+ <span class="bold"><strong>  # Forward Logs to Splunk on the TCP port that matches the one specified in Splunk Web UI.
+ tcp {
+   mode =&gt; "client"
+   host =&gt; "&lt;Enter Splunk listener IP address&gt;"
+   port =&gt; <em class="replaceable ">TCP_PORT_NUMBER</em>
+ }</strong></span>
+}</pre></div><div id="id-1.5.6.2.7.3.3.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      If you are not planning on using the Splunk UI to parse your centralized
+      logs, there is no need to forward your logs to Elasticsearch. In this
+      situation, comment out the lines in the Logstash outputs pertaining to
+      Elasticsearch.
+      However, you can continue to forward your centralized logs to multiple
+      locations.
+     </p></div></li><li class="step "><p>
+     Commit your changes to git:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "Logstash configuration change for Splunk
+integration"</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost
+ready-deployment.yml</pre></div></li><li class="step "><p>
+     Complete this change with a reconfigure of the logging environment:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts kronos-reconfigure.yml</pre></div></li><li class="step "><p>
+     In your Splunk UI, confirm that the logs have begun to forward.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.6.2.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Searching for log messages from the Spunk dashboard</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.5.6.2.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To both verify that your integration worked and to search your log messages
+   that have been forwarded you can navigate back to your Splunk dashboard. In
+   the search field, use this string:
+  </p><div class="verbatim-wrap"><pre class="screen">source="tcp:<em class="replaceable ">TCP_PORT_NUMBER</em>"</pre></div><p>
+   Find information on using the Splunk search tool at
+   <a class="link" href="http://docs.splunk.com/Documentation/Splunk/6.4.3/SearchTutorial/WelcometotheSearchTutorial" target="_blank">http://docs.splunk.com/Documentation/Splunk/6.4.3/SearchTutorial/WelcometotheSearchTutorial</a>.
+  </p></div></div><div class="sect1" id="topic-kyf-brv-vw"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operations Bridge Integration</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#topic-kyf-brv-vw">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integrating_opsbridge.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_opsbridge.xml</li><li><span class="ds-label">ID: </span>topic-kyf-brv-vw</li></ul></div></div></div></div><p>
+  The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 monitoring solution (monasca) can easily be
+  integrated with your existing monitoring tools. Integrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9
+  monasca with Operations Bridge using the Operations Bridge Connector
+  simplifies monitoring and managing events and topology information.
+ </p><p>
+  The integration provides the following functionality:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Forwarding of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> monasca alerts and topology to Operations
+    Bridge for event correlation
+   </p></li><li class="listitem "><p>
+    Customization of forwarded events and topology
+   </p></li></ul></div><p>
+  For more information about this connector please see
+  <a class="link" href="https://software.microfocus.com/en-us/products/operations-bridge-suite/overview" target="_blank">https://software.microfocus.com/en-us/products/operations-bridge-suite/overview</a>.
+ </p></div><div class="sect1" id="monitoring-3rd-party-components-with-monasca"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring Third-Party Components With Monasca</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring_third_party_components.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring_third_party_components.xml</li><li><span class="ds-label">ID: </span>monitoring-3rd-party-components-with-monasca</li></ul></div></div></div></div><div class="sect2" id="monasca-integration-overview"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">monasca Monitoring Integration Overview</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-integration-overview">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monasca_integration_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monasca_integration_overview.xml</li><li><span class="ds-label">ID: </span>monasca-integration-overview</li></ul></div></div></div></div><p>
+  monasca, the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 monitoring service, collects information about
+  your cloud's systems, and allows you to create alarm definitions based on
+  these measurements. monasca-agent is the component that collects metrics such
+  as metric storage and alarm thresholding and forwards them to the monasca-api
+  for further processing.
+ </p><p>
+  With a small amount of configuration, you can use the detection and check
+  plugins that are provided with your cloud to monitor integrated third-party
+  components. In addition, you can write custom plugins and integrate them with
+  the existing monitoring service.
+ </p><p>
+  Find instructions for customizing existing plugins to monitor third-party
+  components in the <a class="xref" href="third-party-integrations.html#configuring-check-plugins" title="4.3.4. Configuring Check Plugins">Section 4.3.4, “Configuring Check Plugins”</a>.
+ </p><p>
+  Find instructions for installing and configuring new custom plugins in the
+ <a class="xref" href="third-party-integrations.html#writing-custom-plugins" title="4.3.3. Writing Custom Plugins">Section 4.3.3, “Writing Custom Plugins”</a>.
+ </p><p>
+  You can also use existing alarm definitions, as well as create new alarm
+  definitions that relate to a custom plugin or metric. Instructions for
+  defining new alarm definitions are in the <a class="xref" href="third-party-integrations.html#configuring-alarm-definitions" title="4.3.6. Configuring Alarm Definitions">Section 4.3.6, “Configuring Alarm Definitions”</a>.
+ </p><p>
+  You can use the Operations Console and monasca CLI to list all of the alarms,
+  alarm-definitions, and metrics that exist on your cloud.
+ </p></div><div class="sect2" id="monasca-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">monasca Agent</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-agent">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monasca_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monasca_agent.xml</li><li><span class="ds-label">ID: </span>monasca-agent</li></ul></div></div></div></div><p>
+  The monasca agent (monasca-agent) collects information about your cloud using
+  the installed plugins. The plugins are written in Python, and determine the
+  monitoring metrics for your system, as well as the interval for collection.
+  The default collection interval is 30 seconds, and we strongly recommend
+  not changing this default value.
+ </p><p>
+  The following two types of custom plugins can be added to your cloud.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <span class="bold"><strong>Detection Plugin</strong></span>. Determines whether the
+    monasca-agent has the ability to monitor the specified component or service
+    on a host. If successful, this type of plugin configures an associated
+    <span class="bold"><strong>check plugin</strong></span> by creating a YAML
+    configuration file.
+   </p></li><li class="listitem "><p>
+    <span class="bold"><strong>Check Plugin</strong></span>. Specifies the metrics to be
+    monitored, using the configuration file created by the detection plugin.
+   </p></li></ul></div><p>
+  monasca-agent is installed on every server in your cloud, and provides
+  plugins that monitor the following.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    System metrics relating to CPU, memory, disks, host availability, etc.
+   </p></li><li class="listitem "><p>
+    Process health metrics (process, http_check)
+   </p></li><li class="listitem "><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9-specific component metrics, such as apache
+    rabbitmq, kafka, cassandra, etc.
+   </p></li></ul></div><p>
+  monasca is pre-configured with default check plugins and associated detection
+  plugins. The default plugins can be reconfigured to monitor third-party
+  components, and often only require small adjustments to adapt them to this
+  purpose. Find a list of the default plugins here:
+  <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#detection-plugins" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#detection-plugins</a>
+ </p><p>
+  Often, a single check plugin will be used to monitor multiple services. For
+  example, many services use the <code class="literal">http_check.py</code> detection
+  plugin to detect the up/down status of a service endpoint. Often the
+  <code class="literal">process.py</code> check plugin, which provides process monitoring
+  metrics, is used as a basis for a custom process detection plugin.
+ </p><p>
+  More information about the monasca agent can be found in the following
+  locations
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    monasca agent overview:
+    <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md</a>
+   </p></li><li class="listitem "><p>
+    Information on existing plugins:
+    <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md</a>
+   </p></li><li class="listitem "><p>
+    Information on plugin customizations:
+    <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md</a>
+   </p></li></ul></div></div><div class="sect2" id="writing-custom-plugins"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Writing Custom Plugins</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#writing-custom-plugins">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-writing_custom_plugins.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-writing_custom_plugins.xml</li><li><span class="ds-label">ID: </span>writing-custom-plugins</li></ul></div></div></div></div><p>
+  When the pre-built monasca plugins do not meet your monitoring needs, you can
+  write custom plugins to monitor your cloud. After you have written a plugin,
+  you must install and configure it.
+ </p><p>
+  When your needs dictate a very specific custom monitoring check, you must
+  provide both a detection and check plugin.
+ </p><p>
+  The steps involved in configuring a custom plugin include running a detection
+  plugin and passing any necesssary parameters to the detection plugin so the
+  resulting check configuration file is created with all necessary data.
+ </p><p>
+  When using an existing check plugin to monitor a third-party component, a
+  custom detection plugin is needed only if there is not an associated default
+  detection plugin.
+ </p><p>
+  <span class="bold"><strong>Check plugin configuration files</strong></span>
+ </p><p>
+  Each plugin needs a corresponding YAML configuration file with the same stem
+  name as the plugin check file. For example, the plugin file
+  <code class="filename">http_check.py</code> (in
+  <code class="filename">/usr/lib/python2.7/site-packages/monasca_agent/collector/checks_d/</code>)
+  should have a corresponding configuration file,
+  <code class="filename">http_check.yaml</code> (in
+  <code class="filename">/etc/monasca/agent/conf.d/http_check.yaml</code>).  The stem
+  name <code class="literal">http_check</code> must be the same for both files.
+ </p><p>
+  Permissions for the YAML configuration file must be <span class="bold"><strong>read+write</strong></span> for <code class="literal">mon-agent</code> user (the
+  user that must also own the file), and <span class="bold"><strong>read</strong></span>
+  for the <code class="literal">mon-agent</code> group. Permissions for the file must be
+  restricted to the <span class="bold"><strong>mon-agent</strong></span> user and
+  <span class="bold"><strong>monasca</strong></span> group. The following example shows
+  correct permissions settings for the file
+  <code class="filename">http_check.yaml</code>.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls -alt /etc/monasca/agent/conf.d/http_check.yaml
+-rw-r----- 1 monasca-agent monasca 10590 Jul 26 05:44 http_check.yaml</pre></div><p>
+  A check plugin YAML configuration file has the following structure.
+ </p><div class="verbatim-wrap"><pre class="screen">init_config:
+    key1: value1
+    key2: value2
+
+instances:
+    - name: john_smith
+      username: john_smith
+      password: 123456
+    - name: jane_smith
+      username: jane_smith
+      password: 789012</pre></div><p>
+  In the above file structure, the <code class="literal">init_config</code> section
+  allows you to specify any number of global
+  <span class="bold"><strong>key:value</strong></span> pairs. Each pair will be available
+  on every run of the check that relates to the YAML configuration file.
+ </p><p>
+  The <code class="literal">instances</code> section allows you to list the instances
+  that the related check will be run on. The check will be run once on each
+  instance listed in the <code class="literal">instances</code> section. Ensure that each
+  instance listed in the <code class="literal">instances</code> section has a unique
+  name.
+ </p><p>
+  <span class="bold"><strong>Custom detection plugins</strong></span>
+ </p><p>
+  Detection plugins should be written to perform checks that ensure that a
+  component can be monitored on a host. Any arguments needed by the associated
+  check plugin are passed into the detection plugin at setup (configuration)
+  time. The detection plugin will write to the associated check configuration
+  file.
+ </p><p>
+  When a detection plugin is successfully run in the configuration step, it
+  will write to the check configuration YAML file. The configuration file for
+  the check is written to the following directory.
+ </p><div class="verbatim-wrap"><pre class="screen">/etc/monasca/agent/conf.d/</pre></div><p>
+  <span class="bold"><strong>Writing process detection plugin using the
+  ServicePlugin class</strong></span>
+ </p><p>
+  The monasca-agent provides a <code class="literal">ServicePlugin</code>
+  class that makes process detection monitoring easy.
+ </p><p>
+  <span class="bold"><strong>Process check</strong></span>
+ </p><p>
+  The process check plugin generates metrics based on the process status for
+  specified process names. It generates
+  <code class="literal">process.pid_count</code> metrics for the specified
+  dimensions, and a set of detailed process metrics for the specified
+  dimensions by default.
+ </p><p>
+  The ServicePlugin class allows you to specify a list of process name(s) to
+  detect, and uses <span class="bold"><strong>psutil</strong></span> to see if the
+  process exists on the host. It then appends the <code class="filename">process.yml</code> configuration
+  file with the process name(s), if they do not already exist.
+ </p><p>
+  The following is an example of a <code class="literal">process.py</code>
+  check <code class="literal">ServicePlugin</code>.
+ </p><div class="verbatim-wrap"><pre class="screen">import monasca_setup.detection
+
+class monascaTransformDetect(monasca_setup.detection.ServicePlugin):
+    """Detect monasca Transform daemons and setup configuration to monitor them."""
+    def __init__(self, template_dir, overwrite=False, args=None):
+        log.info("      Watching the monasca transform processes.")
+        service_params = {
+            'args': {},
+            'template_dir': template_dir,
+            'overwrite': overwrite,
+            'service_name': 'monasca-transform',
+            'process_names': ['monasca-transform','pyspark',
+                              'transform/lib/driver']
+        }
+        super(monascaTransformDetect, self).__init__(service_params)</pre></div><p>
+  <span class="bold"><strong>Writing a Custom Detection Plugin using Plugin or
+  ArgsPlugin classes</strong></span>
+ </p><p>
+  A custom detection plugin class should derive from either the Plugin or
+  ArgsPlugin classes provided in the
+  <code class="filename">/usr/lib/python2.7/site-packages/monasca_setup/detection</code> directory.
+ </p><p>
+  If the plugin parses command line arguments, the <code class="literal">ArgsPlugin</code> class is useful.
+  The ArgsPlugin class derives from the Plugin class. The ArgsPlugin class has
+  a method to check for required arguments, and a method to return the instance
+  that will be used for writing to the configuration file with the dimensions
+  from the command line parsed and included.
+ </p><p>
+  If the ArgsPlugin methods do not seem to apply, then derive directly from the
+  Plugin class.
+ </p><p>
+  When deriving from these classes, the following methods should be
+  implemented.
+ </p><div class="itemizedlist " id="ul-dfd-kvs-px"><ul class="itemizedlist"><li class="listitem "><p>
+    _<span class="emphasis"><em>detect - set self.available=True when conditions are met that
+    the thing to monitor exists on a host.</em></span>
+   </p></li><li class="listitem "><p>
+    <span class="emphasis"><em>build</em></span>_config - writes the instance information to the
+    configuration and return the configuration.
+   </p></li><li class="listitem "><p>
+    dependencies_installed (default implementation is in ArgsPlugin, but not
+    Plugin) - return true when python dependent libraries are installed.
+   </p></li></ul></div><p>
+  The following is an example custom detection plugin.
+ </p><div class="verbatim-wrap"><pre class="screen">import ast
+import logging
+
+import monasca_setup.agent_config
+import monasca_setup.detection
+
+log = logging.getLogger(__name__)
+
+
+class HttpCheck(monasca_setup.detection.ArgsPlugin):
+    """Setup an http_check according to the passed in args.
+       Despite being a detection plugin this plugin does no detection and will be a noop without   arguments.
+       Expects space separated arguments, the required argument is url. Optional parameters include:
+       disable_ssl_validation and match_pattern.
+    """
+
+    def _detect(self):
+        """Run detection, set self.available True if the service is detected.
+        """
+        self.available = self._check_required_args(['url'])
+
+    def build_config(self):
+        """Build the config as a Plugins object and return.
+        """
+        config = monasca_setup.agent_config.Plugins()
+        # No support for setting headers at this time
+        instance = self._build_instance(['url', 'timeout', 'username', 'password',
+                                         'match_pattern', 'disable_ssl_validation',
+                                         'name', 'use_keystone', 'collect_response_time'])
+
+        # Normalize any boolean parameters
+        for param in ['use_keystone', 'collect_response_time']:
+            if param in self.args:
+                instance[param] = ast.literal_eval(self.args[param].capitalize())
+        # Set some defaults
+        if 'collect_response_time' not in instance:
+            instance['collect_response_time'] = True
+        if 'name' not in instance:
+            instance['name'] = self.args['url']
+
+        config['http_check'] = {'init_config': None, 'instances': [instance]}
+
+        return config</pre></div><p>
+  <span class="bold"><strong>Installing a detection plugin in the <span class="productname">OpenStack</span> version delivered with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></strong></span>
+ </p><p>
+  Install a plugin by copying it to the plugin directory
+  (<code class="filename">/usr/lib/python2.7/site-packages/monasca_agent/collector/checks_d/</code>).
+ </p><p>
+  The plugin should have file permissions of
+  <span class="bold"><strong>read+write</strong></span> for the root user (the user that
+  should also own the file) and <span class="bold"><strong>read</strong></span> for the
+  root group and all other users.
+ </p><p>
+  The following is an example of correct file permissions for the
+  <span class="bold"><strong>http_check.py</strong></span> file.
+ </p><div class="verbatim-wrap"><pre class="screen">-rw-r--r-- 1 root root 1769 Sep 19 20:14 http_check.py</pre></div><p>
+  Detection plugins should be placed in the following directory.
+ </p><div class="verbatim-wrap"><pre class="screen">/usr/lib/monasca/agent/custom_detect.d/</pre></div><p>
+  The detection plugin directory name should be accessed using the
+  <code class="literal">monasca_agent_detection_plugin_dir</code> Ansible variable. This
+  variable is defined in the
+  <code class="literal">roles/monasca-agent/vars/main.yml</code> file.
+ </p><div class="verbatim-wrap"><pre class="screen">monasca_agent_detection_plugin_dir: /usr/lib/monasca/agent/custom_detect.d/</pre></div><p>
+  Example: Add Ansible <code class="literal">monasca_configure</code> task to install the
+  plugin. (The <code class="literal">monasca_configure</code> task can be added to any
+  service playbook.) In this example, it is added to
+  <code class="filename">~/openstack/ardana/ansible/roles/_CEI-CMN/tasks/monasca_configure.yml</code>.
+ </p><div class="verbatim-wrap"><pre class="screen">---
+- name: _CEI-CMN | monasca_configure |
+    Copy ceilometer Custom plugin
+  become: yes
+  copy:
+    src: ardanaceilometer_mon_plugin.py
+    dest: "{{ monasca_agent_detection_plugin_dir }}"
+    owner: root
+    group: root
+    mode: 0440</pre></div><p>
+  <span class="bold"><strong>Custom check plugins</strong></span>
+ </p><p>
+  Custom check plugins generate metrics. Scalability should be taken into
+  consideration on systems that will have hundreds of servers, as a large
+  number of metrics can affect performance by impacting disk performance, RAM
+  and CPU usage.
+ </p><p>
+  You may want to tune your configuration parameters so that less-important
+  metrics are not monitored as frequently. When check plugins are configured
+  (when they have an associated YAML configuration file) the agent will attempt
+  to run them.
+ </p><p>
+  Checks should be able to run within the 30-second metric collection window.
+  If your check runs a command, you should provide a timeout to prevent the
+  check from running longer than the default 30-second window. You can use the
+  <code class="literal">monasca_agent.common.util.timeout_command</code> to set a timeout
+  for in your custom check plugin python code.
+ </p><p>
+  Find a description of how to write custom check plugins at
+  <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md#creating-a-custom-check-plugin" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md#creating-a-custom-check-plugin</a>
+ </p><p>
+  Custom checks derive from the AgentCheck class located in the
+  <code class="literal">monasca_agent/collector/checks/check.py</code> file. A check
+  method is required.
+ </p><p>
+  Metrics should contain dimensions that make each item that you are monitoring
+  unique (such as service, component, hostname). The hostname dimension is
+  defined by default within the AgentCheck class, so every metric has this
+  dimension.
+ </p><p>
+  A custom check will do the following.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Read the configuration instance passed into the check method.
+   </p></li><li class="listitem "><p>
+    Set dimensions that will be included in the metric.
+   </p></li><li class="listitem "><p>
+    Create the metric with gauge, rate, or counter types.
+   </p></li></ul></div><p>
+  Metric Types:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    gauge: Instantaneous reading of a particular value (for example,
+    mem.free_mb).
+   </p></li><li class="listitem "><p>
+    rate: Measurement over a time period. The following equation can be used to
+    define rate.
+   </p><div class="verbatim-wrap"><pre class="screen">rate=delta_v/float(delta_t)</pre></div></li><li class="listitem "><p>
+    counter: The number of events, increment and decrement methods, for
+    example, zookeeper.timeouts
+   </p></li></ul></div><p>
+  The following is an example component check named SimpleCassandraExample.
+ </p><div class="verbatim-wrap"><pre class="screen">import monasca_agent.collector.checks as checks
+from monasca_agent.common.util import timeout_command
+
+CASSANDRA_VERSION_QUERY = "SELECT version();"
+
+
+class SimpleCassandraExample(checks.AgentCheck):
+
+    def __init__(self, name, init_config, agent_config):
+        super(SimpleCassandraExample, self).__init__(name, init_config, agent_config)
+
+    @staticmethod
+    def _get_config(instance):
+        user = instance.get('user')
+        password = instance.get('password')
+        service = instance.get('service')
+        timeout = int(instance.get('timeout'))
+
+        return user, password, service, timeout
+
+    def check(self, instance):
+        user, password, service, node_name, timeout = self._get_config(instance)
+
+        dimensions = self._set_dimensions({'component': 'cassandra', 'service': service}, instance)
+
+        results, connection_status = self._query_database(user, password, timeout, CASSANDRA_VERSION_QUERY)
+
+        if connection_status != 0:
+            self.gauge('cassandra.connection_status', 1, dimensions=dimensions)
+        else:
+            # successful connection status
+            self.gauge('cassandra.connection_status', 0, dimensions=dimensions)
+
+    def _query_database(self, user, password, timeout, query):
+        stdout, stderr, return_code = timeout_command(["/opt/cassandra/bin/vsql", "-U", user, "-w", password, "-A", "-R",
+                                                       "|", "-t", "-F", ",", "-x"], timeout, command_input=query)
+        if return_code == 0:
+            # remove trailing newline
+            stdout = stdout.rstrip()
+            return stdout, 0
+        else:
+            self.log.error("Error querying cassandra with return code of {0} and error {1}".format(return_code, stderr))
+            return stderr, 1</pre></div><p>
+  <span class="bold"><strong>Installing check plugin</strong></span>
+ </p><p>
+  The check plugin needs to have the same file permissions as the detection
+  plugin. File permissions must be <span class="bold"><strong>read+write</strong></span>
+  for the root user (the user that should own the file), and
+  <span class="bold"><strong>read</strong></span> for the root group and all other users.
+ </p><p>
+  Check plugins should be placed in the following directory.
+ </p><div class="verbatim-wrap"><pre class="screen">/usr/lib/monasca/agent/custom_checks.d/</pre></div><p>
+  The check plugin directory should be accessed using the
+  <code class="literal">monasca_agent_check_plugin_dir</code> Ansible variable. This
+  variable is defined in the
+  <code class="literal">roles/monasca-agent/vars/main.yml</code> file.
+ </p><div class="verbatim-wrap"><pre class="screen">monasca_agent_check_plugin_dir: /usr/lib/monasca/agent/custom_checks.d/</pre></div></div><div class="sect2" id="configuring-check-plugins"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Check Plugins</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-check-plugins">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-configuring_check_plugins.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-configuring_check_plugins.xml</li><li><span class="ds-label">ID: </span>configuring-check-plugins</li></ul></div></div></div></div><p>
+  <span class="bold"><strong>Manually configure a plugin when unit-testing using the
+  monasca-setup script installed with the monasca-agent</strong></span>
+ </p><p>
+  Find a good explanation of configuring plugins here:
+  <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md#configuring" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md#configuring</a>
+ </p><p>
+  SSH to a node that has both the monasca-agent installed as well as the
+  component you wish to monitor.
+ </p><p>
+  The following is an example command that configures a plugin that has no
+  parameters (uses the detection plugin class name).
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>/usr/bin/monasca-setup -d ARDANACeilometer</pre></div><p>
+  The following is an example command that configures the apache plugin and
+  includes related parameters.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>/usr/bin/monasca-setup -d apache -a 'url=http://192.168.245.3:9095/server-status?auto'</pre></div><p>
+  If there is a change in the configuration it will restart the monasca-agent
+  on the host so the configuration is loaded.
+ </p><p>
+  After the plugin is configured, you can verify that the configuration file
+  has your changes (see the next <span class="bold"><strong>Verify that your check plugin
+  is configured</strong></span> section).
+ </p><p>
+  Use the monasca CLI to see if your metric exists (see the
+  <span class="bold"><strong>Verify that metrics exist</strong></span> section).
+ </p><p>
+  <span class="bold"><strong>Using Ansible modules to configure plugins in
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9</strong></span>
+ </p><p>
+  The <code class="literal">monasca_agent_plugin</code> module is installed as part of
+  the monasca-agent role.
+ </p><p>
+  The following Ansible example configures the process.py plugin for the
+  ceilometer detection plugin. The following example only passes in the name of
+  the detection class.
+ </p><div class="verbatim-wrap"><pre class="screen">- name: _CEI-CMN | monasca_configure |
+    Run monasca agent Cloud Lifecycle Manager specific ceilometer detection plugin
+  become: yes
+  monasca_agent_plugin:
+    name: "ARDANACeilometer"</pre></div><p>
+  If a password or other sensitive data are passed to the detection plugin, the
+  <code class="literal">no_log</code> option should be set to
+  <span class="bold"><strong>True</strong></span>. If the <code class="literal">no_log</code>
+  option is not set to <span class="bold"><strong>True</strong></span>, the data passed
+  to the plugin will be logged to syslog.
+ </p><p>
+  The following Ansible example configures the Cassandra plugin and passes in
+  related arguments.
+ </p><div class="verbatim-wrap"><pre class="screen"> - name: Run monasca Agent detection plugin for Cassandra
+   monasca_agent_plugin:
+     name: "Cassandra"
+     args="directory_names={{ FND_CDB.vars.cassandra_data_dir }},{{ FND_CDB.vars.cassandra_commit_log_dir }} process_username={{ FND_CDB.vars.cassandra_user }}"
+   when: database_type == 'cassandra'</pre></div><p>
+  The following Ansible example configures the keystone endpoint using the
+  http_check.py detection plugin. The class name <code class="literal">httpcheck</code>
+  of the http_check.py detection plugin is the name.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>- name:  keystone-monitor | local_monitor |
+    Setup active check on keystone internal endpoint locally
+  become: yes
+  monasca_agent_plugin:
+    name: "httpcheck"
+    args: "use_keystone=False \
+           url=http://{{ keystone_internal_listen_ip }}:{{
+               keystone_internal_port }}/v3 \
+           dimensions=service:identity-service,\
+                       component:keystone-api,\
+                       api_endpoint:internal,\
+                       monitored_host_type:instance"
+  tags:
+    - keystone
+    - keystone_monitor</pre></div><p>
+  <span class="bold"><strong>Verify that your check plugin is configured</strong></span>
+ </p><p>
+  All check configuration files are located in the following directory. You can
+  see the plugins that are running by looking at the plugin configuration
+  directory.
+ </p><div class="verbatim-wrap"><pre class="screen">/etc/monasca/agent/conf.d/</pre></div><p>
+  When the monasca-agent starts up, all of the check plugins that have a
+  matching configuration file in the
+  <code class="literal">/etc/monasca/agent/conf.d/</code> directory will be loaded.
+ </p><p>
+  If there are errors running the check plugin they will be written to the
+  following error log file.
+ </p><div class="verbatim-wrap"><pre class="screen">/var/log/monasca/agent/collector.log</pre></div><p>
+  You can change the monasca-agent log level by modifying the
+  <code class="literal">log_level</code> option in the
+  <code class="literal">/etc/monasca/agent/agent.yaml</code> configuration file, and then
+  restarting the monasca-agent, using the following command.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>service openstack-monasca-agent restart</pre></div><p>
+  You can debug a check plugin by running <code class="literal">monasca-collector</code>
+  with the check option. The following is an example of the
+  <code class="literal">monasca-collector</code> command.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo /usr/bin/monasca-collector check <em class="replaceable ">CHECK_NAME</em></pre></div><p>
+  <span class="bold"><strong>Verify that metrics exist</strong></span>
+ </p><p>
+  Begin by logging in to your deployer or controller node.
+ </p><p>
+  Run the following set of commands, including the <code class="literal">monasca
+  metric-list</code> command. If the metric exists, it will be displayed in
+  the output.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
+<code class="prompt user">ardana &gt; </code>monasca metric-list --name <em class="replaceable ">METRIC_NAME</em></pre></div></div><div class="sect2" id="metric-performance-considerations"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metric Performance Considerations</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#metric-performance-considerations">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-metric_performance_considerations.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-metric_performance_considerations.xml</li><li><span class="ds-label">ID: </span>metric-performance-considerations</li></ul></div></div></div></div><p>
+  Collecting metrics on your virtual machines can greatly affect performance.
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 supports 200 compute nodes, with up to 40 VMs each. If your
+  environment is managing maximum number of VMs, adding a single metric for all
+  VMs is the equivalent of adding 8000 metrics.
+ </p><p>
+  Because of the potential impact that new metrics have on system performance,
+  consider adding only new metrics that are useful for alarm-definition,
+  capacity planning, or debugging process failure.
+ </p></div><div class="sect2" id="configuring-alarm-definitions"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Alarm Definitions</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-alarm-definitions">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-configuring_alarm_definitions.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-configuring_alarm_definitions.xml</li><li><span class="ds-label">ID: </span>configuring-alarm-definitions</li></ul></div></div></div></div><p>
+  The monasca-api-spec, found here
+  <a class="link" href="https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md" target="_blank">https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md</a>
+  provides an explanation of Alarm Definitions and Alarms. You can find more
+  information on alarm definition expressions at the following page:
+  <a class="link" href="https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#alarm-definition-expressions" target="_blank">https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#alarm-definition-expressions</a>.
+ </p><p>
+  When an alarm definition is defined, the monasca-threshold engine will
+  generate an alarm for each unique instance of the match_by metric dimensions
+  found in the metric. This allows a single alarm definition that can
+  dynamically handle the addition of new hosts.
+ </p><p>
+  There are default alarm definitions configured for all "process check"
+  (process.py check) and "HTTP Status" (http_check.py check) metrics in the
+  monasca-default-alarms role. The monasca-default-alarms role is installed as
+  part of the monasca deployment phase of your cloud's deployment. You do not
+  need to create alarm definitions for these existing checks.
+ </p><p>
+  Third parties should create an alarm definition when they wish to alarm on a
+  custom plugin metric. The alarm definition should only be defined once.
+  Setting a notification method for the alarm definition is recommended but not
+  required.
+ </p><p>
+  The following Ansible modules used for alarm definitions are installed as
+  part of the monasca-alarm-definition role. This process takes place during
+  the monasca set up phase of your cloud's deployment.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    monasca_alarm_definition
+   </p></li><li class="listitem "><p>
+    monasca_notification_method
+   </p></li></ul></div><p>
+  The following examples, found in the
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms</code>
+  directory, illustrate how monasca sets up the default alarm definitions.
+ </p><p>
+  <span class="bold"><strong>monasca Notification Methods</strong></span>
+ </p><p>
+  The monasca-api-spec, found in the following link, provides details about
+  creating a notification
+  <a class="link" href="https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#create-notification-method" target="_blank">https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#create-notification-method</a>
+ </p><p>
+  The following are supported notification types.
+ </p><div class="itemizedlist " id="ul-t4b-pt4-qx"><ul class="itemizedlist"><li class="listitem "><p>
+    EMAIL
+   </p></li><li class="listitem "><p>
+    WEBHOOK
+   </p></li><li class="listitem "><p>
+    PAGERDUTY
+   </p></li></ul></div><p>
+  The <code class="literal">keystone_admin_tenant</code> project is used so that the
+  alarms will show up on the Operations Console UI.
+ </p><p>
+  The following file snippet shows variables from the
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms/defaults/main.yml</code>
+  file.
+ </p><div class="verbatim-wrap"><pre class="screen">---
+notification_address: root@localhost
+notification_name: 'Default Email'
+notification_type: EMAIL
+
+monasca_keystone_url: "{{ KEY_API.advertises.vips.private[0].url }}/v3"
+monasca_api_url: "{{ MON_AGN.consumes_MON_API.vips.private[0].url }}/v2.0"
+monasca_keystone_user: "{{ MON_API.consumes_KEY_API.vars.keystone_monasca_user }}"
+monasca_keystone_password: "{{ MON_API.consumes_KEY_API.vars.keystone_monasca_password | quote }}"
+monasca_keystone_project: "{{ KEY_API.vars.keystone_admin_tenant }}"
+
+monasca_client_retries: 3
+monasca_client_retry_delay: 2</pre></div><p>
+  You can specify a single default notification method in the
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms/tasks/main.yml</code>
+  file. You can also add or modify the notification type and related details
+  using the Operations Console UI or monasca CLI.
+ </p><p>
+  The following is a code snippet from the
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms/tasks/main.yml</code>
+  file.
+ </p><div class="verbatim-wrap"><pre class="screen">---
+- name: monasca-default-alarms | main | Setup default notification method
+  monasca_notification_method:
+    name: "{{ notification_name }}"
+    type: "{{ notification_type }}"
+    address: "{{ notification_address }}"
+    keystone_url: "{{ monasca_keystone_url }}"
+    keystone_user: "{{ monasca_keystone_user }}"
+    keystone_password: "{{ monasca_keystone_password }}"
+    keystone_project: "{{ monasca_keystone_project }}"
+    monasca_api_url: "{{ monasca_api_url }}"
+  no_log: True
+  tags:
+    - system_alarms
+    - monasca_alarms
+    - openstack_alarms
+  register: default_notification_result
+  until: not default_notification_result | failed
+  retries: "{{ monasca_client_retries }}"
+  delay: "{{ monasca_client_retry_delay }}"</pre></div><p>
+  <span class="bold"><strong>monasca Alarm Definition</strong></span>
+ </p><p>
+  In the alarm definition "expression" field, you can specify the metric name
+  and threshold. The "match_by" field is used to create a new alarm for every
+  unique combination of the match_by metric dimensions.
+ </p><p>
+  Find more details on alarm definitions at the monasca API documentation:
+  (<a class="link" href="https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md#alarm-definitions-and-alarms" target="_blank">https://github.com/stackforge/monasca-api/blob/master/docs/monasca-api-spec.md#alarm-definitions-and-alarms</a>).
+ </p><p>
+  The following is a code snippet from the
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms/tasks/main.yml</code>
+  file.
+ </p><div class="verbatim-wrap"><pre class="screen">- name: monasca-default-alarms | main | Create Alarm Definitions
+  monasca_alarm_definition:
+    name: "{{ item.name }}"
+    description: "{{ item.description | default('') }}"
+    expression: "{{ item.expression }}"
+    keystone_token: "{{ default_notification_result.keystone_token }}"
+    match_by: "{{ item.match_by | default(['hostname']) }}"
+    monasca_api_url: "{{ default_notification_result.monasca_api_url }}"
+    severity: "{{ item.severity | default('LOW') }}"
+    alarm_actions:
+      - "{{ default_notification_result.notification_method_id }}"
+    ok_actions:
+      - "{{ default_notification_result.notification_method_id }}"
+    undetermined_actions:
+      - "{{ default_notification_result.notification_method_id }}"
+  register: monasca_system_alarms_result
+  until: not monasca_system_alarms_result | failed
+  retries: "{{ monasca_client_retries }}"
+  delay: "{{ monasca_client_retry_delay }}"
+  with_flattened:
+    - monasca_alarm_definitions_system
+    - monasca_alarm_definitions_monasca
+    - monasca_alarm_definitions_openstack
+    - monasca_alarm_definitions_misc_services
+  when: monasca_create_definitions</pre></div><p>
+  In the following example
+  <code class="literal">~/openstack/ardana/ansible/roles/monasca-default-alarms/vars/main.yml</code>
+  Ansible variables file, the alarm definition named
+  <span class="bold"><strong>Process Check</strong></span> sets the
+  <span class="bold"><strong>match_by</strong></span> variable with the following
+  parameters.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    process_name
+   </p></li><li class="listitem "><p>
+    hostname
+   </p></li></ul></div><div class="verbatim-wrap"><pre class="screen">monasca_alarm_definitions_system:
+  - name: "Host Status"
+    description: "Alarms when the specified host is down or not reachable"
+    severity: "HIGH"
+    expression: "host_alive_status &gt; 0"
+    match_by:
+      - "target_host"
+      - "hostname"
+  - name: "HTTP Status"
+    description: &gt;
+      "Alarms when the specified HTTP endpoint is down or not reachable"
+    severity: "HIGH"
+    expression: "http_status &gt; 0"
+    match_by:
+      - "service"
+      - "component"
+      - "hostname"
+      - "url"
+  - name: "CPU Usage"
+    description: "Alarms when CPU usage is high"
+    expression: "avg(cpu.idle_perc) &lt; 10 times 3"
+  - name: "High CPU IOWait"
+    description: "Alarms when CPU IOWait is high, possible slow disk issue"
+    expression: "avg(cpu.wait_perc) &gt; 40 times 3"
+    match_by:
+      - "hostname"
+  - name: "Disk Inode Usage"
+    description: "Alarms when disk inode usage is high"
+    expression: "disk.inode_used_perc &gt; 90"
+    match_by:
+      - "hostname"
+      - "device"
+    severity: "HIGH"
+  - name: "Disk Usage"
+    description: "Alarms when disk usage is high"
+    expression: "disk.space_used_perc &gt; 90"
+    match_by:
+      - "hostname"
+      - "device"
+    severity: "HIGH"
+  - name: "Memory Usage"
+    description: "Alarms when memory usage is high"
+    severity: "HIGH"
+    expression: "avg(mem.usable_perc) &lt; 10 times 3"
+  - name: "Network Errors"
+    description: &gt;
+      "Alarms when either incoming or outgoing network errors are high"
+    severity: "MEDIUM"
+    expression: "net.in_errors_sec &gt; 5 or net.out_errors_sec &gt; 5"
+  - name: "Process Check"
+    description: "Alarms when the specified process is not running"
+    severity: "HIGH"
+    expression: "process.pid_count &lt; 1"
+    match_by:
+      - "process_name"
+      - "hostname"
+  - name: "Crash Dump Count"
+    description: "Alarms when a crash directory is found"
+    severity: "MEDIUM"
+    expression: "crash.dump_count &gt; 0"
+    match_by:
+      - "hostname"</pre></div><p>
+  The preceding configuration would result in the creation of an alarm for each
+  unique metric that matched the following criteria.
+ </p><div class="verbatim-wrap"><pre class="screen">process.pid_count + process_name + hostname</pre></div><p>
+  <span class="bold"><strong>Check that the alarms exist</strong></span>
+ </p><p>
+  Begin by using the following commands, including <code class="literal">monasca
+  alarm-definition-list</code>, to check that the alarm definition exists.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
+<code class="prompt user">ardana &gt; </code>monasca alarm-definition-list --name <em class="replaceable ">ALARM_DEFINITION_NAME</em></pre></div><p>
+  Then use either of the following commands to check that the alarm has been
+  generated. A status of "OK" indicates a healthy alarm.
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-name <em class="replaceable ">metric name</em></pre></div><p>
+  Or
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --alarm-definition-id <em class="replaceable ">ID_FROM_ALARM-DEFINITION-LIST</em></pre></div><div id="id-1.5.6.4.7.36" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   To see CLI options use the <code class="literal">monasca help</code> command.
+  </p></div><p>
+  <span class="bold"><strong>Alarm state upgrade considerations</strong></span>
+ </p><p>
+  If the name of a monitoring metric changes or is no longer being sent,
+  existing alarms will show the alarm state as
+  <code class="literal">UNDETERMINED</code>. You can update an alarm definition as long
+  as you do not change the <span class="bold"><strong>metric name</strong></span> or
+  <span class="bold"><strong>dimension name</strong></span> values in the <span class="bold"><strong>expression</strong></span> or <span class="bold"><strong>match_by</strong></span> fields. If you find that you need to alter
+  either of these values, you must delete the old alarm definitions and create
+  new definitions with the updated values.
+ </p><p>
+  If a metric is never sent, but has a related alarm definition, then no alarms
+  would exist. If you find that metrics are never sent, then you should
+  remove the related alarm definitions.
+ </p><p>
+  When removing an alarm definition, the Ansible module
+  <span class="bold"><strong>monasca_alarm_definition</strong></span> supports the state
+  <code class="literal">absent</code>.
+ </p><p>
+  The following file snippet shows an example of how to remove an alarm
+  definition by setting the state to <code class="literal">absent</code>.
+ </p><div class="verbatim-wrap"><pre class="screen">- name: monasca-pre-upgrade | Remove alarm definitions
+   monasca_alarm_definition:
+     name: "{{ item.name }}"
+     state: "absent"
+     keystone_url: "{{ monasca_keystone_url }}"
+     keystone_user: "{{ monasca_keystone_user }}"
+     keystone_password: "{{ monasca_keystone_password }}"
+     keystone_project: "{{ monasca_keystone_project }}"
+     monasca_api_url: "{{ monasca_api_url }}"
+   with_items:
+     - { name: "Kafka Consumer Lag" }</pre></div><p>
+  An alarm exists in the OK state when the monasca threshold engine has seen at
+  least one metric associated with the alarm definition and has not exceeded
+  the alarm definition threshold.
+ </p></div><div class="sect2" id="integration-of-plugins-with-monasca-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Openstack Integration of Custom Plugins into monasca-Agent (if applicable)</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#integration-of-plugins-with-monasca-agent">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-integration_of_plugins_with_monasca-agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integration_of_plugins_with_monasca-agent.xml</li><li><span class="ds-label">ID: </span>integration-of-plugins-with-monasca-agent</li></ul></div></div></div></div><p>
+  monasca-agent is an OpenStack open-source project. monasca can also monitor
+  non-openstack services. Third parties should install custom plugins into
+  their <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 system using the steps outlined in the
+  <a class="xref" href="third-party-integrations.html#writing-custom-plugins" title="4.3.3. Writing Custom Plugins">Section 4.3.3, “Writing Custom Plugins”</a>. If the OpenStack community
+  determines that the custom plugins are of general benefit, the plugin may be
+  added to the openstack/monasca-agent so that they are installed with the
+  monasca-agent. During the review process for openstack/monasca-agent there
+  are no guarantees that code will be approved or merged by a deadline.
+  Open-source contributors are expected to help with codereviews in order to get
+  their code accepted. Once changes are approved and integrated into the
+  openstack/monasca-agent and that version of the monasca-agent is integrated
+  with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9, the third party can remove the custom plugin
+  installation steps since they would be installed in the default monasca-agent
+  venv.
+ </p><p>
+  Find the open source repository for the monaca-agent here:
+  <a class="link" href="https://github.com/openstack/monasca-agent" target="_blank">https://github.com/openstack/monasca-agent</a>
+ </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-identity.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Managing Identity</span></a><a class="nav-link" href="clm-admin-ui.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Cloud Lifecycle Manager Admin UI User Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

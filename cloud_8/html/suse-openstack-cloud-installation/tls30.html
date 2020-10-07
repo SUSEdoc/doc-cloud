@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuring Transport Layer Security (TLS) | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 29. Configuring Transport Layer Security (TLS)" /><meta name="description" content="TLS is enabled by default during the installation of SUSE OpenStack Cloud 8 and additional configuration options are available to secure your environment, as described below." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="post-install.html" title="Part III. Post-Installation" /><link rel="prev" href="install-openstack-clients.html" title="Chapter 28. Installing OpenStack Clients" /><link rel="next" href="config-availability-zones.html" title="Chapter 30. Configuring Availability Zones" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="tls30.html">Configuring Transport Layer Security (TLS)</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 28. Installing OpenStack Clients" href="install-openstack-clients.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 30. Configuring Availability Zones" href="config-availability-zones.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="tls30.html">Configuring Transport Layer Security (TLS)</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 28. Installing OpenStack Clients" href="install-openstack-clients.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 30. Configuring Availability Zones" href="config-availability-zones.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="tls30"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">29 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Transport Layer Security (TLS)</span> <a title="Permalink" class="permalink" href="tls30.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span>tls30</li></ul></div></div><div><div class="abstract"><p>
+    TLS is enabled by default during the installation of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> and
+    additional configuration options are available to secure your environment,
+    as described below.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="tls30.html#id-1.4.6.6.11"><span class="number">29.1 </span><span class="name">Configuring TLS in the input model</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.12"><span class="number">29.2 </span><span class="name">User-provided certificates and trust chains</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.13"><span class="number">29.3 </span><span class="name">Edit the input model to include your certificate files</span></a></span></dt><dt><span class="section"><a href="tls30.html#sec-generate-certificate"><span class="number">29.4 </span><span class="name">Generate a self-signed CA</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.15"><span class="number">29.5 </span><span class="name">Generate a certificate signing request</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.16"><span class="number">29.6 </span><span class="name">Generate a server certificate</span></a></span></dt><dt><span class="section"><a href="tls30.html#sec-upload-toclm"><span class="number">29.7 </span><span class="name">Upload to the Cloud Lifecycle Manager</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.18"><span class="number">29.8 </span><span class="name">Configuring the cipher suite</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.19"><span class="number">29.9 </span><span class="name">Testing</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.20"><span class="number">29.10 </span><span class="name">Verifying that the trust chain is correctly deployed</span></a></span></dt><dt><span class="section"><a href="tls30.html#id-1.4.6.6.21"><span class="number">29.11 </span><span class="name">Turning TLS on or off</span></a></span></dt></dl></div></div><p>
+  In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you can provide your own certificate authority and
+  certificates for internal and public virtual IP addresses (VIPs), and you
+  should do so for any production cloud. The certificates automatically
+  generated by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> are useful for testing and setup, but you should always
+  install your own for production use. Certificate installation is discussed
+  below.
+ </p><p>
+  Read the following if you are using the default <code class="literal">cert-name:
+  my-public-cert</code> in your model.
+ </p><p>
+  The bundled test certificate for public endpoints, located at
+  <code class="filename">~/openstack/my_cloud/config/tls/certs/my-public-cert</code>, is
+  now expired but was left in the product in case you changed the content with
+  your valid certificate. Please verify if the certificate is expired and
+  generate your own, as described in
+  <a class="xref" href="tls30.html#sec-generate-certificate" title="29.4. Generate a self-signed CA">Section 29.4, “Generate a self-signed CA”</a>.
+ </p><p>
+  You can verify the expiry date by running this command:
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openssl x509 -in ~/openstack/my_cloud/config/tls/certs/my-public-cert \
+-noout -enddate
+notAfter=Oct  8 09:01:58 2016 GMT</pre></div><p>
+  Before you begin, the following list of terms will be helpful when generating
+  and installing certificates.
+ </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.6.6.9.1"><span class="term "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>-generated public CA</span></dt><dd><p>
+     A <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>-generated public CA
+     (<code class="filename">openstack_frontend_cacert.crt</code>) is available for you
+     to use in <code class="filename">/etc/pki/trust/anchors/ca-certificates</code>.
+    </p></dd><dt id="id-1.4.6.6.9.2"><span class="term ">Fully qualified domain name (FQDN) of the public VIP</span></dt><dd><p>
+     The registered domain name. A FQDN is not mandatory. It is perfectly valid
+     to have no FQDN and use IP addresses instead. Note that you can use FQDNs
+     on public endpoints, and you may change them whenever the need arises.
+    </p></dd><dt id="id-1.4.6.6.9.3"><span class="term ">Certificate authority (CA) certificate</span></dt><dd><p>
+     Your certificates must be signed by a CA, such as your internal IT
+     department or a public certificate authority. For this example we will use
+     a self-signed certificate.
+    </p></dd><dt id="id-1.4.6.6.9.4"><span class="term ">Server certificate</span></dt><dd><p>
+     It is easy to confuse server certificates and CA certificates. Server
+     certificates reside on the server and CA certificates reside on the
+     client. A server certificate affirms that the server that sent it serves a
+     set of IP addresses, domain names, and set of services. A CA certificate
+     is used by the client to authenticate this claim.
+    </p></dd><dt id="id-1.4.6.6.9.5"><span class="term ">SAN (subject-alt-name)</span></dt><dd><p>
+     The set of IP addresses and domain names in a server certificate request:
+     A template for a server certificate.
+    </p></dd><dt id="id-1.4.6.6.9.6"><span class="term ">Certificate signing request (CSR)</span></dt><dd><p>
+     A blob of data generated from a certificate request and sent to a CA,
+     which would then sign it, produce a server certificate, and send it back.
+    </p></dd><dt id="id-1.4.6.6.9.7"><span class="term ">External VIP</span></dt><dd><p>
+     External virtual IP address
+    </p></dd><dt id="id-1.4.6.6.9.8"><span class="term ">Internal VIP</span></dt><dd><p>
+     Internal virtual IP address
+    </p></dd></dl></div><p>
+  The major difference between an external VIP certificate and an internal VIP
+  certificate is that the internal VIP has approximately 40 domain names in the
+  SAN. This is because each service has a different domain name in
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>. So it is unlikely that you can create an internal server
+  certificate before running the configuration processor. But after a
+  configuration processor run, a certificate request would be created for each
+  of your cert-names.
+ </p><div class="sect1" id="id-1.4.6.6.11"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring TLS in the input model</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   For this example certificate configuration, let us assume there is no FQDN for
+   the external VIP and that you are going to use the default IP address
+   provided by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>. Let's also assume that for the internal VIP you
+   will use the defaults as well. If you were to call your certificate
+   authority "example-CA," the CA certificate would then be called
+   "example-CA.crt" and the key would be called "example-CA.key." In the
+   following examples, the external VIP certificate will be named
+   "example-public-cert" and the internal VIP certificate will be named
+   "example-internal-cert."
+  </p><div id="id-1.4.6.6.11.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Cautions:
+   </p></div><p>
+   Any time you make a cert change when using your own CA:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     You should use a distinct name from those already existing in
+     <code class="filename">config/tls/cacerts</code>. This also means that you should
+     not <span class="emphasis"><em>reuse</em></span> your CA names (and use unique and
+     distinguishable names such as MyCompanyXYZ_PrivateRootCA.crt). A new name
+     is what indicates that a file is new or changed, so reusing a name means
+     that the file is not considered changed even its contents have changed.
+    </p></li><li class="listitem "><p>
+     You should not remove any existing CA files from
+     <code class="filename">config/tls/cacerts</code>.
+    </p></li><li class="listitem "><p>
+     If you want to remove an existing CA you must
+    </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       First remove the file.
+      </p></li><li class="step "><p>
+       Then run:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible -i hosts/verb_hosts FND-STN -a 'sudo keytool -delete -alias \
+debian:&lt;filename to remove&gt; \
+-keystore /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security/cacerts \
+-storepass changeit'</pre></div></li></ol></div></div></li></ul></div><div id="id-1.4.6.6.11.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    Be sure to install your own certificate for all production clouds after
+    installing and testing your cloud. If you ever want to test or troubleshoot
+    later, you will be able to revert to the sample certificate to get back to
+    a stable state for testing.
+   </p></div><div id="id-1.4.6.6.11.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Unless this is a new deployment, do not update both the certificate and the
+    CA together. Add the CA first and then run a site deploy. Then update the
+    certificate and run tls-reconfigure, FND-CLU-stop, FND-CLU-start and then
+    ardana-reconfigure. If a playbook has failed, rerun it with -vv to get
+    detailed error information. The configure, HAproxy restart, and reconfigure
+    steps are included below. If this is a new deployment and you are adding
+    your own certs/CA before running site.yml this caveat does not apply.
+   </p></div><p>
+   You can add your own certificate by following the instructions below. All
+   changes must go into the file
+   <code class="filename">~/openstack/my_cloud/definition/data/network_groups.yml</code>.
+  </p><p>
+   Below are the entries for TLS for the internal and admin load balancers:
+  </p><div class="verbatim-wrap"><pre class="screen">- provider: ip-cluster
+        name: lb
+        tls-components:
+        - default
+        components:
+        # These services do not currently support TLS so they are not listed
+        # under tls-components
+        - nova-metadata
+        roles:
+        - internal
+        - admin
+        cert-file: openstack-internal-cert
+        # The openstack-internal-cert is a reserved name and
+        # this certificate will be autogenerated. You
+        # can bring in your own certificate with a different name
+
+        # cert-file: customer-provided-internal-cert
+        # replace this with name of file in "config/tls/certs/"</pre></div><p>
+   The configuration processor will also create a request template for each
+   named certificate under <code class="literal">info/cert_reqs/</code> This will be of
+   the form:
+  </p><div class="verbatim-wrap"><pre class="screen">info/cert_reqs/customer-provided-internal-cert</pre></div><p>
+   These request templates contain the subject <code class="literal">Alt-names</code>
+   that the certificates need. You can add to this template before generating
+   your certificate signing request .
+  </p><p>
+   You would then send the CSR to your CA to be signed, and once you receive
+   the certificate, place it in <code class="filename">config/tls/certs</code>.
+  </p><p>
+   When you bring in your own certificate, you may want to bring in the trust
+   chains (or CA certificate) for this certificate. This is usually not
+   required if the CA is a public signer that is typically bundled with the
+   operating system. However, we suggest you include it anyway by copying the
+   file into the directory <code class="filename">config/cacerts/</code>.
+  </p></div><div class="sect1" id="id-1.4.6.6.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User-provided certificates and trust chains</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> generates its own internal certificates but is designed to allow
+   you to bring in your own certificates for the VIPs. Here is the general
+   process.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     You must have a server certificate and a CA certificate to go with it
+     (unless the signer is a public CA and it is already bundled with most
+     distributions).
+    </p></li><li class="step "><p>
+     You must decide the names of the server certificates and configure the
+     <code class="literal">network_groups.yml</code> file in the input model such that
+     each load balancer provider has at least one cert-name associated with it.
+    </p></li><li class="step "><p>
+     Run the configuration processor. Note that you may or may not have the
+     certificate file at this point. The configuration processor would create
+     certificate request file artifacts under
+     <code class="literal">info/cert_reqs/</code> for each of the cert-name(s) in the
+     <code class="literal">network_groups.yml</code> file. While there is no special
+     reason to use the request file created for an external endpoint VIP
+     certificate, it is important to use the request files created for internal
+     certificates since the canonical names for the internal VIP can be many
+     and service specific and each of these need to be in the Subject Alt Names
+     attribute of the certificate.
+    </p></li><li class="step "><p>
+     Create a certificate signing request for this request file and send it to
+     your internal CA or a public CA to get it certified and issued with a
+     certificate. You will now have a server certificate and possibly a trust
+     chain or CA certificate.
+    </p></li><li class="step "><p>
+     Next, upload it to the Cloud Lifecycle Manager. Server certificates should be added to
+     <code class="filename">config/tls/certs</code> and CA certificates should be added
+     to <code class="filename">config/tls/cacerts</code>. The file extension should be
+     CRT file for the CA certificate to be processed by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. Detailed
+     steps are next.
+    </p></li></ol></div></div></div><div class="sect1" id="id-1.4.6.6.13"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Edit the input model to include your certificate files</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Edit the load balancer configuration in
+   <code class="literal">~/openstack/my_cloud/definition/data/network_groups.yml</code>:
+  </p><div class="verbatim-wrap"><pre class="screen">load-balancers:
+ - provider: ip-cluster
+ name: lb
+ tls-components:
+ - default
+ components:
+ - nova-metadata
+ roles:
+ - internal
+ - admin
+ cert-file: example-internal-cert #&lt;&lt;&lt;---- Certificate name for the internal VIP
+
+- provider: ip-cluster
+ name: extlb
+ external-name: myardana.test #&lt;&lt;&lt;--- Use just IP for the external VIP in this example
+ tls-components:
+ - default
+ roles:
+ - public
+ cert-file: example-public-cert #&lt;&lt;&lt;---- Certificate name for the external VIP</pre></div><p>
+   Commit your changes to the local git repository and run the configuration
+   processor:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "changed VIP certificates"
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div><p>
+   Verify that certificate requests have been generated by the configuration
+   processor for every certificate file configured in the
+   <code class="literal">networks_groups.yml</code> file. In this example, there are two
+   files, as shown from the list command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls ~/openstack/my_cloud/info/cert_reqs
+example-internal-cert
+example-public-cert</pre></div></div><div class="sect1" id="sec-generate-certificate"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate a self-signed CA</span> <a title="Permalink" class="permalink" href="tls30.html#sec-generate-certificate">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span>sec-generate-certificate</li></ul></div></div></div></div><div id="id-1.4.6.6.14.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    In a production setting you will not perform this step. You will use your
+    company's CA or a valid public CA.
+   </p></div><p>
+   This section demonstrates to how you can create your own self-signed CA and
+   then use this CA to sign server certificates. This CA can be your
+   organization's IT internal CA that is self-signed and whose CA certificates
+   are deployed on your organization's machines. This way the server
+   certificate becomes legitimate.
+  </p><div id="id-1.4.6.6.14.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Please use a unique CN for your example Certificate Authority and do not
+    install multiple CA certificates with the same CN into your cloud.
+   </p></div><p>
+   Copy the commands below to the command line and execute. This will cause the
+   two files, <code class="literal">example-CA.key</code> and
+   <code class="literal">example-CA.crt</code> to be created:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>export EXAMPLE_CA_KEY_FILE='example-CA.key'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_CA_CERT_FILE='example-CA.crt'
+<code class="prompt user">ardana &gt; </code>openssl req -x509 -batch -newkey rsa:2048 -nodes -out "${EXAMPLE_CA_CERT_FILE}" \
+-keyout "${EXAMPLE_CA_KEY_FILE}" \
+-subj "/C=UK/O=hp/CN=YourOwnUniqueCertAuthorityName" \
+-days 365</pre></div><p>
+   You can tweak the subj and days settings above to meet your needs, or to
+   test. For instance, if you want to test what happens when a CA expires, you
+   can set 'days' to a very low value. Grab the configuration
+   processor-generated request file from <code class="literal">info/cert_reqs/</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cat ~/openstack/my_cloud/info/cert_reqs/example-internal-cert</pre></div><p>
+   Now, copy this file to your working directory and append a
+   <code class="literal">.req</code> extension to it.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cp ~/openstack/my_cloud/info/cert_reqs/example-internal-cert \
+example-internal-cert.req</pre></div><div class="example" id="sec-tls-private-metadata"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 29.1: </span><span class="name">Certificate request file </span><a title="Permalink" class="permalink" href="tls30.html#sec-tls-private-metadata">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+prompt = no
+
+[ req_distinguished_name ]
+CN = "openstack-vip"
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = "deployerincloud-ccp-c0-m1-mgmt"
+DNS.2 = "deployerincloud-ccp-vip-CEI-API-mgmt"
+DNS.3 = "deployerincloud-ccp-vip-CND-API-mgmt"
+DNS.4 = "deployerincloud-ccp-vip-DES-API-mgmt"
+DNS.5 = "deployerincloud-ccp-vip-FND-MDB-mgmt"
+DNS.6 = "deployerincloud-ccp-vip-FND-RMQ-mgmt"
+DNS.7 = "deployerincloud-ccp-vip-FND-VDB-mgmt"
+DNS.8 = "deployerincloud-ccp-vip-FRE-API-mgmt"
+DNS.9 = "deployerincloud-ccp-vip-GLA-API-mgmt"
+DNS.10 = "deployerincloud-ccp-vip-GLA-REG-mgmt"
+DNS.11 = "deployerincloud-ccp-vip-HEA-ACF-mgmt"
+DNS.12 = "deployerincloud-ccp-vip-HEA-ACW-mgmt"
+DNS.13 = "deployerincloud-ccp-vip-HEA-API-mgmt"
+DNS.14 = "deployerincloud-ccp-vip-HUX-SVC-mgmt"
+DNS.15 = "deployerincloud-ccp-vip-HZN-WEB-mgmt"
+DNS.16 = "deployerincloud-ccp-vip-KEY-API-mgmt"
+DNS.17 = "deployerincloud-ccp-vip-KEYMGR-API-mgmt"
+DNS.18 = "deployerincloud-ccp-vip-LOG-API-mgmt"
+DNS.19 = "deployerincloud-ccp-vip-LOG-SVR-mgmt"
+DNS.20 = "deployerincloud-ccp-vip-MON-API-mgmt"
+DNS.21 = "deployerincloud-ccp-vip-NEU-SVR-mgmt"
+DNS.22 = "deployerincloud-ccp-vip-NOV-API-mgmt"
+DNS.23 = "deployerincloud-ccp-vip-NOV-MTD-mgmt"
+DNS.24 = "deployerincloud-ccp-vip-OCT-API-mgmt"
+DNS.25 = "deployerincloud-ccp-vip-OPS-WEB-mgmt"
+DNS.26 = "deployerincloud-ccp-vip-SHP-API-mgmt"
+DNS.27 = "deployerincloud-ccp-vip-SWF-PRX-mgmt"
+DNS.28 = "deployerincloud-ccp-vip-admin-CEI-API-mgmt"
+DNS.29 = "deployerincloud-ccp-vip-admin-CND-API-mgmt"
+DNS.30 = "deployerincloud-ccp-vip-admin-DES-API-mgmt"
+DNS.31 = "deployerincloud-ccp-vip-admin-FND-MDB-mgmt"
+DNS.32 = "deployerincloud-ccp-vip-admin-FRE-API-mgmt"
+DNS.33 = "deployerincloud-ccp-vip-admin-GLA-API-mgmt"
+DNS.34 = "deployerincloud-ccp-vip-admin-HEA-ACF-mgmt"
+DNS.35 = "deployerincloud-ccp-vip-admin-HEA-ACW-mgmt"
+DNS.36 = "deployerincloud-ccp-vip-admin-HEA-API-mgmt"
+DNS.37 = "deployerincloud-ccp-vip-admin-HUX-SVC-mgmt"
+DNS.38 = "deployerincloud-ccp-vip-admin-HZN-WEB-mgmt"
+DNS.39 = "deployerincloud-ccp-vip-admin-KEY-API-mgmt"
+DNS.40 = "deployerincloud-ccp-vip-admin-KEYMGR-API-mgmt"
+DNS.41 = "deployerincloud-ccp-vip-admin-MON-API-mgmt"
+DNS.42 = "deployerincloud-ccp-vip-admin-NEU-SVR-mgmt"
+DNS.43 = "deployerincloud-ccp-vip-admin-NOV-API-mgmt"
+DNS.44 = "deployerincloud-ccp-vip-admin-OPS-WEB-mgmt"
+DNS.45 = "deployerincloud-ccp-vip-admin-SHP-API-mgmt"
+DNS.46 = "deployerincloud-ccp-vip-admin-SWF-PRX-mgmt"
+DNS.47 = "192.168.245.5"
+IP.1 = "192.168.245.5"
+
+=============end of certificate request file.</pre></div></div></div><div id="id-1.4.6.6.14.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    In the case of a public VIP certificate, please add all the FQDNs you want
+    it to support Currently <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> does not add the hostname for the
+    external-name specified in <code class="literal">network_groups.yml</code> to the
+    certificate request file . However, you can add it to the certificate
+    request file manually. Here we assume that <code class="literal">myardana.test</code>
+    is your external-name. In that case you would add this line (to the
+    certificate request file that is shown above in
+    <a class="xref" href="tls30.html#sec-tls-private-metadata" title="Certificate request file">Example 29.1, “Certificate request file”</a>):
+   </p><div class="verbatim-wrap"><pre class="screen">DNS.48 = "myardana.test"</pre></div></div><div id="id-1.4.6.6.14.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Any attempt to use IP addresses rather than FQDNs in certificates must use
+    subject alternate name entries that list both the IP address (needed for
+    Google) and DNS with an IP (needed for a Python bug workaround). Failure to
+    create the certificates in this manner will cause future installations of
+    Go-based tools (such as Cloud Foundry, Stackato and other PaaS components)
+    to fail.
+   </p></div></div><div class="sect1" id="id-1.4.6.6.15"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate a certificate signing request</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.15">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Now that you have a CA and a certificate request file, it is time to generate
+   a CSR.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>export EXAMPLE_SERVER_KEY_FILE='example-internal-cert.key'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_SERVER_CSR_FILE='example-internal-cert.csr'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_SERVER_REQ_FILE=example-internal-cert.req
+<code class="prompt user">ardana &gt; </code>openssl req -newkey rsa:2048 -nodes -keyout "$EXAMPLE_SERVER_KEY_FILE" \
+-out "$EXAMPLE_SERVER_CSR_FILE" -extensions v3_req -config "$EXAMPLE_SERVER_REQ_FILE"</pre></div><p>
+   Note that in production you would usually send the generated
+   <code class="literal">example-internal-cert.csr</code> file to your IT department. But
+   in this example you are your own CA, so sign and generate a server
+   certificate.
+  </p></div><div class="sect1" id="id-1.4.6.6.16"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate a server certificate</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.16">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.4.6.6.16.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    In a production setting you will not perform this step. You will send the
+    CSR created in the previous section to your company CA or a to a valid
+    public CA and have them sign and send you back the certificate.
+   </p></div><p>
+   This section demonstrates how you would use your own self-signed CA that
+   your created earlier to sign and generate a server certificate. A server
+   certificate is essentially a signed public key, the signer being a CA and
+   trusted by a client. When you install this the signing CA's certificate
+   (called CA certificate or trust chain) on the client machine, you are
+   telling the client to trust this CA, and thereby implicitly trusting any
+   server certificates that are signed by this CA, thus creating a trust
+   anchor.
+  </p><p>
+   <span class="bold"><strong>CA configuration file</strong></span>
+  </p><p>
+   When the CA signs the certificate, it uses a configuration file that tells
+   it to verify the CSR. Note that in a production scenario the CA takes care
+   of this for you.
+  </p><p>
+   Create a file called <code class="literal">openssl.cnf</code> and add the following
+   contents to it.
+  </p><div class="verbatim-wrap"><pre class="screen"># Copyright 2010 United States Government as represented by the
+# Administrator of the National Aeronautics and Space Administration.
+# All Rights Reserved.
+#...
+
+# OpenSSL configuration file.
+#
+
+# Establish working directory.
+
+dir = .
+
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+serial = $dir/serial
+database = $dir/index.txt
+new_certs_dir = $dir/
+certificate = $dir/cacert.pem
+private_key = $dir/cakey.pem
+unique_subject = no
+default_crl_days = 365
+default_days = 365
+default_md = md5
+preserve = no
+email_in_dn = no
+nameopt = default_ca
+certopt = default_ca
+policy = policy_match
+copy_extensions = copy
+
+
+[ policy_match ]
+countryName = optional
+stateOrProvinceName = optional
+organizationName = optional
+organizationalUnitName = optional
+commonName = supplied
+emailAddress = optional
+
+[ req ]
+default_bits = 1024 # Size of keys
+default_keyfile = key.pem # name of generated keys
+default_md = md5 # message digest algorithm
+string_mask = nombstr # permitted characters
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+x509_extensions = v3_ca
+
+[ req_distinguished_name ]
+# Variable name Prompt string
+#---------------------- ----------------------------------
+0.organizationName = Organization Name (company)
+organizationalUnitName = Organizational Unit Name (department, division)
+emailAddress = Email Address
+emailAddress_max = 40
+localityName = Locality Name (city, district)
+stateOrProvinceName = State or Province Name (full name)
+countryName = Country Name (2 letter code)
+countryName_min = 2
+countryName_max = 2
+commonName = Common Name (hostname, IP, or your name)
+commonName_max = 64
+
+# Default values for the above, for consistency and less typing.
+# Variable name Value
+#------------------------------ ------------------------------
+0.organizationName_default = Exampleco PLC
+localityName_default = Anytown
+stateOrProvinceName_default = Anycounty
+countryName_default = UK
+commonName_default = my-CA
+
+[ v3_ca ]
+basicConstraints = CA:TRUE
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+subjectAltName = @alt_names
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+subjectKeyIdentifier = hash
+
+[ alt_names ]
+
+######### end of openssl.cnf #########</pre></div><p>
+   <span class="bold"><strong>Sign and create a server certificate</strong></span>
+  </p><p>
+   Now you can sign the server certificate with your CA. Copy the commands
+   below to the command line and execute. This will cause the one file,
+   example-internal-cert.crt, to be created:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>export EXAMPLE_SERVER_CERT_FILE='example-internal-cert.crt'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_SERVER_CSR_FILE='example-internal-cert.csr'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_CA_KEY_FILE='example-CA.key'
+<code class="prompt user">ardana &gt; </code>export EXAMPLE_CA_CERT_FILE='example-CA.crt'
+<code class="prompt user">ardana &gt; </code>touch index.txt
+<code class="prompt user">ardana &gt; </code>openssl rand -hex -out serial 6
+<code class="prompt user">ardana &gt; </code>openssl ca -batch -notext -md sha256 -in "$EXAMPLE_SERVER_CSR_FILE" \
+-cert "$EXAMPLE_CA_CERT_FILE" \
+-keyfile "$EXAMPLE_CA_KEY_FILE" \
+-out "$EXAMPLE_SERVER_CERT_FILE" \
+-config openssl.cnf -extensions v3_req</pre></div><p>
+   Finally, concatenate both the server key and certificate in preparation for
+   uploading to the Cloud Lifecycle Manager.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cat example-internal-cert.key example-internal-cert.crt &gt; example-internal-cert</pre></div><p>
+   Note that you have only created the internal-cert in this example. Repeat
+   the above sequence for example-public-cert. Make sure you use the
+   appropriate certificate request generated by the configuration processor.
+  </p></div><div class="sect1" id="sec-upload-toclm"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upload to the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="tls30.html#sec-upload-toclm">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span>sec-upload-toclm</li></ul></div></div></div></div><p>
+   The following two files created from the example run above will need to be
+   uploaded to the Cloud Lifecycle Manager and copied into <code class="filename">config/tls</code>.
+  </p><div class="itemizedlist " id="ul-zcc-v1c-5v"><ul class="itemizedlist"><li class="listitem "><p>
+     example-internal-cert
+    </p></li><li class="listitem "><p>
+     example-CA.crt
+    </p></li></ul></div><p>
+   Once on the Cloud Lifecycle Manager, execute the following two copy commands to copy to their
+   respective directories. Note if you had created an external cert, you can
+   copy that in a similar manner, specifying its name using the copy command as
+   well.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cp example-internal-cert ~/openstack/my_cloud/config/tls/certs/
+<code class="prompt user">ardana &gt; </code>cp example-CA.crt ~/openstack/my_cloud/config/tls/cacerts/</pre></div><p>
+   <span class="bold"><strong>Continue with the deployment</strong></span>
+  </p><p>
+   Next, log into the Cloud Lifecycle Manager node, and save and commit the changes to the local
+   git repository:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "updated certificate and CA"</pre></div><p>
+   Next, rerun the <code class="literal">config-processor-run</code> playbook, and run
+   <code class="literal">ready-deployment.yml</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div><p>
+   If you receive any prompts, enter the required information.
+  </p><div id="id-1.4.6.6.17.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    For automated installation (for example CI) you can specify the required
+    passwords on the Ansible command line. For example, the command below will
+    disable encryption by the configuration processor:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre></div></div><p>
+   Run this series of runbooks to complete the deployment:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts FND-CLU-stop.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts FND-CLU-start.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts monasca-stop.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts monasca-start.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></div><div class="sect1" id="id-1.4.6.6.18"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the cipher suite</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.18">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   By default, the cipher suite is set to:
+   <code class="literal">HIGH:!aNULL:!eNULL:!DES:!3DES</code>. This setting is
+   recommended in the
+   <a class="link" href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html" target="_blank">OpenStack
+   documentation site</a>. You may override this. To do so, open
+   <code class="filename">config/haproxy/defaults.yml</code> and edit it. The parameters
+   can be found under the <code class="literal">haproxy_globals</code> list.
+  </p><div class="verbatim-wrap"><pre class="screen">- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
+- "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</pre></div><p>
+   Make the changes as needed. It is best to keep the two options identical.
+  </p></div><div class="sect1" id="id-1.4.6.6.19"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.19">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You can easily determine if an endpoint is behind TLS. To do so, run the
+   following command, which probes a Keystone identity service endpoint that is
+   behind TLS:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>echo | openssl s_client -connect 192.168.245.5:5000 | openssl x509 -fingerprint -noout
+depth=0 CN = openstack-vip
+verify error:num=20:unable to get local issuer certificate
+verify return:1
+depth=0 CN = openstack-vip
+verify error:num=27:certificate not trusted
+verify return:1
+depth=0 CN = openstack-vip
+verify error:num=21:unable to verify the first certificate
+verify return:1
+DONE
+SHA1 Fingerprint=C6:46:1E:59:C6:11:BF:72:5E:DD:FC:FF:B0:66:A7:A2:CC:32:1C:B8</pre></div><p>
+   The next command probes a MariaDB endpoint that is not behind TLS:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>echo | openssl s_client -connect 192.168.245.5:3306 | openssl x509 -fingerprint -noout
+140448358213264:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:s23_clnt.c:795:
+unable to load certificate
+140454148159120:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703
+:Expecting: TRUSTED CERTIFICATE</pre></div></div><div class="sect1" id="id-1.4.6.6.20"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Verifying that the trust chain is correctly deployed</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.20">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You can determine if the trust chain is correctly deployed by running the
+   following commands:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>echo | openssl s_client -connect 192.168.245.9:5000 2&gt;/dev/null | grep code
+Verify return code: 21 (unable to verify the first certificate)
+echo | openssl s_client -connect 192.168.245.9:5000 \
+-CAfile /etc/pki/trust/anchors/ca-certificates/openstack_frontend_cacert.crt 2&gt;/dev/null | grep code
+Verify return code: 0 (ok)</pre></div><p>
+   Here, the first command produces error 21, which is then fixed by providing
+   the CA certificate file. This verifies that the CA certificate matches the
+   server certificate.
+  </p></div><div class="sect1" id="id-1.4.6.6.21"><div class="titlepage"><div><div><h2 class="title"><span class="number">29.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Turning TLS on or off</span> <a title="Permalink" class="permalink" href="tls30.html#id-1.4.6.6.21">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-configuring_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-configuring_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You should leave TLS enabled in production. However, if you need to disable
+   it for any reason, you must change "tls-components" to "components" in
+   <code class="literal">network_groups.yml</code> (as shown earlier) and comment out the
+   cert-file. Additionally, if you have a <code class="literal">network_groups.yml</code>
+   file from a previous installation, you will not have TLS enabled unless you
+   change "components" to "tls-components" in that file. By default, Horizon is
+   configured with TLS in the input model. Note that you should not disable TLS
+   in the input model for Horizon as that is a public endpoint and is required.
+   Additionally, you should keep all services behind TLS, but using the input
+   model file <code class="literal">network_groups.yml</code> you may turn TLS off for a
+   service for troubleshooting or debugging. TLS should always be enabled for
+   production environments.
+  </p><p>
+   If you are using an example input model on a clean install, all supported
+   TLS services will be enabled before deployment of your cloud. If you want to
+   change this setting later, for example, when upgrading, you can change the
+   input model and reconfigure the system. The process is as follows:
+  </p><p>
+   Edit the input model <code class="literal">network_groups.yml</code> file
+   appropriately, as described above. Then, commit the changes to the git
+   repository:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible/
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "TLS change"</pre></div><p>
+   Change directories again and run the configuration processor and ready
+   deployment playbooks:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div><p>
+   Change directories again and run the reconfigure playbook:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="config-availability-zones.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 30 </span>Configuring Availability Zones</span></a><a class="nav-link" href="install-openstack-clients.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 28 </span>Installing OpenStack Clients</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

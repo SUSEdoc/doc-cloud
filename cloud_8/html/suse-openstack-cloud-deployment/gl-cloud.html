@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Glossary of Terminology and Product Names | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Deploying With Crowbar" /><meta name="chapter-title" content="Glossary of Terminology and Product Names" /><meta name="description" content="A concept of how services are running on nodes in a High Availability cluster. In an active/active setup, both the main and redundant systems are managed concurrently. If a failure of services occurs, the redundant system is already online, and can take over until the main system is fixed and brough…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-deployment.html" title="Deploying With Crowbar" /><link rel="prev" href="app-deploy-docupdates.html" title="Appendix C. Documentation Updates" /><link rel="next" href="book-upstream-admin.html" title="OpenStack Administrator Guide" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="gl-cloud.html">Glossary of Terminology and Product Names</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deploying With Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">16 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-maintenance.html"><span class="number">V </span><span class="name">Maintenance and Support</span></a><ol><li class="inactive"><a href="cha-depl-maintenance.html"><span class="number">17 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Maintenance</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">18 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="cha-deploy-logs.html"><span class="number">19 </span><span class="name">Log Files</span></a></li><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">20 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="part-depl-poc.html"><span class="number">VI </span><span class="name">Proof of Concepts Deployments</span></a><ol><li class="inactive"><a href="cha-deploy-poc.html"><span class="number">21 </span><span class="name">Building a SUSE <span class="productname">OpenStack</span> Cloud Test lab</span></a></li></ol></li><li class="inactive"><a href="app-deploy-vmware.html"><span class="number">A </span><span class="name">VMware vSphere Installation Instructions</span></a></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">B </span><span class="name">Using Cisco Nexus Switches with Neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">C </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Appendix C. Documentation Updates" href="app-deploy-docupdates.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="gl-cloud.html">Glossary of Terminology and Product Names</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Appendix C. Documentation Updates" href="app-deploy-docupdates.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="glossary"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number"> </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Glossary of Terminology and Product Names</span> <a title="Permalink" class="permalink" href="gl-cloud.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>glossary.xml</li><li><span class="ds-label">ID: </span>book-deployment</li></ul></div></div></div></div><div class="line"></div><dl><dt id="gloss-act-act"><span><span class="glossterm">Active/Active</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-act-act">#</a></span></dt><dd class="glossdef"><p>
+    A concept of how services are running on nodes in a High Availability cluster. In
+    an active/active setup, both the main and redundant systems are managed
+    concurrently. If a failure of services occurs, the redundant system is
+    already online, and can take over until the main system is fixed and
+    brought back online.
+   </p></dd><dt id="gloss-act-pass"><span><span class="glossterm">Active/Passive</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-act-pass">#</a></span></dt><dd class="glossdef"><p>
+    A concept of how services are running on nodes in a High Availability cluster. In
+    an active/passive setup, one or more services are running on an active
+    cluster node, whereas the passive node stands by. If the active node fails then the services are transferred to the passive node.
+   </p></dd><dt id="id-1.3.12.5"><span><span class="glossterm">Administration Server</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.5">#</a></span></dt><dd class="glossdef"><p>
+    Also called Crowbar Administration Node. Manages all other nodes. It
+    assigns IP addresses to them, boots them using PXE, configures them, and
+    provides them the necessary software for their roles. To provide these
+    services, the Administration Server runs Crowbar, Chef, DHCP, TFTP, NTP, and other
+    services.
+   </p></dd><dt id="id-1.3.12.6"><span><span class="glossterm">AMI (Amazon Machine Image)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.6">#</a></span></dt><dd class="glossdef"><p>
+    A virtual machine that can be created and customized by a user. AMIs can
+    be identified by an ID prefixed with <code class="literal">ami-</code>.
+   </p></dd><dt id="gloss-az"><span><span class="glossterm">Availability Zone</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-az">#</a></span></dt><dd class="glossdef"><p>
+    An <span class="productname">OpenStack</span> method of partitioning clouds. It enables you to arrange
+    <span class="productname">OpenStack</span> Compute hosts into logical groups. The groups typically have
+    physical isolation and redundancy from other availability zones, for
+    example, by using separate power supply or network equipment for each
+    zone. When users provision resources, they can specify from which
+    availability zone their instance should be created. This allows cloud
+    consumers to ensure that their application resources are spread across
+    disparate machines to achieve high availability if the hardware fails.
+    Since the Grizzly release, availability zones are implemented via host
+    aggregates.
+
+   </p></dd><dt id="id-1.3.12.8"><span><span class="glossterm">AWS (Amazon Web Services)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.8">#</a></span></dt><dd class="glossdef"><p>
+    A collection of remote computing services (including Amazon EC2, Amazon
+    S3, and others) that together make up Amazon's cloud computing platform.
+   </p></dd><dt id="id-1.3.12.9"><span><span class="glossterm">Barclamp</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.9">#</a></span></dt><dd class="glossdef"><p>
+    A set of Chef cookbooks, templates, and other logic. Used to apply
+    a particular Chef role to individual nodes or a set of nodes.
+
+   </p></dd><dt id="id-1.3.12.10"><span><span class="glossterm">Ceilometer</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.10">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-ceilo" title="Telemetry">Telemetry</a>.
+   </p></dd><dt id="id-1.3.12.11"><span><span class="glossterm">Cell</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.11">#</a></span></dt><dd class="glossdef"><p>
+    Cells provide a new way to scale Compute deployments. This includes the
+    ability to have compute clusters (cells) in different geographic
+    locations all under the same Compute API. This allows for a single API
+    server being used to control access to multiple cloud installations.
+    Cells provide logical partitioning of Compute resources in a
+    child/parent relationship.
+   </p></dd><dt id="id-1.3.12.13"><span><span class="glossterm">Ceph</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.13">#</a></span></dt><dd class="glossdef"><p>
+    A massively scalable, open source, distributed storage system. It
+    consists of an object store, a block store, and a POSIX-compliant
+    distributed file system.
+   </p></dd><dt id="id-1.3.12.12"><span><span class="glossterm">Chef</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.12">#</a></span></dt><dd class="glossdef"><p>
+    An automated configuration management platform for deployment of your
+    entire cloud infrastructure. The Chef server manages many of the
+    software packages and allows the easy changing of nodes.
+   </p></dd><dt id="id-1.3.12.14"><span><span class="glossterm">Cinder</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.14">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-cinder" title="OpenStack Block Storage"><span class="productname">OpenStack</span> Block Storage</a>.
+   </p></dd><dt id="id-1.3.12.20"><span><span class="glossterm">cloud-init</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.20">#</a></span></dt><dd class="glossdef"><p>
+    A package commonly installed in virtual machine images. It uses the SSH
+    public key to initialize an instance after boot.
+   </p></dd><dt id="id-1.3.12.15"><span><span class="glossterm">Cluster</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.15">#</a></span></dt><dd class="glossdef"><p>
+    A set of connected computers that work together. In many respects (and
+    from the outside) they can be viewed as a single system. Clusters can be
+    further categorized depending on their purpose, for example: High Availability
+    clusters, high-performance clusters, or load-balancing clusters.
+   </p></dd><dt id="gloss-partition"><span><span class="glossterm">Cluster Partition</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-partition">#</a></span></dt><dd class="glossdef"><p>
+    Whenever communication fails between one or more nodes and the rest of
+    the cluster, a cluster partition occurs: The nodes of a cluster are
+    split into partitions but still active. They can only communicate with
+    nodes in the same partition and are unaware of the separated nodes. As
+    the loss of the nodes on the other partition cannot be confirmed, a
+    <a class="xref" href="gl-cloud.html#gloss-splitbrain" title="Split Brain">Split Brain</a> scenario develops.
+   </p></dd><dt id="gloss-crm"><span><span class="glossterm">Cluster Resource Manager</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-crm">#</a></span></dt><dd class="glossdef"><p>
+    The main management entity in a High Availability cluster responsible for
+    coordinating all non-local interactions. The
+    <a class="xref" href="gl-cloud.html#gloss-hasi" title="SUSE Linux Enterprise High Availability Extension">SUSE Linux Enterprise High Availability Extension</a> uses Pacemaker as CRM. Each node of the
+    cluster has its own CRM instance. The instance running on the
+    <a class="xref" href="gl-cloud.html#gloss-dc" title="Designated Coordinator (DC)">Designated Coordinator (DC)</a> is the one elected to relay decisions to the
+    other non-local CRMs and to process their input.
+   </p></dd><dt id="id-1.3.12.21"><span><span class="glossterm">Compute Node</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.21">#</a></span></dt><dd class="glossdef"><p>
+    Node within a SUSE <span class="productname">OpenStack</span> Cloud. A physical server running a Hypervisor. A
+    Compute Node is a host for guest virtual machines that are deployed in
+    the cloud. It starts virtual machines on demand using
+    <code class="literal">nova-compute</code>. To split virtual machine load across
+    more than one server, a cloud should contain multiple Compute Nodes.
+   </p></dd><dt id="id-1.3.12.18"><span><span class="glossterm">Container</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.18">#</a></span></dt><dd class="glossdef"><p>
+    A container is a storage compartment for data. It can be thought of as a
+    directory, only that it cannot be nested.
+   </p></dd><dt id="id-1.3.12.22"><span><span class="glossterm">Control Node</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.22">#</a></span></dt><dd class="glossdef"><p>
+    Node within a SUSE <span class="productname">OpenStack</span> Cloud. The Control Node is configured through the
+    Administration Server and registers with the Administration Server for all required
+    software. Hosts the <span class="productname">OpenStack</span> API endpoints and the <span class="productname">OpenStack</span>
+    scheduler and runs the <code class="literal">nova</code> services—except
+    for <code class="literal">nova-compute</code>, which is run on the Compute Nodes.
+    The Control Node coordinates everything about cloud virtual machines:
+    like a central communication center it receives all requests (for
+    example, if a user wants to start or stop a virtual machine). It
+    communicates with the Compute Nodes to coordinate fulfillment of the
+    request. A cloud can contain multiple Control Nodes.
+   </p></dd><dt id="id-1.3.12.23"><span><span class="glossterm">Cookbook</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.23">#</a></span></dt><dd class="glossdef"><p>
+    A collection of Chef recipes which deploy a software stack or
+    functionality. The unit of distribution for Chef.
+   </p></dd><dt id="id-1.3.12.19"><span><span class="glossterm">Corosync</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.19">#</a></span></dt><dd class="glossdef"><p>
+    The messaging/infrastructure layer used in a High Availability cluster that is set
+    up with SUSE Linux Enterprise High Availability Extension. For example, the cluster communication
+    channels are defined in
+    <code class="filename">/etc/corosync/corosync.conf</code>.
+   </p></dd><dt id="id-1.3.12.24"><span><span class="glossterm">Crowbar</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.24">#</a></span></dt><dd class="glossdef"><p>
+    Bare-metal installer and an extension of Chef server. The primary
+    function of Crowbar is to get new hardware into a state where it can
+    be managed by Chef. That means: Setting up BIOS and RAID, network,
+    installing a basic operating system, and setting up services like DNS,
+    NTP, and DHCP. The Crowbar server manages all nodes, supplying
+    configuration of hardware and software.
+   </p></dd><dt id="gloss-dc"><span><span class="glossterm">Designated Coordinator (DC)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-dc">#</a></span></dt><dd class="glossdef"><p>
+    One <a class="xref" href="gl-cloud.html#gloss-crm" title="Cluster Resource Manager">Cluster Resource Manager</a> in a High Availability cluster is elected as the
+    Designated Coordinator (DC). The DC is the only entity in the cluster
+    that can decide that a cluster-wide change needs to be performed. For
+    example, fencing a node or moving resources around. After a membership change,
+    the DC is elected from all nodes in the cluster.
+   </p></dd><dt id="id-1.3.12.26"><span><span class="glossterm">DRBD (Distributed Replicated Block Device)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.26">#</a></span></dt><dd class="glossdef"><p>
+    DRBD is a block device designed for building high availability
+    clusters. The whole block device is mirrored via a dedicated network and
+    is seen as a network RAID-1.
+   </p></dd><dt id="id-1.3.12.27"><span><span class="glossterm">EBS (Amazon Elastic Block Store)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.27">#</a></span></dt><dd class="glossdef"><p>
+    Block-level storage volumes for use with Amazon EC2 instances. Similar
+    to <span class="productname">OpenStack</span> Cinder.
+   </p></dd><dt id="id-1.3.12.28"><span><span class="glossterm">EC2 (Amazon Elastic Compute Cloud)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.28">#</a></span></dt><dd class="glossdef"><p>
+    A public cloud run by Amazon. It provides similar functionality to
+    <span class="productname">OpenStack</span> Compute.
+   </p></dd><dt id="id-1.3.12.29"><span><span class="glossterm">Ephemeral Disk</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.29">#</a></span></dt><dd class="glossdef"><p>
+    Ephemeral disks offer machine local disk storage linked to the life
+    cycle of a virtual machine instance. When a virtual machine is
+    terminated, all data on the ephemeral disk is lost. Ephemeral disks are
+    not included in any snapshots.
+   </p></dd><dt id="gloss-failover"><span><span class="glossterm">Failover</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-failover">#</a></span></dt><dd class="glossdef"><p>
+    Occurs when a resource fails on a cluster node (or the node itself
+    fails) and the affected resources are started on another node.
+   </p></dd><dt id="gloss-fencing"><span><span class="glossterm">Fencing</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-fencing">#</a></span></dt><dd class="glossdef"><p>
+    Describes the concept of preventing access to a shared resource by
+    isolated or failing cluster members. Should a cluster node fail, it will
+    be shut down or reset to prevent it from causing trouble. The resources
+    running on the cluster node will be moved away to another node. This
+    way, resources are locked out of a node whose status is uncertain.
+   </p></dd><dt id="gloss-IP-fixed"><span><span class="glossterm">Fixed IP Address</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-IP-fixed">#</a></span></dt><dd class="glossdef"><p>
+    When an instance is launched, it is automatically assigned a fixed
+    (private) IP address, which stays the same until the instance is
+    explicitly terminated. Private IP addresses are used for communication
+    between instances.
+   </p></dd><dt id="gloss-flavor"><span><span class="glossterm">Flavor</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-flavor">#</a></span></dt><dd class="glossdef"><p>
+    The compute, memory, and storage capacity of <code class="literal">nova</code>
+    computing instances (in terms of virtual CPUs, RAM, etc.). Flavors can
+    be thought of as <span class="quote">“<span class="quote ">templates</span>”</span> for the amount of cloud
+    resources that are assigned to an instance.
+   </p></dd><dt id="gloss-IP-float"><span><span class="glossterm">Floating IP Address</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-IP-float">#</a></span></dt><dd class="glossdef"><p>
+    An IP address that a Compute project can associate with a virtual
+    machine. A pool of floating IP addresses is available in <span class="productname">OpenStack</span> Compute,
+    as configured by the cloud operator. After a floating IP address has
+    been assigned to an instance, the instance can be reached from outside
+    the cloud by this public IP address. Floating IP addresses can be
+    dynamically disassociated and associated with other instances.
+   </p></dd><dt id="id-1.3.12.35"><span><span class="glossterm">Glance</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.35">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-glance" title="OpenStack Image"><span class="productname">OpenStack</span> Image</a>.
+   </p></dd><dt id="id-1.3.12.36"><span><span class="glossterm">Guest Operating System</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.36">#</a></span></dt><dd class="glossdef"><p>
+    An instance of an operating system installed on a virtual machine.
+   </p></dd><dt id="id-1.3.12.37"><span><span class="glossterm">Heat</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.37">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-heat" title="Orchestration">Orchestration</a>.
+   </p></dd><dt id="id-1.3.12.38"><span><span class="glossterm">High Availability Cluster</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.38">#</a></span></dt><dd class="glossdef"><p>
+    High Availability clusters seek to minimize two things: system downtime and data
+    loss. System downtime occurs when a user-facing service is unavailable
+    beyond a specified maximum amount of time. System downtime and data
+    loss (data is accidentally destroyed) can occur not only in case of a single
+    failure. There are also cases of cascading failures,
+    where a single failure deteriorates into a series of consequential
+    failures.
+   </p></dd><dt id="id-1.3.12.39"><span><span class="glossterm">Horizon</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.39">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-horizon" title="OpenStack Dashboard"><span class="productname">OpenStack</span> Dashboard</a>.
+   </p></dd><dt id="id-1.3.12.40"><span><span class="glossterm">Host</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.40">#</a></span></dt><dd class="glossdef"><p>
+    A physical computer.
+   </p></dd><dt id="gloss-host-aggr"><span><span class="glossterm">Host Aggregate</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-host-aggr">#</a></span></dt><dd class="glossdef"><p>
+    An <span class="productname">OpenStack</span> method of grouping hosts via a common set of metadata. It
+    enables you to tag groups of hosts with certain capabilities or
+    characteristics. A characteristic could be related to physical location,
+    allowing creation or further partitioning of availability zones. It could
+    also be related to performance (for example, indicating the
+    availability of SSD storage) or anything else that the cloud
+    administrators deem appropriate. A host can be in more than one host
+    aggregate.
+   </p></dd><dt id="id-1.3.12.42"><span><span class="glossterm">Hybrid Cloud</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.42">#</a></span></dt><dd class="glossdef"><p>
+    One of several deployment models for a cloud infrastructure. A
+    composition of both public and private clouds that remain unique
+    entities, but are bound together by standardized technology for enabling
+    data and application portability. Integrating SUSE Studio and
+    SUSE Manager with SUSE <span class="productname">OpenStack</span> Cloud delivers a platform and tools with which to
+    enable enterprise hybrid clouds.
+    
+   </p></dd><dt id="id-1.3.12.43"><span><span class="glossterm">Hypervisor</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.43">#</a></span></dt><dd class="glossdef"><p>
+    A piece of computer software, firmware or hardware that creates and runs
+    virtual machines. It arbitrates and controls access of the virtual
+    machines to the underlying hardware.
+   </p></dd><dt id="id-1.3.12.44"><span><span class="glossterm">IaaS (Infrastructure-as-a-Service)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.44">#</a></span></dt><dd class="glossdef"><p>
+    A service model of cloud computing where processing, storage, networks,
+    and other fundamental computing resources are rented over the Internet.
+    It allows the customer to deploy and run arbitrary software, including
+    operating systems and applications. The customer has control over
+    operating systems, storage, and deployed applications but does not
+    control the underlying cloud infrastructure. Housing and maintaining it
+    is in the responsibility of the service provider.
+   </p></dd><dt id="id-1.3.12.45"><span><span class="glossterm">Image</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.45">#</a></span></dt><dd class="glossdef"><p>
+    A file that contains a complete Linux virtual machine.
+   </p><p>
+    In the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> context, images are virtual disk images that
+    represent the contents and structure of a storage medium or device
+    (such as a hard disk), in a single file. Images are used as a template from which
+    a virtual machine can be started. For starting a virtual machine,
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> always uses a copy of the image.
+   </p><p>
+    Images have both content and metadata; the latter are also called
+    image properties.
+   </p></dd><dt id="id-1.3.12.46"><span><span class="glossterm">Instance</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.46">#</a></span></dt><dd class="glossdef"><p>
+    A virtual machine that runs inside the cloud.
+   </p></dd><dt id="gloss-instsnap"><span><span class="glossterm">Instance Snapshot</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-instsnap">#</a></span></dt><dd class="glossdef"><p>
+    A point-in-time copy of an instance. It preserves the disk state of a
+    running instance and can be used to launch a new instance or to create a
+    new image based upon the snapshot.
+   </p></dd><dt id="id-1.3.12.48"><span><span class="glossterm">Keypair</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.48">#</a></span></dt><dd class="glossdef"><p>
+    <span class="productname">OpenStack</span> Compute injects SSH keypair credentials that are injected
+    into images when they are launched.
+   </p></dd><dt id="id-1.3.12.49"><span><span class="glossterm">Keystone</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.49">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-keystone" title="OpenStack Identity"><span class="productname">OpenStack</span> Identity</a>.
+   </p></dd><dt id="id-1.3.12.50"><span><span class="glossterm">libvirt</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.50">#</a></span></dt><dd class="glossdef"><p>
+    Virtualization API library. Used by <span class="productname">OpenStack</span> to interact with many of
+    its supported hypervisors.
+   </p></dd><dt id="id-1.3.12.51"><span><span class="glossterm">Linux Bridge</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.51">#</a></span></dt><dd class="glossdef"><p>
+    A software allowing multiple virtual machines to share a single physical
+    NIC within <span class="productname">OpenStack</span> Compute. It behaves like a hub: You can connect
+    multiple (physical or virtual) network interface devices to it. Any
+    Ethernet frames that come in from one interface attached to the bridge
+    is transmitted to all other devices.
+   </p></dd><dt id="id-1.3.12.52"><span><span class="glossterm">Logical Volume (LV)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.52">#</a></span></dt><dd class="glossdef"><p>
+    Acts as a virtual disk partition. After creating a
+    <a class="xref" href="gl-cloud.html#gloss-vg" title="Volume Group (VG)">Volume Group (VG)</a>, logical volumes can be created in that
+    volume group. Logical volumes can be used as raw block devices, swap
+    devices, or for creating a (mountable) file system like disk partitions.
+   </p></dd><dt id="id-1.3.12.53"><span><span class="glossterm">Migration</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.53">#</a></span></dt><dd class="glossdef"><p>
+    The process of moving a virtual machine instance from one Compute Node
+    to another. This process can only be executed by cloud administrators.
+   </p></dd><dt id="id-1.3.12.54"><span><span class="glossterm">Multicast</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.54">#</a></span></dt><dd class="glossdef"><p>
+    A technology used for a one-to-many communication within a network that
+    can be used for cluster communication. Corosync supports both
+    multicast and unicast.
+   </p></dd><dt id="id-1.3.12.55"><span><span class="glossterm">Network</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.55">#</a></span></dt><dd class="glossdef"><p>
+    In the <span class="productname">OpenStack</span> Networking API: An isolated L2 network segment
+    (similar to a VLAN). It forms the basis for describing the L2 network
+    topology in a given <span class="productname">OpenStack</span> Networking deployment.
+   </p></dd><dt id="id-1.3.12.56"><span><span class="glossterm">Neutron</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.56">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-neutron" title="OpenStack Networking"><span class="productname">OpenStack</span> Networking</a>.
+   </p></dd><dt id="id-1.3.12.57"><span><span class="glossterm">Node</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.57">#</a></span></dt><dd class="glossdef"><p>
+    A (physical) server that is managed by Crowbar.
+   </p></dd><dt id="id-1.3.12.58"><span><span class="glossterm">Nova</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.58">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-nova" title="OpenStack Compute"><span class="productname">OpenStack</span> Compute</a>.
+   </p></dd><dt id="id-1.3.12.59"><span><span class="glossterm">Object</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.59">#</a></span></dt><dd class="glossdef"><p>
+    Basic storage entity in <span class="productname">OpenStack</span> Object Storage, representing a file
+    that your store there. When you upload data to <span class="productname">OpenStack</span>
+    Object Storage, the data is neither compressed nor encrypted, it is
+    stored as-is.
+   </p></dd><dt id="id-1.3.12.60"><span><span class="glossterm">Open vBridge</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.60">#</a></span></dt><dd class="glossdef"><p>
+    A virtual networking device. It behaves like a virtual switch: network
+    interface devices connect to its ports. The ports can be configured
+    similar to a physical switch's port, including VLAN configurations.
+   </p></dd><dt id="id-1.3.12.61"><span><span class="glossterm"><span class="productname">OpenStack</span></span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.61">#</a></span></dt><dd class="glossdef"><p>
+    A collection of open source software to build and manage public and
+    private clouds. Its components are designed to work together to provide
+    Infrastructure as a Service and massively scalable cloud computing
+    software.
+   </p><p>
+    At the same time, <span class="productname">OpenStack</span> is also a community and a project.
+   </p></dd><dt id="gloss-cinder"><span><span class="glossterm"><span class="productname">OpenStack</span> Block Storage</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-cinder">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components and services (code name:
+    <code class="literal">Cinder</code>). It provides persistent block
+    level storage devices for use <span class="productname">OpenStack</span> compute instances. The block
+    storage system manages the creation, attaching and detaching of the
+    block devices to servers.
+    
+    Prior to the <span class="productname">OpenStack</span> Grizzly release, the service was part of
+    <code class="literal">nova-volume</code> (block service).
+
+   </p></dd><dt id="gloss-nova"><span><span class="glossterm"><span class="productname">OpenStack</span> Compute</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-nova">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components and services (code name:
+    <code class="literal">Nova</code>). It is a cloud computing fabric
+    controller and as such, the main part of an IaaS system. It provides
+    virtual machines on demand.
+   </p></dd><dt id="gloss-horizon"><span><span class="glossterm"><span class="productname">OpenStack</span> Dashboard</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-horizon">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components or services (code name:
+    <code class="literal">Horizon</code>). It provides a modular Web interface for
+    <span class="productname">OpenStack</span> services and allows end users and administrators to interact
+    with each <span class="productname">OpenStack</span> service through the service's API.
+   </p></dd><dt id="gloss-keystone"><span><span class="glossterm"><span class="productname">OpenStack</span> Identity</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-keystone">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components or services (code name:
+    <code class="literal">Keystone</code>). It provides authentication and
+    authorization for all <span class="productname">OpenStack</span> services.
+   </p></dd><dt id="gloss-glance"><span><span class="glossterm"><span class="productname">OpenStack</span> Image</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-glance">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components or services (code name:
+    <code class="literal">Glance</code>). It provides discovery, registration, and
+    delivery services for virtual disk images.
+   </p></dd><dt id="gloss-neutron"><span><span class="glossterm"><span class="productname">OpenStack</span> Networking</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-neutron">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components or services (code name:
+    <code class="literal">Neutron</code>). It provides <span class="quote">“<span class="quote ">network connectivity
+    as a service</span>”</span> between interface devices (for example, vNICs)
+    managed by other <span class="productname">OpenStack</span> services (for example, Compute). Allows
+    users to create their own networks and attach interfaces to them.
+   </p></dd><dt id="gloss-swift"><span><span class="glossterm"><span class="productname">OpenStack</span> Object Storage</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-swift">#</a></span></dt><dd class="glossdef"><p>
+    One of the core <span class="productname">OpenStack</span> components or services (code name:
+    <code class="literal">Swift</code>). Allows to store and retrieve files
+    while providing built-in redundancy and fail-over. Can be used for
+    backing up and archiving data, streaming data to a user's Web browser,
+    or developing new applications with data storage integration.
+   </p></dd><dt id="id-1.3.12.69"><span><span class="glossterm"><span class="productname">OpenStack</span> Service</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.69">#</a></span></dt><dd class="glossdef"><p>
+    A collection of Linux services (or daemons) that work together to
+    provide core functionality within the <span class="productname">OpenStack</span> project. This can be storing
+    objects, providing virtual servers, or authentication and authorization.
+    All services have code names, which are also used in configuration files,
+    and command line programs.
+   </p></dd><dt id="gloss-heat"><span><span class="glossterm">Orchestration</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-heat">#</a></span></dt><dd class="glossdef"><p>
+    
+    A module (code name: <code class="literal">Heat</code>) to orchestrate
+    multiple composite cloud applications using file-based or Web-based
+    templates. It contains both a user interface and an API and describes
+    your cloud deployment in a declarative language. The module is an
+    integrated project of <span class="productname">OpenStack</span> as of the Havana release.
+   </p></dd><dt id="id-1.3.12.71"><span><span class="glossterm">PaaS (Platform-as-a-Service)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.71">#</a></span></dt><dd class="glossdef"><p>
+    A service model of cloud computing where a computing platform and
+    cloud-based application development tools are rented over the Internet.
+    The customer controls software deployment and configuration settings,
+    but not the underlying cloud infrastructure including network, servers,
+    operating systems, or storage.
+   </p></dd><dt id="id-1.3.12.72"><span><span class="glossterm">Pacemaker</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.72">#</a></span></dt><dd class="glossdef"><p>
+    An open source cluster resource manager used in SUSE Linux Enterprise High Availability Extension.
+   </p></dd><dt id="id-1.3.12.73"><span><span class="glossterm">Port</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.73">#</a></span></dt><dd class="glossdef"><p>
+    In the <span class="productname">OpenStack</span> Networking API: An attachment port to an L2
+    <span class="productname">OpenStack</span> Networking network.
+
+   </p></dd><dt id="id-1.3.12.76"><span><span class="glossterm">Private Cloud</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.76">#</a></span></dt><dd class="glossdef"><p>
+    One of several deployment models for a cloud infrastructure. The
+    infrastructure is operated exclusively for a single organization and may
+    exist on or off premises. The cloud is owned and managed by the
+    organization itself, by a third party or a combination of both.
+   </p></dd><dt id="id-1.3.12.77"><span><span class="glossterm">Private IP Address</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.77">#</a></span></dt><dd class="glossdef"><p>
+    See <a class="xref" href="gl-cloud.html#gloss-IP-fixed" title="Fixed IP Address">Fixed IP Address</a>.
+   </p></dd><dt id="gloss-project"><span><span class="glossterm">Project</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-project">#</a></span></dt><dd class="glossdef"><p>
+    A concept in <span class="productname">OpenStack</span> Identity. Used to identify a group, an
+    organization, or a project (or more generically, an individual customer
+    environment in the cloud). Also called <code class="literal">tenant</code>. The
+    term <code class="literal">tenant</code> is primarily used in the <span class="productname">OpenStack</span>
+    command line tools.
+
+   </p></dd><dt id="gloss-proposal"><span><span class="glossterm">Proposal</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-proposal">#</a></span></dt><dd class="glossdef"><p>
+    Special configuration for a barclamp. It includes barclamp-specific
+    settings, and a list of nodes to which the proposal should be applied.
+   </p></dd><dt id="id-1.3.12.78"><span><span class="glossterm">Public Cloud</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.78">#</a></span></dt><dd class="glossdef"><p>
+    One of several deployment models for a cloud infrastructure. The cloud
+    infrastructure is designed for use by the general public and exists on
+    the premises of the cloud provider. Services like applications, storage,
+    and other resources are made available to the general public for free or
+    are offered on a pay-per-use model. The infrastructure is owned and
+    managed by a business, academic or government organization, or some
+    combination of these.
+   </p></dd><dt id="id-1.3.12.79"><span><span class="glossterm">Public IP Address</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.79">#</a></span></dt><dd class="glossdef"><p>
+    See <a class="xref" href="gl-cloud.html#gloss-IP-float" title="Floating IP Address">Floating IP Address</a>.
+   </p></dd><dt id="id-1.3.12.80"><span><span class="glossterm">qcow (QEMU Copy on Write)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.80">#</a></span></dt><dd class="glossdef"><p>
+    A disk image format supported by the QEMU virtual machine manager. A
+    <code class="literal">qcow2</code> image helps to optimize disk space. It
+    consumes disk space only when contents are written on it and grows as
+    data is added.
+   </p><p>
+    <code class="literal">qcow2</code> is a more recent version of the
+    <code class="literal">qcow</code> format where a read-only base image is used, and
+    all writes are stored to the <code class="literal">qcow2</code> image.
+   </p></dd><dt id="gloss-quorum"><span><span class="glossterm">Quorum</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-quorum">#</a></span></dt><dd class="glossdef"><p>
+    In a cluster, a <a class="xref" href="gl-cloud.html#gloss-partition" title="Cluster Partition">Cluster Partition</a> is defined to have
+    quorum (is <span class="quote">“<span class="quote ">quorate</span>”</span>) if it has the majority of nodes (or
+    votes). Quorum distinguishes exactly one partition. It is part of the
+    algorithm to prevent several disconnected partitions or nodes from
+    proceeding and causing data and service corruption
+    (<a class="xref" href="gl-cloud.html#gloss-splitbrain" title="Split Brain">Split Brain</a>). Quorum is a prerequisite for
+    <a class="xref" href="gl-cloud.html#gloss-fencing" title="Fencing">Fencing</a>, which then ensures that quorum is
+    indeed unique.
+   </p></dd><dt id="id-1.3.12.82"><span><span class="glossterm">Quota</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.82">#</a></span></dt><dd class="glossdef"><p>
+    Restriction of resources to prevent overconsumption within a cloud. In
+    <span class="productname">OpenStack</span>, quotas are defined per project and contain multiple
+    parameters, such as amount of RAM, number of instances, or number of
+    floating IP addresses.
+   </p></dd><dt id="id-1.3.12.83"><span><span class="glossterm">RC File  (openrc.sh)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.83">#</a></span></dt><dd class="glossdef"><p>
+    Environment file needed for the <span class="productname">OpenStack</span> command line tools. The RC
+    file is project-specific and contains the credentials used by
+    <span class="productname">OpenStack</span> Compute, Image, and Identity services.
+   </p></dd><dt id="id-1.3.12.84"><span><span class="glossterm">Recipe</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.84">#</a></span></dt><dd class="glossdef"><p>
+    A group of Chef scripts and templates. Recipes are used by
+    Chef to deploy a unit of functionality.
+   </p></dd><dt id="id-1.3.12.85"><span><span class="glossterm">Region</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.85">#</a></span></dt><dd class="glossdef"><p>
+    
+    An <span class="productname">OpenStack</span> method of aggregating clouds. Regions are a robust way to
+    share some infrastructure between <span class="productname">OpenStack</span> compute installations,
+    while allowing for a high degree of failure tolerance. Regions have a
+    separate API endpoint per installation.
+   </p></dd><dt id="gloss-rsc"><span><span class="glossterm">Resource</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-rsc">#</a></span></dt><dd class="glossdef"><p>
+    In a High Availability context: Any type of service or application that is known
+    to the cluster resource manager. Examples include an IP address, a file
+    system, or a database.
+   </p></dd><dt id="gloss-ra"><span><span class="glossterm">Resource Agent (RA)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-ra">#</a></span></dt><dd class="glossdef"><p>
+    A script acting as a proxy to manage a resource in a High Availability cluster.
+    For example, it can start, stop or monitor a resource.
+   </p></dd><dt id="id-1.3.12.88"><span><span class="glossterm">Role</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.88">#</a></span></dt><dd class="glossdef"><p>
+    In the Crowbar/Chef context: an instance of a
+    <a class="xref" href="gl-cloud.html#gloss-proposal" title="Proposal">Proposal</a> that is active on a node.
+   </p><p>
+    In the <a class="xref" href="gl-cloud.html#gloss-keystone" title="OpenStack Identity"><span class="productname">OpenStack</span> Identity</a> context: concept of controlling
+    the actions or set of operations that a user is allowed to perform. A
+    role includes a set of rights and privileges. A user assuming that role
+    inherits those rights and privileges.
+   </p></dd><dt id="id-1.3.12.89"><span><span class="glossterm">S3 (Amazon Simple Storage Service)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.89">#</a></span></dt><dd class="glossdef"><p>
+    An object storage by Amazon that can be used to store and retrieve data
+    on the Web. Similar in function to <span class="productname">OpenStack</span> Object Storage. It can act
+    as a back-end store for Glance images.
+   </p></dd><dt id="id-1.3.12.90"><span><span class="glossterm">SaaS (Software-as-a-Service)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.90">#</a></span></dt><dd class="glossdef"><p>
+    A service model of cloud computing where applications are hosted by a
+    service provider and made available to customers remotely as a Web-based
+    service.
+   </p></dd><dt id="id-1.3.12.91"><span><span class="glossterm">SBD (STONITH Block Device)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.91">#</a></span></dt><dd class="glossdef"><p>
+    In an environment where all nodes of a High Availability cluster have access to
+    shared storage, a small partition is used for disk-based fencing.
+   </p></dd><dt id="id-1.3.12.92"><span><span class="glossterm">Security Group</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.92">#</a></span></dt><dd class="glossdef"><p>
+    Concept in <span class="productname">OpenStack</span> Networking. A security group is a container for
+    security group rules. Security group rules allow to specify the type of
+    traffic and direction (ingress/egress) that is allowed to pass through a
+    port.
+   </p></dd><dt id="gloss-spof"><span><span class="glossterm">Single Point of Failure (SPOF)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-spof">#</a></span></dt><dd class="glossdef"><p>
+    An individual piece of equipment or software which will cause system
+    downtime or data loss if it fails. To eliminate single points of
+    failure, High Availability systems seek to provide redundancy for crucial pieces
+    of equipment or software.
+   </p></dd><dt id="gloss-hammer"><span><span class="glossterm">SLEShammer</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-hammer">#</a></span></dt><dd class="glossdef"><p>
+    When you first boot a node in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> via PXE, it is booted with the SLEShammer image. This performs the initial hardware discovery, and registers the node with Crowbar.
+    After you allocate the node, it is rebooted with a regular SLES installation image.
+   </p></dd><dt id="id-1.3.12.95"><span><span class="glossterm">Snapshot</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.95">#</a></span></dt><dd class="glossdef"><p>
+    See <a class="xref" href="gl-cloud.html#gloss-volsnap" title="Volume Snapshot">Volume Snapshot</a> or <a class="xref" href="gl-cloud.html#gloss-instsnap" title="Instance Snapshot">Instance Snapshot</a>.
+   </p></dd><dt id="gloss-splitbrain"><span><span class="glossterm">Split Brain</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-splitbrain">#</a></span></dt><dd class="glossdef"><p>
+    Also known as a <span class="quote">“<span class="quote ">partitioned cluster</span>”</span> scenario. Either
+    through a software or hardware failure, the cluster nodes are divided
+    into two or more groups that do not know of each other.
+    <a class="xref" href="gl-cloud.html#gloss-stonith" title="STONITH">STONITH</a> prevents a split brain situation from
+    badly affecting the entire cluster.
+   </p></dd><dt id="gloss-stateful"><span><span class="glossterm">Stateful Service</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-stateful">#</a></span></dt><dd class="glossdef"><p>
+    A service where subsequent requests to the service depend on the results
+    of the first request.
+   </p></dd><dt id="gloss-stateless"><span><span class="glossterm">Stateless Service</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-stateless">#</a></span></dt><dd class="glossdef"><p>
+    A service that provides a response after your request, and then requires
+    no further attention.
+
+   </p></dd><dt id="gloss-stonith"><span><span class="glossterm">STONITH</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-stonith">#</a></span></dt><dd class="glossdef"><p>
+    The acronym for <span class="quote">“<span class="quote ">Shoot the other node in the head</span>”</span>. It
+    refers to the fencing mechanism that shuts down a misbehaving node to
+    prevent it from causing trouble in a cluster.
+   </p></dd><dt id="id-1.3.12.100"><span><span class="glossterm">Storage Node</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.100">#</a></span></dt><dd class="glossdef"><p>
+    Node within a SUSE <span class="productname">OpenStack</span> Cloud. Acts as the controller for cloud-based
+    storage. A cloud can contain multiple Storage Nodes.
+   </p></dd><dt id="id-1.3.12.101"><span><span class="glossterm">Subnet</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.101">#</a></span></dt><dd class="glossdef"><p>
+    In the <span class="productname">OpenStack</span> Networking API: A block of IP addresses and other
+    network configuration (for example, a default gateway, DNS servers) that
+    can be associated with an <span class="productname">OpenStack</span> Networking network. Each subnet
+    represents an IPv4 or IPv6 address block. Multiple subnets can be
+    associated with a network, if necessary.
+   </p></dd><dt id="gloss-hasi"><span><span class="glossterm">SUSE Linux Enterprise High Availability Extension</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-hasi">#</a></span></dt><dd class="glossdef"><p>
+    An integrated suite of open source clustering technologies that enables
+    you to implement highly available physical and virtual Linux clusters.
+   </p></dd><dt id="id-1.3.12.102"><span><span class="glossterm">SUSE <span class="productname">OpenStack</span> Cloud Administrator</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.102">#</a></span></dt><dd class="glossdef"><p>
+    User role in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. Manages projects, users, images, flavors,
+    and quotas within <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
+   </p></dd><dt id="id-1.3.12.103"><span><span class="glossterm">SUSE <span class="productname">OpenStack</span> Cloud Dashboard</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.103">#</a></span></dt><dd class="glossdef"><p>
+    The <span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Dashboard is a Web interface that enables cloud
+    administrators and users to manage various <span class="productname">OpenStack</span> services. It is based
+    on <span class="productname">OpenStack</span> Dashboard (also known under its codename
+    <code class="literal">Horizon</code>).
+   </p></dd><dt id="id-1.3.12.104"><span><span class="glossterm">SUSE <span class="productname">OpenStack</span> Cloud Operator</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.104">#</a></span></dt><dd class="glossdef"><p>
+    User role in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. Installs and deploys <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
+   </p></dd><dt id="id-1.3.12.105"><span><span class="glossterm">SUSE <span class="productname">OpenStack</span> Cloud User</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.105">#</a></span></dt><dd class="glossdef"><p>
+    User role in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. End user who launches and manages
+    instances, can create snapshots, and use volumes for persistent storage
+    within <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
+   </p></dd><dt id="id-1.3.12.107"><span><span class="glossterm">Swift</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.107">#</a></span></dt><dd class="glossdef"><p>
+    Code name for <a class="xref" href="gl-cloud.html#gloss-swift" title="OpenStack Object Storage"><span class="productname">OpenStack</span> Object Storage</a>.
+   </p></dd><dt id="id-1.3.12.108"><span><span class="glossterm">TAP Device</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.108">#</a></span></dt><dd class="glossdef"><p>
+    A virtual networking device. A TAP device, such as
+    <code class="literal">vnet0</code> is how hypervisors such as KVM and
+    Xen implement a virtual network interface card (vNIC). An Ethernet
+    frame sent to a TAP device is received by the guest operating system.
+    The tap option connects the network stack of the guest operating system
+    to a TAP network device on the host.
+   </p></dd><dt id="gloss-ceilo"><span><span class="glossterm">Telemetry</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-ceilo">#</a></span></dt><dd class="glossdef"><p>
+    A module (code name: <code class="literal">Ceilometer</code>) for metering
+    <span class="productname">OpenStack</span>-based clouds. The project aims to provide a unique point of
+    contact across all <span class="productname">OpenStack</span> core components for acquiring metrics.
+    The metrics can then be consumed by other components such as customer billing.
+    The module is an integrated project of <span class="productname">OpenStack</span> as of the Havana
+    release.
+   </p></dd><dt id="id-1.3.12.110"><span><span class="glossterm">Tenant</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.110">#</a></span></dt><dd class="glossdef"><p>
+    See <a class="xref" href="gl-cloud.html#gloss-project" title="Project">Project</a>.
+   </p></dd><dt id="id-1.3.12.111"><span><span class="glossterm">Unicast</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.111">#</a></span></dt><dd class="glossdef"><p>
+    A technology for sending messages to a single network destination.
+    Corosync supports both multicast and unicast. In Corosync,
+    unicast is implemented as UDP-unicast (UDPU).
+   </p></dd><dt id="id-1.3.12.112"><span><span class="glossterm">User</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.112">#</a></span></dt><dd class="glossdef"><p>
+    In the <span class="productname">OpenStack</span> context, a digital representation of a person,
+    system, or service who uses <span class="productname">OpenStack</span> cloud services. Users can be
+    directly assigned to a particular project and behave as if they are
+    contained in that project.
+   </p></dd><dt id="id-1.3.12.113"><span><span class="glossterm">Veth Pair</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.113">#</a></span></dt><dd class="glossdef"><p>
+    A virtual networking device.
+    
+    The acronym veth stands for virtual Ethernet interface. A veth is a pair
+    of virtual network interfaces correctly
+
+    directly together. An Ethernet frame sent to one end of a veth pair is
+    received by the other end of a veth pair. <span class="productname">OpenStack</span> Networking uses
+    veth pairs as virtual patch cables to make connections between virtual
+    bridges.
+   </p></dd><dt id="id-1.3.12.114"><span><span class="glossterm">VLAN</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.114">#</a></span></dt><dd class="glossdef"><p>
+    A physical method for network virtualization. VLANs allow to create
+    virtual networks across a distributed network. Disparate hosts
+    (on independent networks) appear as if they were part of the same
+    broadcast domain.
+   </p></dd><dt id="id-1.3.12.115"><span><span class="glossterm">VM (Virtual Machine)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.115">#</a></span></dt><dd class="glossdef"><p>
+    An operating system instance that runs on top of a hypervisor. Multiple
+    virtual machines can run on the same physical host at the same time.
+   </p></dd><dt id="id-1.3.12.116"><span><span class="glossterm">vNIC </span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.116">#</a></span></dt><dd class="glossdef"><p>
+    Virtual network interface card.
+   </p></dd><dt id="id-1.3.12.117"><span><span class="glossterm">Volume</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.117">#</a></span></dt><dd class="glossdef"><p>
+    Detachable block storage device. Unlike a SAN, it can only be attached
+    to one instance at a time.
+   </p></dd><dt id="gloss-vg"><span><span class="glossterm">Volume Group (VG)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-vg">#</a></span></dt><dd class="glossdef"><p>
+    A virtual disk consisting of aggregated physical volumes. Volume groups
+    can be logically partitioned into logical volumes.
+   </p></dd><dt id="gloss-volsnap"><span><span class="glossterm">Volume Snapshot</span> <a title="Permalink" class="permalink" href="gl-cloud.html#gloss-volsnap">#</a></span></dt><dd class="glossdef"><p>
+    A point-in-time copy of an <span class="productname">OpenStack</span> storage volume. Used to back up
+    volumes.
+   </p></dd><dt id="id-1.3.12.120"><span><span class="glossterm">vSwitch (Virtual Switch)</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.120">#</a></span></dt><dd class="glossdef"><p>
+    
+    A software that runs on a host or node and provides the features and
+    functions of a hardware-based network switch.
+   </p></dd><dt id="id-1.3.12.121"><span><span class="glossterm">Zone</span> <a title="Permalink" class="permalink" href="gl-cloud.html#id-1.3.12.121">#</a></span></dt><dd class="glossdef"><p>
+    
+    A logical grouping of Compute services and virtual machine hosts.
+   </p></dd></dl></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="app-deploy-docupdates.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Appendix C </span>Documentation Updates</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

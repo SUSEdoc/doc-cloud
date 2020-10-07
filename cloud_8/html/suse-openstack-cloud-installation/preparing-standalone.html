@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Preparing for Stand-Alone Deployment | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 8. Preparing for Stand-Alone Deployment" /><meta name="description" content="The Cloud Lifecycle Manager can be installed on a Control Plane or on a stand-alone server." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="cloudinstallation-overview.html" title="Chapter 7. Overview" /><link rel="next" href="install-gui.html" title="Chapter 9. Installing with the Install UI" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="preparing-standalone.html">Preparing for Stand-Alone Deployment</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 7. Overview" href="cloudinstallation-overview.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Installing with the Install UI" href="install-gui.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="preparing-standalone.html">Preparing for Stand-Alone Deployment</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 7. Overview" href="cloudinstallation-overview.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Installing with the Install UI" href="install-gui.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="preparing-standalone"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparing for Stand-Alone Deployment</span> <a title="Permalink" class="permalink" href="preparing-standalone.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-preparing-standalone.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-preparing-standalone.xml</li><li><span class="ds-label">ID: </span>preparing-standalone</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="preparing-standalone.html#id-1.4.5.3.2"><span class="number">8.1 </span><span class="name">Cloud Lifecycle Manager Installation Alternatives</span></a></span></dt><dt><span class="section"><a href="preparing-standalone.html#id-1.4.5.3.3"><span class="number">8.2 </span><span class="name">Installing a Stand-Alone Deployer</span></a></span></dt></dl></div></div><div class="sect1" id="id-1.4.5.3.2"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Lifecycle Manager Installation Alternatives</span> <a title="Permalink" class="permalink" href="preparing-standalone.html#id-1.4.5.3.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-preparing-standalone.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-preparing-standalone.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  The Cloud Lifecycle Manager can be installed on a Control Plane or on a stand-alone
+  server.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Installing the Cloud Lifecycle Manager on a Control Plane is done during the process of
+    deploying your Cloud. Your Cloud and the Cloud Lifecycle Manager are deployed together.
+   </p></li><li class="listitem "><p>
+    With a standalone Cloud Lifecycle Manager, you install the deployer first and then deploy
+    your Cloud in a separate process. Either the Install UI or command line
+    can be used to deploy a stand-alone Cloud Lifecycle Manager.
+   </p></li></ul></div><p>
+  Each method is suited for particular needs. The best choice depends on your
+  situation.
+ </p><p>
+  <span class="bold"><strong>Stand-alone Deployer</strong></span>
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    + Compared to a Control Plane deployer, a stand-alone deployer is easier to
+    backup and redeploy in case of disaster
+   </p></li><li class="listitem "><p>
+    + Separates cloud management from components being managed
+   </p></li><li class="listitem "><p>
+    + Does not use Control Plane resources
+   </p></li><li class="listitem "><p>
+    - Another server is required (less of a disadvantage if using a VM)
+   </p></li><li class="listitem "><p>
+    - Installation may be more complex than a Control Plane Cloud Lifecycle Manager
+   </p></li></ul></div><p>
+  <span class="bold"><strong>Control Plane Deployer</strong></span>
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    + Installation is usually simpler than installing a stand-alone deployer
+   </p></li><li class="listitem "><p>
+    + Requires fewer servers or VMs
+   </p></li><li class="listitem "><p>
+    - Could contend with workloads for resources
+   </p></li><li class="listitem "><p>
+    - Harder to redeploy in case of failure compared to stand-alone deployer
+   </p></li><li class="listitem "><p>
+    - There is a risk to the Cloud Lifecycle Manager when updating or modifying controllers
+   </p></li><li class="listitem "><p>
+    - Runs on one of the servers that is deploying or managing your Cloud
+   </p></li></ul></div><p>
+  <span class="bold"><strong>Summary</strong></span>
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    A Control Plane Cloud Lifecycle Manager is best for small, simple Cloud deployments.
+   </p></li><li class="listitem "><p>
+    With a larger, more complex cloud, a stand-alone deployer provides better
+    recoverability and the separation of manager from managed components.
+   </p></li></ul></div></div><div class="sect1" id="id-1.4.5.3.3"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing a Stand-Alone Deployer</span> <a title="Permalink" class="permalink" href="preparing-standalone.html#id-1.4.5.3.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-preparing-standalone.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-preparing-standalone.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   If you do not intend to install a stand-alone deployer, proceed to
+   installing the Cloud Lifecycle Manager on a Control Plane.
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Instructions for GUI installation are in <a class="xref" href="install-gui.html" title="Chapter 9. Installing with the Install UI">Chapter 9, <em>Installing with the Install UI</em></a>.
+    </p></li><li class="listitem "><p>
+     Instructions for installing via the command line are in <a class="xref" href="install-kvm.html" title="Chapter 12. Installing Mid-scale and Entry-scale KVM">Chapter 12, <em>Installing Mid-scale and Entry-scale KVM</em></a>.
+    </p></li></ul></div><div class="sect2" id="id-1.4.5.3.3.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before You Start</span> <a title="Permalink" class="permalink" href="preparing-standalone.html#id-1.4.5.3.3.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-preparing-standalone.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-preparing-standalone.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Review the <a class="xref" href="preinstall-checklist.html" title="Chapter 2. Pre-Installation Checklist">Chapter 2, <em>Pre-Installation Checklist</em></a> about recommended
+     pre-installation tasks.
+    </p></li><li class="step "><p>
+     Prepare the Cloud Lifecycle Manager node. The Cloud Lifecycle Manager must be accessible either directly or via
+     <code class="literal">ssh</code>, and have SUSE Linux Enterprise Server 12 SP3 installed. All nodes must
+     be accessible to the Cloud Lifecycle Manager. If the nodes do not have direct access to
+     online Cloud subscription channels, the Cloud Lifecycle Manager node will need to host the
+     Cloud repositories.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       If you followed the installation instructions for Cloud Lifecycle Manager server (see <a class="xref" href="cha-depl-dep-inst.html" title="Chapter 3. Installing the Cloud Lifecycle Manager server">Chapter 3, <em>Installing the Cloud Lifecycle Manager server</em></a>), <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> software should already be
+       installed. Double-check whether SUSE Linux Enterprise and <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> are properly
+       registered at the SUSE Customer Center by starting YaST and running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
+       Registration</span>.
+      </p><p>
+       If you have not yet installed <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, do so by starting YaST and
+       running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
+       Registration</span> › <span class="guimenu ">Select
+       Extensions</span>. Choose <span class="guimenu "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span>
+       and follow the on-screen instructions. Make sure to register
+       <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> during the installation process and to install the software
+       pattern <code class="literal">patterns-cloud-ardana</code>.
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo zypper -n in patterns-cloud-ardana</pre></div></li><li class="step "><p>
+       Ensure the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> media repositories and updates repositories are
+       made available to all nodes in your deployment. This can be accomplished
+       either by configuring the Cloud Lifecycle Manager server as an SMT mirror as described in
+       <a class="xref" href="app-deploy-smt-lcm.html" title="Chapter 4. Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)">Chapter 4, <em>Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</em></a> or by syncing or mounting the
+       Cloud and updates repositories to the Cloud Lifecycle Manager server as described in <a class="xref" href="cha-depl-repo-conf-lcm.html" title="Chapter 5. Software Repository Setup">Chapter 5, <em>Software Repository Setup</em></a>.
+      </p></li><li class="step "><p>
+       Configure passwordless <code class="command">sudo</code> for the user created when
+       setting up the node (as described in <a class="xref" href="cha-depl-dep-inst.html#sec-depl-adm-inst-user" title="3.4. Creating a User">Section 3.4, “Creating a User”</a>). Note that this is
+       <span class="emphasis"><em>not</em></span> the user <code class="systemitem">ardana</code> that will be used later in this
+       procedure. In the following we assume you named the user <code class="systemitem">cloud</code>. Run the command
+       <code class="command">visudo</code> as user <code class="systemitem">root</code> and add the following line
+       to the end of the file:
+      </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable ">CLOUD</em> ALL = (root) NOPASSWD:ALL</pre></div><p>
+       Make sure to replace <em class="replaceable ">CLOUD</em> with your user name
+       choice.
+      </p></li><li class="step "><p>
+       Set the password for the user
+       <code class="systemitem">ardana</code>:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step "><p>
+       Become the user <code class="systemitem">ardana</code>:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>su - ardana</pre></div></li><li class="step "><p>
+       Place a copy of the SUSE Linux Enterprise Server 12 SP3 <code class="filename">.iso</code> in the
+       <code class="systemitem">ardana</code> home directory,
+       <code class="filename">var/lib/ardana</code>, and rename it to
+       <code class="filename">sles12sp3.iso</code>.
+      </p></li><li class="step "><p>
+       Install the templates, examples, and working model directories:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>/usr/bin/ardana-init</pre></div></li></ol></li></ol></div></div></div><div class="sect2" id="id-1.4.5.3.3.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring for a Stand-Alone Deployer</span> <a title="Permalink" class="permalink" href="preparing-standalone.html#id-1.4.5.3.3.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-preparing-standalone.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-preparing-standalone.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The following steps are necessary to set up a stand-alone deployer whether
+   you will be using the Install UI or command line.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Copy the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale KVM example input model to a
+     stand-alone input model. This new input model will be edited so that it
+     can be used as a stand-alone Cloud Lifecycle Manager installation.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cp -r ~/openstack/examples/entry-scale-kvm/* \
+~/openstack/examples/entry-scale-kvm-stand-alone-deployer</pre></div></li><li class="step "><p>
+     Change to the new directory
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cd ~/openstack/examples/entry-scale-kvm-stand-alone-deployer</pre></div></li><li class="step "><p>
+     Edit the cloudConfig.yml file to change the name of the input model. This
+     will make the model available both to the Install UI and to the command
+     line installation process.
+    </p><p>
+     Change <code class="literal">name: entry-scale-kvm</code> to <code class="literal">name:
+     entry-scale-kvm-stand-alone-deployer</code>
+    </p></li><li class="step "><p>
+     Change to the <code class="filename">data</code> directory.
+    </p></li><li class="step "><p>
+     Make the following edits to your configuration files.
+    </p><div id="id-1.4.5.3.3.5.3.5.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      The indentation of each of the input files is important and will cause
+      errors if not done correctly. Use the existing content in each of these
+      files as a reference when adding additional content for your Cloud Lifecycle Manager.
+     </p></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Update <code class="filename">control_plane.yml</code> to add the Cloud Lifecycle Manager.
+      </p></li><li class="listitem "><p>
+       Update <code class="filename">server_roles.yml</code> to add the Cloud Lifecycle Manager role.
+      </p></li><li class="listitem "><p>
+       Update <code class="filename">net_interfaces.yml</code> to add the interface
+       definition for the Cloud Lifecycle Manager.
+      </p></li><li class="listitem "><p>
+       Create a <code class="filename">disks_lifecycle_manager.yml</code> file to define
+       the disk layout for the Cloud Lifecycle Manager.
+      </p></li><li class="listitem "><p>
+       Update <code class="filename">servers.yml</code> to add the dedicated Cloud Lifecycle Manager node.
+      </p></li></ul></div><p>
+     <code class="filename">Control_plane.yml</code>: The snippet below shows the
+     addition of a single node cluster into the control plane to host the Cloud Lifecycle Manager
+     service.
+    </p><div id="id-1.4.5.3.3.5.3.5.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      In addition to adding the new cluster, you also have to remove the Cloud Lifecycle Manager
+      component from the <code class="literal">cluster1</code> in the examples.
+     </p></div><div class="verbatim-wrap"><pre class="screen">  clusters:
+<span class="bold"><strong>     - name: cluster0
+       cluster-prefix: c0
+       server-role: LIFECYCLE-MANAGER-ROLE
+       member-count: 1
+       allocation-policy: strict
+       service-components:
+         - lifecycle-manager</strong></span>
+         - ntp-client
+     - name: cluster1
+       cluster-prefix: c1
+       server-role: CONTROLLER-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - ntp-server</pre></div><p>
+     This specifies a single node of role
+     <code class="literal">LIFECYCLE-MANAGER-ROLE</code> hosting the Cloud Lifecycle Manager.
+    </p><p>
+     <code class="filename">Server_roles.yml</code>: The snippet below shows the
+     insertion of the new server roles definition:
+    </p><div class="verbatim-wrap"><pre class="screen">   server-roles:
+
+<span class="bold"><strong>      - name: LIFECYCLE-MANAGER-ROLE
+        interface-model: LIFECYCLE-MANAGER-INTERFACES
+        disk-model: LIFECYCLE-MANAGER-DISKS</strong></span>
+
+      - name: CONTROLLER-ROLE</pre></div><p>
+     This defines a new server role which references a new interface-model and
+     disk-model to be used when configuring the server.
+    </p><p>
+     <code class="filename">net-interfaces.yml</code>: The snippet below shows the
+     insertion of the network-interface info:
+    </p><div class="verbatim-wrap"><pre class="screen"><span class="bold"><strong>    - name: LIFECYCLE-MANAGER-INTERFACES
+      network-interfaces:
+        - name: BOND0
+          device:
+             name: bond0
+          bond-data:
+             options:
+                 mode: active-backup
+                 miimon: 200
+                 primary: hed3
+             provider: linux
+             devices:
+                 - name: hed3
+                 - name: hed4
+          network-groups:
+             - MANAGEMENT</strong></span></pre></div><p>
+     This assumes that the server uses the same physical networking layout as
+     the other servers in the example.
+    </p><p>
+     <code class="filename">disks_lifecycle_manager.yml</code>: In the examples,
+     disk-models are provided as separate files (this is just a convention, not
+     a limitation) so the following should be added as a new file named
+     <code class="filename">disks_lifecycle_manager.yml</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">---
+   product:
+      version: 2
+
+   disk-models:
+<span class="bold"><strong>   - name: LIFECYCLE-MANAGER-DISKS
+     # Disk model to be used for Cloud Lifecycle Managers nodes
+     # /dev/sda_root is used as a volume group for /, /var/log and /var/crash
+     # sda_root is a templated value to align with whatever partition is really used
+     # This value is checked in os config and replaced by the partition actually used
+     # on sda e.g. sda1 or sda5
+
+     volume-groups:
+       - name: ardana-vg
+         physical-volumes:
+           - /dev/sda_root
+
+       logical-volumes:
+       # The policy is not to consume 100% of the space of each volume group.
+       # 5% should be left free for snapshots and to allow for some flexibility.
+          - name: root
+            size: 80%
+            fstype: ext4
+            mount: /
+          - name: crash
+            size: 15%
+            mount: /var/crash
+            fstype: ext4
+            mkfs-opts: -O large_file
+        consumer:
+              name: os</strong></span></pre></div><p>
+     <code class="filename">Servers.yml</code>: The snippet below shows the insertion of
+     an additional server used for hosting the Cloud Lifecycle Manager. Provide the address
+     information here for the server you are running on, that is, the node
+     where you have installed the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> ISO.
+    </p><div class="verbatim-wrap"><pre class="screen">  servers:
+     # NOTE: Addresses of servers need to be changed to match your environment.
+     #
+     #       Add additional servers as required
+
+<span class="bold"><strong>     #Lifecycle-manager
+     - id: lifecycle-manager
+       ip-addr: <em class="replaceable ">YOUR IP ADDRESS HERE</em>
+       role: LIFECYCLE-MANAGER-ROLE
+       server-group: RACK1
+       nic-mapping: HP-SL230-4PORT
+       mac-addr: 8c:dc:d4:b5:c9:e0
+       # ipmi information is not needed </strong></span>
+
+     # Controllers
+     - id: controller1
+       ip-addr: 192.168.10.3
+       role: CONTROLLER-ROLE</pre></div></li></ol></div></div><p>
+   With the stand-alone input model complete, you are ready to proceed to
+   installing the stand-alone deployer with either the Install UI or the
+   command line.
+  </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-gui.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 9 </span>Installing with the Install UI</span></a><a class="nav-link" href="cloudinstallation-overview.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 7 </span>Overview</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing SUSE CaaS Platform Heat Templates | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 21. Installing SUSE CaaS Platform Heat Templates" /><meta name="description" content="This chapter describes how to install SUSE CaaS Platform Heat template on SUSE OpenStack Cloud." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="install-ardana-manila.html" title="Chapter 20. Installing Manila and Creating Manila Shares" /><link rel="next" href="integrations.html" title="Chapter 22. Integrations" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-heat-templates.html">Installing SUSE CaaS Platform Heat Templates</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 20. Installing Manila and Creating Manila Shares" href="install-ardana-manila.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 22. Integrations" href="integrations.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-heat-templates.html">Installing SUSE CaaS Platform Heat Templates</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 20. Installing Manila and Creating Manila Shares" href="install-ardana-manila.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 22. Integrations" href="integrations.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="install-heat-templates"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">21 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing SUSE CaaS Platform Heat Templates</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span>install-heat-templates</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="install-heat-templates.html#sec-heat-templates-install"><span class="number">21.1 </span><span class="name">SUSE CaaS Platform Heat Installation Procedure</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.4"><span class="number">21.2 </span><span class="name">Installing SUSE CaaS Platform with Multiple Masters</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.5"><span class="number">21.3 </span><span class="name">Deploy SUSE CaaS Platform Stack Using Heat SUSE CaaS Platform Playbook</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.6"><span class="number">21.4 </span><span class="name">Deploy SUSE CaaS Platform Cluster with Multiple Masters Using Heat CaasP
+  Playbook</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.7"><span class="number">21.5 </span><span class="name">SUSE CaaS Platform <span class="productname">OpenStack</span> Image for Heat SUSE CaaS Platform Playbook</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.8"><span class="number">21.6 </span><span class="name">Enabling the Cloud Provider Integration (CPI) Feature</span></a></span></dt><dt><span class="section"><a href="install-heat-templates.html#id-1.4.5.16.9"><span class="number">21.7 </span><span class="name">More Information about SUSE CaaS Platform</span></a></span></dt></dl></div></div><p>
+  This chapter describes how to install SUSE CaaS Platform Heat template on
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+ </p><div class="sect1" id="sec-heat-templates-install"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE CaaS Platform Heat Installation Procedure</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#sec-heat-templates-install">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span>sec-heat-templates-install</li></ul></div></div></div></div><div class="procedure " id="id-1.4.5.16.3.2"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 21.1: </span><span class="name">Preparation </span><a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.3.2">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Download the latest SUSE CaaS Platform for <span class="productname">OpenStack</span> image (for example,
+     <code class="filename">SUSE-CaaS-Platform-3.0-OpenStack-Cloud.x86_64-1.0.0-GM.qcow2</code>)
+     from <a class="link" href="https://download.suse.com" target="_blank">https://download.suse.com</a>.
+    </p></li><li class="step "><p>
+     Upload the image to Glance:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack image create --public --disk-format qcow2 --container-format \
+bare --file SUSE-CaaS-Platform-3.0-OpenStack-Cloud.x86_64-1.0.0-GM.qcow2 \
+CaaSP-3</pre></div></li><li class="step "><p>
+     Install the <span class="package ">caasp-openstack-heat-templates</span> package on a
+     machine with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> repositories:
+    </p><div class="verbatim-wrap"><pre class="screen">zypper in caasp-openstack-heat-templates</pre></div><p>
+     The installed templates are located in
+     <code class="filename">/usr/share/caasp-openstack-heat-templates</code>.
+    </p><p>
+     Alternatively, you can get official Heat templates by cloning the
+     appropriate Git repository:
+    </p><div class="verbatim-wrap"><pre class="screen">git clone https://github.com/SUSE/caasp-openstack-heat-templates</pre></div></li></ol></div></div><div class="procedure " id="id-1.4.5.16.3.3"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 21.2: </span><span class="name">Installing Templates via Horizon </span><a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.3.3">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     In Horizon, go to
+     <span class="guimenu ">Project</span> › <span class="guimenu ">Stacks</span> › <span class="guimenu ">Launch
+     Stack</span>.
+    </p></li><li class="step "><p>
+     Select <span class="guimenu ">File</span> from the <span class="guimenu ">Template Source</span>
+     drop-down box and upload the <code class="filename">caasp-stack.yaml</code> file.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Launch Stack</span> dialog, provide the required
+     information (stack name, password, flavor size, external network of your
+     environment, etc.).
+    </p></li><li class="step "><p>
+     Click <span class="guimenu ">Launch</span> to launch the stack. This creates all
+     required resources for running SUSE CaaS Platform in an <span class="productname">OpenStack</span> environment. The
+     stack creates one Admin Node, one Master Node, and server worker nodes as
+     specified.
+    </p></li></ol></div></div><div class="procedure " id="id-1.4.5.16.3.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 21.3: </span><span class="name">Install Templates from the Command Line </span><a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.3.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Specify the appropriate flavor and network settings in the
+     <code class="filename">caasp-environment.yaml</code> file.
+    </p></li><li class="step "><p>
+     Create a stack in Heat by passing the template, environment file, and
+     parameters:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack stack create -t caasp-stack.yaml -e caasp-environment.yaml \
+--parameter image=CaaSP-3 caasp-stack</pre></div></li></ol></div></div><div class="procedure " id="id-1.4.5.16.3.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 21.4: </span><span class="name">Accessing Velum SUSE CaaS Platform dashboard </span><a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.3.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     After the stack has been created, the Velum SUSE CaaS Platform dashboard runs on the Admin Node.
+     You can access it using the Admin Node's floating IP address.
+    </p></li><li class="step "><p>
+     Create an account and follow the steps in the Velum SUSE CaaS Platform dashboard to complete the
+     SUSE CaaS Platform installation.
+    </p></li></ol></div></div><p>
+   When you have successfully accessed the admin node web interface via the
+   floating IP, follow the instructions at <a class="link" href="https://documentation.suse.com/suse-caasp/3/single-html/caasp-deployment/" target="_blank">https://documentation.suse.com/suse-caasp/3/single-html/caasp-deployment/</a> to
+   continue the setup of SUSE CaaS Platform.
+  </p></div><div class="sect1" id="id-1.4.5.16.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing SUSE CaaS Platform with Multiple Masters</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.4.5.16.4.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    A Heat stack with load balancing and multiple master nodes can only be
+    created from the command line, because Horizon does not have support for nested
+    Heat templates.
+   </p></div><p>
+   Install the <span class="package ">caasp-openstack-heat-templates</span> package on a
+   machine with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> repositories:
+  </p><div class="verbatim-wrap"><pre class="screen">zypper in caasp-openstack-heat-templates</pre></div><p>
+   The installed templates are located in
+   <code class="filename">/usr/share/caasp-openstack-heat-templates</code>.
+  </p><p>
+   A working load balancer is needed in your SUSE <span class="productname">OpenStack</span> Cloud deployment. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+   uses HAProxy.
+  </p><p>
+   Verify that load balancing with HAProxy is working correctly
+   in your <span class="productname">OpenStack</span> installation by creating a load balancer manually and
+   checking that the <code class="literal">provisioning_status</code> changes to
+   <code class="literal">Active</code>.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer show
+&lt;<em class="replaceable ">LOAD_BALANCER_ID</em>&gt;</pre></div><p>
+   HAProxy is the default load balancer provider in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+  </p><p>
+   The steps below can be used to set up a network, subnet, router, security
+   and IPs for a test <code class="literal">lb_net1</code> network with
+   <code class="literal">lb_subnet1</code> subnet.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create lb_net1
+  <code class="prompt user">ardana &gt; </code>openstack subnet create --name lb_subnet1 lb_net1 \
+--subnet-range 172.29.0.0/24 --gateway 172.29.0.2
+<code class="prompt user">ardana &gt; </code>openstack router create lb_router1
+<code class="prompt user">ardana &gt; </code>openstack router add subnet lb_router1 lb_subnet1
+<code class="prompt user">ardana &gt; </code>openstack router set lb_router1 --external-gateway ext-net
+<code class="prompt user">ardana &gt; </code>openstack network list</pre></div><div class="procedure " id="id-1.4.5.16.4.12"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 21.5: </span><span class="name">Steps to Install SUSE CaaS Platform with Multiple Masters </span><a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.4.12">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Specify the appropriate flavor and network settings in the
+     <code class="filename">caasp-multi-master-environment.yaml</code> file.
+    </p></li><li class="step "><p>
+     Set <code class="literal">master_count</code> to the desired number in the
+     <code class="filename">caasp-multi-master-environment.yaml</code> file. The master
+     count must be set to an odd number of nodes.
+    </p><div class="verbatim-wrap"><pre class="screen">master_count: 3</pre></div></li><li class="step "><p>
+     Create a stack in Heat by passing the template, environment file, and
+     parameters:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack stack create -t caasp-multi-master-stack.yaml \
+-e caasp-multi-master-environment.yaml --parameter image=CaaSP-3 caasp-multi-master-stack</pre></div></li><li class="step "><p>
+     Find the floating IP address of the load balancer. This is necessary for
+     accessing the Velum SUSE CaaS Platform dashboard.
+    </p><ol type="a" class="substeps "><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer list --provider</pre></div></li><li class="step "><p>
+       From the output, copy the <code class="literal">id</code> and enter it in the
+       following command as shown in the following example:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer show id</pre></div><div class="verbatim-wrap"><pre class="screen">+---------------------+------------------------------------------------+
+| Field               | Value                                          |
++---------------------+------------------------------------------------+
+| admin_state_up      | True                                           |
+| description         |                                                |
+| id                  | 0d973d80-1c79-40a4-881b-42d111ee9625           |
+| listeners           | {"id": "c9a34b63-a1c8-4a57-be22-75264769132d"} |
+|                     | {"id": "4fa2dae0-126b-4eb0-899f-b2b6f5aab461"} |
+| name                | caasp-stack-master_lb-bhr66gtrx3ue             |
+| operating_status    | ONLINE                                         |
+| pools               | {"id": "8c011309-150c-4252-bb04-6550920e0059"} |
+|                     | {"id": "c5f55af7-0a25-4dfa-a088-79e548041929"} |
+| provider            | haproxy                                        |
+| provisioning_status | ACTIVE                                         |
+| tenant_id           | fd7ffc07400642b1b05dbef647deb4c1               |
+| vip_address         | 172.28.0.6                                     |
+| vip_port_id         | 53ad27ba-1ae0-4cd7-b798-c96b53373e8b           |
+| vip_subnet_id       | 87d18a53-ad0c-4d71-b82a-050c229b710a           |
++---------------------+------------------------------------------------+</pre></div></li><li class="step "><p>
+       Search the floating IP list for <code class="literal">vip_address</code>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack floating ip list | grep 172.28.0.6
+| d636f3...481b0c | fd7ff...deb4c1 | 172.28.0.6  | 10.84.65.37  | 53ad2...373e8b |</pre></div></li><li class="step "><p>
+       The load balancer floating ip address is 10.84.65.37
+      </p></li></ol></li></ol></div></div><p>
+   <span class="bold"><strong>Accessing the Velum SUSE CaaS Platform Dashboard</strong></span>
+  </p><p>
+   After the stack has been created, the Velum SUSE CaaS Platform dashboard runs on the
+   admin node. You can access it using the floating IP address of the admin
+   node.
+  </p><p>
+   Create an account and follow the steps in the Velum SUSE CaaS Platform dashboard to
+   complete the SUSE CaaS Platform installation.
+  </p><p>
+   SUSE CaaS Platform Admin Node Install: Screen 1
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_1.png" target="_blank"><img src="images/caasp_1.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 2
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_2.png" target="_blank"><img src="images/caasp_2.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 3
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_3.png" target="_blank"><img src="images/caasp_3.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 4
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_4.png" target="_blank"><img src="images/caasp_4.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 5
+  </p><p>
+   Set External Kubernetes API to
+   <em class="replaceable ">LOADBALANCER_FLOATING_IP</em>, External Dashboard FQDN
+   to <em class="replaceable ">ADMIN_NODE_FLOATING_IP</em>
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_5.png" target="_blank"><img src="images/caasp_5.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 6
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_6.png" target="_blank"><img src="images/caasp_6.png" width="" /></a></div></div><p>
+   SUSE CaaS Platform Admin Node Install: Screen 7
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/caasp_7.png" target="_blank"><img src="images/caasp_7.png" width="" /></a></div></div></div><div class="sect1" id="id-1.4.5.16.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploy SUSE CaaS Platform Stack Using Heat SUSE CaaS Platform Playbook</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Install the <span class="package ">caasp-openstack-heat-templates</span> package on a
+     machine with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> repositories:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>zypper in caasp-openstack-heat-templates</pre></div><p>
+     The installed templates are located in
+     <code class="filename">/usr/share/caasp-openstack-heat-templates</code>.
+    </p></li><li class="step "><p>
+     Run <code class="filename">heat-caasp-deploy.yml</code> on the Cloud Lifecycle Manager to create a
+     SUSE CaaS Platform cluster with Heat templates from the
+     <code class="literal">caasp-openstack-heat-templates</code> package.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost heat-caasp-deploy.yml</pre></div></li><li class="step "><p>
+     In a browser, navigate to the Horizon UI to determine the floating IP
+     address assigned to the admin node.
+    </p></li><li class="step "><p>
+     Go to http://<em class="replaceable ">ADMIN-NODE-FLOATING-IP</em>/ to bring
+     up the Velum dashboard.
+    </p></li><li class="step "><p>
+     Follow the steps for <code class="literal">bootstrap</code> and <code class="literal">add nodes
+     to the cluster</code> to bring up the SUSE CaaS Platform Kubernetes cluster.
+    </p></li></ol></div></div></div><div class="sect1" id="id-1.4.5.16.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploy SUSE CaaS Platform Cluster with Multiple Masters Using Heat CaasP
+  Playbook</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Install the <span class="package ">caasp-openstack-heat-templates</span> package on a
+     machine with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> repositories:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>zypper in caasp-openstack-heat-templates</pre></div><p>
+     The installed templates are located in
+     <code class="filename">/usr/share/caasp-openstack-heat-templates</code>.
+    </p></li><li class="step "><p>
+     On the Cloud Lifecycle Manager, run the <code class="filename">heat-caasp-deploy.yml</code> playbook
+     and pass parameters for <code class="literal">caasp_stack_name</code>,
+     <code class="literal">caasp_stack_yaml_file</code> and
+     <code class="literal">caasp_stack_env_yaml_file</code>.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost heat-caasp-deploy.yml -e "caasp_stack_name=caasp_multi-master caasp_stack_yaml_file=caasp-multi-master-stack.yaml caasp_stack_env_yaml_file=caasp-multi-master-environment.yaml"</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.4.5.16.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE CaaS Platform <span class="productname">OpenStack</span> Image for Heat SUSE CaaS Platform Playbook</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   By default the Heat SUSE CaaS Platform playbook downloads the SUSE CaaS Platform image from <a class="link" href="http://download.suse.de/install/SUSE-CaaSP-3-GM/SUSE-CaaS-Platform-3.0-for-OpenStack-Cloud.x86_64-3.0.0-GM.qcow2" target="_blank">http://download.suse.de/install/SUSE-CaaSP-3-GM/SUSE-CaaS-Platform-3.0-for-OpenStack-Cloud.x86_64-3.0.0-GM.qcow2</a>. If
+   this URL is not accessible, the SUSE CaaS Platform image can be downloaded from <a class="link" href="https://download.suse.com/Download?buildid=z7ezhywXXRc" target="_blank">https://download.suse.com/Download?buildid=z7ezhywXXRc</a> and
+   copied to the deployer.
+  </p><p>
+   To create a SUSE CaaS Platform cluster and pass the path to the downloaded image, run the
+   following commands:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost heat-caasp-deploy.yml -e "caasp_image_tmp_path=~/SUSE-CaaS-Platform-3.0-for-OpenStack-Cloud.x86_64-3.0.0-GM.qcow2"</pre></div><p>
+   To create a SUSE CaaS Platform cluster with multiple masters and pass the path to the
+   downloaded image, run the following commands:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost heat-caasp-deploy.yml -e "caasp_image_tmp_path=caasp_image_tmp_path=~/SUSE-CaaS-Platform-3.0-for-OpenStack-Cloud.x86_64-3.0.0-GM.qcow2
+ caasp_stack_name=caasp_multi-master caasp_stack_yaml_file=caasp-multi-master-stack.yaml caasp_stack_env_yaml_file=caasp-multi-master-environment.yaml"</pre></div></div><div class="sect1" id="id-1.4.5.16.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling the Cloud Provider Integration (CPI) Feature</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    When deploying a CaaaSP cluster using SUSE CaaS Platform <span class="productname">OpenStack</span> Heat
+    templates, the following CPI parameters can be set in
+    <code class="filename">caasp-environment.yaml</code> or
+    <code class="filename">caasp-multi-master-environment.yaml</code>.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.16.8.3.1"><span class="term ">cpi_auth_url</span></dt><dd><p>
+       The URL of the Keystone API used to authenticate the user. This value
+       can be found on <span class="productname">OpenStack</span> Dashboard under
+       <span class="guimenu ">Access and Security</span> › <span class="guimenu ">API
+       Access</span> › <span class="guimenu ">Credentials</span> (for
+       example, https://api.keystone.example.net:5000/v3/)
+      </p></dd><dt id="id-1.4.5.16.8.3.2"><span class="term ">cpi_domain_name</span></dt><dd><p>
+       Name of the domain the user belongs to
+      </p></dd><dt id="id-1.4.5.16.8.3.3"><span class="term ">cpi_tenant_name</span></dt><dd><p>
+       Name of the project the user belongs to. This is the project where the
+       resources will be created.
+      </p></dd><dt id="id-1.4.5.16.8.3.4"><span class="term ">cpi_region</span></dt><dd><p>
+       Name of the region to use when running a multi-region <span class="productname">OpenStack</span>
+       cloud. The region is a general division of an <span class="productname">OpenStack</span> deployment.
+      </p></dd><dt id="id-1.4.5.16.8.3.5"><span class="term ">cpi_username</span></dt><dd><p>
+       Username of a valid user that has been set in Keystone. Default: admin
+      </p></dd><dt id="id-1.4.5.16.8.3.6"><span class="term ">cpi_password</span></dt><dd><p>
+       Password of a valid user that has been set in Keystone.
+      </p></dd><dt id="id-1.4.5.16.8.3.7"><span class="term ">cpi_monitor_max_retries</span></dt><dd><p>
+       Neutron load balancer monitoring max retries. Default: 3
+      </p></dd><dt id="id-1.4.5.16.8.3.8"><span class="term ">cpi_bs_version</span></dt><dd><p>
+       Cinder Block Storage API version. Possible values are v1, v2 , v3 or
+       auto. Default: auto
+      </p></dd><dt id="id-1.4.5.16.8.3.9"><span class="term ">cpi_ignore_volume_az</span></dt><dd><p>
+       Ignore Cinder and Nova availability zones. Default: true
+      </p></dd></dl></div><p>
+    When the SUSE CaaS Platform cluster has been deployed by the Heat templates, the
+    Velum dashboard on the admin node
+    (https://<em class="replaceable ">ADMIN-NODE-IP</em>/) will have entries for
+    <span class="guimenu ">Cloud Provider Integration</span> (CPI). The <span class="productname">OpenStack</span>
+    settings form will show the values that were set in the
+    <code class="filename">caasp-environment.yaml</code> or
+    <code class="filename">caasp-multi-master-environment.yaml</code> files.
+   </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/cpi_1.png" target="_blank"><img src="images/cpi_1.png" width="" /></a></div></div><p>
+    After the SUSE CaaS Platform cluster comes up, install the latest SUSE CaaS Platform 3.0 Maintenance
+    Update using the following steps:
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Spin up a SUSE CaaS Platform cluster using Heat templates following the
+      instructions in <a class="xref" href="install-heat-templates.html#sec-heat-templates-install" title="21.1. SUSE CaaS Platform Heat Installation Procedure">Section 21.1, “SUSE CaaS Platform Heat Installation Procedure”</a>. Do not go
+      through the bootstrapping steps, because the SUSE CaaS Platform Maintenance Update
+      (MU) must be applied first. After the maintenance update process below
+      succeeds, return to the SUSE CaaS Platform installation instructions and follow the
+      admin node bootstrapping steps.
+     </p><p>
+      Apply the SUSE CaaS Platform 3.0 Maintenance Update with the following steps:
+     </p><ol type="a" class="substeps "><li class="step "><p>
+        Log in to each node and add the update repository.
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo zypper ar http://nu.novell.com/SUSE/Updates/SUSE-CAASP/3.0/x86_64/update/ caasp_update</pre></div></li><li class="step "><p>
+        With root privileges, run <code class="literal">transactional-update</code> on each node.
+       </p></li><li class="step "><p>
+        Reboot each node
+       </p></li><li class="step "><p>
+        Verify that the Velum image packages were updated
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>zypper se --detail velum-image
+i | sles12-velum-image | package    | 3.1.7-3.27.3  | x86_64 | update_caasp</pre></div></li></ol></li><li class="step "><p>
+      Upload a valid trust certificate that can validate a certificate
+      presented by Keystone at the specified
+      <code class="literal">keystone_auth_url</code> in the <code class="literal">system-wide
+      certificate</code> section of Velum. The certificate must be uploaded
+      to avoid bootstrapping failure with a <code class="literal">x509: certificate signed
+      by unknown authority</code> error message.
+     </p><p>
+      Get SUSE Root CA certificate with the following steps:
+     </p><ol type="a" class="substeps "><li class="step "><p>
+        From the RPM provided in the repos:
+       </p><ol type="i" class="substeps "><li class="step "><p>
+          Add a repository for your distribution at
+          <code class="literal">http://download.suse.de/ibs/SUSE:/CA/</code>. For
+          example, with <code class="literal">openSUSE Leap</code>, use
+          <code class="literal">http://download.suse.de/ibs/SUSE:/CA/openSUSE_Leap_15.0/SUSE:CA.repo</code>
+         </p></li><li class="step "><p>
+          Install certificates and find the <code class="filename">.pem</code> file.
+         </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo zypper in ca-certificates-suse
+<code class="prompt user">ardana &gt; </code>rpm -ql ca-certificates-suse</pre></div><p>
+          The path to the cert is <code class="filename">/usr/share/pki/trust/anchors/SUSE_Trust_Root.crt.pem</code>
+         </p></li></ol></li><li class="step "><p>
+        In <code class="literal">system wide certificate</code> during setup in Velum,
+        upload this certificate so you can bootstrap with CPI.
+     </p></li></ol></li><li class="step "><p>
+      After the nodes come up, continue with the installation instructions in
+      <a class="xref" href="install-heat-templates.html#sec-heat-templates-install" title="21.1. SUSE CaaS Platform Heat Installation Procedure">Section 21.1, “SUSE CaaS Platform Heat Installation Procedure”</a> following the admin node
+      cluster bootstrapping steps.
+     </p></li></ol></div></div></div><div class="sect1" id="id-1.4.5.16.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">More Information about SUSE CaaS Platform</span> <a title="Permalink" class="permalink" href="install-heat-templates.html#id-1.4.5.16.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/install_caasp_heat_templates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install_caasp_heat_templates.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  More information about the SUSE CaaS Platform is available at <a class="link" href="https://documentation.suse.com/suse-caasp/3/single-html/caasp-deployment/" target="_blank">https://documentation.suse.com/suse-caasp/3/single-html/caasp-deployment/</a>
+ </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="integrations.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 22 </span>Integrations</span></a><a class="nav-link" href="install-ardana-manila.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 20 </span>Installing Manila and Creating Manila Shares</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Boot from SAN and Multipath Configuration | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 6. Boot from SAN and Multipath Configuration" /><meta name="description" content="For information about supported hardware for multipathing, see Book “Planning an Installation with Cloud Lifecycle Manager”, Chapter 2 “Hardware and Software Support Matrix”, Section 2.2 “Supported Hardware Configurations”." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="preinstall.html" title="Part I. Pre-Installation" /><link rel="prev" href="cha-depl-repo-conf-lcm.html" title="Chapter 5. Software Repository Setup" /><link rel="next" href="cloudinstallation.html" title="Part II. Cloud Installation" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="preinstall.html">Pre-Installation</a><span> › </span><a class="crumb" href="multipath-boot-from-san.html">Boot from SAN and Multipath Configuration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Software Repository Setup" href="cha-depl-repo-conf-lcm.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Cloud Installation" href="cloudinstallation.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="preinstall.html">Pre-Installation</a><span> › </span><a class="crumb" href="multipath-boot-from-san.html">Boot from SAN and Multipath Configuration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Software Repository Setup" href="cha-depl-repo-conf-lcm.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Cloud Installation" href="cloudinstallation.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="multipath-boot-from-san"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Boot from SAN and Multipath Configuration</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span>multipath-boot-from-san</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="multipath-boot-from-san.html#multipath-overview"><span class="number">6.1 </span><span class="name">Introduction</span></a></span></dt><dt><span class="section"><a href="multipath-boot-from-san.html#id-1.4.4.7.3"><span class="number">6.2 </span><span class="name">Install Phase Configuration</span></a></span></dt><dt><span class="section"><a href="multipath-boot-from-san.html#restriction2"><span class="number">6.3 </span><span class="name">QLogic FCoE restrictions and additional configurations</span></a></span></dt><dt><span class="section"><a href="multipath-boot-from-san.html#install-boot-from-san"><span class="number">6.4 </span><span class="name">Installing the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> ISO for Nodes That Support Boot From SAN</span></a></span></dt></dl></div></div><div class="sect1" id="multipath-overview"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#multipath-overview">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span>multipath-overview</li></ul></div></div></div></div><p>
+   For information about supported hardware for multipathing, see
+   <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 2 “Hardware and Software Support Matrix”, Section 2.2 “Supported Hardware Configurations”</span>.
+  </p><div id="boot-from-san-LUN0" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    When exporting a LUN to a node for boot from SAN, you should ensure that
+    <span class="emphasis"><em>LUN 0</em></span> is assigned to the LUN and configure any setup
+    dialog that is necessary in the firmware to consume this LUN 0 for OS boot.
+   </p></div><div id="boot-from-san-host-persona" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    Any hosts that are connected to 3PAR storage must have a <code class="literal">host
+    persona</code> of <code class="literal">2-generic-alua</code> set on the 3PAR.
+    Refer to the 3PAR documentation for the steps necessary to check this and
+    change if necessary.
+   </p></div><p>
+   iSCSI boot from SAN is not supported. For more information on the use of
+   Cinder with multipath, see <a class="xref" href="integrations.html#sec-3par-multipath" title="22.1.3. Multipath Support">Section 22.1.3, “Multipath Support”</a>.
+  </p><p>
+   To allow <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> to use volumes from a SAN, you have to specify
+   configuration options for both the installation and the OS configuration
+   phase. In all cases, the devices that are utilized are devices for which
+   multipath is configured.
+  </p></div><div class="sect1" id="id-1.4.4.7.3"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Install Phase Configuration</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#id-1.4.4.7.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   For FC connected nodes and for FCoE nodes where the network processor used
+   is from the Emulex family such as for the 650FLB, the following changes need
+   to be made.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     In each stanza of the <code class="filename">servers.yml</code> insert a line
+     stating <code class="literal">boot-from-san: true</code>
+    </p><div class="verbatim-wrap"><pre class="screen">- id: controller2
+      ip-addr: 192.168.10.4
+      role: CONTROLLER-ROLE
+      server-group: RACK2
+      nic-mapping: HP-DL360-4PORT</pre></div><p>
+     This uses the disk <code class="filename">/dev/mapper/mpatha</code> as the default
+     device on which to install the OS.
+    </p></li><li class="step "><p>
+     In the disk input models, specify the devices that will be used via their
+     multipath names (which will be of the form
+     <code class="filename">/dev/mapper/mpatha</code>,
+     <code class="filename">/dev/mapper/mpathb</code>, etc.).
+    </p><div class="verbatim-wrap"><pre class="screen">    volume-groups:
+      - name: ardana-vg
+        physical-volumes:
+
+          # NOTE: 'sda_root' is a templated value. This value is checked in
+          # os-config and replaced by the partition actually used on sda
+          #for example sda1 or sda5
+          - /dev/mapper/mpatha_root
+
+...
+      - name: vg-comp
+        physical-volumes:
+          - /dev/mapper/mpathb</pre></div></li></ol></div></div><p>
+   Instead of using Cobbler, you need to provision a baremetal node manually
+   using the following procedure.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Assign a static IP to the node.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Use the <code class="command">ip addr</code> command to list active network
+       interfaces on your system:
+      </p><div class="verbatim-wrap"><pre class="screen">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eno1: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+    link/ether f0:92:1c:05:89:70 brd ff:ff:ff:ff:ff:ff
+    inet 10.13.111.178/26 brd 10.13.111.191 scope global eno1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f292:1cff:fe05:8970/64 scope link
+       valid_lft forever preferred_lft forever
+3: eno2: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP qlen 1000
+    link/ether f0:92:1c:05:89:74 brd ff:ff:ff:ff:ff:ff</pre></div></li><li class="step "><p>
+       Identify the network interface that matches the MAC address of your
+       server and edit the corresponding configuration file in
+       <code class="filename">/etc/sysconfig/network-scripts</code>. For example, for
+       the <code class="systemitem">eno1</code> interface, open the
+       <code class="systemitem">/etc/sysconfig/network-scripts/ifcfg-eno1</code> file
+       and edit <em class="replaceable ">IPADDR</em> and
+       <em class="replaceable ">NETMASK</em> values to match your environment.
+       Note that the <em class="replaceable ">IPADDR</em> is used in the
+       corresponding stanza in <code class="filename">servers.yml</code>. You may also
+       need to set <code class="literal">BOOTPROTO</code> to <code class="literal">none</code>:
+      </p><div class="verbatim-wrap"><pre class="screen">TYPE=Ethernet
+BOOTPROTO=none
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=eno1
+UUID=36060f7a-12da-469b-a1da-ee730a3b1d7c
+DEVICE=eno1
+ONBOOT=yes
+NETMASK=255.255.255.192
+IPADDR=10.13.111.14</pre></div></li><li class="step "><p>
+       Reboot the SLES node and ensure that it can be accessed from the
+       Cloud Lifecycle Manager.
+      </p></li></ol></li><li class="step "><p>
+     Add the <code class="literal">ardana</code> user and home directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>useradd -m -d /var/lib/ardana -U ardana</pre></div></li><li class="step "><p>
+     Allow the user <code class="literal">ardana</code> to run <code class="command">sudo</code>
+     without a password by creating the
+     <code class="filename">/etc/sudoers.d/ardana</code> file with the following
+     configuration:
+    </p><div class="verbatim-wrap"><pre class="screen">ardana ALL=(ALL) NOPASSWD:ALL</pre></div></li><li class="step "><p>
+     When you start installation using the Cloud Lifecycle Manager, or if you are adding a SLES
+     node to an existing cloud, you need to copy the Cloud Lifecycle Manager public key to the
+     SLES node to enable passwordless SSH access. One way of doing this is to
+     copy the file <code class="filename">~/.ssh/authorized_keys</code> from
+     another node in the cloud to the same location on the SLES node. If you
+     are installing a new cloud, this file will be available on the nodes after
+     running the <code class="filename">bm-reimage.yml</code> playbook. Ensure that
+     there is global read access to the file
+     <code class="filename">/var/lib/ardana/.ssh/authorized_keys</code>.
+    </p><p>
+     Use the following command to test passwordless SSH from the deployer and
+     check the ability to remotely execute sudo commands:
+    </p><div class="verbatim-wrap"><pre class="screen">ssh stack@<em class="replaceable ">SLES_NODE_IP</em> "sudo tail -5 /var/log/messages"</pre></div></li></ol></div></div><div class="sect2" id="depl-cloud"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying the Cloud</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#depl-cloud">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span>depl-cloud</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div><p>
+     For automated installation, you can specify the required parameters. For
+     example, the following command disables encryption by the configuration
+     processor:
+    </p><div class="verbatim-wrap"><pre class="screen">    ansible-playbook -i hosts/localhost config-processor-run.yml \
+    -e encrypt="" -e rekey=""</pre></div></li><li class="step "><p>
+     Use the following playbook below to create a deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     To ensure that all existing non-OS partitions on the nodes are wiped prior to
+     installation, you need to run the <code class="filename">wipe_disks.yml</code>
+     playbook. The <code class="filename">wipe_disks.yml</code> playbook is only meant
+     to be run on systems immediately after running
+     <code class="filename">bm-reimage.yml</code>. If used for any other case, it may
+     not wipe all of the expected partitions.
+    </p><p>
+      This step is not required if you are using clean machines.
+    </p><p>
+     Before you run the <code class="filename">wipe_disks.yml</code> playbook, you need
+     to make the following changes in the deployment directory.
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       In the
+       <code class="filename">~/scratch/ansible/next/ardana/ansible/roles/diskconfig/tasks/get_disk_info.yml</code>
+       file, locate the following line:
+      </p><div class="verbatim-wrap"><pre class="screen">shell: ls -1 /dev/mapper/ | grep "mpath" | grep -v {{ wipe_disks_skip_partition }}$ | grep -v {{ wipe_disks_skip_partition }}[0-9]</pre></div><p>
+       Replace it with:
+      </p><div class="verbatim-wrap"><pre class="screen">shell: ls -1 /dev/mapper/ | grep "mpath"  | grep -v {{ wipe_disks_skip_partition }}$ | grep -v {{ wipe_disks_skip_partition }}[0-9] | grep -v {{ wipe_disks_skip_partition }}_part[0-9]</pre></div></li><li class="listitem "><p>
+       In the
+       <code class="filename">~/scratch/ansible/next/ardana/ansible/roles/multipath/tasks/install.yml</code>
+       file, set the <code class="literal">multipath_user_friendly_names</code> variable
+       value to <code class="literal">yes</code> for all occurrences.
+      </p></li></ul></div><p>
+     Run the <code class="filename">wipe_disks.yml</code> playbook:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts wipe_disks.yml</pre></div><p>
+     If you have used an encryption password when running the configuration
+     processor, use the command below, and enter the encryption password when
+     prompted:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts wipe_disks.yml --ask-vault-pass</pre></div></li><li class="step "><p>
+     Run the <code class="filename">site.yml</code> playbook:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts site.yml</pre></div><p>
+     If you have used an encryption password when running the configuration
+     processor, use the command below, and enter the encryption password when
+     prompted:
+    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts site.yml --ask-vault-pass</pre></div><p>
+     The step above runs <code class="systemitem">osconfig</code> to configure the
+     cloud and <code class="systemitem">ardana-deploy</code> to deploy the cloud.
+     Depending on the number of nodes, this step may take considerable time to
+     complete.
+    </p></li></ol></div></div></div></div><div class="sect1" id="restriction2"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">QLogic FCoE restrictions and additional configurations</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#restriction2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span>restriction2</li></ul></div></div></div></div><p>
+   If you are using network cards such as Qlogic Flex Fabric 536 and 630
+   series, there are additional OS configuration steps to support the
+   importation of LUNs as well as some restrictions on supported
+   configurations.
+  </p><p>
+   The restrictions are:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Only one network card can be enabled in the system.
+    </p></li><li class="listitem "><p>
+     The FCoE interfaces on this card are dedicated to FCoE traffic. They
+     cannot have IP addresses associated with them.
+    </p></li><li class="listitem "><p>
+     NIC mapping cannot be used.
+    </p></li></ul></div><p>
+   In addition to the configuration options above, you also need to specify the
+   FCoE interfaces for install and for os configuration. There are 3 places
+   where you need to add additional configuration options for fcoe-support:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     In <code class="literal">servers.yml</code>, which is used for configuration of the
+     system during OS install, FCoE interfaces need to be specified for each
+     server. In particular, the mac addresses of the FCoE interfaces need to be
+     given, <span class="emphasis"><em>not</em></span> the symbolic name (for example,
+     <code class="literal">eth2</code>).
+    </p><div class="verbatim-wrap"><pre class="screen">    - id: compute1
+      ip-addr: 10.245.224.201
+      role: COMPUTE-ROLE
+      server-group: RACK2
+      mac-addr: 6c:c2:17:33:4c:a0
+      ilo-ip: 10.1.66.26
+      ilo-user: linuxbox
+      ilo-password: linuxbox123
+      boot-from-san: True
+      fcoe-interfaces:
+         - <span class="bold"><strong>6c:c2:17:33:4c:a1</strong></span>
+         - <span class="bold"><strong>6c:c2:17:33:4c:a9</strong></span></pre></div><div id="id-1.4.4.7.4.6.1.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      NIC mapping cannot be used.
+     </p></div></li><li class="listitem "><p>
+     For the osconfig phase, you will need to specify the
+     <code class="literal">fcoe-interfaces</code> as a peer of
+     <code class="literal">network-interfaces</code> in the
+     <code class="literal">net_interfaces.yml</code> file:
+    </p><div class="verbatim-wrap"><pre class="screen">    - name: CONTROLLER-INTERFACES
+      fcoe-interfaces:
+        - name: fcoe
+          devices:
+             - <span class="bold"><strong>eth2</strong></span>
+             - <span class="bold"><strong>eth3</strong></span>
+      network-interfaces:
+        - name: eth0
+          device:
+              name: eth0
+          network-groups:
+            - EXTERNAL-API
+            - EXTERNAL-VM
+            - GUEST
+            - MANAGEMENT</pre></div><div id="id-1.4.4.7.4.6.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      The MAC addresses specified in the <code class="literal">fcoe-interfaces</code>
+      stanza in <code class="filename">servers.yml</code> must correspond to the
+      symbolic names used in the <code class="literal">fcoe-interfaces</code> stanza in
+      <code class="filename">net_interfaces.yml</code>.
+     </p><p>
+      Also, to satisfy the FCoE restriction outlined in
+      <a class="xref" href="multipath-boot-from-san.html#restriction2" title="6.3. QLogic FCoE restrictions and additional configurations">Section 6.3, “QLogic FCoE restrictions and additional configurations”</a> above, there can be no overlap between the
+      devices in <code class="literal">fcoe-interfaces</code> and those in
+      <code class="literal">network-interfaces</code> in the
+      <code class="filename">net_interfaces.yml</code> file. In the example,
+      <code class="literal">eth2</code> and <code class="literal">eth3</code> are
+      <code class="literal">fcoe-interfaces</code> while <code class="literal">eth0</code> is in
+      <code class="literal">network-interfaces</code>.
+     </p></div></li><li class="listitem "><p>
+     As part of the initial install from an iso, additional parameters need to
+     be supplied on the kernel command line:
+    </p><div class="verbatim-wrap"><pre class="screen">multipath=true partman-fcoe/interfaces=&lt;mac address1&gt;,&lt;mac address2&gt; disk-detect/fcoe/enable=true --- quiet</pre></div></li></ul></div><p>
+   Since NIC mapping is not used to guarantee order of the networks across the
+   system the installer will remap the network interfaces in a deterministic
+   fashion as part of the install. As part of the installer dialogue, if DHCP
+   is not configured for the interface, it is necessary to confirm that the
+   appropriate interface is assigned the ip address. The network interfaces may
+   not be at the names expected when installing via an ISO. When you are asked
+   to apply an IP address to an interface, press <span class="keycap">Alt</span><span class="key-connector">–</span><span class="keycap">F2</span> and in the console
+   window, run the command <code class="command">ip a</code> to examine the interfaces
+   and their associated MAC addresses. Make a note of the interface name with
+   the expected MAC address and use this in the subsequent dialog. Press
+   <span class="keycap">Alt</span><span class="key-connector">–</span><span class="keycap">F1</span> to
+   return to the installation screen. You should note that the names of the
+   interfaces may have changed after the installation completes. These names
+   are used consistently in any subsequent operations.
+  </p><p>
+   Therefore, even if FCoE is not used for boot from SAN (for example for
+   cinder), then it is recommended that <code class="literal">fcoe-interfaces</code> be
+   specified as part of install (without the multipath or disk detect options).
+   Alternatively, you need to run
+   <code class="filename">osconfig-fcoe-reorder.yml</code> before
+   <code class="filename">site.yml</code> or <code class="filename">osconfig-run.yml</code> is
+   invoked to reorder the networks in a similar manner to the installer. In
+   this case, the nodes will need to be manually rebooted for the network
+   reorder to take effect. Run <code class="filename">osconfig-fcoe-reorder.yml</code>
+   in the following scenarios:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     If you have used a third-party installer to provision your bare-metal
+     nodes
+    </p></li><li class="listitem "><p>
+     If you are booting from a local disk (that is one that is not presented
+     from the SAN) but you want to use FCoE later, for example, for cinder.
+    </p></li></ul></div><p>
+   To run the command:
+  </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts osconfig-fcoe-reorder.yml</pre></div><p>
+   If you do not run <code class="filename">osconfig-fcoe-reorder.yml</code>, you will
+   encounter a failure in <code class="filename">osconfig-run.yml</code>.
+  </p><p>
+   If you are booting from a local disk, the LUNs that will be imported over
+   FCoE will not be visible before <code class="filename">site.yml</code> or
+   <code class="filename">osconfig-run.yml</code> has been run. However, if you need to
+   import the LUNs before this, for instance, in scenarios where you need to
+   run <code class="filename">wipe_disks.yml</code> (run this only after first running
+   <code class="filename">bm-reimage.yml</code>), then you can run the
+   <code class="literal">fcoe-enable</code> playbook across the nodes in question. This
+   will configure FCoE and import the LUNs presented to the nodes.
+  </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/verb_hosts fcoe-enable.yml</pre></div></div><div class="sect1" id="install-boot-from-san"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> ISO for Nodes That Support Boot From SAN</span> <a title="Permalink" class="permalink" href="multipath-boot-from-san.html#install-boot-from-san">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-multipath_boot_from_san.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-multipath_boot_from_san.xml</li><li><span class="ds-label">ID: </span>install-boot-from-san</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     During manual installation of SUSE Linux Enterprise Server 12 SP3, select the desired SAN disk and
+     create an LVM partitioning scheme that meets <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> requirements,
+     that is it has an <code class="literal">ardana-vg</code> volume group and an
+     <code class="literal">ardana-vg-root</code> logical volume. For further information
+     on partitioning, see
+     <a class="xref" href="cha-depl-dep-inst.html#sec-depl-adm-inst-partitioning" title="3.3. Partitioning">Section 3.3, “Partitioning”</a>.
+    </p></li><li class="step "><p>
+     After the installation is completed and the system is booted up, open the
+     file <code class="filename">/etc/multipath.conf</code> and edit the defaults as
+     follows:
+    </p><div class="verbatim-wrap"><pre class="screen">defaults {
+    user_friendly_names yes
+    bindings_file "/etc/multipath/bindings"
+}</pre></div></li><li class="step "><p>
+     Open the <code class="filename">/etc/multipath/bindings</code> file and map the
+     expected device name to the SAN disk selected during installation. In
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, the naming convention is <code class="literal">mpatha</code>,
+     <code class="literal">mpathb</code>, and so on. For example:
+    </p><div class="verbatim-wrap"><pre class="screen">mpatha-part1    360000000030349030-part1
+mpatha-part2    360000000030349030-part2
+mpatha-part3    360000000030349030-part3
+
+mpathb-part1    360000000030349000-part1
+mpathb-part2    360000000030349000-part2</pre></div></li><li class="step "><p>
+     Reboot the machine to enable the changes.
+    </p></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cloudinstallation.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part II </span>Cloud Installation</span></a><a class="nav-link" href="cha-depl-repo-conf-lcm.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 5 </span>Software Repository Setup</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

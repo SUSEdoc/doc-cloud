@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing manila and Creating manila Shares | Deployment Guide using Cloud Lifecycle Manager | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 32. Installing manila and Creating manila Shares" /><meta name="description" content="The OpenStack Shared File Systems service (manila) provides file storage to a virtual machine. The Shared File Systems service provides a storage provisioning control plane for shared or distributed file systems. The service enables management of share types and share snapshots if you have a driver …" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part IV. Cloud Installation" /><link rel="prev" href="install-sles-compute.html" title="Chapter 31. Installing SLES Compute" /><link rel="next" href="install-heat-templates.html" title="Chapter 33. Installing SUSE CaaS Platform heat Templates" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-ardana-manila.html">Installing manila and Creating manila Shares</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li><li class="inactive"><a href="preinstall.html"><span class="number">III </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">13 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">14 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">15 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">16 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">17 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">18 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">IV </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">19 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">20 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">21 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">22 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">23 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">24 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">25 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">26 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">27 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">28 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">29 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">30 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">31 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">32 </span><span class="name">Installing manila and Creating manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">33 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">34 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">35 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">36 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">37 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">V </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="cloud-verification.html"><span class="number">38 </span><span class="name">Post Installation Tasks</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">39 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">40 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">41 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">42 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">43 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">44 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">VI </span><span class="name">Support</span></a><ol><li class="inactive"><a href="sec-depl-trouble-faq.html"><span class="number">45 </span><span class="name">FAQ</span></a></li><li class="inactive"><a href="sec-installation-trouble-support.html"><span class="number">46 </span><span class="name">Support</span></a></li><li class="inactive"><a href="inst-support-ptf.html"><span class="number">47 </span><span class="name">
+    Applying PTFs (Program Temporary Fixes) Provided by SUSE L3 Support
+   </span></a></li><li class="inactive"><a href="inst-support-ptf-test.html"><span class="number">48 </span><span class="name">
+    Testing PTFs (Program Temporary Fixes) on a Single Node
+   </span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 31. Installing SLES Compute" href="install-sles-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 33. Installing SUSE CaaS Platform heat Templates" href="install-heat-templates.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-ardana-manila.html">Installing manila and Creating manila Shares</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 31. Installing SLES Compute" href="install-sles-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 33. Installing SUSE CaaS Platform heat Templates" href="install-heat-templates.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="install-ardana-manila"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">32 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing manila and Creating manila Shares</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span>install-ardana-manila</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="install-ardana-manila.html#id-1.3.6.15.2"><span class="number">32.1 </span><span class="name">Installing manila</span></a></span></dt><dt><span class="section"><a href="install-ardana-manila.html#id-1.3.6.15.3"><span class="number">32.2 </span><span class="name">Adding manila to an Existing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Environment</span></a></span></dt><dt><span class="section"><a href="install-ardana-manila.html#configure-manila-backend"><span class="number">32.3 </span><span class="name">Configure manila Backend</span></a></span></dt><dt><span class="section"><a href="install-ardana-manila.html#id-1.3.6.15.5"><span class="number">32.4 </span><span class="name">Creating manila Shares</span></a></span></dt><dt><span class="section"><a href="install-ardana-manila.html#id-1.3.6.15.6"><span class="number">32.5 </span><span class="name">Troubleshooting</span></a></span></dt></dl></div></div><div class="sect1" id="id-1.3.6.15.2"><div class="titlepage"><div><div><h2 class="title"><span class="number">32.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing manila</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The <span class="productname">OpenStack</span> Shared File Systems service (manila) provides file storage
+   to a virtual machine. The Shared File Systems service provides a storage
+   provisioning control plane for shared or distributed file systems. The
+   service enables management of share types and share snapshots if you have a
+   driver that supports them.
+  </p><p>
+   The manila service consists of the following components:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     manila-api
+    </p></li><li class="listitem "><p>
+     manila-data
+    </p></li><li class="listitem "><p>
+     manila-scheduler
+    </p></li><li class="listitem "><p>
+     manila-share
+    </p></li><li class="listitem "><p>
+     messaging queue
+    </p></li></ul></div><p>
+   These manila components are included in example <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> models
+   based on nova KVM, such as <code class="literal">entry-scale-kvm</code>,
+   <code class="literal">entry-scale-kvm-mml</code>, and
+   <code class="literal">mid-scale-kvm</code>. General installation instructions are
+   available at <a class="xref" href="install-kvm.html" title="Chapter 24. Installing Mid-scale and Entry-scale KVM">Chapter 24, <em>Installing Mid-scale and Entry-scale KVM</em></a>.
+  </p><p>
+   If you modify one of these cloud models to set up a dedicated Cloud Lifecycle Manager, add
+   <code class="literal">manila-client</code> item to the list of service components for
+   the Cloud Lifecycle Manager cluster.
+  </p><p>
+   The following steps install manila if it is not already present in your
+   cloud data model:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Apply manila changes in <code class="filename">control_plane.yml</code>.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd /var/lib/ardana/openstack/my_cloud/definition/data/</pre></div><p>
+     Add <code class="literal">manila-client</code> to the list of service components for
+     Cloud Lifecycle Manager, and <code class="literal">manila-api</code> to the Control Node.
+    </p></li><li class="step "><p>
+     Run the Configuration Processor.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "manila config"
+<code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible/
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Deploy manila
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts percona-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-deploy.yml</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-gen-hosts-file.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts clients-deploy.yml</pre></div><p>
+     If manila has already been installed and is being reconfigured, run
+     the following for the changes to take effect:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-stop.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-start.yml</pre></div></li><li class="step "><p>
+     Verify the manila installation
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd
+<code class="prompt user">ardana &gt; </code>. manila.osrc
+<code class="prompt user">ardana &gt; </code>. service.osrc
+<code class="prompt user">ardana &gt; </code>manila api-version
+<code class="prompt user">ardana &gt; </code>manila service-list</pre></div><p>
+     The manila CLI can be run from Cloud Lifecycle Manager or controller nodes.
+    </p></li></ol></div></div><div id="id-1.3.6.15.2.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The <code class="literal">manila-share</code> service component is not started by the
+    <code class="filename">manila-deploy.yml</code> playbook when run under default
+    conditions. This component requires that a valid backend be configured,
+    which is described in <a class="xref" href="install-ardana-manila.html#configure-manila-backend" title="32.3. Configure manila Backend">Section 32.3, “Configure manila Backend”</a>.
+   </p></div></div><div class="sect1" id="id-1.3.6.15.3"><div class="titlepage"><div><div><h2 class="title"><span class="number">32.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding manila to an Existing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Environment</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Add manila to an existing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 installation or as part of an
+   upgrade with the following steps:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Add the items listed below to the list of service components in
+     <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>.
+     Add them to clusters that have <code class="literal">server-role</code> set to
+     <code class="literal">CONTROLLER-ROLE</code> (applies to entry-scale models).
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       manila-client
+      </p></li><li class="listitem "><p>
+       manila-api
+      </p></li></ul></div></li><li class="step "><p>
+     If your environment uses a dedicated Cloud Lifecycle Manager, add
+     <code class="literal">magnum-client</code> to the list of service components for the
+     Cloud Lifecycle Manager in
+     <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>.
+    </p></li><li class="step "><p>
+     Commit your configuration to the local git repo.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+     Run the configuration processor.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Update deployment directory.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Deploy manila.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts percona-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-gen-hosts-file.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts clients-deploy.yml</pre></div></li><li class="step "><p>
+     Verify the manila installation.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd
+<code class="prompt user">ardana &gt; </code>. manila.osrc
+<code class="prompt user">ardana &gt; </code>. service.osrc
+<code class="prompt user">ardana &gt; </code>manila api-version
+<code class="prompt user">ardana &gt; </code>manila service-list</pre></div></li></ol></div></div><p>
+   The manila CLI can be run from the Cloud Lifecycle Manager or controller nodes.
+  </p><p>
+   Proceed to <a class="xref" href="install-ardana-manila.html#configure-manila-backend" title="32.3. Configure manila Backend">Section 32.3, “Configure manila Backend”</a>.
+  </p></div><div class="sect1" id="configure-manila-backend"><div class="titlepage"><div><div><h2 class="title"><span class="number">32.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure manila Backend</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#configure-manila-backend">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span>configure-manila-backend</li></ul></div></div></div></div><div class="sect2" id="id-1.3.6.15.4.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">32.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure NetaApp manila Back-end</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.4.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.3.6.15.4.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     An account with cluster administrator privileges must be used with the
+     <code class="literal">netapp_login</code> option when using Share Server management.
+     Share Server management creates Storage Virtual Machines (SVM), thus SVM
+     administrator privileges are insufficient.
+    </p><p>
+     There are two modes for the NetApp manila back-end:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <code class="literal">driver_handles_share_servers = True</code>
+      </p></li><li class="listitem "><p>
+       <code class="literal">driver_handles_share_servers = False</code> This value must
+       be set to <code class="literal">False</code> if you want the driver to operate
+       without managing share servers.
+      </p></li></ul></div><p>
+     More information is available from
+     <a class="link" href="https://netapp-openstack-dev.github.io/openstack-docs/rocky/manila/configuration/manila_config_files/section_unified-driver-without-share-server.html" target="_blank">NetApp
+     OpenStack</a>
+    </p></div><p>
+    The steps to configure a NetApp manila back-end are:
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Configure a back-end in the manila configuration file, following the
+      directions and comments in the file.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/my_cloud
+<code class="prompt user">ardana &gt; </code>vi config/manila/manila.conf.j2</pre></div></li><li class="step "><p>
+      Commit your configuration to the local Git repo.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+      Run the configuration processor.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+      Update deployment directory.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+      Run reconfiguration playbook.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-reconfigure.yml</pre></div></li><li class="step "><p>
+      Restart manila services.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-stop.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-start.yml</pre></div></li></ol></div></div><div id="id-1.3.6.15.4.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     After the <code class="literal">manila-share</code> service has been initialized
+     with a backend, it can be controlled independently of
+     <code class="literal">manila-api</code> by using the playbooks
+     <code class="filename">manila-share-start.yml</code>,
+     <code class="filename">manila-share-stop.yml</code>, and
+     <code class="filename">manila-share-status.yml</code>.
+    </p></div></div><div class="sect2" id="id-1.3.6.15.4.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">32.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure CephFS manila Backend</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.4.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    Configure a back-end in the manila configuration file,
+    <code class="filename">~/openstack/my_cloud vi config/manila/manila.conf.j2</code>.
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      To define a CephFS native back-end, create a section like the following:
+     </p><div class="verbatim-wrap"><pre class="screen">[cephfsnative1]
+driver_handles_share_servers = False
+share_backend_name = CEPHFSNATIVE1
+share_driver = manila.share.drivers.cephfs.driver.CephFSDriver
+cephfs_conf_path = /etc/ceph/ceph.conf
+cephfs_protocol_helper_type = CEPHFS
+cephfs_auth_id = manila
+cephfs_cluster_name = ceph
+cephfs_enable_snapshots = False</pre></div></li><li class="step "><p>
+      Add CephFS to <code class="literal">enabled_share_protocols</code>:
+     </p><div class="verbatim-wrap"><pre class="screen">enabled_share_protocols = NFS,CIFS,CEPHFS</pre></div></li><li class="step "><p>
+      Edit the <code class="literal">enabled_share_backends</code> option in the
+      <code class="literal">DEFAULT</code> section to point to the driver’s back-end
+      section name.
+     </p></li><li class="step "><p>
+      According to the environment, modify back-end specific lines in
+      <code class="filename">~/openstack/my_cloud vi
+      config/manila/manila.conf.j2</code>.
+     </p></li><li class="step "><p>
+      Commit your configuration to the local Git repo.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+      Run the configuration processor.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+      Update deployment directory.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+      Run reconfiguration playbook.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-reconfigure.yml</pre></div></li><li class="step "><p>
+      Restart manila services.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-stop.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts manila-start.yml</pre></div></li></ol></div></div><div id="id-1.3.6.15.4.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     After the <code class="literal">manila-share</code> service has been initialized
+     with a back-end, it can be controlled independently of
+     <code class="literal">manila-api</code> by using the playbooks
+     <code class="filename">manila-share-start.yml</code>,
+     <code class="filename">manila-share-stop.yml</code>, and
+     <code class="filename">manila-share-status.yml</code>.
+    </p></div><p>
+    For more details of the CephFS manila back-end, see
+    <a class="link" href="https://docs.openstack.org/manila/rocky/admin/cephfs_driver.html" target="_blank">OpenStack
+    CephFS driver</a>.
+   </p></div></div><div class="sect1" id="id-1.3.6.15.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">32.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating manila Shares</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   manila can support two modes, with and without the handling of share
+   servers. The mode depends on driver support.
+  </p><p>
+   Mode 1: The back-end is a generic driver,
+   <code class="literal">driver_handles_share_servers = False</code> (DHSS is disabled).
+   The following example creates a VM using manila share image.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>wget http://tarballs.openstack.org/manila-image-elements/images/manila-service-image-master.qcow2
+<code class="prompt user">ardana &gt; </code>. service.osrc;openstack image create --name
+"manila-service-image-new" \
+--file manila-service-image-master.qcow2 --disk-format qcow2 \
+--container-format bare --visibility public --progress
+<code class="prompt user">ardana &gt; </code>openstack image list (verify manila image)
+<code class="prompt user">ardana &gt; </code>openstack security group create manila-security-group \
+--description "Allows web and NFS traffic to manila server."
+<code class="prompt user">ardana &gt; </code>openstack security group rule create manila-security-group \
+--protocol tcp --dst-port 2049
+<code class="prompt user">ardana &gt; </code>openstack security group rule create manila-security-group \
+--protocol udp --dst-port 2049
+<code class="prompt user">ardana &gt; </code>openstack security group rule create manila-security-group \
+--protocol tcp --dst-port 22
+<code class="prompt user">ardana &gt; </code>openstack security group rule create manila-security-group \
+--protocol icmp
+<code class="prompt user">ardana &gt; </code>openstack security group rule list manila-security-group (verify manila security group)
+<code class="prompt user">ardana &gt; </code>openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey
+<code class="prompt user">ardana &gt; </code>openstack network create n1
+<code class="prompt user">ardana &gt; </code>openstack subnet create s1 --network n1 <em class="replaceable ">--subnet-range 11.11.11.0/24</em>
+<code class="prompt user">ardana &gt; </code>openstack router create r1
+<code class="prompt user">ardana &gt; </code>openstack router add subnet r1 s1
+<code class="prompt user">ardana &gt; </code>openstack router set r1 ext-net
+<code class="prompt user">ardana &gt; </code>openstack network list
+<code class="prompt user">ardana &gt; </code>openstack server create manila-vm --flavor m1.small \
+--image IMAGE_ID --nic net-id=N1_ID --security-group manila-security-group \
+--key-name myKey
+<code class="prompt user">ardana &gt; </code>oenstack floating ip create <em class="replaceable ">EXT-NET_ID</em>
+<code class="prompt user">ardana &gt; </code>openstack server add floating ip manila-vm <em class="replaceable ">EXT-NET_ID</em></pre></div></li><li class="step "><p>
+     Validate your ability to ping or connect by SSH to
+     <code class="literal">manila-vm</code> with credentials
+     <code class="literal">manila/manila</code>.
+    </p></li><li class="step "><p>
+     Modify the configuration:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>vi
+    /etc/manila/manila.conf.d/100-manila.conf</pre></div><p>
+     Make changes in [generic1] section
+    </p><div class="verbatim-wrap"><pre class="screen">service_instance_name_or_id = <em class="replaceable ">MANILA_VM_ID</em>
+service_net_name_or_ip = <em class="replaceable ">MANILA_VM_FLOATING_IP</em>
+tenant_net_name_or_ip = <em class="replaceable ">MANILA_VM_FLOATING_IP</em></pre></div></li><li class="step "><p>
+     Create a share type. OpenStack docs has
+     <a class="link" href="https://docs.openstack.org/manila/rocky/install/post-install.html" target="_blank">detailed
+     instructions</a>. Use the instructions for <code class="literal">manila type-create
+     default_share_type False</code>
+    </p></li><li class="step "><p>
+     Restart manila services and verify they are up.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>systemctl restart openstack-manila-api \
+openstack-manila-share openstack-manila-scheduler
+<code class="prompt user">ardana &gt; </code>manila service-list</pre></div></li><li class="step "><p>
+     Continue creating a share
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>manila create NFS 1 --name <em class="replaceable ">SHARE</em>
+<code class="prompt user">ardana &gt; </code>manila list (status will change from  creating to available)
+<code class="prompt user">ardana &gt; </code>manila show share1
+<code class="prompt user">ardana &gt; </code>manila access-allow <em class="replaceable ">SHARE</em> ip <em class="replaceable ">INSTANCE_IP</em></pre></div></li><li class="step "><p>
+     Mount the share on a Compute instance
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>mkdir ~/test_directory
+<code class="prompt user">tux &gt; </code>sudo mount -vt nfs <em class="replaceable ">EXT-NET_ID</em>:/shares/<em class="replaceable ">SHARE-SHARE-ID</em> ~/test_folder</pre></div></li></ol></div></div><p>
+   Mode 2: The back-end is <code class="literal">NetApp</code>,
+   <code class="literal">driver_handles_share_servers = True</code> (DHSS is enabled).
+   Procedure for driver_handles_share_servers = False is similar to Mode 1.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Modify the configuration
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>vi /etc/manila/manila.conf.d/100-manila.conf</pre></div><p>
+     Add a <code class="literal">backendNetApp</code> section
+    </p><div class="verbatim-wrap"><pre class="screen">share_driver = manila.share.drivers.netapp.common.NetAppDriver
+driver_handles_share_servers = True
+share_backend_name=backendNetApp
+netapp_login=<em class="replaceable ">NetApp_USERNAME</em>
+netapp_password=<em class="replaceable ">NetApp_PASSWORD</em>
+netapp_server_hostname=<em class="replaceable ">NETAPP_HOSTNAME</em>
+netapp_root_volume_aggregate=<em class="replaceable ">AGGREGATE_NAME</em></pre></div><p>
+     Add to [DEFAULT] section
+    </p><div class="verbatim-wrap"><pre class="screen">enabled_share_backends = backendNetApp
+default_share_type = default1</pre></div></li><li class="step "><p>
+     Create a manila share image and verify it
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>wget http://tarballs.openstack.org/manila-image-elements/images/manila-service-image-master.qcow2
+<code class="prompt user">ardana &gt; </code>. service.osrc;openstack image create <code class="literal">manila-service-image-new</code> \
+--file manila-service-image-master.qcow2 --disk-format qcow2 \
+--container-format bare --visibility public --progress
+<code class="prompt user">ardana &gt; </code>openstack image list (verify a manila image)</pre></div></li><li class="step "><p>
+     Create a share type. OpenStack docs has
+     <a class="link" href="https://docs.openstack.org/manila/rocky/install/post-install.html" target="_blank">detailed
+     instructions</a>. Use the instructions for <code class="literal">manila type-create
+     default_share_type True</code> .
+    </p></li><li class="step "><p>
+     Restart services
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>systemctl restart openstack-manila-api openstack-manila-share \openstack-manila-scheduler
+<code class="prompt user">ardana &gt; </code>manila service-list (verify services are up)</pre></div></li><li class="step "><p>
+     Continue creating a share. <code class="literal">OCTAVIA-MGMT-NET</code> can be used
+     as <em class="replaceable ">PRIVATE_NETWORK</em> in this example.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>manila share-network-create --name demo-share-network1 \
+--neutron-net-id PRIVATE_NETWORK_ID --neutron-subnet-id PRIVATE_NETWORK_SUBNET_ID
+<code class="prompt user">ardana &gt; </code>manila create NFS 1 --name share2 --share-network demo-share-network1</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.6.15.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">32.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting</span> <a title="Permalink" class="permalink" href="install-ardana-manila.html#id-1.3.6.15.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-ardana-manila.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-ardana-manila.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   If manila-list shows share status in error, use <code class="literal">storage aggregate
+   show</code> to list available aggregates. Errors may be found in
+   <code class="filename">/var/log/manila/manila-share.log</code>
+  </p><p>
+   if the compute nodes do not have access to manila back-end server, use
+   the <code class="literal">manila-share</code> service on controller nodes instead. You
+   can do so by either running <code class="literal">sudo systemctl stop
+   openstack-manila-share</code> on compute to turn off its share service or
+   skipping adding "manila-share" to compute hosts in the input-model
+   (<code class="filename">control_plane.yml</code> in
+   <code class="filename">/var/lib/ardana/openstack/my_cloud/definition/data</code>).
+  </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-heat-templates.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 33 </span>Installing SUSE CaaS Platform heat Templates</span></a><a class="nav-link" href="install-sles-compute.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 31 </span>Installing SLES Compute</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

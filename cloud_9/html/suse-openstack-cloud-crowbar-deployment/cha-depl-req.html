@@ -1,0 +1,1430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Considerations and Requirements | Deployment Guide using Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Crowbar" /><meta name="chapter-title" content="Chapter 2. Considerations and Requirements" /><meta name="description" content="Before deploying SUSE OpenStack Cloud Crowbar, there are some requirements to meet and architectural decisions to make. Read this chapter thoroughly first, as some decisions need to be made before deploying SUSE OpenStack Cloud, and they cannot be changed afterward." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="dpopov@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="part-depl-intro.html" title="Part I. Architecture and Requirements" /><link rel="prev" href="cha-depl-arch.html" title="Chapter 1. The SUSE OpenStack Cloud Architecture" /><link rel="next" href="part-depl-admserv.html" title="Part II. Setting Up the Administration Server" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">16 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">17 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-troubleshooting.html"><span class="number">V </span><span class="name">Troubleshooting and Support</span></a><ol><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">18 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">A </span><span class="name">Using Cisco Nexus Switches with neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">B </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-depl-req"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations and Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div><div><div class="abstract"><p>
+    Before deploying <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>, there are some requirements to meet and
+    architectural decisions to make. Read this chapter thoroughly first, as
+    some decisions need to be made <span class="emphasis"><em>before</em></span> deploying
+    SUSE <span class="productname">OpenStack</span> Cloud, and they cannot be changed afterward.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-network"><span class="number">2.1 </span><span class="name">Network</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-storage"><span class="number">2.2 </span><span class="name">Persistent Storage</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-ssl"><span class="number">2.3 </span><span class="name">SSL Encryption</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-hardware"><span class="number">2.4 </span><span class="name">Hardware Requirements</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-software"><span class="number">2.5 </span><span class="name">Software Requirements</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-ha"><span class="number">2.6 </span><span class="name">High Availability</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-summary"><span class="number">2.7 </span><span class="name">Summary: Considerations and Requirements</span></a></span></dt><dt><span class="sect1"><a href="cha-depl-req.html#sec-depl-req-installation"><span class="number">2.8 </span><span class="name">Overview of the SUSE <span class="productname">OpenStack</span> Cloud Installation</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-depl-req-network"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network</li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> requires a complex network setup consisting of several
+   networks that are configured during installation. These networks are for
+   exclusive cloud usage. You need a router to access them from an existing network.
+  </p><p>
+   The network configuration on the nodes in the SUSE <span class="productname">OpenStack</span> Cloud network is
+   entirely controlled by Crowbar. Any network configuration not created with
+   Crowbar (for example, with YaST) will automatically be
+   overwritten. After the cloud is deployed, network settings cannot be
+   changed.
+  </p><div class="figure" id="id-1.4.3.3.2.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/cloud_network_overview.png" target="_blank"><img src="images/cloud_network_overview.png" width="" alt="SUSE OpenStack Cloud Network: Overview" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 2.1: </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Network: Overview </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.4">#</a></h6></div></div><p>
+   The following networks are pre-defined when setting up <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
+   The IP addresses listed are the default addresses and can be changed
+   using the YaST Crowbar module (see
+   <a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>). It is also possible to
+   customize the network setup by manually editing
+   the network barclamp template. See
+   <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a> for detailed instructions.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="vle-netw-adm"><span class="term ">
+     Admin Network (192.168.124/24)
+    </span></dt><dd><p>
+      A private network to access the Administration Server and all nodes for
+      administration purposes. The default setup also allows access to the
+      BMC (Baseboard Management Controller) data via IPMI (Intelligent
+      Platform Management Interface) from this network. If required, BMC
+      access can be swapped to a separate network.
+     </p><p>
+      You have the following options for controlling access to this network:
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        Do not allow access from the outside and keep the admin network
+        completely separated.
+       </p></li><li class="listitem "><p>
+        Allow access to the Administration Server from a single network (for example,
+        your company's administration network) via the <span class="quote">“<span class="quote ">bastion
+        network</span>”</span> option configured on an additional network card with
+        a fixed IP address.
+       </p></li><li class="listitem "><p>
+        Allow access from one or more networks via a gateway.
+       </p></li></ul></div></dd><dt id="vle-netw-stor"><span class="term ">
+     Storage Network (192.168.125/24)
+    </span></dt><dd><p>
+      Private SUSE <span class="productname">OpenStack</span> Cloud internal virtual network. This network is used by
+      Ceph and swift only. It should not be accessed by
+      users.
+     </p></dd><dt id="id-1.4.3.3.2.6.3"><span class="term ">
+     Private Network (nova-fixed, 192.168.123/24)
+    </span></dt><dd><p>
+      Private SUSE <span class="productname">OpenStack</span> Cloud internal virtual network. This network is used for
+      inter-instance communication and provides access to the outside
+      world for the instances. The required gateway is automatically provided by SUSE <span class="productname">OpenStack</span> Cloud.
+     </p></dd><dt id="id-1.4.3.3.2.6.4"><span class="term ">
+     Public Network (nova-floating, public, 192.168.126/24)
+    </span></dt><dd><p>
+      The only public network provided by SUSE <span class="productname">OpenStack</span> Cloud. You can access the
+      nova Dashboard and all instances (provided they have been equipped
+      with floating IP addresses) on this network. This network can only be accessed
+      via a gateway, which must be provided externally. All SUSE <span class="productname">OpenStack</span> Cloud
+      users and administrators must have access to the public network.
+     </p></dd><dt id="vle-netw-sdn"><span class="term ">
+     Software Defined Network (os_sdn, 192.168.130/24)
+    </span></dt><dd><p>
+      Private SUSE <span class="productname">OpenStack</span> Cloud internal virtual network. This network is used
+      when neutron is configured to use openvswitch with
+      <code class="literal">GRE</code> tunneling for the virtual networks. It should
+      not be accessible to users.
+     </p></dd><dt id="id-1.4.3.3.2.6.6"><span class="term ">The monasca Monitoring Network</span></dt><dd><p>
+      The monasca monitoring node needs to have an interface on both the
+      admin network and the public network. monasca's backend services will
+      listen on the admin network, the API services
+      (<code class="systemitem">openstack-monasca-api</code>,
+      <code class="systemitem">openstack-monasca-log-api</code>) will listen on all
+      interfaces. <code class="systemitem">openstack-monasca-agent</code> and
+      <code class="systemitem">openstack-monasca-log-agent</code> will send their logs
+      and metrics to the
+      <code class="systemitem">monasca-api</code>/<code class="systemitem">monasca-log-api</code>
+      services to the monitoring node's public network IP address.
+     </p></dd></dl></div><p>
+   If the Octavia barclamp will be deployed, the Octavia Management Network
+   also needs to be configured.
+   Octavia uses a set of instances running on one or more compute nodes
+   called amphorae and the Octavia services need to communicate with the
+   amphorae over a dedicated management network.
+   This network is not pre-defined when setting up <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. It needs
+   to be explicitly configured as covered under <a class="xref" href="cha-depl-ostack.html#sec-depl-ostack-octavia-mgmtnet" title="12.20.1.1. Management network">Section 12.20.1.1, “Management network”</a>.
+  </p><div id="id-1.4.3.3.2.8" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Protect Networks from External Access</h6><p>
+    For security reasons, protect the following networks from external
+    access:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <a class="xref" href="cha-depl-req.html#vle-netw-adm">
+     Admin Network (192.168.124/24)
+    </a>
+     </p></li><li class="listitem "><p>
+      <a class="xref" href="cha-depl-req.html#vle-netw-stor">
+     Storage Network (192.168.125/24)
+    </a>
+     </p></li><li class="listitem "><p>
+      <a class="xref" href="cha-depl-req.html#vle-netw-sdn">
+     Software Defined Network (os_sdn, 192.168.130/24)
+    </a>
+     </p></li></ul></div><p>
+    Especially traffic from the cloud instances must not be able to pass
+    through these networks.
+   </p></div><div id="id-1.4.3.3.2.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: VLAN Settings</h6><p>
+    As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, using a VLAN for the admin network is
+    only supported on a native/untagged VLAN. If you need VLAN support for the
+    admin network, it must be handled at switch level.
+   </p><p>
+    When changing the network configuration with YaST or by editing
+    <code class="filename">/etc/crowbar/network.json</code> you can define VLAN
+    settings for each network. For the networks <code class="literal">nova-fixed</code>
+    and <code class="literal">nova-floating</code>, however, special rules apply:
+   </p><p>
+    <span class="bold"><strong>nova-fixed</strong></span>: The <span class="guimenu ">USE
+    VLAN</span> setting will be ignored. However, VLANs will automatically
+    be used if deploying neutron with VLAN support (using the plugins
+    linuxbridge, openvswitch plus VLAN, or cisco plus VLAN). In this case, you
+    need to specify a correct <span class="guimenu ">VLAN ID</span> for this network.
+   </p><p>
+    <span class="bold"><strong>nova-floating</strong></span>: When using a VLAN for
+    <code class="literal">nova-floating</code> (which is the default), the <span class="guimenu ">USE
+    VLAN</span> and <span class="guimenu ">VLAN ID</span> settings for
+    <span class="guimenu ">nova-floating</span> and <span class="guimenu ">public</span> must be
+    the same. When not using a VLAN for <code class="literal">nova-floating</code>, it
+    must have a different physical network interface than the
+    <code class="literal">nova_fixed</code> network.
+   </p></div><div id="id-1.4.3.3.2.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: No IPv6 Support</h6><p>
+    As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, IPv6 is not supported. This applies to the cloud
+    internal networks and to the instances. You must use static IPv4 addresses
+    for all network interfaces on the Admin Node, and disable IPv6 before
+    deploying Crowbar on the Admin Node.
+   </p></div><p>
+   The following diagram shows the pre-defined SUSE <span class="productname">OpenStack</span> Cloud network in more
+   detail. It demonstrates how the <span class="productname">OpenStack</span> nodes and services use the
+   different networks.
+  </p><div class="figure" id="id-1.4.3.3.2.12"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/cloud_network_detail.png" target="_blank"><img src="images/cloud_network_detail.png" width="" alt="SUSE OpenStack Cloud Network: Details" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 2.2: </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Network: Details </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.12">#</a></h6></div></div><div class="sect2 " id="sec-depl-req-network-allocation"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Address Allocation</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-allocation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-allocation</li></ul></div></div></div></div><p>
+    The default networks set up in SUSE <span class="productname">OpenStack</span> Cloud are class C networks with 256
+    IP addresses each. This limits the maximum number of instances that
+    can be started simultaneously. Addresses within the networks are
+    allocated as outlined in the following table. Use the YaST
+    Crowbar module to make customizations (see
+    <a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>). The last address in the IP address
+    range of each network is always reserved as the broadcast address. This
+    assignment cannot be changed.
+   </p><p>For an overview of the minimum number of IP addresses needed for each
+    of the ranges in the network settings, see <a class="xref" href="cha-depl-req.html#tab-netw-range-ip-min" title="Minimum Number of IP Addresses for Network Ranges">Table 2.1, “Minimum Number of IP Addresses for Network Ranges”</a>.
+   </p><div class="table" id="tab-netw-range-ip-min"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.1: </span><span class="name">Minimum Number of IP Addresses for Network Ranges </span><a title="Permalink" class="permalink" href="cha-depl-req.html#tab-netw-range-ip-min">#</a></h6></div><div class="table-contents"><table class="table" summary="Minimum Number of IP Addresses for Network Ranges" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><thead><tr><th>
+        <p>
+         Network
+        </p>
+       </th><th>
+        <p>
+         Required Number of IP addresses
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         Admin Network
+        </p>
+       </td><td>
+        <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>1 IP address per node (Administration Server, Control Nodes, and
+           Compute Nodes)</p></li><li class="listitem "><p>1 VIP address for PostgreSQL</p></li><li class="listitem "><p>1 VIP address for RabbitMQ</p></li><li class="listitem "><p>1 VIP address per cluster (per Pacemaker barclamp proposal)</p></li></ul></div>
+       </td></tr><tr><td>
+        <p>
+         Public Network
+        </p>
+       </td><td>
+        <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>1 IP address per node (Control Nodes and Compute Nodes)</p></li><li class="listitem "><p>1 VIP address per cluster</p></li></ul></div>
+       </td></tr><tr><td>
+        <p>
+         BMC Network
+        </p>
+       </td><td>
+        <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>1 IP address per node (Administration Server, Control Nodes, and
+           Compute Nodes)</p></li></ul></div>
+       </td></tr><tr><td>
+        <p>
+         Software Defined Network
+        </p>
+       </td><td>
+        <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>1 IP address per node (Control Nodes and
+           Compute Nodes)</p></li></ul></div>
+       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Limitations of the Default Network Proposal</h6><p>
+     The default network proposal as described below limits the maximum
+     number of Compute Nodes to 80, the maximum number of floating IP
+     addresses to 61 and the maximum number of addresses in the nova_fixed
+     network to 204.
+    </p><p>
+     To overcome these limitations you need to reconfigure the network setup
+     by using appropriate address ranges. Do this by either using the
+     YaST Crowbar module as described in
+     <a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>, or by manually editing the
+     network template file as described in
+     <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a>.
+    </p></div><div class="table" id="id-1.4.3.3.2.13.6"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.2: </span><span class="name"><code class="systemitem">192.168.124.0/24</code> (Admin/BMC) Network Address Allocation </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.13.6">#</a></h6></div><div class="table-contents"><table class="table" summary="192.168.124.0/24 (Admin/BMC) Network Address Allocation" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        <p>
+         Function
+        </p>
+       </th><th>
+        <p>
+         Address
+        </p>
+       </th><th>
+        <p>
+         Remark
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         router
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.1</code>
+        </p>
+       </td><td>
+        <p>
+         Provided externally.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         admin
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.10</code> -
+         <code class="systemitem">192.168.124.11</code>
+        </p>
+       </td><td>
+        <p>
+         Fixed addresses reserved for the Administration Server.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         DHCP
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.21</code> -
+         <code class="systemitem">192.168.124.80</code>
+        </p>
+       </td><td>
+        <p>
+         Address range reserved for node allocation/installation. Determines
+         the maximum number of parallel allocations/installations.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.81</code> -
+         <code class="systemitem">192.168.124.160</code>
+        </p>
+       </td><td>
+        <p>
+         Fixed addresses for the <span class="productname">OpenStack</span> nodes. Determines the maximum
+         number of <span class="productname">OpenStack</span> nodes that can be deployed.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         bmc vlan host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.161</code>
+        </p>
+       </td><td>
+        <p>
+         Fixed address for the BMC VLAN. Used to generate a VLAN tagged
+         interface on the Administration Server that can access the BMC
+         network. The BMC VLAN must be in the same ranges as BMC, and
+         BMC must have VLAN enabled.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         bmc host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.162</code> -
+         <code class="systemitem">192.168.124.240</code>
+        </p>
+       </td><td>
+        <p>
+         Fixed addresses for the <span class="productname">OpenStack</span> nodes. Determines the maximum
+         number of <span class="productname">OpenStack</span> nodes that can be deployed.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         switch
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.124.241</code> -
+         <code class="systemitem">192.168.124.250</code>
+        </p>
+       </td><td>
+        <p>
+         This range is not used in current releases and might be removed in
+         the future.
+        </p>
+       </td></tr></tbody></table></div></div><div class="table" id="id-1.4.3.3.2.13.7"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.3: </span><span class="name"><code class="systemitem">192.168.125/24</code> (Storage) Network Address Allocation </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.13.7">#</a></h6></div><div class="table-contents"><table class="table" summary="192.168.125/24 (Storage) Network Address Allocation" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        <p>
+         Function
+        </p>
+       </th><th>
+        <p>
+         Address
+        </p>
+       </th><th>
+        <p>
+         Remark
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.125.10</code> -
+         <code class="systemitem">192.168.125.239</code>
+        </p>
+       </td><td>
+        <p>
+         Each Storage Node will get an address from this range.
+        </p>
+       </td></tr></tbody></table></div></div><div class="table" id="id-1.4.3.3.2.13.8"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.4: </span><span class="name"><code class="systemitem">192.168.123/24</code> (Private Network/nova-fixed) Network Address Allocation </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.13.8">#</a></h6></div><div class="table-contents"><table class="table" summary="192.168.123/24 (Private Network/nova-fixed) Network Address Allocation" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        <p>
+         Function
+        </p>
+       </th><th>
+        <p>
+         Address
+        </p>
+       </th><th>
+        <p>
+         Remark
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         DHCP
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.123.1</code> -
+         <code class="systemitem">192.168.123.254</code>
+        </p>
+       </td><td>
+        <p>
+         Address range for instances, routers and DHCP/DNS agents.
+        </p>
+       </td></tr></tbody></table></div></div><div class="table" id="id-1.4.3.3.2.13.9"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.5: </span><span class="name"><code class="systemitem">192.168.126/24</code> (Public Network nova-floating, public) Network Address Allocation </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.13.9">#</a></h6></div><div class="table-contents"><table class="table" summary="192.168.126/24 (Public Network nova-floating, public) Network Address Allocation" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        <p>
+         Function
+        </p>
+       </th><th>
+        <p>
+         Address
+        </p>
+       </th><th>
+        <p>
+         Remark
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         router
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.126.1</code>
+        </p>
+       </td><td>
+        <p>
+         Provided externally.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         public host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.126.2</code> -
+         <code class="systemitem">192.168.126.127</code>
+        </p>
+       </td><td>
+        <p>
+         Public address range for external SUSE <span class="productname">OpenStack</span> Cloud components such as the
+         <span class="productname">OpenStack</span> Dashboard or the API.
+        </p>
+       </td></tr><tr><td>
+        <p>
+         floating host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.126.129</code> -
+         <code class="systemitem">192.168.126.254</code>
+        </p>
+       </td><td>
+        <p>
+         Floating IP address range. Floating IP addresses can be manually assigned to
+         a running instance to allow to access the guest from the
+         outside. Determines the maximum number of instances that can
+         concurrently be accessed from the outside.
+        </p>
+        <p>
+         The nova_floating network is set up with a netmask of
+         255.255.255.192, allowing a maximum number of 61 IP addresses. This
+         range is pre-allocated by default and managed by neutron.
+        </p>
+       </td></tr></tbody></table></div></div><div class="table" id="id-1.4.3.3.2.13.10"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.6: </span><span class="name"><code class="systemitem">192.168.130/24</code> (Software Defined Network) Network Address Allocation </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.2.13.10">#</a></h6></div><div class="table-contents"><table class="table" summary="192.168.130/24 (Software Defined Network) Network Address Allocation" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        <p>
+         Function
+        </p>
+       </th><th>
+        <p>
+         Address
+        </p>
+       </th><th>
+        <p>
+         Remark
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         host
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.130.10</code> -
+         <code class="systemitem">192.168.130.254</code>
+        </p>
+       </td><td>
+        <p>
+         If neutron is configured with <code class="literal">openvswitch</code>
+         and <code class="literal">gre</code>, each network node and all
+         Compute Nodes will get an IP address from this range.
+        </p>
+       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Addresses for Additional Servers</h6><p>
+     Addresses not used in the ranges mentioned above can be used to add
+     additional servers with static addresses to SUSE <span class="productname">OpenStack</span> Cloud. Such servers
+     can be used to provide additional services. A SUSE Manager server
+     inside SUSE <span class="productname">OpenStack</span> Cloud, for example, must be configured using one of
+     these addresses.
+    </p></div></div><div class="sect2 " id="sec-depl-req-network-modes"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Modes</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-modes">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-modes</li></ul></div></div></div></div><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> supports different network modes defined in Crowbar: <code class="literal">single</code>, <code class="literal">dual</code>, and
+    <code class="literal">team</code>. As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, the networking mode
+    is applied to all nodes and the Administration Server. That means that all
+    machines need to meet the hardware requirements for the chosen mode. The
+    network mode can be configured using the YaST Crowbar module
+    (<a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>). The network mode cannot
+    be changed after the cloud is deployed.
+   </p><p>
+    Other, more flexible network mode setups can be configured by manually
+    editing the Crowbar network configuration files. See <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a> for more information. SUSE or a
+    partner can assist you in creating a custom setup within the scope of a
+    consulting services agreement (see <a class="link" href="http://www.suse.com/consulting/" target="_blank">http://www.suse.com/consulting/</a> for more information on
+    SUSE consulting).
+   </p><div id="id-1.4.3.3.2.14.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Network Device Bonding is Required for HA</h6><p>Network device bonding is required for an HA setup of
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. If you are planning to move your cloud to an
+     HA setup at a later point in time, make sure to use a network
+     mode in the YaST Crowbar that supports network device bonding.</p><p>Otherwise a migration to an HA setup is not supported.</p></div><div class="sect3 " id="sec-depl-req-network-modes-single"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Single Network Mode</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-modes-single">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-modes-single</li></ul></div></div></div></div><p>
+     In single mode you use one Ethernet card for all the traffic:
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/cloud_networking_single_mode.png" target="_blank"><img src="images/cloud_networking_single_mode.png" width="" alt="Single Network Mode" /></a></div></div></div><div class="sect3 " id="sec-depl-req-network-modes-dual"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dual Network Mode</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-modes-dual">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-modes-dual</li></ul></div></div></div></div><p>
+     Dual mode needs two Ethernet cards (on all nodes but Administration Server) to completely separate traffic between the Admin Network and the public network:
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/cloud_networking_dual_mode.png" target="_blank"><img src="images/cloud_networking_dual_mode.png" width="" alt="Dual Network Mode" /></a></div></div></div><div class="sect3 " id="sec-depl-req-network-modes-teaming"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.1.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Team Network Mode</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-modes-teaming">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-modes-teaming</li></ul></div></div></div></div><p>
+     Team mode is similar to single mode, except that you
+     combine several Ethernet cards to a <span class="quote">“<span class="quote ">bond</span>”</span> (network device
+     bonding). Team mode needs two or more Ethernet cards.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/cloud_networking_team_mode.png" target="_blank"><img src="images/cloud_networking_team_mode.png" width="" alt="Team Network Mode" /></a></div></div><p>
+     When using team mode, you must choose a <span class="quote">“<span class="quote ">bonding
+     policy</span>”</span> that defines how to use the combined Ethernet cards. You
+     can either set them up for fault tolerance, performance (load balancing),
+     or a combination of both.
+    </p></div></div><div class="sect2 " id="sec-depl-req-network-bastion"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing the Administration Server via a Bastion Network</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-bastion">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-bastion</li></ul></div></div></div></div><p>
+    Enabling access to the Administration Server from another network requires an external gateway. This option offers
+    maximum flexibility, but requires additional hardware and may be less
+    secure than you require. Therefore SUSE <span class="productname">OpenStack</span> Cloud offers a second option for
+    accessing the Administration Server: the bastion network. You only need a
+    dedicated Ethernet card and a static IP address from the external
+    network to set it up.
+   </p><p>
+    The bastion network setup (see <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-mode-bastion" title="7.3.1. Setting Up a Bastion Network">Section 7.3.1, “Setting Up a Bastion Network”</a> for setup instructions)
+    enables logging in to the Administration Server via SSH from the company network. A
+    direct login to other nodes in the cloud is not possible. However, the
+    Administration Server can act as a <span class="quote">“<span class="quote ">jump host</span>”</span>: First
+    log in to the Administration Server via SSH, then log in via SSH to
+    other nodes.
+   </p></div><div class="sect2 " id="sec-depl-req-network-dns"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">DNS and Host Names</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-dns">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-dns</li></ul></div></div></div></div><p>
+    The Administration Server acts as a name server for all nodes in the cloud. If
+    the Administration Server has access to the outside, then you can add additional
+    name servers that are automatically used to forward requests. If
+    additional name servers are found on your cloud deployment, the name server
+    on the Administration Server is automatically configured to forward requests
+    for non-local records to these servers.
+   </p><p>
+    The Administration Server must have a fully qualified host
+    name. The domain name you specify is used for the DNS zone. It is
+    required to use a sub-domain such as
+    <em class="replaceable ">cloud.example.com</em>. The Administration Server
+    must have authority over the domain it is on so that it can
+    create records for discovered nodes. As a result, it will not forward
+    requests for names it cannot resolve in this domain, and thus cannot
+    resolve names for the second-level domain, .e.g. <em class="replaceable ">example.com</em>, other
+    than for nodes in the cloud.
+   </p><p>
+    This host name must not be changed after SUSE <span class="productname">OpenStack</span> Cloud has been deployed.
+    The <span class="productname">OpenStack</span> nodes are named after their MAC address by default,
+    but you can provide aliases, which are easier to remember when
+    allocating the nodes. The aliases for the <span class="productname">OpenStack</span> nodes can be
+    changed at any time. It is useful to have a list of MAC addresses and
+    the intended use of the corresponding host at hand when deploying the
+    <span class="productname">OpenStack</span> nodes.
+   </p></div></div><div class="sect1 " id="sec-depl-req-storage"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Persistent Storage</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage</li></ul></div></div></div></div><p>
+   When talking about <span class="quote">“<span class="quote ">persistent storage</span>”</span> on <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>,
+   there are two completely different aspects to discuss: 1) the block and
+   object storage services SUSE <span class="productname">OpenStack</span> Cloud offers, 2) the
+   hardware related storage aspects on the different node types.
+  </p><div id="id-1.4.3.3.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Persistent vs. Ephemeral Storage</h6><p>
+    Block and object storage are persistent storage models where files or
+    images are stored until they are explicitly deleted. SUSE <span class="productname">OpenStack</span> Cloud also
+    offers ephemeral storage for images attached to instances. These
+    ephemeral images only exist during the life of an instance and are
+    deleted when the guest is terminated. See
+    <a class="xref" href="cha-depl-req.html#sec-depl-req-storage-hardware-compute" title="2.2.2.3. Compute Nodes">Section 2.2.2.3, “Compute Nodes”</a> for more
+    information.
+   </p></div><div class="sect2 " id="sec-depl-req-storage-services"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Storage Services</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-services">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-services</li></ul></div></div></div></div><p>
+    SUSE <span class="productname">OpenStack</span> Cloud offers two different types of services
+    for persistent storage: object and block storage. Object storage lets
+    you upload and download files (similar to an FTP server), whereas a
+    block storage provides mountable devices (similar to a hard disk
+    partition). SUSE <span class="productname">OpenStack</span> Cloud provides a repository to store the
+    virtual disk images used to start instances.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.3.3.4.3.1"><span class="term ">Object Storage with swift</span></dt><dd><p>
+       The <span class="productname">OpenStack</span> object storage service is called swift. The
+       storage component of swift (swift-storage) must be
+       deployed on dedicated nodes where no other cloud services run. Deploy at
+       least two swift nodes to provide redundant storage. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> is configured to
+       always use all unused disks on a node for storage.
+      </p><p>
+       swift can optionally be used by glance, the service
+       that manages the images used to boot the instances. Offering
+       object storage with swift is optional.
+      </p></dd><dt id="id-1.4.3.3.3.4.3.2"><span class="term ">Block Storage</span></dt><dd><p>
+       Block storage on SUSE <span class="productname">OpenStack</span> Cloud is provided by cinder.
+       cinder can use a variety of storage back-ends, including
+       network storage solutions like NetApp or EMC. It is also possible to
+       use local disks for block storage. A list of drivers available for
+       cinder and the features supported for each driver is
+       available from the <em class="citetitle ">CinderSupportMatrix</em> at
+       <a class="link" href="https://wiki.openstack.org/wiki/CinderSupportMatrix" target="_blank">https://wiki.openstack.org/wiki/CinderSupportMatrix</a>.
+       <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 ships with <span class="productname">OpenStack</span>
+       Rocky.
+      </p><p>
+       Alternatively, cinder can use Ceph RBD as a back-end.  Ceph
+       offers data security and speed by storing the the content on a dedicated
+       Ceph cluster.
+      </p></dd><dt id="id-1.4.3.3.3.4.3.3"><span class="term ">The glance Image Repository</span></dt><dd><p>
+       glance provides a catalog and repository for virtual disk images
+       used to start the instances. glance is installed on a
+       Control Node. It uses swift, Ceph, or a
+       directory on the Control Node to store the images. The image
+       directory can either be a local directory or an NFS share.
+      </p></dd></dl></div></div><div class="sect2 " id="sec-depl-req-storage-hardware"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage Hardware Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-hardware">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-hardware</li></ul></div></div></div></div><p>
+    Each node in SUSE <span class="productname">OpenStack</span> Cloud needs sufficient disk space to store both the operating system and  additional data.
+    Requirements and recommendations for the various node types are listed
+    below.
+   </p><div id="id-1.4.3.3.3.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Choose a Hard Disk for the Operating System Installation</h6><p>
+     The operating system will always be installed on the
+     <span class="emphasis"><em>first</em></span> hard disk. This is the disk that is listed
+     <span class="emphasis"><em>first</em></span> in the BIOS, the one from which the machine
+     will boot. Make sure that the hard disk the operating system is installed on will be recognized as the first disk.
+    </p></div><div class="sect3 " id="sec-depl-req-storage-hardware-admin"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration Server</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-hardware-admin">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-hardware-admin</li></ul></div></div></div></div><p>
+     If you store the update repositories directly on the Administration Server (see
+     <a class="xref" href="cha-depl-req.html#sec-depl-req-repos" title="2.5.2. Product and Update Repositories">Section 2.5.2, “Product and Update Repositories”</a>), we recommend mounting <code class="filename">/srv</code> on a separate partition or volume with a minimum of 30 GB space.
+    </p><p>
+     Log files from all nodes in SUSE <span class="productname">OpenStack</span> Cloud are stored on the Administration Server
+     under <code class="filename">/var/log</code>.
+     The message service RabbitMQ requires 1 GB of free space
+     in <code class="filename">/var</code> (see
+     <span class="intraxref">Book “<em class="citetitle ">Operations Guide Crowbar</em>”, Chapter 5 “Log Management”, Section 5.4 “Log Files”, Section 5.4.1 “On the Administration Server”</span> for a complete list).
+    </p></div><div class="sect3 " id="sec-depl-req-storage-hardware-control"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.2.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Nodes</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-hardware-control">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-hardware-control</li></ul></div></div></div></div><p>
+     Depending on how the services are set up, glance and
+     cinder may require additional disk space on the
+     Control Node on which they are running. glance may be configured
+     to use a local directory, whereas cinder may use a local
+     image file for storage. For performance and scalability reasons this is
+     only recommended for test setups. Make sure there is sufficient free
+     disk space available if you use a local file for storage.
+    </p><p>
+     cinder may be configured to use local disks for storage (configuration option <code class="literal">raw</code>). If you choose this setup, we recommend deploying the <span class="guimenu ">cinder-volume</span> role to one or more dedicated Control Nodes. Those should be equipped with several disks providing sufficient storage space. It may also be necessary to equip this node with two or more bonded network cards, since it will generate heavy network traffic. Bonded network cards require a special setup for this node. For details, refer to <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a>.
+    </p></div><div class="sect3 " id="sec-depl-req-storage-hardware-compute"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.2.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute Nodes</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-hardware-compute">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-hardware-compute</li></ul></div></div></div></div><p>
+     Unless an instance is started via “Boot from Volume”, it is started with at least one disk, which is a copy of the image from which it has been started. Depending on the flavor you start, the instance may also have a second, so-called <span class="quote">“<span class="quote ">ephemeral</span>”</span>
+     disk. The size of the root disk depends on the image itself.
+     Ephemeral disks are always created as sparse image files that grow up
+     to a defined size as they are <span class="quote">“<span class="quote ">filled</span>”</span>. By default
+     ephemeral disks have a size of 10 GB.
+    </p><p>
+     Both disks, root images and ephemeral disk, are directly bound to the
+     instance and are deleted when the instance is terminated.
+     These disks are bound to the Compute Node on which the
+     instance has been started. The disks are created under
+     <code class="filename">/var/lib/nova</code> on the Compute Node. Your
+     Compute Nodes should be equipped with enough disk space to store the
+     root images and ephemeral disks.
+    </p><div id="id-1.4.3.3.3.5.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Ephemeral Disks vs. Block Storage</h6><p>
+      Do not confuse ephemeral disks with persistent block storage. In
+      addition to an ephemeral disk, which is automatically provided with
+      most instance flavors, you can optionally add a persistent storage
+      device provided by cinder. Ephemeral disks are deleted when
+      the instance terminates, while persistent storage devices can be
+      reused in another instance.
+     </p></div><p>
+     The maximum disk space required on a compute node depends on the
+     available flavors. A flavor specifies the number of CPUs, RAM, and disk
+     size of an instance. Several flavors ranging from
+     <span class="guimenu ">tiny</span> (1 CPU, 512 MB RAM, no ephemeral disk) to
+     <span class="guimenu ">xlarge</span> (8 CPUs, 8 GB RAM, 10 GB ephemeral disk) are
+     available by default. Adding custom flavors, and editing and deleting
+     existing flavors is also supported.
+    </p><p>
+     To calculate the minimum disk space needed on a compute node, you need
+     to determine the highest disk-space-to-RAM ratio from your flavors.
+     For example:
+    </p><table border="0" summary="Simple list" class="simplelist "><tr><td>
+      Flavor small: 2 GB RAM, 100 GB ephemeral disk =&gt; 50 GB disk /1 GB RAM
+     </td></tr><tr><td>
+      Flavor large: 8 GB RAM, 200 GB ephemeral disk =&gt; 25 GB disk /1 GB RAM
+     </td></tr></table><p>
+     So, 50 GB disk /1 GB RAM is the ratio that matters. If you multiply
+     that value by the amount of RAM in GB available on your compute node,
+     you have the minimum disk space required by ephemeral disks. Pad that
+     value with sufficient space for the root disks plus a buffer to leave room for flavors with a higher disk-space-to-RAM ratio in
+     the future.
+    </p><div id="id-1.4.3.3.3.5.6.9" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Overcommitting Disk Space</h6><p>
+      The scheduler that decides in which node an instance is started
+      does not check for available disk space. If there is no disk space
+      left on a compute node, this will not only cause data loss on the
+      instances, but the compute node itself will also stop operating.
+      Therefore you must make sure all compute nodes are equipped with
+      enough hard disk space.
+     </p></div></div><div class="sect3 " id="sec-depl-req-storage-hardware-store"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.2.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage Nodes (optional)</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-storage-hardware-store">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-storage-hardware-store</li></ul></div></div></div></div><p> The block storage service
+    Ceph RBD and the object storage service swift need to be deployed onto
+    dedicated nodes—it is not possible to mix these services. The swift
+    component requires at least two machines (more are recommended) to store
+    data redundantly. For information on hardware requirements for Ceph, see
+    <a class="link" href="https://documentation.suse.com/ses/5.5/single-html/ses-deployment/#storage-bp-hwreq" target="_blank">https://documentation.suse.com/ses/5.5/single-html/ses-deployment/#storage-bp-hwreq</a>
+    </p><p>
+     Each Ceph/swift Storage Node needs at least two hard disks.
+     The first one will be used for the operating system installation, while
+     the others can be used for storage. We recommend equipping
+     the storage nodes with as many disks as possible.
+    </p><p>
+     Using RAID on swift storage nodes is not supported.
+     swift takes care of redundancy and replication on its own. Using
+     RAID with swift would also result in a huge performance
+     penalty.
+    </p></div></div></div><div class="sect1 " id="sec-depl-req-ssl"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SSL Encryption</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-ssl">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-ssl</li></ul></div></div></div></div><p>
+   Whenever non-public data travels over a network it must be encrypted.
+   Encryption protects the integrity and confidentiality of data. Therefore
+   you should enable SSL support when deploying SUSE <span class="productname">OpenStack</span> Cloud to production. (SSL
+   is not enabled by default as it requires you to provide certificates.)
+   The following services (and their APIs, if available) can use SSL:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     cinder
+    </p></li><li class="listitem "><p>
+     horizon
+    </p></li><li class="listitem "><p>
+     glance
+    </p></li><li class="listitem "><p>
+     heat
+    </p></li><li class="listitem "><p>
+     keystone
+    </p></li><li class="listitem "><p>
+     manila
+    </p></li><li class="listitem "><p>
+     neutron
+    </p></li><li class="listitem "><p>
+     nova
+    </p></li><li class="listitem "><p>
+     swift
+    </p></li><li class="listitem "><p>
+     VNC
+    </p></li><li class="listitem "><p>
+    RabbitMQ
+    </p></li><li class="listitem "><p>
+    ironic
+    </p></li><li class="listitem "><p>
+    Magnum
+    </p></li></ul></div><p>
+   You have two options for deploying your SSL certificates. You may use a single shared certificate for all services on each node, or provide individual certificates for each service. The minimum requirement is a single certificate for the Control Node and all services installed on it.
+  </p><p>
+   Certificates must be signed by a trusted authority. Refer to
+   <a class="link" href="https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-apache2-ssl" target="_blank">https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-apache2-ssl</a>
+   for instructions on how to create and sign them.
+  </p><div id="id-1.4.3.3.4.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Host Names</h6><p>
+    Each SSL certificate is issued for a certain host name and, optionally,
+    for alternative host names (via the <code class="literal">AlternativeName</code>
+    option). Each publicly available node in SUSE <span class="productname">OpenStack</span> Cloud has two host
+    names—an internal and a public one. The SSL certificate needs
+    to be issued for <span class="emphasis"><em>both</em></span> internal and public names.
+   </p><p>
+    The internal name has the following scheme:
+   </p><div class="verbatim-wrap"><pre class="screen">d<em class="replaceable ">MACADDRESS</em>.<em class="replaceable ">FQDN</em></pre></div><p>
+    <em class="replaceable ">MACADDRESS</em> is the MAC address of the
+    interface used to boot the machine via PXE. All letters are turned
+    lowercase and all colons are replaced with dashes. For example,
+    <code class="literal">00-00-5E-00-53-00</code>. <em class="replaceable ">FQDN</em> is
+    the fully qualified domain name. An example name looks like this:
+   </p><div class="verbatim-wrap"><pre class="screen">d00-00-5E-00-53-00.example.com</pre></div><p>
+    Unless you have entered a custom <span class="guimenu ">Public Name</span> for a
+    client (see <a class="xref" href="cha-depl-inst-nodes.html#sec-depl-inst-nodes-install" title="11.2. Node Installation">Section 11.2, “Node Installation”</a> for details),
+    the public name is the same as the internal name prefixed by
+    <code class="literal">public</code>:
+   </p><div class="verbatim-wrap"><pre class="screen">public-d00-00-5E-00-53-00.example.com</pre></div><p>
+    To look up the node names open the Crowbar Web interface and click the
+    name of a node in the <span class="guimenu ">Node Dashboard</span>. The names are
+    listed as <span class="guimenu ">Full Name</span> and <span class="guimenu ">Public
+    Name</span>.
+   </p></div></div><div class="sect1 " id="sec-depl-req-hardware"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Hardware Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware</li></ul></div></div></div></div><p>
+   Precise hardware requirements can only be listed for the Administration Server and
+   the <span class="productname">OpenStack</span> Control Node. The requirements of the <span class="productname">OpenStack</span>
+   Compute and Storage Nodes depends on the number of concurrent
+   instances and their virtual hardware equipment.
+  </p><p>
+   A minimum of three machines are required for a SUSE <span class="productname">OpenStack</span> Cloud:
+   one Administration Server, one Control Node, and one Compute Node. You also need a gateway providing access to the public network.
+   Deploying storage requires additional nodes: at least two nodes for
+   swift and a minimum of four nodes for Ceph.
+  </p><div id="id-1.4.3.3.5.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Virtual/Physical Machines and Architecture</h6><p>
+    Deploying SUSE <span class="productname">OpenStack</span> Cloud functions to virtual machines is only supported for the
+    Administration Server—all other nodes need to be physical hardware. Although the
+    Control Node can be virtualized in test environments, this is not
+    supported for production systems.
+   </p><p>
+    SUSE <span class="productname">OpenStack</span> Cloud currently only runs on <code class="literal">x86_64</code> hardware.
+   </p></div><div class="sect2 " id="sec-depl-req-hardware-admserv"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration Server</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware-admserv">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware-admserv</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Architecture: x86_64.
+     </p></li><li class="listitem "><p>
+      RAM: at least 4 GB, 8 GB recommended. The demand for memory depends on
+      the total number of nodes in SUSE <span class="productname">OpenStack</span> Cloud—the higher the number of
+      nodes, the more RAM is needed. A deployment with 50 nodes requires a
+      minimum of 24 GB RAM for each Control Node.
+     </p></li><li class="listitem "><p>
+      Hard disk: at least 50 GB. We recommend putting
+      <code class="filename">/srv</code> on a separate partition with at least
+      additional 30 GB of space. Alternatively, you can mount the update
+      repositories from another server (see <a class="xref" href="cha-depl-req.html#sec-depl-req-repos" title="2.5.2. Product and Update Repositories">Section 2.5.2, “Product and Update Repositories”</a> for details).
+     </p></li><li class="listitem "><p>
+      Number of network cards: 1 for single and dual mode, 2 or more for
+      team mode. Additional networks such as the bastion network and/or a
+      separate BMC network each need an additional network card. See
+      <a class="xref" href="cha-depl-req.html#sec-depl-req-network" title="2.1. Network">Section 2.1, “Network”</a> for details.
+     </p></li><li class="listitem "><p>
+      Can be deployed on physical hardware or a virtual machine.
+     </p></li></ul></div></div><div class="sect2 " id="sec-depl-req-hardware-contrnode"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Node</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware-contrnode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware-contrnode</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Architecture: x86_64.
+     </p></li><li class="listitem "><p>
+      RAM: at least 8 GB, 12 GB when deploying a single Control Node, and 32 GB
+      recommended.
+     </p></li><li class="listitem "><p>
+      Number of network cards: 1 for single mode, 2 for dual mode, 2 or more
+      for team mode. See <a class="xref" href="cha-depl-req.html#sec-depl-req-network" title="2.1. Network">Section 2.1, “Network”</a> for details.
+     </p></li><li class="listitem "><p>
+      Hard disk: See
+      <a class="xref" href="cha-depl-req.html#sec-depl-req-storage-hardware-control" title="2.2.2.2. Control Nodes">Section 2.2.2.2, “Control Nodes”</a>.
+     </p></li></ul></div></div><div class="sect2 " id="sec-depl-req-hardware-compnode"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute Node</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware-compnode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware-compnode</li></ul></div></div></div></div><p>
+    The Compute Nodes need to be equipped with a sufficient amount of RAM
+    and CPUs, matching the numbers required by the maximum number of
+    instances running concurrently. An instance started in
+    SUSE <span class="productname">OpenStack</span> Cloud cannot share resources from several physical nodes. It uses
+    the resources of the node on which it was started. So if you
+    offer a flavor (see <a class="xref" href="gl-cloud.html#gloss-flavor" title="Flavor">Flavor</a> for a definition)
+    with 8 CPUs and 12 GB RAM, at least one of your nodes should be able to
+    provide these resources. Add 1 GB RAM for every two nodes
+    (including Control Nodes and Storage Nodes) deployed in your cloud.
+   </p><p>
+    See <a class="xref" href="cha-depl-req.html#sec-depl-req-storage-hardware-compute" title="2.2.2.3. Compute Nodes">Section 2.2.2.3, “Compute Nodes”</a> for storage
+    requirements.
+   </p></div><div class="sect2 " id="sec-depl-req-hardware-stornode"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage Node</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware-stornode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware-stornode</li></ul></div></div></div></div><p>
+    Usually a single CPU and a minimum of 4 GB RAM are sufficient for the Storage Nodes. Memory requirements increase depending on the total number of
+    nodes in SUSE <span class="productname">OpenStack</span> Cloud—the higher the number of nodes, the more RAM you need. A deployment with 50 nodes requires a minimum of 20 GB for each
+    Storage Node. If you use Ceph as storage, the storage nodes should be
+    equipped with an additional 2 GB RAM per OSD (Ceph object storage
+    daemon).
+   </p><p>
+    For storage requirements, see <a class="xref" href="cha-depl-req.html#sec-depl-req-storage-hardware-store" title="2.2.2.4. Storage Nodes (optional)">Section 2.2.2.4, “Storage Nodes (optional)”</a>.
+   </p></div><div class="sect2 " id="sec-depl-req-hardware-monnode"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">monasca Node</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-hardware-monnode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-hardware-monnode</li></ul></div></div></div></div><p>
+     The monasca Node is a dedicated physical machine that runs the
+     <code class="literal">monasca-server</code> role. This node is used for
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.  Hardware requirements for the monasca Node are as
+     follows:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Architecture: x86_64
+     </p></li><li class="listitem "><p>
+       RAM: At least 32 GB, 64 GB or more is recommended
+     </p></li><li class="listitem "><p>
+       CPU: At least 8 cores, 16 cores or more is recommended
+     </p></li><li class="listitem "><p>
+       Hard Disk: SSD is strongly recommended
+     </p></li></ul></div><p>
+     The following formula can be used to calculate the required disk space:
+   </p><div class="verbatim-wrap"><pre class="screen">200 GB + ["number of nodes" * "retention period" * ("space for log
+   data/day" + "space for metrics data/day") ]</pre></div><p>
+    The recommended values for the formula are as follows:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Retention period = 60 days for InfluxDB and Elasticsearch
+     </p></li><li class="listitem "><p>
+       Space for daily log data = 2GB
+     </p></li><li class="listitem "><p>
+       Space for daily metrics data = 50MB
+     </p></li></ul></div><p>
+     The formula is based on the following log data assumptions:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Approximately 50 log files per node
+     </p></li><li class="listitem "><p>
+       Approximately 1 log entry per file per sec
+     </p></li><li class="listitem "><p>
+       200 bytes in size
+     </p></li></ul></div><p>
+     The formula is based on the following metrics data assumptions:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       400 metrics per node
+     </p></li><li class="listitem "><p>
+      Time interval of 30 seconds
+     </p></li><li class="listitem "><p>
+      20 bytes in size
+     </p></li></ul></div><p>
+    The formula provides only a rough estimation of the required disk
+    space. There are several factors that can affect disk space
+    requirements. This includes the exact combination of services that run on
+    your <span class="productname">OpenStack</span> node actual cloud usage pattern, and whether any or all
+    services have debug logging enabled.
+   </p></div></div><div class="sect1 " id="sec-depl-req-software"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Software Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-software">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-software</li></ul></div></div></div></div><p>
+   All nodes and the Administration Server in SUSE <span class="productname">OpenStack</span> Cloud run on SUSE Linux Enterprise Server 12 SP4. Subscriptions for
+   the following components are available as one- or three-year subscriptions
+   including priority support:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Control Node + <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Administration Server (including
+     entitlements for High Availability and SUSE Linux Enterprise Server 12 SP4)
+    </p></li><li class="listitem "><p>
+     Additional <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Control Node (including
+     entitlements for High Availability and SUSE Linux Enterprise Server 12 SP4)
+    </p></li><li class="listitem "><p>
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Compute Node (excluding entitlements for High Availability and
+     SUSE Linux Enterprise Server 12 SP4)
+    </p></li><li class="listitem "><p>
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> swift node (excluding entitlements for High Availability
+     and SUSE Linux Enterprise Server 12 SP4)
+    </p></li></ul></div><p>
+   SUSE Linux Enterprise Server 12 SP4, HA entitlements for Compute Nodes and swift Storage Nodes, and entitlements for guest operating systems need
+   to be purchased separately. Refer to
+   <a class="link" href="http://www.suse.com/products/suse-openstack-cloud/how-to-buy/" target="_blank">http://www.suse.com/products/suse-openstack-cloud/how-to-buy/</a>
+   for more information on licensing and pricing.
+  </p><p>
+   Running an external Ceph cluster (optional) with SUSE <span class="productname">OpenStack</span> Cloud  requires an additional SUSE Enterprise Storage
+   subscription. Refer to <a class="link" href="https://www.suse.com/products/suse-enterprise-storage/" target="_blank">https://www.suse.com/products/suse-enterprise-storage/</a> and
+   <a class="link" href="https://www.suse.com/products/suse-openstack-cloud/frequently-asked-questions" target="_blank">https://www.suse.com/products/suse-openstack-cloud/frequently-asked-questions</a>
+   for more information.
+  </p><div id="id-1.4.3.3.6.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: SUSE Account</h6><p>
+    A SUSE account is needed for product registration and access to
+    update repositories. If you do not already have one, go to
+    <a class="link" href="http://www.suse.com/" target="_blank">http://www.suse.com/</a> to create it.
+   </p></div><div class="sect2 " id="sec-depl-req-software-optional"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optional Component: SUSE Enterprise Storage</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-software-optional">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-software-optional</li></ul></div></div></div></div><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> can be extended by SUSE Enterprise Storage for setting up a Ceph cluster
+    providing block storage services. To store virtual disks for instances, SUSE <span class="productname">OpenStack</span> Cloud uses block storage provided by the cinder
+    module. cinder itself needs a back-end providing storage. In
+    production environments this usually is a network storage
+    solution. cinder can use a variety of network storage back-ends, among them solutions from EMC, Fujitsu, or NetApp. In case your
+    organization does not provide a network storage solution that can be used
+    with SUSE <span class="productname">OpenStack</span> Cloud, you can set up a Ceph cluster with SUSE Enterprise Storage. SUSE Enterprise Storage
+    provides a reliable and fast distributed storage architecture using
+    commodity hardware platforms.
+   </p></div><div class="sect2 " id="sec-depl-req-repos"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Product and Update Repositories</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-repos">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-repos</li></ul></div></div></div></div><p>
+    You need seven software repositories to deploy SUSE <span class="productname">OpenStack</span> Cloud and to keep a running SUSE <span class="productname">OpenStack</span> Cloud up-to-date. This includes the static product repositories, which do not change over the
+    product life cycle, and the update repositories, which constantly change.
+    The following repositories are needed:
+   </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Mandatory Repositories </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.6.8.3">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.3.3.6.8.3.2"><span class="term ">SUSE Linux Enterprise Server 12 SP4 Product</span></dt><dd><p>
+       The SUSE Linux Enterprise Server 12 SP4 product repository is a copy of the installation
+       media (DVD #1) for SUSE Linux Enterprise Server. As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>
+       8, it is required to have it available locally on the
+       Administration Server. This repository requires approximately 3.5 GB of hard
+       disk space.
+      </p></dd><dt id="id-1.4.3.3.6.8.3.3"><span class="term "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 Product</span></dt><dd><p>
+       The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 product repository is a copy
+       of the installation media (DVD #1) for SUSE <span class="productname">OpenStack</span> Cloud. It can either be
+       made available remotely via HTTP, or locally on the Administration Server. We recommend the latter since it makes the setup of the Administration Server
+       easier. This repository requires approximately 500 MB of hard disk
+       space.
+      </p></dd><dt id="id-1.4.3.3.6.8.3.4"><span class="term ">PTF</span></dt><dd><p>
+       This repository is created automatically on the Administration Server when you install the
+       SUSE <span class="productname">OpenStack</span> Cloud add-on product. It serves as a repository for
+       <span class="quote">“<span class="quote ">Program Temporary Fixes</span>”</span> (PTF), which are part of the
+       SUSE support program.
+      </p></dd><dt id="id-1.4.3.3.6.8.3.5"><span class="term ">SLES12-SP4-Pool and <span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-9</span></span>-Pool</span></dt><dd><p>
+       The SUSE Linux Enterprise Server and <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> repositories contain all binary
+       RPMs from the installation media, plus pattern information and
+       support status metadata. These repositories are served from SUSE Customer Center
+       and need to be kept in synchronization with their sources. Make them  available remotely via an existing SMT or SUSE Manager
+       server. Alternatively, make them available locally on the Administration Server
+       by installing a local SMT server, by mounting or synchronizing a
+       remote directory, or by copying them.
+      </p></dd><dt id="id-1.4.3.3.6.8.3.6"><span class="term ">SLES12-SP4-Updates and <span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-9</span></span>-Updates</span></dt><dd><p>
+       These repositories contain maintenance updates to packages in the
+       corresponding Pool repositories. These repositories are served from
+       SUSE Customer Center and need to be kept synchronized with their sources. Make them available remotely via an existing SMT or
+       SUSE Manager server, or locally on the Administration Server by installing a
+       local SMT server, by mounting or synchronizing a remote
+       directory, or by regularly copying them.
+      </p></dd></dl></div><p>
+    As explained in <a class="xref" href="cha-depl-req.html#sec-depl-req-ha" title="2.6. High Availability">Section 2.6, “High Availability”</a>, Control Nodes in SUSE <span class="productname">OpenStack</span> Cloud
+    can optionally be made highly available with the SUSE Linux Enterprise
+    High Availability Extension. The following repositories are
+    required to deploy SLES High Availability Extension nodes:
+   </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Optional Repositories </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.6.8.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.4.3.3.6.8.5.2"><span class="term ">SLE12-SP4-HA-Pool</span></dt><dd><p>
+       The pool repositories contain all binary RPMs from the installation
+       media, plus pattern information and support status metadata. These
+       repositories are served from SUSE Customer Center and need to be kept in
+       synchronization with their sources. Make them available
+       remotely via an existing SMT or SUSE Manager server. Alternatively, make
+       them available locally on the Administration Server by installing a local SMT server, by
+       mounting or synchronizing a remote directory, or by copying them.
+      </p></dd><dt id="id-1.4.3.3.6.8.5.3"><span class="term ">SLE12-SP4-HA-Updates</span></dt><dd><p>
+       These repositories contain maintenance updates to packages in the
+       corresponding pool repositories. These repositories are served from
+       SUSE Customer Center and need to be kept synchronized with their sources. Make them
+       available remotely via an existing SMT or SUSE Manager server, or locally
+       on the Administration Server by installing a local SMT server, by mounting or
+       synchronizing a remote directory, or by regularly copying them.
+      </p></dd></dl></div><p>
+    The product repositories for SUSE Linux Enterprise Server 12 SP4 and
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 do not change during the life cycle
+    of a product. Thus, they can be copied to the destination directory from the
+    installation media. However, the pool and update repositories must be
+    kept synchronized with their sources on the SUSE Customer Center. SUSE
+    offers two products that synchronize repositories and make
+    them available within your organization: SUSE Manager
+    (<a class="link" href="http://www.suse.com/products/suse-manager/" target="_blank">http://www.suse.com/products/suse-manager/</a>, and
+    Subscription Management Tool (which ships with SUSE Linux Enterprise Server 12 SP4).
+   </p><p>
+    All repositories must be served via HTTP to be
+    available for SUSE <span class="productname">OpenStack</span> Cloud deployment. Repositories that are installed on the Administration Server are made available by the Apache Web
+    server running on the Administration Server. If your organization already uses
+    SUSE Manager or SMT, you can use the repositories provided by these
+    servers.
+   </p><p>
+    Making the repositories locally available on the Administration Server has the
+    advantage of a simple network setup within SUSE <span class="productname">OpenStack</span> Cloud, and it allows you to
+    seal off the SUSE <span class="productname">OpenStack</span> Cloud network from other networks in your
+    organization. Hosting the repositories on a remote server has
+    the advantage of using existing resources and services, and it makes
+    setting up the Administration Server much easier. However, this requires a custom network setup
+    for SUSE <span class="productname">OpenStack</span> Cloud, since the Administration Server needs access to the remote
+    server.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.3.3.6.8.9.1"><span class="term ">Installing a Subscription Management Tool (SMT) Server on the Administration Server</span></dt><dd><p>
+       The SMT server, shipping with SUSE Linux Enterprise Server 12 SP4, regularly
+       synchronizes repository data from SUSE Customer Center with your local host.
+       Installing the SMT server on the Administration Server is recommended if
+       you do not have access to update repositories from elsewhere within
+       your organization. This option requires the Administration Server to have Internet access.
+      </p></dd><dt id="id-1.4.3.3.6.8.9.2"><span class="term ">Using a Remote SMT Server</span></dt><dd><p>
+       If you already run an SMT server within your organization, you
+       can use it within SUSE <span class="productname">OpenStack</span> Cloud. When using a remote SMT server,
+       update repositories are served directly from the SMT server.
+       Each node is configured with these repositories upon its initial
+       setup.
+      </p><p>
+       The SMT server needs to be accessible from the Administration Server and
+       all nodes in SUSE <span class="productname">OpenStack</span> Cloud (via one or more gateways). Resolving the
+       server's host name also needs to work.
+      </p></dd><dt id="id-1.4.3.3.6.8.9.3"><span class="term ">Using a SUSE Manager Server</span></dt><dd><p>
+       Each client that is managed by SUSE Manager needs to register with the
+       SUSE Manager server. Therefore the SUSE Manager support can only be installed
+       after the nodes have been deployed. SUSE Linux Enterprise Server 12 SP4 must be set up
+       for autoinstallation on the SUSE Manager server in order to use repositories
+       provided by SUSE Manager during node deployment.
+      </p><p>
+       The server needs to be accessible from the Administration Server and all nodes
+       in SUSE <span class="productname">OpenStack</span> Cloud (via one or more gateways). Resolving the server's host
+       name also needs to work.
+      </p></dd><dt id="id-1.4.3.3.6.8.9.4"><span class="term ">Using Existing Repositories</span></dt><dd><p>
+       If you can access existing repositories from within your company
+       network from the Administration Server, you have the following options: mount, synchronize, or
+       manually transfer these repositories to the required locations on the
+       Administration Server.
+      </p></dd></dl></div></div></div><div class="sect1 " id="sec-depl-req-ha"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Availability</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-ha">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-ha</li></ul></div></div></div></div><p>
+   Several components and services in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> are potentially single
+   points of failure that may cause system downtime and data loss if they
+   fail.
+  </p><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> provides various mechanisms to ensure that the crucial
+   components and services are highly available. The following sections
+   provide an overview of components on each node that can be made highly available. For making the Control Node functions and the
+   Compute Nodes highly available, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> uses the cluster software SUSE Linux Enterprise
+   High Availability Extension. Make sure to thoroughly read <a class="xref" href="cha-depl-req.html#sec-depl-reg-ha-general" title="2.6.5. Cluster Requirements and Recommendations">Section 2.6.5, “Cluster Requirements and Recommendations”</a> to learn about additional requirements for high availability deployments.
+  </p><div class="sect2 " id="sec-depl-req-ha-admin"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Availability of the Administration Server</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-ha-admin">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-ha-admin</li></ul></div></div></div></div><p>
+    The Administration Server provides all services needed to manage and deploy all
+    other nodes in the cloud. If the Administration Server is not available, new
+    cloud nodes cannot be allocated, and you cannot add new roles to cloud
+    nodes.
+   </p><p>
+    However, only two services on the Administration Server are single points of
+    failure, without which the cloud cannot continue to run properly: DNS
+    and NTP.
+   </p><div class="sect3 " id="sec-depl-req-ha-admin-spof"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.6.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration Server—Avoiding Points of Failure</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-ha-admin-spof">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-ha-admin-spof</li></ul></div></div></div></div><p>
+     To avoid DNS and NTP as potential points of failure, deploy the roles
+     <code class="systemitem">dns-server</code> and
+     <code class="systemitem">ntp-server</code> to multiple nodes.
+    </p><div id="id-1.4.3.3.7.4.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Access to External Network</h6><p>
+      If any configured DNS forwarder or NTP external server is not
+      reachable through the admin network from these nodes, allocate an
+      address in the public network for each node that has the
+      <code class="systemitem">dns-server</code> and
+      <code class="systemitem">ntp-server</code> roles:
+     </p><div class="verbatim-wrap"><pre class="screen">crowbar network allocate_ip default `hostname -f` public host</pre></div><p>
+      Then the nodes can use the public gateway to reach the external
+      servers. The change will only become effective after the next run of
+      <code class="command">chef-client</code> on the affected nodes.
+     </p></div></div></div><div class="sect2 " id="sec-depl-reg-ha-control"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Availability of the Control Node(s)</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-control">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-control</li></ul></div></div></div></div><p>
+    The Control Node(s) usually run a variety of services without which
+    the cloud would not be able to run properly.
+   </p><div class="sect3 " id="sec-depl-reg-ha-control-spof"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Node(s)—Avoiding Points of Failure</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-control-spof">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-control-spof</li></ul></div></div></div></div><p>
+     To prevent the cloud from avoidable downtime if one or more
+     Control Nodes fail, you can make the
+     following roles highly available:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <code class="systemitem">database-server</code>
+       (<code class="systemitem">database</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">keystone-server</code>
+       (<code class="systemitem">keystone</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">rabbitmq-server</code>
+       (<code class="systemitem">rabbitmq</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">swift-proxy</code> (<code class="systemitem">swift</code>
+       barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">glance-server</code>
+       (<code class="systemitem">glance</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">cinder-controller</code>
+       (<code class="systemitem">cinder</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">neutron-server</code>
+       (<code class="systemitem">neutron</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">neutron-network</code> (<code class="systemitem">neutron</code>
+       barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">nova-controller</code>
+       (<code class="systemitem">nova</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">nova_dashboard-server</code>
+       (<code class="systemitem">nova_dashboard</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">ceilometer-server</code>
+       (<code class="systemitem">ceilometer</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">ceilometer-control</code>
+       (<code class="systemitem">ceilometer</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">heat-server</code>
+       (<code class="systemitem">heat</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">octavia-api</code>
+       (<code class="systemitem">octavia</code> barclamp)
+      </p></li><li class="listitem "><p>
+       <code class="systemitem">octavia-backend</code>
+       (<code class="systemitem">octavia</code> barclamp)
+      </p></li></ul></div><p>
+     Instead of assigning these roles to individual cloud nodes, you can
+     assign them to one or several High Availability clusters. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> will
+     then use the Pacemaker cluster stack (shipped with the SUSE Linux Enterprise
+     High Availability Extension) to manage the services. If one Control Node fails, the services
+     will fail over to another
+     Control Node. For details on the
+     Pacemaker cluster stack and the SUSE Linux Enterprise High Availability Extension, refer to the
+     <em class="citetitle ">High Availability Guide</em>, available at
+     <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/</a>.
+     Note that SUSE Linux Enterprise High Availability Extension includes Linux Virtual Server as the load-balancer, and
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> uses HAProxy for this purpose
+     (<a class="link" href="http://haproxy.1wt.eu/" target="_blank">http://haproxy.1wt.eu/</a>).
+    </p><div id="id-1.4.3.3.7.5.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Recommended Setup</h6><p>
+      Though it is possible to use the same cluster for all of the roles
+      above, the recommended setup is to use three clusters and to deploy
+      the roles as follows:
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        <code class="literal">data</code> cluster:
+        <code class="systemitem">database-server</code> and
+        <code class="systemitem">rabbitmq-server</code>
+       </p></li><li class="listitem "><p>
+        <code class="literal">network</code> cluster:
+        <code class="systemitem">neutron-network</code> (as the
+        <code class="systemitem">neutron-network</code> role may result in heavy network
+        load and CPU impact)
+       </p></li><li class="listitem "><p>
+        <code class="systemitem">services</code> cluster: all other roles listed
+        above (as they are related to API/schedulers)
+       </p></li></ul></div></div><div id="id-1.4.3.3.7.5.3.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Cluster Requirements and Recommendations</h6><p>
+      For setting up the clusters, some special requirements and
+      recommendations apply. For details, refer to
+      <a class="xref" href="cha-depl-req.html#sec-depl-reg-ha-general" title="2.6.5. Cluster Requirements and Recommendations">Section 2.6.5, “Cluster Requirements and Recommendations”</a>.
+     </p></div></div><div class="sect3 " id="sec-depl-reg-ha-control-recover"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Node(s)—Recovery</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-control-recover">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-control-recover</li></ul></div></div></div></div><p>
+     Recovery of the Control Node(s) is done automatically by the cluster
+     software: if one Control Node fails, Pacemaker will fail over the
+     services to another Control Node. If a failed Control Node is
+     repaired and rebuilt via Crowbar, it will be automatically configured
+     to join the cluster. At this point Pacemaker will have the option to
+     fail back services if required.
+    </p></div></div><div class="sect2 " id="sec-depl-reg-ha-compute"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Availability of the Compute Node(s)</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-compute">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-compute</li></ul></div></div></div></div><p>
+    If a Compute Node fails, all VMs running on that node will go down. While it cannot protect against failures of individual VMs, a
+    High Availability setup for Compute Nodes helps to minimize VM downtime caused by
+    Compute Node failures.  If the <code class="literal">nova-compute</code> service or
+    <code class="literal">libvirtd</code> fail on a Compute Node, Pacemaker will
+    try to automatically recover them.  If recovery fails, or the
+    node itself should become unreachable, the node will be fenced and the
+    VMs will be moved to a different Compute Node.
+   </p><p>
+    If you decide to use High Availability for Compute Nodes, your Compute Node will
+    be run as Pacemaker remote nodes. With the <code class="literal">pacemaker-remote</code>
+    service, High Availability clusters can be extended to control remote nodes without any
+    impact on scalability, and without having to install the full cluster stack
+    (including <code class="literal">corosync</code>) on the remote nodes.  Instead, each
+    Compute Node only runs the <code class="literal">pacemaker-remote</code> service. The service
+    acts as a proxy, allowing the cluster stack on the <span class="quote">“<span class="quote ">normal</span>”</span>
+    cluster nodes to connect to it and to control services remotely. Thus, the
+    node is effectively integrated into the cluster as a remote node. In this way,
+    the services running on the <span class="productname">OpenStack</span> compute nodes can be controlled from the core
+    Pacemaker cluster in a lightweight, scalable fashion.
+   </p><p> Find more information about the <code class="literal">pacemaker_remote</code>
+    service in
+    <em class="citetitle ">Pacemaker Remote—Extending High Availability into
+    Virtual Nodes</em>,
+    available at <a class="link" href="http://www.clusterlabs.org/doc/" target="_blank">http://www.clusterlabs.org/doc/</a>. </p><p>To configure High Availability for Compute Nodes, you need to adjust the following
+   barclamp proposals:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Pacemaker—for details, see <a class="xref" href="cha-depl-ostack.html#sec-depl-ostack-pacemaker" title="12.2. Deploying Pacemaker (Optional, HA Setup Only)">Section 12.2, “Deploying Pacemaker (Optional, HA Setup Only)”</a>.</p></li><li class="listitem "><p>nova—for details, see <a class="xref" href="cha-depl-ostack.html#sec-depl-ostack-nova-ha" title="12.10.1. HA Setup for nova">Section 12.10.1, “HA Setup for nova”</a>.</p></li></ul></div></div><div class="sect2 " id="sec-depl-reg-ha-storage"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Availability of the Storage Node(s)</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-storage">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-storage</li></ul></div></div></div></div><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> offers two different types of storage that can be used
+    for the Storage Nodes: object storage (provided by the <span class="productname">OpenStack</span>
+    swift component) and block storage (provided by Ceph).
+   </p><p>
+    Both already consider High Availability aspects by design, therefore it does not
+    require much effort to make the storage highly available.
+   </p><div class="sect3 " id="sec-depl-reg-ha-storage-swift"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.6.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">swift—Avoiding Points of Failure</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-storage-swift">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-storage-swift</li></ul></div></div></div></div><p>
+     The <span class="productname">OpenStack</span> Object Storage replicates the data by design, provided
+     the following requirements are met:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       The option <span class="guimenu ">Replicas</span> in the swift
+       barclamp is set to <code class="literal">3</code>, the tested and recommended
+       value.
+      </p></li><li class="listitem "><p>
+       The number of Storage Nodes needs to be greater than the value set in
+       the <span class="guimenu ">Replicas</span> option.
+      </p></li></ul></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       To avoid single points of failure, assign the
+       <code class="systemitem">swift-storage</code> role to multiple nodes.
+      </p></li><li class="step "><p>
+       To make the API highly available, assign the
+       <code class="systemitem">swift-proxy</code> role to a cluster instead of
+       assigning it to a single Control Node. See
+       <a class="xref" href="cha-depl-req.html#sec-depl-reg-ha-control-spof" title="2.6.2.1. Control Node(s)—Avoiding Points of Failure">Section 2.6.2.1, “Control Node(s)—Avoiding Points of Failure”</a>. Other swift roles
+       must not be deployed on a cluster.
+      </p></li></ol></div></div></div><div class="sect3 " id="sec-depl-reg-ha-storage-ceph"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.6.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ceph—Avoiding Points of Failure</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-storage-ceph">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-storage-ceph</li></ul></div></div></div></div><p>
+     Ceph is a distributed storage solution that can provide High Availability.  For High Availability
+     redundant storage and monitors need to be configured in the Ceph
+     cluster. For more information refer to the SUSE Enterprise Storage documentation at
+     <a class="link" href="https://documentation.suse.com/ses/5.5/" target="_blank">https://documentation.suse.com/ses/5.5/</a>.
+    </p></div></div><div class="sect2 " id="sec-depl-reg-ha-general"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cluster Requirements and Recommendations</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-general">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-general</li></ul></div></div></div></div><p>
+    When considering setting up one or more High Availability clusters, refer to the
+    chapter <em class="citetitle ">System Requirements</em> in the
+    <em class="citetitle ">High Availability Guide</em> for SUSE Linux Enterprise High Availability Extension. The guide is available at
+    <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/</a>.
+   </p><p>
+    The HA requirements for Control Node also apply to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. Note that by
+    buying <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>, you automatically get an entitlement for
+    SUSE Linux Enterprise High Availability Extension.
+   </p><p>
+    Especially note the following requirements:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="vle-ha-req-nodes"><span class="term ">Number of Cluster Nodes</span></dt><dd><p>
+       Each cluster needs to consist of at least three cluster nodes.
+      </p><div id="id-1.4.3.3.7.8.5.1.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Odd Number of Cluster Nodes</h6><p>
+        The Galera cluster needs an <span class="emphasis"><em>odd</em></span> number of cluster
+        nodes with a <span class="emphasis"><em>minimum</em></span> of three nodes.
+       </p><p>
+        A cluster needs
+        <a class="xref" href="gl-cloud.html#gloss-quorum" title="Quorum">Quorum</a> to
+        keep services running. A three-node cluster can tolerate
+         failure of only one node at a time, whereas a five-node cluster can
+        tolerate failures of two nodes.
+       </p></div></dd><dt id="vle-ha-req-stonith"><span class="term ">STONITH</span></dt><dd><p>
+       The cluster software will shut down <span class="quote">“<span class="quote ">misbehaving</span>”</span> nodes
+       in a cluster to prevent them from causing trouble. This mechanism is
+       called <code class="literal">fencing</code> or
+       <a class="xref" href="gl-cloud.html#gloss-stonith" title="STONITH">STONITH</a>.
+      </p><div id="id-1.4.3.3.7.8.5.2.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: No Support Without STONITH</h6><p>
+        A cluster without STONITH is not supported.
+       </p></div><p>
+       For a supported HA setup, ensure the following:
+      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         Each node in the High Availability cluster needs to have at least one
+         STONITH device (usually a hardware device). We strongly
+         recommend multiple STONITH devices per node, unless STONITH Block Device (SBD) is used.
+        </p></li><li class="listitem "><p>
+         The global cluster options <code class="systemitem">stonith-enabled</code>
+         and <code class="systemitem">startup-fencing</code> must be set to
+         <code class="literal">true</code>. These options are set automatically when
+         deploying the <code class="systemitem">Pacemaker</code> barclamp. When you change them, you will lose support.
+        </p></li><li class="listitem "><p>
+         When deploying the <code class="literal">Pacemaker</code> service, select a
+         <a class="xref" href="cha-depl-ostack.html#vle-pacemaker-barcl-stonith">STONITH: Configuration mode for STONITH
+    </a>
+         that matches your setup. If your STONITH devices support the
+         IPMI protocol, choosing the IPMI option is the easiest way to
+         configure STONITH. Another alternative is SBD. It provides a way to enable STONITH and fencing
+         in clusters without external power switches, but it requires shared
+         storage. For SBD requirements, see
+         <a class="link" href="http://linux-ha.org/wiki/SBD_Fencing" target="_blank">http://linux-ha.org/wiki/SBD_Fencing</a>, section
+         <em class="citetitle ">Requirements</em>.
+        </p></li></ul></div><p>
+       For more information, refer to the <em class="citetitle ">High Availability Guide</em>, available at
+       <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/</a>.
+       Especially read the following chapters: <em class="citetitle ">Configuration and
+       Administration Basics</em>, and <em class="citetitle ">Fencing and
+       STONITH</em>, <em class="citetitle "> Storage Protection</em>.
+      </p></dd><dt id="vle-ha-req-communication"><span class="term ">Network Configuration</span></dt><dd><div id="id-1.4.3.3.7.8.5.3.2.1" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Redundant Communication Paths</h6><p>
+        For a supported HA setup, it is required to set up cluster
+        communication via two or more redundant paths. For this purpose, use
+        network device bonding and team network mode in your Crowbar network setup. For details, see
+        <a class="xref" href="cha-depl-req.html#sec-depl-req-network-modes-teaming" title="2.1.2.3. Team Network Mode">Section 2.1.2.3, “Team Network Mode”</a>. At least two
+        Ethernet cards per cluster node are required for network redundancy.
+        We advise using team network mode everywhere (not only
+        between the cluster nodes) to ensure redundancy.
+       </p></div><p>
+       For more information, refer to the <em class="citetitle ">High Availability Guide</em>, available at
+       <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/</a>.
+       Especially read the following chapter: <em class="citetitle ">Network Device
+       Bonding</em>.
+      </p><p>
+       Using a second communication channel (ring) in Corosync (as an
+       alternative to network device bonding) is not supported yet in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
+       By default, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> uses the admin network (typically
+       <code class="literal">eth0</code>) for the first Corosync ring.
+      </p><div id="id-1.4.3.3.7.8.5.3.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Dedicated Networks</h6><p>
+         The <code class="literal">corosync</code> network communication layer is
+         crucial to the health of the cluster. <code class="literal">corosync</code> traffic always
+         goes over the admin network.
+        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+           Use redundant communication paths for the <code class="literal">corosync</code>
+           network communication layer.
+          </p></li><li class="listitem "><p>
+           Do not place the <code class="literal">corosync</code> network communication layer
+           on interfaces shared with any other networks that could experience heavy
+           load, such as the <span class="productname">OpenStack</span> public / private / SDN / storage networks.
+          </p></li></ul></div><p>
+         Similarly, if SBD over iSCSI is used as a STONITH device (see
+         <a class="xref" href="cha-depl-req.html#vle-ha-req-stonith">STONITH</a>), do not place the iSCSI traffic on
+         interfaces that could experience heavy load, because this might disrupt
+         the SBD mechanism.
+        </p></div></dd><dt id="vle-ha-req-storage"><span class="term ">Storage Requirements</span></dt><dd><p>
+       When using SBD as STONITH device, additional requirements apply
+       for the shared storage. For details, see
+       <a class="link" href="http://linux-ha.org/wiki/SBD_Fencing" target="_blank">http://linux-ha.org/wiki/SBD_Fencing</a>, section
+       <em class="citetitle ">Requirements</em>.
+      </p></dd></dl></div></div><div class="sect2 " id="sec-depl-reg-ha-more"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-reg-ha-more">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-reg-ha-more</li></ul></div></div></div></div><p>
+    For a basic understanding and detailed information on the SUSE Linux Enterprise
+    High Availability Extension (including the Pacemaker cluster stack), read the
+    <em class="citetitle ">High Availability Guide</em>. It is available at
+    <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/</a>.
+   </p><p>
+    In addition to the chapters mentioned in
+    <a class="xref" href="cha-depl-req.html#sec-depl-reg-ha-general" title="2.6.5. Cluster Requirements and Recommendations">Section 2.6.5, “Cluster Requirements and Recommendations”</a>, the following
+    chapters are especially recommended:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <em class="citetitle ">Product Overview</em>
+     </p></li><li class="listitem "><p>
+      <em class="citetitle ">Configuration and Administration Basics</em>
+     </p></li></ul></div><p>
+    The <em class="citetitle ">High Availability Guide</em> also provides comprehensive information about the
+    cluster management tools with which you can view and check the cluster status
+    in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. They can also be used to look up details like
+    configuration of cluster resources or global cluster options. Read the
+    following chapters for more information:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      HA Web Console: <em class="citetitle ">Configuring and Managing Cluster Resources (Web
+      Interface)</em>
+     </p></li><li class="listitem "><p>
+      <code class="command">crm.sh</code>: <em class="citetitle "> Configuring and Managing
+      Cluster Resources (Command Line)</em>
+     </p></li></ul></div></div></div><div class="sect1 " id="sec-depl-req-summary"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Summary: Considerations and Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-summary">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-summary</li></ul></div></div></div></div><p>
+   As outlined above, there are some important considerations to be made
+   before deploying SUSE <span class="productname">OpenStack</span> Cloud. The following briefly summarizes what was
+   discussed in detail in this chapter. Keep in mind that as of
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, it is not possible to change some
+   aspects such as the network setup when SUSE <span class="productname">OpenStack</span> Cloud is deployed!
+   
+  </p><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Network </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.8.3">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+     If you do not want to stick with the default networks and addresses,
+     define custom networks and addresses. You need five different networks.
+     If you need to separate the admin and the BMC network, a sixth network
+     is required. See <a class="xref" href="cha-depl-req.html#sec-depl-req-network" title="2.1. Network">Section 2.1, “Network”</a> for details.
+     Networks that share interfaces need to be configured as VLANs.
+    </p></li><li class="listitem "><p>
+     The SUSE <span class="productname">OpenStack</span> Cloud networks are completely isolated, therefore it is not
+     required to use public IP addresses for them. A class C network as used
+     in this documentation may not provide enough addresses for a cloud that
+     is supposed to grow. You may alternatively choose addresses from a
+     class B or A network.
+    </p></li><li class="listitem "><p>
+     Determine how to allocate addresses from your network. Make sure not to
+     allocate IP addresses twice. See
+     <a class="xref" href="cha-depl-req.html#sec-depl-req-network-allocation" title="2.1.1. Network Address Allocation">Section 2.1.1, “Network Address Allocation”</a> for the default
+     allocation scheme.
+    </p></li><li class="listitem "><p>
+     Define which network mode to use. Keep in mind that all machines within
+     the cloud (including the Administration Server) will be set up with the chosen
+     mode and therefore need to meet the hardware requirements. See
+     <a class="xref" href="cha-depl-req.html#sec-depl-req-network-modes" title="2.1.2. Network Modes">Section 2.1.2, “Network Modes”</a> for details.
+    </p></li><li class="listitem "><p>
+     Define how to access the admin and BMC network(s): no access from the
+     outside (no action is required), via an external gateway (gateway needs
+     to be provided), or via bastion network. See
+     <a class="xref" href="cha-depl-req.html#sec-depl-req-network-bastion" title="2.1.3. Accessing the Administration Server via a Bastion Network">Section 2.1.3, “Accessing the Administration Server via a Bastion Network”</a> for details.
+    </p></li><li class="listitem "><p>
+     Provide a gateway to access the public network (public, nova-floating).
+    </p></li><li class="listitem "><p>
+     Make sure the Administration Server's host name is correctly configured
+     (<code class="command">hostname</code> <code class="option">-f</code> needs to return a
+     fully qualified host name). If this is not the case, run <span class="guimenu ">YaST</span> › <span class="guimenu ">Network Services</span> › <span class="guimenu ">Hostnames</span> and add a fully qualified
+     host name.
+    </p></li><li class="listitem "><p>
+     Prepare a list of MAC addresses and the intended use of the
+     corresponding host for all <span class="productname">OpenStack</span> nodes.
+    </p></li></ul></div><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Update Repositories </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.8.4">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+     Depending on your network setup you have different options for
+     providing up-to-date update repositories for SUSE Linux Enterprise Server and SUSE <span class="productname">OpenStack</span> Cloud for
+     SUSE <span class="productname">OpenStack</span> Cloud deployment: using an existing SMT or SUSE Manager
+     server, installing SMT on the Administration Server, synchronizing data
+     with an existing repository, mounting remote repositories, or using physical media. Choose the option that best matches your
+     needs.
+    </p></li></ul></div><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Storage </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.8.5">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+     Decide whether you want to deploy the object storage service
+     swift. If so, you need to deploy at least two nodes with
+     sufficient disk space exclusively dedicated to swift.
+    </p></li><li class="listitem "><p>
+     Decide which back-end to use with cinder. If using the
+     <span class="guimenu ">raw</span> back-end (local disks) we strongly
+     recommend using a separate node equipped with several hard disks for
+     deploying <code class="literal">cinder-volume</code>. Ceph needs a minimum of four exclusive nodes with sufficient disk space.
+    </p></li><li class="listitem "><p>
+     Make sure all Compute Nodes are equipped with sufficient hard disk
+     space.
+    </p></li></ul></div><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">SSL Encryption </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.8.6">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+     Decide whether to use different SSL certificates for the services and
+     the API, or whether to use a single certificate.
+    </p></li><li class="listitem "><p>
+     Get one or more SSL certificates certified by a trusted third party
+     source.
+    </p></li></ul></div><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Hardware and Software Requirements </span><a title="Permalink" class="permalink" href="cha-depl-req.html#id-1.4.3.3.8.7">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+     Make sure the hardware requirements for the different node types are
+     met.
+    </p></li><li class="listitem "><p>
+     Make sure to have all required software at hand.
+    </p></li></ul></div></div><div class="sect1 " id="sec-depl-req-installation"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview of the SUSE <span class="productname">OpenStack</span> Cloud Installation</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-installation</li></ul></div></div></div></div><p>
+   Deploying and installing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> is a multi-step process.
+   Start by deploying a basic SUSE Linux Enterprise Server installation and the
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> add-on product to the Administration Server. Then the product and
+   update repositories need to be set up and the SUSE <span class="productname">OpenStack</span> Cloud network needs to
+   be configured. Next, complete the Administration Server setup. After the
+   Administration Server is ready, you can start deploying and configuring the
+   <span class="productname">OpenStack</span> nodes. The complete node deployment is done automatically via
+   Crowbar and Chef from the Administration Server. All you need to do is to
+   boot the nodes using PXE and to deploy the <span class="productname">OpenStack</span> components to them.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Install SUSE Linux Enterprise Server 12 SP4 on the Administration Server with the add-on product
+     SUSE <span class="productname">OpenStack</span> Cloud. Optionally select the Subscription Management Tool (SMT) pattern for installation. See
+     <a class="xref" href="cha-depl-adm-inst.html" title="Chapter 3. Installing the Administration Server">Chapter 3, <em>Installing the Administration Server</em></a>.
+    </p></li><li class="step "><p>
+     Optionally set up and configure the SMT server on the Administration Server. See
+     <a class="xref" href="app-deploy-smt.html" title="Chapter 4. Installing and Setting Up an SMT Server on the Administration Server (Optional)">Chapter 4, <em>Installing and Setting Up an SMT Server on the Administration Server (Optional)</em></a>.
+    </p></li><li class="step "><p>
+     Make all required software repositories available on the Administration Server. See
+     <a class="xref" href="cha-depl-repo-conf.html" title="Chapter 5. Software Repository Setup">Chapter 5, <em>Software Repository Setup</em></a>.
+    </p></li><li class="step "><p>
+     Set up the network on the Administration Server. See
+     <a class="xref" href="sec-depl-adm-inst-network.html" title="Chapter 6. Service Configuration: Administration Server Network Configuration">Chapter 6, <em>Service Configuration:  Administration Server Network Configuration</em></a>.
+    </p></li><li class="step "><p>
+     Perform the Crowbar setup to configure the SUSE <span class="productname">OpenStack</span> Cloud network and to make the
+     repository locations known. When the configuration is done, start the
+     SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation. See <a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>.
+    </p></li><li class="step "><p>
+     Boot all nodes onto which the <span class="productname">OpenStack</span> components should be deployed
+     using PXE and allocate them in the Crowbar Web interface to start the
+     automatic SUSE Linux Enterprise Server installation. See
+     <a class="xref" href="cha-depl-inst-nodes.html" title="Chapter 11. Installing the OpenStack Nodes">Chapter 11, <em>Installing the <span class="productname">OpenStack</span> Nodes</em></a>.
+    </p></li><li class="step "><p>
+     Configure and deploy the <span class="productname">OpenStack</span> components via the Crowbar Web
+     interface or command line tools. See <a class="xref" href="cha-depl-ostack.html" title="Chapter 12. Deploying the OpenStack Services">Chapter 12, <em>Deploying the <span class="productname">OpenStack</span> Services</em></a>.
+    </p></li><li class="step "><p>
+     When all <span class="productname">OpenStack</span> components are up and running, SUSE <span class="productname">OpenStack</span> Cloud is ready.
+     The cloud administrator can now upload images to enable users to start
+     deploying instances. See the <em class="citetitle ">Administrator Guide</em> and the
+     <em class="citetitle ">Supplement to <em class="citetitle ">Administrator Guide</em> and <em class="citetitle ">User Guide</em></em>.
+
+    </p></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-depl-admserv.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part II </span>Setting Up the Administration Server</span></a><a class="nav-link" href="cha-depl-arch.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

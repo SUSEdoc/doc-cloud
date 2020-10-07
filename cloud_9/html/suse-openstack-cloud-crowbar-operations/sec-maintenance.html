@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Maintenance | Operations Guide Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide Crowbar" /><meta name="chapter-title" content="Chapter 1. Maintenance" /><meta name="description" content="Keeping the nodes in SUSE OpenStack Cloud Crowbar up-to-date requires an appropriate setup of the update and pool repositories and the deployment of either the Updater barclamp or the SUSE Manager barclamp. For details, see Book “Deployment Guide using Crowbar”, Chapter 5 “Software Repository Setup”…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="next" href="gpu-passthrough.html" title="Chapter 2. GPU passthrough" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="sec-maintenance.html">Maintenance</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="sec-maintenance.html"><span class="number">1 </span><span class="name">Maintenance</span></a></li><li class="inactive"><a href="gpu-passthrough.html"><span class="number">2 </span><span class="name">GPU passthrough</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">3 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="soc-monitoring.html"><span class="number">4 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></li><li class="inactive"><a href="monitoring-log-management.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="troubleshooting.html"><span class="number">6 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Operations Guide Crowbar" href="book-crowbar-operations.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. GPU passthrough" href="gpu-passthrough.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="sec-maintenance.html">Maintenance</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Operations Guide Crowbar" href="book-crowbar-operations.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. GPU passthrough" href="gpu-passthrough.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="sec-maintenance"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Maintenance</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-maintenance</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="sec-maintenance.html#sec-nodes-update"><span class="number">1.1 </span><span class="name">Keeping the Nodes Up-To-Date</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#sec-service-orders"><span class="number">1.2 </span><span class="name">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#sec-upgrade-8-9"><span class="number">1.3 </span><span class="name">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#sec-recover-comp-node-failure"><span class="number">1.4 </span><span class="name">Recovering from Compute Node Failure</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#sec-bootstrap-compute-plane"><span class="number">1.5 </span><span class="name">Bootstrapping the Compute Plane</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#sec-bootstrap-galera-cluster-with-missing-node"><span class="number">1.6 </span><span class="name">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#id-1.5.3.8"><span class="number">1.7 </span><span class="name">Updating MariaDB with Galera</span></a></span></dt><dt><span class="section"><a href="sec-maintenance.html#OctaviaMaintenance"><span class="number">1.8 </span><span class="name">Load Balancer: Octavia Administration</span></a></span></dt></dl></div></div><div class="sect1" id="sec-nodes-update"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Keeping the Nodes Up-To-Date</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-nodes-update">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-nodes-update</li></ul></div></div></div></div><p>
+      Keeping the nodes in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> up-to-date requires an appropriate
+      setup of the update and pool repositories and the deployment of
+      either the <span class="guimenu ">Updater</span> barclamp or the SUSE Manager
+      barclamp. For details, see
+      <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 5 “Software Repository Setup”, Section 5.2 “Update and Pool Repositories”</span>, <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 11 “Installing the <span class="productname">OpenStack</span> Nodes”, Section 11.4.1 “Deploying Node Updates with the Updater Barclamp”</span>, and
+      <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 11 “Installing the <span class="productname">OpenStack</span> Nodes”, Section 11.4.2 “Configuring Node Updates with the <span class="guimenu ">SUSE Manager Client</span>
+    Barclamp”</span>.
+    </p><p>
+      If one of those barclamps is deployed, patches are installed on the
+      nodes. Patches that do not require a reboot will not cause a service
+      interruption. If a patch (for example, a kernel update) requires a reboot
+      after the installation, services running on the machine that is rebooted
+      will not be available within SUSE <span class="productname">OpenStack</span> Cloud.  Therefore, we strongly recommend
+      installing those patches during a maintenance window.
+    </p><div id="id-1.5.3.2.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Maintenance Mode</h6><p>
+        As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, it is not possible to put your entire SUSE <span class="productname">OpenStack</span> Cloud into
+        <span class="quote">“<span class="quote ">Maintenance Mode</span>”</span> (such as limiting all users to
+        read-only operations on the control plane), as <span class="productname">OpenStack</span> does
+        not support this. However when Pacemaker is deployed to
+        manage HA clusters, it should be used to place services and
+        cluster nodes into <span class="quote">“<span class="quote ">Maintenance Mode</span>”</span> before
+        performing maintenance functions on them. For more
+        information,
+        see <a class="link" href="https://documentation.suse.com/sle-ha/12-SP5/single-html/SLE-HA-guide/#cha-conf-hawk2" target="_blank">SUSE Linux Enterprise
+        High Availability documentation</a>.
+      </p></div><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Consequences when Rebooting Nodes </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.2.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.5.3.2.5.2"><span class="term ">Administration Server</span></dt><dd><p>
+            While the Administration Server is offline, it is not possible to deploy new
+            nodes. However, rebooting the Administration Server has no effect on starting
+            instances or on instances already running.
+          </p></dd><dt id="id-1.5.3.2.5.3"><span class="term ">Control Nodes</span></dt><dd><p>
+            The consequences a reboot of a Control Node depend on the
+            services running on that node:
+          </p><p><span class="formalpara-title">Database, keystone, RabbitMQ, glance, nova: </span>
+              No new instances can be started.
+            </p><p><span class="formalpara-title">swift: </span>
+              No object storage data is available. If glance uses
+              swift, it will not be possible to start new instances.
+            </p><p><span class="formalpara-title">cinder, Ceph: </span>
+              No block storage data is available.
+            </p><p><span class="formalpara-title">neutron: </span>
+              No new instances can be started. On running instances the
+              network will be unavailable.
+            </p><p><span class="formalpara-title">horizon. </span>
+              horizon will be unavailable. Starting and managing instances
+              can be done with the command line tools.
+            </p></dd><dt id="id-1.5.3.2.5.4"><span class="term ">Compute Nodes</span></dt><dd><p>
+            Whenever a Compute Node is rebooted, all instances running on
+            that particular node will be shut down and must be manually restarted.
+            Therefore it is recommended to <span class="quote">“<span class="quote ">evacuate</span>”</span> the node by
+            migrating instances to another node, before rebooting it.
+          </p></dd></dl></div></div><div class="sect1" id="sec-service-orders"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-service-orders">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-service-orders</li></ul></div></div></div></div><p>
+      In case you need to restart your complete SUSE <span class="productname">OpenStack</span> Cloud (after a complete shut
+      down or a power outage), ensure that the external Ceph cluster is started,
+      available and healthy.
+      Then start nodes and services in the order documented
+      below.
+    </p><div class="orderedlist "><div class="orderedlist-title-wrap"><h6 class="orderedlist-title"><span class="name">Service Order on Start-up </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.3.3">#</a></h6></div><ol class="orderedlist" type="1"><li class="listitem "><p>
+          Control Node/Cluster on which the Database is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which RabbitMQ is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which keystone is deployed
+        </p></li><li class="listitem "><p>
+          For swift:
+        </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+              Storage Node on which the <code class="literal">swift-storage</code> role is deployed
+            </p></li><li class="listitem "><p>
+              Storage Node on which the <code class="literal">swift-proxy</code> role is deployed
+            </p></li></ol></div></li><li class="listitem "><p>
+          Any remaining Control Node/Cluster. The following additional rules apply:
+        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              The Control Node/Cluster on which the <code class="literal">neutron-server</code>
+              role is deployed needs to be started before starting the node/cluster
+              on which the <code class="literal">neutron-l3</code> role is deployed.
+            </p></li><li class="listitem "><p>
+              The Control Node/Cluster on which the <code class="literal">nova-controller</code>
+              role is deployed needs to be started before starting the node/cluster
+              on which heat is deployed.
+            </p></li></ul></div></li><li class="listitem "><p>
+          Compute Nodes
+        </p></li></ol></div><p>
+      If multiple roles are deployed on a single Control Node, the services are
+      automatically started in the correct order on that node. If you have more
+      than one node with multiple roles, make sure they are
+      started as closely as possible to the order listed above.
+    </p><p>
+      To shut down SUSE <span class="productname">OpenStack</span> Cloud, terminate nodes and services in the order documented
+      below (which is the reverse of the start-up order).
+    </p><div class="orderedlist "><div class="orderedlist-title-wrap"><h6 class="orderedlist-title"><span class="name">Service Order on Shutdown </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.3.6">#</a></h6></div><ol class="orderedlist" type="1"><li class="listitem "><p>
+          Compute Nodes
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which heat is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which the <code class="literal">nova-controller</code>
+          role is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which the <code class="literal">neutron-l3</code>
+          role is deployed
+        </p></li><li class="listitem "><p>
+          All Control Node(s)/Cluster(s) on which neither of the following services
+          is deployed: Database, RabbitMQ, and keystone.
+        </p></li><li class="listitem "><p>
+          For swift:
+        </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+              Storage Node on which the <code class="literal">swift-proxy</code> role is
+              deployed
+            </p></li><li class="listitem "><p>
+              Storage Node on which the <code class="literal">swift-storage</code> role is
+              deployed
+            </p></li></ol></div></li><li class="listitem "><p>
+          Control Node/Cluster on which keystone is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which RabbitMQ is deployed
+        </p></li><li class="listitem "><p>
+          Control Node/Cluster on which the Database is deployed
+        </p></li><li class="listitem "><p>
+          If required, gracefully shut down an external Ceph cluster
+        </p></li></ol></div></div><div class="sect1" id="sec-upgrade-8-9"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-upgrade-8-9">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-upgrade-8-9</li></ul></div></div></div></div><p>
+      Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 can be done either via a
+      Web interface or from the command line. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> supports a non-disruptive
+      upgrade which provides a fully-functional SUSE <span class="productname">OpenStack</span> Cloud operation during most of
+      the upgrade procedure, if your installation meets the requirements at <a class="xref" href="sec-maintenance.html#il-upgrade-8-9-non-disruptive" title="Non-Disruptive Upgrade Requirements">Non-Disruptive Upgrade Requirements</a>.
+    </p><p>
+      If the requirements for a non-disruptive upgrade are not met, the
+      upgrade procedure will be done in normal mode. When
+      live-migration is set up, instances will be migrated to another node
+      before the respective Compute Node is updated to ensure continuous
+      operation.
+    </p><div id="id-1.5.3.4.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: STONITH and Administration Server</h6><p>
+        Make sure that the STONITH mechanism in your cloud does not rely on the
+        state of the Administration Server (for example, no SBD devices are located there,
+        and IPMI is not using the network connection relying on the
+        Administration Server). Otherwise, this may affect the clusters when the Administration Server is
+        rebooted during the upgrade procedure.
+      </p></div><div class="sect2" id="sec-upgrade-8-9-requirements"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Requirements</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-upgrade-8-9-requirements">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-upgrade-8-9-requirements</li></ul></div></div></div></div><p>
+        When starting the upgrade process, several checks are performed to
+        determine whether the SUSE <span class="productname">OpenStack</span> Cloud is in an upgradeable state and whether a
+        non-disruptive update would be supported:
+      </p><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">General Upgrade Requirements </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.4.5.3">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+            All nodes need to have the latest <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 updates <span class="bold"><strong>and</strong></span> the latest SLES 12 SP3 updates installed. If
+            this is not the case, refer to <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 11 “Installing the <span class="productname">OpenStack</span> Nodes”, Section 11.4.1 “Deploying Node Updates with the Updater Barclamp”</span> for instructions on how to
+            update.
+          </p></li><li class="listitem "><p>
+            All allocated nodes need to be turned on and have to be in state
+            <span class="quote">“<span class="quote ">ready</span>”</span>.
+          </p></li><li class="listitem "><p>
+            All barclamp proposals need to have been successfully deployed. If a
+            proposal is in state <span class="quote">“<span class="quote ">failed</span>”</span>, the upgrade procedure will
+            refuse to start. Fix the issue, or remove the proposal, if necessary.
+          </p></li><li class="listitem "><p>
+            If the Pacemaker barclamp is deployed, all clusters
+            need to be in a healthy state.
+          </p></li><li class="listitem "><p> The upgrade will not start when Ceph is deployed via Crowbar. Only
+            external Ceph is supported. Documentation for SUSE Enterprise Storage is available at
+            <a class="link" href="https://documentation.suse.com/ses/5.5/" target="_blank">https://documentation.suse.com/ses/5.5/</a>.
+          </p></li><li class="listitem "><p>
+            The following repositories need to be available on a server that is
+            accessible from the Administration Server. The HA repositories are only needed if you
+            have an HA setup. It is recommended to use the same server that also
+            hosts the respective repositories of the current version.
+          </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal"><span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-9</span></span>-Pool</code></td></tr><tr><td><code class="literal"><span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-9</span></span>-Update</code></td></tr><tr><td><code class="literal">SLES12-SP4-Pool</code></td></tr><tr><td><code class="literal">SLES12-SP4-Update</code></td></tr><tr><td>
+              <code class="literal">SLE12-SP4-HA-Pool</code> (for HA setups only)
+            </td></tr><tr><td>
+              <code class="literal">SLE12-SP4-HA-Update</code> (for HA setups only)
+            </td></tr></table><div id="id-1.5.3.4.5.3.7.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+              Do not add repositories to the SUSE <span class="productname">OpenStack</span> Cloud repository configuration. This
+              needs to be done during the upgrade procedure.
+            </p></div></li></ul></div><div class="itemizedlist " id="il-upgrade-8-9-non-disruptive"><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Non-Disruptive Upgrade Requirements </span><a title="Permalink" class="permalink" href="sec-maintenance.html#il-upgrade-8-9-non-disruptive">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+            All Control Nodes need to be set up highly available.
+          </p></li><li class="listitem "><p>
+            A non-disruptive upgrade is not supported if the cinder
+            has been deployed with the <code class="literal">raw devices</code> or
+            <code class="literal">local file</code> back-end. In this case, you have to perform
+            a regular upgrade, or change the cinder back-end for a
+            non-disruptive upgrade.
+          </p></li><li class="listitem "><p>
+            A non-disruptive upgrade is prevented if the
+            <code class="literal">cinder-volume</code> service is placed on Compute Node. For a
+            non-disruptive upgrade, <code class="literal">cinder-volume</code> should either be
+            HA-enabled or placed on non-compute nodes.
+          </p></li><li class="listitem "><p>
+            A non-disruptive upgrade is prevented if <code class="literal">manila-share</code>
+            service is placed on a Compute Node. For more information, see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 12 “Deploying the <span class="productname">OpenStack</span> Services”, Section 12.14 “Deploying manila”</span>.
+          </p></li><li class="listitem "><p>
+            Live-migration support needs to be configured and enabled for the
+            Compute Nodes. The amount of free resources (CPU and RAM) on the
+            Compute Nodes needs to be sufficient to evacuate the nodes one by one.
+          </p></li><li class="listitem "><p>
+            In case of a non-disruptive upgrade, glance must be configured as a
+            shared storage if the <span class="guimenu ">Default Storage
+              Store</span> value in the glance is set to <code class="literal">File</code>.
+          </p></li><li class="listitem "><p>
+            For a non-disruptive upgrade, only KVM-based Compute Nodes with
+            the <code class="literal">nova-compute-kvm</code> role are allowed in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8.
+          </p></li><li class="listitem "><p>
+            Non-disruptive upgrade is limited to the following cluster
+            configurations:
+          </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                Single cluster that has all supported controller roles on it
+              </p></li><li class="listitem "><p>
+                Two clusters where one only has
+                <code class="systemitem">neutron-network</code> and the other one has the
+                rest of the controller roles.
+              </p></li><li class="listitem "><p>
+                Two clusters where one only has
+                <code class="systemitem">neutron-server</code> plus
+                <code class="systemitem">neutron-network</code> and the other one has the
+                rest of the controller roles.
+              </p></li><li class="listitem "><p>
+                Two clusters, where one cluster runs the database and RabbitMQ
+              </p></li><li class="listitem "><p>
+                Three clusters, where one cluster runs database and RabbitMQ,
+                another cluster has the controller roles, and the third cluster has
+                the <code class="systemitem">neutron-network</code> role.
+	      </p></li></ul></div><p>
+            If your cluster configuration is not supported by the non-disruptive
+            upgrade procedure, you can still perform a normal upgrade.
+          </p></li></ul></div></div><div class="sect2" id="sec-upgrade-unsupported-configs"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Unsupported configurations</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-upgrade-unsupported-configs">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-upgrade-unsupported-configs</li></ul></div></div></div></div><p>
+        In SUSE <span class="productname">OpenStack</span> Cloud 9, certain configurations and barclamp combinations
+        are no longer supported. See the <a class="link" href="https://www.suse.com/releasenotes/x86_64/SUSE-OPENSTACK-CLOUD/9/" target="_blank">SUSE <span class="productname">OpenStack</span> Cloud
+        9 release notes</a> for details. The upgrade prechecks fail
+        if they detect an unsupported configuration. Below is a list
+        configurations that cause failure and possible solutions.
+</p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Unsupported Configurations </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.4.6.3">#</a></h6></div><dl class="variablelist"><dt id="id-1.5.3.4.6.3.2"><span class="term ">
+            aodh deployed
+          </span></dt><dd><p>
+              The aodh barclamp has been removed in SUSE <span class="productname">OpenStack</span> Cloud 9. Deactivate and delete
+              the aodh proposal before continuing the upgrade.
+            </p></dd><dt id="id-1.5.3.4.6.3.3"><span class="term ">
+            ceilometer deployed without monasca
+          </span></dt><dd><p>
+              As of SUSE <span class="productname">OpenStack</span> Cloud 9, ceilometer has been reduced to the ceilometer agent,
+              with monasca being used as a storage back-end. Consequently, a
+              standalone ceilometer without monasca present will fail the upgrade
+              prechecks. There are two possible solutions.
+            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+	          Deactivate and delete the ceilometer proposal before the upgrade, and
+	          re-enable it after the upgrade.
+	        </p></li><li class="listitem "><p>
+	          Deploy the monasca barclamp before the upgrade.
+	        </p></li></ul></div><div id="id-1.5.3.4.6.3.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Existing ceilometer Data</h6><p>
+		Existing ceilometer data is not migrated to new
+		monasca storage. It stays in the MariaDB
+		ceilometer database, and it can be accessed directly,
+		if needed. The data is also included in the <span class="productname">OpenStack</span>
+		database backup created by upgrade process.
+	      </p></div></dd><dt id="id-1.5.3.4.6.3.4"><span class="term ">
+            nova: Xen Compute Nodes present
+          </span></dt><dd><p>
+              As of SUSE <span class="productname">OpenStack</span> Cloud 9, the Xen hypervisor is no longer supported. On any
+              cloud, where Xen based compute nodes are still present, the following
+              procedure must be followed before it can be upgraded to SUSE <span class="productname">OpenStack</span> Cloud 9:
+            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  Run <code class="command">nova service-disable</code> for all nova Compute Nodes
+                  running the Xen hypervisor. In the Crowbar context, these are the
+                  Compute Nodes with the <code class="literal">nova-compute-xen</code> role in the
+                  nova barclamp. This prevents any new VMs from being launched on these
+                  Compute Nodes. It is safe to leave the Compute Nodes in question in this
+                  state for the entire duration of the next step.
+                </p></li><li class="listitem "><p>
+                  Recreate all nova instances still running on the Xen-based
+                  Compute Nodes on non-Xen Compute Nodes or shut them down completely.
+                </p></li><li class="listitem "><p>
+                  With no other instances on the Xen-based Compute Nodes, remove the nova
+                  barclamp's <code class="literal">nova-compute-xen</code> role from these nodes and
+                  re-apply the nova barclamp. You may optionally assign a different
+                  <code class="literal">nova-compute</code> role, such as
+                  <code class="literal">nova-compute-kvm</code>, to configure them as Compute Nodes for
+                  one of the remaining hypervisors.
+                </p></li></ul></div></dd><dt id="id-1.5.3.4.6.3.5"><span class="term ">
+            trove deployed
+          </span></dt><dd><p>
+              The trove barclamp has been removed in SUSE <span class="productname">OpenStack</span> Cloud 9. Deactivate and delete
+              the trove proposal before continuing the upgrade.
+            </p></dd></dl></div></div><div class="sect2" id="sec-upgrade-web-ui"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading Using the Web Interface</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-upgrade-web-ui">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-upgrade-web-ui</li></ul></div></div></div></div><p>
+        The Web interface features a wizard that guides you through the upgrade
+        procedure.
+      </p><div id="id-1.5.3.4.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Canceling the Upgrade</h6><p>
+          You can cancel the upgrade process by clicking <span class="guimenu ">Cancel
+            Upgrade</span>. The upgrade operation can only be canceled
+          before the Administration Server upgrade is started. When the upgrade has been
+          canceled, the nodes return to the ready state. However, any user
+          modifications must be undone manually. This includes reverting repository
+          configuration.
+        </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+            To start the upgrade procedure, open the Crowbar Web interface on the Administration Server and choose <span class="guimenu ">Utilities</span> › <span class="guimenu ">Upgrade</span>. Alternatively, point the browser directly to the upgrade
+            wizard on the Administration Server, for example
+            <code class="literal">http://192.168.124.10/upgrade/</code>.
+          </p></li><li class="step "><p>
+            On the first screen of the Web interface you will run preliminary checks, get
+            information about the upgrade mode and start the upgrade process.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_upgrade_prepare.png" target="_blank"><img src="images/depl_upgrade_prepare.png" width="" /></a></div></div></li><li class="step "><p>
+            Perform the preliminary checks to determine whether the upgrade
+            requirements are met by clicking <span class="guimenu ">Check</span> in
+            <code class="literal">Preliminary Checks</code>.
+          </p><p>
+            The Web interface displays the progress of the checks. You will see green, yellow or
+            red indicator next to each check. Yellow means the upgrade can only be
+            performed in the normal mode. Red indicates an error, which means that
+            you need to fix the problem and run the <span class="guimenu ">Check</span> again.
+          </p></li><li class="step "><p>
+            When all checks in the previous step have passed, <code class="literal">Upgrade
+              Mode</code> shows the result of the upgrade analysis. It will indicate
+            whether the upgrade procedure will continue in non-disruptive or in
+            normal mode.
+          </p></li><li class="step "><p>
+            To start the upgrade process, click <span class="guimenu ">Begin Upgrade</span>.
+          </p></li><li class="step "><p>
+            While the upgrade of the Administration Server is prepared, the upgrade wizard
+            prompts you to <span class="guimenu ">Download the Backup of the
+              Administration Server</span>. When the backup is done, move it to a safe place. If
+            something goes wrong during the upgrade procedure of the Administration Server, you
+            can restore the original state from this backup using the
+            <code class="command">crowbarctl backup restore
+              <em class="replaceable ">NAME</em></code> command.
+          </p></li><li class="step "><p>
+            Check that the repositories required for upgrading the Administration Server are
+            available and updated. To do this, click the <span class="guimenu ">Check</span>
+            button. If the checks fail, add the software repositories as described in
+            <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 5 “Software Repository Setup”</span>. Run the
+            checks again, and click <span class="guimenu ">Next</span>.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_upgrade_repocheck-admin.png" target="_blank"><img src="images/depl_upgrade_repocheck-admin.png" width="" /></a></div></div></li><li class="step "><p>
+            Click <span class="guimenu ">Upgrade Administration Server</span> to upgrade and
+            reboot the admin node. Note that this operation may take a while. When
+            the Administration Server has been updated, click <span class="guimenu ">Next</span>.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_upgrade_admin.png" target="_blank"><img src="images/depl_upgrade_admin.png" width="" /></a></div></div></li><li class="step "><p>
+            Check that the repositories required for upgrading all nodes are
+            available and updated.  To do this click the <span class="guimenu ">Check</span>
+            button. If the check fails, add the software repositories as described in
+            <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 5 “Software Repository Setup”</span>. Run the
+            checks again, and click <span class="guimenu ">Next</span>.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_upgrade_repocheck-nodes.png" target="_blank"><img src="images/depl_upgrade_repocheck-nodes.png" width="" /></a></div></div></li><li class="step "><p>
+            Next, you need to stop <span class="productname">OpenStack</span> services. This makes the <span class="productname">OpenStack</span> API
+            unavailable until the upgrade of control plane is
+            completed. When you are ready, click <span class="guimenu ">Stop
+              Services</span>. Wait until the services are stopped and click
+            <span class="guimenu ">Next</span>.
+          </p></li><li class="step "><p>
+            Before upgrading the nodes, the wizard prompts you to <span class="guimenu ">Back up
+              OpenStack Database</span>. The MariaDB database backup will be
+            stored on the Administration Server. It can be used to restore the database in case
+            something goes wrong during the upgrade. To back up the database, click
+            <span class="guimenu ">Create Backup</span>. When the backup operation is
+            finished, click <span class="guimenu ">Next</span>.
+          </p></li><li class="step "><p>
+            If you prefer to upgrade the controller nodes and postpone upgrading
+            Compute Nodes, disable the <span class="guimenu ">Upgrade Compute Nodes</span>
+            option. In this case, you can use the <span class="guimenu ">Go to Dashboard</span>
+            button to switch to the Crowbar Web interface to check the current configuration
+            and make changes, as long as they do not affect the Compute Nodes. If you
+            choose to postpone upgrading Compute Nodes, all <span class="productname">OpenStack</span> services remain up
+            and running.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_compnode_postponed.png" target="_blank"><img src="images/depl_compnode_postponed.png" width="" /></a></div></div></li><li class="step "><p>
+            When the upgrade is completed, press <span class="guimenu ">Finish</span> to
+            return to the Dashboard.
+          </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/depl_upgrade_finished.png" target="_blank"><img src="images/depl_upgrade_finished.png" width="" /></a></div></div></li></ol></div></div><div id="id-1.5.3.4.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Dealing with Errors</h6><p>
+          If an error occurs during the upgrade process, the wizard displays a
+          message with a description of the error and a possible solution. After
+          fixing the error, re-run the step where the error occurred.
+        </p></div></div><div class="sect2" id="sec-upgrade-command-line"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading from the Command Line</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-upgrade-command-line">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-upgrade-command-line</li></ul></div></div></div></div><p>
+        The upgrade procedure on the command line is performed by using the program
+        <code class="command">crowbarctl</code>. For general help, run <code class="command">crowbarctl
+          help</code>. To get help on a certain subcommand, run
+        <code class="command">crowbarctl <em class="replaceable ">COMMAND</em> help</code>.
+      </p><p>
+        To review the process of the upgrade procedure, you may call
+        <code class="command">crowbarctl upgrade status</code> at any time. Steps may have
+        three states: <code class="literal">pending</code>, <code class="literal">running</code>, and
+        <code class="literal">passed</code>.
+      </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+            To start the upgrade procedure from the command line, log in to the
+            Administration Server as <code class="systemitem">root</code>.
+          </p></li><li class="step "><p>
+            Perform the preliminary checks to determine whether the upgrade
+            requirements are met:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade prechecks</pre></div><p>
+            The command's result is shown in a table. Make sure the column
+            <span class="guimenu ">Errors</span> does not contain any entries. If there are
+            errors, fix them and restart the <code class="command">precheck</code> command
+            afterwards. You cannot proceed until the mandatory checks have passed.
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade prechecks
+            +-------------------------------+--------+----------+--------+------+
+            | Check ID                      | Passed | Required | Errors | Help |
+            +-------------------------------+--------+----------+--------+------+
+            | network_checks                | true   | true     |        |      |
+            | cloud_healthy                 | true   | true     |        |      |
+            | maintenance_updates_installed | true   | true     |        |      |
+            | compute_status                | true   | false    |        |      |
+            | ha_configured                 | true   | false    |        |      |
+            | clusters_healthy              | true   | true     |        |      |
+            +-------------------------------+--------+----------+--------+------+</pre></div><p>
+            Depending on the outcome of the checks, it is automatically decided
+            whether the upgrade procedure will continue in non-disruptive or in
+            normal mode. For the non-disruptive mode, all the checks must pass,
+            including those that are not marked in the table as required.
+          </p><div id="id-1.5.3.4.8.4.2.6" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.png" /><h6>Tip: Forcing Normal Mode Upgrade</h6><p>
+              The non-disruptive update will take longer than an upgrade in normal
+              mode, because it performs certain tasks sequentially which are done
+              in parallel during the normal upgrade. Live-migrating guests to
+              other Compute Nodes during the non-disruptive
+              upgrade takes additional time.
+            </p><p>
+              Therefore, if a non-disruptive upgrade is not a requirement for you, you
+              may want to switch to the normal upgrade mode, even if your setup
+              supports the non-disruptive method. To force the normal upgrade mode,
+              run:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade mode normal</pre></div><p>
+              To query the current upgrade mode run:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade mode</pre></div><p>
+              To switch back to the non-disruptive mode run:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade mode non_disruptive</pre></div><p>
+              It is possible to call this command at any time during the upgrade
+              process until the <code class="literal">services</code> step is started. After
+              that point the upgrade mode can no longer be changed.
+            </p></div></li><li class="step "><p>
+            Prepare the nodes by transitioning them into the <span class="quote">“<span class="quote ">upgrade</span>”</span>
+            state and stopping the chef daemon:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade prepare</pre></div><p>
+            Depending of the size of your SUSE <span class="productname">OpenStack</span> Cloud deployment, this step may take
+            some time. Use the command <code class="command">crowbarctl upgrade status</code>
+            to monitor the status of the process named
+            <code class="literal">steps.prepare.status</code>. It needs to be in state
+            <code class="literal">passed</code> before you proceed:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade status
+            +--------------------------------+----------------+
+            | Status                         | Value          |
+            +--------------------------------+----------------+
+            | current_step                   | backup_crowbar |
+            | current_substep                |                |
+            | current_substep_status         |                |
+            | current_nodes                  |                |
+            | current_node_action            |                |
+            | remaining_nodes                |                |
+            | upgraded_nodes                 |                |
+            | crowbar_backup                 |                |
+            | openstack_backup               |                |
+            | suggested_upgrade_mode         | non_disruptive |
+            | selected_upgrade_mode          |                |
+            | compute_nodes_postponed        | false          |
+            | steps.prechecks.status         | passed         |
+            | steps.prepare.status           | passed         |
+            | steps.backup_crowbar.status    | pending        |
+            | steps.repocheck_crowbar.status | pending        |
+            | steps.admin.status             | pending        |
+            | steps.repocheck_nodes.status   | pending        |
+            | steps.services.status          | pending        |
+            | steps.backup_openstack.status  | pending        |
+            | steps.nodes.status             | pending        |
+            +--------------------------------+----------------+</pre></div></li><li class="step "><p>
+            Create a backup of the existing Administration Server installation. In case something
+            goes wrong during the upgrade procedure of the Administration Server you can restore
+            the original state from this backup with the command <code class="command">crowbarctl
+              backup restore <em class="replaceable ">NAME</em></code>
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade backup crowbar</pre></div><p>
+            To list all existing backups including the one you have just created, run
+            the following command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl backup list
+            +----------------------------+--------------------------+--------+---------+
+            | Name                       | Created                  | Size   | Version |
+            +----------------------------+--------------------------+--------+---------+
+            | crowbar_upgrade_1534864741 | 2018-08-21T15:19:03.138Z | 219 KB | 4.0     |
+            +----------------------------+--------------------------+--------+---------+</pre></div></li><li class="step "><p>
+            This step prepares the upgrade of the Administration Server by checking the
+            availability of the update and pool repositories for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>
+            9 and SUSE Linux Enterprise Server 12 SP4. Run the following command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade repocheck crowbar
+            +----------------------------------------+------------------+-----------+
+            | Repository                             | Status           | Type      |
+            +----------------------------------------+------------------+-----------+
+            | SLES12-SP4-Pool                        | x86_64 (missing) | os        |
+            | SLES12-SP4-Updates                     | x86_64 (missing) | os        |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Pool    | available        | openstack |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Updates | available        | openstack |
+            +----------------------------------------+------------------+-----------+</pre></div><p>
+            Two of the required repositories are reported as missing, because they have
+            not yet been added to the Crowbar configuration. To add them to the
+            Administration Server proceed as follows.
+          </p><p>
+            Note that this step is for setting up the repositories for the Administration Server,
+            not for the nodes in SUSE <span class="productname">OpenStack</span> Cloud (this will be done in a subsequent step).
+          </p><ol type="a" class="substeps "><li class="step "><p>
+                Start <code class="command">yast repositories</code> and proceed with
+                <span class="guimenu ">Continue</span>. Replace the repositories
+                <code class="literal">SLES12-SP3-Pool</code> and
+                <code class="literal">SLES12-SP3-Updates</code> with the respective SP4
+                repositories.
+              </p><p>
+                If you prefer to use zypper over YaST, you may alternatively make the
+                change using <code class="command">zypper mr</code>.
+              </p></li><li class="step "><p>
+                Next, replace the <code class="literal">SUSE-OpenStack-Cloud-Crowbar-8</code>
+                update and pool repositories with the respective <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9 versions.
+              </p></li><li class="step "><p>
+                Check for other (custom) repositories. All SLES SP3 repositories need
+                to be replaced with the respective SLES SP4 version. In case no SP3
+                version exists, disable the repository—the respective packages
+                from that repository will be deleted during the upgrade.
+              </p></li></ol><div id="id-1.5.3.4.8.4.5.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Administration Server with external SMT</h6><p>
+              If the Administration Server is configured with external SMT, the system
+              repositories configuration is managed by the system utilities. In this
+              case, skip the above substeps and run the <code class="command">zypper migration
+                --download-only</code> command.
+            </p></div><p>
+            Once the repository configuration on the Administration Server has been updated, run
+            the command to check the repositories again. If the configuration is
+            correct, the result should look like the following:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade repocheck crowbar
+            +----------------------------------------+-----------+-----------+
+            | Repository                             | Status    | Type      |
+            +----------------------------------------+-----------+-----------+
+            | SLES12-SP4-Pool                        | available | os        |
+            | SLES12-SP4-Updates                     | available | os        |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Pool    | available | openstack |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Updates | available | openstack |
+            +----------------------------------------+-----------+-----------+</pre></div></li><li class="step "><p>
+            Now that the repositories are available, the Administration Server itself will be
+            upgraded. The update will run in the background using <code class="command">zypper
+              dup</code>. Once all packages have been upgraded, the Administration Server will
+            be rebooted and you will be logged out. To start the upgrade run:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade admin</pre></div></li><li class="step "><p>
+            After the Administration Server has been successfully updated, the Control Nodes and
+            Compute Nodes will be upgraded. At first the availability of the
+            repositories used to provide packages for the SUSE <span class="productname">OpenStack</span> Cloud nodes is tested.
+          </p><div id="id-1.5.3.4.8.4.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Correct Metadata in the PTF Repository</h6><p>
+              When adding new repositories to the nodes, make sure that the new PTF
+              repository also contains correct metadata (even if it is empty). To do
+              this, run the <code class="command">createrepo-cloud-ptf</code> command.
+            </p></div><p>
+            Note that the configuration for these repositories differs from the one
+            for the Administration Server that was already done in a previous step. In this step
+            the repository locations are made available to Crowbar rather than to
+            libzypp on the Administration Server. To check the repository configuration run the
+            following command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade repocheck nodes
+            +----------------------------------------+-------------------------------------+-----------+
+            | Repository                             | Status                              | Type      |
+            +----------------------------------------+-------------------------------------+-----------+
+            | SLE12-SP4-HA-Pool                      | missing (x86_64), inactive (x86_64) | ha        |
+            | SLE12-SP4-HA-Updates                   | missing (x86_64), inactive (x86_64) | ha        |
+            | SLE12-SP4-HA-Updates-test              | missing (x86_64), inactive (x86_64) | ha        |
+            | SLES12-SP4-Pool                        | missing (x86_64), inactive (x86_64) | os        |
+            | SLES12-SP4-Updates                     | missing (x86_64), inactive (x86_64) | os        |
+            | SLES12-SP4-Updates-test                | missing (x86_64), inactive (x86_64) | os        |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Pool    | missing (x86_64), inactive (x86_64) | openstack |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Updates | missing (x86_64), inactive (x86_64) | openstack |
+            +----------------------------------------+-------------------------------------+-----------+</pre></div><p>
+            To update the locations for the listed repositories, start <code class="command">yast
+              crowbar</code> and proceed as described in <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 7 “Crowbar Setup”, Section 7.4 “<span class="guimenu ">Repositories</span>”</span>.
+          </p><p>
+            Once the repository configuration for Crowbar has been updated, run the
+            command to check the repositories again to determine, whether the current
+            configuration is correct.
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade repocheck nodes
+            +----------------------------------------+-----------+-----------+
+            | Repository                             | Status    | Type      |
+            +----------------------------------------+-----------+-----------+
+            | SLE12-SP4-HA-Pool                      | available | ha        |
+            | SLE12-SP4-HA-Updates                   | available | ha        |
+            | SLES12-SP4-Pool                        | available | os        |
+            | SLES12-SP4-Updates                     | available | os        |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Pool    | available | openstack |
+            | SUSE-OpenStack-Cloud-Crowbar-9-Updates | available | openstack |
+            +----------------------------------------+-----------+-----------+</pre></div><div id="id-1.5.3.4.8.4.7.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Shut Down Running instances in Normal Mode</h6><p>
+              If the upgrade is done in the normal mode, you need to shut down or suspend
+              all running instances before performing the next step.
+            </p></div><div id="id-1.5.3.4.8.4.7.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Product Media Repository Copies</h6><p>
+              To PXE boot new nodes, an additional SUSE Linux Enterprise Server 12 SP4 repository—a copy
+              of the installation system— is required. Although not required
+              during the upgrade procedure, it is recommended to set up this directory
+              now. Refer to <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 5 “Software Repository Setup”, Section 5.1 “Copying the Product Media Repositories”</span> for
+              details. If you had also copied the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 installation media
+              (optional), you may also want to provide the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>
+              9 the same way.
+            </p><p>
+              Once the upgrade procedure has been successfully finished, you may
+              delete the previous copies of the installation media in
+              <code class="filename">/srv/tftpboot/suse-12.4/x86_64/install</code> and
+              <code class="filename">/srv/tftpboot/suse-12.4/x86_64/repos/Cloud</code>.
+            </p></div></li><li class="step "><p>
+            To ensure the status of the nodes does not change during the upgrade
+            process, the majority of the <span class="productname">OpenStack</span> services will be stopped on the
+            nodes. As a result, the <span class="productname">OpenStack</span> API will no longer be accessible. In
+            case of the non-disruptive mode, the instances will continue to run and
+            stay accessible. Run the following command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade services</pre></div><p>
+            This step takes a while to finish. Monitor the process by running
+            <code class="command">crowbarctl upgrade status</code>. Do not proceed before
+            <code class="literal">steps.services.status</code> is set to
+            <code class="literal">passed</code>.
+          </p></li><li class="step "><p>
+            The last step before upgrading the nodes is to make a backup of the
+            <span class="productname">OpenStack</span> database. The database dump will be stored on the
+            Administration Server and can be used to restore the database in case something goes
+            wrong during the upgrade.
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade backup openstack</pre></div><p>
+            To find the location of the database dump, run the <code class="command">crowbarctl
+              upgrade status</code>.
+          </p></li><li class="step "><p>
+            The final step of the upgrade procedure is upgrading the
+            nodes.  To start the process, enter:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade nodes all</pre></div><p>
+            The upgrade process runs in the background and can be queried with
+            <code class="command">crowbarctl upgrade status</code>. Depending on the size of
+            your SUSE <span class="productname">OpenStack</span> Cloud it may take several hours, especially when performing a
+            non-disruptive update. In that case, the Compute Nodes are updated
+            one-by-one after instances have been live-migrated to other nodes.
+          </p><p>
+            Instead of upgrading all nodes you may also upgrade
+            the Control Nodes first and individual Compute Nodes afterwards. Refer to
+            <code class="command">crowbarctl upgrade nodes --help</code> for details. If you
+            choose this approach, you can use the <code class="command">crowbarctl upgrade
+              status</code> command to monitor the upgrade process. The output of
+            this command contains the following entries:
+          </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.3.4.8.4.10.5.1"><span class="term ">
+                current_node_action
+              </span></dt><dd><p>
+                  The current action applied to the node.
+                </p></dd><dt id="id-1.5.3.4.8.4.10.5.2"><span class="term ">
+                current_substep
+              </span></dt><dd><p>
+                  Shows the current substep of the node upgrade step. For example,
+                  for the <code class="command">crowbarctl upgrade nodes controllers</code>,
+                  the <code class="literal">current_substep</code> entry displays the
+                  <code class="literal">controller_nodes</code> status when upgrading controllers.
+                </p></dd></dl></div><p>
+            After the controllers have been upgraded, the
+            <code class="literal">steps.nodes.status</code> entry in the output displays the
+            <code class="literal">running</code> status. Check then the status of the
+            <code class="literal">current_substep_status</code> entry. If it displays
+            <code class="literal">finished</code>, you can move to the next step of upgrading
+            the Compute Nodes.
+          </p><p>
+            <span class="bold"><strong>Postponing the Upgrade</strong></span>
+          </p><p>
+            It is possible to stop the upgrade of compute nodes and postpone their
+            upgrade with the command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade nodes postpone</pre></div><p>
+            After the upgrade of compute nodes is postponed, you can go to Crowbar
+            Web interface, check the configuration. You can also apply some changes, provided
+            they do not affect the Compute Nodes. During the postponed upgrade, all
+            <span class="productname">OpenStack</span> services should be up and running.
+          </p><p>
+            To resume the upgrade, issue the command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade nodes resume</pre></div><p>
+            Finish the upgrade with either <code class="command">crowbarctl upgrade nodes
+              all</code> or upgrade nodes one node by one with <code class="command">crowbarctl
+              upgrade nodes <em class="replaceable ">NODE_NAME</em></code>.
+          </p><p>
+            When upgrading individual Compute Nodes using the <code class="command">crowbarctl
+              upgrade nodes</code> <em class="replaceable ">NODE_NAME</em> command, the
+            <code class="literal">current_substep_status</code> entry changes to
+            <code class="literal">node_finished</code> when the upgrade of a single node is
+            done. After all nodes have been upgraded, the
+            <code class="literal">current_substep_status</code> entry displays <code class="literal">finished</code>.
+          </p></li></ol></div></div><div id="id-1.5.3.4.8.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Dealing with Errors</h6><p>
+          If an error occurs during the upgrade process, the output of the
+          <code class="command">crowbarctl upgrade status</code> provides a detailed
+          description of the failure. In most cases, both the output and the error
+          message offer enough information for fixing the issue. When the problem has
+          been solved, run the previously-issued upgrade command to resume the
+          upgrade process.
+        </p></div><div class="sect3" id="sec-depl-maintenance-parallel-upgrade-cmdl"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Simultaneous Upgrade of Multiple Nodes</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-depl-maintenance-parallel-upgrade-cmdl">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-depl-maintenance-parallel-upgrade-cmdl</li></ul></div></div></div></div><p>
+          It is possible to select more Compute Nodes for selective upgrade instead of
+          just one. Upgrading multiple nodes simultaneously significantly reduces the
+          time required for the upgrade.
+        </p><p>
+          To upgrade multiple nodes simultaneously, use the following command:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade nodes <em class="replaceable ">NODE_NAME_1</em>,<em class="replaceable ">NODE_NAME_2</em>,<em class="replaceable ">NODE_NAME_3</em></pre></div><p>
+          Node names can be separated by comma, semicolon, or space. When using
+          space as separator, put the part containing node names in quotes.
+        </p><p>
+          Use the following command to find the names of the nodes that haven't been upgraded:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>crowbarctl upgrade status nodes</pre></div><p>
+          Since the simultaneous upgrade is intended to be non-disruptive, all
+          Compute Nodes targeted for a simultaneous upgrade must be cleared of any
+          running instances.</p><div id="id-1.5.3.4.8.6.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+            You can check what instances are running on a specific
+            node using the following command:
+          </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>nova list --all-tenants --host <em class="replaceable ">NODE_NAME</em></pre></div></div><p>
+          This means that it is not possible to pick an arbitrary number of
+          Compute Nodes for the simultaneous upgrade operation: you have to make sure
+          that it is possible to live-migrate every instance away from the batch of
+          nodes that are supposed to be upgraded in parallel. In case of high load
+          on all Compute Nodes, it might not be possible to upgrade more than one node
+          at a time. Therefore, it is recommended to perform the following steps for
+          each node targeted for the simultaneous upgrade prior to running the
+          <code class="command">crowbarctl upgrade nodes</code> command.
+        </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+              Disable the Compute Node so it's not used as a target during
+              live-evacuation of any other node:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>openstack compute service set --disable <em class="replaceable ">"NODE_NAME"</em> nova-compute</pre></div></li><li class="step "><p>
+              Evacuate all running instances from the node:
+            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>nova host-evacuate-live <em class="replaceable ">"NODE_NAME"</em></pre></div></li></ol></div></div><p>
+          After completing these steps, you can perform a simultaneous upgrade of
+          the selected nodes.
+        </p></div></div><div class="sect2" id="sec-depl-maintenance-upgrade-troubleshooting"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting Upgrade Issues</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-depl-maintenance-upgrade-troubleshooting">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-depl-maintenance-upgrade-troubleshooting</li></ul></div></div></div></div><div class="qandaset" id="id-1.5.3.4.9.2"><div class="free-id" id="id-1.5.3.4.9.2.1"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.1.1"><strong>Q: 1.</strong>
+              Upgrade of the admin server has failed.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.1.2"><p>
+              Check for empty, broken, and not signed repositories in the Administration Server
+              upgrade log file <code class="filename">/var/log/crowbar/admin-server-upgrade.log</code>. Fix the
+              repository setup. Upgrade then remaining packages manually to SUSE Linux Enterprise Server 12 SP4
+              and SUSE <span class="productname">OpenStack</span> Cloud 9 using the command <code class="command">zypper dup</code>. Reboot the Administration Server.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.2"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.2.1"><strong>Q: 2.</strong>
+              An upgrade step repeatedly fails due to timeout.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.2.2"><p>
+              Timeouts for most upgrade operations can be adjusted in the
+              <code class="filename">/etc/crowbar/upgrade_timeouts.yml</code> file. If the
+              file doesn't exist, use the following template, and modify it to your needs:
+            </p><div class="verbatim-wrap"><pre class="screen">              :prepare_repositories: 120
+              :pre_upgrade: 300
+              :upgrade_os: 1500
+              :post_upgrade: 600
+              :shutdown_services: 600
+              :shutdown_remaining_services: 600
+              :evacuate_host: 300
+              :chef_upgraded: 1200
+              :router_migration: 600
+              :lbaas_evacuation: 600
+              :set_network_agents_state: 300
+              :delete_pacemaker_resources: 600
+              :delete_cinder_services: 300
+              :delete_nova_services: 300
+              :wait_until_compute_started: 60
+              :reload_nova_services: 120
+              :online_migrations: 1800</pre></div><p>
+              The following entries may require higher values (all values are
+              specified in seconds):
+            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">upgrade_os</code> Time allowed for upgrading all packages of one node.
+                </p></li><li class="listitem "><p>
+                  <code class="literal">chef_upgraded</code> Time allowed for initial
+                  <code class="literal">crowbar_join</code> and <code class="literal">chef-client</code>
+                  run on a node that has been upgraded and rebooted.
+                </p></li><li class="listitem "><p>
+                  <code class="literal">evacuate_host</code> Time allowed for live migrate all VMs from a host.
+                </p></li></ul></div></dd></dl><div class="free-id" id="live-migration-failed"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.3.1"><strong>Q: 3.</strong>
+              Node upgrade has failed during live migration.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.3.2"><p>
+              The problem may occur when it is not possible to live migrate certain
+              VMs anywhere. It may be necessary to shut down or suspend other VMs to
+              make room for migration. Note that the Bash shell script that starts
+              the live migration for the Compute Node is executed from the
+              Control Node. An error message generated by the <code class="command">crowbarctl
+                upgrade status</code> command contains the exact names of both
+              nodes. Check the <code class="filename">/var/log/crowbar/node-upgrade.log</code>
+              file on the Control Node for the information that can help you with
+              troubleshooting. You might also need to check <span class="productname">OpenStack</span> logs in
+              <code class="filename">/var/log/nova</code> on the Compute Node as well as on the
+              Control Nodes.
+            </p><p>
+              It is possible that live-migration of a certain VM takes too long. This
+              can happen if instances are very large or network connection between
+              compute hosts is slow or overloaded. If this case, try to raise the
+              global timeout in
+              <code class="filename">/etc/crowbar/upgrade_timeouts.yml</code>.
+            </p><p>
+              We recommend to perform the live migration manually first. After it is
+              completed successfully, call the <code class="command">crowbarctl upgrade</code>
+              command again.
+            </p><p>
+              The following commands can be helpful for analyzing issues with live migrations:
+            </p><div class="verbatim-wrap"><pre class="screen">              nova server-migration-list
+              nova server-migration-show
+              nova instance-action-list
+              nova instance-action</pre></div><p>
+              Note that these commands require <span class="productname">OpenStack</span> administrator privileges.
+            </p><p>
+              The following log files may contain useful information:
+            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="filename">/var/log/nova/nova-compute</code> on the Compute Nodes
+                  that the migration is performed from and to.
+                </p></li><li class="listitem "><p>
+                  <code class="filename">/var/log/nova/*.log</code> (especially log files for the
+                  conductor, scheduler and placement services) on the Control Nodes.
+                </p></li></ul></div><p>
+              It can happen that active instances and instances with heavy
+              loads cannot be live migrated in a reasonable time. In that case, you
+              can abort a running live-migration operation using the <code class="command">nova
+                live-migration-abort <em class="replaceable ">MIGRATION-ID</em></code>
+              command. You can then perform the upgrade of the specific node at a
+              later time.
+            </p><p>
+              Alternatively, it is possible to force the completion of
+              the live migration by using the <code class="command">nova
+                live-migration-force-complete
+                <em class="replaceable ">MIGRATION-ID</em></code> command. However,
+              this might pause the instances for a prolonged period of time and have
+              a negative impact on the workload running inside the instance.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.4"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.4.1"><strong>Q: 4.</strong>
+              Node has failed during OS upgrade.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.4.2"><p>
+              Possible reasons include an incorrect repository setup or package
+              conflicts. Check the <code class="filename">/var/log/crowbar/node-upgrade.log</code> log file on the
+              affected node. Check the repositories on node using the <code class="command">zypper
+                lr</code> command. Make sure the required repositories are
+              available. To test the setup, install a package manually or run the
+              <code class="command">zypper dup</code> command (this command is executed by the
+              upgrade script). Fix the repository setup and run the failed upgrade
+              step again. If custom package versions or version locks are in place,
+              make sure that they don't interfere with the <code class="command">zypper dup</code> command.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.5"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.5.1"><strong>Q: 5.</strong>
+              Node does not come up after reboot.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.5.2"><p>
+              In some cases, a node can take too long to reboot causing a timeout. We
+              recommend to check the node manually, make sure it is online, and repeat the step.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.6"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.6.1"><strong>Q: 6.</strong>
+              N number of nodes were provided to compute upgrade using
+              <code class="command">crowbarctl upgrade nodes node_1,node_2,...,node_N</code>,
+              but less then N were actually upgraded.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.6.2"><p>
+              If the live migration cannot be performed for certain nodes due to a timeout,
+              Crowbar upgrades only the nodes that it was able to
+              live-evacuate in the specified time. Because some nodes have been upgraded, it is possible that
+              more resources will be available for live-migration when you try to run this
+              step again. See also <a class="xref" href="sec-maintenance.html#live-migration-failed" title="Q: 3."><em>
+              Node upgrade has failed during live migration.
+            </em></a>.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.7"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.7.1"><strong>Q: 7.</strong>
+              Node has failed at the initial chef client run stage.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.7.2"><p>
+              An unsupported entry in the configuration file may prevent a service
+              from starting. This causes the node to fail at the initial
+              chef client run stage. Checking the
+              <code class="filename">/var/log/crowbar/crowbar_join/chef.*</code> log files on
+              the node is a good starting point.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.8"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.8.1"><strong>Q: 8.</strong>
+              I need to change <span class="productname">OpenStack</span> configuration during the upgrade but I cannot access Crowbar.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.8.2"><p>
+              Crowbar Web interface is accessible only when an upgrade is completed or
+              when it is postponed. Postponing the upgrade can be done only after
+              upgrading all Control Nodes using the <code class="command">crowbarctl upgrade nodes
+                postpone</code> command. You can then access Crowbar and
+              save your modifications. Before you can continue with the upgrade of
+              rest of the nodes, resume the upgrade using the <code class="command">crowbarctl
+                upgrade nodes resume</code> command.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.9"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.9.1"><strong>Q: 9.</strong>
+              Failure occurred when evacuating routers.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.9.2"><p>
+              Check the <code class="filename">/var/log/crowbar/node-upgrade.log</code> file on
+              the node that performs the router evacuation (it should be mentioned in
+              the error message). The ID of the router that failed to migrate (or the
+              affected network port) is logged to
+              <code class="filename">/var/log/crowbar/node-upgrade.log</code>. Use the
+              <span class="productname">OpenStack</span> CLI tools to check the state of the affected router and
+              its ports. Fix manually, if necessary. This can be done by bringing the
+              router or port up and down again. The following
+              commands can be useful for solving the issue:
+            </p><div class="verbatim-wrap"><pre class="screen">              openstack router show <em class="replaceable ">ID</em>
+              openstack port list --router <em class="replaceable ">ROUTER-ID</em>
+              openstack port show <em class="replaceable ">PORT-ID</em>
+              openstack port set</pre></div><p>
+              Resume the upgrade by running the failed upgrade step
+              again to continue with the router migration.
+            </p></dd></dl><div class="free-id" id="id-1.5.3.4.9.2.10"></div><dl class="qandaentry"><dt class="question" id="id-1.5.3.4.9.2.10.1"><strong>Q: 10.</strong>
+              Some non-controller nodes were upgraded after performing <code class="command">crowbarctl upgrade nodes
+                controllers</code>.
+            </dt><dd class="answer" id="id-1.5.3.4.9.2.10.2"><p>
+              In the current upgrade implementation, <span class="productname">OpenStack</span> nodes are divided
+              into Compute Nodes and other nodes. The <code class="command">crowbarctl upgrade nodes
+                controllers</code> command starts the upgrade of all the nodes that
+              do not host compute services. This includes the controllers.
+            </p></dd></dl></div></div></div><div class="sect1" id="sec-recover-comp-node-failure"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Recovering from Compute Node Failure</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-recover-comp-node-failure">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-recover-comp-node-failure</li></ul></div></div></div></div><p>
+      The following procedure assumes that there is at least one Compute Node
+      already running. Otherwise, see
+      <a class="xref" href="sec-maintenance.html#sec-bootstrap-compute-plane" title="1.5. Bootstrapping the Compute Plane">Section 1.5, “Bootstrapping the Compute Plane”</a>.
+    </p><div class="procedure " id="pro-recover-compute-node-failure"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 1.1: </span><span class="name">Procedure for Recovering from Compute Node Failure </span><a title="Permalink" class="permalink" href="sec-maintenance.html#pro-recover-compute-node-failure">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st-compnode-failed-reason"><p>
+          If the Compute Node failed, it should have been fenced. Verify that this is
+          the case. Otherwise, check <code class="filename">/var/log/pacemaker.log</code> on
+          the Designated Coordinator to determine why the Compute Node was not fenced.
+          The most likely reason is a problem with STONITH devices.
+        </p></li><li class="step "><p>
+          Determine the cause of the Compute Node's failure.
+        </p></li><li class="step "><p>
+          Rectify the root cause.
+        </p></li><li class="step "><p>
+          Boot the Compute Node again.
+        </p></li><li class="step "><p>
+          Check whether the <code class="systemitem">crowbar_join</code> script ran
+          successfully on the Compute Node. If this is not the case, check the log
+          files to find out the reason. Refer to
+          <a class="xref" href="monitoring-log-management.html#sec-deploy-logs-crownodes" title="5.4.2. On All Other Crowbar Nodes">Section 5.4.2, “On All Other Crowbar Nodes”</a> to find the exact
+          location of the log file.
+        </p></li><li class="step "><p>
+          If the <code class="systemitem">chef-client</code> agent triggered by
+          <code class="systemitem">crowbar_join</code> succeeded, confirm that the
+          <code class="systemitem">pacemaker_remote</code> service is up and running.
+        </p></li><li class="step "><p>
+          Check whether the remote node is registered and considered healthy by the
+          core cluster. If this is not the case check
+          <code class="filename">/var/log/pacemaker.log</code> on the Designated Coordinator
+          to determine the cause. There should be a remote primitive running on the
+          core cluster (active/passive). This primitive is responsible for
+          establishing a TCP connection to the
+          <code class="systemitem">pacemaker_remote</code> service on port 3121 of the
+          Compute Node. Ensure that nothing is preventing this particular TCP
+          connection from being established (for example, problems with NICs,
+          switches, firewalls etc.). One way to do this is to run the following
+          commands:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>lsof -i tcp:3121
+          <code class="prompt user">tux &gt; </code>tcpdump tcp port 3121</pre></div></li><li class="step "><p>
+          If Pacemaker can communicate with the remote node, it should start the
+          <code class="systemitem">nova-compute</code> service on it as part of the cloned
+          group <code class="literal">cl-g-nova-compute</code> using the NovaCompute OCF
+          resource agent. This cloned group will block startup of
+          <code class="systemitem">nova-evacuate</code> until at least one clone is
+          started.
+        </p><p>
+          A necessary, related but different procedure is described in
+          <a class="xref" href="sec-maintenance.html#sec-bootstrap-compute-plane" title="1.5. Bootstrapping the Compute Plane">Section 1.5, “Bootstrapping the Compute Plane”</a>.
+        </p></li><li class="step "><p>
+          It may happen that <code class="systemitem">novaCompute</code> has been launched
+          correctly on the Compute Node by <code class="systemitem">lrmd</code>, but the
+          <code class="systemitem">openstack-nova-compute</code> service is still not
+          running. This usually happens when <code class="systemitem">nova-evacuate</code>
+          did not run correctly.
+        </p><p>
+          If <code class="systemitem">nova-evacuate</code> is not
+          running on one of the core cluster nodes, make sure that the service is
+          marked as started (<code class="literal">target-role="Started"</code>). If this is
+          the case, then your cloud does not have any Compute Nodes already running as
+          assumed by this procedure.
+        </p><p>
+          If <code class="systemitem">nova-evacuate</code> is started but it is
+          failing, check the Pacemaker logs to determine the cause.
+        </p><p>
+          If <code class="systemitem">nova-evacuate</code> is started and
+          functioning correctly, it should call nova's
+          <code class="literal">evacuate</code> API to release resources used by the
+          Compute Node and resurrect elsewhere any VMs that died when it failed.
+        </p></li><li class="step "><p>
+          If <code class="systemitem">openstack-nova-compute</code> is running, but VMs are
+          not booted on the node, check that the service is not disabled or forced
+          down using the <code class="command">openstack compute service list</code>
+          command. In case the service is disabled, run the <code class="command">openstack
+            compute service set –enable
+            <em class="replaceable ">SERVICE_ID</em></code> command. If the service is
+          forced down, run the following commands:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>fence_nova_param () {
+          key="$1"
+          cibadmin -Q -A "//primitive[@id="fence-nova"]//nvpair[@name='$key']" | \
+          sed -n '/.*value="/{s///;s/".*//;p}'
+          }
+          <code class="prompt user">tux &gt; </code>fence_compute \
+          --auth-url=`fence_nova_param auth-url` \
+          --endpoint-type=`fence_nova_param endpoint-type` \
+          --tenant-name=`fence_nova_param tenant-name` \
+          --domain=`fence_nova_param domain` \
+          --username=`fence_nova_param login` \
+          --password=`fence_nova_param passwd` \
+          -n <em class="replaceable ">COMPUTE_HOSTNAME</em> \
+          --action=on</pre></div></li></ol></div></div><p>
+      The above steps should be performed automatically after the node is
+      booted. If that does not happen, try the following debugging techniques.
+    </p><p>
+      Check the <code class="literal">evacuate</code> attribute for the Compute Node in the
+      Pacemaker cluster's <code class="systemitem">attrd</code> service using the
+      command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>attrd_updater -p -n evacuate -N <em class="replaceable ">NODE</em></pre></div><p>
+      Possible results are the following:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+          The attribute is not set. Refer to
+          <a class="xref" href="sec-maintenance.html#st-compnode-failed-reason" title="Step 1">Step 1</a> in
+          <a class="xref" href="sec-maintenance.html#pro-recover-compute-node-failure" title="Procedure for Recovering from Compute Node Failure">Procedure 1.1, “Procedure for Recovering from Compute Node Failure”</a>.
+        </p></li><li class="listitem "><p>
+          The attribute is set to <code class="literal">yes</code>. This means that the
+          Compute Node was fenced, but <code class="systemitem">nova-evacuate</code> never
+          initiated the recovery procedure by calling nova's evacuate API.
+        </p></li><li class="listitem "><p>
+          The attribute contains a time stamp, in which case the recovery procedure
+          was initiated at the time indicated by the time stamp, but has not
+          completed yet.
+        </p></li><li class="listitem "><p>
+          If the attribute is set to <code class="literal">no</code>, the recovery procedure
+          recovered successfully and the cloud is ready for the Compute Node to
+          rejoin.
+        </p></li></ul></div><p>
+      If the attribute is stuck with the wrong value, it can be set to
+      <code class="literal">no</code> using the command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>attrd_updater -n evacuate -U no -N <em class="replaceable ">NODE</em></pre></div><p>
+      After standard fencing has been performed, fence agent
+      <code class="systemitem">fence_compute</code> should activate the secondary
+      fencing device (<code class="literal">fence-nova</code>). It does this by setting
+      the attribute to <code class="literal">yes</code> to mark the node as needing
+      recovery. The agent also calls nova's
+      <code class="systemitem">force_down</code> API to notify it that the host is down.
+      You should be able to see this in
+      <code class="filename">/var/log/nova/fence_compute.log</code> on the node in the core
+      cluster that was running the <code class="systemitem">fence-nova</code> agent at
+      the time of fencing. During the recovery, <code class="literal">fence_compute</code>
+      tells nova that the host is up and running again.
+    </p></div><div class="sect1" id="sec-bootstrap-compute-plane"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Bootstrapping the Compute Plane</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-bootstrap-compute-plane">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-bootstrap-compute-plane</li></ul></div></div></div></div><p>
+      If the whole compute plane is down, it is not always obvious how to boot it
+      up, because it can be subject to deadlock if evacuate attributes are set on
+      every Compute Node. In this case, manual intervention is
+      required. Specifically, the operator must manually choose one or more
+      Compute Nodes to bootstrap the compute plane, and then run the
+      <code class="command">attrd_updater -n evacuate -U no -N <em class="replaceable ">NODE</em></code>
+      command for each
+      of those Compute Nodes to indicate that they do not require the resurrection
+      process and can have their <code class="literal">nova-compute</code> start up straight
+      away. Once these Compute Nodes are up, this breaks the deadlock allowing
+      <code class="literal">nova-evacuate</code> to start. This way, any other nodes that
+      require resurrection can be processed automatically. If no resurrection is
+      desired anywhere in the cloud, then the attributes should be set to
+      <code class="literal">no</code> for all nodes.
+    </p><div id="id-1.5.3.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        If Compute Nodes are started too long after the
+        <code class="literal">remote-*</code> resources are started on the control plane,
+        they are liable to fencing. This should be avoided.
+      </p></div></div><div class="sect1" id="sec-bootstrap-galera-cluster-with-missing-node"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#sec-bootstrap-galera-cluster-with-missing-node">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span>sec-bootstrap-galera-cluster-with-missing-node</li></ul></div></div></div></div><p>
+      Pacemaker does not promote a node to master until it received from all
+      nodes the latest <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm "><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number (seqno)</a></em></a>.
+      That is a problem when one node of the MariaDB Galera Cluster is down (eg. due
+      to hardware or network problems) because the <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm "><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number</a></em></a>
+      can not be received from the unavailable node.
+      To recover a MariaDB Galera Cluster manual steps are needed to
+      select a bootstrap node for MariaDB Galera Cluster and to promote that node
+      with Pacemaker.
+    </p><div id="id-1.5.3.7.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        Selecting the correct bootstrap node (depending on the highest
+        <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm "><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number (seqno)</a></em></a>)
+        is important. If the wrong node is selected data loss is possible.
+      </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+          To find out which node has the latest Sequence number, call the following
+          command on all MariaDB Galera Cluster nodes and select the node with the
+          highest Sequence number.
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">mysqld_safe --wsrep-recover
+          tail -5 /var/log/mysql/mysqld.log
+          ...
+          [Note] WSREP: Recovered position: 7a477edc-757d-11e9-a01a-d218e7381711:2490</pre></div><p>
+          At the end of <code class="filename">/var/log/mysql/mysqld.log</code> the Sequence
+          number is written (in this example, the sequence number is 2490).
+          After all Sequence numbers are collected from all nodes, the node with
+          the highest Sequence number is selected for bootstrap node.
+          In this example, the node with the highest Sequence number is called
+          <code class="literal">node1</code>.
+        </p></li><li class="step "><p>
+          Temporarily mark the galera Pacemaker resource as unmanaged:
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">          crm resource unmanage galera</pre></div></li><li class="step "><p>
+          Mark the node as bootstrap node (call the following commands from the
+          bootstrap node which is <code class="literal">node1</code> in this example):
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">          crm_attribute -N node1 -l reboot --name galera-bootstrap -v true
+          crm_attribute -N node1 -l reboot --name master-galera -v 100</pre></div></li><li class="step "><p>
+          Promote the bootstrap node:
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">          crm_resource --force-promote -r galera -V</pre></div></li><li class="step "><p>
+          Redetect the current state of the galera resource:
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">          crm resource cleanup galera</pre></div></li><li class="step "><p>
+          Return the control to Pacemaker:
+        </p><div class="verbatim-wrap highlight bash"><pre class="screen">          crm resource manage galera
+          crm resource start galera</pre></div></li></ol></div></div><p>
+      The MariaDB Galera Cluster is now running and Pacemaker is handling the cluster.
+    </p></div><div class="sect1" id="id-1.5.3.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Updating MariaDB with Galera</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-maintenance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      Updating MariaDB with Galera must be done manually. Crowbar does not
+      install updates automatically. Updates can be done with Pacemaker or with
+      the CLI. In particular, manual updating applies to upgrades to MariaDB
+      10.2.17 or higher from MariaDB 10.2.16 or earlier. See <a class="link" href="https://mariadb.com/kb/en/library/mariadb-10222-release-notes/" target="_blank">MariaDB
+        10.2.22 Release Notes - Notable Changes</a>.
+    </p><div id="id-1.5.3.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+        In order to run the following update steps, the database cluster needs to
+        be up and healthy.
+      </p></div><p>
+      Using the Pacemaker GUI, update MariaDB with the following procedure:
+    </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+          Put the cluster into maintenance mode. Detailed information about the
+          Pacemaker GUI and its operation is available in the <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/#cha-conf-hawk2" target="_blank">https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/#cha-conf-hawk2</a>.
+        </p></li><li class="step "><p>
+          Perform a rolling upgrade to MariaDB following the instructions at <a class="link" href="https://mariadb.com/kb/en/library/upgrading-between-minor-versions-with-galera-cluster/" target="_blank">Upgrading
+            Between Minor Versions with Galera Cluster</a>.
+        </p><p>
+          The process involves the following steps:
+        </p><ol type="a" class="substeps "><li class="step "><p>
+              Stop MariaDB
+            </p></li><li class="step "><p>
+              Uninstall the old versions of MariaDB and the Galera wsrep provider
+            </p></li><li class="step "><p>
+              Install the new versions of MariaDB and the Galera wsrep provider
+            </p></li><li class="step "><p>
+              Change configuration options if necessary
+            </p></li><li class="step "><p>
+              Start MariaDB
+            </p></li><li class="step "><p>
+              Run <code class="command">mysql_upgrade</code> with the
+              <code class="literal">--skip-write-binlog</code> option
+            </p></li></ol></li><li class="step "><p>
+          Each node must upgraded individually so that the cluster is always
+          operational.
+        </p></li><li class="step "><p>
+          Using the Pacemaker GUI, take the cluster out of maintenance mode.
+        </p></li></ol></div></div><p>
+      When updating with the CLI, the database cluster must be up and
+      healthy. Update MariaDB with the following procedure:
+    </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+          Mark Galera as unmanaged:
+        </p><div class="verbatim-wrap"><pre class="screen">crm resource unmanage galera</pre></div><p>
+          Or put the whole cluster into maintenance mode:
+        </p><div class="verbatim-wrap"><pre class="screen">crm configure property maintenance-mode=true</pre></div></li><li class="step "><p>
+          Pick a node other than the one currently targeted by the load balancer and
+          stop MariaDB on that node:
+        </p><div class="verbatim-wrap"><pre class="screen">crm_resource --wait --force-demote -r galera -V</pre></div></li><li class="step "><p>
+          Perform updates with the following steps:
+        </p><ol type="a" class="substeps "><li class="step "><p>
+              Uninstall the old versions of MariaDB and the Galera wsrep provider.
+            </p></li><li class="step "><p>
+              Install the new versions of MariaDB and the Galera wsrep
+              provider. Select the appropriate instructions at <a class="link" href="https://mariadb.com/kb/en/library/installing-mariadb-with-zypper/" target="_blank">Installing
+                MariaDB with zypper</a>.
+            </p></li><li class="step "><p>
+              Change configuration options if necessary.
+            </p></li></ol></li><li class="step "><p>
+          Start MariaDB on the node.
+        </p><div class="verbatim-wrap"><pre class="screen">crm_resource --wait --force-promote -r galera -V</pre></div></li><li class="step "><p>
+          Run <code class="command">mysql_upgrade</code> with the
+          <code class="literal">--skip-write-binlog</code> option.
+        </p></li><li class="step "><p>
+          On the other nodes, repeat the process detailed above: stop MariaDB,
+          perform updates, start MariaDB, run <code class="command">mysql_upgrade</code>.
+        </p></li><li class="step "><p>
+          Mark Galera as managed:
+        </p><div class="verbatim-wrap"><pre class="screen">crm resource manage galera</pre></div><p>
+          Or take the cluster out of maintenance mode.
+        </p></li></ol></div></div></div><div class="sect1" id="OctaviaMaintenance"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Load Balancer: Octavia Administration</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#OctaviaMaintenance">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>networking-octavia-maintenance.xml</li><li><span class="ds-label">ID: </span>OctaviaMaintenance</li></ul></div></div></div></div><div class="sect2" id="octavia-admin-delete"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing load balancers</span> <a title="Permalink" class="permalink" href="sec-maintenance.html#octavia-admin-delete">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>networking-octavia-maintenance.xml</li><li><span class="ds-label">ID: </span>octavia-admin-delete</li></ul></div></div></div></div><p>
+      The following procedures demonstrate how to delete a load
+      balancer that is in the <code class="literal">ERROR</code>,
+      <code class="literal">PENDING_CREATE</code>, or
+      <code class="literal">PENDING_DELETE</code> state.
+    </p><div class="procedure " id="id-1.5.3.9.2.3"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 1.2: </span><span class="name">
+        Manually deleting load balancers created with neutron lbaasv2
+        (in an upgrade/migration scenario)
+       </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.9.2.3">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+          Query the Neutron service for the loadbalancer ID:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>neutron lbaas-loadbalancer-list
+neutron CLI is deprecated and will be removed in the future. Use openstack CLI instead.
++--------------------------------------+---------+----------------------------------+--------------+---------------------+----------+
+| id                                   | name    | tenant_id                        | vip_address  | provisioning_status | provider |
++--------------------------------------+---------+----------------------------------+--------------+---------------------+----------+
+| 7be4e4ab-e9c6-4a57-b767-da9af5ba7405 | test-lb | d62a1510b0f54b5693566fb8afeb5e33 | 192.168.1.10 | ERROR               | haproxy  |
++--------------------------------------+---------+----------------------------------+--------------+---------------------+----------+</pre></div></li><li class="step "><p>
+          Connect to the neutron database:
+        </p><div id="id-1.5.3.9.2.3.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+            The default database name depends on the life cycle
+            manager. Ardana uses <code class="literal">ovs_neutron</code> while
+            Crowbar uses <code class="literal">neutron</code>.
+          </p></div><p>Ardana:</p><div class="verbatim-wrap"><pre class="screen">mysql&gt; use ovs_neutron</pre></div><p>Crowbar:</p><div class="verbatim-wrap"><pre class="screen">mysql&gt; use neutron</pre></div></li><li class="step "><p>
+          Get the pools and healthmonitors associated with the loadbalancer:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; select id, healthmonitor_id, loadbalancer_id from lbaas_pools where loadbalancer_id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
++--------------------------------------+--------------------------------------+--------------------------------------+
+| id                                   | healthmonitor_id                     | loadbalancer_id                      |
++--------------------------------------+--------------------------------------+--------------------------------------+
+| 26c0384b-fc76-4943-83e5-9de40dd1c78c | 323a3c4b-8083-41e1-b1d9-04e1fef1a331 | 7be4e4ab-e9c6-4a57-b767-da9af5ba7405 |
++--------------------------------------+--------------------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+          Get the members associated with the pool:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; select id, pool_id from lbaas_members where pool_id = '26c0384b-fc76-4943-83e5-9de40dd1c78c';
++--------------------------------------+--------------------------------------+
+| id                                   | pool_id                              |
++--------------------------------------+--------------------------------------+
+| 6730f6c1-634c-4371-9df5-1a880662acc9 | 26c0384b-fc76-4943-83e5-9de40dd1c78c |
+| 06f0cfc9-379a-4e3d-ab31-cdba1580afc2 | 26c0384b-fc76-4943-83e5-9de40dd1c78c |
++--------------------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+          Delete the pool members:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from lbaas_members where id = '6730f6c1-634c-4371-9df5-1a880662acc9';
+mysql&gt; delete from lbaas_members where id = '06f0cfc9-379a-4e3d-ab31-cdba1580afc2';</pre></div></li><li class="step "><p>
+          Find and delete the listener associated with the loadbalancer:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; select id, loadbalancer_id, default_pool_id from lbaas_listeners where loadbalancer_id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
++--------------------------------------+--------------------------------------+--------------------------------------+
+| id                                   | loadbalancer_id                      | default_pool_id                      |
++--------------------------------------+--------------------------------------+--------------------------------------+
+| 3283f589-8464-43b3-96e0-399377642e0a | 7be4e4ab-e9c6-4a57-b767-da9af5ba7405 | 26c0384b-fc76-4943-83e5-9de40dd1c78c |
++--------------------------------------+--------------------------------------+--------------------------------------+
+mysql&gt; delete from lbaas_listeners where id = '3283f589-8464-43b3-96e0-399377642e0a';</pre></div></li><li class="step "><p>
+          Delete the pool associated with the loadbalancer:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from lbaas_pools where id = '26c0384b-fc76-4943-83e5-9de40dd1c78c';</pre></div></li><li class="step "><p>
+          Delete the healthmonitor associated with the pool:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from lbaas_healthmonitors where id = '323a3c4b-8083-41e1-b1d9-04e1fef1a331';</pre></div></li><li class="step "><p>
+          Delete the loadbalancer:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from lbaas_loadbalancer_statistics where loadbalancer_id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
+mysql&gt; delete from lbaas_loadbalancers where id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.3.9.2.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 1.3: </span><span class="name">Manually Deleting Load Balancers Created With Octavia </span><a title="Permalink" class="permalink" href="sec-maintenance.html#id-1.5.3.9.2.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+          Query the Octavia service for the loadbalancer ID:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>openstack loadbalancer list --column id --column name --column provisioning_status
++--------------------------------------+---------+---------------------+
+| id                                   | name    | provisioning_status |
++--------------------------------------+---------+---------------------+
+| d8ac085d-e077-4af2-b47a-bdec0c162928 | test-lb | ERROR               |
++--------------------------------------+---------+---------------------+</pre></div></li><li class="step "><p>
+          Query the Octavia service for the amphora IDs (in this
+          example we use <code class="literal">ACTIVE/STANDBY</code> topology with 1 spare Amphora):
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>openstack loadbalancer amphora list
++--------------------------------------+--------------------------------------+-----------+--------+---------------+-------------+
+| id                                   | loadbalancer_id                      | status    | role   | lb_network_ip | ha_ip       |
++--------------------------------------+--------------------------------------+-----------+--------+---------------+-------------+
+| 6dc66d41-e4b6-4c33-945d-563f8b26e675 | d8ac085d-e077-4af2-b47a-bdec0c162928 | ALLOCATED | BACKUP | 172.30.1.7    | 192.168.1.8 |
+| 1b195602-3b14-4352-b355-5c4a70e200cf | d8ac085d-e077-4af2-b47a-bdec0c162928 | ALLOCATED | MASTER | 172.30.1.6    | 192.168.1.8 |
+| b2ee14df-8ac6-4bb0-a8d3-3f378dbc2509 | None                                 | READY     | None   | 172.30.1.20   | None        |
++--------------------------------------+--------------------------------------+-----------+--------+---------------+-------------+</pre></div></li><li class="step "><p>
+          Query the Octavia service for the loadbalancer pools:
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>openstack loadbalancer pool list
++--------------------------------------+-----------+----------------------------------+---------------------+----------+--------------+----------------+
+| id                                   | name      | project_id                       | provisioning_status | protocol | lb_algorithm | admin_state_up |
++--------------------------------------+-----------+----------------------------------+---------------------+----------+--------------+----------------+
+| 39c4c791-6e66-4dd5-9b80-14ea11152bb5 | test-pool | 86fba765e67f430b83437f2f25225b65 | ACTIVE              | TCP      | ROUND_ROBIN  | True           |
++--------------------------------------+-----------+----------------------------------+---------------------+----------+--------------+----------------+</pre></div></li><li class="step "><p>
+          Connect to the octavia database:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; use octavia</pre></div></li><li class="step "><p>
+          Delete any listeners, pools, health monitors, and members
+          from the load balancer:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from listener where load_balancer_id = 'd8ac085d-e077-4af2-b47a-bdec0c162928';
+mysql&gt; delete from health_monitor where pool_id = '39c4c791-6e66-4dd5-9b80-14ea11152bb5';
+mysql&gt; delete from member where pool_id = '39c4c791-6e66-4dd5-9b80-14ea11152bb5';
+mysql&gt; delete from pool where load_balancer_id = 'd8ac085d-e077-4af2-b47a-bdec0c162928';</pre></div></li><li class="step "><p>
+          Delete the amphora entries in the database:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; delete from amphora_health where amphora_id = '6dc66d41-e4b6-4c33-945d-563f8b26e675';
+mysql&gt; update amphora set status = 'DELETED' where id = '6dc66d41-e4b6-4c33-945d-563f8b26e675';
+mysql&gt; delete from amphora_health where amphora_id = '1b195602-3b14-4352-b355-5c4a70e200cf';
+mysql&gt; update amphora set status = 'DELETED' where id = '1b195602-3b14-4352-b355-5c4a70e200cf';</pre></div></li><li class="step "><p>
+          Delete the load balancer instance:
+        </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; update load_balancer set provisioning_status = 'DELETED' where id = 'd8ac085d-e077-4af2-b47a-bdec0c162928';</pre></div></li><li class="step "><p>
+          The following script automates the above steps:
+        </p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+
+if (( $# != 1 )); then
+echo "Please specify a loadbalancer ID"
+exit 1
+fi
+
+LB_ID=$1
+
+set -u -e -x
+
+readarray -t AMPHORAE &lt; &lt;(openstack loadbalancer amphora list \
+--format value \
+--column id \
+--column loadbalancer_id \
+| grep ${LB_ID} \
+| cut -d ' ' -f 1)
+
+readarray -t POOLS &lt; &lt;(openstack loadbalancer show ${LB_ID} \
+--format value \
+--column pools)
+
+mysql octavia --execute "delete from listener where load_balancer_id = '${LB_ID}';"
+for p in "${POOLS[@]}"; do
+mysql octavia --execute "delete from health_monitor where pool_id = '${p}';"
+mysql octavia --execute "delete from member where pool_id = '${p}';"
+done
+mysql octavia --execute "delete from pool where load_balancer_id = '${LB_ID}';"
+for a in "${AMPHORAE[@]}"; do
+mysql octavia --execute "delete from amphora_health where amphora_id = '${a}';"
+mysql octavia --execute "update amphora set status = 'DELETED' where id = '${a}';"
+done
+mysql octavia --execute "update load_balancer set provisioning_status = 'DELETED' where id = '${LB_ID}';"</pre></div></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="gpu-passthrough.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 2 </span>GPU passthrough</span></a><a class="nav-link" href="book-crowbar-operations.html"><span class="prev-icon">←</span><span class="nav-label"><em class="citetitle ">Operations Guide Crowbar</em></span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

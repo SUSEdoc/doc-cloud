@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Cloud Lifecycle Manager Admin UI User Guide | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" /><meta name="description" content="The Cloud Lifecycle Manager Admin UI is a web-based GUI for viewing and managing the configuration of an installed cloud. After successfully deploying the cloud with the Install UI, the final screen displays a link to the CLM Admin UI. (For example, see Book “Deployment Guide using Cloud Lifecycle M…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="tutorials.html" title="Chapter 2. Tutorials" /><link rel="next" href="third-party-integrations.html" title="Chapter 4. Third-Party Integrations" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="clm-admin-ui.html">Cloud Lifecycle Manager Admin UI User Guide</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Third-Party Integrations" href="third-party-integrations.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="clm-admin-ui.html">Cloud Lifecycle Manager Admin UI User Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Third-Party Integrations" href="third-party-integrations.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="clm-admin-ui"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Lifecycle Manager Admin UI User Guide</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>clm-admin-ui</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="clm-admin-ui.html#accessing-clm-admin-ui"><span class="number">3.1 </span><span class="name">Accessing the Admin UI</span></a></span></dt><dt><span class="section"><a href="clm-admin-ui.html#id-1.5.5.4"><span class="number">3.2 </span><span class="name">Admin UI Pages</span></a></span></dt><dt><span class="section"><a href="clm-admin-ui.html#clm-admin-topology"><span class="number">3.3 </span><span class="name">Topology</span></a></span></dt><dt><span class="section"><a href="clm-admin-ui.html#clm-admin-addserver"><span class="number">3.4 </span><span class="name">Server Management</span></a></span></dt><dt><span class="section"><a href="clm-admin-ui.html#clm-server-replacement"><span class="number">3.5 </span><span class="name">Server Replacement</span></a></span></dt></dl></div></div><p>
+  The Cloud Lifecycle Manager Admin UI is a web-based GUI for viewing and managing the
+  configuration of an installed cloud. After successfully deploying the cloud
+  with the Install UI, the final screen displays a link to the CLM Admin UI.
+  (For example, see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 21 “Installing with the Install UI”, Section 21.5 “Running the Install UI”, Cloud Deployment Successful</span>). Usually the URL
+  associated with this link is
+  <code class="literal">https://<em class="replaceable ">DEPLOYER_MGMT_NET_IP</em>:9085</code>,
+  although it may be different depending on the cloud configuration and the
+  installed version of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+ </p><div class="sect1" id="accessing-clm-admin-ui"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing the Admin UI</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#accessing-clm-admin-ui">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>accessing-clm-admin-ui</li></ul></div></div></div></div><p>
+   In a browser, go to
+   <code class="literal">https://<em class="replaceable ">DEPLOYER_MGMT_NET_IP</em>:9085</code>.
+  </p><p>
+   The
+   <code class="literal"><em class="replaceable ">DEPLOYER_MGMT_NET_IP</em>:<em class="replaceable ">PORT_NUMBER</em></code>
+   is not necessarily the same for all installations, and can be displayed with
+   the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack endpoint list --service ardana --interface admin -c URL</pre></div><p>
+   Accessing the Cloud Lifecycle Manager Admin UI requires access to the
+   <span class="bold"><strong>MANAGEMENT</strong></span> network that was configured
+   when the Cloud was deployed. Access to this network is necessary to be able
+   to access the Cloud Lifecycle Manager Admin UI and log in. Depending on the network setup, it
+   may be necessary to use an SSH tunnel similar to what is recommended in
+   <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 21 “Installing with the Install UI”, Section 21.5 “Running the Install UI”</span>. The Admin UI requires keystone and
+   HAProxy to be running and to be accesible. If keystone or HAProxy are
+   not running, cloud reconfiguration is limited to the command line.
+  </p><p>
+   Logging in requires a keystone user. If the user is not an admin on the
+   default domain and one or more projects, the Cloud Lifecycle Manager Admin UI will not display
+   information about the Cloud and may present errors.
+  </p><div class="figure" id="admin-ui-login-page"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_ui_login_page.png" target="_blank"><img src="images/clm_admin_ui_login_page.png" width="" alt="Cloud Lifecycle Manager Admin UI Login Page" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.1: </span><span class="name">Cloud Lifecycle Manager Admin UI Login Page </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-login-page">#</a></h6></div></div></div><div class="sect1" id="id-1.5.5.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Admin UI Pages</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#id-1.5.5.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect2" id="clm-admin-ui-services"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Services</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-ui-services">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>clm-admin-ui-services</li></ul></div></div></div></div><p>
+    Services pages relay information about the various OpenStack and other
+    services that have been deployed as part of the cloud. Service information
+    displays the list of services registered with keystone and the endpoints
+    associated with those services. The information is equivalent to running
+    the command <code class="command">openstack endpoint list</code>.
+   </p><p>
+    The <code class="literal">Service Information</code> table contains the following
+    information, based on how the service is registered with keystone:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.4.2.4.1"><span class="term ">Name</span></dt><dd><p>
+       The name of the service, this may be an OpenStack code name
+      </p></dd><dt id="id-1.5.5.4.2.4.2"><span class="term ">Description</span></dt><dd><p>
+       Service description, for some services this is a repeat of the name
+      </p></dd><dt id="id-1.5.5.4.2.4.3"><span class="term ">Endpoints</span></dt><dd><p>
+       Services typically have 1 or more endpoints that are accessible to make
+       API calls. The most common configuration is for a service to have
+       <code class="literal">Admin</code>, <code class="literal">Public</code>, and
+       <code class="literal">Internal</code> endpoints, with each intended for access by
+       consumers corresponding to the type of endpoint.
+      </p></dd><dt id="id-1.5.5.4.2.4.4"><span class="term ">Region</span></dt><dd><p>
+       Service endpoints are part of a region. In multi-region clouds, some
+       services will have endpoints in multiple regions.
+      </p></dd></dl></div><div class="figure" id="admin-ui-service-info"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/service_information.png" target="_blank"><img src="images/service_information.png" width="" alt="Cloud Lifecycle Manager Admin UI Service Information" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.2: </span><span class="name">Cloud Lifecycle Manager Admin UI Service Information </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-service-info">#</a></h6></div></div></div><div class="sect2" id="admin-ui-suse-cloud-packages"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Packages</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-suse-cloud-packages">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-suse-cloud-packages</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Packages</span> tab displays packages that are part of the
+    SUSE OpenStack Cloud product.
+   </p><p>
+    The <code class="literal">SUSE Cloud Packages</code> table contains the following:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.4.3.4.1"><span class="term ">Name</span></dt><dd><p>
+       The name of the SUSE Cloud package
+      </p></dd><dt id="id-1.5.5.4.3.4.2"><span class="term ">Version</span></dt><dd><p>
+       The version of the package which is installed in the Cloud
+      </p></dd></dl></div><div class="figure" id="admin-ui-cloud-package-versions"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/cloud_package_versions.png" target="_blank"><img src="images/cloud_package_versions.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Cloud Package" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.3: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Cloud Package </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-package-versions">#</a></h6></div></div><div id="id-1.5.5.4.3.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     Packages with the <code class="literal">venv-</code> prefix denote the version of
+     the specific OpenStack package that is deployed. The release name can be
+     determined from the <a class="link" href="https://releases.openstack.org/" target="_blank">OpenStack Releases</a>
+     page.
+    </p></div></div><div class="sect2" id="admin-ui-suse-cloud-configuration"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-suse-cloud-configuration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-suse-cloud-configuration</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Configuration</span> tab displays services that are
+    deployed in the cloud and the configuration files associated with those
+    services. Services may be reconfigured by editing the
+    <code class="filename">.j2</code> files listed and clicking the
+    <span class="guimenu ">Update</span> button.
+   </p><p>
+    This page also provides the ability to set up SUSE Enterprise Storage Integration after
+    initial deployment.
+   </p><div class="figure" id="admin-ui-cloud-service-configuration"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_configuration_0.png" target="_blank"><img src="images/clm_admin_services_configuration_0.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Configuration" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.4: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Configuration </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-service-configuration">#</a></h6></div></div><p>
+    Clicking one of the listed configuration files opens the file editor where
+    changes can be made. Asterisks identify files that have been edited but
+    have not had their updates applied to the cloud.
+   </p><div class="figure" id="admin-ui-cloud-service-configuration-editor"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_configuration_1.png" target="_blank"><img src="images/clm_admin_services_configuration_1.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Configuration Editor" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.5: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Configuration Editor </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-service-configuration-editor">#</a></h6></div></div><p>
+    After editing the service configuration, click the
+    <span class="guimenu ">Update</span> button to begin deploying configuration changes
+    to the cloud. The status of those changes will be streamed to the UI.
+   </p><p>
+    <span class="bold"><strong>Configure SUSE Enterprise Storage After Initial Deployment</strong></span>
+   </p><p>
+    A link to the <code class="filename">settings.yml</code> file is available under the
+    <code class="literal">ses</code> selection on the <span class="guimenu ">Configuration</span> tab.
+   </p><p>
+    To set up SUSE Enterprise Storage Integration:
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Click on the link to edit the <code class="filename">settings.yml</code> file.
+     </p></li><li class="step "><p>
+      Uncomment the <code class="literal">ses_config_path</code> parameter, specify the
+      location on the deployer host containing the
+      <code class="filename">ses_config.yml</code> file, and save the
+      <code class="filename">settings.yml</code> file.
+     </p></li><li class="step "><p>
+      If the <code class="filename">ses_config.yml</code> file does not yet exist in
+      that location on the deployer host, a new link will appear for uploading
+      a file from your local workstation.
+     </p></li><li class="step "><p>
+      When <code class="filename">ses_config.yml</code> is present on the deployer host,
+      it will appear in the <code class="literal">ses</code> section of the
+      <span class="guimenu ">Configuration</span> tab and can be edited directly
+      there.
+     </p></li></ol></div></div><div id="id-1.5.5.4.4.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     If the cloud is configured using self-signed certificates, the streaming
+     status updates (including the log) may be interupted and require a reload
+     of the CLM Admin UI. See
+     <span class="intraxref">Book “Security Guide”, Chapter 8 “Transport Layer Security (TLS) Overview”, Section 8.2 “TLS Configuration”</span> for details on using
+     signed certificates.
+    </p></div><div class="figure" id="admin-ui-cloud-service-configuration-update"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_configuration_2.png" target="_blank"><img src="images/clm_admin_services_configuration_2.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Configuration Update" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.6: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Configuration Update </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-service-configuration-update">#</a></h6></div></div></div><div class="sect2" id="admin-ui-suse-cloud-services-model"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Model</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-suse-cloud-services-model">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-suse-cloud-services-model</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Model</span> tab displays input models that are deployed in
+    the cloud and the associated model files. The model files listed can be
+    modified.
+   </p><div class="figure" id="admin-ui-cloud-services-model"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_model_0.png" target="_blank"><img src="images/clm_admin_services_model_0.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Model" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.7: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Model </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-services-model">#</a></h6></div></div><p>
+    Clicking one of the listed model files opens the file editor where changes
+    can be made. Asterisks identify files that have been edited but have
+    not had their updates applied to the cloud.
+   </p><div class="figure" id="admin-ui-cloud-services-model-editor"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_model_1.png" target="_blank"><img src="images/clm_admin_services_model_1.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Model Editor" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.8: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Model Editor </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-services-model-editor">#</a></h6></div></div><p>
+    After editing the model file, click the <span class="guimenu ">Validate</span> button
+    to validate changes. If validation is successful, <span class="guimenu ">Update</span>
+    is enabled. Click the <span class="guimenu ">Update</span> button to deploy the
+    changes to the cloud. Before starting deployment, a confirmation dialog
+    shows the choices of only running
+    <code class="filename">config-processor-run.yml</code> and
+    <code class="filename">ready-deployment.yml</code> playbooks or running a full
+    deployment. It also indicates the risk of updating the deployed cloud.
+   </p><div class="figure" id="admin-ui-cloud-services-model-confirmation"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_model_2.png" target="_blank"><img src="images/clm_admin_services_model_2.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Model Confirmation" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.9: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Model Confirmation </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-services-model-confirmation">#</a></h6></div></div><p>
+    Click <span class="guimenu ">Update</span> to start deployment. The status of the
+    changes will be streamed to the UI.
+   </p><div id="id-1.5.5.4.5.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     If the cloud is configured using self-signed certificates, the streaming
+     status updates (including the log) may be interrupted. The CLM Admin UI
+     must be reloaded. See <span class="intraxref">Book “Security Guide”, Chapter 8 “Transport Layer Security (TLS) Overview”, Section 8.2 “TLS Configuration”</span>
+     for details on using signed certificates.
+    </p></div><div class="figure" id="admin-ui-cloud-services-model-update"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_services_model_3.png" target="_blank"><img src="images/clm_admin_services_model_3.png" width="" alt="Cloud Lifecycle Manager Admin UI SUSE Service Model Update" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.10: </span><span class="name">Cloud Lifecycle Manager Admin UI SUSE Service Model Update </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-services-model-update">#</a></h6></div></div></div><div class="sect2" id="admin-ui-roles"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Roles</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-roles">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-roles</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Services Per Role</span> tab displays the list of all roles
+    that have been defined in the Cloud Lifecycle Manager input model, the list of servers that
+    role, and the services installed on those servers.
+   </p><p>
+    The <code class="literal">Services Per Role</code> table contains the following:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.4.6.4.1"><span class="term ">Role</span></dt><dd><p>
+       The name of the role in the data model. In the included data model
+       templates, these names are descriptive, such as
+       <code class="literal">MTRMON-ROLE</code> for a metering and monitoring server.
+       There is no strict constraint on role names and they may have been
+       altered at install time.
+      </p></dd><dt id="id-1.5.5.4.6.4.2"><span class="term ">Servers</span></dt><dd><p>
+       The model IDs for the servers that have been assigned this role. This
+       does not necessarily correspond to any DNS or other naming labels a host
+       has, unless the host ID was set that way during install.
+      </p></dd><dt id="id-1.5.5.4.6.4.3"><span class="term ">Services</span></dt><dd><p>
+       A list of <span class="productname">OpenStack</span> and other Cloud related services that comprise this
+       role. Servers that have been assigned this role will have these services
+       installed and enabled.
+      </p></dd></dl></div><div class="figure" id="admin-ui-cloud-pkg-versions"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/server_role_information.png" target="_blank"><img src="images/server_role_information.png" width="" alt="Cloud Lifecycle Manager Admin UI Services Per Role" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.11: </span><span class="name">Cloud Lifecycle Manager Admin UI Services Per Role </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-cloud-pkg-versions">#</a></h6></div></div></div><div class="sect2" id="admin-ui-servers"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-servers">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-servers</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Servers</span> pages contain information about the hardware
+    that comprises the cloud, including the configuration of the servers, and
+    the ability to add new compute nodes to the cloud.
+   </p><p>
+    The <code class="literal">Servers</code> table contains the following information:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.4.7.4.1"><span class="term ">ID</span></dt><dd><p>
+       This is the ID of the server in the data model. This does not
+       necessarily correspond to any DNS or other naming labels a host has,
+       unless the host ID was set that way during install.
+      </p></dd><dt id="id-1.5.5.4.7.4.2"><span class="term ">IP Address</span></dt><dd><p>
+       The management network IP address of the server
+      </p></dd><dt id="id-1.5.5.4.7.4.3"><span class="term ">Server Group</span></dt><dd><p>
+       The server group which this server is assigned to
+      </p></dd><dt id="id-1.5.5.4.7.4.4"><span class="term ">NIC Mapping</span></dt><dd><p>
+       The NIC mapping that describes the PCI slot addresses for the servers
+       ethernet adapters
+      </p></dd><dt id="id-1.5.5.4.7.4.5"><span class="term ">Mac Address</span></dt><dd><p>
+       The hardware address of the servers primary physical ethernet adapter
+      </p></dd></dl></div><div class="figure" id="admin-ui-server-summary"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/server_summary.png" target="_blank"><img src="images/server_summary.png" width="" alt="Cloud Lifecycle Manager Admin UI Server Summary" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.12: </span><span class="name">Cloud Lifecycle Manager Admin UI Server Summary </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-server-summary">#</a></h6></div></div></div><div class="sect2" id="admin-ui-server-details"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Admin UI Server Details</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-server-details">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/day2_ui_documentation.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>day2_ui_documentation.xml</li><li><span class="ds-label">ID: </span>admin-ui-server-details</li></ul></div></div></div></div><p>
+    <code class="literal">Server Details</code> can be viewed by clicking the menu at the
+    right side of each row in the <code class="literal">Servers</code> table, the server
+    details dialog contains the information from the Servers table and the
+    following additional fields:
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.4.8.3.1"><span class="term ">IPMI IP Address</span></dt><dd><p>
+       The IPMI network address, this may be empty if the server was
+       provisioned prior to being added to the Cloud
+      </p></dd><dt id="id-1.5.5.4.8.3.2"><span class="term ">IPMI Username</span></dt><dd><p>
+       The username that was specified for IPMI access
+      </p></dd><dt id="id-1.5.5.4.8.3.3"><span class="term ">IPMI Password</span></dt><dd><p>
+       This is obscured in the readonly dialog, but is editable when adding a
+       new server
+      </p></dd><dt id="id-1.5.5.4.8.3.4"><span class="term ">Network Interfaces</span></dt><dd><p>
+       The network interfaces configured on the server
+      </p></dd><dt id="id-1.5.5.4.8.3.5"><span class="term ">Filesystem Utilization</span></dt><dd><p>
+       Filesystem usage (percentage of filesystem in use). Only available if
+       monasca is in use
+      </p></dd></dl></div><div class="figure" id="admin-ui-server-summary-details"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/server_summary_details.png" target="_blank"><img src="images/server_summary_details.png" width="" alt="Server Details (1/2)" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.13: </span><span class="name">Server Details (1/2) </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-server-summary-details">#</a></h6></div></div><div class="figure" id="admin-ui-server-summary-details-more"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/server_summary_details_more.png" target="_blank"><img src="images/server_summary_details_more.png" width="" alt="Server Details (2/2)" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.14: </span><span class="name">Server Details (2/2) </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#admin-ui-server-summary-details-more">#</a></h6></div></div></div></div><div class="sect1" id="clm-admin-topology"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Topology</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topology">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-topology</li></ul></div></div></div></div><p>
+  The topology section of the Cloud Lifecycle Manager Admin UI displays an overview of how the
+  Cloud is configured. Each section of the topology represents some facet of
+  the Cloud configuration and provides a visual layout of the way components are
+  associated with each other. Many of the components in the topology are linked
+  to each other, and can be navigated between by clicking on any component that
+  appears as a hyperlink.
+ </p><div class="sect2" id="clm-admin-control-planes"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Planes</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-control-planes">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-control-planes</li></ul></div></div></div></div><p>
+   The <span class="guimenu ">Control Planes</span> tab displays control planes and
+   availability zones within the Cloud.
+  </p><p>
+   Each control plane is show as a table of clusters, resources, and load
+   balancers (represented by vertical columns in the table).
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.3.4.1"><span class="term ">Control Plane</span></dt><dd><p>
+      A set of servers dedicated to running the infrastructure of the Cloud.
+      Many Cloud configurations will have only a single control plane.
+     </p></dd><dt id="id-1.5.5.5.3.4.2"><span class="term ">Clusters</span></dt><dd><p>
+      A set of one or more servers hosting a particular set of services, tied
+      to the <code class="literal">role</code> that has been assigned to that
+      server. <code class="literal">Clusters</code> are generally differentiated from
+      <code class="literal">Resources</code> in that they are fixed size groups of
+      servers that do not grow as the Cloud grows.
+     </p></dd><dt id="id-1.5.5.5.3.4.3"><span class="term ">Resources</span></dt><dd><p>
+      Servers hosting the scalable parts of the Cloud, such as Compute Hosts
+      that host VMs, or swift servers for object storage. These will vary in
+      number with the size and scale of the Cloud and can generally be
+      increased after the initial Cloud deployment.
+     </p></dd><dt id="id-1.5.5.5.3.4.4"><span class="term ">Load Balancers</span></dt><dd><p>
+      Servers that distribute API calls across servers hosting the called
+      services.
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-control-planes-0"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_control_planes_0.png" target="_blank"><img src="images/clm_admin_topo_control_planes_0.png" width="" alt="Control Plane Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.15: </span><span class="name">Control Plane Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-control-planes-0">#</a></h6></div></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.3.6.1"><span class="term ">Availability Zones</span></dt><dd><p>
+      Listed beneath the running services, groups together in a row the hosts
+      in a particular availability zone for a particular cluster or resource
+      type (the rows are AZs, the columns are clusters/resources)
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-control-planes-1"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_control_planes_1.png" target="_blank"><img src="images/clm_admin_topo_control_planes_1.png" width="" alt="Control Plane Topology - Availability Zones" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.16: </span><span class="name">Control Plane Topology - Availability Zones </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-control-planes-1">#</a></h6></div></div></div><div class="sect2" id="clm-admin-topo-regions"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Regions</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-regions">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-topo-regions</li></ul></div></div></div></div><p>
+   Displays the distribution of control plane services across regions.  Clouds
+   that have only a single region will list all services in the same cell.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.4.3.1"><span class="term ">Control Planes</span></dt><dd><p>
+      The group of services that run the Cloud infrastructure
+     </p></dd><dt id="id-1.5.5.5.4.3.2"><span class="term ">Region</span></dt><dd><p>
+      Each region will be represented by a column with the region name as the
+      column header. The list of services that are running in that region will
+      be in that column, with each row corresponding to a particular control
+      plane.
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-regions-image"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_regions.png" target="_blank"><img src="images/clm_admin_topo_regions.png" width="" alt="Regions Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.17: </span><span class="name">Regions Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-regions-image">#</a></h6></div></div></div><div class="sect2" id="clm-admin-topo-services"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Services</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-services">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-topo-services</li></ul></div></div></div></div><p>
+   A list of services running in the Cloud, organized by the type (class) of
+   service. Each service is then listed along with the control planes that the
+   service is part of, the other services that each particular service consumes
+   (requires), and the endpoints of the service, if the service exposes an API.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.5.3.1"><span class="term ">Class</span></dt><dd><p>
+      A category of like services, such as "security" or "operations".
+      Multiple services may belong to the same category.
+     </p></dd><dt id="id-1.5.5.5.5.3.2"><span class="term ">Description</span></dt><dd><p>
+      A short description of the service, typically sourced from the service
+      itself
+     </p></dd><dt id="id-1.5.5.5.5.3.3"><span class="term ">Service</span></dt><dd><p>
+      The name of the service. For <span class="productname">OpenStack</span> services, this is the project
+      codename, such as nova for virtual machine provisioning. Clicking a
+      service will navigate to the section of this page with details for that
+      particular service.
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-services-0"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_services_0.png" target="_blank"><img src="images/clm_admin_topo_services_0.png" width="" alt="Services Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.18: </span><span class="name">Services Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-services-0">#</a></h6></div></div><p>
+    The detail data about a service provides additional insight into the
+    service, such as what other services are required to run a service, and
+    what network protocols can be used to access the service
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.5.6.1"><span class="term ">Components</span></dt><dd><p>
+       Each service is made up of one or more components, which are listed
+       separately here. The components of a service may represent pieces of the
+       service that run on different hosts, provide distinct functionality, or
+       modularize business logic.
+      </p></dd><dt id="id-1.5.5.5.5.6.2"><span class="term ">Control Planes</span></dt><dd><p>
+       A service may be running in multiple control planes. Each control plane
+       that a service is running in will be listed here.
+      </p></dd><dt id="id-1.5.5.5.5.6.3"><span class="term ">Consumes</span></dt><dd><p>
+       Other services required for this service to operate correctly.
+      </p></dd><dt id="id-1.5.5.5.5.6.4"><span class="term ">Endpoints</span></dt><dd><p>
+       How a service can be accessed, typically a REST API, though other
+       network protocols may be listed here. Services that do not expose an API
+       or have any sort of external access will not list any entries here.
+      </p></dd></dl></div><div class="figure" id="clm-admin-topo-service-details"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_services_1.png" target="_blank"><img src="images/clm_admin_topo_services_1.png" width="" alt="Service Details Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.19: </span><span class="name">Service Details Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-service-details">#</a></h6></div></div></div><div class="sect2" id="clm-admin-networks"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Networks</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-networks">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-networks</li></ul></div></div></div></div><p>
+   Lists the networks and network groups that comprise the Cloud. Each network
+   group is respresented by a row in the table, with columns identifying which
+   networks are used by the intersection of the group (row) and
+   cluster/resource (column).
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.6.3.1"><span class="term ">Group</span></dt><dd><p>
+      The network group
+     </p></dd><dt id="id-1.5.5.5.6.3.2"><span class="term ">Clusters</span></dt><dd><p>
+      A set of one or more servers hosting a particular set of services, tied
+      to the <code class="literal">role</code> that has been assigned to that
+      server. <code class="literal">Clusters</code> are generally differentiated from
+      <code class="literal">Resources</code> in that they are fixed size groups of
+      servers that do not grow as the Cloud grows.
+     </p></dd><dt id="id-1.5.5.5.6.3.3"><span class="term ">Resources</span></dt><dd><p>
+      Servers hosting the scalable parts of the Cloud, such as Compute Hosts
+      that host VMs, or swift servers for object storage. These will vary in
+      number with the size and scale of the Cloud and can generally be
+      increased after the initial Cloud deployment.
+     </p></dd></dl></div><p>
+   Cells in the middle of the table represent the network that is running on
+   the resource/cluster represented by that column and is part of the network
+   group identified in the leftmost column of the same row.
+  </p><div class="figure" id="clm-admin-topo-networks"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_networks_0.png" target="_blank"><img src="images/clm_admin_topo_networks_0.png" width="" alt="Networks Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.20: </span><span class="name">Networks Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-networks">#</a></h6></div></div><p>
+    Each network group is listed along with the servers and interfaces that
+    comprise the network group.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.6.7.1"><span class="term ">Network Group</span></dt><dd><p>
+       The elements that make up the network group, whose name is listed above
+       the table
+      </p></dd><dt id="id-1.5.5.5.6.7.2"><span class="term ">Networks</span></dt><dd><p>
+       Networks that are part of the specified network group
+      </p></dd><dt id="id-1.5.5.5.6.7.3"><span class="term ">Address</span></dt><dd><p>
+       IP address of the corresponding server
+      </p></dd><dt id="id-1.5.5.5.6.7.4"><span class="term ">Server</span></dt><dd><p>
+       Server name of the server that is part of this network. Clicking on a
+       server will load the server topology details.
+      </p></dd><dt id="id-1.5.5.5.6.7.5"><span class="term ">Interface Model</span></dt><dd><p>
+       The particular combination of hardware address and bonding that tie this
+       server to the specified network group. Clicking on an <code class="literal">Interface
+       Model</code> will load the corresponding section of the
+       <code class="literal">Roles</code> page.
+      </p></dd></dl></div><div class="figure" id="clm-admin-topo-network-groups"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_networks_1.png" target="_blank"><img src="images/clm_admin_topo_networks_1.png" width="" alt="Network Groups Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.21: </span><span class="name">Network Groups Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-network-groups">#</a></h6></div></div></div><div class="sect2" id="clm-admin-server-groups"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-server-groups">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-server-groups</li></ul></div></div></div></div><p>
+   A hierarchical display of the tree of Server Groups. Groups will be
+   represented by a heading with their name, starting with the first row which
+   contains the Cloud-wide server group (often called
+   <code class="literal">CLOUD</code>).  Within each Server Group, the Network Groups,
+   Networks, Servers, and Server Roles are broken down. Note that server groups
+   can be nested, producing a tree-like structure of groups.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.7.3.1"><span class="term ">Network Groups</span></dt><dd><p>
+      The network groups that are part of this server group.
+     </p></dd><dt id="id-1.5.5.5.7.3.2"><span class="term ">Networks</span></dt><dd><p>
+      The network that is part of the server group and corresponds to the
+      network group in the same row.
+     </p></dd><dt id="id-1.5.5.5.7.3.3"><span class="term ">Server Roles</span></dt><dd><p>
+      The model defined role that was applied to the server, made up of a
+      combination of services, and network/storage configurations unique to
+      that role within the Cloud
+     </p></dd><dt id="id-1.5.5.5.7.3.4"><span class="term ">Servers</span></dt><dd><p>
+      The servers that have the role defined in their row and are part of the
+      network group represented by the column the server is in.
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-server-groups"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_server_groups.png" target="_blank"><img src="images/clm_admin_topo_server_groups.png" width="" alt="Server Groups Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.22: </span><span class="name">Server Groups Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-server-groups">#</a></h6></div></div></div><div class="sect2" id="clm-admin-roles"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Roles</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-roles">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_topology.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_topology.xml</li><li><span class="ds-label">ID: </span>clm-admin-roles</li></ul></div></div></div></div><p>
+   The list of server roles that define the server configurations for the
+   Cloud. Each server role consists of several configurations. In this topology
+   the focus is on the Disk Models and Network Interface Models that are
+   applied to the servers with that role.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.5.8.3.1"><span class="term ">Server Role</span></dt><dd><p>
+      The name of the role, as it is defined in the model
+     </p></dd><dt id="id-1.5.5.5.8.3.2"><span class="term ">Disk Model</span></dt><dd><p>
+      The name of the disk model
+     </p></dd><dt id="id-1.5.5.5.8.3.3"><span class="term ">Volume Group</span></dt><dd><p>
+      Name of the volume group
+     </p></dd><dt id="id-1.5.5.5.8.3.4"><span class="term ">Mount</span></dt><dd><p>
+      Name of the volume being mounted on the server
+     </p></dd><dt id="id-1.5.5.5.8.3.5"><span class="term ">Size</span></dt><dd><p>
+      The size of the volume as a percentage of physical disk space
+     </p></dd><dt id="id-1.5.5.5.8.3.6"><span class="term ">FS Type</span></dt><dd><p>
+      Filesystem type
+     </p></dd><dt id="id-1.5.5.5.8.3.7"><span class="term ">Options</span></dt><dd><p>
+      Optional flags applied when mounting the volume
+     </p></dd><dt id="id-1.5.5.5.8.3.8"><span class="term ">PVol(s)</span></dt><dd><p>
+      The physical address to the storage used for this volume group
+     </p></dd><dt id="id-1.5.5.5.8.3.9"><span class="term ">Interface Model</span></dt><dd><p>
+      The name of the interface model
+     </p></dd><dt id="id-1.5.5.5.8.3.10"><span class="term ">Network Group</span></dt><dd><p>
+      The name of the network group. Clicking on a Network Group will load the
+      details of that group on the Networks page.
+     </p></dd><dt id="id-1.5.5.5.8.3.11"><span class="term ">Interface/Options</span></dt><dd><p>
+      Includes logical network name, such as <code class="literal">hed1</code>,
+      <code class="literal">hed2</code>, and <code class="literal">bond</code> information grouping
+      the logical network name together. The Cloud software will map these to
+      physical devices.
+     </p></dd></dl></div><div class="figure" id="clm-admin-topo-roles"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_topo_roles.png" target="_blank"><img src="images/clm_admin_topo_roles.png" width="" alt="Roles Topology" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.23: </span><span class="name">Roles Topology </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-topo-roles">#</a></h6></div></div></div></div><div class="sect1" id="clm-admin-addserver"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Management</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-addserver">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-addserver</li></ul></div></div></div></div><div class="sect2" id="clm-admin-add-server"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-add-server</li></ul></div></div></div></div><p>
+  The Add Server page in the Cloud Lifecycle Manager Admin UI allows for adding additional
+  Compute Nodes to the Cloud.
+ </p><div class="figure" id="clm-admin-add-server-0"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_0.png" target="_blank"><img src="images/clm_admin_add_server_0.png" width="" alt="Add Server Overview" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.24: </span><span class="name">Add Server Overview </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-0">#</a></h6></div></div><div class="sect3" id="clm-admin-available-servers"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Available Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-available-servers">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-available-servers</li></ul></div></div></div></div><p>
+   Servers that can be added to the Cloud are shown on the left side of the
+   <code class="literal">Add Server</code> screen. Additional servers can be included in
+   this list three different ways:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Discover servers via SUSE Manager or HPE OneView (for details on adding
+     servers via autodiscovery, see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 21 “Installing with the Install UI”, Section 21.4 “Optional: Importing Certificates for SUSE Manager and HPE OneView”</span> and
+     <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 21 “Installing with the Install UI”, Section 21.5 “Running the Install UI”</span>
+    </p></li><li class="listitem "><p>
+     Manually add servers individually by clicking <span class="guimenu ">Manual
+     Entry</span> and filling out the form with the server information
+     (instructions below)
+    </p></li><li class="listitem "><p>
+     Create a CSV file of the servers to be added (see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 21 “Installing with the Install UI”, Section 21.3 “Optional: Creating a CSV File to Import Server Data”</span>)
+    </p></li></ol></div><p>
+   Manually adding a server requires the following fields:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.6.2.4.5.1"><span class="term ">ID</span></dt><dd><p>
+      A unique name for the server
+     </p></dd><dt id="id-1.5.5.6.2.4.5.2"><span class="term ">IP Address</span></dt><dd><p>
+      The IP address that the server has, or will have, in the Cloud
+     </p></dd><dt id="id-1.5.5.6.2.4.5.3"><span class="term ">Server Group</span></dt><dd><p>
+      Which server group the server will belong to. The IP address must be
+      compatible with the selected Server Group. If the required Server
+      Group is not present, it can be created
+     </p></dd><dt id="id-1.5.5.6.2.4.5.4"><span class="term ">NIC Mapping</span></dt><dd><p>
+      The NIC to PCI address mapping for the server being added to the Cloud.
+      If the required NIC mapping is not present, it can be created
+     </p></dd><dt id="id-1.5.5.6.2.4.5.5"><span class="term ">Role</span></dt><dd><p>
+      Which compute role to add the server to. If this is set, the server will
+      be immediately assigned that role on the right side of the page. If it is
+      not set, the server will be added to the left side panel of available
+      servers
+     </p></dd></dl></div><p>
+   Some additional fields must be set if the server is not already provisioned
+   with an OS, or if a new OS install is desired for the server. These fields
+   are not required if an <span class="productname">OpenStack</span> Cloud compatible OS is already installed:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.6.2.4.7.1"><span class="term ">MAC Address</span></dt><dd><p>
+      The MAC address of the IPMI network card of the server
+     </p></dd><dt id="id-1.5.5.6.2.4.7.2"><span class="term ">IPMI IP Address</span></dt><dd><p>
+      The IPMI network address (IP address) of the server
+     </p></dd><dt id="id-1.5.5.6.2.4.7.3"><span class="term ">IPMI Username</span></dt><dd><p>
+      Username to log in to IPMI on the server
+     </p></dd><dt id="id-1.5.5.6.2.4.7.4"><span class="term ">IPMI Password</span></dt><dd><p>
+      Password to log in to IPMI on the server
+     </p></dd></dl></div><div class="figure" id="clm-admin-add-server-image"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_1.png" target="_blank"><img src="images/clm_admin_add_server_1.png" width="" alt="Manually Add Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.25: </span><span class="name">Manually Add Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-image">#</a></h6></div></div><p>
+   Servers in the available list can be dragged to the desired role on the
+   right. Only Compute-related roles will be displayed.
+  </p><div class="figure" id="clm-admin-add-server-2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_2.png" target="_blank"><img src="images/clm_admin_add_server_2.png" width="" alt="Manually Add Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.26: </span><span class="name">Manually Add Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-2">#</a></h6></div></div></div><div class="sect3" id="clm-admin-addserver-settings"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add Server Settings</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-addserver-settings">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-addserver-settings</li></ul></div></div></div></div><p>
+   There are several settings that apply across all Compute Nodes being added to
+   the Cloud. Beneath the list of nodes, users will find options to control
+   whether existing nodes can be modified, whether the new nodes should have
+   their data disks wiped, and whether to activate the new Compute Nodes as part
+   of the update process.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.6.2.5.3.1"><span class="term ">Safe Mode</span></dt><dd><p>
+      Prevents modification of existing Compute Nodes. Can be unchecked to allow
+      modifications. Modifying existing Compute Nodes has the potential to disrupt
+      the continuous operation of the Cloud and should be done with caution.
+     </p></dd><dt id="id-1.5.5.6.2.5.3.2"><span class="term ">Wipe Data Disks</span></dt><dd><p>
+      The data disks on the new server will not be wiped by default,
+      but users can specify to wipe clean the data disks as part of the
+      process of adding the Compute Node(s) to the Cloud.
+     </p></dd><dt id="id-1.5.5.6.2.5.3.3"><span class="term ">Activate</span></dt><dd><p>
+      Activates the added Compute Node(s) during the process of adding them to
+      the Cloud. Activation adds a Compute Node to the pool of nodes that the
+      <code class="literal">nova-scheduler</code> uses when instantiating VMs.
+     </p></dd></dl></div><div class="figure" id="clm-admin-safe-mode"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_safe_mode.png" target="_blank"><img src="images/clm_admin_safe_mode.png" width="" alt="Add Server Settings options" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.27: </span><span class="name">Add Server Settings options </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-safe-mode">#</a></h6></div></div></div><div class="sect3" id="clm-admin-install-os"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.4.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Install OS</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-install-os">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-install-os</li></ul></div></div></div></div><p>
+   Servers that have been assigned a role but not yet deployed can have SLES
+   installed as part of the Cloud deployment. This step is necessary for
+   servers that are not provisioned with an OS.
+  </p><p>
+   On the <code class="literal">Install OS</code> page, the <code class="literal">Available
+   Servers</code> list will be populated with servers that have been
+   assigned to a role but not yet deployed to the Cloud. From here, select
+   which servers to install an OS onto and use the arrow controls to move them
+   to the Selected Servers box on the right. After all servers that require an
+   OS to be provisioned have been added to the Selected Servers list and click
+   <span class="guimenu ">Next</span>.
+  </p><div class="figure" id="clm-admin-add-server-3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_3.png" target="_blank"><img src="images/clm_admin_add_server_3.png" width="" alt="Select Servers to Provision OS" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.28: </span><span class="name">Select Servers to Provision OS </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-3">#</a></h6></div></div><p>
+   The UI will prompt for confirmation that the OS should be installed, because
+   provisioning an OS will replace any existing operating system on the
+   server.
+  </p><div class="figure" id="clm-admin-add-server-4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_4.png" target="_blank"><img src="images/clm_admin_add_server_4.png" width="" alt="Confirm Provision OS" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.29: </span><span class="name">Confirm Provision OS </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-4">#</a></h6></div></div><p>
+   When the OS install begins, progress of the install will be displayed on
+   screen
+  </p><div class="figure" id="clm-admin-add-server-5"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_5.png" target="_blank"><img src="images/clm_admin_add_server_5.png" width="" alt="OS Install Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.30: </span><span class="name">OS Install Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-5">#</a></h6></div></div><p>
+   After OS provisioning is complete, a summary of the provisioned servers will
+   be displayed. Clicking <span class="guimenu ">Close</span> will return the user to the
+   role selection page where deployment can continue.
+  </p><div class="figure" id="clm-admin-add-server-6"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_6.png" target="_blank"><img src="images/clm_admin_add_server_6.png" width="" alt="OS Install Summary" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.31: </span><span class="name">OS Install Summary </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-6">#</a></h6></div></div></div><div class="sect3" id="clm-admin-deploy-newservers"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.4.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploy New Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deploy-newservers">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-deploy-newservers</li></ul></div></div></div></div><p>
+   When all newly added servers have an OS provisioned, either via the Install
+   OS process detailed above or having previously been provisioned outside of
+   the Cloud Lifecycle Manager Admin UI, deployment can begin.
+  </p><p>
+   The <span class="guimenu ">Deploy</span> button will be enabled when one or more new
+   servers have been assigned roles. Clicking <span class="guimenu ">Deploy</span> prompt
+   for confirmation before beginning the deployment process
+  </p><div class="figure" id="clm-admin-add-server-75"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_7.png" target="_blank"><img src="images/clm_admin_add_server_7.png" width="" alt="Confirm Deploy Servers" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.32: </span><span class="name">Confirm Deploy Servers </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-75">#</a></h6></div></div><p>
+   The deployment process will begin by running the Configuration Processor in
+   basic validation mode to check the values input for the servers being
+   added. This will check IP addresses, server groups, and NIC mappings for
+   syntax or format errors.
+  </p><div class="figure" id="clm-admin-add-server-8"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_8.png" target="_blank"><img src="images/clm_admin_add_server_8.png" width="" alt="Validate Server Changes" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.33: </span><span class="name">Validate Server Changes </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-8">#</a></h6></div></div><p>
+   After validation is successful, the servers will be prepared for
+   deployment. The preparation consists of running the full Configuration
+   Processor and two additional playbooks to ready servers for deployment.
+  </p><div class="figure" id="clm-admin-add-server-9"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_9.png" target="_blank"><img src="images/clm_admin_add_server_9.png" width="" alt="Prepare Servers" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.34: </span><span class="name">Prepare Servers </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-9">#</a></h6></div></div><p>
+   After the servers have been prepared, deployment can begin. This process
+   will generate a new <code class="filename">hosts</code> file, run the
+   <code class="filename">site.yml</code> playbook, and update monasca (if
+   monasca is deployed)
+  </p><div class="figure" id="clm-admin-add-server-10"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_10.png" target="_blank"><img src="images/clm_admin_add_server_10.png" width="" alt="Deploy Servers" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.35: </span><span class="name">Deploy Servers </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-10">#</a></h6></div></div><p>
+   When deployment is completed, a summary page will be displayed. Clicking
+   <span class="guimenu ">Close</span> will return to the <code class="literal">Add Server</code> page.
+  </p><div class="figure" id="clm-admin-add-server-11"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_add_server_11.png" target="_blank"><img src="images/clm_admin_add_server_11.png" width="" alt="Deploy Summary" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.36: </span><span class="name">Deploy Summary </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-add-server-11">#</a></h6></div></div></div></div><div class="sect2" id="clm-admin-activate-server"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Activating Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-activate-server">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-activate-server</li></ul></div></div></div></div><p>
+  The Server Summary page in the Cloud Lifecycle Manager Admin UI allows for activating
+  Compute Nodes in the Cloud. Compute Nodes may be activated when
+  they are added to the Cloud. An activated compute node is available
+  for the <code class="literal">nova-scheduler</code> to use for hosting new VMs that are created.
+  Only servers that are not currently activated will have the
+  activation menu option available.
+ </p><div class="figure" id="clm-admin-activate-server-1"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_activate_1.png" target="_blank"><img src="images/clm_admin_activate_1.png" width="" alt="Activate Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.37: </span><span class="name">Activate Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-activate-server-1">#</a></h6></div></div><p>
+  Once activation is triggered, the progress of activating the node
+  and adding it to the <code class="literal">nova-scheduler</code> is displayed.
+ </p><div class="figure" id="clm-admin-activate-server-2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_activate_2.png" target="_blank"><img src="images/clm_admin_activate_2.png" width="" alt="Activate Server Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.38: </span><span class="name">Activate Server Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-activate-server-2">#</a></h6></div></div></div><div class="sect2" id="clm-admin-deactivate-server"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deactivating Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-server">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-deactivate-server</li></ul></div></div></div></div><p>
+  The Server Summary page in the Cloud Lifecycle Manager Admin UI allows for deactivating
+  Compute Nodes in the Cloud. Deactivating a Compute Node removes it from
+  the pool of servers that the <code class="literal">nova-scheduler</code> will put VMs on.
+  When a Compute Node is deactivated, the UI attempts to migrate any
+  currently running VMs from that server to an active node.
+ </p><div class="figure" id="clm-admin-deactivate-server-1"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_deactivate_1.png" target="_blank"><img src="images/clm_admin_deactivate_1.png" width="" alt="Deactivate Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.39: </span><span class="name">Deactivate Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-server-1">#</a></h6></div></div><p>
+  The deactivation process requires confirmation before proceeding.
+ </p><div class="figure" id="clm-admin-deactivate-server-2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_deactivate_2.png" target="_blank"><img src="images/clm_admin_deactivate_2.png" width="" alt="Deactivate Server Confirmation" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.40: </span><span class="name">Deactivate Server Confirmation </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-server-2">#</a></h6></div></div><p>
+  Once deactivation is triggered, the progress of deactivating the node
+  and removing it from the <code class="literal">nova-scheduler</code> is displayed.
+ </p><div class="figure" id="clm-admin-deactivate-server-3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_deactivate_3.png" target="_blank"><img src="images/clm_admin_deactivate_3.png" width="" alt="Deactivate Server Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.41: </span><span class="name">Deactivate Server Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-server-3">#</a></h6></div></div><p>
+  If a Compute Node selected for deactivation has VMs running on it,
+  a prompt will appear to select where to migrate the running VMs
+ </p><div class="figure" id="clm-admin-deactivate-with-migration-1"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_deactivate_with_migration_1.png" target="_blank"><img src="images/clm_admin_deactivate_with_migration_1.png" width="" alt="Select Migration Target" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.42: </span><span class="name">Select Migration Target </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-with-migration-1">#</a></h6></div></div><p>
+  A summary of the VMs being migrated will be displayed, along with
+  the progress migrating them from the deactivated Compute Node to
+  the target host. Once the migration attempt is complete, click
+  'Done' to continue the deactivation process.
+ </p><div class="figure" id="clm-admin-deactivate-with-migration-2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_deactivate_with_migration_2.png" target="_blank"><img src="images/clm_admin_deactivate_with_migration_2.png" width="" alt="Deactivate Migration Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.43: </span><span class="name">Deactivate Migration Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-deactivate-with-migration-2">#</a></h6></div></div></div><div class="sect2" id="clm-admin-delete-server"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deleting Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-delete-server">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_admin_addserver.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_admin_addserver.xml</li><li><span class="ds-label">ID: </span>clm-admin-delete-server</li></ul></div></div></div></div><p>
+  The Server Summary page in the Cloud Lifecycle Manager Admin UI allows for deleting
+  Compute Nodes from the Cloud. Deleting a Compute Node removes it from
+  the cloud. Only Compute Nodes that are deactivated can be deleted.
+ </p><div class="figure" id="clm-admin-delete-server-1"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_delete_1.png" target="_blank"><img src="images/clm_admin_delete_1.png" width="" alt="Delete Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.44: </span><span class="name">Delete Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-delete-server-1">#</a></h6></div></div><p>
+  The deletion process requires confirmation before proceeding.
+ </p><div class="figure" id="clm-admin-delete-server-2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_delete_2.png" target="_blank"><img src="images/clm_admin_delete_2.png" width="" alt="Delete Server Confirmation" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.45: </span><span class="name">Delete Server Confirmation </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-delete-server-2">#</a></h6></div></div><p>
+  If the Compute Node is not reachable (SSH from the deployer is not
+  possible), a warning will appear, requesting confirmation that
+  the node is shut down or otherwise removed from the environment.
+  Reachable Compute Nodes will be shutdown as part of the deletion
+  process.
+ </p><div class="figure" id="clm-admin-delete-server-3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_delete_3.png" target="_blank"><img src="images/clm_admin_delete_3.png" width="" alt="Unreachable Delete Confirmation" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.46: </span><span class="name">Unreachable Delete Confirmation </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-delete-server-3">#</a></h6></div></div><p>
+  The progress of deleting the Compute Node will be displayed, including
+  a streaming log with additional details of the running playbooks.
+ </p><div class="figure" id="clm-admin-delete-server-4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_delete_4.png" target="_blank"><img src="images/clm_admin_delete_4.png" width="" alt="Delete Server Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.47: </span><span class="name">Delete Server Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-delete-server-4">#</a></h6></div></div></div></div><div class="sect1" id="clm-server-replacement"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Replacement</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-server-replacement">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_replace_server.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_replace_server.xml</li><li><span class="ds-label">ID: </span>clm-server-replacement</li></ul></div></div></div></div><p>
+  The process of replacing a server is initiated from the Server Summary (see <a class="xref" href="clm-admin-ui.html#admin-ui-servers" title="3.2.6. Servers">Section 3.2.6, “Servers”</a>). Replacing a server will remove the existing
+  server from the Cloud configuration and install the new server in its
+  place. The rest of this process varies slightly depending on the type of
+  server being replaced.
+ </p><div class="sect2" id="control-plane-servers"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Plane Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#control-plane-servers">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_replace_server.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_replace_server.xml</li><li><span class="ds-label">ID: </span>control-plane-servers</li></ul></div></div></div></div><p>
+   Servers that are part of the Control Plane (generally those that are not
+   hosting Compute VMs or ephemeral storage) are replaced "in-place". This
+   means the replacement server has the same IP Address and is expected to have the
+   same NIC Mapping and Server Group as the server being replaced.
+  </p><p>
+   To replace a Control Plane server, click the menu to the right of the server
+   listing on the <span class="guimenu ">Summary</span> tab of the <a class="xref" href="clm-admin-ui.html#admin-ui-servers" title="3.2.6. Servers">Section 3.2.6, “Servers”</a> page.  From the menu options, select
+   <span class="guimenu ">Replace</span>.
+ </p><div class="figure" id="clm-admin-replaceserver-menu"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replaceserver_menu.png" target="_blank"><img src="images/clm_admin_replaceserver_menu.png" width="" alt="Replace Server Menu" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.48: </span><span class="name">Replace Server Menu </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replaceserver-menu">#</a></h6></div></div><p>
+   Selecting <span class="guimenu ">Replace</span> will open a dialog box that includes
+   information about the server being replaced, as well as a form for inputting
+   the required information for the new server.
+  </p><div class="figure" id="clm-admin-replaceserver-controlplane-replaceform"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replaceserver_controlplane_replaceform.png" target="_blank"><img src="images/clm_admin_replaceserver_controlplane_replaceform.png" width="" alt="Replace Controller Form" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.49: </span><span class="name">Replace Controller Form </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replaceserver-controlplane-replaceform">#</a></h6></div></div><p>
+   The IPMI information for the new server is required to perform the
+   replacement process.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.7.3.8.1"><span class="term ">MAC Address</span></dt><dd><p>
+      The hardware address of the server's primary physical ethernet
+      adapter
+     </p></dd><dt id="id-1.5.5.7.3.8.2"><span class="term ">IPMI IP Address</span></dt><dd><p>
+      The network address for IPMI access to the new server
+     </p></dd><dt id="id-1.5.5.7.3.8.3"><span class="term ">IPMI Username</span></dt><dd><p>
+      The username credential for IPMI access to the new server
+     </p></dd><dt id="id-1.5.5.7.3.8.4"><span class="term ">IPMI Password</span></dt><dd><p>
+      The password associated with the <code class="literal">IPMI Username</code> on the
+      new server
+     </p></dd></dl></div><p>
+   To use a server that has already been discovered, check the box for
+   <span class="guimenu ">Use available servers</span> and select an existing server
+   from the <span class="guimenu ">Available Servers</span> dropdown. This will
+   automatically populate the server information fields above with the
+   information previously entered/discovered for the specified server.
+  </p><p>
+   If SLES is not already installed, or to reinstall SLES on the new
+   server, check the box for <span class="guimenu ">Install OS</span>. The username will
+   be pre-populated with the username from the Cloud install. Installing the OS
+   requires specifying the password that was used for deploying the cloud so
+   that the replacement process can access the host after the OS is installed.
+  </p><p>
+   The data disks on the new server will not be wiped by default, but users
+   can specify to wipe clean the data disks as part of the replacement process.
+  </p><p>
+   Once the new server information is set, click the <span class="guimenu ">Replace</span>
+   button in the lower right to begin replacement. A list of the replacement
+   process steps will be displayed, and there will be a link at the bottom of
+   the list to show the log file as the changes are made.
+  </p><div class="figure" id="clm-admin-replace-server-controlplane-progress"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replace_server_controlplane_progress.png" target="_blank"><img src="images/clm_admin_replace_server_controlplane_progress.png" width="" alt="Replace Controller Progress" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.50: </span><span class="name">Replace Controller Progress </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replace-server-controlplane-progress">#</a></h6></div></div><p>
+   When all of the steps are complete, click <span class="guimenu ">Close</span> to return
+   to the Servers page.
+  </p></div><div class="sect2" id="compute-servers"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute Servers</span> <a title="Permalink" class="permalink" href="clm-admin-ui.html#compute-servers">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/clm_replace_server.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>clm_replace_server.xml</li><li><span class="ds-label">ID: </span>compute-servers</li></ul></div></div></div></div><p>
+   When servers that host VMs are replaced, the following actions happen:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     a new server is added
+    </p></li><li class="step "><p>
+     existing instances are migrated from the existing server to the new server
+    </p></li><li class="step "><p>
+     the existing server is deleted from the model
+    </p></li></ol></div></div><p>
+   The new server will not have the same IP Address and may have a different
+   NIC Mapping and Server Group than the server being replaced.
+  </p><p>
+   To replace a Compute server, click the menu to the right of the server
+   listing on the <span class="guimenu ">Summary</span> tab of the <a class="xref" href="clm-admin-ui.html#admin-ui-servers" title="3.2.6. Servers">Section 3.2.6, “Servers”</a> page.  From the menu options, select
+   <span class="guimenu ">Replace</span>.
+  </p><div class="figure" id="clm-admin-replacecompute-menu"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_menu.png" target="_blank"><img src="images/clm_admin_replacecompute_menu.png" width="" alt="Replace Compute Menu" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.51: </span><span class="name">Replace Compute Menu </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-menu">#</a></h6></div></div><p>
+   Selecting <span class="guimenu ">Replace</span> will open a dialog box that includes
+   information about the server being replaced, and a form for inputting the
+   required information for the new server.
+  </p><p>
+   If the IP address of the server being replaced cannot be reached
+by the deployer, a warning will appear to verify that the replacement
+should continue.
+  </p><div class="figure" id="clm-admin-replacecompute-unreachable-warn"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_unreachable_warn.png" target="_blank"><img src="images/clm_admin_replacecompute_unreachable_warn.png" width="" alt="Unreachable Compute Node Warning" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.52: </span><span class="name">Unreachable Compute Node Warning </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-unreachable-warn">#</a></h6></div></div><div class="figure" id="clm-admin-replacecompute-replaceform"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_replaceform.png" target="_blank"><img src="images/clm_admin_replacecompute_replaceform.png" width="" alt="Replace Compute Form" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.53: </span><span class="name">Replace Compute Form </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-replaceform">#</a></h6></div></div><p>
+   Replacing a Compute server involves adding the new server and then
+   performing migration. This requires some new information:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     an unused IP address
+    </p></li><li class="listitem "><p>
+     a new ID
+    </p></li><li class="listitem "><p>
+     selections for Server Group and NIC Mapping, which do not need to match
+     the original server.
+    </p></li></ul></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.7.4.13.1"><span class="term ">ID</span></dt><dd><p>
+      This is the ID of the server in the data model. This does not necessarily
+      correspond to any DNS or other naming labels of a host, unless the host
+      ID was set that way during install.
+     </p></dd><dt id="id-1.5.5.7.4.13.2"><span class="term ">IP Address</span></dt><dd><p>
+      The management network IP address of the server
+     </p></dd><dt id="id-1.5.5.7.4.13.3"><span class="term ">Server Group</span></dt><dd><p>
+      The server group which this server is assigned to. If the required
+      Server Group does not exist, it can be created
+     </p></dd><dt id="id-1.5.5.7.4.13.4"><span class="term ">NIC Mapping</span></dt><dd><p>
+      The NIC mapping that describes the PCI slot addresses for the server's
+      ethernet adapters. If the required NIC mapping does not exist, it
+      can be created
+     </p></dd></dl></div><p>
+   The IPMI information for the new server is also required to perform the
+   replacement process.
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.5.7.4.15.1"><span class="term ">Mac Address</span></dt><dd><p>
+      The hardware address of the server's primary physical ethernet adapter
+     </p></dd><dt id="id-1.5.5.7.4.15.2"><span class="term ">IPMI IP Address</span></dt><dd><p>
+      The network address for IPMI access to the new server
+     </p></dd><dt id="id-1.5.5.7.4.15.3"><span class="term ">IPMI Username</span></dt><dd><p>
+      The username credential for IPMI access to the new server
+     </p></dd><dt id="id-1.5.5.7.4.15.4"><span class="term ">IPMI Password</span></dt><dd><p>
+      The password associated with the <code class="literal">IPMI Username</code>
+     </p></dd></dl></div><p>
+   To use a server that has already been discovered, check the box for
+   <span class="guimenu ">Use available servers</span> and select an existing server
+   from the <span class="guimenu ">Available Servers</span> dropdown. This will
+   automatically populate the server information fields above with the
+   information previously entered/discovered for the specified server.
+  </p><p>
+   If SLES is not already installed, or to reinstall SLES on the new
+   server, check the box for <span class="guimenu ">Install OS</span>. The username will
+   be pre-populated with the username from the Cloud install. Installing the OS
+   requires specifying the password that was used for deploying the cloud so
+   that the replacement process can access the host after the OS is installed.
+  </p><p>
+   The data disks on the new server will not be wiped by default, but
+   <code class="literal">wipe clean</code> can specified for the data disks as
+   part of the replacement process.
+  </p><p>
+   When the new server information is set, click the <span class="guimenu ">Replace</span>
+   button in the lower right to begin replacement. The configuration processor
+   will be run to validate that the entered information is compatible with the
+   configuration of the Cloud.
+  </p><p>
+   When validation has completed, the Compute replacement takes place in
+   several distinct steps, and each will have its own page with a list of
+   process steps displayed. A link at the bottom of the list can show the log
+   file as the changes are made.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Install SLES if that option was selected
+    </p><div class="figure" id="clm-admin-replacecompute-installsles"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_installsles.png" target="_blank"><img src="images/clm_admin_replacecompute_installsles.png" width="" alt="Install SLES on New Compute" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.54: </span><span class="name">Install SLES on New Compute </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-installsles">#</a></h6></div></div></li><li class="step "><p>
+     Commit the changes to the data model and run the configuration processor
+    </p><div class="figure" id="clm-admin-replacecompute-prepareserver"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_prepareserver.png" target="_blank"><img src="images/clm_admin_replacecompute_prepareserver.png" width="" alt="Prepare Compute Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.55: </span><span class="name">Prepare Compute Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-prepareserver">#</a></h6></div></div></li><li class="step "><p> Deploy the new server, install services on it, update monasca
+    (if installed), activate the server with nova so that it can host
+    VMs.
+    </p><div class="figure" id="clm-admin-replacecompute-deploynew"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_deploynew.png" target="_blank"><img src="images/clm_admin_replacecompute_deploynew.png" width="" alt="Deploy New Compute Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.56: </span><span class="name">Deploy New Compute Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-deploynew">#</a></h6></div></div></li><li class="step "><p>
+     Disable the existing server. If the existing server is unreachable, there may
+     be warnings about disabling services on that server.
+    </p><div class="figure" id="clm-admin-replacecompute-hostaggwarnings"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_hostaggwarnings.png" target="_blank"><img src="images/clm_admin_replacecompute_hostaggwarnings.png" width="" alt="Host Aggregate Removal Warning" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.57: </span><span class="name">Host Aggregate Removal Warning </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-hostaggwarnings">#</a></h6></div></div><p>
+     If the existing server is reachable, instances on that server will be migrated
+     to the new server.
+    </p><div class="figure" id="clm-admin-replacecompute-migration"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_migration.png" target="_blank"><img src="images/clm_admin_replacecompute_migration.png" width="" alt="Migrate Instances from Existing Compute Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.58: </span><span class="name">Migrate Instances from Existing Compute Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-migration">#</a></h6></div></div><p>
+     If the existing server is not reachable, the migration step will be
+     skipped.
+    </p><div class="figure" id="clm-admin-replacecompute-disableexisting"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_disableexisting.png" target="_blank"><img src="images/clm_admin_replacecompute_disableexisting.png" width="" alt="Disable Existing Compute Server" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.59: </span><span class="name">Disable Existing Compute Server </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-disableexisting">#</a></h6></div></div></li><li class="step "><p>
+     Remove the existing server from the model and update the cloud
+     configuration. If the server is not reachable, the user is asked to verify
+     that the server is shut down. If server is reachable, the cloud services
+     running on it will be stopped and the server will be shut down as part of
+     the removal from the Cloud.
+    </p><div class="figure" id="clm-admin-replacecompute-shutdownwarning"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_shutdownwarning.png" target="_blank"><img src="images/clm_admin_replacecompute_shutdownwarning.png" width="" alt="Existing Server Shutdown Check" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.60: </span><span class="name">Existing Server Shutdown Check </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-shutdownwarning">#</a></h6></div></div><p>
+     Upon verification that the unreachable host is shut down, it will be removed from the
+     data model.
+    </p><div class="figure" id="clm-admin-replacecompute-deleteexisting"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_deleteexisting.png" target="_blank"><img src="images/clm_admin_replacecompute_deleteexisting.png" width="" alt="Existing Server Delete" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.61: </span><span class="name">Existing Server Delete </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-deleteexisting">#</a></h6></div></div><p>
+     After the model has been updated, a summary of the changes will
+     appear. Click <span class="guimenu ">Close</span> to return to the server summary
+     screen.
+    </p><div class="figure" id="clm-admin-replacecompute-summary"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/clm_admin_replacecompute_summary.png" target="_blank"><img src="images/clm_admin_replacecompute_summary.png" width="" alt="Compute Replacement Summary" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.62: </span><span class="name">Compute Replacement Summary </span><a title="Permalink" class="permalink" href="clm-admin-ui.html#clm-admin-replacecompute-summary">#</a></h6></div></div></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="third-party-integrations.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Third-Party Integrations</span></a><a class="nav-link" href="tutorials.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Tutorials</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

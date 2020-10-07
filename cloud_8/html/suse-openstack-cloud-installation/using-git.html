@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using Git for Configuration Management | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 10. Using Git for Configuration Management" /><meta name="description" content="In SUSE OpenStack Cloud 8, a local git repository is used to track configuration changes; the Configuration Processor (CP) uses this repository. Use of a git workflow means that your configuration history is maintained, making rollbacks easier and keeping a record of previous configuration settings.…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="install-gui.html" title="Chapter 9. Installing with the Install UI" /><link rel="next" href="install-standalone.html" title="Chapter 11. Installing a Stand-Alone Cloud Lifecycle Manager" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="using-git.html">Using Git for Configuration Management</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 9. Installing with the Install UI" href="install-gui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 11. Installing a Stand-Alone Cloud Lifecycle Manager" href="install-standalone.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="using-git.html">Using Git for Configuration Management</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 9. Installing with the Install UI" href="install-gui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 11. Installing a Stand-Alone Cloud Lifecycle Manager" href="install-standalone.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="using-git"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Git for Configuration Management</span> <a title="Permalink" class="permalink" href="using-git.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span>using-git</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="using-git.html#id-1.4.5.5.4"><span class="number">10.1 </span><span class="name">Initialization on a new deployment</span></a></span></dt><dt><span class="section"><a href="using-git.html#updating-configuration-including-default-config"><span class="number">10.2 </span><span class="name">Updating any configuration, including the default configuration</span></a></span></dt><dt><span class="section"><a href="using-git.html#git-merge"><span class="number">10.3 </span><span class="name">Resolving Git merge conflicts</span></a></span></dt></dl></div></div><p>
+  In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, a local git repository is used to track configuration
+  changes; the Configuration Processor (CP) uses this repository. Use of a git
+  workflow means that your configuration history is maintained, making
+  rollbacks easier and keeping a record of previous configuration settings. The
+  git repository also provides a way for you to merge changes that you pull down as
+  <span class="quote">“<span class="quote ">upstream</span>”</span> updates (that is, updates from <span class="phrase"><span class="phrase">SUSE</span></span>). It also
+  allows you to manage your own configuration changes.
+ </p><p>
+  The git repository is installed by the Cloud Lifecycle Manager on the Cloud Lifecycle Manager node.
+ </p><div class="sect1" id="id-1.4.5.5.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Initialization on a new deployment</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   On a system new to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, the Cloud Lifecycle Manager will prepare a git repository
+   under <code class="literal">~/openstack</code>. The Cloud Lifecycle Manager provisioning runs the
+   <code class="literal">ardana-init-deployer</code> script automatically. This calls
+   <code class="literal">ansible-playbook -i hosts/localhost git-00-initialise.yml</code>.
+  </p><p>
+   As a result, the <code class="literal">~/openstack</code> directory is initialized as
+   a git repo (if it is empty). It is initialized with four empty branches:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.4.4.1"><span class="term ">ardana</span></dt><dd><p>
+      This holds the upstream source code corresponding to the contents of the
+      <code class="literal">~/openstack</code> directory on a pristine installation.
+      Every source code release that is downloaded from <span class="phrase"><span class="phrase">SUSE</span></span> is applied as
+      a fresh commit to this branch. This branch contains no customization by
+      the end user.
+     </p></dd><dt id="id-1.4.5.5.4.4.2"><span class="term ">site</span></dt><dd><p>
+      This branch begins life as a copy of the first <code class="literal">ardana</code>
+      drop. It is onto this branch that you commit your configuration changes.
+      It is the branch most visible to the end user.
+     </p></dd><dt id="id-1.4.5.5.4.4.3"><span class="term ">ansible</span></dt><dd><p>
+      This branch contains the variable definitions generated by the CP that
+      our main ansible playbooks need. This includes the
+      <code class="literal">verb_hosts</code> file that describes to ansible what servers
+      are playing what roles. The <code class="literal">ready-deployment</code> playbook
+      takes this output and assembles a <code class="literal">~/scratch</code> directory
+      containing the ansible playbooks together with the variable definitions
+      in this branch. The result is a working ansible directory
+      <code class="literal">~/scratch/ansible/next/ardana/ansible</code> from which the
+      main deployment playbooks may be successfully run.
+     </p></dd><dt id="id-1.4.5.5.4.4.4"><span class="term ">cp-persistent</span></dt><dd><p>
+      This branch contains the persistent state that the CP needs to maintain.
+      That state is mostly the assignment of IP addresses and roles to
+      particular servers. Some operational procedures may involve editing the
+      contents of this branch: for example, retiring a machine from service or
+      repurposing it.
+     </p></dd></dl></div><p>
+   Two temporary branches are created and populated at run time:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.4.6.1"><span class="term ">staging-ansible</span></dt><dd><p>
+      This branch hosts the most recent commit that will be appended to the
+      Ansible branch.
+     </p></dd><dt id="id-1.4.5.5.4.6.2"><span class="term ">staging-cp-persistent</span></dt><dd><p>
+      This branch hosts the most recent commit that will be appended to the
+      cp-persistent branch.
+     </p></dd></dl></div><div id="id-1.4.5.5.4.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The information above provides insight into the workings of the
+    configuration processor and the git repository. However, in practice you
+    can simply follow the steps below to make configuration changes.
+   </p></div></div><div class="sect1" id="updating-configuration-including-default-config"><div class="titlepage"><div><div><h2 class="title"><span class="number">10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Updating any configuration, including the default configuration</span> <a title="Permalink" class="permalink" href="using-git.html#updating-configuration-including-default-config">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span>updating-configuration-including-default-config</li></ul></div></div></div></div><p>
+   When you need to make updates to a configuration you must:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Check out the <code class="literal">site</code> branch. You may already be on that
+     branch. If so, git will tell you that and the command will leave you
+     there.
+    </p><div class="verbatim-wrap"><pre class="screen">git checkout site</pre></div></li><li class="step "><p>
+     Edit the YAML file or files that contain the configuration you want to
+     change.
+    </p></li><li class="step "><p>
+     Commit the changes to the <code class="literal">site</code> branch.
+    </p><div class="verbatim-wrap"><pre class="screen">git add -A
+git commit -m "your commit message goes here in quotes"</pre></div><p>
+     If you want to add a single file to your git repository, you can use the
+     command below, as opposed to using <code class="command">git add -A</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">git add PATH_TO_FILE</pre></div><p>
+     For example, if you made a change to your <code class="command">servers.yml</code>
+     file and wanted to only commit that change, you would use this command:
+    </p><div class="verbatim-wrap"><pre class="screen">git add ~/openstack/my_cloud/definition/data/servers.yml</pre></div></li><li class="step "><p>
+     To produce the required configuration processor output from those changes.
+     Review the output files manually if required, run the configuration
+     processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Ready the deployment area
+    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the deployment playbooks from the resulting scratch directory.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li></ol></div></div></div><div class="sect1" id="git-merge"><div class="titlepage"><div><div><h2 class="title"><span class="number">10.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Resolving Git merge conflicts</span> <a title="Permalink" class="permalink" href="using-git.html#git-merge">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span>git-merge</li></ul></div></div></div></div><p>
+   When you make changes, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> attempts to incorporate new or updated
+   configuration information on top of your existing environment. However, with
+   some changes to your environment, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cannot automatically
+   determine whether to keep your changes or drop them in favor of the new or
+   updated configurations. This will result in <code class="literal">merge
+   conflicts</code>, and it will be up to you to manually resolve the
+   conflicts before you can proceed. This is common, but it can be
+   confusing. Git provides a way to resolve these situations.
+  </p><p>
+   This section gives an overview of how to approach the issue of merge
+   conflicts, showing general procedures for determining where the conflict is
+   occurring, alternative methods for resolution, and a fallback procedure for
+   the case where the resolution goes wrong and you need to start changes from
+   the beginning.
+  </p><p>
+   For a general overview of how <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> uses Git, see the introductory
+   article <a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>. In particular, note how the
+   <code class="literal">site</code> branch is the one most used by the end-user, while
+   the <code class="literal">ardana</code> branch contains the "upstream" source code
+   corresponding to the contents of the <code class="literal">~/openstack</code>
+   directory on a pristine fresh installation.
+  </p><div class="sect2" id="id-1.4.5.5.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identifying the occurrence of a <code class="literal">merge conflict</code></span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   If you get a <code class="literal">merge conflict</code>, you will observe output
+   similar to the following on the console:
+  </p><div class="verbatim-wrap"><pre class="screen">Auto-merging ardana/ansible/roles/nova-compute-esx/defaults/main.yml
+Auto-merging ardana/ansible/roles/nova-common/templates/nova.conf.j2
+<span class="bold"><strong>CONFLICT (content): Merge conflict in ardana/ansible/roles/nova-common/templates/nova.conf.j2</strong></span>
+Auto-merging ardana/ansible/roles/nova-cli/tasks/availability_zones.yml
+Auto-merging ardana/ansible/roles/nova-api/templates/api-paste.ini.j2</pre></div></div><div class="sect2" id="id-1.4.5.5.6.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Examining Conflicts</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Use <code class="literal">git status</code> to discover the source of the problem:
+  </p><div class="verbatim-wrap"><pre class="screen">...
+        new file:   tech-preview/entry-scale-kvm-mml/data/swift/rings.yml
+        modified:   tech-preview/mid-scale/README.md
+        modified:   tech-preview/mid-scale/data/control_plane.yml
+
+Unmerged paths:
+  (use "git add/rm &lt;file&gt;..." as appropriate to mark resolution)
+
+        <span class="bold"><strong>both modified:   ardana/ansible/roles/nova-common/templates/nova.conf.j2</strong></span></pre></div><p>
+   Edit the file
+   <code class="literal">ardana/ansible/roles/nova-common/templates/nova.conf.j2</code>
+   to see the conflict markers:
+  </p><div class="verbatim-wrap"><pre class="screen">[neutron]
+admin_auth_url = {{ neutron_admin_auth_url }}
+admin_password = {{ neutron_admin_password }}
+admin_tenant_name = {{ neutron_admin_tenant_name }}
+admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>&lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD
+metadata_proxy_shared_secret = top_secret_password111
+=======
+metadata_proxy_shared_secret = {{ neutron_metadata_proxy_shared_secret }}
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; ardana</strong></span>
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+service_metadata_proxy = True</pre></div><p>
+   This indicates that <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>is trying to set the value of
+   <code class="literal">metadata_proxy_shared_secret</code> to be <code class="literal">{{
+   neutron_metadata_proxy_shared_secret }}</code> whereas previously you
+   have set its value to <code class="literal">top_secret_password111</code>.
+  </p></div><div class="sect2" id="id-1.4.5.5.6.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Examining differences between your current version and the previous upstream version</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Typically, the previous upstream version will be the last-but-one commit on
+   the <code class="literal">ardana</code> branch. This version will have been created
+   during the initial installation of your cloud (or perhaps during a previous
+   upgrade or configuration change). So in total, there are three significant
+   versions of the file:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     The previous "upstream" version on the <code class="literal">ardana</code> branch.
+    </p></li><li class="listitem "><p>
+     Your current version on the <code class="literal">site</code> branch.
+    </p></li><li class="listitem "><p>
+     The new "upstream" version on the <code class="literal">ardana</code> branch.
+    </p></li></ul></div><p>
+   You can identify the commit number of the previous "upstream" version using
+   <code class="literal">git merge-base</code>.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git merge-base ardana site
+<span class="bold"><strong>2eda1df48e2822533c50f80f5bfd7a9d788bdf73</strong></span></pre></div><p>
+   And then use <code class="literal">git log</code> to see where this commit occurs in
+   the history of the <code class="literal">ardana</code> branch.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git log ardana --
+commit 22cfa83f3526baf30b3697e971a712930f86f611
+Author: Openstack git user &lt;openstack@example.com&gt;
+Date:   Mon Jan 18 00:30:33 2018 +0000
+
+    New drop
+
+commit <span class="bold"><strong>2eda1df48e2822533c50f80f5bfd7a9d788bdf73</strong></span>
+Author: Openstack git user &lt;openstack@example.com&gt;
+Date:   Sun Jan 17 19:14:01 2018 +0000
+
+    New drop</pre></div><p>
+   In this instance, we can see that the relevant commit is in fact the
+   last-but-one commit. We can use the simplified name
+   <code class="literal">ardana^1</code> to identify that commit.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git diff <span class="bold"><strong>ardana^1</strong></span> HEAD -- ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   In the diff output, you should be able to see how you changed the value for
+   <code class="literal">metadata_proxy_shared_secret</code> from
+   <code class="literal">unset</code> to <code class="literal">top_secret_password111</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>diff --git a/ardana/ansible/roles/nova-common/templates/nova.conf.j2 b/ardana/ansible/roles/nova-common/templates/nova.conf.j2
+index 597a982..05cb07c 100644
+--- a/ardana/ansible/roles/nova-common/templates/nova.conf.j2
++++ b/ardana/ansible/roles/nova-common/templates/nova.conf.j2
+@@ -132,7 +132,7 @@ admin_auth_url = {{ neutron_admin_auth_url }}
+ admin_password = {{ neutron_admin_password }}
+ admin_tenant_name = {{ neutron_admin_tenant_name }}
+ admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>-metadata_proxy_shared_secret = unset
++metadata_proxy_shared_secret = top_secret_password111</strong></span>
+ neutron_auth_strategy = keystone
+ neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+ service_metadata_proxy = True</pre></div></div><div class="sect2" id="id-1.4.5.5.6.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Examining differences between your current version and the new upstream version</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To compare your change with the new upstream version from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> on
+   the <code class="literal">ardana</code> branch you can use <code class="literal">git diff HEAD
+   ardana -- &lt;&lt;path/to/file&gt;&gt;</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git diff HEAD ardana -- ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   In the extract of output below, you can see your value
+   <code class="literal">top_secret_password111</code> and the new value <code class="literal">{{
+   neutron_metadata_proxy_shared_secret }}</code> that <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> wants
+   to set.
+  </p><div class="verbatim-wrap"><pre class="screen">..
+ admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>-metadata_proxy_shared_secret = top_secret_password111
++metadata_proxy_shared_secret = {{ neutron_metadata_proxy_shared_secret }}</strong></span>
+ neutron_auth_strategy = keystone
+ neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt</pre></div></div><div class="sect2" id="id-1.4.5.5.6.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Examining differences between the new upstream version and the previous upstream version</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To compare the new upstream version from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> with the previous
+   upstream version from your initial install (or previous change):
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git diff $(git merge-base ardana HEAD) ardana -- ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   In the extract of output below, you can see the new upstream value
+   <code class="literal">{{ neutron_metadata_proxy_shared_secret }}</code> that
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> wants to set and the previous upstream value
+   <code class="literal">unset</code>.
+  </p><div class="verbatim-wrap"><pre class="screen"> admin_password = {{ neutron_admin_password }}
+ admin_tenant_name = {{ neutron_admin_tenant_name }}
+ admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>-metadata_proxy_shared_secret = unset
++metadata_proxy_shared_secret = {{ neutron_metadata_proxy_shared_secret }}</strong></span>
+ neutron_auth_strategy = keystone
+ neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt</pre></div></div><div class="sect2" id="id-1.4.5.5.6.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using <code class="literal">stage markers</code> to view clean versions of files (without conflict markers)</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You can use the <code class="literal">git show</code> command with stage markers to
+   view files without having conflict markers embedded in them. Stage 1 is the
+   previous upstream version (<span class="bold"><strong>:1</strong></span>), stage 2 is
+   your current version (<span class="bold"><strong>:2</strong></span>) while stage 3 is
+   the new upstream version (<span class="bold"><strong>:3</strong></span>).
+  </p><p>
+   <span class="bold"><strong>Stage 1</strong></span>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git show <span class="bold"><strong>:1</strong></span>:ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><div class="verbatim-wrap"><pre class="screen">...
+admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>metadata_proxy_shared_secret = unset</strong></span>
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+...</pre></div><p>
+   <span class="bold"><strong>Stage 2</strong></span>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git show <span class="bold"><strong>:2</strong></span>:ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><div class="verbatim-wrap"><pre class="screen">...
+admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>metadata_proxy_shared_secret = top_secret_password111</strong></span>
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+...</pre></div><p>
+   <span class="bold"><strong>Stage 3</strong></span>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git show <span class="bold"><strong>:3</strong></span>:ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><div class="verbatim-wrap"><pre class="screen">...
+admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>metadata_proxy_shared_secret = {{ neutron_metadata_proxy_shared_secret }}</strong></span>
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+...</pre></div></div><div class="sect2" id="id-1.4.5.5.6.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Resolving the conflict</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   There are two approaches to resolving the conflict:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Edit the merged file containing the conflict markers, keeping the change
+     you want to preserve and removing the conflict markers and any changes you
+     want to discard.
+    </p></li><li class="listitem "><p>
+     Take the new upstream version of the file and re-apply any changes you
+     would like to keep from your current version.
+    </p></li></ol></div></div><div class="sect2" id="id-1.4.5.5.6.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Resolving the conflict - editing the file containing the conflict markers</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Edit the file
+   <code class="literal">ardana/ansible/roles/nova-common/templates/nova.conf.j2</code>
+   and if you want to maintain your change, then delete the lines in bold
+   below:
+  </p><div class="verbatim-wrap"><pre class="screen">[neutron]
+admin_auth_url = {{ neutron_admin_auth_url }}
+admin_password = {{ neutron_admin_password }}
+admin_tenant_name = {{ neutron_admin_tenant_name }}
+admin_username = {{ neutron_admin_username }}
+<span class="bold"><strong>&lt;&lt;&lt;&lt;&lt;&lt;&lt;HEAD</strong></span>
+metadata_proxy_shared_secret = top_secret_password111
+<span class="bold"><strong>=======
+metadata_proxy_shared_secret = {{ neutron_metadata_proxy_shared_secret }}
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; ardana</strong></span>
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+service_metadata_proxy = True</pre></div><p>
+   Your file should now look like this:
+  </p><div class="verbatim-wrap"><pre class="screen">[neutron]
+admin_auth_url = {{ neutron_admin_auth_url }}
+admin_password = {{ neutron_admin_password }}
+admin_tenant_name = {{ neutron_admin_tenant_name }}
+admin_username = {{ neutron_admin_username }}
+metadata_proxy_shared_secret = top_secret_password111
+neutron_auth_strategy = keystone
+neutron_ca_certificates_file = /etc/ssl/certs/ca-certificates.crt
+service_metadata_proxy = True</pre></div></div><div class="sect2" id="id-1.4.5.5.6.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Resolving the conflict - re-applying your changes to new upstream version</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Create a copy of the new upstream version (see Stage 3 above) in your
+   working directory:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git show <span class="bold"><strong>:3</strong></span>:ardana/ansible/roles/nova-common/templates/nova.conf.j2 &gt; \
+ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   Now edit the file
+   <code class="literal">ardana/ansible/roles/nova-common/templates/nova.conf.j2</code>
+   and manually re-apply the changes you want.
+  </p></div><div class="sect2" id="id-1.4.5.5.6.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Completing the merge procedure</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.14">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You may want to check that the changes you have applied are correct. Compare
+   the new upstream version with the version in your working directory:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git diff ardana -- ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   If you are happy with the resolution, you can stage your changes using:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git add ardana/ansible/roles/nova-common/templates/nova.conf.j2</pre></div><p>
+   Apply the above steps to all the merge conflicts you encounter, and when you
+   have them resolved to your satisfaction, complete the merge:
+  </p><div class="verbatim-wrap"><pre class="screen">git commit -m "complete merge"</pre></div></div><div class="sect2" id="id-1.4.5.5.6.15"><div class="titlepage"><div><div><h3 class="title"><span class="number">10.3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Recovering from Errors</span> <a title="Permalink" class="permalink" href="using-git.html#id-1.4.5.5.6.15">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-using_git.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-using_git.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   If you make a mistake during the resolution process, you can return your
+   working directory to a clean copy of the <code class="literal">site</code> branch
+   using:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git reset --hard</pre></div><p>
+   If the new upstream version contains files that did not exist in the previous
+   version, these files will be left behind - you can see them using
+   <code class="literal">git status</code>. To clean up these files, remove them and then
+   reset:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>git rm -rf ardana
+<code class="prompt user">tux &gt; </code>git reset --hard</pre></div><p>
+   Alternatively, you can use <code class="literal">git stash</code> to save these files
+   to a transient stash queue.
+  </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-standalone.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 11 </span>Installing a Stand-Alone Cloud Lifecycle Manager</span></a><a class="nav-link" href="install-gui.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 9 </span>Installing with the Install UI</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

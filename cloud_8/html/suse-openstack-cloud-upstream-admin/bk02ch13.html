@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Orchestration | OpenStack Administrator Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="OpenStack Administrator Guide" /><meta name="chapter-title" content="Chapter 13. Orchestration" /><meta name="description" content="Orchestration is an orchestration engine that provides the possibility to launch multiple composite cloud applications based on templates in the form of text files that can be treated like code. A native Heat Orchestration Template (HOT) format is evolving, but it also endeavors to provide compatibi…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-upstream-admin.html" title="OpenStack Administrator Guide" /><link rel="prev" href="bk02ch12.html" title="Chapter 12. Bare Metal" /><link rel="next" href="osadm-os-cli.html" title="Chapter 14. OpenStack command-line clients" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-upstream-admin.html">OpenStack Administrator Guide</a><span> › </span><a class="crumb" href="bk02ch13.html">Orchestration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02ch01.html"><span class="number">1 </span><span class="name">Documentation Conventions</span></a></li><li class="inactive"><a href="bk02ch02.html"><span class="number">2 </span><span class="name">Get started with OpenStack</span></a></li><li class="inactive"><a href="cha-identity.html"><span class="number">3 </span><span class="name">Identity management</span></a></li><li class="inactive"><a href="bk02ch04.html"><span class="number">4 </span><span class="name">Dashboard</span></a></li><li class="inactive"><a href="bk02ch05.html"><span class="number">5 </span><span class="name">Compute</span></a></li><li class="inactive"><a href="bk02ch06.html"><span class="number">6 </span><span class="name">Object Storage</span></a></li><li class="inactive"><a href="bk02ch07.html"><span class="number">7 </span><span class="name">Block Storage</span></a></li><li class="inactive"><a href="bk02ch08.html"><span class="number">8 </span><span class="name">Shared File Systems</span></a></li><li class="inactive"><a href="networking.html"><span class="number">9 </span><span class="name">Networking</span></a></li><li class="inactive"><a href="bk02ch10.html"><span class="number">10 </span><span class="name">Telemetry</span></a></li><li class="inactive"><a href="bk02ch11.html"><span class="number">11 </span><span class="name">Database</span></a></li><li class="inactive"><a href="bk02ch12.html"><span class="number">12 </span><span class="name">Bare Metal</span></a></li><li class="inactive"><a href="bk02ch13.html"><span class="number">13 </span><span class="name">Orchestration</span></a></li><li class="inactive"><a href="osadm-os-cli.html"><span class="number">14 </span><span class="name">OpenStack command-line clients</span></a></li><li class="inactive"><a href="bk02ch15.html"><span class="number">15 </span><span class="name">Cross-project features</span></a></li><li class="inactive"><a href="bk02ch16.html"><span class="number">16 </span><span class="name">Appendix</span></a></li><li class="inactive"><a href="bk02go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 12. Bare Metal" href="bk02ch12.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. OpenStack command-line clients" href="osadm-os-cli.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-upstream-admin.html">OpenStack Administrator Guide</a><span> › </span><a class="crumb" href="bk02ch13.html">Orchestration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 12. Bare Metal" href="bk02ch12.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. OpenStack command-line clients" href="osadm-os-cli.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="id-1.4.15"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud</span> <span class="productnumber ">8</span></div><div><h1 class="title"><span class="number">13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Orchestration</span> <a title="Permalink" class="permalink" href="bk02ch13.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="bk02ch13.html#id-1.4.15.4"><span class="number">13.1 </span><span class="name">Introduction</span></a></span></dt><dt><span class="sect1"><a href="bk02ch13.html#id-1.4.15.5"><span class="number">13.2 </span><span class="name">Orchestration authorization model</span></a></span></dt><dt><span class="sect1"><a href="bk02ch13.html#id-1.4.15.6"><span class="number">13.3 </span><span class="name">Stack domain users</span></a></span></dt></dl></div></div><p>Orchestration is an orchestration engine that provides the
+possibility to launch multiple composite cloud applications based on
+templates in the form of text files that can be treated like code. A
+native Heat Orchestration Template (HOT) format is evolving, but it
+also endeavors to provide compatibility with the AWS CloudFormation
+template format, so that many existing CloudFormation templates can
+be launched on OpenStack.</p><div class="sect1 " id="id-1.4.15.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">13.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Orchestration service, a tool for orchestrating clouds,
+automatically configures and deploys resources in stacks. The deployments can
+be simple, such as deploying WordPress on Ubuntu with an SQL back end, or
+complex, such as starting a server group that auto scales by
+starting and stopping using real-time CPU loading information from the
+Telemetry service.</p><p>Orchestration stacks are defined with templates, which are non-procedural
+documents. Templates describe tasks in terms of resources, parameters, inputs,
+constraints, and dependencies. When the Orchestration service was originally
+introduced, it worked with AWS CloudFormation templates, which are in the JSON
+format.</p><p>The Orchestration service also runs Heat Orchestration Template (HOT)
+templates that are written in YAML. YAML is a terse notation that loosely
+follows structural conventions (colons, returns, indentation) that are similar
+to Python or Ruby. Therefore, it is easier to write, parse, grep, generate
+with tools, and maintain source-code management systems.</p><p>Orchestration can be accessed through a CLI and RESTful queries.
+The Orchestration service provides both an OpenStack-native REST API and a
+CloudFormation-compatible Query API. The Orchestration service is also
+integrated with the OpenStack dashboard to perform stack functions through
+a web interface.</p><p>For more information about using the Orchestration service through the
+command line, see the <a class="link" href="http://docs.openstack.org/cli-reference/heat.html" target="_blank">OpenStack Command-Line Interface Reference</a>.</p></div><div class="sect1 " id="id-1.4.15.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">13.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Orchestration authorization model</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Orchestration authorization model defines the
+authorization process for requests during deferred operations.
+A common example is an auto-scaling group update. During
+the auto-scaling update operation, the Orchestration service
+requests resources of other components (such as servers from
+Compute or networks from Networking) to extend or reduce the
+capacity of an auto-scaling group.</p><p>The Orchestration service provides the following authorization models:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Password authorization</p></li><li class="listitem "><p>OpenStack Identity trusts authorization</p></li></ul></div><div class="sect2 " id="id-1.4.15.5.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Password authorization</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.5.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Orchestration service supports password authorization.
+Password authorization requires that a user pass a
+username and password to the Orchestration service. Encrypted
+password are stored in the database, and used for deferred
+operations.</p><p>Password authorization involves the following steps:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>A user requests stack creation, by providing a token and
+username and password. The Dashboard or
+python-heatclient requests the token on the user's behalf.</p></li><li class="step "><p>If the stack contains any resources that require deferred
+operations, then the orchestration engine fails its validation
+checks if the user did not provide a valid username/password.</p></li><li class="step "><p>The username/password are encrypted and stored in the Orchestration
+database.</p></li><li class="step "><p>Orchestration creates a stack.</p></li><li class="step "><p>Later, the Orchestration service retrieves the credentials and
+requests another token on behalf of the user. The token is not
+limited in scope and provides access to all the roles of the stack
+owner.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.15.5.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OpenStack Identity trusts authorization</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.5.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>A trust is an OpenStack Identity extension that enables delegation,
+and optionally impersonation through the OpenStack Identity service.
+The key terminology is <span class="emphasis"><em>trustor</em></span> (the user delegating) and
+<span class="emphasis"><em>trustee</em></span> (the user being delegated to).</p><p>To create a trust, the <span class="emphasis"><em>trustor</em></span> (in this case, the user creating the
+stack in the Orchestration service) provides the OpenStack Identity service
+with the following information:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>The ID of the <span class="emphasis"><em>trustee</em></span> (who you want to delegate to, in this case,
+the Orchestration service user).</p></li><li class="listitem "><p>The roles to be delegated. Configure roles through
+the <code class="literal">heat.conf</code> file. Ensure the configuration contains whatever
+roles are required to perform the deferred operations on the
+user's behalf. For example, launching an OpenStack Compute
+instance in response to an auto-scaling event.</p></li><li class="listitem "><p>Whether to enable impersonation.</p></li></ul></div><p>The OpenStack Identity service provides a <span class="emphasis"><em>trust id</em></span>,
+which is consumed by <span class="emphasis"><em>only</em></span> the trustee to obtain a
+<span class="emphasis"><em>trust scoped token</em></span>. This token is limited in scope,
+such that the trustee has limited access to those
+roles delegated. In addition, the trustee has effective impersonation
+of the trustor user if it was selected when creating the trust.
+For more information, see <a class="xref" href="cha-identity.html" title="Chapter 3. Identity management">Chapter 3, <em>Identity management</em></a>.</p><p>Trusts authorization involves the following steps:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>A user creates a stack through an API request (only the token is
+required).</p></li><li class="step "><p>The Orchestration service uses the token to create a trust
+between the stack owner (trustor) and the Orchestration
+service user (trustee). The service delegates a special role (or roles)
+as defined in the <span class="emphasis"><em>trusts_delegated_roles</em></span> list in the
+Orchestration configuration file. By default, the Orchestration
+service sets all the roles from trustor available for trustee.
+Deployers might modify this list to reflect a local RBAC policy.
+For example, to ensure that the heat process can access only
+those services that are expected while impersonating a stack owner.</p></li><li class="step "><p>Orchestration stores the encrypted <span class="emphasis"><em>trust id</em></span> in the Orchestration
+database.</p></li><li class="step "><p>When a deferred operation is required, the Orchestration service
+retrieves the <span class="emphasis"><em>trust id</em></span> and requests a trust scoped token which
+enables the service user to impersonate the stack owner during
+the deferred operation. Impersonation is helpful, for example,
+so the service user can launch Compute instances on
+behalf of the stack owner in response to an auto-scaling event.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.15.5.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authorization model configuration</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.5.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Initially, the password authorization model was the
+default authorization model. Since the Kilo release, the
+Identity trusts authorization model is enabled for the Orchestration
+service by default.</p><p>To enable the password authorization model, change the following
+parameter in the <code class="literal">heat.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">deferred_auth_method=password</pre></div><p>To enable the trusts authorization model, change the following
+parameter in the <code class="literal">heat.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">deferred_auth_method=trusts</pre></div><p>To specify the trustor roles that it delegates to trustee during
+authorization, specify the <code class="literal">trusts_delegated_roles</code> parameter
+in the <code class="literal">heat.conf</code> file. If <code class="literal">trusts_delegated_roles</code> is not
+defined, then all the trustor roles are delegated to trustee.</p><div id="id-1.4.15.5.7.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The trustor delegated roles must be pre-configured in the
+OpenStack Identity service before using them in the Orchestration service.</p></div></div></div><div class="sect1 " id="id-1.4.15.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">13.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Stack domain users</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Stack domain users allow the Orchestration service to
+authorize and start the following operations within booted virtual
+machines:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Provide metadata to agents inside instances. Agents poll for changes
+and apply the configuration that is expressed in the metadata to the
+instance.</p></li><li class="listitem "><p>Detect when an action is complete. Typically, software configuration
+on a virtual machine after it is booted. Compute moves
+the VM state to "Active" as soon as it creates it, not when the
+Orchestration service has fully configured it.</p></li><li class="listitem "><p>Provide application level status or meters from inside the instance.
+For example, allow auto-scaling actions to be performed in response
+to some measure of performance or quality of service.</p></li></ul></div><p>The Orchestration service provides APIs that enable all of these
+operations, but all of those APIs require authentication.
+For example, credentials to access the instance that the agent
+is running upon. The heat-cfntools agents use signed requests,
+which require an ec2 key pair created through Identity.
+The key pair is then used to sign requests to the Orchestration
+CloudFormation and CloudWatch compatible APIs, which are
+authenticated through signature validation. Signature validation
+uses the Identity ec2tokens extension.</p><p>Stack domain users encapsulate all stack-defined users (users who are
+created as a result of data that is contained in an
+Orchestration template) in a separate domain.
+The separate domain is created specifically to contain data
+related to the Orchestration stacks only. A user is created, which is
+the <span class="emphasis"><em>domain admin</em></span>, and Orchestration uses the <span class="emphasis"><em>domain admin</em></span> to manage
+the lifecycle of the users in the stack <span class="emphasis"><em>user domain</em></span>.</p><div class="sect2 " id="id-1.4.15.6.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Stack domain users configuration</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.6.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To configure stack domain user, the Orchestration service completes the
+following tasks:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>A special OpenStack Identity service domain is created. For
+example, a domain that is called <code class="literal">heat</code> and the ID is set with the
+<code class="literal">stack_user_domain</code> option in the <code class="literal">heat.conf</code> file.</p></li><li class="step "><p>A user with sufficient permissions to create and delete projects
+and users in the <code class="literal">heat</code> domain is created.</p></li><li class="step "><p>The username and password for the domain admin user is set in the
+<code class="literal">heat.conf</code> file (<code class="literal">stack_domain_admin</code> and
+<code class="literal">stack_domain_admin_password</code>). This user administers
+<span class="emphasis"><em>stack domain users</em></span> on behalf of stack owners, so they no longer
+need to be administrators themselves. The risk of this escalation path
+is limited because the <code class="literal">heat_domain_admin</code> is only given
+administrative permission for the <code class="literal">heat</code> domain.</p></li></ol></div></div><p>To set up stack domain users, complete the following steps:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Create the domain:</p><p><code class="literal">$OS_TOKEN</code> refers to a token. For example, the service admin
+token or some other valid token for a user with sufficient roles
+to create users and domains. <code class="literal">$KS_ENDPOINT_V3</code> refers to the v3
+OpenStack Identity endpoint (for example,
+<code class="literal">http://keystone_address:5000/v3</code> where <span class="emphasis"><em>keystone_address</em></span> is
+the IP address or resolvable name for the Identity
+service).</p><div class="verbatim-wrap"><pre class="screen">$ openstack --os-token $OS_TOKEN --os-url=$KS_ENDPOINT_V3 --os-\
+  identity-api-version=3 domain create heat --description "Owns \
+  users and projects created by heat"</pre></div><p>The domain ID is returned by this command, and is referred to as
+<code class="literal">$HEAT_DOMAIN_ID</code> below.</p></li><li class="step "><p>Create the user:</p><div class="verbatim-wrap"><pre class="screen">$ openstack --os-token $OS_TOKEN --os-url=$KS_ENDPOINT_V3 --os-\
+  identity-api-version=3 user create --password $PASSWORD --domain \
+  $HEAT_DOMAIN_ID heat_domain_admin --description "Manages users \
+  and projects created by heat"</pre></div><p>The user ID is returned by this command and is referred to as
+<code class="literal">$DOMAIN_ADMIN_ID</code> below.</p></li><li class="step "><p>Make the user a domain admin:</p><div class="verbatim-wrap"><pre class="screen">$ openstack --os-token $OS_TOKEN --os-url=$KS_ENDPOINT_V3 --os-\
+  identity-api-version=3 role add --user $DOMAIN_ADMIN_ID --domain \
+  $HEAT_DOMAIN_ID admin</pre></div><p>Then you must add the domain ID, username and password from these
+steps to the <code class="literal">heat.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">stack_domain_admin_password = password
+stack_domain_admin = heat_domain_admin
+stack_user_domain = domain id returned from domain create above</pre></div></li></ol></div></div></div><div class="sect2 " id="id-1.4.15.6.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Usage workflow</span> <a title="Permalink" class="permalink" href="bk02ch13.html#id-1.4.15.6.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The following steps are run during stack creation:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Orchestration creates a new <span class="emphasis"><em>stack domain project</em></span> in the <code class="literal">heat</code>
+domain if the stack contains any resources that require creation
+of a <span class="emphasis"><em>stack domain user</em></span>.</p></li><li class="step "><p>For any resources that require a user, the Orchestration service creates
+the user in the <span class="emphasis"><em>stack domain project</em></span>. The <span class="emphasis"><em>stack domain project</em></span> is
+associated with the Orchestration stack in the Orchestration
+database, but is separate and unrelated (from an authentication
+perspective) to the stack owners project. The users who are created
+in the stack domain are still assigned the <code class="literal">heat_stack_user</code> role, so
+the API surface they can access is limited through
+the <code class="literal">policy.json</code> file.
+For more  information, see <a class="xref" href="cha-identity.html" title="Chapter 3. Identity management">Chapter 3, <em>Identity management</em></a>.</p></li><li class="step "><p>When API requests are processed, the Orchestration service performs
+an internal lookup, and allows stack details for a given stack to be
+retrieved. Details are retrieved from the database for
+both the stack owner's project (the default
+API path to the stack) and the stack domain project, subject to the
+<code class="literal">policy.json</code> restrictions.</p></li></ol></div></div><p>This means there are now two paths that
+can result in the same data being retrieved through the Orchestration API.
+The following example is for resource-metadata:</p><div class="verbatim-wrap"><pre class="screen">GET v1/​{stack_owner_project_id}​/stacks/​{stack_name}​/\
+​{stack_id}​/resources/​{resource_name}​/metadata</pre></div><p>or:</p><div class="verbatim-wrap"><pre class="screen">GET v1/​{stack_domain_project_id}​/stacks/​{stack_name}​/​\
+{stack_id}​/resources/​{resource_name}​/metadata</pre></div><p>The stack owner uses the former (via <code class="literal">openstack stack resource metadata
+STACK RESOURCE</code>), and any agents in the instance
+use the latter.</p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="osadm-os-cli.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 14 </span>OpenStack command-line clients</span></a><a class="nav-link" href="bk02ch12.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 12 </span>Bare Metal</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

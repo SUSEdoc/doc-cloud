@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuring Load Balancer as a Service | Deployment Guide using Cloud Lifecycle Manager | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 43. Configuring Load Balancer as a Service" /><meta name="description" content="The SUSE OpenStack Cloud neutron LBaaS service supports several load balancing providers. By default, both Octavia and the namespace HAProxy driver are configured to be used." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="post-install.html" title="Part V. Post-Installation" /><link rel="prev" href="config-availability-zones.html" title="Chapter 42. Configuring Availability Zones" /><link rel="next" href="postinstall-checklist.html" title="Chapter 44. Other Common Post-Installation Tasks" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="OctaviaInstall.html">Configuring Load Balancer as a Service</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li><li class="inactive"><a href="preinstall.html"><span class="number">III </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">13 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">14 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">15 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">16 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">17 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">18 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">IV </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">19 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">20 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">21 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">22 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">23 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">24 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">25 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">26 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">27 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">28 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">29 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">30 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">31 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">32 </span><span class="name">Installing manila and Creating manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">33 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">34 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">35 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">36 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">37 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">V </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="cloud-verification.html"><span class="number">38 </span><span class="name">Post Installation Tasks</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">39 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">40 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">41 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">42 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">43 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">44 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">VI </span><span class="name">Support</span></a><ol><li class="inactive"><a href="sec-depl-trouble-faq.html"><span class="number">45 </span><span class="name">FAQ</span></a></li><li class="inactive"><a href="sec-installation-trouble-support.html"><span class="number">46 </span><span class="name">Support</span></a></li><li class="inactive"><a href="inst-support-ptf.html"><span class="number">47 </span><span class="name">
+    Applying PTFs (Program Temporary Fixes) Provided by SUSE L3 Support
+   </span></a></li><li class="inactive"><a href="inst-support-ptf-test.html"><span class="number">48 </span><span class="name">
+    Testing PTFs (Program Temporary Fixes) on a Single Node
+   </span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 42. Configuring Availability Zones" href="config-availability-zones.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 44. Other Common Post-Installation Tasks" href="postinstall-checklist.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="OctaviaInstall.html">Configuring Load Balancer as a Service</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 42. Configuring Availability Zones" href="config-availability-zones.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 44. Other Common Post-Installation Tasks" href="postinstall-checklist.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="OctaviaInstall"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">43 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Load Balancer as a Service</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span>OctaviaInstall</li></ul></div></div><div><div class="abstract"><p>
+    The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> neutron LBaaS service supports several load balancing
+    providers. By default, both Octavia and the namespace HAProxy driver are
+    configured to be used.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.6"><span class="number">43.1 </span><span class="name">Summary</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.7"><span class="number">43.2 </span><span class="name">Prerequisites</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.8"><span class="number">43.3 </span><span class="name">Octavia Load Balancing Provider</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.9"><span class="number">43.4 </span><span class="name">Prerequisite Setup</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.10"><span class="number">43.5 </span><span class="name">Create Load Balancers</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.11"><span class="number">43.6 </span><span class="name">Create Floating IPs for Load Balancer</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.12"><span class="number">43.7 </span><span class="name">Testing the Octavia Load Balancer</span></a></span></dt></dl></div></div><p>
+  The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> neutron LBaaS service supports several load balancing
+  providers. By default, both Octavia and the namespace HAProxy driver are
+  configured for use.
+ </p><p>
+  If you do not specify the <code class="literal">--provider</code> option it will
+  default to Octavia. The Octavia driver provides more functionality than the
+  HAProxy namespace driver which is deprecated. The HAProxy namespace driver
+  will be retired in a future version of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+ </p><p>
+  There are additional drivers for third-party hardware load balancers. Please
+  refer to the vendor directly. The <code class="command">openstack network service provider
+  list</code> command displays the currently installed load balancer
+  drivers as well as other installed services such as VPN.
+ </p><div class="sect1" id="id-1.3.7.7.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Summary</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+The following procedure demonstrates how to setup a load balancer,
+and test that the round robin load balancing is successful between the two 
+servers. For demonstration purposes, the security group rules and floating
+IPs are applied to the web servers. Adjust these configuration parameters
+if needed.
+ </p></div><div class="sect1" id="id-1.3.7.7.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You need have an external network and a registered image to test LBaaS
+   functionality.
+  </p><p>
+   Creating an external network: <a class="xref" href="cloud-verification.html#create-extnet" title="38.4. Creating an External Network">Section 38.4, “Creating an External Network”</a>.
+  </p><p>
+   Creating and uploading a glance image: <a class="xref" href="cloud-verification.html#upload-image" title="38.3. Uploading an Image for Use">Section 38.3, “Uploading an Image for Use”</a>.
+  </p></div><div class="sect1" id="id-1.3.7.7.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Octavia Load Balancing Provider</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The Octavia Load balancing provider bundled with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 is an operator
+   grade load balancer for <span class="productname">OpenStack</span>. It is based on the <span class="productname">OpenStack</span> Rocky
+   version of Octavia. It differs from the namespace driver by starting a new
+   nova virtual machine (called an <code class="literal">amphora</code>) to house the
+   HAProxy load balancer software that provides the load balancer function. A
+   virtual machine for each load balancer requested provides a better
+   separation of load balancers between tenants, and simplifies increasing load
+   balancing capacity along with compute node growth.  Additionally, if the
+   virtual machine fails for any reason, Octavia will replace it with a
+   replacement VM from a pool of spare VMs, assuming that the feature is
+   configured.
+  </p><div id="id-1.3.7.7.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The Health Monitor will not create or replace failed amphoras. If the pool
+    of spare VMs is exhausted there will be no additional virtual machines to
+    handle load balancing requests.
+   </p></div><p>
+   Octavia uses two-way SSL encryption to communicate with amphoras. There
+   are demo Certificate Authority (CA) certificates included with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 in
+   <code class="filename">~/scratch/ansible/next/ardana/ansible/roles/octavia-common/files</code>
+   on the Cloud Lifecycle Manager. For additional security in production deployments, replace all
+   certificate authorities with ones you generate by running the following
+   commands:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openssl genrsa -passout pass:foobar -des3 -out cakey.pem 2048
+<code class="prompt user">ardana &gt; </code>openssl req -x509 -passin pass:foobar -new -nodes -key cakey.pem -out ca_01.pem
+<code class="prompt user">ardana &gt; </code>openssl genrsa -passout pass:foobar -des3 -out servercakey.pem 2048
+<code class="prompt user">ardana &gt; </code>openssl req -x509 -passin pass:foobar -new -nodes -key cakey.pem -out serverca_01.pem</pre></div><p>
+   For more details refer to the
+   <a class="link" href="https://www.openssl.org/docs/manmaster/man1/openssl.html" target="_blank">openssl
+   man page</a>.
+  </p><div id="id-1.3.7.7.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    If you change the certificate authority and have amphoras running with an
+    old CA, you will not be able to control the amphoras. The amphoras will need
+    to be failed over so they can utilize the new certificate. If you change
+    the CA password for the server certificate, you need to change that in the
+    Octavia configuration files as well. For more information, see
+    <span class="intraxref">Book “Operations Guide CLM”, Chapter 10 “Managing Networking”, Section 10.4 “Networking Service Overview”, Section 10.4.9 “Load Balancer: Octavia Driver Administration”, Section 10.4.9.2 “Tuning Octavia Installation”</span>.
+   </p></div></div><div class="sect1" id="id-1.3.7.7.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisite Setup</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    <span class="bold"><strong>Octavia Client Installation</strong></span>
+  </p><p>
+    The Octavia client must be installed in the control plane, see
+    <a class="xref" href="install-openstack-clients.html" title="Chapter 40. Installing OpenStack Clients">Chapter 40, <em>Installing OpenStack Clients</em></a>.
+  </p><p>
+   <span class="bold"><strong>Octavia Network and Management Network
+   Ports</strong></span>
+  </p><p>
+   The Octavia management network and Management network must have access to
+   each other. If you have a configured firewall between the Octavia management
+   network and Management network, you must open up the following ports to
+   allow network traffic between the networks.
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     From Management network to Octavia network
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       TCP 9443 (amphora API)
+      </p></li></ul></div></li><li class="listitem "><p>
+     From Octavia network to Management network
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       TCP 9876 (Octavia API)
+      </p></li><li class="listitem "><p>
+       UDP 5555 (Octavia Health Manager)
+      </p></li></ul></div></li></ul></div><p>
+   <span class="bold"><strong>Installing the Amphora Image</strong></span>
+  </p><p>
+   Octavia uses nova VMs for its load balancing function; SUSE
+   provides images used to boot those VMs called
+   <code class="literal">octavia-amphora</code>.
+  </p><div id="id-1.3.7.7.9.9" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+    Without these images the Octavia load balancer will not work.
+   </p></div><p>
+   <span class="bold"><strong>Register the image.</strong></span> The <span class="productname">OpenStack</span> load
+   balancing service (Octavia) does not automatically register the Amphora
+   guest image.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     The Amphora image is in an RPM package managed by zypper, display the full path to that file with the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>find /srv -type f -name "*amphora-image*"</pre></div><p>
+     For example:
+     <code class="filename">/srv/www/suse-12.4/x86_64/repos/Cloud/suse/noarch/openstack-octavia-amphora-image-x86_64-0.1.0-13.157.noarch.rpm</code>.
+     The Amphora image may be updated via maintenance updates, which will change the filename.
+    </p><p>
+     Switch to the <code class="filename">ansible</code> directory and register the
+     image by giving the full path and name for the Amphora image as an
+     argument to <code class="literal">service_package</code>, replacing the filename
+     as needed to reflect an updated amphora image rpm:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts service-guest-image.yml \
+-e service_package=\
+/srv/www/suse-12.4/x86_64/repos/Cloud/suse/noarch/openstack-octavia-amphora-image-x86_64-0.1.0-13.157.noarch.rpm</pre></div></li><li class="step "><p>
+     Source the service user (this can be done on a different computer)
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source service.osrc</pre></div></li><li class="step "><p>
+     Verify that the image was registered (this can be done on a computer with
+     access to the glance CLI client)
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list
++--------------------------------------+------------------------+---------
+| ID                                   | Name                   | Status |
++--------------------------------------+------------------------+--------+
+...
+| 1d4dd309-8670-46b6-801d-3d6af849b6a9 | octavia-amphora-x86_64 | active |
+...</pre></div><div id="id-1.3.7.7.9.11.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      In the example above, the status of the
+      <code class="literal">octavia-amphora-x86_64</code> image is
+      <span class="emphasis"><em>active</em></span> which means the image was successfully
+      registered. If a status of the images is <span class="emphasis"><em>queued</em></span>, you
+      need to run the image registration again.
+     </p><p>
+      If you run the registration by accident, the system will only upload a
+      new image if the underlying image has been changed.
+     </p><p>
+      Ensure there are not multiple amphora images listed. Execute following command:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack image list --tag amphora</pre></div><p>
+      If the above command returns more than one image, unset the old amphora image. To unset the image execute following command:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack image unset --tag amphora &lt;oldimageid&gt;</pre></div></div><p>
+     If you have already created load balancers, they will not receive the new
+     image. Only load balancers created after the image has been successfully
+     installed will use the new image. If existing load balancers need to be
+     switched to the new image, please follow the instructions in <span class="intraxref">Book “Operations Guide CLM”, Chapter 10 “Managing Networking”, Section 10.4 “Networking Service Overview”, Section 10.4.9 “Load Balancer: Octavia Driver Administration”, Section 10.4.9.2 “Tuning Octavia Installation”</span>.
+    </p></li></ol></div></div><p>
+   <span class="bold"><strong>Setup network, subnet, router, security and
+   IP's</strong></span>
+  </p><p>
+   If you have already created a network, subnet, router, security settings and
+   IPs you can skip the following steps and go directly to creating the load
+   balancers. In this example we will boot two VMs running web servers and then 
+   use curl scripts to demonstrate load balancing between the two VMs.
+   Along the way we will save important parameters to a bash variable and use 
+   them later in the process.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Make a tenant network for  load balancer clients (the web servers):
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create lb_net2
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | UP                                   |
+| availability_zone_hints   |                                      |
+| availability_zones        |                                      |
+| created_at                | 2019-10-23T13:27:57Z                 |
+| description               |                                      |
+| dns_domain                |                                      |
+| id                        | 50a66468-084b-457f-88e4-2edb7b81851e |
+| ipv4_address_scope        | None                                 |
+| ipv6_address_scope        | None                                 |
+| is_default                | False                                |
+| is_vlan_transparent       | None                                 |
+| mtu                       | 1450                                 |
+| name                      | lb_net2                              |
+| port_security_enabled     | False                                |
+| project_id                | de095070f242416cb3dc4cd00e3c79f7     |
+| provider:network_type     | vxlan                                |
+| provider:physical_network | None                                 |
+| provider:segmentation_id  | 1080                                 |
+| qos_policy_id             | None                                 |
+| revision_number           | 1                                    |
+| router:external           | Internal                             |
+| segments                  | None                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tags                      |                                      |
+| updated_at                | 2019-10-23T13:27:57Z                 |
++---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Create a subnet for the load balancing clients on the tenant network:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet create --network lb_net2 --subnet-range 12.12.12.0/24
++-------------------+--------------------------------------+
+| Field             | Value                                |
++-------------------+--------------------------------------+
+| allocation_pools  | 12.12.12.2-12.12.12.254              |
+| cidr              | 12.12.12.0/24                        |
+| created_at        | 2019-10-23T13:29:45Z                 |
+| description       |                                      |
+| dns_nameservers   |                                      |
+| enable_dhcp       | True                                 |
+| gateway_ip        | 12.12.12.1                           |
+| host_routes       |                                      |
+| id                | c141858a-a792-4c89-91f0-de4dc4694a7f |
+| ip_version        | 4                                    |
+| ipv6_address_mode | None                                 |
+| ipv6_ra_mode      | None                                 |
+| name              | lb_subnet2                           |
+| network_id        | 50a66468-084b-457f-88e4-2edb7b81851e |
+| project_id        | de095070f242416cb3dc4cd00e3c79f7     |
+| revision_number   | 0                                    |
+| segment_id        | None                                 |
+| service_types     |                                      |
+| subnetpool_id     | None                                 |
+| tags              |                                      |
+| updated_at        | 2019-10-23T13:29:45Z                 |
++-------------------+--------------------------------------+</pre></div><p>
+     <span class="bold"><strong>Save the ID of the tenant subnet. 
+	     The load balancer will be attached to it later.</strong></span>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>VIP_SUBNET="c141858a-a792-4c89-91f0-de4dc4694a7f"</pre></div></li><li class="step "><p>
+     Create a router for client VMs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router create --centralized lb_router2
++-------------------------+--------------------------------------+
+| Field                   | Value                                |
++-------------------------+--------------------------------------+
+| admin_state_up          | UP                                   |
+| availability_zone_hints |                                      |
+| availability_zones      |                                      |
+| created_at              | 2019-10-23T13:30:21Z                 |
+| description             |                                      |
+| distributed             | False                                |
+| external_gateway_info   | None                                 |
+| flavor_id               | None                                 |
+| ha                      | False                                |
+| id                      | 1c9949fb-a500-475d-8694-346cf66ebf9a |
+| name                    | lb_router2                           |
+| project_id              | de095070f242416cb3dc4cd00e3c79f7     |
+| revision_number         | 0                                    |
+| routes                  |                                      |
+| status                  | ACTIVE                               |
+| tags                    |                                      |
+| updated_at              | 2019-10-23T13:30:21Z                 |
++-------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Add the subnet to the router and connect it to the external gateway:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router add subnet lb_router2 lb_subnet2</pre></div></li><li class="step "><p>
+      Set gateway for the router. The name of the external network is:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network list
++--------------------------------------+------------------+--------------------------------------+
+| ID                                   | Name             | Subnets                              |
++--------------------------------------+------------------+--------------------------------------+
+| 2ed7deca-81ed-45ee-87ce-aeb4f565d3ad | ext-net          | 45d31556-08b8-4b0e-98d8-c09dd986296a |
+| 50a66468-084b-457f-88e4-2edb7b81851e | lb_net2          | c141858a-a792-4c89-91f0-de4dc4694a7f |
+| 898975bd-e3cc-4afd-8605-3c5606fd5c54 | OCTAVIA-MGMT-NET | 68eed774-c07f-45bb-b37a-489515108acb |
++--------------------------------------+------------------+--------------------------------------+
+
+EXT_NET="ext-net"
+
+openstack router set --external-gateway $EXT_NET lb_router2</pre></div></li><li class="step "><p>
+     Check the router:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router show lb_router2 --fit-width
++-------------------------+-------------------------------------------------------------------------------------------------------+
+| Field                   | Value                                                                                                 |
++-------------------------+-------------------------------------------------------------------------------------------------------+
+| admin_state_up          | UP                                                                                                    |
+| availability_zone_hints |                                                                                                       |
+| availability_zones      | nova                                                                                                  |
+| created_at              | 2019-10-23T13:30:21Z                                                                                  |
+| description             |                                                                                                       |
+| distributed             | False                                                                                                 |
+| external_gateway_info   | {"network_id": "2ed7deca-81ed-45ee-87ce-aeb4f565d3ad", "enable_snat": true, "external_fixed_ips":     |
+|                         | [{"subnet_id": "45d31556-08b8-4b0e-98d8-c09dd986296a", "ip_address": "10.84.57.38"}]}                 |
+| flavor_id               | None                                                                                                  |
+| ha                      | False                                                                                                 |
+| id                      | 1c9949fb-a500-475d-8694-346cf66ebf9a                                                                  |
+| interfaces_info         | [{"subnet_id": "c141858a-a792-4c89-91f0-de4dc4694a7f", "ip_address": "12.12.12.1", "port_id":         |
+|                         | "3d8a8605-dbe5-4fa6-87c3-b351763a9a63"}]                                                              |
+| name                    | lb_router2                                                                                            |
+| project_id              | de095070f242416cb3dc4cd00e3c79f7                                                                      |
+| revision_number         | 3                                                                                                     |
+| routes                  |                                                                                                       |
+| status                  | ACTIVE                                                                                                |
+| tags                    |                                                                                                       |
+| updated_at              | 2019-10-23T13:33:22Z                                                                                  |
++-------------------------+-------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
+     Create a security group for testing with unrestricted inbound 
+     and outbound traffic (you will have to restrict the traffic later):
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack security group create letmein
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field           | Value                                                                                                                                                 |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| created_at      | 2019-05-13T18:50:28Z                                                                                                                                  |
+| description     | letmein                                                                                                                                               |
+| id              | 1d136bc8-8186-4c08-88f4-fe83465f3c30                                                                                                                  |
+| name            | letmein                                                                                                                                               |
+| project_id      | 5bd04b76d1db42988612e5f27170a40a                                                                                                                      |
+| revision_number | 2                                                                                                                                                     |
+| rules           | created_at='2019-05-13T18:50:28Z', direction='egress', ethertype='IPv6', id='1f73b026-5f7e-4b2c-9a72-07c88d8ea82d', updated_at='2019-05-13T18:50:28Z' |
+|                 | created_at='2019-05-13T18:50:28Z', direction='egress', ethertype='IPv4', id='880a04ee-14b4-4d05-b038-6dd42005d3c0', updated_at='2019-05-13T18:50:28Z' |
+| updated_at      | 2019-05-13T18:50:28Z                                                                                                                                  |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
+     Create security rules for the VMs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --ingress --protocol tcp --dst-port 1:1024
+<code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --ingress --protocol icmp
+<code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --egress --protocol tcp --dst-port 1:1024
+<code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --egress --protocol icmp</pre></div></li><li class="step "><p>
+      If you have not already created a keypair for the web servers,
+      create one now with the <code class="command">openstack keypair create</code>.
+      You will use the keypair to boot images.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack keypair create lb_kp1 &gt; lb_kp1.pem
+chmod 400 lb_kp1.pem
+
+ls -la lb*
+-r-------- 1 ardana ardana 1680 May 13 12:52 lb_kp1.pem</pre></div><p>
+      Verify the keypair list:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack keypair list
++---------------+-------------------------------------------------+
+| Name          | Fingerprint                                     |
++---------------+-------------------------------------------------+
+| id_rsa2       | d3:82:4c:fc:80:79:db:94:b6:31:f1:15:8e:ba:35:0b |
+| lb_kp1        | 78:a8:0b:5b:2d:59:f4:68:4c:cb:49:c3:f8:81:3e:d8 |
++---------------+-------------------------------------------------+</pre></div></li><li class="step "><p>
+     List the image names available to boot and boot two VMs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list | grep cirros
+| faa65f54-e38b-43dd-b0db-ae5f5e3d9b83 | cirros-0.4.0-x86_64             | active |</pre></div><p>
+      Boot a VM that will host the pseudo web server:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server create --flavor m1.tiny --image cirros-0.4.0-x86_64 \
+--key-name id_rsa2 --security-group letmein --nic net-id=lb_net2 lb2_vm1 --wait
+ 
++-------------------------------------+------------------------------------------------------------+
+| Field                               | Value                                                      |
++-------------------------------------+------------------------------------------------------------+
+| OS-DCF:diskConfig                   | MANUAL                                                     |
+| OS-EXT-AZ:availability_zone         | nova                                                       |
+| OS-EXT-SRV-ATTR:host                | cjd9-cp1-comp0001-mgmt                                     |
+| OS-EXT-SRV-ATTR:hypervisor_hostname | cjd9-cp1-comp0001-mgmt                                     |
+| OS-EXT-SRV-ATTR:instance_name       | instance-0000001f                                          |
+| OS-EXT-STS:power_state              | Running                                                    |
+| OS-EXT-STS:task_state               | None                                                       |
+| OS-EXT-STS:vm_state                 | active                                                     |
+| OS-SRV-USG:launched_at              | 2019-10-23T13:36:32.000000                                 |
+| OS-SRV-USG:terminated_at            | None                                                       |
+| accessIPv4                          |                                                            |
+| accessIPv6                          |                                                            |
+| addresses                           | lb_net2=12.12.12.13                                        |
+| adminPass                           | 79GcsJQfNt3p                                               |
+| config_drive                        |                                                            |
+| created                             | 2019-10-23T13:36:17Z                                       |
+| flavor                              | m1.tiny (1)                                                |
+| hostId                              | ed0511cb20d44f420e707fbc801643e0658eb2efbf980ef986aa45d0   |
+| id                                  | 874e675b-727b-44a2-99a9-0ff178590f86                       |
+| image                               | cirros-0.4.0-x86_64 (96e0df13-573f-4672-97b9-3fe67ff84d6a) |
+| key_name                            | id_rsa2                                                    |
+| name                                | lb2_vm1                                                    |
+| progress                            | 0                                                          |
+| project_id                          | de095070f242416cb3dc4cd00e3c79f7                           |
+| properties                          |                                                            |
+| security_groups                     | name='letmein'                                             |
+| status                              | ACTIVE                                                     |
+| updated                             | 2019-10-23T13:36:32Z                                       |
+| user_id                             | ec4d4dbf03be4bf09f105c06c7562ba7                           |
+| volumes_attached                    |                                                            |
++-------------------------------------+------------------------------------------------------------+</pre></div><p>
+     Save the private IP of the first web server:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>IP_LBVM1="12.12.12.13"</pre></div><p>
+     Boot a second pseudo web server:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server create --flavor m1.tiny --image cirros-0.4.0-x86_64 \
+--key-name id_rsa2 --security-group letmein --nic net-id=lb_net2 lb2_vm2 --wait
+ 
++-------------------------------------+------------------------------------------------------------+
+| Field                               | Value                                                      |
++-------------------------------------+------------------------------------------------------------+
+| OS-DCF:diskConfig                   | MANUAL                                                     |
+| OS-EXT-AZ:availability_zone         | nova                                                       |
+| OS-EXT-SRV-ATTR:host                | cjd9-cp1-comp0002-mgmt                                     |
+| OS-EXT-SRV-ATTR:hypervisor_hostname | cjd9-cp1-comp0002-mgmt                                     |
+| OS-EXT-SRV-ATTR:instance_name       | instance-00000022                                          |
+| OS-EXT-STS:power_state              | Running                                                    |
+| OS-EXT-STS:task_state               | None                                                       |
+| OS-EXT-STS:vm_state                 | active                                                     |
+| OS-SRV-USG:launched_at              | 2019-10-23T13:38:09.000000                                 |
+| OS-SRV-USG:terminated_at            | None                                                       |
+| accessIPv4                          |                                                            |
+| accessIPv6                          |                                                            |
+| addresses                           | lb_net2=12.12.12.5                                         |
+| adminPass                           | CGDs3mnHcnv8                                               |
+| config_drive                        |                                                            |
+| created                             | 2019-10-23T13:37:55Z                                       |
+| flavor                              | m1.tiny (1)                                                |
+| hostId                              | bf4424315eb006ccb91f80e1024b2617cbb86a2cc70cf912b6ca1f95   |
+| id                                  | a60dfb93-255b-476d-bf28-2b4f0da285e0                       |
+| image                               | cirros-0.4.0-x86_64 (96e0df13-573f-4672-97b9-3fe67ff84d6a) |
+| key_name                            | id_rsa2                                                    |
+| name                                | lb2_vm2                                                    |
+| progress                            | 0                                                          |
+| project_id                          | de095070f242416cb3dc4cd00e3c79f7                           |
+| properties                          |                                                            |
+| security_groups                     | name='letmein'                                             |
+| status                              | ACTIVE                                                     |
+| updated                             | 2019-10-23T13:38:09Z                                       |
+| user_id                             | ec4d4dbf03be4bf09f105c06c7562ba7                           |
+| volumes_attached                    |                                                            |
++-------------------------------------+------------------------------------------------------------+</pre></div><p>
+     Save the private IP of the second web server:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>IP_LBVM2="12.12.12.5"</pre></div></li><li class="step "><p>
+     Verify that all the servers are running:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server list
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
+| ID                                   | Name    | Status | Networks                         | Image               | Flavor  |
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
+| a60dfb93-255b-476d-bf28-2b4f0da285e0 | lb2_vm2 | ACTIVE | lb_net2=12.12.12.5               | cirros-0.4.0-x86_64 | m1.tiny |
+| 874e675b-727b-44a2-99a9-0ff178590f86 | lb2_vm1 | ACTIVE | lb_net2=12.12.12.13              | cirros-0.4.0-x86_64 | m1.tiny |
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+</pre></div></li><li class="step "><p>
+     Check ports for the VMs first (.13 and .5):
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack port list | grep -e $IP_LBVM2 -e $IP_LBVM1
+| 42c356f1-8c49-469a-99c8-12c541378741 || fa:16:3e:2d:6b:be | ip_address='12.12.12.13', subnet_id='c141858a-a792-4c89-91f0-de4dc4694a7f'    | ACTIVE |
+| fb7166c1-06f7-4457-bc0d-4692fc2c7fa2 || fa:16:3e:ac:5d:82 | ip_address='12.12.12.5',  subnet_id='c141858a-a792-4c89-91f0-de4dc4694a7f'    | ACTIVE |</pre></div><p>
+     Create the floating IPs for the VMs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack floating ip create $EXT_NET --port fb7166c1-06f7-4457-bc0d-4692fc2c7fa2
+openstack floating ip create $EXT_NET --port 42c356f1-8c49-469a-99c8-12c541378741</pre></div><p>
+     Verify the floating IP attachment:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server list
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
+| ID                                   | Name    | Status | Networks                         | Image               | Flavor  |
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
+| a60dfb93-255b-476d-bf28-2b4f0da285e0 | lb2_vm2 | ACTIVE | lb_net2=12.12.12.5, 10.84.57.35  | cirros-0.4.0-x86_64 | m1.tiny |
+| 874e675b-727b-44a2-99a9-0ff178590f86 | lb2_vm1 | ACTIVE | lb_net2=12.12.12.13, 10.84.57.39 | cirros-0.4.0-x86_64 | m1.tiny |
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+</pre></div><p>
+     Save the floating IPs of the web server VMs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>LB_VM2_FIP="10.84.57.35"
+<code class="prompt user">ardana &gt; </code>LB_VM1_FIP="10.84.57.39"</pre></div></li><li class="step "><p>
+     Use the <code class="literal">ping</code> command on the VMs to verify that 
+     they respond on their floating IPs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ping $LB_VM2_FIP
+PING 10.84.57.35 (10.84.57.35) 56(84) bytes of data.
+64 bytes from 10.84.57.35: icmp_seq=1 ttl=62 time=2.09 ms
+64 bytes from 10.84.57.35: icmp_seq=2 ttl=62 time=0.542 ms
+^C
+ 
+ping $LB_VM1_FIP
+PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
+64 bytes from 10.84.57.39: icmp_seq=1 ttl=62 time=1.55 ms
+64 bytes from 10.84.57.39: icmp_seq=2 ttl=62 time=0.552 ms
+^C</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create Load Balancers</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The following steps will set up new Octavia Load Balancers.
+  </p><div id="id-1.3.7.7.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The following examples assume names and values from the previous section.
+   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Create the load balancer on the tenant network. Use the
+     bash variable <code class="literal">VIP_SUBNET</code> that holds the ID
+     of the subnet that was saved earlier, or the actual subnet ID:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer create --name lb2 --vip-subnet-id $VIP_SUBNET 
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:28:03                  |
+| description         |                                      |
+| flavor              |                                      |
+| id                  | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| listeners           |                                      |
+| name                | lb2                                  |
+| operating_status    | OFFLINE                              |
+| pools               |                                      |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| provider            | amphora                              |
+| provisioning_status | PENDING_CREATE                       |
+| updated_at          | None                                 |
+| vip_address         | 12.12.12.6                           |
+| vip_network_id      | 50a66468-084b-457f-88e4-2edb7b81851e |
+| vip_port_id         | 5122c1d0-2996-43d5-ad9b-7b3b2c5903d5 |
+| vip_qos_policy_id   | None                                 |
+| vip_subnet_id       | c141858a-a792-4c89-91f0-de4dc4694a7f |
++---------------------+--------------------------------------+</pre></div><p>
+       Save the load balancer <code class="literal">vip_port_id</code>.
+       This is used when attaching a floating IP to the load balancer.
+     </p><div class="verbatim-wrap"><pre class="screen">LB_PORT="5122c1d0-2996-43d5-ad9b-7b3b2c5903d5"</pre></div></li><li class="step "><p>
+     List load balancers. You will need to wait until the load balancer
+     <code class="literal">provisioning_status</code>is <code class="literal">ACTIVE</code> before
+     proceeding to the next step.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer list
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+
+| id                                   | name | project_id                       | vip_address | provisioning_status | provider |
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+
+| 2b0660e1-2901-41ea-93d8-d1fa590b9cfd | lb2  | de095070f242416cb3dc4cd00e3c79f7 | 12.12.12.6  | PENDING_CREATE      | amphora  |
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+</pre></div><p>
+     After some time has passed, the status will change to <code class="literal">ACTIVE</code>.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer list
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+
+| id                                   | name | project_id                       | vip_address | provisioning_status | provider |
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+
+| 2b0660e1-2901-41ea-93d8-d1fa590b9cfd | lb2  | de095070f242416cb3dc4cd00e3c79f7 | 12.12.12.6  | ACTIVE              | amphora  |
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+</pre></div></li><li class="step "><p>
+     Once the load balancer is created, create the listener. This may take some
+     time.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer listener create --protocol HTTP \
+--protocol-port=80 --name lb2_listener lb2
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| connection_limit          | -1                                   |
+| created_at                | 2019-10-29T16:32:26                  |
+| default_pool_id           | None                                 |
+| default_tls_container_ref | None                                 |
+| description               |                                      |
+| id                        | 65930b35-70bf-47d2-a135-aff49c219222 |
+| insert_headers            | None                                 |
+| l7policies                |                                      |
+| loadbalancers             | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| name                      | lb2_listener                         |
+| operating_status          | OFFLINE                              |
+| project_id                | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol                  | HTTP                                 |
+| protocol_port             | 80                                   |
+| provisioning_status       | PENDING_CREATE                       |
+| sni_container_refs        | []                                   |
+| timeout_client_data       | 50000                                |
+| timeout_member_connect    | 5000                                 |
+| timeout_member_data       | 50000                                |
+| timeout_tcp_inspect       | 0                                    |
+| updated_at                | None                                 |
++---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Create the load balancing pool. During the creation of the load balancing
+     pool, the status for the load balancer goes to
+     <code class="literal">PENDING_UPDATE</code>. Use <code class="literal">openstack
+     loadbalancer pool show</code> to watch for the change to
+     <code class="literal">ACTIVE</code>. Once the load balancer returns to
+     <code class="literal">ACTIVE</code>, proceed with the next step.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer pool create --lb-algorithm ROUND_ROBIN \
+--protocol HTTP --listener lb2_listener --name lb2_pool
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:35:06                  |
+| description         |                                      |
+| healthmonitor_id    |                                      |
+| id                  | 75cd42fa-0525-421f-afaa-5de996267536 |
+| lb_algorithm        | ROUND_ROBIN                          |
+| listeners           | 65930b35-70bf-47d2-a135-aff49c219222 |
+| loadbalancers       | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| members             |                                      |
+| name                | lb2_pool                             |
+| operating_status    | OFFLINE                              |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol            | HTTP                                 |
+| provisioning_status | PENDING_CREATE                       |
+| session_persistence | None                                 |
+| updated_at          | None                                 |
++---------------------+--------------------------------------+</pre></div><p>
+      Wait for the status to change to <code class="literal">ACTIVE</code>.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer pool show lb2_pool
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:35:06                  |
+| description         |                                      |
+| healthmonitor_id    |                                      |
+| id                  | 75cd42fa-0525-421f-afaa-5de996267536 |
+| lb_algorithm        | ROUND_ROBIN                          |
+| listeners           | 65930b35-70bf-47d2-a135-aff49c219222 |
+| loadbalancers       | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| members             |                                      |
+| name                | lb2_pool                             |
+| operating_status    | ONLINE                               |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol            | HTTP                                 |
+| provisioning_status | ACTIVE                               |
+| session_persistence | None                                 |
+| updated_at          | 2019-10-29T16:35:10                  |
++---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Add the private IPs of the tenant network for the first web server in the pool:
+    </p><p>
+     In the previous section the addresses for the VMs were saved in the
+     <code class="literal">IP_LBVM1</code> and IP_LBVM2 bash variables. Use those
+     variables or the or the literal addresses of the VMs.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer member create --subnet $VIP_SUBNET \
+--address $IP_LBVM1 --protocol-port 80  lb2_pool
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| address             | 12.12.12.13                          |
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:39:02                  |
+| id                  | 3012cfa2-359c-48c1-8b6f-c650a47c2b73 |
+| name                |                                      |
+| operating_status    | NO_MONITOR                           |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol_port       | 80                                   |
+| provisioning_status | PENDING_CREATE                       |
+| subnet_id           | c141858a-a792-4c89-91f0-de4dc4694a7f |
+| updated_at          | None                                 |
+| weight              | 1                                    |
+| monitor_port        | None                                 |
+| monitor_address     | None                                 |
+| backup              | False                                |
++---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+      Put the addresses the VMs have on the tenant network into the load balancer pool:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer member create --subnet $VIP_SUBNET \
+--address $IP_LBVM2 --protocol-port 80  lb2_pool
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| address             | 12.12.12.5                           |
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:39:59                  |
+| id                  | 3dab546b-e3ea-46b3-96f2-a7463171c2b9 |
+| name                |                                      |
+| operating_status    | NO_MONITOR                           |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol_port       | 80                                   |
+| provisioning_status | PENDING_CREATE                       |
+| subnet_id           | c141858a-a792-4c89-91f0-de4dc4694a7f |
+| updated_at          | None                                 |
+| weight              | 1                                    |
+| monitor_port        | None                                 |
+| monitor_address     | None                                 |
+| backup              | False                                |
++---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Verify the configuration:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer list --fit-width
++---------------------------+------+---------------------------+-------------+---------------------+----------+
+| id                        | name | project_id                | vip_address | provisioning_status | provider |
++---------------------------+------+---------------------------+-------------+---------------------+----------+
+| 2b0660e1-2901-41ea-       | lb2  | de095070f242416cb3dc4cd00 | 12.12.12.6  | ACTIVE              | amphora  |
+| 93d8-d1fa590b9cfd         |      | e3c79f7                   |             |                     |          |
++---------------------------+------+---------------------------+-------------+---------------------+----------+
+
+<code class="prompt user">ardana &gt; </code>openstack loadbalancer show lb2 --fit-width
++---------------------+--------------------------------------+
+| Field               | Value                                |
++---------------------+--------------------------------------+
+| admin_state_up      | True                                 |
+| created_at          | 2019-10-29T16:28:03                  |
+| description         |                                      |
+| flavor              |                                      |
+| id                  | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| listeners           | 65930b35-70bf-47d2-a135-aff49c219222 |
+| name                | lb2                                  |
+| operating_status    | ONLINE                               |
+| pools               | 75cd42fa-0525-421f-afaa-5de996267536 |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7     |
+| provider            | amphora                              |
+| provisioning_status | ACTIVE                               |
+| updated_at          | 2019-10-29T16:40:01                  |
+| vip_address         | 12.12.12.6                           |
+| vip_network_id      | 50a66468-084b-457f-88e4-2edb7b81851e |
+| vip_port_id         | 5122c1d0-2996-43d5-ad9b-7b3b2c5903d5 |
+| vip_qos_policy_id   | None                                 |
+| vip_subnet_id       | c141858a-a792-4c89-91f0-de4dc4694a7f |
++---------------------+--------------------------------------+
+
+<code class="prompt user">ardana &gt; </code>openstack loadbalancer listener list --fit-width
++-----------------+-----------------+--------------+-----------------+----------+---------------+----------------+
+| id              | default_pool_id | name         | project_id      | protocol | protocol_port | admin_state_up |
++-----------------+-----------------+--------------+-----------------+----------+---------------+----------------+
+| 65930b35-70bf-4 | 75cd42fa-0525   | lb2_listener | de095070f242416 | HTTP     |            80 | True           |
+| 7d2-a135-aff49c | -421f-afaa-     |              | cb3dc4cd00e3c79 |          |               |                |
+| 219222          | 5de996267536    |              | f7              |          |               |                |
++-----------------+-----------------+--------------+-----------------+----------+---------------+----------------+
+
+<code class="prompt user">ardana &gt; </code>openstack loadbalancer listener show lb2_listener  --fit-width
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | True                                 |
+| connection_limit          | -1                                   |
+| created_at                | 2019-10-29T16:32:26                  |
+| default_pool_id           | 75cd42fa-0525-421f-afaa-5de996267536 |
+| default_tls_container_ref | None                                 |
+| description               |                                      |
+| id                        | 65930b35-70bf-47d2-a135-aff49c219222 |
+| insert_headers            | None                                 |
+| l7policies                |                                      |
+| loadbalancers             | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd |
+| name                      | lb2_listener                         |
+| operating_status          | ONLINE                               |
+| project_id                | de095070f242416cb3dc4cd00e3c79f7     |
+| protocol                  | HTTP                                 |
+| protocol_port             | 80                                   |
+| provisioning_status       | ACTIVE                               |
+| sni_container_refs        | []                                   |
+| timeout_client_data       | 50000                                |
+| timeout_member_connect    | 5000                                 |
+| timeout_member_data       | 50000                                |
+| timeout_tcp_inspect       | 0                                    |
+| updated_at                | 2019-10-29T16:40:01                  |
++---------------------------+--------------------------------------+</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.11"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create Floating IPs for Load Balancer</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To create the floating IP's for the load balancer, you will need to list
+   the ports for the load balancer. Once you have the port ID, you can then
+   create the floating IP. Notice that the name has changed between the neutron
+   lbass-loadbalancer and openstack loadbalancer CLI. In this case, be sure
+   to pick the port associated with the name <code class="literal">octavia-lb-</code>
+   or use the port ID that was saved when the load balancer was created.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Search for the load balancers port, it will be used when the floating
+     IP is created. Alternately, use the bash variable that contains the load
+     balancer port from the previous section.
+
+     Verify the port that has the address for the load balancer:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack port list --fit-width
++----------------------------+----------------------------+-------------------+-----------------------------+--------+
+| ID                         | Name                       | MAC Address       | Fixed IP Addresses          | Status |
++----------------------------+----------------------------+-------------------+-----------------------------+--------+
+| 5122c1d0-2996-43d5-ad9b-   | octavia-lb-2b0660e1-2901   | fa:16:3e:6a:59:f3 | ip_address='12.12.12.6', su | DOWN   |
+| 7b3b2c5903d5               | -41ea-93d8-d1fa590b9cfd    |                   | bnet_id='c141858a-a792-4c89 |        |
+|                            |                            |                   | -91f0-de4dc4694a7f'         |        |</pre></div></li><li class="step "><p>
+     Create the floating IP for the load balancers port:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack floating ip create --port $LB_PORT $EXT_NET --fit-width
++---------------------+-------------------------------------------------------------------------------------------------+
+| Field               | Value                                                                                           |
++---------------------+-------------------------------------------------------------------------------------------------+
+| created_at          | 2019-10-29T16:59:43Z                                                                            |
+| description         |                                                                                                 |
+| dns_domain          |                                                                                                 |
+| dns_name            |                                                                                                 |
+| fixed_ip_address    | 12.12.12.6                                                                                      |
+| floating_ip_address | 10.84.57.29                                                                                     |
+| floating_network_id | 2ed7deca-81ed-45ee-87ce-aeb4f565d3ad                                                            |
+| id                  | f4f18854-9d92-4eb4-8c05-96ef059b4a41                                                            |
+| name                | 10.84.57.29                                                                                     |
+| port_details        | {u'status': u'DOWN', u'name': u'octavia-lb-2b0660e1-2901-41ea-93d8-d1fa590b9cfd',               |
+|                     | u'admin_state_up': False, u'network_id': u'50a66468-084b-457f-88e4-2edb7b81851e',               |
+|                     | u'device_owner': u'Octavia', u'mac_address': u'fa:16:3e:6a:59:f3', u'device_id': u'lb-          |
+|                     | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd'}                                                          |
+| port_id             | 5122c1d0-2996-43d5-ad9b-7b3b2c5903d5                                                            |
+| project_id          | de095070f242416cb3dc4cd00e3c79f7                                                                |
+| qos_policy_id       | None                                                                                            |
+| revision_number     | 0                                                                                               |
+| router_id           | 1c9949fb-a500-475d-8694-346cf66ebf9a                                                            |
+| status              | DOWN                                                                                            |
+| subnet_id           | None                                                                                            |
+| tags                | []                                                                                              |
+| updated_at          | 2019-10-29T16:59:43Z                                                                            |
++---------------------+-------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
+      Save the floating IP for the load balancer for future use.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>LB_FIP="10.84.57.29"</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing the Octavia Load Balancer</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   This is the web server code that runs on the VMs created earlier. 
+   In this example, the web server is on port 80.
+  </p><div class="verbatim-wrap"><pre class="screen">echo &lt;&lt;EOF &gt;webserver.sh 
+#!/bin/sh
+ 
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+    echo -e "HTTP/1.0 200 OK
+ 
+Welcome to $MYIP" | sudo nc -l -p 80
+done
+EOF</pre></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Remove any old floating IPs from <code class="literal">known_hosts</code>:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ssh-keygen -R  $LB_VM1_FIP
+<code class="prompt user">ardana &gt; </code>ssh-keygen -R  $LB_VM2_FIP</pre></div></li><li class="step "><p>
+     Deploy the web server application:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>
+scp -o StrictHostKeyChecking=no -i lb_kp1.pem webserver.sh cirros@$LB_VM1_FIP:webserver.sh 
+ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM1_FIP 'chmod +x ./webserver.sh'
+ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM1_FIP '(./webserver.sh&amp;)'
+ 
+scp -o StrictHostKeyChecking=no -i lb_kp1.pem webserver.sh cirros@$LB_VM2_FIP:webserver.sh 
+ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM2_FIP 'chmod +x ./webserver.sh'
+ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM2_FIP '(./webserver.sh&amp;)'</pre></div></li><li class="step "><p>
+     Make sure the web servers respond with the correct IPs:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl $LB_VM1_FIP
+Welcome to 12.12.12.5
+curl $LB_VM2_FIP
+Welcome to 12.12.12.5</pre></div></li><li class="step "><p>
+     Access the web servers through the Octavia load balancer using the floating IP:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl $LB_FIP
+Welcome to 12.12.12.5
+<code class="prompt user">ardana &gt; </code> curl $LB_FIP
+Welcome to 12.12.12.13
+<code class="prompt user">ardana &gt; </code> curl $LB_FIP
+Welcome to 12.12.12.5
+<code class="prompt user">ardana &gt; </code> curl $LB_FIP</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="postinstall-checklist.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 44 </span>Other Common Post-Installation Tasks</span></a><a class="nav-link" href="config-availability-zones.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 42 </span>Configuring Availability Zones</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

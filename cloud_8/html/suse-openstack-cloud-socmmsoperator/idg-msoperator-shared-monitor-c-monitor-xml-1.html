@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Monitoring | Monitoring Service Operator's Guide | SUSE OpenStack Cloud Monitoring</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Monitoring" /><meta name="book-title" content="Monitoring Service Operator's Guide" /><meta name="chapter-title" content="Chapter 4. Monitoring" /><meta name="description" content="SUSE OpenStack Cloud Monitoring offers various features which support you in proactively managing your cloud resources. A large number of metrics in combination with early warnings about problems and outages assists you in analyzing and troubleshooting any issue you encounter in your environment." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="fs@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><meta name="tracker-bsc-version" content="" /><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="prev" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html" title="Chapter 3. Operation and Maintenance" /><link rel="next" href="idg-msoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 5. Log Management" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html">Monitoring</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Monitoring Service Operator's Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Manual</span></a></li><li class="inactive"><a href="idg-msoperator-shared-intro-c-intro-xml-1.html"><span class="number">1 </span><span class="name">Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></span></a></li><li class="inactive"><a href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="number">2 </span><span class="name">Installation</span></a></li><li class="inactive"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="number">3 </span><span class="name">Operation and Maintenance</span></a></li><li class="inactive"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="number">4 </span><span class="name">Monitoring</span></a></li><li class="inactive"><a href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">Supported Metrics</span></a></li><li class="inactive"><a href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="number">B </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Operation and Maintenance" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Log Management" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html">Monitoring</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Operation and Maintenance" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Log Management" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="idg-msoperator-shared-monitor-c-monitor-xml-1"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud Monitoring</span></div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-monitor-c-monitor.xml</li><li><span class="ds-label">ID: </span>idg-msoperator-shared-monitor-c-monitor-xml-1</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.10"><span class="number">4.1 </span><span class="name">Overview</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#concept-E8D43EB4494E41D2AB42D4A89396D1CMM"><span class="number">4.2 </span><span class="name">Working with Data Visualizations</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#sec-msoperator-alarms"><span class="number">4.3 </span><span class="name">Defining Alarms</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-alert-xml-1"><span class="number">4.4 </span><span class="name">Defining Notifications</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1"><span class="number">4.5 </span><span class="name">Status of Services, Servers, and Log Data</span></a></span></dt></dl></div></div>
+ 
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> offers various
+  features which support you in proactively managing your cloud resources. A
+  large number of metrics in combination with early warnings about problems and
+  outages assists you in analyzing and troubleshooting any issue you encounter
+  in your environment.
+ </p>
+ <p>
+  The monitoring features include:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    A monitoring overview which allows you to access all monitoring
+    information.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Metrics dashboards for visualizing your monitoring data.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Alerting features for monitoring.
+   </p>
+  </li></ul></div>
+ <p>
+  In the following sections, you will find information on the monitoring
+  overview and the metrics dashboards as well as details on how to define and
+  handle alarms and notifications.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.6"><span class="name">Accessing <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+ </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.6">#</a></h5></div>
+  <p>
+  For accessing <span class="phrase">SUSE OpenStack Cloud Monitoring</span> and performing
+  monitoring tasks, you must have access to the OpenStack platform as a user with
+  the <span class="guimenu ">monasca-user</span> or <span class="guimenu ">monasca-read-only-user</span>
+  role in the <span class="guimenu ">monasca</span> tenant.
+  </p>
+ <p>
+  Log in to OpenStack Horizon with your user name and password. The functions
+  you can use in OpenStack Horizon depend on your access permissions. To access
+  logs and metrics, switch to the <span class="guilabel ">monasca</span> tenant in
+  Horizon. This allows you to access all monitoring data for <span class="phrase">SUSE
+  OpenStack Cloud Monitoring</span>.
+ </p>
+ <div class="figure" id="fig-socm-monasca"><div class="figure-contents">
+  
+  <div class="mediaobject"><a xmlns="" href="images/socm-horizon-monasca.png" target="_blank"><img src="images/socm-horizon-monasca.png" width="" alt="SUSE OpenStack Cloud Horizon Dashboard—Monitoring" /></a></div>
+ </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.1: </span><span class="name">SUSE OpenStack Cloud Horizon Dashboard—Monitoring </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#fig-socm-monasca">#</a></h6></div></div>
+ <div class="sect1" id="id-1.7.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.10">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-monitor-c-monitor-overview-cmmo.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> provides one convenient
+  access point to your monitoring data. Use <span class="guilabel ">Monitoring &gt;
+  Overview</span> to keep track of your services and servers and quickly
+  check their status. The overview also indicates any irregularities in the log
+  data of the system components you are monitoring.
+ </p>
+ <p>
+  On the <span class="guilabel ">Overview</span> page, you can:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    View the status of your services, servers, and log data at a glance. As
+    soon as you have defined an alarm for a service, a server, or log data and
+    metrics data has been received, there is status information displayed on
+    the <span class="guilabel ">Overview</span> page. Different colors are used for the
+    different statuses.
+   </p>
+   <p>
+    For details on the status information, refer to <a class="xref" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1" title="4.5. Status of Services, Servers, and Log Data">Section 4.5, “Status of Services, Servers, and Log Data”</a>. For
+    details on defining alarms, refer to <a class="xref" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#sec-msoperator-alarms" title="4.3. Defining Alarms">Section 4.3, “Defining Alarms”</a>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Access a preconfigured dashboard that visualizes your metrics data.
+    Starting from this dashboard, you can create your own dashboards for
+    visualizing your metrics data as required. For details, refer to
+    <a class="xref" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#concept-E8D43EB4494E41D2AB42D4A89396D1CMM" title="4.2. Working with Data Visualizations">Section 4.2, “Working with Data Visualizations”</a>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Access the <span class="phrase">SUSE OpenStack Cloud Monitoring</span> log management
+    functionality. For details, refer to <a class="xref" href="idg-msoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 5. Log Management">Chapter 5, <em>Log Management</em></a>.
+   </p>
+  </li></ul></div>
+</div>
+ <div class="sect1" id="concept-E8D43EB4494E41D2AB42D4A89396D1CMM"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Working with Data Visualizations</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#concept-E8D43EB4494E41D2AB42D4A89396D1CMM">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-monitor-c-monitor-graf-cmmo.xml</li><li><span class="ds-label">ID: </span>concept-E8D43EB4494E41D2AB42D4A89396D1CMM</li></ul></div></div></div></div>
+ 
+ <p>
+  The user interface for monitoring your services, servers, and log data
+  integrates with Grafana, an open source application for visualizing
+  large-scale monitoring data. Use the options at the top border of the
+  <span class="guilabel ">Overview</span> page to access Grafana.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> ships with preconfigured
+  metrics dashboards. You can instantly use them for monitoring your
+  environment. You can also use them as a starting point for building your own
+  dashboards.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.4"><span class="name">Preconfigured Metrics Dashboard for <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+ </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.4">#</a></h5></div>
+ <p>
+  As a Monitoring Service operator, you use the <span class="guilabel ">Monasca
+  Health</span> option on the <span class="guilabel ">Overview</span> page to view
+  the metrics data on the Monitoring Service. The OpenStack operator uses the
+  <span class="guilabel ">Dashboard</span> option to view the metrics data on the
+  OpenStack services.
+ </p>
+ <div class="figure" id="id-1.7.11.6"><div class="figure-contents">
+  
+  <div class="mediaobject"><a xmlns="" href="images/socm-msoperator-dashboard.png" target="_blank"><img src="images/socm-msoperator-dashboard.png" width="" alt="Metrics Dashboard—Monitoring Service Operator's View" /></a></div>
+ </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.2: </span><span class="name">Metrics Dashboard—Monitoring Service Operator's View </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.6">#</a></h6></div></div>
+ <p>
+  The preconfigured dashboard shows the following data on the Monitoring
+  Service:
+  
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    Status of the main <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    components (<code class="literal">UP</code> or <code class="literal">DOWN</code>).
+   </p>
+   <p>
+    In the upper part of the dashboard the components are grouped into metrics
+    and log management components as well as common components that are used by
+    metrics-based and log-based monitoring.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Information on system resources.
+   </p>
+   <p>
+    The dashboard shows metrics data on CPU usage: the percentage of time the
+    CPU is used in total (<code class="literal">cpu.percent</code>), at user level
+    (<code class="literal">cpu.user_perc</code>), and at system level
+    (<code class="literal">cpu.system_perc</code>), as well as the percentage of time the
+    CPU is idle when no I/O requests are in progress
+    (<code class="literal">cpu.wait_perc</code>).
+   </p>
+   <p>
+    The dashboard shows metrics data on memory usage: the number of megabytes
+    of total memory (<code class="literal">mem.total_mb</code>), used memory
+    (<code class="literal">mem.used_mb</code>), total swap memory
+    (<code class="literal">mem.swap_total_mb</code>), and used swap memory
+    (<code class="literal">mem.swap_used_mb</code>), as well as the number of megabytes
+    used for the page cache (<code class="literal">mem.used_cache</code>).
+   </p>
+   <p>
+    The dashboard visualizes metrics on the percentage of disk space that is
+    being used on a device (<code class="literal">disk.space_used_perc</code>).
+   </p>
+   <p>
+    The dashboard shows metrics data on the <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> system load over different periods
+    (<code class="literal">load.avg_1_min</code>, <code class="literal">load.avg_5_min</code>, and
+    <code class="literal">load.avg_15_min</code>).
+   </p>
+  </li><li class="listitem ">
+   <p>
+    The network usage of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+   </p>
+   <p>
+    The dashboard shows the number of network bytes received and sent per
+    second (<code class="literal">net.in_bytes_sec</code> and
+    <code class="literal">net.out_bytes_sec</code>).
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Metrics data on each <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    component. The metrics that are visualized differ slightly from component
+    to component. The dashboard shows, for example, the percentage of CPU that
+    is consumed by a component (<code class="literal">process.cpu_perc.value </code>),
+    the amount of physical memory that is allocated to the component
+    (<code class="literal">process.mem.rss_mbytes.value</code>), or the number of
+    processes that exist with the corresponding component name
+    (<code class="literal">process.pid_count.value</code>).
+   </p>
+  </li></ul></div>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.9"><span class="name">Building Dashboards</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.9">#</a></h5></div>
+ <p>
+  Each metrics dashboard is composed of one or more panels that are arranged in
+  one or more rows. A row serves as a logical divider within a dashboard. It
+  organizes your panels in groups. The panel is the basic building block for
+  visualizing your metrics data.
+ </p>
+ <p>
+  For building dashboards, you have two options:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    Start from scratch and create a new dashboard.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Take the dashboard that is shipped with <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> as a starting point and customize it.
+   </p>
+  </li></ul></div>
+ <p>
+  The following sections provide introductory information on dashboards, rows,
+  and panels, and make you familiar with the first steps involved in building a
+  dashboard. For additional information, you can also refer to the
+  <a class="ulink" href="http://docs.grafana.org/" target="_blank"> Grafana documentation <span class="ulink-url"> (http://docs.grafana.org/)</span></a>.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.14"><span class="name">Creating a Dashboard</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.14">#</a></h5></div>
+ <p>
+  To create a new dashboard, use the <span class="guilabel ">Open</span> icon in the
+  top right corner of your dashboard window. The option provides access to
+  various features for administrating dashboards. Click <span class="guilabel ">New</span>
+  to create an empty dashboard that serves as a starting point for adding rows
+  and panels.
+ </p>
+ <div class="informalfigure">
+  <div class="mediaobject"><a xmlns="" href="images/socm-new-dashboard.png" target="_blank"><img src="images/socm-new-dashboard.png" width="" /></a></div>
+ </div>
+ <p>
+  On the left side of an empty dashboard, there is a green rectangle displayed.
+  Hover over this rectangle to access a <span class="guilabel ">Row</span> menu. To
+  insert your first panel, you can use the options in the <span class="guilabel ">Add
+  Panel</span> submenu. See below for details on the available panel types.
+ </p>
+ <p>
+  As soon as you have inserted an empty panel, you can add additional rows. For
+  this purpose, use the <span class="guilabel ">Add Row</span> option on the right side
+  of the dashboard.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.19"><span class="name">Editing Rows</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.19">#</a></h5></div>
+ <p>
+  Features for editing rows can be accessed via the green rectangle that is
+  displayed to the left of each row.
+ </p>
+ <p>
+  In addition to adding panels to a row, you can collapse or remove a row, move
+  the position of the row within your dashboard, or set the row height. Row
+  settings allows you, for example, to insert a row title or to hide the
+  <span class="guilabel ">Row</span> menu so that the row can no longer be edited.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.22"><span class="name">Editing Panels</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.22">#</a></h5></div>
+ <p>
+  Grafana distinguishes between three panel types:
+ </p>
+ <p>
+  Panels of type <span class="guilabel ">Graph</span> are used to visualize metrics data.
+  A query editor is provided to define the data to be visualized. The editor
+  allows you to combine multiple queries. This means that any number of metrics
+  and data series can be visualized in one panel.
+ </p>
+ <div class="figure" id="id-1.7.11.25"><div class="figure-contents">
+  
+  <div class="mediaobject"><a xmlns="" href="images/socm-panel-graph.png" target="_blank"><img src="images/socm-panel-graph.png" width="" alt="A Graph Panel" /></a></div>
+ </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.3: </span><span class="name">A Graph Panel </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.25">#</a></h6></div></div>
+ <p>
+  Panels of type <span class="guilabel ">Singlestat</span> are also used to visualize
+  metrics data, yet they reduce a single query to a single number. The single
+  number can be, for example, the minimum, maximum, average, or sum of values
+  of the data series. The single number can be translated into a text value, if
+  required.
+ </p>
+ <p>
+  Panels of type <span class="guilabel ">Text</span> are used to insert static text. The
+  text may, for example, provide information for the dashboard users. Text
+  panels are not connected to any metrics data.
+ </p>
+ <p>
+  As soon as you have added a panel to your dashboard, you can access the
+  options for editing the panel content. For this purpose, click the panel
+  title and use <span class="guilabel ">Edit</span>:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    For panels of type <span class="guilabel ">Text</span>, a simple text editor is
+    displayed for entering text. Plain text, HTML, and markdown format are
+    supported.
+   </p>
+   <div class="figure" id="id-1.7.11.29.1.2"><div class="figure-contents">
+    
+    <div class="mediaobject"><a xmlns="" href="images/socm-panel-text.png" target="_blank"><img src="images/socm-panel-text.png" width="" alt="Editing a Text Panel" /></a></div>
+   </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.4: </span><span class="name">Editing a Text Panel </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.29.1.2">#</a></h6></div></div>
+  </li><li class="listitem ">
+   <p>
+    For panels of type <span class="guilabel ">Graph</span> and
+    <span class="guilabel ">Singlestat</span>, a query editor is displayed to define
+    which data it to be shown. You can add multiple metrics, and apply
+    functions to the metrics. The query results will be visualized in your
+    panel in real time.
+   </p>
+  </li></ul></div>
+ <p>
+  A large number of display and formatting features are provided to customize
+  how the content is presented in a panel. Click the panel title to access the
+  corresponding options. The menu that is displayed also allows you to
+  duplicate or remove a panel. To change the size of a panel, click the
+  <span class="guilabel ">+</span> and <span class="guilabel ">-</span> icons.
+ </p>
+ <p>
+  You can move panels on your dashboard by simply dragging and dropping them
+  within and between rows.
+ </p>
+ <p>
+  By default, the time range for panels is controlled by dashboard settings.
+  Use the time picker in the top right corner of your dashboard window to
+  define relative or absolute time ranges. You can also set an auto-refresh
+  interval, or manually refresh the data that is displayed.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.11.33"><span class="name">Saving and Sharing Dashboards</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.11.33">#</a></h5></div>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> allows you to save a metrics
+  dashboard and export it to a JSON file. The JSON file can be edited, it can
+  be shared with other users, and it can be imported to <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span> again.
+ </p>
+ <p>
+  To save a dashboard, use <span class="guilabel ">Save</span> in the top right corner of
+  your dashboard window. You can enter a name for the dashboard and simply save
+  it to your browser's local storage. Use <span class="guilabel ">Dashboard JSON</span>
+  to directly view the corresponding JSON syntax, or use <span class="guilabel ">Export
+  dashboard</span> to download the JSON file. The JSON file can be
+  forwarded to other users, if required. To import a JSON file, use
+  <span class="guilabel ">Open dashboard</span> in the top left corner of the dashboard
+  window.
+ </p>
+</div>
+ <div class="sect1" id="sec-msoperator-alarms"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Defining Alarms</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#sec-msoperator-alarms">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-monitor-c-monitor-alarm.xml</li><li><span class="ds-label">ID: </span>sec-msoperator-alarms</li></ul></div></div></div></div>
+ 
+ <p>
+  You have to define alarms to monitor your cloud resources. An alarm
+  definition specifies the metrics to be collected and the threshold at which
+  an alarm is to be triggered for a cloud resource. If the specified threshold
+  is reached or exceeded, the alarm is triggered and notifications can be sent
+  to inform users. By default, an alarm definition is evaluated every minute.
+ </p>
+ <p>
+  To handle a large variety of monitoring requirements, you can create either
+  simple alarm definitions that refer to one metrics only, or compound alarm
+  definitions that combine multiple metrics and allow you to track and process
+  more complex events.
+ </p>
+ <p>
+  Example for a simple alarm definition that checks whether the system-level
+  load of the CPU exceeds a threshold of 90 percent:
+ </p>
+<div class="verbatim-wrap"><pre class="screen">cpu.system_perc{hostname=monasca} &gt; 90</pre></div>
+ <p>
+  Example for a simple alarm definition that checks the average time of the
+  system-level load of the CPU over a period of 480 seconds. The alarm is
+  triggered only if this average is greater than 95 percent:
+ </p>
+<div class="verbatim-wrap"><pre class="screen">avg(cpu.system_perc{hostname=monasca}, 120) &gt; 95 times 4</pre></div>
+ <p>
+  Example for a compound alarm definition that evaluates two metrics. The alarm
+  is triggered if either the system-level load of the CPU exceeds a threshold
+  of 90 percent, or if the disk space that is used by the specified service
+  exceeds a threshold of 90 percent:
+ </p>
+<div class="verbatim-wrap"><pre class="screen">avg(cpu.system_perc{hostname=monasca}) &gt; 90 OR
+max(disk.space_used_perc{service=monitoring}) &gt; 90</pre></div>
+ <p>
+  To create, edit, and delete alarms, use <span class="guilabel ">Monitoring &gt; Alarm
+  Definitions</span>.
+ </p>
+ <p>
+  The elements that define an alarm are grouped into
+  <span class="guilabel ">Details</span>, <span class="guilabel ">Expression</span>, and
+  <span class="guilabel ">Notifications</span>. They are described in the following
+  sections.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.12.12"><span class="name">Details</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.12.12">#</a></h5></div>
+ <p>
+  For an alarm definition, you specify the following details:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    <span class="guilabel ">Name</span>. Mandatory identifier of the alarm. The name must
+    be unique within the project for which you define the alarm.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <span class="guilabel ">Description</span>. Optional. A short description that
+    depicts the purpose of the alarm.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <span class="guilabel ">Severity</span>. The following severities for an alarm are
+    supported: <span class="guilabel ">Low</span> (default), <span class="guilabel ">Medium</span>,
+    <span class="guilabel ">High</span>, or <span class="guilabel ">Critical</span>.
+   </p>
+   <p>
+    The severity affects the status information on the
+    <span class="guilabel ">Overview</span> page. If an alarm that is defined as
+    <span class="guilabel ">Critical</span> is triggered, the corresponding resource is
+    displayed in a red box. If an alarm that is defined as
+    <span class="guilabel ">Low</span>, <span class="guilabel ">Medium</span>, or
+    <span class="guilabel ">High</span> is triggered, the corresponding resource is
+    displayed in a yellow box only.
+   </p>
+   <p>
+    The severity level is subjective. Choose a level that is appropriate for
+    prioritizing the alarms in your environment.
+   </p>
+  </li></ul></div>
+ <div class="figure" id="fig-socm-msoperator-alarmdef-create"><div class="figure-contents">
+  
+  <div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create.png" target="_blank"><img src="images/socm-alarmdef-create.png" width="" alt="Creating an Alarm Definition" /></a></div>
+ </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.5: </span><span class="name">Creating an Alarm Definition </span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#fig-socm-msoperator-alarmdef-create">#</a></h6></div></div>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.12.16"><span class="name">Expression</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.12.16">#</a></h5></div>
+ <p>
+  The expression defines how to evaluate a metrics. The expression syntax is
+  based on a simple expressive grammar. For details, refer to the
+  <a class="ulink" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md" target="_blank">Monasca API documentation<span class="ulink-url"> (https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md)</span></a>.
+ </p>
+ <div class="informalfigure">
+  <div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create-expression.png" target="_blank"><img src="images/socm-alarmdef-create-expression.png" width="" /></a></div>
+ </div>
+ <p>
+  To define an alarm expression, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Select the metrics to be evaluated.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Select a statistical function for the metrics: <code class="literal">min</code> to
+    monitor the minimum values, <code class="literal">max</code> to monitor the maximum
+    values, <code class="literal">sum</code> to monitor the sum of the values,
+    <code class="literal">count</code> for the monitored number, or
+    <code class="literal">avg</code> for the arithmetic average.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Enter one or multiple dimensions in the <span class="guilabel ">Add a
+    dimension</span> field to further qualify the metrics.
+   </p>
+   <p>
+    Dimensions filter the data to be monitored. They narrow down the evaluation
+    to specific entities. Each dimension consists of a key/value pair that
+    allows for a flexible and concise description of the data to be monitored,
+    for example, region, availability zone, service tier, or resource ID.
+   </p>
+   <p>
+    The dimensions available for the selected metrics are displayed in the
+    <span class="guilabel ">Matching Metrics</span> section. Type the name of the key you
+    want to associate with the metrics in the <span class="guilabel ">Add a
+    dimension</span> field. You are offered a select list for adding the
+    required key/value pair.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Enter the threshold value at which an alarm is to be triggered, and combine
+    it with a relational operator <code class="literal">&lt;</code>,
+    <code class="literal">&gt;</code>, <code class="literal">&lt;=</code>, or
+    <code class="literal">&gt;=</code>.
+   </p>
+   <p>
+    The unit of the threshold value is related to the metrics for which you
+    define the threshold, for example, the unit is percentage for
+    <code class="literal">cpu.idle_perc</code> or MB for
+    <code class="literal">disk.total_used_space_mb</code>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Switch on the <span class="guilabel ">Deterministic</span> option if you evaluate a
+    metrics for which data is received only sporadically. The option should be
+    switched on, for example, for all log metrics. This ensures that the alarm
+    status is <code class="literal">OK</code> and displayed as a green box on the
+    <span class="guilabel ">Overview</span> page although metrics data has not yet been
+    received.
+   </p>
+   <p>
+    Do not switch on the option if you evaluate a metrics for which data is
+    received regularly. This ensures that you instantly notice, for example,
+    that a host machine is offline and that there is no metrics data for the
+    agent to collect. On the <span class="guilabel ">Overview</span> page, the alarm
+    status therefore changes from <code class="literal">OK</code> to
+    <code class="literal">UNDETERMINED</code> and is displayed as a gray box.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Enter one or multiple dimensions in the <span class="guilabel ">Match by</span> field
+    if you want these dimensions to be taken into account for triggering
+    alarms.
+   </p>
+   <p>
+    Example: If you enter <code class="literal">hostname</code> as dimension, individual
+    alarms will be created for each host machine on which metrics data is
+    collected. The expression you have defined is not evaluated as a whole but
+    individually for each host machine in your environment.
+   </p>
+   <p>
+    If <span class="guilabel ">Match by</span> is set to a dimension, the number of
+    alarms depends on the number of dimension values on which metrics data is
+    received. An empty <span class="guilabel ">Match by</span> field results in exactly
+    one alarm.
+   </p>
+   <p>
+    To enter a dimension, you can simply type the name of the dimension in the
+    <span class="guilabel ">Match by</span> field. The dimensions you enter cannot be
+    changed once the alarm definition is saved.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Build a compound alarm definition to combine multiple metrics in one
+    expression. Using the logical operators <code class="literal">AND</code> or
+    <code class="literal">OR</code>, any number of sub-expressions can be combined.
+   </p>
+   <p>
+    Use the <span class="guilabel ">Add</span> button to create a second expression, and
+    choose either <code class="literal">AND</code> or <code class="literal">OR</code> as
+    <span class="guilabel ">Operator</span> to connect it to the one you have already
+    defined. Proceed with the second expression as described in Step 1 to Step
+    6 above.
+   </p>
+   <p>
+    The following options are provided for creating and organizing compound
+    alarm definitions:
+   </p>
+   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+     <p>
+      Create additional sub-expressions using the <span class="guilabel ">Add</span>
+      button.
+     </p>
+    </li><li class="listitem ">
+     <p>
+      Finish editing a sub-expression using the <span class="guilabel ">Submit</span>
+      button.
+     </p>
+    </li><li class="listitem ">
+     <p>
+      Delete a sub-expression using the <span class="guilabel ">Remove</span> button.
+     </p>
+    </li><li class="listitem ">
+     <p>
+      Change the position of a sub-expression using the <span class="guilabel ">Up</span>
+      or <span class="guilabel ">Down</span> button.
+     </p>
+    </li></ul></div>
+  </li></ol></div>
+ <div id="id-1.7.12.21" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <p>
+   You can also edit the expression syntax directly. For this purpose, save
+   your alarm definition and update it using the <span class="guilabel ">Edit Alarm
+   Definition</span> option.
+  </p>
+  <p>
+   By default, an alarm definition is evaluated every minute. When updating the
+   alarm definition, you can change this interval. For syntax details, refer to
+   the Monasca API documentation on
+   <a class="ulink" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md#alarm-definition-expressions" target="_blank">Alarm Definition Expressions<span class="ulink-url"> (https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md#alarm-definition-expressions)</span></a>.
+  </p>
+ </div>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.7.12.22"><span class="name">Notifications</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#id-1.7.12.22">#</a></h5></div>
+ <p>
+  You can enable notifications for an alarm definition. As soon as an alarm is
+  triggered, the enabled notifications will be sent.
+ </p>
+ <div class="informalfigure">
+  <div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create-notifications.png" target="_blank"><img src="images/socm-alarmdef-create-notifications.png" width="" /></a></div>
+ </div>
+ <p>
+  The <span class="guilabel ">Notifications</span> tab allows you to select the
+  notifications from the ones that are predefined in your environment. For a
+  selected notification, you specify whether you want to send it for a status
+  transition to <span class="guilabel ">Alarm</span>, <span class="guilabel ">OK</span>, and/or
+  <span class="guilabel ">Undetermined</span>.
+ </p>
+ <p>
+  For details on defining notifications, refer to
+  <a class="xref" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-alert-xml-1" title="4.4. Defining Notifications">Section 4.4, “Defining Notifications”</a>. For
+  details on alarm statuses, refer to
+  <a class="xref" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1" title="4.5. Status of Services, Servers, and Log Data">Section 4.5, “Status of Services, Servers, and Log Data”</a>.
+ </p>
+</div>
+ <div class="sect1" id="idg-msoperator-shared-monitor-c-monitor-alert-xml-1"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Defining Notifications</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-alert-xml-1">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-monitor-c-monitor-alert.xml</li><li><span class="ds-label">ID: </span>idg-msoperator-shared-monitor-c-monitor-alert-xml-1</li></ul></div></div></div></div>
+ 
+ <p>
+  Notifications define how users are informed when a threshold value defined
+  for an alarm is reached or exceeded. In the alarm definition, you can assign
+  one or multiple notifications.
+ </p>
+ <p>
+  For a notification, you specify the following elements:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    <span class="guilabel ">Name</span>. A unique identifier of the notification. The
+    name is offered for selection when defining an alarm.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <span class="guilabel ">Type</span>. <code class="literal">Email</code> is the notification
+    method supported by <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. If
+    you want to use <code class="literal">WebHook</code> or <code class="literal">PagerDuty</code>,
+    contact your <span class="phrase">SUSE OpenStack Cloud Monitoring</span> support for
+    further information.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <span class="guilabel ">Address</span>. The email address to be notified when an
+    alarm is triggered.
+   </p>
+   <div id="id-1.7.13.4.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+    <p>
+     Generic top-level domains such as business domain names are not supported
+     in email addresses (for example, <code class="literal">user@xyz.company</code>).
+    </p>
+   </div>
+  </li></ul></div>
+ <p>
+  To create, edit, and delete notifications, use <span class="guilabel ">Monitoring &gt;
+  Notifications</span>.
+ </p>
+</div>
+ <div class="sect1" id="idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Status of Services, Servers, and Log Data</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-monitor-c-monitor-statusinfo.xml</li><li><span class="ds-label">ID: </span>idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1</li></ul></div></div></div></div>
+ 
+ <p>
+  An alarm definition for a service, server, or log data is evaluated over the
+  interval specified in the alarm expression. The alarm definition is
+  re-evaluated in each subsequent interval. The following alarm statuses are
+  distinguished:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    <code class="literal">Alarm</code>. The alarm expression has evaluated to
+    <code class="literal">true</code>. An alarm has been triggered for the cloud
+    resource.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <code class="literal">OK</code>. The alarm expression has evaluated to
+    <code class="literal">false</code>. There is no need to trigger an alarm.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    <code class="literal">Undetermined</code>. No metrics data has been received within
+    the defined interval.
+   </p>
+  </li></ul></div>
+ <p>
+  As soon as you have defined an alarm for a cloud resource, there is status
+  information displayed for it on the <span class="guilabel ">Overview</span> page:
+ </p>
+ <p>
+  The color of the boxes in the three sections indicates the status:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    A green box for a service or server indicates that it is up and running. A
+    green box for a log path indicates that a defined threshold for errors or
+    warnings, for example, has not yet been reached or exceeded. There are
+    alarms defined for the services, servers, or log paths, but no alarms have
+    been triggered.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    A red box for a service, server, or log path indicates that there is a
+    severe problem that needs to be checked. One or multiple alarms defined for
+    a service, a server, or log data have been triggered.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    A yellow box indicates a problem. One or multiple alarms have already been
+    triggered, yet, the severity of these alarms is low.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    A gray box indicates that alarms have been defined. Yet, metrics data has
+    not been received.
+   </p>
+  </li></ul></div>
+ <p>
+  The status information on the <span class="guilabel ">Overview</span> page results from
+  one or multiple alarms that have been defined for the corresponding resource.
+  If multiple alarms are defined, the severity of the individual alarms
+  controls the status color.
+ </p>
+ <p>
+  You can click a resource on the <span class="guilabel ">Overview</span> page to display
+  details on the related alarms. The details include the status of each alarm
+  and the expression that is evaluated. For each alarm, you can drill down on
+  the alarm history. To narrow down the problem, the history presents detailed
+  information on the status transitions.
+ </p>
+</div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Log Management</span></a><a class="nav-link" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Operation and Maintenance</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

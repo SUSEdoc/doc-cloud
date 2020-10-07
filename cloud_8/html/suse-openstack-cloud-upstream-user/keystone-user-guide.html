@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Keystone User Guide | OpenStack User Guide | SUSE OpenStack Cloud Crowbar</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="book-title" content="OpenStack User Guide" /><meta name="chapter-title" content="Chapter 4. Keystone User Guide" /><meta name="description" content="This section contains the documentation for end-users of keystone." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="dpopov@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><meta name="tracker-bsc-version" content="" /><link rel="home" href="index.html" title="OpenStack User Guide" /><link rel="up" href="index.html" title="OpenStack User Guide" /><link rel="prev" href="horizon-user-guide.html" title="Chapter 3. Horizon User Guide" /><link rel="next" href="magnum-user-guide.html" title="Chapter 5. Magnum User Documentation" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack User Guide"><span class="book-icon">OpenStack User Guide</span></a><span> › </span><a class="crumb" href="keystone-user-guide.html">Keystone User Guide</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="glance-user-guide.html"><span class="number">1 </span><span class="name">Glance User Guide</span></a></li><li class="inactive"><a href="ironic-user-guide.html"><span class="number">2 </span><span class="name">Ironic User Guide</span></a></li><li class="inactive"><a href="horizon-user-guide.html"><span class="number">3 </span><span class="name">Horizon User Guide</span></a></li><li class="inactive"><a href="keystone-user-guide.html"><span class="number">4 </span><span class="name">Keystone User Guide</span></a></li><li class="inactive"><a href="magnum-user-guide.html"><span class="number">5 </span><span class="name">Magnum User Documentation</span></a></li><li class="inactive"><a href="nova-user-guide.html"><span class="number">6 </span><span class="name">Nova User Guide</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Horizon User Guide" href="horizon-user-guide.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Magnum User Documentation" href="magnum-user-guide.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack User Guide"><span class="book-icon">OpenStack User Guide</span></a><span> › </span><a class="crumb" href="keystone-user-guide.html">Keystone User Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Horizon User Guide" href="horizon-user-guide.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Magnum User Documentation" href="magnum-user-guide.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="keystone-user-guide"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span></div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Keystone User Guide</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-keystone.xml</li><li><span class="ds-label">ID: </span>keystone-user-guide</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="keystone-user-guide.html#user-documentation"><span class="number">4.1 </span><span class="name">User Documentation</span></a></span></dt></dl></div></div><p>This section contains the documentation for end-users of keystone.</p><div class="sect1" id="user-documentation"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User Documentation</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#user-documentation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user/index</li><li><span class="ds-label">ID: </span>user-documentation</li></ul></div></div></div></div><p>An end user can find the specific API documentation here, <a class="link" href="https://developer.openstack.org/api-ref/identity/v3" target="_blank">OpenStack’s Identity API</a>.</p><div id="id-1.6.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Following are some API examples using curl. These examples are not
+                automatically generated. They can be outdated as things change and are subject
+                to regular updates and changes.</p></div><div class="sect2" id="api-examples-using-curl"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">API Examples using Curl</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#api-examples-using-curl">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>api-examples-using-curl</li></ul></div></div></div></div><div class="sect3" id="v3-api-examples-using-curl"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.1.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">v3 API Examples Using Curl</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#v3-api-examples-using-curl">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>v3-api-examples-using-curl</li></ul></div></div></div></div><div class="sect4" id="tokens"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tokens</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#tokens">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>tokens</li></ul></div></div></div></div><div class="sect5" id="default-scope"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Default scope</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#default-scope">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>default-scope</li></ul></div></div></div></div><p>Get a token with default scope (may be unscoped):</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -i \
+  -H "Content-Type: application/json" \
+  -d '
+{ "auth": {
+    "identity": {
+      "methods": ["password"],
+      "password": {
+        "user": {
+          "name": "admin",
+          "domain": { "id": "default" },
+          "password": "adminpwd"
+        }
+      }
+    }
+  }
+}' \
+  "http://localhost:5000/v3/auth/tokens" ; echo</pre></div><p>Example response:</p><div class="verbatim-wrap highlight bash"><pre class="screen">HTTP/1.1 201 Created
+X-Subject-Token: MIIFvgY...
+Vary: X-Auth-Token
+Content-Type: application/json
+Content-Length: 1025
+Date: Tue, 10 Jun 2014 20:55:16 GMT
+
+{
+  "token": {
+    "methods": ["password"],
+    "roles": [{
+      "id": "9fe2ff9ee4384b1894a90878d3e92bab",
+      "name": "_member_"
+    }, {
+      "id": "c703057be878458588961ce9a0ce686b",
+      "name": "admin"
+    }],
+    "expires_at": "2014-06-10T2:55:16.806001Z",
+    "project": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "8538a3f13f9541b28c2620eb19065e45",
+      "name": "admin"
+    },
+    "catalog": [{
+      "endpoints": [{
+        "url": "http://localhost:3537/v2.0",
+        "region": "RegionOne",
+        "interface": "admin",
+        "id": "29beb2f1567642eb810b042b6719ea88"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "internal",
+        "id": "8707e3735d4415c97ae231b4841eb1c"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "public",
+        "id": "ef303187fc8d41668f25199c298396a5"
+      }],
+      "type": "identity",
+      "id": "bd73972c0e14fb69bae8ff76e112a90",
+      "name": "keystone"
+    }],
+    "extras": {},
+    "user": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "3ec3164f750146be97f21559ee4d9c51",
+      "name": "admin"
+    },
+    "audit_ids": ["yRt0UrxJSs6-WYJgwEMMmg"],
+    "issued_at": "201406-10T20:55:16.806027Z"
+  }
+}</pre></div></div><div class="sect5" id="project-scoped"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Project-scoped</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#project-scoped">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>project-scoped</li></ul></div></div></div></div><p>Get a project-scoped token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -i \
+  -H "Content-Type: application/json" \
+  -d '
+{ "auth": {
+    "identity": {
+      "methods": ["password"],
+      "password": {
+        "user": {
+          "name": "admin",
+          "domain": { "id": "default" },
+          "password": "adminpwd"
+        }
+      }
+    },
+    "scope": {
+      "project": {
+        "name": "demo",
+        "domain": { "id": "default" }
+      }
+    }
+  }
+}' \
+  "http://localhost:5000/v3/auth/tokens" ; echo</pre></div><p>Example response:</p><div class="verbatim-wrap highlight bash"><pre class="screen">HTTP/1.1 201 Created
+X-Subject-Token: MIIFfQ...
+Vary: X-Auth-Token
+Content-Type: application/json
+Content-Length: 960
+Date: Tue, 10 Jun 2014 20:40:14 GMT
+
+{
+  "token": {
+    "audit_ids": ["ECwrVNWbSCqmEgPnu0YCRw"],
+    "methods": ["password"],
+    "roles": [{
+      "id": "c703057be878458588961ce9a0ce686b",
+      "name": "admin"
+    }],
+    "expires_at": "2014-06-10T21:40:14.360795Z",
+    "project": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "3d4c2c82bd5948f0bcab0cf3a7c9b48c",
+      "name": "demo"
+    },
+    "catalog": [{
+      "endpoints": [{
+        "url": "http://localhost:35357/v2.0",
+        "region": "RegionOne",
+        "interface": "admin",
+        "id": "29beb2f1567642eb810b042b6719ea88"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "internal",
+        "id": "87057e3735d4415c97ae231b4841eb1c"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "public",
+        "id": "ef303187fc8d41668f25199c298396a5"
+      }],
+      "type": "identity",
+      "id": "bd7397d2c0e14fb69bae8ff76e112a90",
+      "name": "keystone"
+    }],
+    "extras": {},
+    "user": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "3ec3164f750146be97f21559ee4d9c51",
+      "name": "admin"
+    },
+    "issued_at": "2014-06-10T20:40:14.360822Z"
+  }
+}</pre></div></div><div class="sect5" id="domain-scoped"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Domain-Scoped</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#domain-scoped">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>domain-scoped</li></ul></div></div></div></div><p>Get a domain-scoped token:</p><div id="id-1.6.3.4.2.2.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p> Ensure you have a role-assignment on the domain first.</p></div><div class="verbatim-wrap highlight bash"><pre class="screen">curl -i \
+  -H "Content-Type: application/json" \
+  -d '
+{ "auth": {
+    "identity": {
+      "methods": ["password"],
+      "password": {
+        "user": {
+          "name": "admin",
+          "domain": { "id": "default" },
+          "password": "adminpwd"
+        }
+      }
+    },
+    "scope": {
+      "domain": {
+        "id": "default"
+      }
+    }
+  }
+}' \
+  "http://localhost:5000/v3/auth/tokens" ; echo</pre></div><p>Example response:</p><div class="verbatim-wrap highlight bash"><pre class="screen">HTTP/1.1 201 Created
+X-Subject-Token: MIIFNg...
+Vary: X-Auth-Token
+Content-Type: application/json
+Content-Length: 889
+Date: Tue, 10 Jun 2014 20:52:59 GMT
+
+{
+  "token": {
+    "domain": {
+      "id": "default",
+      "name": "Default"
+    },
+    "methods": ["password"],
+    "roles": [{
+      "id": "c703057be878458588961ce9a0ce686b",
+      "name": "admin"
+    }],
+    "expires_at": "2014-06-10T21:52:58.852167Z",
+    "catalog": [{
+      "endpoints": [{
+        "url": "http://localhost:35357/v2.0",
+        "region": "RegionOne",
+        "interface": "admin",
+        "id": "29beb2f1567642eb810b042b6719ea88"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "internal",
+        "id": "87057e3735d4415c97ae231b4841eb1c"
+      }, {
+        "url": "http://localhost:5000/v2.0",
+        "region": "RegionOne",
+        "interface": "public",
+        "id": "ef303187fc8d41668f25199c298396a5"
+      }],
+      "type": "identity",
+      "id": "bd7397d2c0e14fb69bae8ff76e112a90",
+      "name": "keystone"
+    }],
+    "extras": {},
+    "user": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "3ec3164f750146be97f21559ee4d9c51",
+      "name": "admin"
+    },
+    "audit_ids": ["Xpa6Uyn-T9S6mTREudUH3w"],
+    "issued_at": "2014-06-10T20:52:58.852194Z"
+  }
+}</pre></div></div><div class="sect5" id="getting-a-token-from-a-token"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Getting a token from a token</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#getting-a-token-from-a-token">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>getting-a-token-from-a-token</li></ul></div></div></div></div><p>Get a token from a token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -i \
+  -H "Content-Type: application/json" \
+  -d '
+{ "auth": {
+    "identity": {
+      "methods": ["token"],
+      "token": {
+        "id": "'$OS_TOKEN'"
+      }
+    }
+  }
+}' \
+  "http://localhost:5000/v3/auth/tokens" ; echo</pre></div><p>Example response:</p><div class="verbatim-wrap highlight bash"><pre class="screen">HTTP/1.1 201 Created
+X-Subject-Token: MIIFxw...
+Vary: X-Auth-Token
+Content-Type: application/json
+Content-Length: 1034
+Date: Tue, 10 Jun 2014 21:00:05 GMT
+
+{
+  "token": {
+    "methods": ["token", "password"],
+    "expires_at": "2015-05-28T07:43:44.808209Z",
+    "extras": {},
+    "user": {
+      "domain": {
+        "id": "default",
+        "name": "Default"
+      },
+      "id": "753867c25c3340ffad1abc22d488c31a",
+      "name": "admin"
+    },
+    "audit_ids": ["ZE0OPSuzTmCXHo0eIOYltw",
+      "xxIQCkHOQOywL0oY6CTppQ"
+    ],
+    "issued_at": "2015-05-28T07:19:23.763532Z"
+  }
+}</pre></div><div id="id-1.6.3.4.2.2.5.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>If a scope was included in the request body, then this would get a token
+                      with the new scope.</p></div></div><div class="sect5" id="delete-v3-auth-tokens"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">DELETE /v3/auth/tokens</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#delete-v3-auth-tokens">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>delete-v3-auth-tokens</li></ul></div></div></div></div><p>Revoke a token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -i -X DELETE \
+  -H "X-Auth-Token: $OS_TOKEN" \
+  -H "X-Subject-Token: $OS_TOKEN" \
+  "http://localhost:5000/v3/auth/tokens"</pre></div><p>If there’s no error then the response is empty.</p></div></div><div class="sect4" id="domains"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Domains</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#domains">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>domains</li></ul></div></div></div></div><div class="sect5" id="get-v3-domains"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/domains</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-domains">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-domains</li></ul></div></div></div></div><p>List domains:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+  -H "X-Auth-Token: $OS_TOKEN" \
+  "http://localhost:5000/v3/domains" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "domains": [
+        {
+            "description": "Owns users and tenants (i.e. projects) available on Identity API v2.",
+            "enabled": true,
+            "id": "default",
+            "links": {
+                "self": "http://identity-server:5000/v3/domains/default"
+            },
+            "name": "Default"
+        }
+    ],
+    "links": {
+        "next": null,
+        "previous": null,
+        "self": "http://identity-server:5000/v3/domains"
+    }
+}</pre></div></div><div class="sect5" id="post-v3-domains"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /v3/domains</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#post-v3-domains">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>post-v3-domains</li></ul></div></div></div></div><p>Create a domain:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+  -H "X-Auth-Token: $OS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{ "domain": { "name": "newdomain"}}' \
+  "http://localhost:5000/v3/domains" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "domain": {
+        "enabled": true,
+        "id": "3a5140aecd974bf08041328b53a62458",
+        "links": {
+            "self": "http://identity-server:5000/v3/domains/3a5140aecd974bf08041328b53a62458"
+        },
+        "name": "newdomain"
+    }
+}</pre></div></div></div><div class="sect4" id="projects"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Projects</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#projects">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>projects</li></ul></div></div></div></div><div class="sect5" id="get-v3-projects"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/projects</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-projects">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-projects</li></ul></div></div></div></div><p>List projects:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ "http://localhost:5000/v3/projects" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "links": {
+        "next": null,
+        "previous": null,
+        "self": "http://localhost:5000/v3/projects"
+    },
+    "projects": [
+        {
+            "description": null,
+            "domain_id": "default",
+            "enabled": true,
+            "id": "3d4c2c82bd5948f0bcab0cf3a7c9b48c",
+            "links": {
+                "self": "http://localhost:5000/v3/projects/3d4c2c82bd5948f0bcab0cf3a7c9b48c"
+            },
+            "name": "demo"
+        }
+    ]
+}</pre></div></div><div class="sect5" id="patch-v3-projects-id"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PATCH /v3/projects/{id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#patch-v3-projects-id">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>patch-v3-projects-id</li></ul></div></div></div></div><p>Disable a project:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s -X PATCH \
+  -H "X-Auth-Token: $OS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '
+{
+  "project": {
+      "enabled": false
+    }
+}'\
+  "http://localhost:5000/v3/projects/$PROJECT_ID"  | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "project": {
+        "description": null,
+        "domain_id": "default",
+        "enabled": false,
+        "extra": {},
+        "id": "3d4c2c82bd5948f0bcab0cf3a7c9b48c",
+        "links": {
+            "self": "http://localhost:5000/v3/projects/3d4c2c82bd5948f0bcab0cf3a7c9b48c"
+        },
+        "name": "demo"
+    }
+}</pre></div></div></div><div class="sect4" id="get-v3-services"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/services</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-services">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-services</li></ul></div></div></div></div><p>List the services:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+  -H "X-Auth-Token: $OS_TOKEN" \
+  "http://localhost:5000/v3/services" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "links": {
+        "next": null,
+        "previous": null,
+        "self": "http://localhost:5000/v3/services"
+    },
+    "services": [
+        {
+            "description": "Keystone Identity Service",
+            "enabled": true,
+            "id": "bd7397d2c0e14fb69bae8ff76e112a90",
+            "links": {
+                "self": "http://localhost:5000/v3/services/bd7397d2c0e14fb69bae8ff76e112a90"
+            },
+            "name": "keystone",
+            "type": "identity"
+        }
+    ]
+}</pre></div></div><div class="sect4" id="get-v3-endpoints"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/endpoints</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-endpoints">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-endpoints</li></ul></div></div></div></div><p>List the endpoints:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ "http://localhost:5000/v3/endpoints" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "endpoints": [
+        {
+            "enabled": true,
+            "id": "29beb2f1567642eb810b042b6719ea88",
+            "interface": "admin",
+            "links": {
+                "self": "http://localhost:5000/v3/endpoints/29beb2f1567642eb810b042b6719ea88"
+            },
+            "region": "RegionOne",
+            "service_id": "bd7397d2c0e14fb69bae8ff76e112a90",
+            "url": "http://localhost:35357/v2.0"
+        }
+    ],
+    "links": {
+        "next": null,
+        "previous": null,
+        "self": "http://localhost:5000/v3/endpoints"
+    }
+}</pre></div></div><div class="sect4" id="users"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Users</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#users">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>users</li></ul></div></div></div></div><div class="sect5" id="get-v3-users"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/users</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-users">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-users</li></ul></div></div></div></div><p>List users:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ "http://localhost:5000/v3/users" | python -mjson.tool</pre></div></div><div class="sect5" id="post-v3-users"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /v3/users</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#post-v3-users">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>post-v3-users</li></ul></div></div></div></div><p>Create a user:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ -H "Content-Type: application/json" \
+ -d '{"user": {"name": "newuser", "password": "changeme"}}' \
+ "http://localhost:5000/v3/users" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "user": {
+        "domain_id": "default",
+        "enabled": true,
+        "id": "ec8fc20605354edd91873f2d66bf4fc4",
+        "links": {
+            "self": "http://identity-server:5000/v3/users/ec8fc20605354edd91873f2d66bf4fc4"
+        },
+        "name": "newuser"
+    }
+}</pre></div></div><div class="sect5" id="get-v3-users-user-id"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /v3/users/{user_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-v3-users-user-id">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-v3-users-user-id</li></ul></div></div></div></div><p>Show details for a user:</p><div class="verbatim-wrap highlight bash"><pre class="screen">USER_ID=ec8fc20605354edd91873f2d66bf4fc4
+
+curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ "http://localhost:5000/v3/users/$USER_ID" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "user": {
+        "domain_id": "default",
+        "enabled": true,
+        "id": "ec8fc20605354edd91873f2d66bf4fc4",
+        "links": {
+            "self": "http://localhost:5000/v3/users/ec8fc20605354edd91873f2d66bf4fc4"
+        },
+        "name": "newuser"
+    }
+}</pre></div></div><div class="sect5" id="post-v3-users-user-id-password"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /v3/users/{user_id}/password</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#post-v3-users-user-id-password">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>post-v3-users-user-id-password</li></ul></div></div></div></div><p>Change password using the default policy; this can be done as the user:</p><div class="verbatim-wrap highlight bash"><pre class="screen">USER_ID=b7793000f8d84c79af4e215e9da78654
+ORIG_PASS=userpwd
+NEW_PASS=newuserpwd
+
+curl \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ -H "Content-Type: application/json" \
+ -d '{ "user": {"password": "'$NEW_PASS'", "original_password": "'$ORIG_PASS'"} }' \
+ "http://localhost:5000/v3/users/$USER_ID/password"</pre></div><div id="id-1.6.3.4.2.7.5.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>This command will not print anything if the request was successful.</p></div></div><div class="sect5" id="patch-v3-users-user-id"><div class="titlepage"><div><div><h6 class="title"><span class="number">4.1.1.1.6.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PATCH /v3/users/{user_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#patch-v3-users-user-id">#</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>patch-v3-users-user-id</li></ul></div></div></div></div><p>Reset password using the default policy; this requires admin:</p><div class="verbatim-wrap highlight bash"><pre class="screen">USER_ID=b7793000f8d84c79af4e215e9da78654
+NEW_PASS=newuserpwd
+
+curl -s -X PATCH \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ -H "Content-Type: application/json" \
+ -d '{ "user": {"password": "'$NEW_PASS'"} }' \
+ "http://localhost:5000/v3/users/$USER_ID" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "user": {
+        "default_project_id": "3d4c2c82bd5948f0bcab0cf3a7c9b48c",
+        "domain_id": "default",
+        "email": "demo@example.com",
+        "enabled": true,
+        "extra": {
+            "email": "demo@example.com"
+        },
+        "id": "269348fdd9374b8885da1418e0730af1",
+        "links": {
+            "self": "http://localhost:5000/v3/users/269348fdd9374b8885da1418e0730af1"
+        },
+        "name": "demo"
+    }
+}</pre></div></div></div><div class="sect4" id="put-v3-projects-project-id-groups-group-id-roles-role-id"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PUT /v3/projects/{project_id}/groups/{group_id}/roles/{role_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#put-v3-projects-project-id-groups-group-id-roles-role-id">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>put-v3-projects-project-id-groups-group-id-roles-role-id</li></ul></div></div></div></div><p>Create group role assignment on project:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s -X PUT \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ "http://localhost:5000/v3/projects/$PROJECT_ID/groups/$GROUP_ID/roles/$ROLE_ID" |
+   python -mjson.tool</pre></div><p>There’s no data in the response if the operation is successful.</p></div><div class="sect4" id="post-v3-os-trust-trusts"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /v3/OS-TRUST/trusts</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#post-v3-os-trust-trusts">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>post-v3-os-trust-trusts</li></ul></div></div></div></div><p>Create a trust:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s \
+ -H "X-Auth-Token: $OS_TOKEN" \
+ -H "Content-Type: application/json" \
+ -d '
+{ "trust": {
+    "expires_at": "2014-12-30T23:59:59.999999Z",
+    "impersonation": false,
+    "project_id": "'$PROJECT_ID'",
+    "roles": [
+        { "name": "admin" }
+      ],
+    "trustee_user_id": "'$DEMO_USER_ID'",
+    "trustor_user_id": "'$ADMIN_USER_ID'"
+}}'\
+ "http://localhost:5000/v3/OS-TRUST/trusts" | python -mjson.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "trust": {
+        "expires_at": "2014-12-30T23:59:59.999999Z",
+        "id": "394998fa61f14736b1f0c1f322882949",
+        "impersonation": false,
+        "links": {
+            "self": "http://localhost:5000/v3/OS-TRUST/trusts/394998fa61f14736b1f0c1f322882949"
+        },
+        "project_id": "3d4c2c82bd5948f0bcab0cf3a7c9b48c",
+        "remaining_uses": null,
+        "roles": [
+            {
+                "id": "c703057be878458588961ce9a0ce686b",
+                "links": {
+                    "self": "http://localhost:5000/v3/roles/c703057be878458588961ce9a0ce686b"
+                },
+                "name": "admin"
+            }
+        ],
+        "roles_links": {
+            "next": null,
+            "previous": null,
+            "self": "http://localhost:5000/v3/OS-TRUST/trusts/394998fa61f14736b1f0c1f322882949/roles"
+        },
+        "trustee_user_id": "269348fdd9374b8885da1418e0730af1",
+        "trustor_user_id": "3ec3164f750146be97f21559ee4d9c51"
+    }
+}</pre></div></div></div><div class="sect3" id="service-api-examples-using-curl"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.1.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Service API Examples Using Curl</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#service-api-examples-using-curl">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>service-api-examples-using-curl</li></ul></div></div></div></div><p>The service API is defined to be a subset of the Admin API and runs on port
+                5000 by default.</p><div class="sect4" id="get"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get</li></ul></div></div></div></div><p>This call is identical to that documented for the Admin API, except
+                    that it uses port 5000 by default instead of port 35357:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl "http://0.0.0.0:5000"</pre></div><p>or:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl "http://0.0.0.0:5000/v2.0/"</pre></div><p>See the <a class="xref" href="keystone-user-guide.html#admin-api-examples-using-curl" title="4.1.1.3. Admin API Examples Using Curl">Section 4.1.1.3, “Admin API Examples Using Curl”</a> for more info.</p></div><div class="sect4" id="get-extensions"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /extensions</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-extensions">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-extensions</li></ul></div></div></div></div><p>This call is identical to that documented for the Admin API.</p></div><div class="sect4" id="post-tokens"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /tokens</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#post-tokens">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>post-tokens</li></ul></div></div></div></div><p>This call is identical to that documented for the Admin API.</p></div><div class="sect4" id="get-tenants"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tenants</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tenants">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tenants</li></ul></div></div></div></div><p>List all of the tenants your token can access:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:887665443383838" \
+   "http://localhost:5000/v2.0/tenants"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "tenants_links": [],
+    "tenants": [
+        {
+            "enabled": true,
+            "description": "None",
+            "name": "customer-x",
+            "id": "1"
+        }
+    ]
+}</pre></div></div></div><div class="sect3" id="admin-api-examples-using-curl"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.1.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Admin API Examples Using Curl</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#admin-api-examples-using-curl">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>admin-api-examples-using-curl</li></ul></div></div></div></div><p>These examples assume a default port value of 35357, and depend on the
+                <code class="literal">sampledata</code> bundled with keystone.</p><div class="sect4" id="id1"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#id1">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>id1</li></ul></div></div></div></div><p>Discover API version information, links to documentation (PDF, HTML, WADL),
+                    and supported media types:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl "http://0.0.0.0:35357"</pre></div><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "versions": {
+        "values": [
+            {
+                "id": "v3.4",
+                "links": [
+                    {
+                        "href": "http://127.0.0.1:35357/v3/",
+                        "rel": "self"
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/vnd.openstack.identity-v3+json"
+                    }
+                ],
+                "status": "stable",
+                "updated": "2015-03-30T00:00:00Z"
+            },
+            {
+                "id": "v2.0",
+                "links": [
+                    {
+                        "href": "http://127.0.0.1:35357/v2.0/",
+                        "rel": "self"
+                    },
+                    {
+                        "href": "https://docs.openstack.org/",
+                        "rel": "describedby",
+                        "type": "text/html"
+                    }
+                ],
+                "media-types": [
+                    {
+                        "base": "application/json",
+                        "type": "application/vnd.openstack.identity-v2.0+json"
+                    }
+                ],
+                "status": "stable",
+                "updated": "2014-04-17T00:00:00Z"
+            }
+        ]
+    }
+}</pre></div><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl "http://0.0.0.0:35357/v2.0/"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "version": {
+        "id": "v2.0",
+        "links": [
+            {
+                "href": "http://127.0.0.1:35357/v2.0/",
+                "rel": "self"
+            },
+            {
+                "href": "https://docs.openstack.org/",
+                "rel": "describedby",
+                "type": "text/html"
+            }
+        ],
+        "media-types": [
+            {
+                "base": "application/json",
+                "type": "application/vnd.openstack.identity-v2.0+json"
+            }
+        ],
+        "status": "stable",
+        "updated": "2014-04-17T00:00:00Z"
+    }
+}</pre></div></div><div class="sect4" id="id2"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /extensions</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#id2">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>id2</li></ul></div></div></div></div><p>Discover the API extensions enabled at the endpoint:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl "http://localhost:35357/v2.0/extensions/"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "extensions":{
+        "values":[]
+    }
+}</pre></div></div><div class="sect4" id="id3"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">POST /tokens</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#id3">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>id3</li></ul></div></div></div></div><p>Authenticate by exchanging credentials for an access token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -d '
+   {"auth": {
+      "tenantName": "customer-x",
+      "passwordCredentials": {
+        "username": "joeuser",
+        "password": "secret"
+       }
+     }
+   }' \
+   -H "Content-type: application/json" \
+   "http://localhost:35357/v2.0/tokens"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "access":{
+        "token":{
+            "expires":"2012-02-05T00:00:00",
+            "id":"887665443383838",
+            "tenant":{
+                "id":"1",
+                "name":"customer-x"
+            }
+        },
+        "serviceCatalog":[
+            {
+                "endpoints":[
+                {
+                    "adminURL":"http://swift.admin-nets.local:8080/",
+                    "region":"RegionOne",
+                    "internalURL":"http://127.0.0.1:8080/v1/AUTH_1",
+                    "publicURL":"http://swift.publicinternets.com/v1/AUTH_1"
+                }
+                ],
+                "type":"object-store",
+                "name":"swift"
+            },
+            {
+                "endpoints":[
+                {
+                    "adminURL":"http://cdn.admin-nets.local/v1.1/1",
+                    "region":"RegionOne",
+                    "internalURL":"http://127.0.0.1:7777/v1.1/1",
+                    "publicURL":"http://cdn.publicinternets.com/v1.1/1"
+                }
+                ],
+                "type":"object-store",
+                "name":"cdn"
+            }
+        ],
+        "user":{
+            "id":"1",
+            "roles":[
+                {
+                "tenantId":"1",
+                "id":"3",
+                "name":"Member"
+                }
+            ],
+            "name":"joeuser"
+        }
+    }
+}</pre></div><div id="id-1.6.3.4.4.5.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Take note of the value <code class="literal">[‘access’][‘token’][‘id’]</code> value produced here
+                    (<code class="literal">887665443383838</code>, above), as you can use it in the calls below.</p></div></div><div class="sect4" id="get-tokens-token-id"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tokens/{token_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tokens-token-id">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tokens-token-id</li></ul></div></div></div></div><div id="id-1.6.3.4.4.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>This call refers to a token known to be valid, <code class="literal">887665443383838</code> in this case.</p></div><p>Validate a token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tokens/887665443383838"</pre></div><p>If the token is valid, returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "access":{
+        "token":{
+            "expires":"2012-02-05T00:00:00",
+            "id":"887665443383838",
+            "tenant":{
+                "id":"1",
+                "name":"customer-x"
+            }
+        },
+        "user":{
+            "name":"joeuser",
+            "tenantName":"customer-x",
+            "id":"1",
+            "roles":[
+                {
+                    "serviceId":"1",
+                    "id":"3",
+                    "name":"Member"
+                }
+            ],
+            "tenantId":"1"
+        }
+    }
+}</pre></div></div><div class="sect4" id="head-tokens-token-id"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HEAD /tokens/{token_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#head-tokens-token-id">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>head-tokens-token-id</li></ul></div></div></div></div><p>This is a high-performance variant of the GET call documented above, which
+                    by definition, returns no response body:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -I -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tokens/887665443383838"</pre></div><p>This returns <code class="literal">200</code>, indicating the token is valid:</p><div class="verbatim-wrap"><pre class="screen">HTTP/1.1 200 OK
+Content-Length: 0
+Content-Type: None
+Date: Tue, 08 Nov 2011 23:07:44 GMT</pre></div></div><div class="sect4" id="get-tokens-token-id-endpoints"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tokens/{token_id}/endpoints</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tokens-token-id-endpoints">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tokens-token-id-endpoints</li></ul></div></div></div></div><p>List all endpoints for a token:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tokens/887665443383838/endpoints"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "endpoints_links": [
+        {
+            "href": "http://127.0.0.1:35357/tokens/887665443383838/endpoints?'marker=5&amp;limit=10'",
+            "rel": "next"
+        }
+    ],
+    "endpoints": [
+        {
+            "internalURL": "http://127.0.0.1:8080/v1/AUTH_1",
+            "name": "swift",
+            "adminURL": "http://swift.admin-nets.local:8080/",
+            "region": "RegionOne",
+            "tenantId": 1,
+            "type": "object-store",
+            "id": 1,
+            "publicURL": "http://swift.publicinternets.com/v1/AUTH_1"
+        },
+        {
+            "internalURL": "http://localhost:8774/v1.0",
+            "name": "nova_compat",
+            "adminURL": "http://127.0.0.1:8774/v1.0",
+            "region": "RegionOne",
+            "tenantId": 1,
+            "type": "compute",
+            "id": 2,
+            "publicURL": "http://nova.publicinternets.com/v1.0/"
+        },
+        {
+            "internalURL": "http://localhost:8774/v1.1",
+            "name": "nova",
+            "adminURL": "http://127.0.0.1:8774/v1.1",
+            "region": "RegionOne",
+            "tenantId": 1,
+            "type": "compute",
+            "id": 3,
+            "publicURL": "http://nova.publicinternets.com/v1.1/
+        },
+        {
+            "internalURL": "http://127.0.0.1:9292/v1.1/",
+            "name": "glance",
+            "adminURL": "http://nova.admin-nets.local/v1.1/",
+            "region": "RegionOne",
+            "tenantId": 1,
+            "type": "image",
+            "id": 4,
+            "publicURL": "http://glance.publicinternets.com/v1.1/"
+        },
+        {
+            "internalURL": "http://127.0.0.1:7777/v1.1/1",
+            "name": "cdn",
+            "adminURL": "http://cdn.admin-nets.local/v1.1/1",
+            "region": "RegionOne",
+            "tenantId": 1,
+            "type": "object-store",
+            "id": 5,
+            "publicURL": "http://cdn.publicinternets.com/v1.1/1"
+        }
+    ]
+}</pre></div></div><div class="sect4" id="id4"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tenants</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#id4">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>id4</li></ul></div></div></div></div><p>List all of the tenants in the system (requires an Admin <code class="literal">X-Auth-Token</code>):</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tenants"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "tenants_links": [],
+    "tenants": [
+        {
+            "enabled": false,
+            "description": "None",
+            "name": "project-y",
+            "id": "3"
+        },
+        {
+            "enabled": true,
+            "description": "None",
+            "name": "ANOTHER:TENANT",
+            "id": "2"
+        },
+        {
+            "enabled": true,
+            "description": "None",
+            "name": "customer-x",
+            "id": "1"
+        }
+    ]
+}</pre></div></div><div class="sect4" id="get-tenants-tenant-id"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tenants/{tenant_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tenants-tenant-id">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tenants-tenant-id</li></ul></div></div></div></div><p>Retrieve information about a tenant, by tenant ID:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tenants/1"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "tenant":{
+        "enabled":true,
+        "description":"None",
+        "name":"customer-x",
+        "id":"1"
+    }
+}</pre></div></div><div class="sect4" id="get-tenants-tenant-id-users-user-id-roles"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tenants/{tenant_id}/users/{user_id}/roles</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tenants-tenant-id-users-user-id-roles">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tenants-tenant-id-users-user-id-roles</li></ul></div></div></div></div><p>List the roles a user has been granted on a tenant:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/tenants/1/users/1/roles"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "roles_links":[],
+    "roles":[
+        {
+            "id":"3",
+            "name":"Member"
+        }
+    ]
+}</pre></div></div><div class="sect4" id="get-users-user-id"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /users/{user_id}</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-users-user-id">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-users-user-id</li></ul></div></div></div></div><p>Retrieve information about a user, by user ID:</p><div class="verbatim-wrap highlight bash"><pre class="screen">$ curl -H "X-Auth-Token:999888777666" \
+   "http://localhost:35357/v2.0/users/1"</pre></div><p>Returns:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "user":{
+        "tenantId":"1",
+        "enabled":true,
+        "id":"1",
+        "name":"joeuser"
+    }
+}</pre></div></div><div class="sect4" id="get-tokens-revoked"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.1.1.3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GET /tokens/revoked</span> <a title="Permalink" class="permalink" href="keystone-user-guide.html#get-tokens-revoked">#</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>../api_curl_examples</li><li><span class="ds-label">ID: </span>get-tokens-revoked</li></ul></div></div></div></div><p>Get the revocation list:</p><div class="verbatim-wrap highlight bash"><pre class="screen">curl -s -H "X-Auth-Token: $OS_TOKEN" \
+  "http://localhost:35357/v2.0/tokens/revoked" |
+ jq -r .signed |
+ openssl cms -verify \
+  -certfile /etc/keystone/ssl/certs/signing_cert.pem \
+  -CAfile /etc/keystone/ssl/certs/ca.pem \
+  -inform PEM \
+  -nosmimecap -nodetach -nocerts -noattr 2&gt;/dev/null |
+ python -m json.tool</pre></div><p>Example response:</p><div class="verbatim-wrap highlight javascript"><pre class="screen">{
+    "revoked": [
+        {
+            "expires": "2014-06-10T21:40:14Z",
+            "id": "e6e2b5c9092751f88d2bcd30b09777a9"
+        },
+        {
+            "expires": "2014-06-10T21:47:29Z",
+            "id": "883ef5d610bd1c68fbaa8ac528aa9f17"
+        },
+        {
+            "expires": "2014-06-10T21:51:52Z",
+            "id": "41775ff4838f8f406b7bad28bea0dde6"
+        }
+    ]
+}</pre></div></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="magnum-user-guide.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Magnum User Documentation</span></a><a class="nav-link" href="horizon-user-guide.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Horizon User Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

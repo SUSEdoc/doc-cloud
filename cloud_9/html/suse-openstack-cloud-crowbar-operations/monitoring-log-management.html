@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Log Management | Operations Guide Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide Crowbar" /><meta name="chapter-title" content="Chapter 5. Log Management" /><meta name="description" content="Services and servers in a cloud infrastructure generate huge amounts of log data, from simply announcing that everything is healthy to detailed information on events or processes. The logs are distributed over many physical and virtual servers. SUSE OpenStack Cloud Crowbar Monitoring collects, store…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="next" href="troubleshooting.html" title="Chapter 6. Troubleshooting" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="monitoring-log-management.html">Log Management</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="sec-maintenance.html"><span class="number">1 </span><span class="name">Maintenance</span></a></li><li class="inactive"><a href="gpu-passthrough.html"><span class="number">2 </span><span class="name">GPU passthrough</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">3 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="soc-monitoring.html"><span class="number">4 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></li><li class="inactive"><a href="monitoring-log-management.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="troubleshooting.html"><span class="number">6 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 4. SUSE OpenStack Cloud Monitoring" href="soc-monitoring.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Troubleshooting" href="troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="monitoring-log-management.html">Log Management</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 4. SUSE OpenStack Cloud Monitoring" href="soc-monitoring.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Troubleshooting" href="troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="monitoring-log-management"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Management</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-management.xml</li><li><span class="ds-label">ID: </span>monitoring-log-management</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="monitoring-log-management.html#configure-log-management-window"><span class="number">5.1 </span><span class="name">Working with the Log Management Window</span></a></span></dt><dt><span class="section"><a href="monitoring-log-management.html#configure-index-patterns"><span class="number">5.2 </span><span class="name">Configuring Index Patterns</span></a></span></dt><dt><span class="section"><a href="monitoring-log-management.html#id-1.5.7.18"><span class="number">5.3 </span><span class="name">Monitoring Log Data</span></a></span></dt><dt><span class="section"><a href="monitoring-log-management.html#cha-deploy-logs"><span class="number">5.4 </span><span class="name">Log Files</span></a></span></dt></dl></div></div><p>
+  Services and servers in a cloud infrastructure generate huge amounts of log
+  data, from simply announcing that everything is healthy to detailed
+  information on events or processes. The logs are distributed over many
+  physical and virtual servers. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  collects, stores, and queries these logs and makes them
+  accessible to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users in one
+  central place.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring covers all aspects of an
+  enterprise-class log management solution:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Central management of log data from medium and large-size <span class="productname">OpenStack</span>
+    deployments.
+   </p></li><li class="listitem "><p>
+    Buffered exchange of log data to provide high data throughput.
+   </p></li><li class="listitem "><p>
+    Logical isolation of log data through multi-tenancy.
+   </p></li><li class="listitem "><p>
+    Scalable architecture capable of mastering the data load from a large
+    number of nodes in <span class="productname">OpenStack</span> environments. The log management solution can
+    be horizontally and vertically adapted to constantly changing data loads.
+   </p></li></ul></div><p>
+  For managing the log data of your services and the virtual and physical
+  servers on which they are provisioned, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  integrates with Kibana, an open source analytics and
+  visualization platform. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses
+  Kibana as a front-end application to the log data held in the Elasticsearch
+  database.
+ </p><p>
+  Kibana allows you to easily understand large data volumes. Based on the data
+  that is stored in Elasticsearch indices, you can perform advanced data
+  analysis and visualize your log data in a variety of charts, tables, or maps.
+  Changes to the Elasticsearch indices are displayed in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  in real time.
+ </p><p>
+  The log management features of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  include:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Features for searching, visualizing, and analyzing the log data.
+   </p></li><li class="listitem "><p>
+    Alerting features for monitoring.
+   </p></li></ul></div><p>
+  In the following sections, you will find information on the Log Management
+  Window where you search, visualize, and analyze your log data, as well as
+  details on how to use the alerting features.
+ </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.7.11"><span class="name">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+ </span><a title="Permalink" class="permalink" href="monitoring-log-management.html#id-1.5.7.11">#</a></h5></div><p>
+  For accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and performing
+  log management tasks, the following prerequisites must be fulfilled:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    You must have access to the <span class="productname">OpenStack</span> platform as a user with the
+    <code class="literal">monasca-user</code> role.
+   </p></li><li class="listitem "><p>
+    You must be assigned to the <span class="productname">OpenStack</span> project you want to monitor.
+   </p></li></ul></div><p>
+  Log in to <span class="productname">OpenStack</span> horizon with your user name and password. The functions
+  you can use in <span class="productname">OpenStack</span> horizon depend on your access permissions. To access
+  logs and metrics, switch to the <span class="guimenu ">monasca</span> tenant in
+  horizon.
+ </p><p>
+  The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring functionality is
+  available on the <span class="guimenu ">Monitoring</span> tab. It provides access to
+  the log data of all projects to which you are assigned. The <span class="guimenu ">Log
+  Management</span> option at the top border of the
+  <span class="guimenu ">Overview</span> page displays the log management window where
+  you can work on the log data.
+ </p><div class="sect1" id="configure-log-management-window"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Working with the Log Management Window</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#configure-log-management-window">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>configure-log-management-window</li></ul></div></div></div></div><p>
+  Index patterns determine which data from the underlying Elasticsearch
+  database can be viewed and analyzed in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring's
+  log management window. Index patterns are used to
+  identify the Elasticsearch indices to run search and analytics against.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring ships with a preconfigured
+  index pattern which allows you to instantly view and analyze your log data
+  when accessing the log management window for the first time. You can
+  configure additional index patterns to view and analyze different data from
+  different indices.
+ </p><p>
+  Search queries allow you to search the Elasticsearch indices for data that
+  match your information requirements. The query results can be graphically
+  represented in visualizations, and visualizations can be organized in
+  dashboards.
+ </p><p>
+  The log management window provides features for:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Querying log data.
+   </p></li><li class="listitem "><p>
+    Visualizing query results.
+   </p></li><li class="listitem "><p>
+    Combining visualizations in dashboards.
+   </p></li><li class="listitem "><p>
+    Filtering query results in dashboards.
+   </p></li><li class="listitem "><p>
+    Sharing dashboards.
+   </p></li></ul></div><p>
+  The following sections provide an introduction to queries, visualizations,
+  and dashboards. For additional details, refer to the
+  <a class="link" href="https://www.elastic.co/guide/en/kibana/4.5/index.html" target="_blank">Kibana
+  documentation</a>.
+ </p><div class="sect2" id="query-log-data"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Querying Log Data</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#query-log-data">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>query-log-data</li></ul></div></div></div></div><p>
+  For querying log data, you use the <span class="guimenu ">Discover</span> page in the
+  log management window. It is instantly displayed when you access the window.
+  It shows the most recently collected log data:
+ </p><div class="figure" id="id-1.5.7.16.8.3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/socm-kibana-dashboard.png" target="_blank"><img src="images/socm-kibana-dashboard.png" width="" alt="The Kibana Dashboard—Discover Page" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 5.1: </span><span class="name">The Kibana Dashboard—Discover Page </span><a title="Permalink" class="permalink" href="monitoring-log-management.html#id-1.5.7.16.8.3">#</a></h6></div></div><p>
+  The <span class="guimenu ">Discover</span> page allows you to access the log data in
+  every index that matches the current index pattern. In addition to submitting
+  queries, you can view, filter, and analyze the log data that is returned by
+  your queries.
+ </p><p>
+  On the <span class="guimenu ">Discover</span> page the following elements assist you
+  in analyzing your log data:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Below the main navigation bar at the top of the window, there is a
+    <span class="bold"><strong>search box</strong></span> for querying your log data. By
+    submitting a query, you search all indices that match the current index
+    pattern. The name of the current index pattern is displayed directly below
+    the search box on the left side. You can select a different index pattern,
+    if required.
+   </p><p>
+    For entering strings in the search box, use the Lucene query syntax. Kibana
+    also supports the Elasticsearch Query DSL. For details, refer to the
+    <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/query-dsl.html" target="_blank">Elasticsearch Reference documentation</a>.
+   </p></li><li class="listitem "><p>
+    Use the <span class="bold"><strong>clock icon</strong></span> at the top right border
+    of the log management window to define a time range for filtering the log
+    data. By default, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring displays
+    the log data collected during the last 15 minutes. You can deviate from
+    this default. Multiple options are provided for defining relative or
+    absolute time ranges. The time range you define is instantly applied to all
+    log data.
+   </p></li><li class="listitem "><p>
+    In the bottom right part of the <span class="guimenu ">Discover</span> page, you can
+    view the <span class="bold"><strong>log data</strong></span> returned by your search
+    queries. Depending on whether you have filtered the data by index fields,
+    the log data is either restricted to these fields or entire records are
+    displayed.
+   </p></li><li class="listitem "><p>
+    On the left side of the <span class="guimenu ">Discover</span> page below the search
+    box, you see the <span class="bold"><strong>index fields</strong></span> from the
+    indices that match the current index pattern. You can select individual
+    fields to modify which log data is displayed on the right side.
+   </p><p>
+    Select a field from the <span class="guimenu ">Available Fields</span> section for
+    this purpose and use <span class="guimenu ">Add</span>. To remove a field, select it
+    in the <span class="guimenu ">Selected Fields</span> section and use
+    <span class="guimenu ">Remove</span>.
+   </p><p>
+    From the field list, you can expand a field by simply clicking it. This
+    shows the most common values for the field. You can also set field values
+    as filter, or you can exclude log data with specific field values.
+   </p></li><li class="listitem "><p>
+    If a time field is configured for the current index pattern, the
+    distribution of log entries over time is displayed in a
+    <span class="bold"><strong>histogram</strong></span> in the top right part of the
+    <span class="guimenu ">Discover</span> page.
+   </p><p>
+    By default, the histogram shows the number of logs entries versus time,
+    matched by the underlying query and time filter. You can click the bars in
+    the histogram to narrow down the time filter.
+   </p></li></ul></div><p>
+  Queries can be saved and re-used. They can also be shared with other users.
+  For this purpose, use the options to the right of the search box at the top
+  border of the log management window:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    To save a query, use <span class="guimenu ">Save Search</span>. Saving a query means
+    saving both the query syntax and the current index pattern.
+   </p></li><li class="listitem "><p>
+    To load a query, use <span class="guimenu ">Load Saved Search</span>. A saved query
+    can be loaded and used by any <span class="productname">OpenStack</span> or Monitoring Service operator.
+   </p></li><li class="listitem "><p>
+    To share a query with other users, use <span class="guimenu ">Share Search</span>.
+    The option displays a direct link to the query that you can forward. As a
+    prerequisite for using a direct link, a user must have <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+    access.
+   </p></li></ul></div></div><div class="sect2" id="visualize-query-results"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Visualizing Query Results</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#visualize-query-results">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>visualize-query-results</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports you in building
+  graphical representations of your query results. You can choose from
+  different visualization types, for example, pie charts, data tables, line
+  charts, or vertical bar charts. For visualizing your results, you use the
+  <span class="guimenu ">Visualize</span> page in the log management window:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/socm-kibana-visualize.png" target="_blank"><img src="images/socm-kibana-visualize.png" width="" /></a></div></div><p>
+  To create a visualization, use <span class="guimenu ">New Visualization</span> to the
+  right of the search box at the top border of the window. You have to select a
+  visualization type and the query to be used. You can either create a new
+  query or load a query you have already saved.
+ </p><p>
+  Based on the visualization type and the query, you can proceed with designing
+  the graphical representation in a visualization editor. Multiple design
+  options and a preview function are provided for creating, modifying, and
+  viewing the graphical representation.
+ </p><p>
+  You can save and re-use visualizations. You can also share them with other
+  users. For this purpose, use the options to the right of the search box at
+  the top border of the log management window:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    To save a visualization, use <span class="guimenu ">Save Visualization</span>.
+   </p></li><li class="listitem "><p>
+    To load a visualization, use <span class="guimenu ">Load Saved Visualization</span>.
+    A saved visualization can be loaded and used by any <span class="productname">OpenStack</span> or Monitoring
+    Service operator.
+   </p></li><li class="listitem "><p>
+    To share a visualization with other users, use <span class="guimenu ">Share
+    Visualization</span>. The option displays an HTML snippet that can be
+    used to embed the visualization in a Web page. It also displays a direct
+    link to the visualization that you can forward. As a prerequisite for using
+    an embedded visualization or a direct link, a user must have 
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring access.
+   </p></li></ul></div></div><div class="sect2" id="combine-visualizations-dashboard"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Combining Visualizations in Dashboards</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#combine-visualizations-dashboard">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>combine-visualizations-dashboard</li></ul></div></div></div></div><p>
+  For correlating related information or providing an overview, you can combine
+  visualizations in dashboards. Use the <span class="guimenu ">Dashboard</span> page in
+  the log management window for this purpose:
+ </p><p>
+  To create a dashboard from scratch, you use <span class="guimenu ">New
+  Dashboard</span> to the right of the search box at the top border of the
+  window. To add a visualization from a list of existing visualizations, use
+  <span class="guimenu ">Add Visualization</span>. You need at least one saved
+  visualization to create a dashboard. In addition to adding visualizations,
+  you can also place the tabular output of query results on your dashboards.
+  Switch to the <span class="guimenu ">Searches</span> tab when adding a visualization,
+  and select a saved query. This adds the query result to your dashboard.
+ </p><p>
+  A visualization or query result is displayed in a container on your
+  dashboard. Various options are provided for arranging containers:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Move a container by clicking and dragging its title bar.
+   </p></li><li class="listitem "><p>
+    Resize a container by dragging its bottom right corner.
+   </p></li><li class="listitem "><p>
+    Remove a container using <span class="guimenu ">Delete</span> in the top right
+    corner of the container.
+   </p></li></ul></div><p>
+  Using <span class="guimenu ">Edit</span> in the top right corner of a container, you
+  can switch to the <span class="guimenu ">Visualize</span> or
+  <span class="guimenu ">Discover</span> page. This allows you to design the graphical
+  representation or edit the query. To view the raw data behind a
+  visualization, you can click the bar at the bottom of the container. This
+  replaces your visualization by the underlying raw data. You can export the
+  raw data, if required.
+ </p><p>
+  For each dashboard, you can configure a refresh interval to automatically
+  refresh its content with the latest data. The current interval is displayed
+  in the top right border of the log management window. Click the interval if
+  you want to change it. You can define the interval in absolute or relative
+  terms. Use <span class="guimenu ">Auto-Refresh</span> next to the interval in the
+  border of the log management window to instantly submit the underlying
+  queries and refresh the dashboard content.
+ </p><p>
+  By default, dashboards are displayed with a light background. Using
+  <span class="guimenu ">Options</span> in the top right border of the log management
+  window, you can switch to a dark color scheme.
+ </p></div><div class="sect2" id="filter-query-dashboard"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filtering Query Results in Dashboards</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#filter-query-dashboard">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>filter-query-dashboard</li></ul></div></div></div></div><p>
+  By submitting a query on the data displayed in a dashboard, you can filter
+  out specific sets of data that you want to aggregate while not changing the
+  logic of the individual visualizations.
+ </p><p>
+  Use the search box below the main navigation bar at the top of the log
+  management window for entering a query on the whole dashboard. If a
+  visualization is already based on a saved query, both queries apply.
+ </p></div><div class="sect2" id="sharing-dashboards"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sharing Dashboards</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#sharing-dashboards">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-manage-window.xml</li><li><span class="ds-label">ID: </span>sharing-dashboards</li></ul></div></div></div></div><p>
+  Dashboards can be saved and re-used. They can also be shared with other
+  users. For this purpose, use the options to the right of the search box at
+  the top border of the log management window:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    To save a dashboard, use <span class="guimenu ">Save Dashboard</span>. By default,
+    saving a dashboard also saves the time filter that is defined at the time
+    of saving. You can disable this default by clearing the <span class="guimenu ">Store
+    time with dashboard</span> option. Disabling the default means that the
+    time filter is set to the currently selected time each time the dashboard
+    is loaded.
+   </p></li><li class="listitem "><p>
+    To load a dashboard, use <span class="guimenu ">Load Saved Dashboard</span>. A saved
+    dashboard can be loaded and used by any <span class="productname">OpenStack</span> or Monitoring Service
+    operator.
+   </p></li><li class="listitem "><p>
+    To share a dashboard with other users, use <span class="guimenu ">Share
+    Dashboard</span>. The option displays an HTML snippet that can be used
+    to embed the dashboard in a Web page. It also displays a direct link to the
+    dashboard that you can forward. As a prerequisite for using an embedded
+    dashboard or a direct link, a user must have <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+    access.
+   </p></li></ul></div></div></div><div class="sect1" id="configure-index-patterns"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Index Patterns</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#configure-index-patterns">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-index-patterns.xml</li><li><span class="ds-label">ID: </span>configure-index-patterns</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring enables the dynamic mapping
+  of fields. After configuring an index pattern, the indices that match the
+  pattern are automatically scanned to display the list of index fields. This
+  guarantees that the fields are correctly visualized in the dashboard.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring ships with a preconfigured
+  index pattern that allows you to instantly explore your Elasticsearch indices
+  when accessing the dashboard for the first time. You can create additional
+  patterns to view and analyze specific sets of data. One or multiple patterns
+  can be created per project. When you create additional patterns, you have to
+  set one of them as the default.
+ </p><p>
+  To configure an additional index pattern, use <span class="guimenu ">Settings &gt;
+  Indices</span>. Click the index pattern that is displayed in the
+  <span class="guimenu ">Index Patterns</span> field on the left, and use the
+  <span class="guimenu ">Add New</span> option.
+ </p><p>
+  Indices that match the pattern you define must exist in the Elasticsearch
+  database, and they must contain data. For an index pattern, you specify the
+  following elements:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <span class="guimenu ">Index contains time-based events</span>. It is recommended
+    that this option is selected. This improves search performance by enabling
+    searches only on those indices that contain data on time-based events.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Use event times to create index names</span>. It is
+    recommended that this option is selected. This improves search performance
+    by enabling searches only on those indices that contain data in the time
+    range you specify.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Index pattern interval</span>. Select
+    <code class="literal">Daily</code> as index pattern interval. Daily intervals are
+    supported by the Monitoring Service.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Index name or pattern</span>. The pattern allows you to
+    define dynamic index names. Static text in a pattern is denoted using
+    brackets. Replace the predefined pattern (<code class="literal">[logstash-]*</code>
+    or <code class="literal">[logstash-]YYYY.MM.DD</code>) as follows:
+   </p><p>
+    Replace <code class="literal">logstash-</code> by the project ID of the <span class="productname">OpenStack</span>
+    project whose log data is to be visualized in the dashboard.
+   </p><p>
+    Replace <code class="literal">*</code> or <code class="literal">YYYY.MM.DD</code> by
+    <code class="literal">YYYY-MM-DD</code> as naming pattern. This naming pattern is
+    supported by the Monitoring Service.
+   </p><p>
+    Example: <code class="literal">[557aff4bf007473d84069aca202a1633-]YYYY-MM-DD</code>
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Time-field name</span>. Select <code class="literal">@timestamp</code>
+    as time-field name. <code class="literal">@timestamp</code> matches the
+    <code class="literal">YYYY-MM-DD</code> naming pattern.
+   </p></li></ul></div><p>
+  The default index pattern is automatically loaded when you access the log
+  management window. It is marked with an asterisk in front of the pattern name
+  in the <span class="guimenu ">Index Patterns</span> field at the top left corner of
+  the <span class="guimenu ">Settings</span> page. Select the pattern you want to set as
+  the default from the <span class="guimenu ">Index Patterns</span> field. The
+  content of the log management window is instantly updated.
+ </p></div><div class="sect1" id="id-1.5.7.18"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring Log Data</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#id-1.5.7.18">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-monitoring-log-data.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides alerting features
+  for monitoring your log data. Specific log metrics support you in checking
+  the severity of the entries in your log files. Log metrics are handled like
+  any other metrics in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring. They
+  complete the log management features and support you in analyzing and
+  troubleshooting any issue that you encounter in your log data.
+ </p><p>
+  Using the log metrics for monitoring corresponds to using any other metrics:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Use <span class="guimenu ">Monitoring &gt; Alarm Definitions</span> to create, edit,
+    and delete alarms for log data.
+   </p></li><li class="listitem "><p>
+    Use <span class="guimenu ">Monitoring &gt; Notifications</span> to create, edit, and
+    delete notifications for alarms.
+   </p></li><li class="listitem "><p>
+    Use <span class="guimenu ">Monitoring &gt; Overview</span> to check whether there
+    are any irregularities in your log data. As soon as you have defined an
+    alarm for your log data and metrics data has been received, there is status
+    information displayed on the <span class="guimenu ">Overview</span> page.
+   </p></li></ul></div></div><div class="sect1" id="cha-deploy-logs"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Files</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#cha-deploy-logs">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-files.xml</li><li><span class="ds-label">ID: </span>cha-deploy-logs</li></ul></div></div></div></div><p>
+  Find a list of log files below, sorted according to the nodes where they
+  can be found.
+ </p><div class="sect2" id="sec-deploy-logs-adminserv"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">On the Administration Server</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#sec-deploy-logs-adminserv">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-files.xml</li><li><span class="ds-label">ID: </span>sec-deploy-logs-adminserv</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Crowbar Web Interface:
+     <code class="filename">/var/log/crowbar/production.log</code>
+    </p></li><li class="listitem "><p>
+     Chef server: <code class="filename">/var/log/chef/server.log</code>
+    </p></li><li class="listitem "><p>
+     Chef expander: <code class="filename">/var/log/chef/expander.log</code>
+    </p></li><li class="listitem "><p>
+     Chef client (for the Administration Server only):
+     <code class="filename">/var/log/chef/client.log </code>
+    </p></li><li class="listitem "><p>
+     Upgrade log files (only available if the Administration Server has been upgraded
+     from a previous version using <code class="command">suse-cloud-upgrade</code>):
+     <code class="filename">/var/log/crowbar/upgrade/*</code>
+    </p></li><li class="listitem "><p>
+     Apache SOLR (Chef's search server):
+     <code class="filename">/var/log/chef/solr.log</code>
+    </p></li><li class="listitem "><p>
+     HTTP (AutoYaST) installation server for provisioner barclamp:
+     <code class="filename">/var/log/apache2/provisioner-{access,error}_log</code>
+    </p></li><li class="listitem "><p>
+     Log file from mirroring SMT repositories (optional):
+     <code class="filename">/var/log/smt/smt-mirror.log</code>
+    </p></li><li class="listitem "><p>
+     Default SUSE log files: <code class="filename">/var/log/messages</code>,
+     <code class="filename">/var/log/zypper.log </code> etc.
+    </p></li><li class="listitem "><p>
+     Syslogs for all nodes: <code class="filename">/var/log/nodes/*.log</code> (these
+     are collected via remote syslogging)
+    </p></li><li class="listitem "><p>
+     Other client node log files saved on the Administration Server:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <code class="filename">/var/log/crowbar/sledgehammer/d*.log</code>: Initial
+       Chef client run on nodes booted using PXE prior to discovery by
+       Crowbar.
+      </p></li><li class="listitem "><p>
+       <code class="filename">/var/log/crowbar/chef-client/d*.log</code>: Output from
+       Chef client when proposals are applied to nodes. This is the
+       first place to look if a barclamp proposal fails to apply.
+      </p></li></ul></div></li></ul></div></div><div class="sect2" id="sec-deploy-logs-crownodes"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">On All Other Crowbar Nodes</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#sec-deploy-logs-crownodes">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-files.xml</li><li><span class="ds-label">ID: </span>sec-deploy-logs-crownodes</li></ul></div></div></div></div><p>
+   Logs for when the node registers with the Administration Server:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <code class="filename">/var/log/crowbar/crowbar_join/errlog</code>
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/crowbar/crowbar_join/$TOPIC.{log,err}</code>:
+     STDOUT/STDERR from running commands associated with $TOPIC when the
+     node joins the Crowbar cluster. $TOPIC can be:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <code class="filename">zypper</code>: package management activity
+      </p></li><li class="listitem "><p>
+       <code class="filename">ifup</code>: network configuration activity
+      </p></li><li class="listitem "><p>
+       <code class="filename">Chef</code>: Chef client activity
+      </p></li><li class="listitem "><p>
+       <code class="filename">time</code>: starting of ntp client
+      </p></li></ul></div></li><li class="listitem "><p>
+     Chef client log: <code class="filename">/var/log/chef/client.log</code>
+    </p></li><li class="listitem "><p>
+     Default SUSE log files: <code class="filename">/var/log/messages</code>,
+     <code class="filename">/var/log/zypper.log </code> etc.
+    </p></li></ul></div></div><div class="sect2" id="sec-deploy-logs-contrnode"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">On the Control Node(s)</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#sec-deploy-logs-contrnode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-files.xml</li><li><span class="ds-label">ID: </span>sec-deploy-logs-contrnode</li></ul></div></div></div></div><p>
+   On setups with multiple Control Nodes log files for certain services
+   (such as <code class="filename">keystone.log</code>) are only available on the
+   nodes where the services are deployed.
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <code class="filename">/var/log/apache2/openstack-dashboard-*</code>: Logs for
+     the <span class="productname">OpenStack</span> Dashboard
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/ceilometer/*</code>: ceilometer log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/cinder/*</code>: cinder log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/glance/*</code>: glance; log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/heat/*</code>: heat log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/keystone/*</code>: keystone log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/neutron/*</code>: neutron log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/nova/*</code>: various log files relating to
+     nova services.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/rabbitmq/*</code>: RabbitMQ log files.
+    </p></li><li class="listitem "><p>
+     <code class="filename">/var/log/swift/*</code>: swift log files.
+    </p></li></ul></div></div><div class="sect2" id="sec-deploy-logs-compnode"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">On Compute Nodes</span> <a title="Permalink" class="permalink" href="monitoring-log-management.html#sec-deploy-logs-compnode">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-log-files.xml</li><li><span class="ds-label">ID: </span>sec-deploy-logs-compnode</li></ul></div></div></div></div><p>
+   <code class="filename">/var/log/nova/nova-compute.log</code>
+  </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 6 </span>Troubleshooting</span></a><a class="nav-link" href="soc-monitoring.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 4 </span>SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

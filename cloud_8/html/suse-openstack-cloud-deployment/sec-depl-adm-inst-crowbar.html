@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Crowbar Setup | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Deploying With Crowbar" /><meta name="chapter-title" content="Chapter 7. Crowbar Setup" /><meta name="description" content="The YaST Crowbar module enables you to configure all networks within the cloud, to set up additional repositories, and to manage the Crowbar users. This module should be launched before starting the SUSE OpenStack Cloud Crowbar installation. To start this module, either run yast crowbar or YaSTMiscellaneousCrowbar." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-admserv.html" title="Part II. Setting Up the Administration Server" /><link rel="prev" href="sec-depl-adm-inst-network.html" title="Chapter 6. Service Configuration: Administration Server Network Configuration" /><link rel="next" href="sec-depl-adm-start-crowbar.html" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="part-depl-admserv.html">Setting Up the Administration Server</a><span> › </span><a class="crumb" href="sec-depl-adm-inst-crowbar.html">Crowbar Setup</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deploying With Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">16 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-maintenance.html"><span class="number">V </span><span class="name">Maintenance and Support</span></a><ol><li class="inactive"><a href="cha-depl-maintenance.html"><span class="number">17 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Maintenance</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">18 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="cha-deploy-logs.html"><span class="number">19 </span><span class="name">Log Files</span></a></li><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">20 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="part-depl-poc.html"><span class="number">VI </span><span class="name">Proof of Concepts Deployments</span></a><ol><li class="inactive"><a href="cha-deploy-poc.html"><span class="number">21 </span><span class="name">Building a SUSE <span class="productname">OpenStack</span> Cloud Test lab</span></a></li></ol></li><li class="inactive"><a href="app-deploy-vmware.html"><span class="number">A </span><span class="name">VMware vSphere Installation Instructions</span></a></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">B </span><span class="name">Using Cisco Nexus Switches with Neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">C </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 6. Service Configuration:  Administration Server Network Configuration" href="sec-depl-adm-inst-network.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" href="sec-depl-adm-start-crowbar.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="part-depl-admserv.html">Setting Up the Administration Server</a><span> › </span><a class="crumb" href="sec-depl-adm-inst-crowbar.html">Crowbar Setup</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 6. Service Configuration:  Administration Server Network Configuration" href="sec-depl-adm-inst-network.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" href="sec-depl-adm-start-crowbar.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="sec-depl-adm-inst-crowbar"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Crowbar Setup</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div><div><div class="abstract"><p>
+    The YaST Crowbar module enables you to configure all networks within the
+    cloud, to set up additional repositories, and to manage the Crowbar users.
+    This module should be launched before starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation. To start
+    this module, either run <code class="command">yast crowbar</code> or <span class="guimenu ">YaST</span> › <span class="guimenu ">Miscellaneous</span> › <span class="guimenu ">Crowbar</span>.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-user"><span class="number">7.1 </span><span class="name"><span class="guimenu ">User Settings</span></span></a></span></dt><dt><span class="sect1"><a href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-network"><span class="number">7.2 </span><span class="name"><span class="guimenu ">Networks</span></span></a></span></dt><dt><span class="sect1"><a href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-mode"><span class="number">7.3 </span><span class="name"><span class="guimenu ">Network Mode</span></span></a></span></dt><dt><span class="sect1"><a href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-repos"><span class="number">7.4 </span><span class="name"><span class="guimenu ">Repositories</span></span></a></span></dt><dt><span class="sect1"><a href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network"><span class="number">7.5 </span><span class="name">Custom Network Configuration</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-depl-adm-inst-crowbar-user"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="guimenu ">User Settings</span></span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-user">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-user</li></ul></div></div></div></div><p>
+   In this section, you can manage users for the Crowbar Web interface. The user
+   <code class="systemitem">crowbar</code> (password
+   <code class="literal">crowbar</code>) is preconfigured. Use the
+   <span class="guimenu ">Add</span>, <span class="guimenu ">Edit</span>, and
+   <span class="guimenu ">Delete</span> buttons to manage user accounts. Users configured
+   here have no relation to existing system users on the Administration Server.
+  </p><div class="figure" id="id-1.3.4.6.2.3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/yast_crowbar_user.png" target="_blank"><img src="images/yast_crowbar_user.png" width="" alt="YaST Crowbar Setup: User Settings" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 7.1: </span><span class="name">YaST Crowbar Setup: User Settings </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.2.3">#</a></h6></div></div></div><div class="sect1 " id="sec-depl-adm-inst-crowbar-network"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="guimenu ">Networks</span></span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-network">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-network</li></ul></div></div></div></div><p>
+   Use the <span class="guimenu ">Networks</span> tab to change the default network setup
+   (described in <a class="xref" href="cha-depl-req.html#sec-depl-req-network" title="2.1. Network">Section 2.1, “Network”</a>). Change the IP address
+   assignment for each network under <span class="guimenu ">Edit Ranges</span>. You may
+   also add a bridge (<span class="guimenu ">Add Bridge</span>) or a VLAN (<span class="guimenu ">Use
+   VLAN</span>, <span class="guimenu ">VLAN ID</span>) to a network. Only change the
+   latter two settings if you really know what you require; we recommend
+   sticking with the defaults.
+  </p><div class="figure" id="id-1.3.4.6.3.3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/yast_crowbar_networks.png" target="_blank"><img src="images/yast_crowbar_networks.png" width="" alt="YaST Crowbar Setup: Network Settings" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 7.2: </span><span class="name">YaST Crowbar Setup: Network Settings </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.3.3">#</a></h6></div></div><div id="id-1.3.4.6.3.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: No Network Changes After Completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</h6><p>
+    After you have completed the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation, you cannot change the network
+    setup. If you do need to change it, you must completely set up the
+    Administration Server again.
+   </p></div><div id="id-1.3.4.6.3.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: VLAN Settings</h6><p>
+    As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> <span class="phrase"><span class="phrase">8</span></span>, using a VLAN for the admin network is
+    only supported on a native/untagged VLAN. If you need VLAN support for the
+    admin network, it must be handled at switch level.
+   </p><p>
+    When changing the network configuration with YaST or by editing
+    <code class="filename">/etc/crowbar/network.json</code>, you can define VLAN
+    settings for each network. For the networks <code class="literal">nova-fixed</code>
+    and <code class="literal">nova-floating</code>, however, special rules apply:
+   </p><p>
+    <span class="bold"><strong>nova-fixed</strong></span>: The <span class="guimenu ">USE
+    VLAN</span> setting will be ignored. However, VLANs will automatically
+    be used if deploying Neutron with VLAN support (using the drivers
+    linuxbridge, openvswitch plus VLAN, or cisco_nexus). In this case, you need
+    to specify a correct <span class="guimenu ">VLAN ID</span> for this network.
+   </p><p>
+    <span class="bold"><strong>nova-floating</strong></span>: When using a VLAN for
+    <code class="literal">nova-floating</code> (which is the default), the <span class="guimenu ">USE
+    VLAN</span> and <span class="guimenu ">VLAN ID</span> settings for
+    <span class="guimenu ">nova-floating</span> and <span class="guimenu ">public</span> default to
+    the same.
+   </p><p>
+    You have the option of separating public and floating networks with a
+    custom configuration. Configure your own separate floating network (not as
+    a subnet of the public network), and give the floating network its own
+    router. For example, define <code class="literal">nova-floating</code> as part of an
+    external network with a custom <code class="literal">bridge-name</code>. When you are
+    using different networks and OpenVSwitch is configured, the pre-defined
+    <code class="literal">bridge-name</code> won't work.
+   </p></div><p>
+   Other, more flexible network mode setups, can be configured by manually
+   editing the Crowbar network configuration files. See
+   <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a> for more information.
+   SUSE or a partner can assist you in creating a custom setup within the
+   scope of a consulting services agreement. See
+   <a class="link" href="http://www.suse.com/consulting/" target="_blank">http://www.suse.com/consulting/</a> for more information on
+   SUSE consulting.
+  </p><div class="sect2 " id="sec-depl-adm-inst-crowbar-network-bmc"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Separating the Admin and the BMC Network</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-network-bmc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-network-bmc</li></ul></div></div></div></div><p>
+    If you want to separate the admin and the BMC network, you must change the
+    settings for the networks <span class="guimenu ">bmc</span> and
+    <span class="guimenu ">bmc_vlan</span>. The <span class="guimenu ">bmc_vlan</span> is used to
+    generate a VLAN tagged interface on the Administration Server that can access the
+    <span class="guimenu ">bmc</span> network. The <span class="guimenu ">bmc_vlan</span> needs to be
+    in the same ranges as <span class="guimenu ">bmc</span>, and <span class="guimenu ">bmc</span>
+    needs to have <span class="guimenu ">VLAN</span> enabled.
+   </p><div class="table" id="id-1.3.4.6.3.7.3"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 7.1: </span><span class="name">Separate BMC Network Example Configuration </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.3.7.3">#</a></h6></div><div class="table-contents"><table class="table" summary="Separate BMC Network Example Configuration" border="1"><colgroup><col class="1" /><col class="2" /><col class="3" /></colgroup><thead><tr><th>
+        
+       </th><th align="center">
+        <p>
+         bmc
+        </p>
+       </th><th align="center">
+        <p>
+         bmc_vlan
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         Subnet
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         <code class="systemitem">192.168.128.0</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Netmask
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         <code class="systemitem">255.255.255.0</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Router
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         <code class="systemitem">192.168.128.1</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Broadcast
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         <code class="systemitem">192.168.128.255</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Host Range
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.128.10</code> -
+         <code class="systemitem">192.168.128.100</code>
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">192.168.128.101</code> -
+         <code class="systemitem">192.168.128.101</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         VLAN
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         yes
+        </p>
+       </td></tr><tr><td>
+        <p>
+         VLAN ID
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         100
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Bridge
+        </p>
+       </td><td colspan="2" align="center">
+        <p>
+         no
+        </p>
+       </td></tr></tbody></table></div></div><div class="figure" id="id-1.3.4.6.3.7.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/yast_crowbar_networks_bmc.png" target="_blank"><img src="images/yast_crowbar_networks_bmc.png" width="" alt="YaST Crowbar Setup: Network Settings for the BMC Network" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 7.3: </span><span class="name">YaST Crowbar Setup: Network Settings for the BMC Network </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.3.7.4">#</a></h6></div></div></div></div><div class="sect1 " id="sec-depl-adm-inst-crowbar-mode"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="guimenu ">Network Mode</span></span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-mode">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-mode</li></ul></div></div></div></div><p>
+   On the <span class="guimenu ">Network Mode</span> tab you can choose between
+   <span class="guimenu ">single</span>, <span class="guimenu ">dual</span>, and
+   <span class="guimenu ">team</span>. In single mode, all traffic is handled by a single
+   Ethernet card. Dual mode requires two Ethernet cards and separates traffic
+   for private and public networks. See
+   <a class="xref" href="cha-depl-req.html#sec-depl-req-network-modes" title="2.1.2. Network Modes">Section 2.1.2, “Network Modes”</a> for details.
+  </p><p>
+   Team mode is similar to single mode, except that you combine several
+   Ethernet cards to a “bond”. It is required for an HA setup of SUSE <span class="productname">OpenStack</span> Cloud.
+   When choosing this mode, you also need to specify a <span class="guimenu ">Bonding
+   Policy</span>. This option lets you define whether to focus on
+   reliability (fault tolerance), performance (load balancing), or a
+   combination of both. You can choose from the following modes:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.6.4.4.1"><span class="term "><span class="guimenu ">0</span> (balance-rr)</span></dt><dd><p>
+      Default mode in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. Packets are transmitted in round-robin
+      fashion from the first to the last available interface. Provides fault
+      tolerance and load balancing.
+     </p></dd><dt id="id-1.3.4.6.4.4.2"><span class="term "><span class="guimenu ">1</span> (active-backup)</span></dt><dd><p>
+      Only one network interface is active. If it fails, a different interface
+      becomes active. This setting is the default for SUSE <span class="productname">OpenStack</span> Cloud. Provides fault
+      tolerance.
+     </p></dd><dt id="id-1.3.4.6.4.4.3"><span class="term "><span class="guimenu ">2</span> (balance-xor)</span></dt><dd><p>
+      Traffic is split between all available interfaces based on the following
+      policy: <code class="literal">[(source MAC address XOR'd with destination MAC address
+      XOR packet type ID) modulo slave count]</code> Requires support from
+      the switch. Provides fault tolerance and load balancing.
+     </p></dd><dt id="id-1.3.4.6.4.4.4"><span class="term "><span class="guimenu ">3</span> (broadcast)</span></dt><dd><p>
+      All traffic is broadcast on all interfaces. Requires support from the
+      switch. Provides fault tolerance.
+     </p></dd><dt id="id-1.3.4.6.4.4.5"><span class="term "><span class="guimenu ">4</span> (802.3ad)</span></dt><dd><p>
+      Aggregates interfaces into groups that share the same speed and duplex
+      settings. Requires <code class="command">ethtool</code> support in the interface
+      drivers, and a switch that supports and is configured for IEEE 802.3ad
+      Dynamic link aggregation. Provides fault tolerance and load balancing.
+     </p></dd><dt id="id-1.3.4.6.4.4.6"><span class="term "><span class="guimenu ">5</span> (balance-tlb)</span></dt><dd><p>
+      Adaptive transmit load balancing. Requires <code class="command">ethtool</code>
+      support in the interface drivers but no switch support. Provides fault
+      tolerance and load balancing.
+     </p></dd><dt id="id-1.3.4.6.4.4.7"><span class="term "><span class="guimenu ">6</span> (balance-alb)</span></dt><dd><p>
+      Adaptive load balancing. Requires <code class="command">ethtool</code> support in
+      the interface drivers but no switch support. Provides fault tolerance and
+      load balancing.
+     </p></dd></dl></div><p>
+   For a more detailed description of the modes, see
+   <a class="link" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" target="_blank">https://www.kernel.org/doc/Documentation/networking/bonding.txt</a>.
+  </p><div class="sect2 " id="sec-depl-adm-inst-crowbar-mode-bastion"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Up a Bastion Network</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-mode-bastion">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-mode-bastion</li></ul></div></div></div></div><p>
+    The <span class="guimenu ">Network Mode</span> tab of the YaST Crowbar module also
+    lets you set up a Bastion network. As outlined in
+    <a class="xref" href="cha-depl-req.html#sec-depl-req-network" title="2.1. Network">Section 2.1, “Network”</a>, one way to access the Administration Server
+    from a defined external network is via a Bastion network and a second
+    network card (as opposed to providing an external gateway).
+   </p><p>
+    To set up the Bastion network, you need to have a static IP address for the
+    Administration Server from the external network. The example configuration used below
+    assumes that the external network from which to access the admin network
+    has the following addresses. Adjust them according to your needs.
+   </p><div class="table" id="id-1.3.4.6.4.6.4"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 7.2: </span><span class="name">Example Addresses for a Bastion Network </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.4.6.4">#</a></h6></div><div class="table-contents"><table class="table" summary="Example Addresses for a Bastion Network" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><tbody><tr><td>
+        <p>
+         Subnet
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">10.10.1.0</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Netmask
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">255.255.255.0</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Broadcast
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">10.10.1.255</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Gateway
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">10.10.1.1</code>
+        </p>
+       </td></tr><tr><td>
+        <p>
+         Static Administration Server address
+        </p>
+       </td><td>
+        <p>
+         <code class="systemitem">10.10.1.125</code>
+        </p>
+       </td></tr></tbody></table></div></div><p>
+    In addition to the values above, you need to enter the <span class="guimenu ">Physical
+    Interface Mapping</span>. With this value you specify the Ethernet card
+    that is used for the bastion network. See
+    <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-conduits" title="7.5.5. Network Conduits">Section 7.5.5, “Network Conduits”</a> for details on the
+    syntax. The default value <code class="literal">?1g2</code> matches the second
+    interface (<span class="quote">“<span class="quote ">eth1</span>”</span>) of the system.
+   </p><div class="figure" id="id-1.3.4.6.4.6.6"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/yast_crowbar_networks_bastion.png" target="_blank"><img src="images/yast_crowbar_networks_bastion.png" width="" alt="YaST Crowbar Setup: Network Settings for the Bastion Network" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 7.4: </span><span class="name">YaST Crowbar Setup: Network Settings for the Bastion Network </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.4.6.6">#</a></h6></div></div><div id="id-1.3.4.6.4.6.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: No Network Changes After Completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</h6><p>
+     After you have completed the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation, you cannot change the network
+     setup. If you do need to change it, you must completely set up the
+     Administration Server again.
+    </p></div><div id="id-1.3.4.6.4.6.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Accessing Nodes From Outside the Bastion Network</h6><p>
+     The example configuration from above allows access to the SUSE <span class="productname">OpenStack</span> Cloud nodes
+     from <span class="emphasis"><em>within</em></span> the bastion network. If you want to
+     access nodes from outside the bastion network, make the router for the
+     bastion network the default router for the Administration Server. This is achieved by
+     setting the value for the bastion network's <span class="guimenu ">Router
+     preference</span> entry to a lower value than the corresponding entry
+     for the admin network. By default no router preference is set for the
+     Administration Server—in this case, set the preference for the bastion network
+     to <code class="literal">5</code>.
+    </p><p>
+     If you use a Linux gateway between the outside and the bastion network,
+     you also need to disable route verification (rp_filter) on the Administration Server.
+     Do so by running the following command on the Administration Server:
+    </p><div class="verbatim-wrap"><pre class="screen">echo 0 &gt; /proc/sys/net/ipv4/conf/all/rp_filter</pre></div><p>
+     That command disables route verification for the current session, so the
+     setting will not survive a reboot. Make it permanent by editing
+     <code class="filename">/etc/sysctl.conf</code> and setting the value for
+     <span class="guimenu ">net.ipv4.conf.all.rp_filter</span> to <code class="literal">0</code>.
+    </p></div></div></div><div class="sect1 " id="sec-depl-adm-inst-crowbar-repos"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="guimenu ">Repositories</span></span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-repos">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-inst-crowbar-repos</li></ul></div></div></div></div><p>
+   This dialog lets you announce the locations of the product, pool, and update
+   repositories (see <a class="xref" href="cha-depl-repo-conf.html" title="Chapter 5. Software Repository Setup">Chapter 5, <em>Software Repository Setup</em></a> for details). You can
+   choose between four alternatives:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.6.5.3.1"><span class="term "><span class="guimenu ">Local SMT Server</span>
+    </span></dt><dd><p>
+      If you have an SMT server installed on the Administration Server as explained in
+      <a class="xref" href="app-deploy-smt.html" title="Chapter 4. Installing and Setting Up an SMT Server on the Administration Server (Optional)">Chapter 4, <em>Installing and Setting Up an SMT Server on the Administration Server (Optional)</em></a>, choose this option. The repository
+      details do not need to be provided as they will be configured
+      automatically. This option will be applied by default if the repository
+      configuration has not been changed manually.
+     </p></dd><dt id="id-1.3.4.6.5.3.2"><span class="term "><span class="guimenu ">Remote SMT Server</span>
+    </span></dt><dd><p>
+      If you use a remote SMT for <span class="emphasis"><em>all</em></span> repositories,
+      choose this option and provide the <span class="guimenu ">Sever URL</span> (in the
+      form of <code class="literal">http://smt.example.com</code>). The repository
+      details do not need to be provided, they will be configured
+      automatically.
+     </p></dd><dt id="id-1.3.4.6.5.3.3"><span class="term "><span class="guimenu ">SUSE Manager Server</span>
+    </span></dt><dd><p>
+      If you use a remote SUSE Manager server for <span class="emphasis"><em>all</em></span>
+      repositories, choose this option and provide the <span class="guimenu ">Sever
+      URL</span> (in the form of
+      <code class="literal">http://manager.example.com</code>).
+     </p></dd><dt id="id-1.3.4.6.5.3.4"><span class="term ">Custom</span></dt><dd><p>
+      If you use different sources for your repositories or are using
+      non-standard locations, choose this option and manually provide a
+      location for each repository. This can either be a local directory
+      (<code class="filename">/srv/tftpboot/suse-12.3/x86_64/repos/SLES12-SP3-Pool/</code>)
+      or a remote location
+      (<code class="literal">http://manager.example.com/ks/dist/child/sles12-sp3-updates-x86_64/sles12-sp3-x86_64/</code>).
+      Activating <span class="guimenu ">Ask On Error</span> ensures that you will be
+      informed if a repository is not available during node deployment,
+      otherwise errors will be silently ignored.
+     </p><p>
+      The <span class="guimenu ">Add Repository</span> dialog allows adding additional
+      repositories. See
+      <a class="xref" href="cha-depl-trouble.html#q-depl-trouble-faq-admin-custom-repos" title="Q:"><em>How to make custom software repositories from an external server (for example a remote SMT or SUSE M..?</em></a> for
+      instructions.
+     </p><div id="id-1.3.4.6.5.3.4.2.3" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.png" /><h6>Tip: Default Locations</h6><p>
+       If you have made the repositories available in the default locations on
+       the Administration Server (see
+       <a class="xref" href="cha-depl-repo-conf.html#tab-depl-adm-conf-local-repos" title="Default Repository Locations on the Administration Server">Table 5.5, “Default Repository Locations on the Administration Server”</a> for a list),
+       choose <span class="guimenu ">Custom</span> and leave the <span class="guimenu ">Repository
+       URL</span> empty (default). The repositories will automatically be
+       detected.
+      </p></div></dd></dl></div><div class="figure" id="id-1.3.4.6.5.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/yast_crowbar_repos.png" target="_blank"><img src="images/yast_crowbar_repos.png" width="" alt="YaST Crowbar Setup: Repository Settings" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 7.5: </span><span class="name">YaST Crowbar Setup: Repository Settings </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.5.4">#</a></h6></div></div></div><div class="sect1 " id="sec-depl-inst-admserv-post-network"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Custom Network Configuration</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-inst-admserv-post-network</li></ul></div></div></div></div><p>
+   To adjust the pre-defined network setup of SUSE <span class="productname">OpenStack</span> Cloud beyond the scope of
+   changing IP address assignments (as described in
+   <a class="xref" href="sec-depl-adm-inst-crowbar.html" title="Chapter 7. Crowbar Setup">Chapter 7, <em>Crowbar Setup</em></a>), modify the network barclamp
+   template.
+  </p><p>
+   The Crowbar network barclamp provides two functions for the system. The first
+   is a common role to instantiate network interfaces on the Crowbar managed
+   systems. The other function is address pool management. While the addresses
+   can be managed with the YaST Crowbar module, complex network setups require
+   to manually edit the network barclamp template file
+   <code class="filename">/etc/crowbar/network.json</code>. This section explains the
+   file in detail. Settings in this file are applied to all nodes in SUSE <span class="productname">OpenStack</span> Cloud.
+   (See <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-network-json-resolve" title="7.5.11. Matching Logical and Physical Interface Names with network-json-resolve">Section 7.5.11, “Matching Logical and Physical Interface Names with network-json-resolve”</a> to learn how to verify
+   your correct network interface names.)
+  </p><div id="id-1.3.4.6.6.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: No Network Changes After Completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</h6><p>
+    After you have completed the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation installation, you cannot change
+    the network setup. If you do need to change it, you must completely set up
+    the Administration Server again.
+   </p><p>
+    The only exception to this rule is the interface map, which can be changed
+    after setup. See <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-interface-map" title="7.5.3. Interface Map">Section 7.5.3, “Interface Map”</a>
+    for details.
+   </p></div><div class="sect2 " id="sec-deploy-network-json-edit"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Editing <code class="filename">network.json</code></span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-edit">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-edit</li></ul></div></div></div></div><p>
+    The <code class="filename">network.json</code> file is located in
+    <code class="filename">/etc/crowbar/</code>. The template has the following general
+    structure:
+   </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "<em class="replaceable ">VALUE</em>",
+         "start_up_delay" : <em class="replaceable ">VALUE</em>,
+         "teaming" : { "mode": <em class="replaceable ">VALUE</em> },<span id="structure-general"></span><span class="callout">1</span>
+         "enable_tx_offloading" : <em class="replaceable ">VALUE</em>,
+         "enable_rx_offloading" : <em class="replaceable ">VALUE</em>,
+         "interface_map"<span id="structure-interface-map"></span><span class="callout">2</span> : [
+            ...
+         ],
+         "conduit_map"<span id="structure-conduit"></span><span class="callout">3</span> : [
+            ...
+         ],
+         "networks"<span id="structure-networks"></span><span class="callout">4</span> : {
+            ...
+         },
+      }
+   }
+}</pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#structure-general"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+      General attributes. Refer to
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-global" title="7.5.2. Global Attributes">Section 7.5.2, “Global Attributes”</a> for details.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#structure-interface-map"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      Interface map section. Defines the order in which the physical network
+      interfaces are to be used. Refer to
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-interface-map" title="7.5.3. Interface Map">Section 7.5.3, “Interface Map”</a> for details.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#structure-conduit"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      Network conduit section defining the network modes and the network
+      interface usage. Refer to
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-conduits" title="7.5.5. Network Conduits">Section 7.5.5, “Network Conduits”</a> for details.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#structure-networks"><span class="callout">4</span></a> </p></td><td valign="top" align="left"><p>
+      Network definition section. Refer to
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-networks" title="7.5.7. Network Definitions">Section 7.5.7, “Network Definitions”</a> for details.
+     </p></td></tr></table></div><div id="id-1.3.4.6.6.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Order of Elements</h6><p>
+     The order in which the entries in the <code class="filename">network.json</code>
+     file appear may differ from the one listed above. Use your editor's search
+     function to find certain entries.
+    </p></div></div><div class="sect2 " id="sec-deploy-network-json-global"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Global Attributes</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-global">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-global</li></ul></div></div></div></div><p>
+    The most important options to define in the global attributes section are
+    the default values for the network and bonding modes. The following global
+    attributes exist:
+   </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",<span id="global-mode"></span><span class="callout">1</span>
+         "start_up_delay" : 30,<span id="global-startup"></span><span class="callout">2</span>
+         "teaming" : { "mode": 5 },<span id="global-bonding"></span><span class="callout">3</span>
+         "enable_tx_offloading" : true, <span id="global-tx"></span><span class="callout">4</span>
+         "enable_rx_offloading" : true, <a class="xref" href="sec-depl-adm-inst-crowbar.html#global-tx"><span class="callout">4</span></a>
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#global-mode"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+      Network mode. Defines the configuration name (or name space) to be used
+      from the conduit_map (see
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-conduits" title="7.5.5. Network Conduits">Section 7.5.5, “Network Conduits”</a>). Your choices are
+      single, dual, or team.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#global-startup"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      Time (in seconds) the Chef-client waits for the network interfaces to
+      come online before timing out.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#global-bonding"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      Default bonding mode. For a list of available modes, see
+      <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-adm-inst-crowbar-mode" title="7.3. Network Mode">Section 7.3, “<span class="guimenu ">Network Mode</span>”</a>.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#global-tx"><span class="callout">4</span></a> </p></td><td valign="top" align="left"><p>
+      Turn on/off TX and RX checksum offloading. If set to
+      <code class="literal">false</code>, disable offloading by running <code class="command">ethtool
+      -K</code> and adding the setting to the respective ifcfg configuration
+      file. If set to <code class="literal">true</code>, use the defaults of the network
+      driver. If the network driver supports TX and/or RX checksum offloading
+      and enables it by default, it will be used.
+     </p><p>
+      Checksum offloading is set to <code class="literal">true</code> in
+      <code class="filename">network.json</code> by default. It is recommended to keep
+      this setting. If you experience problems, such as package losses, try
+      disabling this feature by setting the value to <code class="literal">false</code>.
+     </p><div id="id-1.3.4.6.6.6.4.4.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Change of the Default Value</h6><p>
+       Starting with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>, the default value for TX and RX checksum
+       offloading changed from <code class="literal">false</code> to
+       <code class="literal">true</code>.
+      </p></div><p>
+      To check which defaults a network driver uses, run <code class="command">ethtool
+      -k</code>, for example:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo ethtool -k eth0 | grep checksumming
+rx-checksumming: on
+tx-checksumming: on</pre></div><p>
+      Note that if the output shows a value marked as
+      <code class="literal">[fixed]</code>, this value cannot be changed. For more
+      information on TX and RX checksum offloading refer to your hardware
+      vendor's documentation. Detailed technical information can also be
+      obtained from
+      <a class="link" href="https://www.kernel.org/doc/Documentation/networking/checksum-offloads.txt" target="_blank">https://www.kernel.org/doc/Documentation/networking/checksum-offloads.txt</a>.
+     </p></td></tr></table></div></div><div class="sect2 " id="sec-deploy-network-json-interface-map"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interface Map</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-interface-map">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-interface-map</li></ul></div></div></div></div><p>
+    By default, physical network interfaces are used in the order they appear
+    under <code class="filename">/sys/class/net/</code>. If you want to apply a
+    different order, you need to create an interface map where you can specify
+    a custom order of the bus IDs. Interface maps are created for specific
+    hardware configurations and are applied to all machines matching this
+    configuration.
+   </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true ,
+         "enable_rx_offloading" : true ,
+         "interface_map" : [
+            {
+              "pattern" : "PowerEdge R610"<span id="interface-pattern"></span><span class="callout">1</span>,
+              "serial_number" : "0x02159F8E"<span id="interface-serial"></span><span class="callout">2</span>,
+              "bus_order" : [<span id="interface-bus"></span><span class="callout">3</span>
+                "0000:00/0000:00:01",
+                "0000:00/0000:00:03"
+              ]
+            }
+            ...
+         ],
+         "conduit_map" : [
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#interface-pattern"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+      Hardware specific identifier. This identifier can be obtained by running
+      the command <code class="command">dmidecode</code> <code class="option">-s
+      system-product-name</code> on the machine you want to identify. You can
+      log in to a node during the hardware discovery phase (when booting the
+      SLEShammer image) via the Administration Server.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#interface-serial"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      Additional hardware specific identifier. This identifier can be used in
+      case two machines have the same value for <span class="guimenu ">pattern</span>, but
+      different interface maps are needed. Specifying this parameter is
+      optional (it is not included in the default
+      <code class="filename">network.json</code> file). The serial number of a machine
+      can be obtained by running the command <code class="command">dmidecode</code>
+      <code class="option">-s system-serial-number</code> on the machine you want to
+      identify.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#interface-bus"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      Bus IDs of the interfaces. The order in which they are listed here
+      defines the order in which Chef addresses the interfaces. The IDs can
+      be obtained by listing the contents of
+      <code class="filename">/sys/class/net/</code>.
+     </p></td></tr></table></div><div id="id-1.3.4.6.6.7.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: PXE Boot Interface Must be Listed First</h6><p>
+     The physical interface used to boot the node via PXE must always be listed
+     first.
+    </p></div><div id="id-1.3.4.6.6.7.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Interface Map Changes Allowed After Having Completed the SUSE <span class="productname">OpenStack</span> Cloud Crowbar Installation</h6><p>
+     Contrary to all other sections in <code class="filename">network.json</code>, you
+     can change interface maps after completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation. However, nodes
+     that are already deployed and affected by these changes must be deployed
+     again. Therefore, we do not recommend making changes to the interface map
+     that affect active nodes.
+    </p><p>
+     If you change the interface mappings after completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation you
+     <span class="emphasis"><em>must not</em></span> make your changes by editing
+     <code class="filename">network.json</code>. You must rather use the Crowbar Web
+     interface and open <span class="guimenu ">Barclamps</span> › <span class="guimenu ">Crowbar</span> › <span class="guimenu ">Network</span> › <span class="guimenu ">Edit</span>. Activate your changes by clicking
+     <span class="guimenu ">Apply</span>.
+    </p></div></div><div class="sect2 " id="sec-deploy-network-json-interface-map-examples"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interface Map Example</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-interface-map-examples">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-interface-map-examples</li></ul></div></div></div></div><div class="complex-example"><div class="example" id="interface-map-example"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.1: </span><span class="name">Changing the Network Interface Order on a Machine with four NICs </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#interface-map-example">#</a></h6></div><div class="example-contents"><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+       Get the machine identifier by running the following command on the
+       machine to which the map should be applied:
+      </p><div class="verbatim-wrap"><pre class="screen">~ # dmidecode -s system-product-name
+AS 2003R</pre></div><p>
+       The resulting string needs to be entered on the
+       <span class="guimenu ">pattern</span> line of the map. It is interpreted as a Ruby
+       regular expression (see
+       <a class="link" href="http://www.ruby-doc.org/core-2.0/Regexp.html" target="_blank">http://www.ruby-doc.org/core-2.0/Regexp.html</a> for a
+       reference). Unless the pattern starts with <code class="literal">^</code> and ends
+       with <code class="literal">$</code>, a substring match is performed against the
+       name returned from the above commands.
+      </p></li><li class="listitem "><p>
+       List the interface devices in <code class="filename">/sys/class/net</code> to get
+       the current order and the bus ID of each interface:
+      </p><div class="verbatim-wrap"><pre class="screen">~ # ls -lgG /sys/class/net/ | grep eth
+lrwxrwxrwx 1 0 Jun 19 08:43 eth0 -&gt; ../../devices/pci0000:00/0000:00:1c.0/0000:09:00.0/net/eth0
+lrwxrwxrwx 1 0 Jun 19 08:43 eth1 -&gt; ../../devices/pci0000:00/0000:00:1c.0/0000:09:00.1/net/eth1
+lrwxrwxrwx 1 0 Jun 19 08:43 eth2 -&gt; ../../devices/pci0000:00/0000:00:1c.0/0000:09:00.2/net/eth2
+lrwxrwxrwx 1 0 Jun 19 08:43 eth3 -&gt; ../../devices/pci0000:00/0000:00:1c.0/0000:09:00.3/net/eth3</pre></div><p>
+       The bus ID is included in the path of the link target—it is the
+       following string: <code class="filename">../../devices/pci<em class="replaceable ">BUS
+       ID</em>/net/eth0</code>
+      </p></li><li class="listitem "><p>
+       Create an interface map with the bus ID listed in the order the
+       interfaces should be used. Keep in mind that the interface from which
+       the node is booted using PXE must be listed first. In the following
+       example the default interface order has been changed to
+       <code class="systemitem">eth0</code>,
+       <code class="systemitem">eth2</code>,
+       <code class="systemitem">eth1</code> and
+       <code class="systemitem">eth3</code>.
+      </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            {
+              "pattern" : "AS 2003R",
+              "bus_order" : [
+                "0000:00/0000:00:1c.0/0000:09:00.0",
+                "0000:00/0000:00:1c.0/0000:09:00.2",
+                "0000:00/0000:00:1c.0/0000:09:00.1",
+                "0000:00/0000:00:1c.0/0000:09:00.3"
+              ]
+            }
+            ...
+         ],
+         "conduit_map" : [
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div></li></ol></div></div></div></div></div><div class="sect2 " id="sec-deploy-network-json-conduits"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Conduits</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-conduits">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-conduits</li></ul></div></div></div></div><p>
+    Network conduits define mappings for logical interfaces—one or more
+    physical interfaces bonded together. Each conduit can be identified by a
+    unique name, the <span class="guimenu ">pattern</span>. This pattern is also called
+    <span class="quote">“<span class="quote ">Network Mode</span>”</span> in this document.
+   </p><p>
+    Three network modes are available:
+   </p><table border="0" summary="Simple list" class="simplelist "><tr><td><span class="bold"><strong>single</strong></span>: Only use the first interface for
+    all networks. VLANs will be added on top of this single interface.
+   </td></tr><tr><td><span class="bold"><strong>dual</strong></span>: Use the first interface as the admin
+    interface and the second one for all other networks. VLANs will be added
+    on top of the second interface.
+   </td></tr><tr><td><span class="bold"><strong>team</strong></span>: Bond the first two or more
+    interfaces. VLANs will be added on top of the bond.
+   </td></tr></table><p>
+    See <a class="xref" href="cha-depl-req.html#sec-depl-req-network-modes" title="2.1.2. Network Modes">Section 2.1.2, “Network Modes”</a> for detailed descriptions.
+    Apart from these modes a fallback mode <code class="literal">".*/.*/.*"</code> is
+    also pre-defined—it is applied in case no other mode matches the one
+    specified in the global attributes section. These modes can be adjusted
+    according to your needs. It is also possible to customize modes, but mode
+    names must be either <code class="literal">single</code>, <code class="literal">dual</code>, or
+    <code class="literal">team</code>. 
+   </p><p>
+    The mode name that is specified with <code class="literal">mode</code> in the global
+    attributes section is deployed on all nodes in SUSE <span class="productname">OpenStack</span> Cloud. It is not possible
+    to use a different mode for a certain node. However, you can define
+    <span class="quote">“<span class="quote ">sub</span>”</span> modes with the same name that only match the following
+    machines:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Machines with a certain number of physical network interfaces.
+     </p></li><li class="listitem "><p>
+      Machines with certain roles (all Compute Nodes for example).
+     </p></li></ul></div><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+            {
+              "pattern" : "single/.*/.*"<span id="conduit-pattern"></span><span class="callout">1</span>,
+              "conduit_list" : {
+                "intf2"<span id="conduit-name"></span><span class="callout">2</span> : {
+                  "if_list" : ["1g1","1g2"]<span id="conduit-interface"></span><span class="callout">3</span>,
+                  "team_mode" : 5<span id="conduit-bonding"></span><span class="callout">4</span>
+                },
+                "intf1" : {
+                  "if_list" : ["1g1","1g2"],
+                  "team_mode" : 5
+                },
+                "intf0" : {
+                  "if_list" : ["1g1","1g2"],
+                  "team_mode" : 5
+                }
+              }
+            },
+         ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#conduit-pattern"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+      This line contains the pattern definition for the
+      <code class="systemitem">conduit_map</code>. The value for pattern must have the
+      following form:
+     </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable ">MODE_NAME</em>/<em class="replaceable ">NUMBER_OF_NICS</em>/<em class="replaceable ">NODE_ROLE</em></pre></div><p>
+      Each field in the pattern is interpreted as a Ruby regular expression
+      (see <a class="link" href="http://www.ruby-doc.org/core-2.0/Regexp.html" target="_blank">http://www.ruby-doc.org/core-2.0/Regexp.html</a>
+      for a reference).
+     </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.6.6.9.9.1.4.1"><span class="term ">mode_name
+      </span></dt><dd><p>
+         Name of the network mode. This string is used to reference the mode
+         from the general attributes section.
+        </p></dd><dt id="id-1.3.4.6.6.9.9.1.4.2"><span class="term ">number_of_nics
+      </span></dt><dd><p>
+         Normally it is not possible to apply different network modes to
+         different roles—you can only specify one mode in the global
+         attributes section. However, it does not make sense to apply a network
+         mode that bonds three interfaces on a machine with only two physical
+         network interfaces. This option enables you to create modes for nodes
+         with a given number of interfaces.
+        </p></dd><dt id="id-1.3.4.6.6.9.9.1.4.3"><span class="term ">node_role
+      </span></dt><dd><p>
+         This part of the pattern lets you create matches for a certain node
+         role. This enables you to create network modes for certain roles, for
+         example the Compute Nodes (role: <span class="guimenu ">nova-compute</span>) or the
+         Swift nodes (role: <span class="guimenu ">swift-storage</span>). See
+         <a class="xref" href="sec-depl-adm-inst-crowbar.html#ex-conduits-role" title="Network Modes for Certain Roles">Example 7.3, “Network Modes for Certain Roles”</a> for the full list of roles.
+        </p></dd></dl></div></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#conduit-name"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      The logical network interface definition. Each conduit list must contain
+      at least one such definition. This line defines the name of the logical
+      interface. This identifier must be unique and will also be referenced in
+      the network definition section. We recommend sticking with the
+      pre-defined naming scheme: <code class="literal">intf0</code> for <span class="quote">“<span class="quote ">Interface
+      0</span>”</span>, <code class="literal">intf1</code> for <span class="quote">“<span class="quote ">Interface 1</span>”</span>, etc.
+      If you change the name (not recommended), you also need to change all
+      references in the network definition section.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#conduit-interface"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      This line maps one or more <span class="emphasis"><em>physical</em></span> interfaces to
+      the logical interface. Each entry represents a physical interface. If
+      more than one entry exists, the interfaces are bonded—either with
+      the mode defined in the <span class="guimenu ">team_mode</span> attribute of this
+      conduit section. Or, if that is not present, by the globally defined
+      <span class="guimenu ">teaming</span> attribute.
+     </p><p>
+      The physical interfaces definition needs to fit the following pattern:
+     </p><div class="verbatim-wrap"><pre class="screen">[Quantifier][Speed][Order]</pre></div><p>
+      Valid examples are <code class="literal">+1g2</code>, <code class="literal">10g1</code> or
+      <code class="literal">?1g2</code>.
+     </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.6.6.9.9.3.5.1"><span class="term ">Quantifier</span></dt><dd><p>
+         Specifying the quantifier is optional. The following values may be
+         entered:
+        </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal">+</code>: at least the speed specified afterwards
+        (specified value or higher)</td></tr><tr><td><code class="literal">-</code>: at most the speed specified afterwards
+        (specified value or lower)</td></tr><tr><td><code class="literal">?</code>: any speed (speed specified afterwards is
+        ignored)</td></tr></table><p>
+         If no quantifier is specified, the exact speed specified is used.
+        </p></dd><dt id="id-1.3.4.6.6.9.9.3.5.2"><span class="term ">Speed</span></dt><dd><p>
+         Specifying the interface speed is mandatory (even if using the
+         <code class="literal">?</code> quantifier). The following values may be entered:
+        </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal">10m</code>: 10 Mbit</td></tr><tr><td><code class="literal">100m</code>: 100 Mbit</td></tr><tr><td><code class="literal">1g</code>: 1 Gbit</td></tr><tr><td><code class="literal">10g</code>: 10 Gbit</td></tr><tr><td><code class="literal">20g</code>: 20 Gbit</td></tr><tr><td><code class="literal">40g</code>: 40 Gbit</td></tr><tr><td><code class="literal">56g</code>: 56 Gbit</td></tr></table></dd><dt id="id-1.3.4.6.6.9.9.3.5.3"><span class="term ">Order</span></dt><dd><p>
+         Position in the interface order. Specifying this value is mandatory.
+         The interface order is defined by the order in which the interfaces
+         appear in <code class="filename">/sys/class/net</code> (default) or, if it
+         exists, by an interface map. The order is also linked to the speed in
+         this context:
+        </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal">1g1</code>: the first 1Gbit interface</td></tr><tr><td><code class="literal">+1g1</code>: the first 1Gbit or 10Gbit
+        interface. Crowbar will take the first 1Gbit interface. Only if such an
+        interface does not exist, it will take the first 10Gbit interface
+        available.</td></tr><tr><td><code class="literal">?1g3</code>: the third 1Gbit, 10Gbit, 100Mbit or
+        10Mbit interface. Crowbar will take the third 1Gbit interface. Only if
+        such an interface does not exist, it will take the third 10Gbit
+        interface, then the third 100Mbit or 10Mbit interface.</td></tr></table><div id="id-1.3.4.6.6.9.9.3.5.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Ordering Numbers</h6><p>
+          Ordering numbers start with <code class="literal">1</code> rather than with
+          <code class="literal">0</code>.
+         </p><p>
+          Each interfaces that supports multiple speeds is referenced by
+          multiple names—one for each speed it supports. A 10Gbit
+          interface is therefore represented by four names:
+          <code class="literal">10g<em class="replaceable ">X</em></code>,
+          <code class="literal">1g<em class="replaceable ">X</em></code>,
+          <code class="literal">100m<em class="replaceable ">X</em></code>,
+          <code class="literal">10m<em class="replaceable ">X</em></code>, where
+          <em class="replaceable ">X</em> is the ordering number.
+         </p><p>
+          Ordering numbers always start with <code class="literal">1</code> and are
+          assigned ascending for each speed, for example
+          <code class="literal">1g1</code>, <code class="literal">1g2</code>, and
+          <code class="literal">1g3</code>. Numbering starts with the first physical
+          interface. On systems with network interfaces supporting different
+          maximum speeds, ordering numbers for the individual speeds differ, as
+          the following example shows:
+         </p><table border="0" summary="Simple list" class="simplelist "><tr><td>
+          100Mbit (first interface): <code class="literal">100m1</code>,
+          <code class="literal">10m1</code>
+          </td></tr><tr><td>
+          1Gbit (second interface): <code class="literal">1g1</code>,
+          <code class="literal">100m2</code>, <code class="literal">10m2</code>
+          </td></tr><tr><td>
+          10Gbit (third interface): <code class="literal">10g1</code>,
+          <code class="literal">1g2</code>, <code class="literal">100m3</code>,
+          <code class="literal">10m3</code>
+          </td></tr></table><p>
+          In this example the pattern <code class="literal">?1g3</code> would match
+          <code class="literal">100m3</code>, since no third 1Gbit or 10Gbit interface
+          exist.
+         </p></div></dd></dl></div></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#conduit-bonding"><span class="callout">4</span></a> </p></td><td valign="top" align="left"><p>
+      The bonding mode to be used for this logical interface. Overwrites the
+      default set in the global attributes section <span class="emphasis"><em>for this
+      interface</em></span>. See
+      <a class="link" href="https://www.kernel.org/doc/Documentation/networking/bonding.txt" target="_blank">https://www.kernel.org/doc/Documentation/networking/bonding.txt</a>
+      for a list of available modes. Specifying this option is
+      optional—if not specified here, the global setting applies.
+     </p></td></tr></table></div></div><div class="sect2 " id="sec-deploy-network-json-conduits-examples"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Conduit Examples</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-conduits-examples">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-conduits-examples</li></ul></div></div></div></div><div class="complex-example"><div class="example" id="ex-conduits-nic-number"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.2: </span><span class="name">Network Modes for Different NIC Numbers </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#ex-conduits-nic-number">#</a></h6></div><div class="example-contents"><p>
+     The following example defines a team network mode for nodes with 6, 3, and
+     an arbitrary number of network interfaces. Since the first mode that
+     matches is applied, it is important that the specific modes (for 6 and 3
+     NICs) are listed before the general mode:
+    </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+           {
+              "pattern" : "single/6/.*",
+              "conduit_list" : {
+                ...
+              }
+            },
+            {
+              "pattern" : "single/3/.*",
+              "conduit_list" : {
+                ...
+              }
+            },
+            {
+              "pattern" : "single/.*/.*",
+              "conduit_list" : {
+                ...
+              }
+            },
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div></div></div></div><div class="complex-example"><div class="example" id="ex-conduits-role"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.3: </span><span class="name">Network Modes for Certain Roles </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#ex-conduits-role">#</a></h6></div><div class="example-contents"><p>
+     The following example defines network modes for Compute Nodes with four
+     physical interfaces, the Administration Server (role <code class="literal">crowbar</code>), the
+     Control Node, and a general mode applying to all other nodes.
+    </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "team",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+          {
+            "pattern" : "team/4/nova-compute",
+            "conduit_list" : {
+              ...
+            }
+            },
+            {
+              "pattern" : "team/.*/^crowbar$",
+              "conduit_list" : {
+                ...
+              }
+            },
+            {
+              "pattern" : "team/.*/nova-controller",
+              "conduit_list" : {
+                ...
+              }
+            },
+            {
+              "pattern" : "team/.*/.*",
+              "conduit_list" : {
+                ...
+              }
+            },
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div><p>
+     The following values for <code class="literal">node_role</code> can be used:
+    </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal">ceilometer-polling</code>
+     </td></tr><tr><td><code class="literal">ceilometer-server</code>
+     </td></tr><tr><td><code class="literal">cinder-controller</code>
+     </td></tr><tr><td><code class="literal">cinder-volume</code>
+     </td></tr><tr><td><code class="literal">crowbar</code>
+     </td></tr><tr><td><code class="literal">database-server</code>
+     </td></tr><tr><td><code class="literal">glance-server</code>
+     </td></tr><tr><td><code class="literal">heat-server</code>
+     </td></tr><tr><td><code class="literal">horizon-server</code>
+     </td></tr><tr><td><code class="literal">keystone-server</code>
+     </td></tr><tr><td><code class="literal">manila-server</code>
+     </td></tr><tr><td><code class="literal">manila-share</code>
+     </td></tr><tr><td><code class="literal">monasca-agent</code>
+     </td></tr><tr><td><code class="literal">monasca-log-agent</code>
+     </td></tr><tr><td><code class="literal">monasca-master</code>
+     </td></tr><tr><td><code class="literal">monasca-server</code>
+     </td></tr><tr><td><code class="literal">neutron-network</code>
+     </td></tr><tr><td><code class="literal">neutron-server</code>
+     </td></tr><tr><td><code class="literal">nova-controller</code>
+     </td></tr><tr><td><code class="literal">nova-compute-*</code>
+     </td></tr><tr><td><code class="literal">rabbitmq-server</code>
+     </td></tr><tr><td><code class="literal">trove-server</code>
+     </td></tr><tr><td><code class="literal">swift-dispersion</code>
+     </td></tr><tr><td><code class="literal">swift-proxy</code>
+     </td></tr><tr><td><code class="literal">swift-ring-compute</code>
+     </td></tr><tr><td><code class="literal">swift-storage</code>
+     </td></tr></table><p>
+     The role <code class="literal">crowbar</code> refers to the Administration Server.
+    </p></div></div></div><div id="id-1.3.4.6.6.10.5" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: The <code class="literal">crowbar</code> and Pattern Matching</h6><p>
+     As explained in <a class="xref" href="sec-depl-adm-inst-crowbar.html#ex-conduits-machine" title="Network Modes for Certain Machines">Example 7.4, “Network Modes for Certain Machines”</a>, each node has an
+     additional, unique role named <code class="literal">crowbar-<em class="replaceable ">FULLY
+     QUALIFIED HOSTNAME</em></code>.
+    </p><p>
+     All three elements of the value of the <code class="literal">pattern</code> line
+     are read as regular expressions. Therefore using the pattern
+     <code class="literal"><em class="replaceable ">mode-name</em>/.*/crowbar</code> will
+     match all nodes in your installation. <code class="literal">crowbar</code> is
+     considered a substring and therefore will also match all strings
+     <code class="literal">crowbar-<em class="replaceable ">FULLY QUALIFIED
+     HOSTNAME</em></code>. As a consequence, all subsequent map
+     definitions will be ignored. To make sure this does not happen, you must
+     use the proper regular expression <code class="literal">^crowbar$</code>:
+     <code class="literal"><em class="replaceable ">mode-name</em>/.*/^crowbar$</code>.
+    </p></div><div class="complex-example"><div class="example" id="ex-conduits-machine"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.4: </span><span class="name">Network Modes for Certain Machines </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#ex-conduits-machine">#</a></h6></div><div class="example-contents"><p>
+     Apart from the roles listed under <a class="xref" href="sec-depl-adm-inst-crowbar.html#ex-conduits-role" title="Network Modes for Certain Roles">Example 7.3, “Network Modes for Certain Roles”</a>, each
+     node in SUSE <span class="productname">OpenStack</span> Cloud has a unique role, which lets you create modes matching
+     exactly one node. Each node can be addressed by its unique role name in
+     the <code class="literal">pattern</code> entry of the
+     <code class="literal">conduit_map</code>.
+    </p><p>
+     The role name depends on the fully qualified host name (FQHN) of the
+     respective machine. The role is named after the scheme
+     <code class="literal">crowbar-<em class="replaceable ">FULLY QUALIFIED
+     HOSTNAME</em></code> where colons are replaced with dashes,
+     and periods are replaced with underscores. The FQHN depends on whether the
+     respective node was booted via PXE or not.
+    </p><p>
+     To determine the host name of a node, log in to the Crowbar Web interface and got to
+     <span class="guimenu ">Nodes</span> › <span class="guimenu ">Dashboard</span>. Click the respective node name to get detailed data for the
+     node. The FQHN is listed first under <span class="guimenu ">Full Name</span>.
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.6.6.10.6.5.1"><span class="term ">Role Names for Nodes Booted via PXE</span></dt><dd><p>
+        The <em class="replaceable ">FULLY QUALIFIED HOSTNAME</em> for nodes
+        booted via PXE is composed of the following: a prefix 'd', the MAC
+        address of the network interface used to boot the node via PXE, and the
+        domain name as configured on the Administration Server. A machine with the fully
+        qualified host name
+        <code class="literal">d1a-12-05-1e-35-49.cloud.example.com</code> would get the
+        following role name:
+       </p><div class="verbatim-wrap"><pre class="screen">crowbar-d1a-12-05-1e-35-49_cloud_example_com</pre></div></dd><dt id="id-1.3.4.6.6.10.6.5.2"><span class="term ">Role Names for the Administration Server and Nodes Added Manually</span></dt><dd><p>
+        The fully qualified hostnames of the Administration Server and all nodes added
+        manually (as described in
+        <a class="xref" href="cha-depl-inst-nodes.html#sec-depl-inst-nodes-install-external" title="11.3. Converting Existing SUSE Linux Enterprise Server 12 SP3 Machines Into SUSE OpenStack Cloud Nodes">Section 11.3, “Converting Existing SUSE Linux Enterprise Server 12 SP3 Machines Into SUSE <span class="productname">OpenStack</span> Cloud Nodes”</a>) are
+        defined by the system administrator. They typically have the form
+        hostname+domain, for example
+        <em class="replaceable ">admin.cloud.example.com</em>, which would
+        result in the following role name:
+       </p><div class="verbatim-wrap"><pre class="screen">crowbar-admin_cloud_example_com</pre></div></dd></dl></div><p>
+     Network mode definitions for certain machines must be listed first in the
+     conduit map. This prevents other, general rules which would also map from
+     being applied.
+    </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "dual",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+          {
+            "pattern" : "dual/.*/crowbar-d1a-12-05-1e-35-49_cloud_example_com",
+            "conduit_list" : {
+               ...
+            }
+          },
+            ...
+         ],
+         "networks" : {
+            ...
+         },
+      }
+   }
+}</pre></div></div></div></div></div><div class="sect2 " id="sec-deploy-network-json-networks"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Definitions</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-deploy-network-json-networks">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-deploy-network-json-networks</li></ul></div></div></div></div><p>
+    The network definitions contain IP address assignments, the bridge and VLAN
+    setup, and settings for the router preference. Each network is also
+    assigned to a logical interface defined in the network conduit section. In
+    the following the network definition is explained using the example of the
+    admin network definition:
+   </p><div class="verbatim-wrap"><pre class="screen">{
+   "attributes" : {
+      "network" : {
+         "mode" : "single",
+         "start_up_delay" : 30,
+         "teaming" : { "mode": 5 },
+         "enable_tx_offloading" : true,
+         "enable_rx_offloading" : true,
+         "interface_map" : [
+            ...
+         ],
+         "conduit_map" : [
+             ...
+         ],
+         "networks" : {
+           "admin" : {
+             "conduit" : "intf0"<span id="network-conduit"></span><span class="callout">1</span>,
+             "add_bridge" : false<span id="network-bridge"></span><span class="callout">2</span>,
+             "use_vlan" : false<span id="network-vlan"></span><span class="callout">3</span>,
+             "vlan" : 100<span id="network-vlanid"></span><span class="callout">4</span>,
+             "router_pref" : 10<span id="network-routerpref"></span><span class="callout">5</span>,
+             "subnet" : "192.168.124.0"<span id="network-addresses"></span><span class="callout">6</span>,
+             "netmask" : "255.255.255.0",
+             "router" : "192.168.124.1",
+             "broadcast" : "192.168.124.255",
+             "ranges" : {
+               "admin" : {
+                 "start" : "192.168.124.10",
+                 "end" : "192.168.124.11"
+               },
+               "switch" : {
+                 "start" : "192.168.124.241",
+                 "end" : "192.168.124.250"
+               },
+               "dhcp" : {
+                 "start" : "192.168.124.21",
+                 "end" : "192.168.124.80"
+               },
+               "host" : {
+                 "start" : "192.168.124.81",
+                 "end" : "192.168.124.160"
+               }
+             }
+           },
+           "nova_floating": {
+             "add_ovs_bridge": false<span id="network-ovs-bridge"></span><span class="callout">7</span>,
+             "bridge_name": "br-public"<span id="network-ovs-bridge-name"></span><span class="callout">8</span>,
+             ....
+           }
+         ...
+         },
+      }
+   }
+}</pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#network-conduit"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+      Logical interface assignment. The interface must be defined in the
+      network conduit section and must be part of the active network mode.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-bridge"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      Bridge setup. Do not touch. Should be <code class="literal">false</code> for all
+      networks.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-vlan"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      Create a VLAN for this network. Changing this setting is not recommended.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-vlanid"><span class="callout">4</span></a> </p></td><td valign="top" align="left"><p>
+      ID of the VLAN. Change this to the VLAN ID you intend to use for the
+      specific network, if required. This setting can also be changed using the
+      YaST Crowbar interface. The VLAN ID for the
+      <code class="literal">nova-floating</code> network must always match the ID for the
+      <code class="literal">public network</code>.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-routerpref"><span class="callout">5</span></a> </p></td><td valign="top" align="left"><p>
+      Router preference, used to set the default route. On nodes hosting
+      multiple networks the router with the lowest
+      <code class="literal">router_pref</code> becomes the default gateway. Changing this
+      setting is not recommended.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-addresses"><span class="callout">6</span></a> </p></td><td valign="top" align="left"><p>
+      Network address assignments. These values can also be changed by using
+      the YaST Crowbar interface.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-ovs-bridge"><span class="callout">7</span></a> </p></td><td valign="top" align="left"><p>
+      Openvswitch virtual switch setup. This attribute is maintained by Crowbar
+      on a per-node level and should not be changed manually.
+     </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#network-ovs-bridge-name"><span class="callout">8</span></a> </p></td><td valign="top" align="left"><p>
+      Name of the openvswitch virtual switch. This attribute is maintained by
+      Crowbar on a per-node level and should not be changed manually.
+     </p></td></tr></table></div><div id="id-1.3.4.6.6.11.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: VLAN Settings</h6><p>
+     As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> <span class="phrase"><span class="phrase">8</span></span>, using a VLAN for the admin network is
+     only supported on a native/untagged VLAN. If you need VLAN support for the
+     admin network, it must be handled at switch level.
+    </p><p>
+     When changing the network configuration with YaST or by editing
+     <code class="filename">/etc/crowbar/network.json</code>, you can define VLAN
+     settings for each network. For the networks <code class="literal">nova-fixed</code>
+     and <code class="literal">nova-floating</code>, however, special rules apply:
+    </p><p>
+     <span class="bold"><strong>nova-fixed</strong></span>: The <span class="guimenu ">USE
+     VLAN</span> setting will be ignored. However, VLANs will automatically
+     be used if deploying Neutron with VLAN support (using the plugins
+     linuxbridge, openvswitch plus VLAN, or cisco plus VLAN). In this case, you
+     need to specify a correct <span class="guimenu ">VLAN ID</span> for this network.
+    </p><p>
+     <span class="bold"><strong>nova-floating</strong></span>: When using a VLAN for
+     <code class="literal">nova-floating</code> (which is the default), the <span class="guimenu ">USE
+     VLAN</span> and <span class="guimenu ">VLAN ID</span> settings for
+     <span class="guimenu ">nova-floating</span> and <span class="guimenu ">public</span> default to
+     the same.
+    </p><p>
+     You have the option of separating public and floating networks with a
+     custom configuration. Configure your own separate floating network (not as
+     a subnet of the public network), and give the floating network its own
+     router. For example, define <code class="literal">nova-floating</code> as part of an
+     external network with a custom <code class="literal">bridge-name</code>. When you
+     are using different networks and OpenVSwitch is configured, the
+     pre-defined <code class="literal">bridge-name</code> won't work.
+    </p></div></div><div class="sect2 " id="sec-depl-inst-admserv-post-network-external"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Providing Access to External Networks</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network-external">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-inst-admserv-post-network-external</li></ul></div></div></div></div><p>
+    By default, external networks cannot be reached from nodes in the SUSE <span class="productname">OpenStack</span> Cloud.
+    To access external services such as a SUSE Manager server, an SMT server, or
+    a SAN, you need to make the external network(s) known to SUSE <span class="productname">OpenStack</span> Cloud. Do so by
+    adding a network definition for each external network to
+    <code class="filename">/etc/crowbar/network.json</code>. Refer to
+    <a class="xref" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network" title="7.5. Custom Network Configuration">Section 7.5, “Custom Network Configuration”</a> for setup
+    instructions.
+   </p><div class="example" id="id-1.3.4.6.6.12.3"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.5: </span><span class="name">Example Network Definition for the External Network 192.168.150.0/16 </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.6.12.3">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">            "external" : {
+               "add_bridge" : false,
+               "vlan" : <em class="replaceable ">XXX</em>,
+               "ranges" : {
+                  "host" : {
+                     "start" : "192.168.150.1",
+                     "end" : "192.168.150.254"
+                  }
+               },
+               "broadcast" : "192.168.150.255",
+               "netmask" : "255.255.255.0",
+               "conduit" : "intf1",
+               "subnet" : "192.168.150.0",
+               "use_vlan" : true
+            }</pre></div></div></div><p>
+    Replace the value <em class="replaceable ">XXX</em> for the VLAN by a value
+    not used within the SUSE <span class="productname">OpenStack</span> Cloud network and not used by Neutron. By default,
+    the following VLANs are already used:
+   </p><div class="table" id="id-1.3.4.6.6.12.5"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 7.3: </span><span class="name">VLANs used by the SUSE <span class="productname">OpenStack</span> Cloud Default Network Setup </span><a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#id-1.3.4.6.6.12.5">#</a></h6></div><div class="table-contents"><table class="table" summary="VLANs used by the SUSE OpenStack Cloud Default Network Setup" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><thead><tr><th>
+        <p>
+         VLAN ID
+        </p>
+       </th><th>
+        <p>
+         Used by
+        </p>
+       </th></tr></thead><tbody><tr><td>
+        <p>
+         100
+        </p>
+       </td><td>
+        <p>
+         BMC VLAN (bmc_vlan)
+        </p>
+       </td></tr><tr><td>
+        <p>
+         200
+        </p>
+       </td><td>
+        <p>
+         Storage Network
+        </p>
+       </td></tr><tr><td>
+        <p>
+         300
+        </p>
+       </td><td>
+        <p>
+         Public Network (nova-floating, public)
+        </p>
+       </td></tr><tr><td>
+        <p>
+         400
+        </p>
+       </td><td>
+        <p>
+         Software-defined network (os_sdn)
+        </p>
+       </td></tr><tr><td>
+        <p>
+         500
+        </p>
+       </td><td>
+        <p>
+         Private Network (nova-fixed)
+        </p>
+       </td></tr><tr><td>
+        <p>
+         501 - 2500
+        </p>
+       </td><td>
+        <p>
+         Neutron (value of nova-fixed plus 2000)
+        </p>
+       </td></tr></tbody></table></div></div></div><div class="sect2 " id="sec-depl-inst-admserv-post-network-split"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Split Public and Floating Networks on Different VLANs</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network-split">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-inst-admserv-post-network-split</li></ul></div></div></div></div><p>
+    For custom setups, the public and floating networks can be separated.
+    Configure your own separate floating network (not as a subnet of the public
+    network), and give the floating network its own router. For example, define
+    <code class="literal">nova-floating</code> as part of an external network with a
+    custom <code class="literal">bridge-name</code>. When you are using different
+    networks and OpenVSwitch is configured, the pre-defined
+    <code class="literal">bridge-name</code> won't work.
+   </p></div><div class="sect2 " id="sec-depl-inst-admserv-post-network-mtu"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adjusting the Maximum Transmission Unit for the Admin and Storage Network</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-depl-inst-admserv-post-network-mtu">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-depl-inst-admserv-post-network-mtu</li></ul></div></div></div></div><p>
+    If you need to adjust the Maximum Transmission Unit (MTU) for the Admin
+    and/or Storage Network, adjust
+    <code class="filename">/etc/crowbar/network.json</code> as shown below. You can also
+    enable jumbo frames this way by setting the MTU to 9000. The following
+    example enables jumbo frames for both, the storage and the admin network by
+    setting <code class="literal">"mtu": 9000</code>.
+   </p><div class="verbatim-wrap"><pre class="screen">        "admin": {
+          "add_bridge": false,
+          "broadcast": "192.168.124.255",
+          "conduit": "intf0",
+          "mtu": 9000,
+          "netmask": "255.255.255.0",
+          "ranges": {
+            "admin": {
+              "end": "192.168.124.11",
+              "start": "192.168.124.10"
+            },
+            "dhcp": {
+              "end": "192.168.124.80",
+              "start": "192.168.124.21"
+            },
+            "host": {
+              "end": "192.168.124.160",
+              "start": "192.168.124.81"
+            },
+            "switch": {
+              "end": "192.168.124.250",
+              "start": "192.168.124.241"
+            }
+          },
+          "router": "192.168.124.1",
+          "router_pref": 10,
+          "subnet": "192.168.124.0",
+          "use_vlan": false,
+          "vlan": 100
+        },
+        "storage": {
+          "add_bridge": false,
+          "broadcast": "192.168.125.255",
+          "conduit": "intf1",
+          "mtu": 9000,
+          "netmask": "255.255.255.0",
+          "ranges": {
+            "host": {
+              "end": "192.168.125.239",
+              "start": "192.168.125.10"
+            }
+          },
+          "subnet": "192.168.125.0",
+          "use_vlan": true,
+          "vlan": 200
+        },</pre></div><div id="id-1.3.4.6.6.14.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: No Network Changes After Completing the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</h6><p>
+     After you have completed the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation, you cannot change the network
+     setup, and you cannot change the MTU size.
+    </p></div></div><div class="sect2 " id="sec-network-json-resolve"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Matching Logical and Physical Interface Names with network-json-resolve</span> <a title="Permalink" class="permalink" href="sec-depl-adm-inst-crowbar.html#sec-network-json-resolve">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_conf_admin_crowbar.xml</li><li><span class="ds-label">ID: </span>sec-network-json-resolve</li></ul></div></div></div></div><p>
+    SUSE <span class="productname">OpenStack</span> Cloud includes a new script, <code class="filename">network-json-resolve</code>,
+    which matches the physical and logical names of network interfaces, and
+    prints them to stdout. Use this to verify that you are using the correct
+    interface names in <code class="filename">network.json</code>. Note that it will
+    only work if <span class="productname">OpenStack</span> nodes have been deployed. The following command
+    prints a help menu:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve -h</code></pre></div><p>
+    <code class="filename">network-json-resolve</code> reads your deployed
+    <code class="filename">network.json</code> file. To use a different
+    <code class="filename">network.json</code> file, specify its full path with the
+    <code class="command">--network-json</code> option. The following example shows how
+    to use a different <code class="filename">network.json</code> file, and prints the
+    interface mappings of a single node:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve --network-json /opt/configs/network.json aliases compute1</code>
+ eth0: 0g1, 1g1
+ eth1: 0g1, 1g1</pre></div><p>
+    You may query the mappings of a specific network interface:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve aliases compute1 eth0</code>
+ eth0: 0g1, 1g1</pre></div><p>
+    Print the bus ID order on a node. This returns <code class="literal">no bus order
+    defined for <em class="replaceable ">node</em></code> if you did not
+    configure any bus ID mappings:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve bus_order compute1</code></pre></div><p>
+    Print the defined conduit map for the node:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve conduit_map compute1</code>
+bastion: ?1g1
+intf0: ?1g1
+intf1: ?1g1
+intf2: ?1g1</pre></div><p>
+    Resolve conduits to the standard interface names:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve conduits compute1</code>
+bastion:
+intf0: eth0
+intf1: eth0
+intf2: eth0</pre></div><p>
+    Resolve the configured networks on a node to the standard interface names:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve networks compute1</code>
+bastion:
+bmc_vlan:  eth0
+nova_fixed: eth0
+nova_floating: eth0
+os_sdn: eth0
+public: eth0
+storage: eth0</pre></div><p>
+    Resolve the specified network to the standard interface name(s):
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve networks compute1 public</code>
+   public: eth0</pre></div><p>
+    Resolve a <code class="filename">network.json</code>-style interface to its standard
+    interface name(s):
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">sudo /opt/dell/bin/network-json-resolve resolve compute1 1g1</code>
+ eth0</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="sec-depl-adm-start-crowbar.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span>Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a><a class="nav-link" href="sec-depl-adm-inst-network.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 6 </span>Service Configuration:  Administration Server Network Configuration</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

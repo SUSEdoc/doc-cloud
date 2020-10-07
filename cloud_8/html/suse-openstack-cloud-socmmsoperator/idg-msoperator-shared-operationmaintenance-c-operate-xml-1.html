@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Operation and Maintenance | Monitoring Service Operator's Guide | SUSE OpenStack Cloud Monitoring</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Monitoring" /><meta name="book-title" content="Monitoring Service Operator's Guide" /><meta name="chapter-title" content="Chapter 3. Operation and Maintenance" /><meta name="description" content="Regular operation and maintenance includes:" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="fs@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><meta name="tracker-bsc-version" content="" /><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="prev" href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html" title="Chapter 2. Installation" /><link rel="next" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html" title="Chapter 4. Monitoring" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html">Operation and Maintenance</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Monitoring Service Operator's Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Manual</span></a></li><li class="inactive"><a href="idg-msoperator-shared-intro-c-intro-xml-1.html"><span class="number">1 </span><span class="name">Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></span></a></li><li class="inactive"><a href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="number">2 </span><span class="name">Installation</span></a></li><li class="inactive"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="number">3 </span><span class="name">Operation and Maintenance</span></a></li><li class="inactive"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="number">4 </span><span class="name">Monitoring</span></a></li><li class="inactive"><a href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">Supported Metrics</span></a></li><li class="inactive"><a href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="number">B </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Installation" href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Monitoring" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html">Operation and Maintenance</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Installation" href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Monitoring" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="idg-msoperator-shared-operationmaintenance-c-operate-xml-1"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud Monitoring</span></div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operation and Maintenance</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-operationmaintenance-c-operate.xml</li><li><span class="ds-label">ID: </span>idg-msoperator-shared-operationmaintenance-c-operate-xml-1</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.4"><span class="number">3.1 </span><span class="name">Removing Metrics Data</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.5"><span class="number">3.2 </span><span class="name">Removing Log Data</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.6"><span class="number">3.3 </span><span class="name">Log File Handling</span></a></span></dt><dt><span class="section"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#idg-msoperator-shared-operationmaintenance-c-backup-xml-1"><span class="number">3.4 </span><span class="name">Backup and Recovery</span></a></span></dt></dl></div></div>
+ 
+ <p>
+  Regular operation and maintenance includes:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    Configuring data retention for the InfluxDB database. This can be
+    configured in the Monasca barclamp. For details, see the <em class="citetitle ">SUSE
+    OpenStack Cloud Deployment Guide</em>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Configuring data retention for the Elasticsearch database. This can be
+    configured in the Monasca barclamp. For details, see the <em class="citetitle ">SUSE
+    OpenStack Cloud Deployment Guide</em>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Removing metrics data from the InfluxDB database.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Removing log data from the Elasticsearch database.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Handling log files of agents and services.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Backup and recovery of databases, configuration files, and dashboards.
+   </p>
+  </li></ul></div>
+ <div class="sect1" id="id-1.6.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing Metrics Data</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-operate-c-deleteinfluxdbdata.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  Metrics data is stored in the Metrics and Alarms InfluxDB Database. InfluxDB
+  features an SQL-like query language for querying data and performing
+  aggregations on that data.
+ </p>
+ <p>
+  The Metrics Agent configuration defines the metrics and types of measurement
+  for which data is stored. For each measurement, a so-called series is written
+  to the InfluxDB database. A series consists of a timestamp, the metrics, and
+  the value measured.
+ </p>
+ <p>
+  Every series can be assigned key tags. In the case of <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span>, this is the <code class="literal">_tenant_id</code> tag.
+  This tag identifies the OpenStack project for which the metrics data has been
+  collected.
+ </p>
+ <p>
+  From time to time, you may want to delete outdated or unnecessary metrics
+  data from the Metrics and Alarms Database, for example, to save space or
+  remove data for metrics you are no longer interested in. To delete data, you
+  use the InfluxDB command line interface, the interactive shell that is
+  provided for the InfluxDB database.
+ </p>
+ <p>
+  Proceed as follows to delete metrics data from the database:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Create a backup of the database. For details, refer to
+    <a class="xref" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#idg-msoperator-shared-operationmaintenance-c-backup-xml-1" title="3.4. Backup and Recovery">Section 3.4, “Backup and Recovery”</a>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Determine the ID of the OpenStack project for the data to be deleted:
+   </p>
+   <p>
+    Log in to the OpenStack dashboard and go to <span class="bold"><strong>Identity
+    &gt; Projects</strong></span>. The <code class="literal">monasca</code> project initially
+    provides all metrics data related to <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span>.
+   </p>
+   <p>
+    In the course of the productive operation of <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span>, additional projects may be created, for example, for
+    application operators.
+   </p>
+   <p>
+    The <span class="bold"><strong>Project ID</strong></span> field shows the relevant
+    tenant ID.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Log in to the host where the Monitoring Service is installed.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Go to the directory where InfluxDB is installed:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">cd /usr/bin</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Connect to InfluxDB using the InfluxDB command line interface as follows:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">./influx -host &lt;host_ip&gt;</pre></div>
+   <p>
+    Replace <code class="literal">&lt;host_ip&gt;</code> with the IP address of the
+    machine on which <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is
+    installed.
+   </p>
+   <p>
+    The output of this command is, for example, as follows:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">Connected to http://localhost:8086 version 1.1.1
+InfluxDB shell version: 1.1.1</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Connect to the InfluxDB database of <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> (<code class="literal">mon</code>):
+   </p>
+<div class="verbatim-wrap"><pre class="screen">&gt; show databases
+name: databases
+name
+----
+mon
+_internal
+
+&gt; use mon
+Using database mon</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Check the outdated or unnecessary data to be deleted.
+   </p>
+   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+     <p>
+      You can view all measurements for a specific project as follows:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">SHOW MEASUREMENTS WHERE _tenant_id = '&lt;project ID&gt;'</pre></div>
+    </li><li class="listitem ">
+     <p>
+      You can view the series for a specific metrics and project, for example,
+      as follows:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">SHOW SERIES FROM "cpu.user_perc" WHERE _tenant_id = '&lt;project ID&gt;'</pre></div>
+    </li></ul></div>
+  </li><li class="listitem ">
+   <p>
+    Delete the desired data.
+   </p>
+   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+     <p>
+      When a project is no longer relevant or a specific tenant is no longer
+      used, delete all series for the project as follows:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">DROP SERIES WHERE _tenant_id = '&lt;project ID&gt;'</pre></div>
+     <p>
+      Example:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">DROP SERIES WHERE _tenant_id = '27620d7ee6e948e29172f1d0950bd6f4'</pre></div>
+    </li><li class="listitem ">
+     <p>
+      When a metrics is no longer relevant for a project, delete all series for
+      the specific project and metrics as follows:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">DROP SERIES FROM "&lt;metrics&gt;" WHERE _tenant_id = '&lt;project ID&gt;'</pre></div>
+     <p>
+      Example:
+     </p>
+<div class="verbatim-wrap"><pre class="screen">DROP SERIES FROM "cpu.user_perc" WHERE _tenant_id = '27620d7e'</pre></div>
+    </li></ul></div>
+  </li><li class="listitem ">
+   <p>
+    Restart the <code class="literal">influxdb</code> service, for example, as follows:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">sudo systemctl restart influxdb</pre></div>
+  </li></ol></div>
+</div>
+ <div class="sect1" id="id-1.6.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing Log Data</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-operate-c-removelogfiles.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  Log data is stored in the Elasticsearch database. Elasticsearch stores the
+  data in indices. One index per day is created for every OpenStack project.
+ </p>
+ <p>
+  By default, the indices are stored in the following directory on the host
+  where the Monitoring Service is installed:
+ </p>
+ <p>
+  <code class="literal">/var/data/elasticsearch/&lt;cluster-name&gt;/nodes/&lt;node-name&gt;</code>
+ </p>
+ <p>
+  Example:
+ </p>
+ <p>
+  <code class="literal">/var/data/elasticsearch/elasticsearch/nodes/0</code>
+ </p>
+ <div id="id-1.6.5.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <p>
+   If your system uses a different directory, look up the
+   <code class="literal">path.data</code> parameter in the Elasticsearch configuration
+   file, <code class="literal">/etc/elasticsearch/elasticsearch.yml</code>.
+   
+  </p>
+ </div>
+ <p>
+  If you want to delete outdated or unnecessary log data from the Elasticsearch
+  database, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Make sure that <code class="literal">curl</code> is installed. If this is not the
+    case, install the package with
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">sudo zypper in curl</pre></div>
+   
+  </li><li class="listitem ">
+   <p>
+    Create a backup of the Elasticsearch database. For details, refer to
+    <a class="xref" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#idg-msoperator-shared-operationmaintenance-c-backup-xml-1" title="3.4. Backup and Recovery">Section 3.4, “Backup and Recovery”</a>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Determine the ID of the OpenStack project for the data to be deleted:
+   </p>
+   <p>
+    Log in to the OpenStack dashboard and go to <span class="bold"><strong>Identity
+    &gt; Projects</strong></span>.  The <code class="literal">monasca</code> project initially
+    provides a ll metrics data related to <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span>.
+   </p>
+   <p>
+    In the course of the productive operation of <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span>, additional projects may be created.
+   </p>
+   <p>
+    The <span class="bold"><strong>Project ID</strong></span> field shows the relevant
+    ID.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Log in to the host where the Monitoring Service is installed.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Make sure that the data you want to delete exists by executing the
+    following command:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XHEAD -i 'http://localhost:&lt;port&gt;/&lt;projectID-date&gt;'</pre></div>
+   <p>
+    For example, if Elasticsearch is listening at port 9200 (default), the ID
+    of the OpenStack project is <code class="literal">abc123</code>, and you want to
+    check the index of 2015, July 1st, the command is as follows:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XHEAD -i 'http://localhost:9200/abc123-2015-07-01'</pre></div>
+   <p>
+    If the HTTP response is <code class="literal">200</code>, the index exists; if the
+    response is <code class="literal">404</code>, it does not exist.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Delete the index as follows:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:&lt;port&gt;/&lt;projectID-date&gt;'</pre></div>
+   <p>
+    Example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-01'</pre></div>
+   <p>
+    This command either returns an error, such as
+    <code class="literal">IndexMissingException</code>, or acknowledges the successful
+    deletion of the index.
+   </p>
+  </li></ol></div>
+ <div id="id-1.6.5.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <p>
+   Be aware that the <code class="literal">-XDELETE</code> command immediately deletes
+   the index file!
+  </p>
+ </div>
+ <p>
+  Both, for <code class="literal">-XHEAD</code> and <code class="literal">-XDELETE</code>, you can
+  use wildcards for processing several indices. For example, you can delete all
+  indices of a specific project for the whole month of July, 2015:
+ </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-*'</pre></div>
+ <div id="id-1.6.5.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <p>
+   Take extreme care when using wildcards for the deletion of indices. You
+   could delete all existing indices with one single command!
+  </p>
+ </div>
+</div>
+ <div class="sect1" id="id-1.6.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log File Handling</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-operationmaintenance-c-logfilelocation.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  In case of trouble with the <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+  services, you can study their log files to find the reason. The log files are
+  also useful if you need to contact your support organization. For storing the
+  log files, the default installation uses the <code class="literal">/var/log</code>
+  directory on the hosts where the agents or services are installed.
+ </p>
+ <p>
+  You can use <code class="literal">systemd</code>, a system and session manager for
+  LINUX, and <code class="literal">journald</code>, a LINUX logging interface, for
+  addressing dispersed log files.
+ </p>
+ <p>
+  The <span class="phrase">SUSE OpenStack Cloud Monitoring</span> installer automatically
+  puts all <span class="phrase">SUSE OpenStack Cloud Monitoring</span> services under the
+  control of <code class="literal">systemd</code>. <code class="literal">journald</code> provides a
+  centralized management solution for the logging of all processes that are
+  controlled by <code class="literal">systemd</code>. The logs are collected and managed
+  in a so-called journal controlled by the <code class="literal">journald</code> daemon.
+ </p>
+ <p>
+  For details on the <code class="literal">systemd</code> and <code class="literal">journald</code>
+  utilities, refer to the
+  <a class="ulink" href="https://documentation.suse.com/sles/12-SP5/single-html/SLES-admin/#part-system" target="_blank">https://documentation.suse.com/sles/12-SP5/single-html/SLES-admin/#part-system</a>.
+ </p>
+</div>
+ <div class="sect1" id="idg-msoperator-shared-operationmaintenance-c-backup-xml-1"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Recovery</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#idg-msoperator-shared-operationmaintenance-c-backup-xml-1">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-operationmaintenance-c-backup.xml</li><li><span class="ds-label">ID: </span>idg-msoperator-shared-operationmaintenance-c-backup-xml-1</li></ul></div></div></div></div>
+ 
+ <p>
+  Typical tasks of the Monitoring Service operator are to make regular backups,
+  particularly of the data created during operation.
+ </p>
+ <p>
+  At regular intervals, you should make a backup of all:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    Databases.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Configuration files of the individual agents and services.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Monitoring and log dashboards you have created and saved.
+   </p>
+  </li></ul></div>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> does not offer integrated
+  backup and recovery mechanisms. Instead, use the mechanisms and
+  procedures of the individual components.
+ </p>
+ <div class="sect2" id="id-1.6.7.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Databases</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-operate-c-backupdb.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  You need to create regular backups of the following databases on the host
+  where the Monitoring Service is installed:
+ </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p>
+    Elasticsearch database for historic log data.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    InfluxDB database for historic metrics data.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    MariaDB database for historic configuration information.
+   </p>
+  </li></ul></div>
+ <p>
+  It is recommended that backup and restore operations for databases are
+  carried out by experienced operators only.
+ </p>
+<div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.6.7.6.5"><span class="name">Preparations</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.6.5">#</a></h5></div>
+<p> 
+Before backing up and restoring a database, we recommend stopping the Monitoring 
+API and the Log API on the <code class="literal">monasca-server</code> node, and check that all data is processed. 
+This ensures that no data is written to a database during a backup and restore operation. 
+After backing up and restoring a database, restart the APIs.
+</p>
+<p>
+To stop the Monitoring API and the Log API, use the following command:
+</p>
+<div class="verbatim-wrap"><pre class="screen">systemctl stop apache2</pre></div>
+<p>
+To check that all Kafka queues are empty, list the existing consumer groups and 
+check the LAG column for each group. It should be 0. For example:
+</p>
+<div class="verbatim-wrap"><pre class="screen">kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --list
+kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+ --group 1_metrics | column -t -s ','
+kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+ --group transformer-logstash-consumer | column -t -s ','
+kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+ --group thresh-metric | column -t -s ','</pre></div>
+ <p> 
+To restart the Monitoring API and the Log API, use the following command:
+</p>
+<div class="verbatim-wrap"><pre class="screen">systemctl start apache2</pre></div>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.6.7.6.13"><span class="name">Elasticsearch Database</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.6.13">#</a></h5></div>
+ <p>
+  For backing up and restoring your Elasticsearch database, use the
+  Snapshot and Restore module of Elasticsearch.
+ </p>
+ <p>
+  To create a backup of the database, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Make sure that <code class="command">curl</code> is installed, <code class="command">zypper in curl</code>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Log in to the host where the Monitoring Service is installed.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Create a snapshot repository. You need the Elasticsearch bind address for 
+    all commands. run <code class="command">grep network.bind_host /etc/elasticsearch/elasticsearch.yml</code> 
+    to find the bind address, and replace <em class="replaceable ">IP</em> in the 
+    following commands with this address. For example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">curl -XPUT http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup -d '{
+  "type": "fs",
+  "settings": {
+       "location": "/mount/backup/elasticsearch1/my_backup",
+       "compress": true
+  }
+}'</pre></div>
+   <p>
+    The example registers a shared file system repository (<code class="literal">"type":
+    "fs"</code>) that uses the
+    <code class="filename">/mount/backup/elasticsearch1</code> directory for storing
+    snapshots.
+   </p>
+   <div id="id-1.6.7.6.16.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+    <p>
+        The directory for storing snapshots must be configured in the <code class="literal">elasticsearch/repo_dir</code> 
+     setting in the Monasca barclamp (see the <a class="ulink" href="https://documentation.suse.com/soc/8/single-html/suse-openstack-cloud-deployment/#sec-depl-ostack-monasca" target="_blank">Deployment Guide<span class="ulink-url"> (https://documentation.suse.com/soc/8/single-html/suse-openstack-cloud-deployment/#sec-depl-ostack-monasca)</span></a>).  
+     The directory must be manually mounted before creating the snapshot. The 
+     <code class="literal">elasticsearch</code> user must be specified as the owner of the directory.
+    </p>
+   </div>
+   <p>
+    <code class="literal">compress</code> is turned on to compress the metadata files.
+   </p>
+   
+  </li><li class="listitem ">
+   <p>
+    Check whether the repository was created successfully:
+   </p>
+
+   <div class="verbatim-wrap"><pre class="screen">curl -XGET http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup</pre></div>
+   <p>
+    This example response shows a successfully created repository:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">{
+  "my_backup": {
+    "type": "fs",
+    "settings": {
+      "compress": "true",
+      "location": "/mount/backup/elasticsearch1/my_backup"
+    }
+  }
+}</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Create a snapshot of your database that contains all indices. A repository
+    can contain multiple snapshots of the same database. The name of a snapshot
+    must be unique within the snapshots created for your database, for example:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">curl -XPUT http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup/snapshot_1?wait_for_completion=true</pre></div>
+   <p>
+    The example creates a snapshot named <code class="literal">snapshot_1</code> for all
+    indices in the <code class="literal">my_backup</code> repository.
+   </p>
+  </li></ol></div>
+ <p>
+  To restore the database instance, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Close all indices of your database, for example:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">curl -XPOST http://<em class="replaceable ">IP</em>:9200/_all/_close</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Restore all indices from the snapshot you have created, for example:
+</p>
+<div class="verbatim-wrap"><pre class="screen">curl -XPOST http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup/snapshot_1/_restore</pre></div>
+   <p>
+    The example restores all indices from <code class="literal">snapshot_1</code> that is
+    stored in the <code class="literal">my_backup</code> repository.
+   </p>
+  </li></ol></div>
+ <p>
+  For additional information on backing up and restoring an Elasticsearch
+  database, refer to the
+  <a class="ulink" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-snapshots.html" target="_blank">Elasticsearch documentation<span class="ulink-url"> (https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-snapshots.html)</span></a>.
+ </p>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.6.7.6.20"><span class="name">InfluxDB Database</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.6.20">#</a></h5></div>
+ <p>
+  For backing up and restoring your InfluxDB database, you can use the InfluxDB
+  shell. The shell is part of your InfluxDB distribution. If you installed
+  InfluxDB via a package manager, the shell is, by default, installed in the
+  <code class="filename">/usr/bin</code> directory.
+ </p>
+ <p>
+  To create a backup of the database, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Log in to the InfluxDB database as a user who is allowed to run the
+    <code class="literal">influxdb</code> service, for example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">su influxdb -s /bin/bash</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Back up the database, for example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">influxd backup -database mon /mount/backup/mysnapshot</pre></div>
+   <p>
+       Monasca is using <code class="literal">mon</code> as the name of the database
+    The example creates the backup for the database in
+    <code class="filename">/mount/backup/mysnapshot</code>.
+    
+   </p>
+  </li></ol></div>
+ <p>
+  Before restoring the database, make sure that all database processes are shut
+  down. To restore the database, you can then proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    If required, delete all files not included in the backup by dropping the database 
+    before you carry out the restore operation. A restore operation restores all 
+    files included in the backup. Files created or merged at a later point in time 
+    are not affected. For example:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">influx -host <em class="replaceable ">IP</em> -execute 'drop database mon;'</pre></div>
+   <p>
+       Replace <em class="replaceable ">IP</em> with the IP address that the database 
+       is listening to. You can run <code class="command">influxd config</code> and look up 
+       the IP address in the <code class="literal">[http]</code> section.
+       </p>
+  </li><li class="listitem ">
+   <p>
+       Stop the InfluxDB database service:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">systemctl stop influxdb</pre></div>
+</li><li class="listitem ">
+   <p>
+    Log in to the InfluxDB database as a user who is allowed to run the
+    <code class="literal">influxdb</code> service:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">su influxdb -s /bin/bash</pre></div>
+  </li><li class="listitem ">
+   <p>
+   Restore the metastore:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">influxd restore -metadir /var/opt/influxdb/meta /mount/backup/mysnapshot</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Restore the database, for example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">influxd restore -database mon -datadir /var/opt/influxdb/data /mount/backup/mysnapshot</pre></div>
+  <p>
+    The example restores the backup from
+    <code class="filename">/mount/backup/mysnapshot</code> to
+    <code class="filename">/var/opt/influxdb/influxdb.conf</code>.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Ensure that the file permissions for the restored database are set
+    correctly:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">chown -R influxdb:influxdb /var/opt/influxdb</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Start the InfluxDB database service:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">systemctl start influxdb</pre></div>
+  </li></ol></div>
+ <p>
+  For additional information on backing up and restoring an InfluxDB database,
+  refer to the
+  <a class="ulink" href="https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/" target="_blank">InfluxDB documentation<span class="ulink-url"> (https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/)</span></a>.
+ </p>
+ 
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.6.7.6.27"><span class="name">MariaDB Database</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.6.27">#</a></h5></div>
+ <p>
+  For backing up and restoring your MariaDB database, you can use the
+  <code class="command">mysqldump</code> utility program. <code class="command">mysqldump</code>
+  performs a logical backup that produces a set of SQL statements. These
+  statements can later be executed to restore the database.
+ </p>
+ <p>
+  To back up your MariaDB database, you must be the owner of the database or a
+  user with superuser privileges, for example:
+ </p>
+<div class="verbatim-wrap"><pre class="screen">mysqldump -u root -p mon &gt; dumpfile.sql</pre></div>
+ <p>
+  In addition to the name of the database, you have to specify the name and the
+  location where <code class="command">mysqldump</code> stores its output.
+ </p>
+ <p>
+  To restore your MariaDB database, proceed as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    Log in to the host where the Monitoring Service is installed as a user with
+    root privileges.
+   </p>
+  </li><li class="listitem ">
+   <p>
+       Make sure that the <code class="command">mariadb</code> service is running:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">systemctl start mariadb</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Log in to the database you have backed up as a user with root privileges, for example:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">mysql -u root -p mon</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Remove and then re-create the database:
+   </p>
+
+<div class="verbatim-wrap"><pre class="screen">DROP DATABASE mon;
+CREATE DATABASE mon;</pre></div>
+  </li><li class="listitem ">
+   <p>
+Exit mariadb:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">\q</pre></div>
+  </li><li class="listitem ">
+   <p>
+    Restore the database, for example:
+   </p>
+
+<div class="verbatim-wrap"><pre class="screen">mysql -u root -p mon &lt; dumpfile.sql</pre></div>
+  </li></ol></div>
+ <p>
+  For additional information on backing up and restoring a MariaDB database
+  with <code class="literal">mysqldump</code>, refer to the
+  <a class="ulink" href="https://mariadb.com/kb/en/mariadb/mysqldump/" target="_blank">MariaDB
+  documentation<span class="ulink-url"> (https://mariadb.com/kb/en/mariadb/mysqldump/)</span></a>.
+ </p>
+</div>
+ <div class="sect2" id="id-1.6.7.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration Files</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-operate-c-backupcfg.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  Below you find a list of the configuration files of the agents and the
+  individual services included in the Monitoring Service. Back up these files
+  at least after you have installed and configured <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> and after each change in the configuration.
+ </p>
+ 
+ <div class="verbatim-wrap"><pre class="screen">/etc/influxdb/influxdb.conf
+/etc/kafka/server.properties
+/etc/my.cnf
+/etc/my.cnf.d/client.cnf
+/etc/my.cnf.d/mysql-clients.cnf
+/etc/my.cnf.d/server.cnf
+/etc/monasca/agent/agent.yaml
+/etc/monasca/agent/conf.d/*
+/etc/monasca/agent/supervisor.conf
+/etc/monasca/api-config.conf
+/etc/monasca/log-api-config.conf
+/etc/monasca/log-api-config.ini
+/etc/monasca-log-persister/monasca-log-persister.conf
+/etc/monasca-log-transformer/monasca-log-transformer.conf
+/etc/monasca-log-agent/agent.conf
+/etc/monasca-notification/monasca-notification.yaml
+/etc/monasca-persister/monasca-persister.yaml
+/etc/monasca-thresh/thresh.yaml
+/etc/elasticsearch/elasticsearch.yml
+/etc/elasticsearch/logging.yml
+/etc/kibana/kibana.yml</pre></div>
+ <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.6.7.7.4"><span class="name">Recovery</span><a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.7.4">#</a></h5></div>
+ <p>
+  If you need to recover the configuration of one or more agents or services,
+  the recommended procedure is as follows:
+ </p>
+ <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+   <p>
+    If necessary, uninstall the agents or services, and install them again.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Stop the agents or services.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Copy the backup of your configuration files to the correct location
+    according to the table above.
+   </p>
+  </li><li class="listitem ">
+   <p>
+    Start the agents or services again.
+   </p>
+  </li></ol></div>
+</div>
+ <div class="sect2" id="id-1.6.7.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dashboards</span> <a title="Permalink" class="permalink" href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html#id-1.6.7.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-operate-c-backupdashboards.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ 
+ <p>
+  Kibana can persist customized log dashboard designs to the Elasticsearch
+  database, and allows you to recall them. For details on saving, loading, and
+  sharing log management dashboards, refer to the
+  <a class="ulink" href="https://www.elastic.co/guide/en/kibana/4.5/dashboard.html#saving-dashboards" target="_blank">Kibana documentation<span class="ulink-url"> (https://www.elastic.co/guide/en/kibana/4.5/dashboard.html#saving-dashboards)</span></a>.
+ </p>
+ <p>
+  Grafana allows you to export a monitoring dashboard to a JSON file, and to
+  re-import it when necessary. For backing up and restoring the exported
+  dashboards, use the standard mechanisms of your file system. For details on
+  exporting monitoring dashboards, refer to the
+  <a class="ulink" href="https://grafana.com/docs/guides/getting_started/" target="_blank">Getting
+  Started<span class="ulink-url"> (https://grafana.com/docs/guides/getting_started/)</span></a> tutorial of Grafana.
+ </p>
+</div>
+</div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Monitoring</span></a><a class="nav-link" href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Installation</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

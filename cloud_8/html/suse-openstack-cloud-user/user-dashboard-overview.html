@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using the Dashboard | User Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 2. Using the Dashboard" /><meta name="description" content="Often referred to as Horizon or the Horizon dashboard, you can use this console to manage resources on a domain and project level in a web-based graphical user interface (GUI)." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="user-cloudadmin.html" title="Part I. Cloud Admin User Guide" /><link rel="prev" href="using-opsconsole.html" title="Chapter 1. Using the Operations Console" /><link rel="next" href="cloudadmin-gui.html" title="Chapter 3. Cloud Admin Actions with the Dashboard" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="user-dashboard-overview.html">Using the Dashboard</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="user-cloudadmin.html"><span class="number">I </span><span class="name">Cloud Admin User Guide</span></a><ol><li class="inactive"><a href="using-opsconsole.html"><span class="number">1 </span><span class="name">Using the Operations Console</span></a></li><li class="inactive"><a href="user-dashboard-overview.html"><span class="number">2 </span><span class="name">Using the Dashboard</span></a></li><li class="inactive"><a href="cloudadmin-gui.html"><span class="number">3 </span><span class="name">Cloud Admin Actions with the Dashboard</span></a></li><li class="inactive"><a href="CreateCloudAdmin.html"><span class="number">4 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></li><li class="inactive"><a href="install-cli.html"><span class="number">5 </span><span class="name">Installing the Command-Line Clients</span></a></li><li class="inactive"><a href="CreateHARouter.html"><span class="number">6 </span><span class="name">Creating a Highly Available Router</span></a></li></ol></li><li class="inactive"><a href="user-nonadmin.html"><span class="number">II </span><span class="name">Project User Guide</span></a><ol><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">7 </span><span class="name">Using Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="idg-all-userguide-create-network-xml-1.html"><span class="number">8 </span><span class="name">Creating a Private Network</span></a></li><li class="inactive"><a href="create-keypair.html"><span class="number">9 </span><span class="name">Creating a Key Pair</span></a></li><li class="inactive"><a href="user-image-upload.html"><span class="number">10 </span><span class="name">Creating and Uploading a Glance Image</span></a></li><li class="inactive"><a href="lbaas-dashboard.html"><span class="number">11 </span><span class="name">Creating a Load Balancer with the Dashboard</span></a></li><li class="inactive"><a href="HP2-0LBaaS.html"><span class="number">12 </span><span class="name">Using Load Balancing as a Service (LBaaS)</span></a></li><li class="inactive"><a href="LBaaSHeat.html"><span class="number">13 </span><span class="name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li class="inactive"><a href="HP2-0FWaaS.html"><span class="number">14 </span><span class="name">Using Firewall as a Service (FWaaS)</span></a></li><li class="inactive"><a href="UsingVPNaaS.html"><span class="number">15 </span><span class="name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Using the Operations Console" href="using-opsconsole.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Cloud Admin Actions with the Dashboard" href="cloudadmin-gui.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="user-dashboard-overview.html">Using the Dashboard</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Using the Operations Console" href="using-opsconsole.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Cloud Admin Actions with the Dashboard" href="cloudadmin-gui.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="user-dashboard-overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>user-dashboard-overview</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="user-dashboard-overview.html#access-horizon"><span class="number">2.1 </span><span class="name">Accessing Horizon</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#browser-support-horizon"><span class="number">2.2 </span><span class="name">Browser support for Horizon</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#dashboard-limitations"><span class="number">2.3 </span><span class="name">Dashboard Use</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#DashProject"><span class="number">2.4 </span><span class="name">Project dashboard</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#DashAdmin"><span class="number">2.5 </span><span class="name">Admin dashboard</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#DashSettings"><span class="number">2.6 </span><span class="name">Settings dashboard</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#login-dashboard"><span class="number">2.7 </span><span class="name">Accessing the Dashboard</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#horizon-dashboard-examples"><span class="number">2.8 </span><span class="name">Horizon Dashboard</span></a></span></dt><dt><span class="section"><a href="user-dashboard-overview.html#other-panels"><span class="number">2.9 </span><span class="name">Other Panels</span></a></span></dt></dl></div></div><p>
+  Often referred to as Horizon or the Horizon dashboard, you can use this
+  console to manage resources on a domain and project level in a web-based
+  graphical user interface (GUI).
+ </p><p>
+  Horizon is the OpenStack service that serves as the basis for the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+  dashboards.
+ </p><p>
+  The dashboards provide a web-based user interface to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services
+  including Compute, Volume Operations, Networking, and Identity.
+ </p><div class="sect1" id="access-horizon"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing Horizon</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#access-horizon">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>access-horizon</li></ul></div></div></div></div><p>
+   To access the Horizon dashboard as a non cloud administrator, you should ask
+   the cloud admin for the host name or public IP address of the dashboard, and
+   for your user name and password. If you are a cloud admin, you can determine
+   the URL and credentials by following the steps in
+   <a class="xref" href="cloudadmin-gui.html" title="Chapter 3. Cloud Admin Actions with the Dashboard">Chapter 3, <em>Cloud Admin Actions with the Dashboard</em></a>.
+  </p><div id="id-1.7.3.3.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    If you are authenticating against an external source such as an LDAP
+    directory or via WebSSO you cannot change your password via the change
+    password option in User settings.
+   </p></div><p>
+   Along the left side of the Horizon user interface are sections that provide
+   access to Project and Settings sections. If your login credentials have been
+   assigned the 'admin' role you will also see a separate Admin section that
+   provides additional system-wide setting options.
+  </p><p>
+   Across the top are menus to switch between projects and menus where you can
+   access user settings.
+  </p></div><div class="sect1" id="browser-support-horizon"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Browser support for Horizon</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#browser-support-horizon">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>browser-support-horizon</li></ul></div></div></div></div><p>
+   According to OpenStack.org, Horizon is tested and supported on the latest
+   versions of Firefox and Chrome, and IE9+. Below is a summary of browser
+   support for Horizon
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.3.6.3.1"><span class="term ">Very good</span></dt><dd><p>
+      Very well tested; should work as expected
+     </p></dd><dt id="id-1.7.3.3.6.3.2"><span class="term "> Good</span></dt><dd><p>
+      Moderately tested; should look nice and work fine, may have a few visual
+      issues
+     </p></dd><dt id="id-1.7.3.3.6.3.3"><span class="term ">Poor</span></dt><dd><p>
+      Visually inferior
+     </p></dd><dt id="id-1.7.3.3.6.3.4"><span class="term ">Broken</span></dt><dd><p>
+      Essential functionality not working
+     </p></dd><dt id="id-1.7.3.3.6.3.5"><span class="term ">No</span></dt><dd><p>
+      Not supported
+     </p></dd></dl></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Browser</th><th>Status</th><th>Versions </th></tr></thead><tbody><tr><td>Chrome</td><td>HPE Tested</td><td>43.0.2357.81</td></tr><tr><td>Firefox </td><td>HPE Tested</td><td>31+</td></tr><tr><td>Firefox ESR</td><td>HPE Tested</td><td>31+</td></tr><tr><td>Internet Explorer 11</td><td>HPE Tested</td><td>11.0.9600.18314</td></tr><tr><td>Internet Explorer 10</td><td>Not HPE Tested</td><td> </td></tr><tr><td>Internet Explorer 9</td><td>Not HPE Tested</td><td> </td></tr><tr><td>Internet Explorer 8 and below</td><td>Not supported</td><td> </td></tr><tr><td>Safari</td><td>Not HPE Tested</td><td> </td></tr><tr><td>Opera</td><td>Not HPE Tested</td><td> </td></tr></tbody></table></div><div id="id-1.7.3.3.6.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Please refer to the
+    <a class="link" href="https://wiki.openstack.org/wiki/Horizon" target="_blank">OpenStack
+    Dashboard ("Horizon") wiki</a> for additional compatibility and testing
+    information.
+   </p></div><p>
+   At the bottom of this page, you can see some of the services you can manage
+   right from the dashboard. Remember that Horizon runs over TLS so you will
+   need to use the HTTPS protocol with your Horizon IP address.
+  </p></div><div class="sect1" id="dashboard-limitations"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dashboard Use</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#dashboard-limitations">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>dashboard-limitations</li></ul></div></div></div></div><p>
+   As a Cloud or Domain admin of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> dashboard, you should follow the
+   included recommendations for continued success with your cloud.
+  </p><div id="id-1.7.3.3.7.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Do not create projects in the <span class="emphasis"><em>default</em></span> domain. If you
+      would like to create projects for your users, please create a new domain
+      to host the new projects.
+     </p></li><li class="listitem "><p>
+      If you are a Cloud admin, you may make changes to the
+      <span class="emphasis"><em>default</em></span> domain, however changes should be made from
+      the command-line and not through the dashboard.
+     </p></li><li class="listitem "><p>
+      If you are a Domain admin, you will need to modify the domain from the
+      command-line and not from the dashboard.
+     </p></li></ul></div></div></div><div class="sect1" id="DashProject"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Project dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#DashProject">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>DashProject</li></ul></div></div></div></div><p>
+   Use the <span class="bold"><strong>Project</strong></span> dashboard to implement and
+   build out your cloud. This dashboard contains tools to create virtual server
+   instances, create and configure your network, configure access tools (such
+   as key pairs and security groups) and cloud resource templates (stacks).
+  </p></div><div class="sect1" id="DashAdmin"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Admin dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#DashAdmin">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>DashAdmin</li></ul></div></div></div></div><p>
+   Use the <span class="bold"><strong>Admin</strong></span> dashboard to view, allocate,
+   and manage all resources within the cloud.
+  </p><p>
+   The Admin dashboard allows you to manage instances, define flavors, create
+   and configure images, manage networks, view system resources, manage
+   projects, and manage users.
+  </p></div><div class="sect1" id="DashSettings"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Settings dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#DashSettings">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>DashSettings</li></ul></div></div></div></div><p>
+   Use the <span class="bold"><strong>Settings</strong></span> dashboard to change your
+   display language and settings, your time zone, and your password.
+  </p><p>
+   Click <span class="bold"><strong>Settings</strong></span> in the user menu to display
+   the Settings dashboard.
+  </p></div><div class="sect1" id="login-dashboard"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing the Dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#login-dashboard">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>login-dashboard</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Open a web browser that has both JavaScript and cookies enabled.
+    </p></li><li class="step "><p>
+     In the address bar, enter the host name or IP address for the dashboard.
+    </p><div id="id-1.7.3.3.11.2.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      If a certificate warning appears when you try to access the URL for the
+      first time, a self-signed certificate is in use. These certificates are
+      not considered trustworthy by default. Verify the certificate or add an
+      exception in the browser to bypass the warning. For information about
+      managing certificates, see
+      <span class="intraxref">Book “Security Guide”, Chapter 7 “Transport Layer Security (TLS) Overview”, Section 7.2 “TLS Configuration”</span>.
+     </p></div></li><li class="step "><p>
+     On the <span class="bold"><strong>Log In</strong></span> page, enter your user name
+     and password and then click <span class="bold"><strong>Connect</strong></span>.
+    </p></li><li class="step "><p>
+     The UserID with the <code class="literal">admin</code> role is provided with a
+     special tab called Admin. The menu options underneath this tab are similar
+     to the non-admin user views but cover all projects as well as some
+     additional panels not available to general users.
+    </p><p>
+     The Overview page provides a summary by project of the current utilization
+     of major OpenStack resources. The information on this screen is drawn
+     directly from the Compute or Nova service API and provides the ability to
+     filter the query by date range and an option to download results into a
+     CSV file that is compatible with Microsoft Excel or can be imported into a
+     database.
+    </p></li><li class="step "><p>
+     If you are a non-admin user, you will only be able to select a project
+     from the list at the top of the screen.
+    </p></li></ol></div></div></div><div class="sect1" id="horizon-dashboard-examples"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Horizon Dashboard</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#horizon-dashboard-examples">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>horizon-dashboard-examples</li></ul></div></div></div></div><p>
+   There are several services you can manage in the Horizon dashboard.
+  </p><p>
+   <span class="bold"><strong>Viewing System Information</strong></span>
+  </p><p>
+   The <code class="literal">System Information</code> panel provides a list of all
+   currently installed <span class="productname">OpenStack</span> services and their operation status.
+  </p><p>
+   Additional panels on the <code class="literal">System Information</code> display
+   sub-service status for services like Compute, Block Storage, and Network
+   services. This are tabs for Compute Services, Block Storage Services,
+   Network Agents, and Orchestration Services.
+  </p><p>
+   <span class="bold"><strong>Managing Quotas</strong></span>
+  </p><p>
+   In the left hand menu, <span class="guimenu ">Admin</span> › <span class="guimenu ">Systems</span> › <span class="guimenu ">Defaults</span> shows a list of
+   Quota Names such as VCPUs, RAM, Instances, and storage. Click
+   <span class="guimenu ">Update Defaults</span> to manage Default Quotas.
+  </p><p>
+   <span class="bold"><strong>Managing Routers</strong></span>
+  </p><p>
+   In the menu,
+   <span class="guimenu ">Project</span> › <span class="guimenu ">Network</span> › <span class="guimenu ">Routers</span>
+   displays a list of routers. Routers connect end user networks together as
+   well as to provide external connectivity. This panel shows all currently
+   deployed routers and associated metadata. From here the system administrator
+   can create, edit, and delete routers.
+  </p><p>
+   <span class="bold"><strong>Managing Host Aggregates</strong></span>
+  </p><p>
+   Selecting <span class="guimenu ">Admin</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Host Aggregates</span> displays a list of host aggregates along
+   with Availability Zones and Hosts. You can manage Host Aggregates in the
+   <span class="guimenu ">Actions</span> drop-down box.
+  </p><p>
+   <span class="bold"><strong>Hypervisor Status</strong></span>
+  </p><p>
+   Selecting
+   <span class="guimenu ">Admin</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Hypervisors</span>
+   displays a view of total consumed resources, the hypervisors currently
+   running, the physical server for each hypervisor instance, the type of
+   hypervisor, and the infrastructure resources consumed by the hypervisor.
+  </p><p>
+   The <span class="guimenu ">Compute Host</span> tab lists the currently configured
+   physical hosts, the Availability Zone of each host, status, and a button to
+   <span class="guimenu ">Disable Service</span>.
+  </p></div><div class="sect1" id="other-panels"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Other Panels</span> <a title="Permalink" class="permalink" href="user-dashboard-overview.html#other-panels">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-user_dashboard_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-user_dashboard_overview.xml</li><li><span class="ds-label">ID: </span>other-panels</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     The <span class="bold"><strong>Updates and Extensions </strong></span>panel provides
+     a list of available files that can be downloaded and installed. This view
+     is also only available to UserIDs with the <code class="literal">admin</code> role.
+    </p><div id="id-1.7.3.3.13.2.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      Administrators should be cautious to ensure that Horizon Extensions
+      they install come from a trusted source and/or have undergone
+      appropriate review and testing. Administrators should be aware of the
+      risk of spear phishing, by which they may receive an offer to install
+      an apparently useful application which also performs malicious actions.
+     </p></div></li><li class="listitem "><p>
+     <span class="bold"><strong>Host aggregates </strong></span>are a grouping of
+     physical servers or hosts with associated metadata. A host can belong to
+     multiple aggregates.
+    </p></li><li class="listitem "><p>
+     Common use cases for host aggregates include supporting the scheduling of
+     instances to a subset of hosts that have a specific capability or flavor
+     such as a specific type of storage, lots of RAM, and/or large numbers of
+     processors.
+    </p><p>
+     Another use case of host aggregates is to support the arrangement of hosts
+     into logical groups for load balancing and instance distribution. Host
+     aggregates are configured and only viewable by system admins. The end user
+     view of a host aggregate is called an Availability Zone. Availability
+     zones are created via the Nova API and the host aggregates function. End
+     users can use availability zones for similar use cases. For example, an
+     application could be deployed on hosts in multiple availability zones. A
+     load balancer can then be configured and the instances running each
+     deployment of the application in each availability zone can be assigned to
+     the load balancer thus providing a measure of failover and high
+     availability support.
+    </p><p>
+     Additional information on host aggregates and availability zones is
+     available at
+     <a class="link" href="http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/" target="_blank">http://blog.russellbryant.net/2013/05/21/availability-zones-and-host-aggregates-in-openstack-compute-nova/</a>
+     and
+     <a class="link" href="http://docs.openstack.org/openstack-ops/content/scaling.html" target="_blank">http://docs.openstack.org/openstack-ops/content/scaling.html</a>.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>The Instances panel</strong></span> provides a view of
+     all deployed end user instances across all projects, the images applied to
+     those instances, the status of each instance, flavor type, and network
+     information. This information is also supplied by the Nova API.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>The Volumes panel</strong></span> is displayed if the
+     OpenStack Cinder service is available. Cinder provides block storage
+     infrastructure. Block storage provides the ability for end users to attach
+     storage as discrete drives to a compute instance. These drives are
+     persistent and can be reassigned to a different instance. The Volumes tab
+     on this view shows all currently created volumes and associated metadata
+     and status, which physical host the volume is hosted on, and the ability
+     for the admin to manage each volume.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Flavors</strong></span> are virtual hardware templates.
+     Flavors are used to define a virtual compute host. Flavors are assigned
+     during the creation of a new instance. This panel displays all of the
+     current flavor types and provides the ability for the admin to create,
+     edit or delete flavors. Hosting organizations often use flavors as a form
+     of billing unit; flavors with more resources are charged at a higher rate
+     than flavors with fewer resources.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Images</strong></span> are discrete software builds that
+     can be loaded onto an instance. An image can be a standalone operating
+     system implementation or a bundle of operating system and other
+     pre-configured applications. This panel displays all currently available
+     images and associated metadata and enables the system administrator to
+     create, edit and delete images.
+    </p><div id="id-1.7.3.3.13.2.7.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you encounter the following error:
+     </p><div class="verbatim-wrap"><pre class="screen">ERROR: Unable to create new image. URL scheme not supported.</pre></div><p>
+      The error message indicates that the Glance service has not been
+      configured to support the import of Glance images via the
+      <span class="emphasis"><em>http</em></span> option. This option can be enabled by your
+      system administrator by enabling this function in the Glance
+      configuration file.
+     </p></div></li><li class="listitem "><p>
+     <span class="bold"><strong>Networks</strong></span> are used by end users to provide
+     connectivity to and between their deployed instances. This panel provides
+     a list of all currently deployed networks and associated metadata and
+     enables the system administrator the ability to created, edit, and delete
+     networks.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Quotas</strong></span> provide the means to limit
+     resource usage. Quotas are assigned per project. This panel provides a
+     view of all current quotas and enables a system administrator with the
+     ability to edit quota line items.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>The Identity panel</strong></span> has two major panels.
+     The Projects panel provides a list of all current projects and enables a
+     system administrator the ability to create, modify, and delete panels and
+     panel membership.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>The Users panel</strong></span> is available only to
+     system administrators and provides the ability to create, modify, and
+     delete users. These users are considered "local" to Keystone and are
+     authenticated by Keystone.
+    </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cloudadmin-gui.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Cloud Admin Actions with the Dashboard</span></a><a class="nav-link" href="using-opsconsole.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Using the Operations Console</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

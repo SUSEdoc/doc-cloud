@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>UI Verification | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 27. UI Verification" /><meta name="description" content="Once you have completed your cloud deployment, these are some of the common post-installation tasks you may need to perform to verify your cloud installation." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="post-install.html" title="Part III. Post-Installation" /><link rel="prev" href="cloud-verification.html" title="Chapter 26. Cloud Verification" /><link rel="next" href="install-openstack-clients.html" title="Chapter 28. Installing OpenStack Clients" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="ui-verification.html">UI Verification</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 26. Cloud Verification" href="cloud-verification.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 28. Installing OpenStack Clients" href="install-openstack-clients.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="ui-verification.html">UI Verification</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 26. Cloud Verification" href="cloud-verification.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 28. Installing OpenStack Clients" href="install-openstack-clients.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="ui-verification"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">27 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">UI Verification</span> <a title="Permalink" class="permalink" href="ui-verification.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ui_verification.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ui_verification.xml</li><li><span class="ds-label">ID: </span>ui-verification</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="ui-verification.html#sec-verify-block-storage-volume"><span class="number">27.1 </span><span class="name">Verifying Your Block Storage Backend</span></a></span></dt><dt><span class="section"><a href="ui-verification.html#sec-verify-block-storage-swift"><span class="number">27.2 </span><span class="name">Verify the Object Storage (Swift) Operations</span></a></span></dt><dt><span class="section"><a href="ui-verification.html#upload-image"><span class="number">27.3 </span><span class="name">Uploading an Image for Use</span></a></span></dt><dt><span class="section"><a href="ui-verification.html#create-extnet"><span class="number">27.4 </span><span class="name">Creating an External Network</span></a></span></dt></dl></div></div><p>
+  Once you have completed your cloud deployment, these are some of the common
+  post-installation tasks you may need to perform to verify your cloud
+  installation.
+ </p><div class="sect1" id="sec-verify-block-storage-volume"><div class="titlepage"><div><div><h2 class="title"><span class="number">27.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Verifying Your Block Storage Backend</span> <a title="Permalink" class="permalink" href="ui-verification.html#sec-verify-block-storage-volume">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span>sec-verify-block-storage-volume</li></ul></div></div></div></div><p>
+  The sections below will show you the steps to verify that your Block Storage
+  backend was setup properly.
+ </p><div class="sect2" id="id-1.4.6.4.3.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a Volume</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.3.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to create a volume using Horizon dashboard.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log into the Horizon dashboard. For more information, see
+     <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>.
+    </p></li><li class="step "><p>
+     Choose <span class="guimenu ">Project</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Volumes</span>.
+    </p></li><li class="step "><p>
+     On the <span class="guimenu ">Volumes</span> tabs, click the
+     <span class="guimenu ">Create Volume</span> button to create a volume.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Create Volume</span> options, enter the
+     required details into the fields and then click the
+     <span class="guimenu ">Create Volume</span> button:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Volume Name - This is the name you specify for your volume.
+      </p></li><li class="step "><p>
+       Description (optional) - This is an optional description for the volume.
+      </p></li><li class="step "><p>
+       Type - Select the volume type you have created for your volumes from the
+       drop down.
+      </p></li><li class="step "><p>
+       Size (GB) - Enter the size, in GB, you would like the volume to be.
+      </p></li><li class="step "><p>
+       Availability Zone - You can either leave this at the default option of
+       <span class="guimenu ">Any Availability Zone</span> or select a
+       specific zone from the drop-down box.
+      </p></li></ol></li></ol></div></div><p>
+   The dashboard will then show the volume you have just created.
+  </p></div><div class="sect2" id="id-1.4.6.4.3.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Attach Volume to an Instance</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.3.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to attach a volume to an instance:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log into the Horizon dashboard. For more information, see
+     <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>.
+    </p></li><li class="step "><p>
+     Choose <span class="guimenu ">Project</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Instances</span>.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Action</span> column, choose the
+     <span class="guimenu ">Edit Attachments</span> in the drop-down
+     box next to the instance you want to attach the volume to.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Attach To Instance</span> drop-down,
+     select the volume that you want to attach.
+    </p></li><li class="step "><p>
+     Edit the <span class="guimenu ">Device Name</span> if necessary.
+    </p></li><li class="step "><p>
+     Click <span class="guimenu ">Attach Volume</span> to complete the
+     action.
+    </p></li><li class="step "><p>
+     On the <span class="guimenu ">Volumes</span> screen,
+     verify that the volume you attached is displayed in the
+     <span class="guimenu ">Attached To</span> columns.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.4.6.4.3.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Detach Volume from Instance</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.3.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to detach the volume from instance:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log into the Horizon dashboard. For more information, see
+     <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>.
+    </p></li><li class="step "><p>
+     Choose <span class="guimenu ">Project</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Instances</span>.
+    </p></li><li class="step "><p>
+     Click the check box next to the name of the volume you want to detach.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Action</span> column, choose the
+     <span class="guimenu ">Edit Attachments</span> in the drop-down
+     box next to the instance you want to attach the volume to.
+    </p></li><li class="step "><p>
+     Click <span class="guimenu ">Detach Attachment</span>. A confirmation
+     dialog box appears.
+    </p></li><li class="step "><p>
+     Click <span class="guimenu ">Detach Attachment</span> to confirm the
+     detachment of the volume from the associated instance.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.4.6.4.3.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete Volume</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.3.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to delete a volume using Horizon dashboard:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log into the Horizon dashboard. For more information, see
+     <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>.
+    </p></li><li class="step "><p>
+     Choose <span class="guimenu ">Project</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Volumes</span>.
+    </p></li><li class="step "><p>
+     In the <span class="guimenu ">Actions</span> column, click
+     <span class="guimenu ">Delete Volume</span> next to the volume you
+     would like to delete.
+    </p></li><li class="step "><p>
+     To confirm and delete the volume, click <span class="guimenu ">Delete Volume</span>
+     again.
+    </p></li><li class="step "><p>
+     Verify that the volume was removed from the
+     <span class="guimenu ">Volumes</span> screen.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.4.6.4.3.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Verifying Your Object Storage (Swift)</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.3.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_block_storage.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_block_storage.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The following procedure shows how to validate that all servers have been
+   added to the Swift rings:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Run the swift-compare-model-rings.yml playbook as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts swift-compare-model-rings.yml</pre></div></li><li class="step "><p>
+     Search for output similar to the following. Specifically, look at the
+     number of drives that are proposed to be added.
+    </p><div class="verbatim-wrap"><pre class="screen">TASK: [swiftlm-ring-supervisor | validate-input-model | Print report] *********
+ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
+    "var": {
+        "report.stdout_lines": [
+            "Rings:",
+            "  ACCOUNT:",
+            "    ring exists",
+            "    no device changes",
+            "    ring will be rebalanced",
+            "  CONTAINER:",
+            "    ring exists",
+            "    no device changes",
+            "    ring will be rebalanced",
+            "  OBJECT-0:",
+            "    ring exists",
+            "    no device changes",
+            "    ring will be rebalanced"
+        ]
+    }
+}</pre></div></li><li class="step "><p>
+     If the text contains "no device changes" then the deploy was successful
+     and no further action is needed.
+    </p></li><li class="step "><p>
+     If more drives need to be added, it indicates that the deploy
+     failed on some nodes and that you restarted the deploy to include those
+     nodes. However, the nodes are not in the Swift rings because enough time
+     has not elapsed to allow the rings to be rebuilt. You have two options to
+     continue:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Repeat the deploy. There are two steps:
+      </p><ol type="i" class="substeps "><li class="step "><p>
+         Delete the ring builder files as described in
+         <span class="intraxref">Book “Operations Guide”, Chapter 15 “Troubleshooting Issues”, Section 15.6 “Storage Troubleshooting”, Section 15.6.2 “Swift Storage Troubleshooting”, Section 15.6.2.8 “Restarting the Object Storage Deployment”</span>.
+        </p></li><li class="step "><p>
+         Repeat the installation process starting by running the
+         <code class="filename">site.yml</code> playbook as described in
+         <a class="xref" href="install-kvm.html#sec-kvm-deploy" title="12.7. Deploying the Cloud">Section 12.7, “Deploying the Cloud”</a>.
+        </p></li></ol></li><li class="step "><p>
+       Rebalance the rings several times until all drives are incorporated in
+       the rings. This process may take several hours to complete (because you
+       need to wait one hour between each rebalance). The steps are as follows:
+      </p><ol type="i" class="substeps "><li class="step "><p>
+         Change the min-part-hours to 1 hour. See
+         <span class="intraxref">Book “Operations Guide”, Chapter 8 “Managing Object Storage”, Section 8.5 “Managing Swift Rings”, Section 8.5.7 “Changing min-part-hours in Swift”</span>.
+        </p></li><li class="step "><p>
+         Use the "First phase of ring rebalance" and "Final rebalance phase" as
+         described in <span class="intraxref">Book “Operations Guide”, Chapter 8 “Managing Object Storage”, Section 8.5 “Managing Swift Rings”, Section 8.5.5 “Applying Input Model Changes to Existing Rings”</span>.
+         The <span class="quote">“<span class="quote ">Weight change phase of ring rebalance</span>”</span> does not
+         apply because you have not set the weight-step attribute at this
+         stage.
+        </p></li><li class="step "><p>
+         Set the min-part-hours to the recommended 16 hours as described in
+         <span class="intraxref">Book “Operations Guide”, Chapter 8 “Managing Object Storage”, Section 8.5 “Managing Swift Rings”, Section 8.5.7 “Changing min-part-hours in Swift”</span>.
+        </p></li></ol></li></ol></li></ol></div></div><p>
+   If you receive errors during the validation, see
+   <span class="intraxref">Book “Operations Guide”, Chapter 15 “Troubleshooting Issues”, Section 15.6 “Storage Troubleshooting”, Section 15.6.2 “Swift Storage Troubleshooting”, Section 15.6.2.3 “Interpreting Swift Input Model Validation Errors”</span>.
+  </p></div></div><div class="sect1" id="sec-verify-block-storage-swift"><div class="titlepage"><div><div><h2 class="title"><span class="number">27.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Verify the Object Storage (Swift) Operations</span> <a title="Permalink" class="permalink" href="ui-verification.html#sec-verify-block-storage-swift">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-verify_swift.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-verify_swift.xml</li><li><span class="ds-label">ID: </span>sec-verify-block-storage-swift</li></ul></div></div></div></div><p>
+   For information about verifying the operations, see
+   <span class="intraxref">Book “Operations Guide”, Chapter 8 “Managing Object Storage”, Section 8.1 “Running the Swift Dispersion Report”</span>.
+  </p></div><div class="sect1" id="upload-image"><div class="titlepage"><div><div><h2 class="title"><span class="number">27.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uploading an Image for Use</span> <a title="Permalink" class="permalink" href="ui-verification.html#upload-image">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-upload_image.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-upload_image.xml</li><li><span class="ds-label">ID: </span>upload-image</li></ul></div></div></div></div><p>
+  To create a Compute instance, you need to obtain an image that you can use.
+  The Cloud Lifecycle Manager provides an Ansible playbook that will
+  download a CirrOS Linux image, and then upload it as a public image to your
+  image repository for use across your projects.
+ </p><div class="sect2" id="id-1.4.6.4.5.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Running the Playbook</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.5.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-upload_image.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-upload_image.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Use the following command to run this playbook:
+  </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts glance-cloud-configure.yml -e proxy=&lt;PROXY&gt;</pre></div><p>
+   The table below shows the optional switch that you can use as part of this
+   playbook to specify environment-specific information:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Switch</th><th>Description</th></tr></thead><tbody><tr><td>
+       <p>
+        <code class="literal">-e proxy="&lt;proxy_address:port&gt;"</code>
+       </p>
+      </td><td>
+       <p>
+        Optional. If your environment requires a proxy for the internet, use
+        this switch to specify the proxy information.
+       </p>
+      </td></tr></tbody></table></div></div><div class="sect2" id="id-1.4.6.4.5.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to Curate Your Own Images</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.5.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-upload_image.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-upload_image.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   OpenStack has created a guide to show you how to obtain, create, and modify
+   images that will be compatible with your cloud:
+  </p><p>
+   <a class="link" href="http://docs.openstack.org/image-guide/content/" target="_blank">OpenStack
+   Virtual Machine Image Guide</a>
+  </p></div><div class="sect2" id="id-1.4.6.4.5.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the GlanceClient CLI to Create Images</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.5.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-upload_image.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-upload_image.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You can use the GlanceClient on a machine accessible to your cloud or on
+   your Cloud Lifecycle Manager where it is automatically installed.
+  </p><p>
+   The GlanceClient allows you to create, update, list, and delete images as
+   well as manage your image member lists, which allows you to share access to
+   images across multiple tenants. As with most of the OpenStack CLI tools, you
+   can use the <code class="literal">glance help</code> command to get a full list of
+   commands as well as their syntax.
+  </p><p>
+   If you would like to use the <code class="literal">--copy-from</code> option when
+   creating an image, you will need to have your Administrator enable the http
+   store in your environment using the instructions outlined at
+   <span class="intraxref">Book “Operations Guide”, Chapter 5 “Managing Compute”, Section 5.6 “Configuring the Image Service”, Section 5.6.2 “Allowing the Glance copy-from option in your environment”</span>.
+  </p></div></div><div class="sect1" id="create-extnet"><div class="titlepage"><div><div><h2 class="title"><span class="number">27.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating an External Network</span> <a title="Permalink" class="permalink" href="ui-verification.html#create-extnet">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-create_extnet.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-create_extnet.xml</li><li><span class="ds-label">ID: </span>create-extnet</li></ul></div></div></div></div><p>
+  You must have an external network set up to allow your Compute instances to
+  reach the internet. There are multiple methods you can use to create this
+  external network and we provide two of them here. The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> installer
+  provides an Ansible playbook that will create this network for use across
+  your projects. We also show you how to create this network via the command
+  line tool from your Cloud Lifecycle Manager.
+ </p><div class="sect2" id="sec-create-extnet-playbook"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Ansible Playbook</span> <a title="Permalink" class="permalink" href="ui-verification.html#sec-create-extnet-playbook">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-create_extnet.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-create_extnet.xml</li><li><span class="ds-label">ID: </span>sec-create-extnet-playbook</li></ul></div></div></div></div><p>
+   This playbook will query the Networking service for an existing external
+   network, and then create a new one if you do not already have one. The
+   resulting external network will have the name <code class="literal">ext-net</code>
+   with a subnet matching the CIDR you specify in the command below.
+  </p><p>
+   If you need to specify more granularity, for example specifying an
+   allocation pool for the subnet then you should utilize the
+   <a class="xref" href="ui-verification.html#sec-create-extnet-cli" title="27.4.2. Using the NeutronClient CLI">Section 27.4.2, “Using the NeutronClient CLI”</a>.
+  </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts neutron-cloud-configure.yml -e EXT_NET_CIDR=&lt;CIDR&gt;</pre></div><p>
+   The table below shows the optional switch that you can use as part of this
+   playbook to specify environment-specific information:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Switch</th><th>Description</th></tr></thead><tbody><tr><td>
+       <p>
+        <code class="literal">-e EXT_NET_CIDR=&lt;CIDR&gt;</code>
+       </p>
+      </td><td>
+       <p>
+        Optional. You can use this switch to specify the external network CIDR.
+        If you choose not to use this switch, or use a wrong value, the VMs
+        will not be accessible over the network.
+       </p>
+       <p>
+        This CIDR will be from the <code class="literal">EXTERNAL VM</code> network.
+       </p>
+       <div id="id-1.4.6.4.6.3.6.1.4.1.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+         If this option is not defined the default value is "172.31.0.0/16"
+        </p></div>
+      </td></tr></tbody></table></div></div><div class="sect2" id="sec-create-extnet-cli"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the NeutronClient CLI</span> <a title="Permalink" class="permalink" href="ui-verification.html#sec-create-extnet-cli">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-create_extnet.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-create_extnet.xml</li><li><span class="ds-label">ID: </span>sec-create-extnet-cli</li></ul></div></div></div></div><p>
+   For more granularity you can utilize the Neutron command line tool to create
+   your external network.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Source the Admin credentials:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/service.osrc</pre></div></li><li class="step "><p>
+     Create the external network and then the subnet using these commands
+     below.
+    </p><p>
+     Creating the network:
+    </p><div class="verbatim-wrap"><pre class="screen">neutron net-create --router:external &lt;external-network-name&gt;</pre></div><p>
+     Creating the subnet:
+    </p><div class="verbatim-wrap"><pre class="screen">neutron subnet-create &lt;external-network-name&gt; &lt;CIDR&gt; --gateway &lt;gateway&gt; \
+--allocation-pool start=&lt;IP_start&gt;,end=&lt;IP_end&gt; [--disable-dhcp]</pre></div><p>
+     Where:
+    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Value</th><th>Description</th></tr></thead><tbody><tr><td>external-network-name</td><td>
+         <p>
+          This is the name given to your external network. This is a unique
+          value that you will choose. The value <code class="literal">ext-net</code> is
+          usually used.
+         </p>
+        </td></tr><tr><td>CIDR</td><td>
+         <p>
+          You can use this switch to specify the external network CIDR. If you
+          choose not to use this switch, or use a wrong value, the VMs will not
+          be accessible over the network.
+         </p>
+         <p>
+          This CIDR will be from the EXTERNAL VM network.
+         </p>
+        </td></tr><tr><td>--gateway</td><td>
+         <p>
+          Optional switch to specify the gateway IP for your subnet. If this
+          is not included then it will choose the first available IP.
+         </p>
+        </td></tr><tr><td>
+         --allocation-pool start end
+        </td><td>
+         <p>
+          Optional switch to specify a start and end IP address to use as the
+          allocation pool for this subnet.
+         </p>
+        </td></tr><tr><td>--disable-dhcp</td><td>
+         <p>
+          Optional switch if you want to disable DHCP on this subnet. If this
+          is not specified then DHCP will be enabled.
+         </p>
+        </td></tr></tbody></table></div></li></ol></div></div></div><div class="sect2" id="id-1.4.6.4.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">27.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Next Steps</span> <a title="Permalink" class="permalink" href="ui-verification.html#id-1.4.6.4.6.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-operations-create_extnet.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-operations-create_extnet.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Once the external network is created, users can create a Private Network to
+   complete their networking setup. For instructions, see
+   <span class="intraxref">Book “User Guide”, Chapter 8 “Creating a Private Network”</span>.
+  </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-openstack-clients.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 28 </span>Installing OpenStack Clients</span></a><a class="nav-link" href="cloud-verification.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 26 </span>Cloud Verification</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

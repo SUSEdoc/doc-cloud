@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using Load Balancing as a Service (LBaaS) | User Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 12. Using Load Balancing as a Service (LBaaS)" /><meta name="description" content="Load Balancing as a Service (LBaaS) is an advanced networking service that allows load balancing of multi-node environments. It provides the ability to spread requests across multiple servers thereby reducing the load on any single server. The following examples depict usage of the various OpenStack…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="user-nonadmin.html" title="Part II. Project User Guide" /><link rel="prev" href="lbaas-dashboard.html" title="Chapter 11. Creating a Load Balancer with the Dashboard" /><link rel="next" href="LBaaSHeat.html" title="Chapter 13. Using Load Balancing as a Service with Orchestration Service" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-nonadmin.html">Project User Guide</a><span> › </span><a class="crumb" href="HP2-0LBaaS.html">Using Load Balancing as a Service (LBaaS)</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="user-cloudadmin.html"><span class="number">I </span><span class="name">Cloud Admin User Guide</span></a><ol><li class="inactive"><a href="using-opsconsole.html"><span class="number">1 </span><span class="name">Using the Operations Console</span></a></li><li class="inactive"><a href="user-dashboard-overview.html"><span class="number">2 </span><span class="name">Using the Dashboard</span></a></li><li class="inactive"><a href="cloudadmin-gui.html"><span class="number">3 </span><span class="name">Cloud Admin Actions with the Dashboard</span></a></li><li class="inactive"><a href="CreateCloudAdmin.html"><span class="number">4 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></li><li class="inactive"><a href="install-cli.html"><span class="number">5 </span><span class="name">Installing the Command-Line Clients</span></a></li><li class="inactive"><a href="CreateHARouter.html"><span class="number">6 </span><span class="name">Creating a Highly Available Router</span></a></li></ol></li><li class="inactive"><a href="user-nonadmin.html"><span class="number">II </span><span class="name">Project User Guide</span></a><ol><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">7 </span><span class="name">Using Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="idg-all-userguide-create-network-xml-1.html"><span class="number">8 </span><span class="name">Creating a Private Network</span></a></li><li class="inactive"><a href="create-keypair.html"><span class="number">9 </span><span class="name">Creating a Key Pair</span></a></li><li class="inactive"><a href="user-image-upload.html"><span class="number">10 </span><span class="name">Creating and Uploading a Glance Image</span></a></li><li class="inactive"><a href="lbaas-dashboard.html"><span class="number">11 </span><span class="name">Creating a Load Balancer with the Dashboard</span></a></li><li class="inactive"><a href="HP2-0LBaaS.html"><span class="number">12 </span><span class="name">Using Load Balancing as a Service (LBaaS)</span></a></li><li class="inactive"><a href="LBaaSHeat.html"><span class="number">13 </span><span class="name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li class="inactive"><a href="HP2-0FWaaS.html"><span class="number">14 </span><span class="name">Using Firewall as a Service (FWaaS)</span></a></li><li class="inactive"><a href="UsingVPNaaS.html"><span class="number">15 </span><span class="name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 11. Creating a Load Balancer with the Dashboard" href="lbaas-dashboard.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Using Load Balancing as a Service with Orchestration Service" href="LBaaSHeat.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-nonadmin.html">Project User Guide</a><span> › </span><a class="crumb" href="HP2-0LBaaS.html">Using Load Balancing as a Service (LBaaS)</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 11. Creating a Load Balancer with the Dashboard" href="lbaas-dashboard.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Using Load Balancing as a Service with Orchestration Service" href="LBaaSHeat.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="HP2-0LBaaS"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Load Balancing as a Service (LBaaS)</span> <a title="Permalink" class="permalink" href="HP2-0LBaaS.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-lbaas.xml</li><li><span class="ds-label">ID: </span>HP2-0LBaaS</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="HP2-0LBaaS.html#idg-all-userguide-lbaas-xml-6"><span class="number">12.1 </span><span class="name">Configuration</span></a></span></dt><dt><span class="section"><a href="HP2-0LBaaS.html#idg-all-userguide-lbaas-xml-15"><span class="number">12.2 </span><span class="name">For More Information</span></a></span></dt></dl></div></div><p>
+  Load Balancing as a Service (LBaaS) is an advanced networking service that
+  allows load balancing of multi-node environments. It provides the ability to
+  spread requests across multiple servers thereby reducing the load on any
+  single server. The following examples depict usage of the various OpenStack
+  command-line interfaces. The Load Balancer v1 API is also accessible
+  via the Horizon web interface if the v1 API is enabled. The Load Balancer v2
+  API does not currently have a representative Horizon web interface. The v2
+  API is targeted to have a Horizon web interface in a future <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> release.
+  This document describes the configuration for LBaaS v1 and v2.
+ </p><p>
+  You can create TLS enabled Load Balancers in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> by following the
+  steps labeled for TLS Load Balancers. You cannot enable TLS with v1 Load
+  Balancers, only v2 Load Balancers can be enabled with TLS.
+ </p><div id="id-1.7.4.7.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+   When Barbican is not installed by default, you have to manually install
+   Barbican and redeploy neutron.
+  </p></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> can support either LBaaS v1 or LBaaS v2 to allow for wide
+  ranging customer requirements. Check with your administrator for the version
+  that is installed before starting your configuration.
+ </p><div class="sect1" id="idg-all-userguide-lbaas-xml-6"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="HP2-0LBaaS.html#idg-all-userguide-lbaas-xml-6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-lbaas.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-lbaas-xml-6</li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> LBaaS Configuration
+  </p><p>
+   <span class="bold"><strong>Create Private Network for LBaaS</strong></span>
+  </p><p>
+   You can create the new network and router by executing the following command
+   from the Cloud Lifecycle Manager or a shell with access to the API nodes.
+  </p><div class="procedure "><div class="procedure-contents"><ul class="procedure"><li class="step "><p>
+     As a cloud admin, run the following commands to create a private network
+     and a router.
+    </p><div class="verbatim-wrap"><pre class="screen">neutron net-create private
+neutron subnet-create --name sub private 10.1.0.0/24 --gateway 10.1.0.1
+neutron router-create --distributed false router
+neutron router-interface-add router sub
+neutron router-gateway-set router ext-net</pre></div></li></ul></div></div><p>
+   <span class="bold"><strong>Start Virtual Machines</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Add security group rules.
+    </p><div id="id-1.7.4.7.6.7.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      In the example below the load balancer is tested on port 80. If you
+      need to test the load balancer on a different port you will need to
+      create a security group rule for your port number.
+     </p></div><div class="verbatim-wrap"><pre class="screen">neutron security-group-rule-create default --protocol icmp
+neutron security-group-rule-create default --protocol tcp --port-range-min 22 --port-range-max 22
+neutron security-group-rule-create default --protocol tcp --port-range-min 80 --port-range-max 80</pre></div></li><li class="step "><p>
+     Start two VMs on the private network.
+    </p><div class="verbatim-wrap"><pre class="screen">## Start vm1
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk '/private/ {print $2}') vm1
+
+## start vm2
+nova boot --flavor 1 --image &lt;image&gt; --nic net-id=$(neutron net-list | awk '/private/ {print $2}') vm2</pre></div></li><li class="step "><p>
+     Check if the VMs are active.
+    </p><div class="verbatim-wrap"><pre class="screen">nova list</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>For TLS Load Balancers - Create Certificate Chain and
+   Key</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     From a computer with access to the Barbican and labs API, run the
+     following sequence of commands
+    </p><div class="verbatim-wrap"><pre class="screen">openssl genrsa -des3 -out ca.key 1024
+openssl req -new -x509 -days 3650 -key ca.key -out ca.crt
+openssl x509  -in  ca.crt -out ca.pem
+openssl genrsa -des3 -out ca-int_encrypted.key 1024
+openssl rsa -in ca-int_encrypted.key -out ca-int.key
+openssl req -new -key ca-int.key -out ca-int.csr -subj "/CN=ca-int@acme.com"
+openssl x509 -req -days 3650 -in ca-int.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out ca-int.crt
+openssl genrsa -des3 -out server_encrypted.key 1024
+openssl rsa -in server_encrypted.key -out server.key
+openssl req -new -key server.key -out server.csr -subj "/CN=server@acme.com"
+openssl x509 -req -days 3650 -in server.csr -CA ca-int.crt -CAkey ca-int.key -set_serial 01 -out server.crt</pre></div></li><li class="step "><p>
+     For SNI, create another chain with a different CN
+    </p><div class="verbatim-wrap"><pre class="screen">openssl genrsa -des3 -out ca2.key 1024
+openssl req -new -x509 -days 3650 -key ca2.key -out ca2.crt
+openssl x509  -in  ca2.crt -out ca2.pem
+openssl genrsa -des3 -out ca-int_encrypted2.key 1024
+openssl rsa -in ca-int_encrypted2.key -out ca-int2.key
+openssl req -new -key ca-int2.key -out ca-int2.csr -subj "/CN=ca-int-test2@stacme.com"
+openssl x509 -req -days 3650 -in ca-int2.csr -CA ca2.crt -CAkey ca2.key -set_serial 01 -out ca-int2.crt
+openssl genrsa -des3 -out server_encrypted2.key 1024
+openssl rsa -in server_encrypted2.key -out server2.key
+openssl req -new -key server2.key -out server2.csr -subj "/CN=test2@stacme.com"
+openssl x509 -req -days 3650 -in server2.csr -CA ca-int2.crt -CAkey ca-int2.key -set_serial 01 -out server2.crt</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>For TLS Load Balancers - Barbican Secrets and
+   Containers</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Source the <code class="literal">barbican.osrc</code> file from the lifecycle
+     manager node. If you need to perform this operation on a different
+     computer make sure that the OpenStack user account uploading the certs has
+     the keymanager-admin role and is in the admin tenant (see
+     <span class="intraxref">Book “Operations Guide”, Chapter 4 “Managing Identity”, Section 4.5 “Configuring the Identity Service”</span> 
+     for a list of roles and tenants). LBaaS will only be able to access
+     certificates stored in the admin tenant.
+    </p><div class="verbatim-wrap"><pre class="screen">barbican secret store --payload-content-type='text/plain' --name='certificate' --payload="$(cat server.crt)"
+barbican secret store --payload-content-type='text/plain' --name='private_key' --payload="$(cat server.key)"
+barbican secret container create --name='tls_container' --type='certificate' --secret="certificate=$(barbican secret list | awk '/ certificate / {print $2}')" --secret="private_key=$(barbican secret list | awk '/ private_key / {print $2}')"</pre></div><div id="id-1.7.4.7.6.11.1.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+      Do not delete the certificate container associated with your Load
+      Balancer listeners before deleting the Load Balancers themselves. If you
+      delete the certificate first, future operations on your Load Balancers
+      and failover will cease to function.
+     </p></div></li><li class="step "><p>
+     Add the second certificate chain to test SNI
+    </p><div class="verbatim-wrap"><pre class="screen">barbican secret store --payload-content-type='text/plain' --name='certificate2' --payload="$(cat server2.crt)"
+barbican secret store --payload-content-type='text/plain' --name='private_key2' --payload="$(cat server2.key)"
+barbican secret container create --name='tls_container2' --type='certificate' --secret="certificate=$(barbican secret list | awk '/ certificate2 / {print $2}')" --secret="private_key=$(barbican secret list | awk '/ private_key2 / {print $2}')"</pre></div></li><li class="step "><p>
+     Find the Octavia user id. You will add the id as a barbican acl user for
+     the containers and keys.
+    </p><div class="verbatim-wrap"><pre class="screen">source keystone.osrc
+openstack user list</pre></div></li><li class="step "><p>
+     Get the container and secret hrefs.
+    </p><div class="verbatim-wrap"><pre class="screen">source barbican.osrc
+barbican secret list
+barbican secret container list</pre></div></li><li class="step "><p>
+     Add the acl user obtained in step 3 to the hrefs obtained in step 4 by
+     executing <code class="literal">barbican acl user add --user &lt;user id of Octavia&gt;
+     &lt;href&gt;</code>. In the example below, the Octavia user,
+     <code class="literal">66649a0863b64275bc3bffb50e3d76c8</code> is being added as the
+     Barbican acl user for the containers and keys:
+    </p><div class="verbatim-wrap"><pre class="screen">barbican acl user add --user 66649a0863b64275bc3bffb50e3d76c8 https://10.242.124.130:9311/v1/containers/7ebcd4fa-e96a-493d-b1ee-260914d3cbeb
+barbican acl user add --user 66649a0863b64275bc3bffb50e3d76c8 https://10.242.124.130:9311/v1/secrets/d3c9584c-a43c-4fc1-bfa9-ebcafee57059
+barbican acl user add --user 66649a0863b64275bc3bffb50e3d76c8 https://10.242.124.130:9311/v1/secrets/0b958aa8-49d2-40aa-82dd-5660e012b3a3</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>Create Load Balancer v2</strong></span>
+  </p><div id="id-1.7.4.7.6.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The creation of the Load Balancer requires a tenant network and not an
+    external network.
+   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Create the new load balancer using the
+     <code class="literal">lbaas-loadbalancer-create</code> command and giving the load
+     balancer a name and subnet.
+    </p><div class="verbatim-wrap"><pre class="screen">source barbican.osrc
+neutron lbaas-loadbalancer-create --name lb sub</pre></div></li><li class="step "><p>
+     Create a new listener. If you are enabling TLS, use the second example, if
+     you are enabling TLS and SNI, use the third example.
+    </p><div id="id-1.7.4.7.6.14.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      Use unique port numbers for each listener. This example uses 80, 443
+      and 444.
+     </p></div><ol type="a" class="substeps "><li class="step "><p>
+       Create a new listener for the load balancer without TLS using the
+       <code class="literal">lbaas-listener-create</code> command and giving the listener
+       the name of the load balancer, the protocol, the protocol port and a
+       name for the listener.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-listener-create --loadbalancer lb --protocol HTTP --protocol-port 80 --name listener</pre></div></li><li class="step "><p>
+       Create a new listener for the load balancer with TLS and no SNI using
+       the <code class="literal">lbaas-listener-create</code> command and giving the
+       listener the name of the load balancer, the protocol, the protocol port,
+       the name for the listener and the default TLS container.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-listener-create --loadbalancer lb --protocol-port 443 --protocol TERMINATED_HTTPS --name tls_listener --default-tls-container-ref=$(barbican secret container list | awk '/ tls_container / {print $2}')</pre></div></li><li class="step "><p>
+       Create a new listener for the load balancer with TLS and SNI using the
+       <code class="literal">lbaas-listener-create</code> command and giving the listener
+       the name of the load balancer, the protocol, the protocol port, the name
+       for the listener, the default TLS container and the SNI container.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-listener-create --loadbalancer lb --protocol-port 444 --protocol TERMINATED_HTTPS --name sni_listener --default-tls-container-ref=$(barbican secret container list | awk '/ tls_container / {print $2}') --sni-container-refs $(barbican secret container list | awk '/ tls_container2 / {print $2}’</pre></div></li><li class="step "><p>
+       For each listener, create a new pool for the load balancer using the
+       <code class="literal">lbaas-pool-create</code> command. Creating a new pool
+       requires the load balancing algorithm, the name of the listener, the
+       protocol and a name for the pool. In the example below we show the
+       command for the listener named <code class="literal">listener</code>. You need to
+       repeat that for the tls_listener and sni_listener as well. Make sure to
+       specify different names for each pool.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-pool-create --lb-algorithm ROUND_ROBIN --listener listener --protocol HTTP --name &lt;pool name&gt;</pre></div></li><li class="step "><p>
+       You can add members to the load balancer pool by running the
+       <code class="literal">lbaas-member-create</code> command. The command requires the
+       subnet, IP address, protocol port and the name of the pool for each
+       virtual machine you would like to include into the load balancer pool. It is
+       important to note that this will need to be repeated for each pool
+       created above.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-member-create --subnet sub --address &lt;ip address vm1&gt; --protocol-port &lt;port&gt; &lt;pool name&gt;
+neutron lbaas-member-create --subnet sub --address &lt;ip address vm2&gt; --protocol-port &lt;port&gt; &lt;pool name&gt;</pre></div></li><li class="step "><p>
+       Display the current state of the load balancer and values with
+       <code class="literal">lbaas-loadbalancer-show</code>.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron lbaas-loadbalancer-show lb</pre></div></li><li class="step "><p>
+       You need to assign the floating IP to lbaas VIP so it can be accessed
+       from the external network.
+      </p><div class="verbatim-wrap"><pre class="screen">fixedip_vip=$(neutron lbaas-loadbalancer-list | awk '/lb/ {print $6}')
+portuuid_vip=$(neutron port-list | grep $fixedip_vip | awk '{print $2}')</pre></div></li><li class="step "><p>
+       Create and associate the floating IP address to lbaas VIP address.
+      </p><div class="verbatim-wrap"><pre class="screen">neutron floatingip-create ext-net --port-id $portuuid_vip</pre></div></li></ol></li></ol></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     A complete list of the Load Balancer v2 API commands can be found at:
+     <a class="link" href="https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0" target="_blank">https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0</a>
+    </p></li><li class="listitem "><p>
+     Additional Load Balancer v2 API examples can be found at:
+     <a class="link" href="http://docs.openstack.org/mitaka/networking-guide/adv-config-lbaas.html" target="_blank">http://docs.openstack.org/mitaka/networking-guide/adv-config-lbaas.html</a>
+    </p></li><li class="listitem "><p>
+     Instructions on how to terminate TLS certificates on a deployed Load
+     Balancer can be found at:
+     <a class="link" href="https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0#Create_a_Listener" target="_blank">https://wiki.openstack.org/wiki/Neutron/LBaaS/API_2.0#Create_a_Listener</a>
+    </p></li></ul></div><p>
+   <span class="bold"><strong>Create Load Balancer v1</strong></span>
+  </p><div id="id-1.7.4.7.6.17" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    v1 Load Balancers cannot be enabled with TLS.
+   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Create the load balancer pool with <code class="literal">lb-pool-create</code>
+     giving it a method, name, protocol and subnet.
+    </p><div class="verbatim-wrap"><pre class="screen">neutron lb-pool-create --lb-method ROUND_ROBIN --name pool --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}')</pre></div></li><li class="step "><p>
+     Create load balancing members with <code class="literal">lb-member-create</code>
+     providing the IP address, protocol and load balancing pool name to each
+     member.
+    </p><div class="verbatim-wrap"><pre class="screen">neutron lb-member-create --address &lt;ip address vm1&gt; --protocol-port &lt;port&gt; pool
+neutron lb-member-create --address &lt;ip address vm2&gt; --protocol-port &lt;port&gt; pool</pre></div></li><li class="step "><p>
+     Create the vip with <code class="literal">lb-vip-create</code> giving it a name,
+     protocol, protocol port and a subnet.
+    </p><div class="verbatim-wrap"><pre class="screen">neutron lb-vip-create --name vip --protocol-port &lt;port&gt; --protocol HTTP --subnet-id $(neutron subnet-list | awk '/sub/ {print $2}') pool</pre></div></li><li class="step "><p>
+     You can check to see if the load balancer is active with
+     <code class="literal">lb-vip-show</code>
+    </p><div class="verbatim-wrap"><pre class="screen">neutron lb-vip-show vip</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>Validate LBaaS Functionality</strong></span>
+  </p><div id="id-1.7.4.7.6.20" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    You should perform the following steps from a node that has a route to
+    the private network. Using the examples from above, 10.1.0.0/24 should be
+    reachable.
+   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     SSH into both vm1 and vm2 in two separate windows and make them listen on
+     your configured port.
+    </p></li><li class="step "><p>
+     From one window.
+    </p><div class="verbatim-wrap"><pre class="screen">ssh cirros@&lt;ip address vm1&gt;
+pass: &lt;password&gt;</pre></div></li><li class="step "><p>
+     From another window.
+    </p><div class="verbatim-wrap"><pre class="screen">ssh cirros@&lt;ip address vm2&gt;
+pass: &lt;password&gt;</pre></div></li><li class="step "><p>
+     Start running web servers on both of the virtual machines.
+    </p></li><li class="step "><p>
+     Create a webserv.sh script with below contents. Use the &lt;port&gt; from
+     the member creation step.
+    </p><div class="verbatim-wrap"><pre class="screen">$ vi webserv.sh
+
+#!/bin/bash
+
+MYIP=$(/sbin/ifconfig eth0|grep 'inet addr'|awk -F: '{print $2}'| awk '{print $1}');
+while true; do
+    echo -e "HTTP/1.0 200 OK
+
+Welcome to $MYIP" | sudo nc -l -p &lt;port&gt;
+done
+
+## Give it Exec rights
+$ chmod 755 webserv.sh
+
+## Start webserver
+$ ./webserv.sh</pre></div></li><li class="step "><p>
+     Open a separate window. From the respective source node in external
+     network (in case of accessing LBaaS VIP thorough its FIP) or in private
+     network (in case of no FIP), add the respective IP address to the no_proxy
+     env variable, if required. You can get the <span class="emphasis"><em>VIP</em></span> from
+     the <code class="literal">neutron lbaas-loadbalancer-list</code> for LBaaS v2 and
+     <code class="literal">neutron lb-vip-list</code> for LBaaS v1.
+    </p></li><li class="step "><p>
+     Run the following commands to test load balancing. In this example, the
+     VIP IP address is 10.1.0.7 and when executing curl against the VIP, the
+     responses are returned from the load balanced services.
+    </p><div class="verbatim-wrap"><pre class="screen">$ export no_proxy=$no_proxy,10.1.0.7
+
+## Curl the VIP
+$ curl 10.1.0.7
+Welcome to 10.1.0.4
+
+$ curl 10.1.0.7
+Welcome to 10.1.0.5
+
+$ curl 10.1.0.7
+Welcome to 10.1.0.4</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>Verify SNI</strong></span>
+  </p><p>
+   You can verify SNI by running the following command from a node with access
+   to the private network. You can get the VIP from the neutron
+   <code class="literal">lbaas-loadbalancer-list</code> for LBaaS v2.
+  </p><div class="verbatim-wrap"><pre class="screen">openssl s_client -servername test2@stacme.com -connect &lt;vip of lb&gt;:444</pre></div><p>
+   Certificate information will print to the screen. You should verify that the
+   CN matches the CN you passed to <code class="literal">-servername</code>. In the
+   example below the CN matches the servername passed from above.
+  </p><div class="verbatim-wrap"><pre class="screen">subject=/CN=test2@stacme.com
+issuer=/CN=ca-int-test2@stacme.com</pre></div></div><div class="sect1" id="idg-all-userguide-lbaas-xml-15"><div class="titlepage"><div><div><h2 class="title"><span class="number">12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="HP2-0LBaaS.html#idg-all-userguide-lbaas-xml-15">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/userguide-lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-lbaas.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-lbaas-xml-15</li></ul></div></div></div></div><p>
+   For more information on the neutron command-line interface (CLI) and load
+   balancing, see the OpenStack networking command-line client reference:
+   <a class="link" href="http://docs.openstack.org/cli-reference/content/neutronclient_commands.html" target="_blank">http://docs.openstack.org/cli-reference/content/neutronclient_commands.html</a>
+  </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="LBaaSHeat.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 13 </span>Using Load Balancing as a Service with Orchestration Service</span></a><a class="nav-link" href="lbaas-dashboard.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 11 </span>Creating a Load Balancer with the Dashboard</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

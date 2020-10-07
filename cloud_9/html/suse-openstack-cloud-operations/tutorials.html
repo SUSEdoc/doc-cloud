@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Tutorials | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 2. Tutorials" /><meta name="description" content="This section contains tutorials for common tasks for your SUSE OpenStack Cloud 9 cloud." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="gettingstarted-ops.html" title="Chapter 1. Operations Overview" /><link rel="next" href="clm-admin-ui.html" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="tutorials.html">Tutorials</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Operations Overview" href="gettingstarted-ops.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" href="clm-admin-ui.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="tutorials.html">Tutorials</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Operations Overview" href="gettingstarted-ops.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Cloud Lifecycle Manager Admin UI User Guide" href="clm-admin-ui.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="tutorials"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tutorials</span> <a title="Permalink" class="permalink" href="tutorials.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials.xml</li><li><span class="ds-label">ID: </span>tutorials</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="tutorials.html#Quickstart-Guide"><span class="number">2.1 </span><span class="name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Quickstart Guide</span></a></span></dt><dt><span class="section"><a href="tutorials.html#install-cli"><span class="number">2.2 </span><span class="name">Installing the Command-Line Clients</span></a></span></dt><dt><span class="section"><a href="tutorials.html#CreateCloudAdmin"><span class="number">2.3 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></span></dt><dt><span class="section"><a href="tutorials.html#log-management-integration"><span class="number">2.4 </span><span class="name">Log Management and Integration</span></a></span></dt><dt><span class="section"><a href="tutorials.html#Integrating-Kibana-with-Splunk"><span class="number">2.5 </span><span class="name">Integrating Your Logs with Splunk</span></a></span></dt><dt><span class="section"><a href="tutorials.html#LDAP-Integration"><span class="number">2.6 </span><span class="name">Integrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with an LDAP System</span></a></span></dt></dl></div></div><p>
+  This section contains tutorials for common tasks for your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9
+  cloud.
+ </p><div class="sect1" id="Quickstart-Guide"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Quickstart Guide</span> <a title="Permalink" class="permalink" href="tutorials.html#Quickstart-Guide">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-quickstart_guide.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-quickstart_guide.xml</li><li><span class="ds-label">ID: </span>Quickstart-Guide</li></ul></div></div></div></div><div class="sect2" id="id-1.5.4.3.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.3.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-quickstart_guide.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-quickstart_guide.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   This document provides simplified instructions for installing and setting up
+   a <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. Use this quickstart guide to build testing, demonstration, and
+   lab-type environments., rather than production installations. When you
+   complete this quickstart process, you will have a fully functioning <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+   demo environment.
+  </p><div id="id-1.5.4.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    These simplified instructions are intended for testing or
+    demonstration. Instructions for production installations are in <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”</span>.
+   </p></div></div><div class="sect2" id="id-1.5.4.3.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview of components</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.3.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-quickstart_guide.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-quickstart_guide.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The following are short descriptions of the components that <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> employs
+   when installing and deploying your cloud.
+  </p><p><span class="formalpara-title">Ansible. </span>
+    Ansible is a powerful configuration management tool used by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to
+    manage nearly all aspects of your cloud infrastructure. Most commands in
+    this quickstart guide execute Ansible scripts, known as playbooks. You will
+    run playbooks that install packages, edit configuration files, manage
+    network settings, and take care of the general administration tasks
+    required to get your cloud up and running.
+   </p><p>
+   Get more information on Ansible at
+   <a class="link" href="https://www.ansible.com/" target="_blank">https://www.ansible.com/</a>.
+  </p><p><span class="formalpara-title">Cobbler. </span>
+    Cobbler is another third-party tool used by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to deploy
+    operating systems across the physical servers that make up your cloud. Find
+    more info at <a class="link" href="http://cobbler.github.io/" target="_blank">http://cobbler.github.io/</a>.
+   </p><p><span class="formalpara-title">Git. </span>
+    Git is the version control system used to manage the configuration files
+    that define your cloud. Any changes made to your cloud configuration files
+    must be committed to the locally hosted git repository to take effect. Read
+    more information on Git at <a class="link" href="https://git-scm.com/" target="_blank">https://git-scm.com/</a>.
+   </p></div><div class="sect2" id="id-1.5.4.3.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparation</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.3.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-quickstart_guide.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-quickstart_guide.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Successfully deploying a <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> environment is a large endeavor, but it is
+   not complicated. For a successful deployment, you must put a number of
+   components in place before rolling out your cloud. Most importantly, a basic
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> requires the proper network infrastrucure. Because <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+   segregates the network traffic of many of its elements, if the necessary
+   networks, routes, and firewall access rules are not in place, communication
+   required for a successful deployment will not occur.
+  </p></div><div class="sect2" id="section-v5g-dvv-xw"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Getting Started</span> <a title="Permalink" class="permalink" href="tutorials.html#section-v5g-dvv-xw">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-quickstart_guide.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-quickstart_guide.xml</li><li><span class="ds-label">ID: </span>section-v5g-dvv-xw</li></ul></div></div></div></div><p>
+   When your network infrastructure is in place, go ahead and set up the Cloud Lifecycle Manager.
+   This is the server that will orchestrate the deployment of the rest of your
+   cloud. It is also the server you will run most of your deployment and
+   management commands on.
+  </p><p>
+   <span class="bold"><strong>Set up the Cloud Lifecycle Manager</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     <span class="bold"><strong>Download the installation media</strong></span>
+    </p><p>
+     Obtain a copy of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> installation media, and make sure that it is
+     accessible by the server that you are installing it on. Your method of
+     doing this may vary. For instance, some may choose to load the
+     installation ISO on a USB drive and physically attach it to the server,
+     while others may run the IPMI Remote Console and attach the ISO to a
+     virtual disc drive.
+    </p></li><li class="step "><p>
+     <span class="bold"><strong>Install the operating system</strong></span>
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Boot your server, using the installation media as the boot source.
+      </p></li><li class="step "><p>
+       Choose "install" from the list of options and choose your preferred
+       keyboard layout, location, language, and other settings.
+      </p></li><li class="step "><p>
+       Set the address, netmask, and gateway for the primary network interface.
+      </p></li><li class="step "><p>
+       Create a root user account.
+      </p></li></ol><p>
+     Proceed with the OS installation. After the installation is complete and
+     the server has rebooted into the new OS, log in with the user account you
+     created.
+    </p></li><li class="step "><p>
+     <span class="bold"><strong>Configure the new server</strong></span>
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       SSH to your new server, and set a valid DNS nameserver in the
+       <code class="filename">/etc/resolv.conf</code> file.
+      </p></li><li class="step "><p>
+       Set the environment variable <code class="literal">LC_ALL</code>:
+      </p><div class="verbatim-wrap"><pre class="screen">export LC_ALL=C</pre></div></li></ol><p>
+     You now have a server running SUSE Linux Enterprise Server (SLES).
+     The next step is to configure this machine as a Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     <span class="bold"><strong>Configure the Cloud Lifecycle Manager</strong></span>
+    </p><p>
+     The installation media you used to install the OS on the server also has
+     the files that will configure your cloud. You need to mount this
+     installation media on your new server in order to use these files.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Using the URL that you obtained the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> installation media from,
+       run <code class="literal">wget</code> to download the ISO file to your server:
+      </p><div class="verbatim-wrap"><pre class="screen">wget <em class="replaceable ">INSTALLATION_ISO_URL</em></pre></div></li><li class="step "><p>
+       Now mount the ISO in the <code class="filename">/media/cdrom/</code> directory
+      </p><div class="verbatim-wrap"><pre class="screen">sudo mount <em class="replaceable ">INSTALLATION_ISO</em> /media/cdrom/</pre></div></li><li class="step "><p>
+       Unpack the tar file found in the
+       <code class="filename">/media/cdrom/ardana/</code> directory where you just
+       mounted the ISO:
+      </p><div class="verbatim-wrap"><pre class="screen">tar xvf /media/cdrom/ardana/ardana-x.x.x-x.tar</pre></div></li><li class="step "><p>
+       Now you will install and configure all the components needed to turn this
+       server into a Cloud Lifecycle Manager. Run the <code class="filename">ardana-init.bash</code>
+       script from the uncompressed tar file:
+      </p><div class="verbatim-wrap"><pre class="screen">~/ardana-x.x.x/ardana-init.bash</pre></div><p>
+       The <code class="filename">ardana-init.bash</code> script prompts you to enter an
+       optional SSH passphrase. This passphrase protects the RSA key used to
+       SSH to the other cloud nodes. This is an optional passphrase, and you
+       can skip it by pressing <span class="keycap">Enter</span> at the prompt.
+      </p><p>
+       The <code class="filename">ardana-init.bash</code> script automatically installs
+       and configures everything needed to set up this server as the lifecycle
+       manager for your cloud.
+      </p><p>
+       When the script has finished running, you can proceed to the next step,
+       editing your input files.
+      </p></li></ol></li><li class="step "><p>
+     <span class="bold"><strong>Edit your input files</strong></span>
+    </p><p>
+     Your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> input files are where you define your cloud
+     infrastructure and how it runs. The input files define options such as
+     which servers are included in your cloud, the type of disks the servers
+     use, and their network configuration. The input files also define which
+     services your cloud will provide and use, the network architecture, and
+     the storage backends for your cloud.
+    </p><p>
+     There are several example configurations, which you can find on your Cloud Lifecycle Manager
+     in the <code class="filename">~/openstack/examples/</code> directory.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       The simplest way to set up your cloud is to copy the contents of one of
+       these example configurations to your
+       <code class="filename">~/openstack/mycloud/definition/</code> directory. You can
+       then edit the copied files and define your cloud.
+      </p><div class="verbatim-wrap"><pre class="screen">cp -r ~/openstack/examples/<em class="replaceable ">CHOSEN_EXAMPLE</em>/* ~/openstack/my_cloud/definition/</pre></div></li><li class="step "><p>
+       Edit the files in your
+       <code class="filename">~/openstack/my_cloud/definition/</code> directory to
+       define your cloud.
+      </p></li></ol></li><li class="step "><p>
+     <span class="bold"><strong>Commit your changes</strong></span>
+    </p><p>
+     When you finish editing the necessary input files, stage them, and
+     then commit the changes to the local Git repository:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My commit message"</pre></div></li><li class="step "><p>
+     <span class="bold"><strong>Image your servers</strong></span>
+    </p><p>
+     Now that you have finished editing your input files, you can deploy the
+     configuration to the servers that will comprise your cloud.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Image the servers. You will install the SLES operating system across
+       all the servers in your cloud, using Ansible playbooks to trigger the
+       process.
+      </p></li><li class="step "><p>
+       The following playbook confirms that your servers are accessible over
+       their IPMI ports, which is a prerequisite for the imaging process:
+      </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost bm-power-status.yml</pre></div></li><li class="step "><p>
+       Now validate that your cloud configuration files have proper YAML syntax
+       by running the <code class="filename">config-processor-run.yml</code> playbook:
+      </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div><p>
+       If you receive an error when running the preceeding playbook, one or
+       more of your configuration files has an issue. Refer to the output of
+       the Ansible playbook, and look for clues in the Ansible log file, found
+       at <code class="filename">~/.ansible/ansible.log</code>.
+      </p></li><li class="step "><p>
+       The next step is to prepare your imaging system, Cobbler, to deploy
+       operating systems to all your cloud nodes:
+      </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre></div></li><li class="step "><p>
+       Now you can image your cloud nodes. You will use an Ansible playbook to
+       trigger Cobbler to deploy operating systems to all the nodes you
+       specified in your input files:
+      </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost bm-reimage.yml</pre></div><p>
+       The <code class="filename">bm-reimage.yml</code> playbook performs the following
+       operations:
+      </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+         Powers down the servers.
+        </p></li><li class="listitem "><p>
+         Sets the servers to boot from a network interface.
+        </p></li><li class="listitem "><p>
+         Powers on the servers and performs a PXE OS installation.
+        </p></li><li class="listitem "><p>
+         Waits for the servers to power themselves down as part of a successful
+         OS installation. This can take some time.
+        </p></li><li class="listitem "><p>
+         Sets the servers to boot from their local hard disks and powers on the
+         servers.
+        </p></li><li class="listitem "><p>
+         Waits for the SSH service to start on the servers and verifies that
+         they have the expected host-key signature.
+        </p></li></ol></div></li></ol></li><li class="step "><p>
+     <span class="bold"><strong>Deploy your cloud</strong></span>
+    </p><p>
+     Now that your servers are running the SLES operating system, it is time
+     to configure them for the roles they will play in your new cloud.
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Prepare the Cloud Lifecycle Manager to deploy your cloud configuration to all the nodes:
+      </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div><p>
+       NOTE: The preceding playbook creates a new directory,
+       <code class="filename">~/scratch/ansible/next/ardana/ansible/</code>, from which
+       you will run many of the following commands.
+      </p></li><li class="step "><p><span class="step-optional">(Optional)</span> 
+       If you are reusing servers or disks to run your cloud, you can wipe the
+       disks of your newly imaged servers by running the
+       <code class="filename">wipe_disks.yml</code> playbook:
+      </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible/
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml</pre></div><p>
+       The <code class="filename">wipe_disks.yml</code> playbook removes any existing
+       data from the drives on your new servers. This can be helpful if you are
+       reusing servers or disks. This action will not affect the OS partitions
+       on the servers.
+      </p><div id="id-1.5.4.3.5.4.8.3.2.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+        The <code class="filename">wipe_disks.yml</code> playbook is only meant to be
+        run on systems immediately after running
+        <code class="filename">bm-reimage.yml</code>.  If used for any other case, it
+        may not wipe all of the expected partitions. For example, if
+        <code class="filename">site.yml</code> fails, you cannot start fresh by running
+        <code class="filename">wipe_disks.yml</code>. You must
+        <code class="literal">bm-reimage</code> the node first and then run
+        <code class="literal">wipe_disks</code>.
+       </p></div></li><li class="step "><p>
+       Now it is time to deploy your cloud. Do this by running the
+       <code class="filename">site.yml</code> playbook, which pushes the configuration
+       you defined in the input files out to all the servers that will host
+       your cloud.
+      </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible/
+ansible-playbook -i hosts/verb_hosts site.yml</pre></div><p>
+       The <code class="filename">site.yml</code> playbook installs packages, starts
+       services, configures network interface settings, sets iptables firewall
+       rules, and more. Upon successful completion of this playbook, your
+       <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> will be in place and in a running state. This playbook can take
+       up to six hours to complete.
+      </p></li></ol></li><li class="step "><p>
+     <span class="bold"><strong>SSH to your nodes</strong></span>
+    </p><p>
+     Now that you have successfully run <code class="filename">site.yml</code>, your cloud
+     will be up and running. You can verify connectivity to your nodes by
+     connecting to each one by using SSH. You can find the IP addresses of your
+     nodes by viewing the <code class="filename">/etc/hosts</code> file.
+    </p><p>
+     For security reasons, you can only SSH to your nodes from the Cloud Lifecycle Manager. SSH
+     connections from any machine other than the Cloud Lifecycle Manager will be refused by the
+     nodes.
+    </p><p>
+     From the Cloud Lifecycle Manager, SSH to your nodes:
+    </p><div class="verbatim-wrap"><pre class="screen">ssh &lt;management IP address of node&gt;</pre></div><p>
+     Also note that SSH is limited to your cloud's management network. Each
+     node has an address on the management network, and you can find this
+     address by reading the <code class="filename">/etc/hosts</code> or
+     <code class="filename">server_info.yml</code> file.
+    </p></li></ol></div></div></div></div><div class="sect1" id="install-cli"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing the Command-Line Clients</span> <a title="Permalink" class="permalink" href="tutorials.html#install-cli">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-installing_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-installing_cli.xml</li><li><span class="ds-label">ID: </span>install-cli</li></ul></div></div></div></div><p>
+  During the installation, by default, the suite of OpenStack command-line
+  tools are installed on the Cloud Lifecycle Manager and the control plane in your
+  environment. You can learn more about these in the OpenStack
+  documentation here:
+  <a class="link" href="https://docs.openstack.org/python-openstackclient/latest/" target="_blank">OpenStackClient</a>.
+ </p><p>
+  If you wish to install the command-line interfaces on other nodes in your
+  environment, there are two methods you can use to do so that we describe
+  below.
+ </p><div class="sect2" id="idg-all-userguide-installing-cli-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing the CLI tools using the input model</span> <a title="Permalink" class="permalink" href="tutorials.html#idg-all-userguide-installing-cli-xml-5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-installing_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-installing_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-installing-cli-xml-5</li></ul></div></div></div></div><p>
+   During the initial install phase of your cloud you can edit your input model
+   to request that the command-line clients be installed on any of the node
+   clusters in your environment. To do so, follow these steps:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Edit your <code class="literal">control_plane.yml</code> file. Full path:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/definition/data/control_plane.yml</pre></div></li><li class="step "><p>
+     In this file you will see a list of <code class="literal">service-components</code>
+     to be installed on each of your clusters. These clusters will be divided
+     per role, with your controller node cluster likely coming at the
+     beginning. Here you will see a list of each of the clients that can be
+     installed. These include:
+    </p><div class="verbatim-wrap"><pre class="screen">keystone-client
+glance-client
+cinder-client
+nova-client
+neutron-client
+swift-client
+heat-client
+openstack-client
+monasca-client
+barbican-client
+designate-client</pre></div></li><li class="step "><p>
+     For each client you want to install, specify the name under the
+     <code class="literal">service-components</code> section for the cluster you want to
+     install it on.
+    </p><p>
+     So, for example, if you would like to install the nova and neutron clients on
+     your Compute node cluster, you can do so by adding the
+     <code class="literal">nova-client</code> and <code class="literal">neutron-client</code>
+     services, like this:
+    </p><div class="verbatim-wrap"><pre class="screen">      resources:
+        - name: compute
+          resource-prefix: comp
+          server-role: COMPUTE-ROLE
+          allocation-policy: any
+          min-count: 0
+          service-components:
+            - ntp-client
+            - nova-compute
+            - nova-compute-kvm
+            - neutron-l3-agent
+            - neutron-metadata-agent
+            - neutron-openvswitch-agent
+            <span class="bold"><strong>- nova-client
+            - neutron-client</strong></span></pre></div><div id="id-1.5.4.4.4.3.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      This example uses the <code class="literal">entry-scale-kvm</code> sample
+      file. Your model may be different so use this as a guide but do not
+      copy and paste the contents of this example into your input model.
+     </p></div></li><li class="step "><p>
+     Commit your configuration to the local git repo, as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+     Continue with the rest of your installation.
+    </p></li></ol></div></div></div><div class="sect2" id="idg-all-userguide-installing-cli-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing the CLI tools using Ansible</span> <a title="Permalink" class="permalink" href="tutorials.html#idg-all-userguide-installing-cli-xml-6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-installing_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-installing_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-installing-cli-xml-6</li></ul></div></div></div></div><p>
+   At any point after your initial installation you can install the
+   command-line clients on any of the nodes in your environment. To do so,
+   follow these steps:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Obtain the hostname for the nodes you want to install the clients on by
+     looking in your hosts file:
+    </p><div class="verbatim-wrap"><pre class="screen">cat /etc/hosts</pre></div></li><li class="listitem "><p>
+     Install the clients using this playbook, specifying your hostnames using
+     commas:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts -e "install_package=&lt;client_name&gt;" client-deploy.yml -e "install_hosts=&lt;hostname&gt;"</pre></div><p>
+     So, for example, if you would like to install the novaClient on two of your
+     Compute nodes with hostnames <code class="literal">ardana-cp1-comp0001-mgmt</code>
+     and <code class="literal">ardana-cp1-comp0002-mgmt</code> you can use this syntax:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts -e "install_package=novaclient" client-deploy.yml -e "install_hosts=ardana-cp1-comp0001-mgmt,ardana-cp1-comp0002-mgmt"</pre></div></li><li class="listitem "><p>
+     Once the playbook completes successfully, you should be able to SSH to
+     those nodes and, using the proper credentials, authenticate and use the
+     command-line interfaces you have installed.
+    </p></li></ol></div></div></div><div class="sect1" id="CreateCloudAdmin"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Admin Actions with the Command Line</span> <a title="Permalink" class="permalink" href="tutorials.html#CreateCloudAdmin">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>CreateCloudAdmin</li></ul></div></div></div></div><p>
+  Cloud admins can use the command line tools to perform domain admin tasks
+  such as user and project administration.
+ </p><div class="sect2" id="idg-all-operations-cloudadmin-cli-xml-4"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Additional Cloud Admins</span> <a title="Permalink" class="permalink" href="tutorials.html#idg-all-operations-cloudadmin-cli-xml-4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-cloudadmin-cli-xml-4</li></ul></div></div></div></div><p>
+   You can create additional Cloud Admins to help with the administration of
+   your cloud.
+  </p><p>
+   keystone identity service query and administration tasks can be performed
+   using the <span class="productname">OpenStack</span> command line utility. The utility is installed by the
+   Cloud Lifecycle Manager onto the Cloud Lifecycle Manager.
+  </p><div id="id-1.5.4.5.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    keystone administration tasks should be performed by an
+    <span class="emphasis"><em>admin</em></span> user with a token scoped to the
+    <span class="emphasis"><em>default</em></span> domain via the keystone v3 identity API.
+    These settings are preconfigured in the file
+    <code class="filename">~/keystone.osrc</code>. By default,
+    <code class="filename">keystone.osrc</code> is configured with the admin endpoint of
+    keystone. If the admin endpoint is not accessible from your network, change
+    <code class="literal">OS_AUTH_URL</code> to point to the public endpoint.
+   </p></div></div><div class="sect2" id="idg-all-operations-cloudadmin-cli-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Command Line Examples</span> <a title="Permalink" class="permalink" href="tutorials.html#idg-all-operations-cloudadmin-cli-xml-5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-cloudadmin-cli-xml-5</li></ul></div></div></div></div><p>
+   For a full list of OpenStackClient commands, see
+   <a class="link" href="http://docs.openstack.org/developer/python-openstackclient/command-list.html" target="_blank">OpenStackClient
+   Command List</a>.
+  </p><p>
+   <span class="bold"><strong>Sourcing the keystone Administration
+   Credentials</strong></span>
+  </p><p>
+   You can set the environment variables needed for identity administration by
+   sourcing the <code class="literal">keystone.osrc</code> file created by the lifecycle
+   manager:
+  </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div><p>
+   <span class="bold"><strong>List users in the default domain</strong></span>
+  </p><p>
+   These users are created by the Cloud Lifecycle Manager in the MySQL back end:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack user list</pre></div><p>
+   Example output:
+  </p><div class="verbatim-wrap"><pre class="screen">$ openstack user list
++----------------------------------+------------------+
+| ID                               | Name             |
++----------------------------------+------------------+
+| 155b68eda9634725a1d32c5025b91919 | heat             |
+| 303375d5e44d48f298685db7e6a4efce | octavia          |
+| 40099e245a394e7f8bb2aa91243168ee | logging          |
+| 452596adbf4d49a28cb3768d20a56e38 | admin            |
+| 76971c3ad2274820ad5347d46d7560ec | designate        |
+| 7b2dc0b5bb8e4ffb92fc338f3fa02bf3 | hlm_backup       |
+| 86d345c960e34c9189519548fe13a594 | barbican         |
+| 8e7027ab438c4920b5853d52f1e08a22 | nova_monasca     |
+| 9c57dfff57e2400190ab04955e7d82a0 | barbican_service |
+| a3f99bcc71b242a1bf79dbc9024eec77 | nova             |
+| aeeb56fc4c4f40e0a6a938761f7b154a | glance-check     |
+| af1ef292a8bb46d9a1167db4da48ac65 | cinder           |
+| af3000158c6d4d3d9257462c9cc68dda | demo             |
+| b41a7d0cb1264d949614dc66f6449870 | swift            |
+| b78a2b17336b43368fb15fea5ed089e9 | cinderinternal   |
+| bae1718dee2d47e6a75cd6196fb940bd | monasca          |
+| d4b9b32f660943668c9f5963f1ff43f9 | ceilometer       |
+| d7bef811fb7e4d8282f19fb3ee5089e9 | swift-monitor    |
+| e22bbb2be91342fd9afa20baad4cd490 | neutron          |
+| ec0ad2418a644e6b995d8af3eb5ff195 | glance           |
+| ef16c37ec7a648338eaf53c029d6e904 | swift-dispersion |
+| ef1a6daccb6f4694a27a1c41cc5e7a31 | glance-swift     |
+| fed3a599b0864f5b80420c9e387b4901 | monasca-agent    |
++----------------------------------+------------------+</pre></div><p>
+   <span class="bold"><strong>List domains created by the installation
+   process</strong></span>:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack domain list</pre></div><p>
+   Example output:
+  </p><div class="verbatim-wrap"><pre class="screen">$ openstack domain list
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| ID                               | Name    | Enabled | Description                                                          |
++----------------------------------+---------+---------+----------------------------------------------------------------------+
+| 6740dbf7465a4108a36d6476fc967dbd | heat    | True    | Owns users and projects created by heat                              |
+| default                          | Default | True    | Owns users and tenants (i.e. projects) available on Identity API v2. |
++----------------------------------+---------+---------+----------------------------------------------------------------------+</pre></div><p>
+   <span class="bold"><strong>List the roles</strong></span>:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack role list</pre></div><p>
+   Example output:
+  </p><div class="verbatim-wrap"><pre class="screen">$ openstack role list
++----------------------------------+---------------------------+
+| ID                               | Name                      |
++----------------------------------+---------------------------+
+| 0be3da26cd3f4cd38d490b4f1a8b0c03 | designate_admin           |
+| 13ce16e4e714473285824df8188ee7c0 | monasca-agent             |
+| 160f25204add485890bc95a6065b9954 | key-manager:service-admin |
+| 27755430b38c411c9ef07f1b78b5ebd7 | monitor                   |
+| 2b8eb0a261344fbb8b6b3d5934745fe1 | key-manager:observer      |
+| 345f1ec5ab3b4206a7bffdeb5318bd32 | admin                     |
+| 49ba3b42696841cea5da8398d0a5d68e | nova_admin                |
+| 5129400d4f934d4fbfc2c3dd608b41d9 | ResellerAdmin             |
+| 60bc2c44f8c7460a9786232a444b56a5 | neutron_admin             |
+| 654bf409c3c94aab8f929e9e82048612 | cinder_admin              |
+| 854e542baa144240bfc761cdb5fe0c07 | monitoring-delegate       |
+| 8946dbdfa3d346b2aa36fa5941b43643 | key-manager:auditor       |
+| 901453d9a4934610ad0d56434d9276b4 | key-manager:admin         |
+| 9bc90d1121544e60a39adbfe624a46bc | monasca-user              |
+| 9fe2a84a3e7443ae868d1009d6ab4521 | service                   |
+| 9fe2ff9ee4384b1894a90878d3e92bab | member                    |
+| a24d4e0a5de14bffbe166bfd68b36e6a | swiftoperator             |
+| ae088fcbf579425580ee4593bfa680e5 | heat_stack_user           |
+| bfba56b2562942e5a2e09b7ed939f01b | keystoneAdmin             |
+| c05f54cf4bb34c7cb3a4b2b46c2a448b | glance_admin              |
+| fe010be5c57240db8f559e0114a380c1 | key-manager:creator       |
++----------------------------------+---------------------------+</pre></div><p>
+   <span class="bold"><strong>List admin user role assignment within default
+   domain</strong></span>:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack role assignment list --user admin --domain default</pre></div><p>
+   Example output:
+  </p><div class="verbatim-wrap"><pre class="screen"># This indicates that the admin user is assigned the admin role within the default domain
+<code class="prompt user">ardana &gt; </code> openstack role assignment list --user admin --domain default
++----------------------------------+----------------------------------+-------+---------+---------+
+| Role                             | User                             | Group | Project | Domain  |
++----------------------------------+----------------------------------+-------+---------+---------+
+| b398322103504546a070d607d02618ad | fed1c038d9e64392890b6b44c38f5bbb |       |         | default |
++----------------------------------+----------------------------------+-------+---------+---------+</pre></div><p>
+   <span class="bold"><strong>Create a new user in default domain</strong></span>:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack user create --domain default --password-prompt --email &lt;email_address&gt; --description &lt;description&gt; --enable &lt;username&gt;</pre></div><p>
+   Example output showing the creation of a user named
+   <code class="literal">testuser</code> with email address
+   <code class="literal">test@example.com</code> and a description of <code class="literal">Test
+   User</code>:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack user create --domain default --password-prompt --email test@example.com --description "Test User" --enable testuser
+User Password:
+Repeat User Password:
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description | Test User                        |
+| domain_id   | default                          |
+| email       | test@example.com                 |
+| enabled     | True                             |
+| id          | 8aad69acacf0457e9690abf8c557754b |
+| name        | testuser                         |
++-------------+----------------------------------+</pre></div><p>
+   <span class="bold"><strong>Assign admin role for testuser within the default
+   domain</strong></span>:
+  </p><div class="verbatim-wrap"><pre class="screen">openstack role add admin --user &lt;username&gt; --domain default
+openstack role assignment list --user &lt;username&gt; --domain default</pre></div><p>
+   Example output:
+  </p><div class="verbatim-wrap"><pre class="screen"># Just for demonstration purposes - do not do this in a production environment!
+<code class="prompt user">ardana &gt; </code> openstack role add admin --user testuser --domain default
+<code class="prompt user">ardana &gt; </code> openstack role assignment list --user testuser --domain default
++----------------------------------+----------------------------------+-------+---------+---------+
+| Role                             | User                             | Group | Project | Domain  |
++----------------------------------+----------------------------------+-------+---------+---------+
+| b398322103504546a070d607d02618ad | 8aad69acacf0457e9690abf8c557754b |       |         | default |
++----------------------------------+----------------------------------+-------+---------+---------+</pre></div></div><div class="sect2" id="default-service-admin-roles"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Assigning the default service admin roles</span> <a title="Permalink" class="permalink" href="tutorials.html#default-service-admin-roles">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>default-service-admin-roles</li></ul></div></div></div></div><p>
+   The following examples illustrate how you can assign each of the new service
+   admin roles to a user.
+  </p><p>
+   <span class="bold"><strong>Assigning the glance_admin role</strong></span>
+  </p><p>
+   A user must have the role of admin in order to assign the glance_admin role.
+   To assign the role, you will set the environment variables needed for the
+   identity service administrator.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     First, source the identity service credentials:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem "><p>
+     You can add the glance_admin role to a user on a project with this
+     command:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user &lt;username&gt; --project &lt;project_name&gt; glance_admin</pre></div><p>
+     Example, showing a user named <code class="literal">testuser</code> being granted
+     the <code class="literal">glance_admin</code> role in the
+     <code class="literal">test_project</code> project:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project glance_admin</pre></div></li><li class="listitem "><p>
+     You can confirm the role assignment by listing out the roles:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role assignment list --user &lt;username&gt;</pre></div><p>
+     Example output:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack role assignment list --user testuser
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
+| Role                             | User                             | Group | Project                          | Domain | Inherited |
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
+| 46ba80078bc64853b051c964db918816 | 8bcfe10101964e0c8ebc4de391f3e345 |       | 0ebbf7640d7948d2a17ac08bbbf0ca5b |        | False     |
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem "><p>
+     Note that only the role ID is displayed. To get the role name, execute the
+     following:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role show &lt;role_id&gt;</pre></div><p>
+     Example output:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack role show 46ba80078bc64853b051c964db918816
++-------+----------------------------------+
+| Field | Value                            |
++-------+----------------------------------+
+| id    | 46ba80078bc64853b051c964db918816 |
+| name  | glance_admin                     |
++-------+----------------------------------+</pre></div></li><li class="listitem "><p>
+     To demonstrate that the user has glance admin privileges, authenticate
+     with those user creds and then upload and publish an image. Only a user
+     with an admin role or glance_admin can publish an image.
+    </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+       The easiest way to do this will be to make a copy of the
+       <code class="literal">service.osrc</code> file and edit it with your user
+       credentials. You can do that with this command:
+      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem "><p>
+       Using your preferred editor, edit the <code class="literal">user.osrc</code> file
+       and replace the values for the following entries to match your user
+       credentials:
+      </p><div class="verbatim-wrap"><pre class="screen">export OS_USERNAME=&lt;username&gt;
+export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem "><p>
+       You will also need to edit the following lines for your environment:
+      </p><div class="verbatim-wrap"><pre class="screen">## Change these values from 'unset' to 'export'
+export OS_PROJECT_NAME=&lt;project_name&gt;
+export OS_PROJECT_DOMAIN_NAME=Default</pre></div><p>
+       Here is an example output:
+      </p><div class="verbatim-wrap"><pre class="screen">unset OS_DOMAIN_NAME
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_PROJECT_NAME=test_project
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=testuser
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=testuser
+export OS_AUTH_URL=http://192.168.245.9:35357/v3
+export OS_ENDPOINT_TYPE=internalURL
+# OpenstackClient uses OS_INTERFACE instead of OS_ENDPOINT
+export OS_INTERFACE=internal
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem "><p>
+     Source the environment variables for your user:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem "><p>
+     Upload an image and publicize it:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack image create --name "upload me" --visibility public --container-format bare --disk-format qcow2 --file uploadme.txt</pre></div><p>
+     Example output:
+    </p><div class="verbatim-wrap"><pre class="screen">+------------------+--------------------------------------+
+| Property         | Value                                |
++------------------+--------------------------------------+
+| checksum         | dd75c3b840a16570088ef12f6415dd15     |
+| container_format | bare                                 |
+| created_at       | 2016-01-06T23:31:27Z                 |
+| disk_format      | qcow2                                |
+| id               | cf1490f4-1eb1-477c-92e8-15ebbe91da03 |
+| min_disk         | 0                                    |
+| min_ram          | 0                                    |
+| name             | upload me                            |
+| owner            | bd24897932074780a20b780c4dde34c7     |
+| protected        | False                                |
+| size             | 10                                   |
+| status           | active                               |
+| tags             | []                                   |
+| updated_at       | 2016-01-06T23:31:31Z                 |
+| virtual_size     | None                                 |
+| visibility       | public                               |
++------------------+--------------------------------------+</pre></div><div id="id-1.5.4.5.5.5.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      You can use the command <code class="command">openstack help image create</code> to
+      get the full syntax for this command.
+     </p></div></li></ol></div><p>
+   <span class="bold"><strong>Assigning the nova_admin role</strong></span>
+  </p><p>
+   A user must have the role of admin in order to assign the nova_admin role.
+   To assign the role, you will set the environment variables needed for the
+   identity service administrator.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     First, source the identity service credentials:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem "><p>
+     You can add the glance_admin role to a user on a project with this
+     command:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user &lt;username&gt; --project &lt;project_name&gt; nova_admin</pre></div><p>
+     Example, showing a user named <code class="literal">testuser</code> being granted
+     the <code class="literal">glance_admin</code> role in the
+     <code class="literal">test_project</code> project:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project nova_admin</pre></div></li><li class="listitem "><p>
+     You can confirm the role assignment by listing out the roles:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role assignment list --user &lt;username&gt;</pre></div><p>
+     Example output:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack role assignment list --user testuser
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
+| Role                             | User                             | Group | Project                          | Domain | Inherited |
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
+| 8cdb02bab38347f3b65753099f3ab73c | 8bcfe10101964e0c8ebc4de391f3e345 |       | 0ebbf7640d7948d2a17ac08bbbf0ca5b |        | False     |
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem "><p>
+     Note that only the role ID is displayed. To get the role name, execute the
+     following:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role show &lt;role_id&gt;</pre></div><p>
+     Example output:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack role show 8cdb02bab38347f3b65753099f3ab73c
++-------+----------------------------------+
+| Field | Value                            |
++-------+----------------------------------+
+| id    | 8cdb02bab38347f3b65753099f3ab73c |
+| name  | nova_admin                       |
++-------+----------------------------------+</pre></div></li><li class="listitem "><p>
+     To demonstrate that the user has nova admin privileges, authenticate with
+     those user creds and then upload and publish an image. Only a user with an
+     admin role or glance_admin can publish an image.
+    </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+       The easiest way to do this will be to make a copy of the
+       <code class="literal">service.osrc</code> file and edit it with your user
+       credentials. You can do that with this command:
+      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem "><p>
+       Using your preferred editor, edit the <code class="literal">user.osrc</code> file
+       and replace the values for the following entries to match your user
+       credentials:
+      </p><div class="verbatim-wrap"><pre class="screen">export OS_USERNAME=&lt;username&gt;
+export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem "><p>
+       You will also need to edit the following lines for your environment:
+      </p><div class="verbatim-wrap"><pre class="screen">## Change these values from 'unset' to 'export'
+export OS_PROJECT_NAME=&lt;project_name&gt;
+export OS_PROJECT_DOMAIN_NAME=Default</pre></div><p>
+       Here is an example output:
+      </p><div class="verbatim-wrap"><pre class="screen">unset OS_DOMAIN_NAME
+export OS_IDENTITY_API_VERSION=3
+export OS_AUTH_VERSION=3
+export OS_PROJECT_NAME=test_project
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USERNAME=testuser
+export OS_USER_DOMAIN_NAME=Default
+export OS_PASSWORD=testuser
+export OS_AUTH_URL=http://192.168.245.9:35357/v3
+export OS_ENDPOINT_TYPE=internalURL
+# OpenstackClient uses OS_INTERFACE instead of OS_ENDPOINT
+export OS_INTERFACE=internal
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem "><p>
+     Source the environment variables for your user:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem "><p>
+     List all of the virtual machines in the project specified in user.osrc:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack server list</pre></div><p>
+     Example output showing no virtual machines, because there are no virtual
+     machines created on the project specified in the user.osrc file:
+    </p><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
+| ID                                   | Name                                                  | Status | Networks                                                        |
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
+     For this demonstration, we do have a virtual machine associated with a
+     different project and because your user has nova_admin permissions, you
+     can view those virtual machines using a slightly different command:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack server list --all-projects</pre></div><p>
+     Example output, now showing a virtual machine:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> openstack server list --all-projects
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
+| ID                                   | Name                                                  | Status | Networks                                                        |
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
+| da4f46e2-4432-411b-82f7-71ab546f91f3 | testvml                                               | ACTIVE |                                                                 |
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
+     You can also now delete virtual machines in other projects by using the
+     <code class="literal">--all-tenants</code> switch:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack server delete --all-projects &lt;instance_id&gt;</pre></div><p>
+     Example, showing us deleting the instance in the previous step:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack server delete --all-projects da4f46e2-4432-411b-82f7-71ab546f91f3</pre></div></li><li class="listitem "><p>
+     You can get a full list of available commands by using this:
+    </p><div class="verbatim-wrap"><pre class="screen">openstack -h</pre></div></li></ol></div><p>
+   You can perform the same steps as above for the neutron and cinder service
+   admin roles:
+  </p><div class="verbatim-wrap"><pre class="screen">neutron_admin
+cinder_admin</pre></div></div><div class="sect2" id="customize-policy"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Customize policy.json on the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="tutorials.html#customize-policy">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>customize-policy</li></ul></div></div></div></div><p>
+   One way to deploy <code class="filename">policy.json</code> for a service is by going to each of the
+   target nodes and making changes there. This is not necessary anymore. This
+   process has been streamlined and policy.json files can be edited on the
+   Cloud Lifecycle Manager and then deployed to nodes. Please exercise caution when modifying
+   policy.json files. It is best to validate the changes in a non-production
+   environment before rolling out policy.json changes into production. It is
+   not recommended that you make policy.json changes without a way to validate
+   the desired policy behavior. Updated policy.json files can be deployed using
+   the appropriate <code class="literal">&lt;service_name&gt;-reconfigure.yml</code>
+   playbook.
+  </p></div><div class="sect2" id="service-roles"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Roles</span> <a title="Permalink" class="permalink" href="tutorials.html#service-roles">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-using_cli.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-using_cli.xml</li><li><span class="ds-label">ID: </span>service-roles</li></ul></div></div></div></div><p>
+   Service roles represent the functionality used to implement the <span class="productname">OpenStack</span>
+   role based access control (RBAC) model. This is used to manage access to
+   each <span class="productname">OpenStack</span> service. Roles are named and assigned per user or group for
+   each project by the identity service. Role definition and policy enforcement
+   are defined outside of the identity service independently by each <span class="productname">OpenStack</span>
+   service.
+  </p><p>
+   The token generated by the identity service for each user authentication
+   contains the role(s) assigned to that user for a particular project. When a
+   user attempts to access a specific <span class="productname">OpenStack</span> service, the role is parsed by
+   the service, compared to the service-specific policy file, and then granted
+   the resource access defined for that role by the service policy file.
+  </p><p>
+   Each service has its own service policy file with the
+   <code class="literal">/etc/[SERVICE_CODENAME]/policy.json</code> file name format
+   where <code class="literal">[SERVICE_CODENAME]</code> represents a specific <span class="productname">OpenStack</span>
+   service name. For example, the <span class="productname">OpenStack</span> nova service would have a policy
+   file called <code class="literal">/etc/nova/policy.json</code>.
+  </p><p>
+   Service policy files can be modified and deployed to control nodes from the
+   Cloud Lifecycle Manager. Administrators are advised to validate policy changes before checking
+   in the changes to the site branch of the local git repository before rolling
+   the changes into production. Do not make changes to policy files without
+   having a way to validate them.
+  </p><p>
+   The policy files are located at the following site branch directory on the
+   Cloud Lifecycle Manager.
+  </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/</pre></div><p>
+   For test and validation, policy files can be modified in a non-production
+   environment from the <code class="literal">~/scratch/</code> directory. For a specific
+   policy file, run a search for <code class="literal">policy.json</code>. To deploy
+   policy changes for a service, run the service specific reconfiguration
+   playbook (for example, <code class="literal">nova-reconfigure.yml</code>). For a
+   complete list of reconfiguration playbooks, change directories to
+   <code class="literal">~/scratch/ansible/next/ardana/ansible</code> and run this
+   command:
+  </p><div class="verbatim-wrap"><pre class="screen">ls –l | grep reconfigure</pre></div><div id="note-j2-comments" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    Comments added to any <code class="filename">*.j2</code> files (including templates)
+    must follow proper comment syntax. Otherwise you may see errors when
+    running the config-processor or any of the service playbooks.
+   </p></div></div></div><div class="sect1" id="log-management-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Management and Integration</span> <a title="Permalink" class="permalink" href="tutorials.html#log-management-integration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span>log-management-integration</li></ul></div></div></div></div><div class="sect2" id="id-1.5.4.6.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.6.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> uses the ELK (Elasticsearch, Logstash, Kibana) stack for log
+   management across the entire cloud infrastructure. This configuration
+   facilitates simple administration as well as integration with third-party
+   tools. This tutorial covers how to forward your logs to a third-party tool
+   or service, and how to access and search the Elasticsearch log stores
+   through API endpoints.
+  </p></div><div class="sect2" id="section-pvm-zkx-1x"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The ELK stack</span> <a title="Permalink" class="permalink" href="tutorials.html#section-pvm-zkx-1x">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span>section-pvm-zkx-1x</li></ul></div></div></div></div><p>
+   The ELK logging stack consists of the Elasticsearch, Logstash, and
+   Kibana elements.
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Elasticsearch. </span>
+      Elasticsearch is the storage and indexing component of the ELK stack.
+      It stores and indexes the data received from Logstash. Indexing makes
+      your log data searchable by tools designed for querying and analyzing
+      massive sets of data. You can query the Elasticsearch datasets from the
+      built-in Kibana console, a third-party data analysis tool, or through
+      the Elasticsearch API (covered later).
+     </p></li><li class="listitem "><p><span class="formalpara-title">Logstash. </span>
+      Logstash reads the log data from the services running on your servers,
+      and then aggregates and ships that data to a storage location. By
+      default, Logstash sends the data to the Elasticsearch indexes, but it
+      can also be configured to send data to other storage and indexing tools
+      such as Splunk.
+     </p></li><li class="listitem "><p><span class="formalpara-title">Kibana. </span>
+      Kibana provides a simple and easy-to-use method for searching,
+      analyzing, and visualizing the log data stored in the Elasticsearch
+      indexes. You can customize the Kibana console to provide graphs,
+      charts, and other visualizations of your log data.
+     </p></li></ul></div></div><div class="sect2" id="section-d3k-gnx-1x"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Elasticsearch API</span> <a title="Permalink" class="permalink" href="tutorials.html#section-d3k-gnx-1x">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span>section-d3k-gnx-1x</li></ul></div></div></div></div><p>
+   You can query the Elasticsearch indexes through various language-specific
+   APIs, as well as directly over the IP address and port that Elasticsearch
+   exposes on your implementation. By default, Elasticsearch presents from
+   localhost, port 9200. You can run queries directly from a terminal using
+   <code class="literal">curl</code>. For example:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl -XGET 'http://localhost:9200/_search?q=tag:yourSearchTag'</pre></div><p>
+   The preceding command searches all indexes for all data with the
+   "yourSearchTag" tag.
+  </p><p>
+   You can also use the Elasticsearch API from outside the logging node. This
+   method connects over the Kibana VIP address, port 5601, using basic http
+   authentication. For example, you can use the following command to perform
+   the same search as the preceding search:
+  </p><div class="verbatim-wrap"><pre class="screen">curl -u kibana:&lt;password&gt; kibana_vip:5601/_search?q=tag:yourSearchTag</pre></div><p>
+   You can further refine your search to a specific index of data, in this case
+   the "elasticsearch" index:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl -XGET 'http://localhost:9200/elasticsearch/_search?q=tag:yourSearchTag'</pre></div><p>
+   The search API is RESTful, so responses are provided in JSON format. Here's
+   a sample (though empty) response:
+  </p><div class="verbatim-wrap"><pre class="screen">{
+    "took":13,
+    "timed_out":false,
+    "_shards":{
+        "total":45,
+        "successful":45,
+        "failed":0
+    },
+    "hits":{
+        "total":0,
+        "max_score":null,
+        "hits":[]
+    }
+}</pre></div></div><div class="sect2" id="id-1.5.4.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.6.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You can find more detailed Elasticsearch API documentation at
+   <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html</a>.
+  </p><p>
+   Review the Elasticsearch Python API documentation at the following sources:
+   <a class="link" href="http://elasticsearch-py.readthedocs.io/en/master/api.html" target="_blank">http://elasticsearch-py.readthedocs.io/en/master/api.html</a>
+  </p><p>
+   Read the Elasticsearch Java API documentation at
+   <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html</a>.
+  </p></div><div class="sect2" id="section-knd-hcf-bx"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Forwarding your logs</span> <a title="Permalink" class="permalink" href="tutorials.html#section-knd-hcf-bx">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-manage_logs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-manage_logs.xml</li><li><span class="ds-label">ID: </span>section-knd-hcf-bx</li></ul></div></div></div></div><p>
+   You can configure Logstash to ship your logs to an outside storage and
+   indexing system, such as Splunk. Setting up this configuration is as simple
+   as editing a few configuration files, and then running the Ansible playbooks
+   that implement the changes. Here are the steps.
+  </p><div class="orderedlist " id="ol-mtz-mnr-bx"><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Begin by logging in to the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Verify that the logging system is up and running:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts logging-status.yml</pre></div><p>
+     When the preceding playbook completes without error, proceed to the next
+     step.
+    </p></li><li class="listitem "><p>
+     Edit the Logstash configuration file, found at the following location:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/logging-server/templates/logstash.conf.j2</pre></div><p>
+     Near the end of the Logstash configuration file, you will find a section for
+     configuring Logstash output destinations. The following example
+     demonstrates the changes necessary to forward your logs to an outside
+     server (changes in bold). The configuration block sets up a TCP connection
+     to the destination server's IP address over port 5514.
+    </p><div class="verbatim-wrap"><pre class="screen"># Logstash outputs
+    output {
+      # Configure Elasticsearch output
+      # http://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html
+      elasticsearch {
+        index =&gt; "${[@metadata][es_index]"}
+        hosts =&gt; ["{{ elasticsearch_http_host }}:{{ elasticsearch_http_port }}"]
+        flush_size =&gt; {{ logstash_flush_size }}
+        idle_flush_time =&gt; 5
+        workers =&gt; {{ logstash_threads }}
+      }
+      <span class="bold"><strong>  # Forward Logs to Splunk on TCP port 5514 which matches the one specified in Splunk Web UI.
+      tcp {
+        mode =&gt; "client"
+        host =&gt; "&lt;Enter Destination listener IP address&gt;"
+        port =&gt; 5514
+      }</strong></span>
+    }</pre></div><p>
+     Logstash can forward log data to multiple sources, so there is no need to
+     remove or alter the Elasticsearch section in the preceding file.
+     However, if you choose to stop forwarding your log data to
+     Elasticsearch, you can do so by removing the related section in this
+     file, and then continue with the following steps.
+    </p></li><li class="listitem "><p>
+     Commit your changes to the local git repository:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "Your commit message"</pre></div></li><li class="listitem "><p>
+     Run the configuration processor to check the status of all configuration
+     files:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+     Run the ready-deployment playbook:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+     Implement the changes to the Logstash configuration file:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts kronos-server-configure.yml</pre></div></li></ol></div><p>
+   Configuring the receiving service will vary from product to product. Consult
+   the documentation for your particular product for instructions on how to set
+   it up to receive log files from Logstash.
+  </p></div></div><div class="sect1" id="Integrating-Kibana-with-Splunk"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrating Your Logs with Splunk</span> <a title="Permalink" class="permalink" href="tutorials.html#Integrating-Kibana-with-Splunk">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-integrating_logstash_splunk.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-integrating_logstash_splunk.xml</li><li><span class="ds-label">ID: </span>Integrating-Kibana-with-Splunk</li></ul></div></div></div></div><div class="sect2" id="idg-all-operations-tutorials-integrating-logstash-splunk-xml-2"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrating with Splunk</span> <a title="Permalink" class="permalink" href="tutorials.html#idg-all-operations-tutorials-integrating-logstash-splunk-xml-2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-integrating_logstash_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-integrating_logstash_splunk.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-tutorials-integrating-logstash-splunk-xml-2</li></ul></div></div></div></div><p>
+   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 logging solution provides a flexible and extensible
+   framework to centralize the collection and processing of logs from all nodes
+   in your cloud. The logs are shipped to a highly available and fault-tolerant
+   cluster where they are transformed and stored for better searching and
+   reporting. The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 logging solution uses the ELK stack
+   (Elasticsearch, Logstash and Kibana) as a production-grade implementation
+   and can support other storage and indexing technologies.
+  </p><p>
+   You can configure Logstash, the service that aggregates and forwards the
+   logs to a searchable index, to send the logs to a third-party target, such
+   as Splunk.
+  </p><p>
+   For how to integrate the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 centralized
+   logging solution with Splunk, including the steps to set up and forward
+   logs, please refer to <a class="xref" href="third-party-integrations.html#splunk-integration" title="4.1. Splunk Integration">Section 4.1, “Splunk Integration”</a>.
+  </p></div></div><div class="sect1" id="LDAP-Integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with an LDAP System</span> <a title="Permalink" class="permalink" href="tutorials.html#LDAP-Integration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-keystone_ldap_integration.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-keystone_ldap_integration.xml</li><li><span class="ds-label">ID: </span>LDAP-Integration</li></ul></div></div></div></div><p>
+  You can configure your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cloud to work with an outside user
+  authentication source such as Active Directory or OpenLDAP. keystone, the
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> identity service, functions as the first stop for any user
+  authorization/authentication requests. keystone can also function as a proxy
+  for user account authentication, passing along authentication and
+  authorization requests to any LDAP-enabled system that has been configured as
+  an outside source. This type of integration lets you use an existing
+  user-management system such as Active Directory and its powerful group-based
+  organization features as a source for permissions in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+ </p><p>
+  Upon successful completion of this tutorial, your cloud will refer user
+  authentication requests to an outside LDAP-enabled directory system, such as
+  Microsoft Active Directory or OpenLDAP.
+ </p><div class="sect2" id="id-1.5.4.8.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure your LDAP source</span> <a title="Permalink" class="permalink" href="tutorials.html#id-1.5.4.8.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-tutorials-keystone_ldap_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-tutorials-keystone_ldap_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To configure your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cloud to use an outside user-management source,
+   perform the following steps:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Make sure that the LDAP-enabled system you plan to integrate with is up
+     and running and accessible over the necessary ports from your cloud
+     management network.
+    </p></li><li class="step "><p>
+     Edit the
+     <code class="filename">/var/lib/ardana/openstack/my_cloud/config/keystone/keystone.conf.j2</code>
+     file and set the following options:
+    </p><div class="verbatim-wrap"><pre class="screen">domain_specific_drivers_enabled = True
+domain_configurations_from_database = False</pre></div></li><li class="step " id="st-keystone-ldap-create-yaml"><p>
+     Create a YAML file in the
+     <code class="filename">/var/lib/ardana/openstack/my_cloud/config/keystone/</code>
+     directory that defines your LDAP connection. You can make a copy of the
+     sample keystone-LDAP configuration file, and then edit that file with the
+     details of your LDAP connection.
+    </p><p>
+     The following example copies the
+     <code class="filename">keystone_configure_ldap_sample.yml</code> file and names the
+     new file <code class="filename">keystone_configure_ldap_my.yml</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cp /var/lib/ardana/openstack/my_cloud/config/keystone/keystone_configure_ldap_sample.yml \
+  /var/lib/ardana/openstack/my_cloud/config/keystone/keystone_configure_ldap_my.yml</pre></div></li><li class="step "><p>
+     Edit the new file to define the connection to your LDAP source. This guide
+     does not provide comprehensive information on all aspects of the
+     <code class="literal">keystone_configure_ldap.yml</code> file. Find a complete list
+     of keystone/LDAP configuration file options at:
+     <a class="link" href="https://github.com/openstack/keystone/tree/stable/rocky/etc" target="_blank">https://github.com/openstack/keystone/tree/stable/rocky/etc</a>
+    </p><p>
+     The following file illustrates an example keystone configuration that is
+     customized for an Active Directory connection.
+    </p><div class="verbatim-wrap"><pre class="screen">keystone_domainldap_conf:
+
+    # CA certificates file content.
+    # Certificates are stored in Base64 PEM format. This may be entire LDAP server
+    # certificate (in case of self-signed certificates), certificate of authority
+    # which issued LDAP server certificate, or a full certificate chain (Root CA
+    # certificate, intermediate CA certificate(s), issuer certificate).
+    #
+    cert_settings:
+      cacert: |
+        -----BEGIN CERTIFICATE-----
+
+        certificate appears here
+
+        -----END CERTIFICATE-----
+
+    # A domain will be created in MariaDB with this name, and associated with ldap back end.
+    # Installer will also generate a config file named /etc/keystone/domains/keystone.&lt;domain_name&gt;.conf
+    #
+    domain_settings:
+      name: ad
+      description: Dedicated domain for ad users
+
+    conf_settings:
+      identity:
+         driver: ldap
+
+
+      # For a full list and description of ldap configuration options, please refer to
+      # http://docs.openstack.org/liberty/config-reference/content/keystone-configuration-file.html.
+      #
+      # Please note:
+      #  1. LDAP configuration is read-only. Configuration which performs write operations (i.e. creates users, groups, etc)
+      #     is not supported at the moment.
+      #  2. LDAP is only supported for identity operations (reading users and groups from LDAP). Assignment
+      #     operations with LDAP (i.e. managing roles, projects) are not supported.
+      #  3. LDAP is configured as non-default domain. Configuring LDAP as a default domain is not supported.
+      #
+
+      ldap:
+        url: ldap://<em class="replaceable ">YOUR_COMPANY_AD_URL</em>
+        suffix: <em class="replaceable ">YOUR_COMPANY_DC</em>
+        query_scope: sub
+        user_tree_dn: CN=Users,<em class="replaceable ">YOUR_COMPANY_DC</em>
+        user : CN=admin,CN=Users,<em class="replaceable ">YOUR_COMPANY_DC</em>
+        password: REDACTED
+        user_objectclass: user
+        user_id_attribute: cn
+        user_name_attribute: cn
+        group_tree_dn: CN=Users,<em class="replaceable ">YOUR_COMPANY_DC</em>
+        group_objectclass: group
+        group_id_attribute: cn
+        group_name_attribute: cn
+        use_pool: True
+        user_enabled_attribute: userAccountControl
+        user_enabled_mask: 2
+        user_enabled_default: 512
+        use_tls: True
+        tls_req_cert: demand
+        # if you are configuring multiple LDAP domains, and LDAP server certificates are issued
+        # by different authorities, make sure that you place certs for all the LDAP backend domains in the
+        # cacert parameter as seen in this sample yml file so that all the certs are combined in a single CA file
+        # and every LDAP domain configuration points to the combined CA file.
+        # Note:
+        # 1. Please be advised that every time a new ldap domain is configured, the single CA file gets overwritten
+        # and hence ensure that you place certs for all the LDAP backend domains in the cacert parameter.
+        # 2. There is a known issue on one cert per CA file per domain when the system processes
+        # concurrent requests to multiple LDAP domains. Using the single CA file with all certs combined
+        # shall get the system working properly.
+
+        tls_cacertfile: /etc/keystone/ssl/certs/all_ldapdomains_ca.pem</pre></div></li><li class="step "><p>
+     Add your new file to the local Git repository and commit the changes.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack
+<code class="prompt user">ardana &gt; </code>git checkout site
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "Adding LDAP server integration config"</pre></div></li><li class="step "><p>
+     Run the configuration processor and deployment preparation playbooks to
+     validate the YAML files and prepare the environment for configuration.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the keystone reconfiguration playbook to implement your changes,
+     passing the newly created YAML file as an argument to the
+     <code class="literal">-e@<em class="replaceable ">FILE_PATH</em></code> parameter:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml \
+  -e@/var/lib/ardana/openstack/my_cloud/config/keystone/keystone_configure_ldap_my.yml</pre></div><p>
+     To integrate your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cloud with multiple domains, repeat these
+     steps starting from <a class="xref" href="tutorials.html#st-keystone-ldap-create-yaml" title="Step 3">Step 3</a>
+     for each domain.
+    </p></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="clm-admin-ui.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Cloud Lifecycle Manager Admin UI User Guide</span></a><a class="nav-link" href="gettingstarted-ops.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Operations Overview</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

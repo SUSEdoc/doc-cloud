@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Operations Overview | Operations Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Operations Guide" /><meta name="chapter-title" content="Chapter 1. Operations Overview" /><meta name="description" content="A high-level overview of the processes related to operating a SUSE OpenStack Cloud 8 cloud." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide" /><link rel="prev" href="book-operations.html" title="Operations Guide" /><link rel="next" href="tutorials.html" title="Chapter 2. Tutorials" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide</a><span> › </span><a class="crumb" href="gettingstarted-ops.html">Operations Overview</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">3 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">4 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">5 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">6 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">7 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">8 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">9 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">10 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">11 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">12 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">13 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">14 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">15 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Operations Guide" href="book-operations.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide</a><span> › </span><a class="crumb" href="gettingstarted-ops.html">Operations Overview</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Operations Guide" href="book-operations.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="gettingstarted-ops"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operations Overview</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span>gettingstarted-ops</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="gettingstarted-ops.html#id-1.6.3.3"><span class="number">1.1 </span><span class="name">What is a cloud operator?</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#tools"><span class="number">1.2 </span><span class="name">Tools provided to operate your cloud</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#id-1.6.3.5"><span class="number">1.3 </span><span class="name">Daily tasks</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#id-1.6.3.6"><span class="number">1.4 </span><span class="name">Weekly or monthly tasks</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#id-1.6.3.7"><span class="number">1.5 </span><span class="name">Semi-annual tasks</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#id-1.6.3.8"><span class="number">1.6 </span><span class="name">Troubleshooting</span></a></span></dt><dt><span class="section"><a href="gettingstarted-ops.html#idg-all-operations-operations-overview-xml-11"><span class="number">1.7 </span><span class="name">Common Questions</span></a></span></dt></dl></div></div><p>
+  A high-level overview of the processes related to operating a
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> cloud.
+ </p><div class="sect1" id="id-1.6.3.3"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What is a cloud operator?</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#id-1.6.3.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   When we talk about a cloud operator it is important to understand the scope
+   of the tasks and responsibilities we are referring to. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> defines a
+   cloud operator as the person or group of people who will be administering
+   the cloud infrastructure, which includes:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Monitoring the cloud infrastructure, resolving issues as they arise.
+    </p></li><li class="listitem "><p>
+     Managing hardware resources, adding/removing hardware due to capacity
+     needs.
+    </p></li><li class="listitem "><p>
+     Repairing, and recovering if needed, any hardware issues.
+    </p></li><li class="listitem "><p>
+     Performing domain administration tasks, which involves creating and
+     managing projects, users, and groups as well as setting and managing
+     resource quotas.
+    </p></li></ul></div></div><div class="sect1" id="tools"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tools provided to operate your cloud</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#tools">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span>tools</li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> provides the following tools which are available to operate your
+   cloud:
+  </p><p>
+   <span class="bold"><strong>Operations Console</strong></span>
+  </p><p>
+   Often referred to as the Ops Console, you can use this console to view data
+   about your cloud infrastructure in a web-based graphical user interface
+   (GUI) to make sure your cloud is operating correctly. By logging on to the
+   console, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> administrators can manage data in the following ways:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Triage alarm notifications in the central dashboard
+    </p></li><li class="listitem "><p>
+     Monitor the environment by giving priority to alarms that take precedence
+    </p></li><li class="listitem "><p>
+     Manage compute nodes and easily use a form to create a new host
+    </p></li><li class="listitem "><p>
+     Refine the monitoring environment by creating new alarms to specify a
+     combination of metrics, services, and hosts that match the triggers unique
+     to an environment
+    </p></li><li class="listitem "><p>
+     Plan for future storage by tracking capacity over time to predict with
+     some degree of reliability the amount of additional storage needed
+    </p></li></ul></div><p>
+   For more details on how to connect to and use the Operations Console, see
+   <span class="intraxref">Book “User Guide”, Chapter 1 “Using the Operations Console”, Section 1.1 “Operations Console Overview”</span>.
+  </p><p>
+   <span class="bold"><strong>Dashboard</strong></span>
+  </p><p>
+   Often referred to as Horizon or the Horizon dashboard, you can use this
+   console to manage resources on a domain and project level in a web-based
+   graphical user interface (GUI). The following are some of the typical
+   operational tasks that you may perform using the dashboard:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Creating and managing projects, users, and groups within your domain.
+    </p></li><li class="listitem "><p>
+     Assigning roles to users and groups to manage access to resources.
+    </p></li><li class="listitem "><p>
+     Setting and updating resource quotas for the projects.
+    </p></li></ul></div><p>
+   For more details, see the following pages:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <a class="xref" href="ops-managing-identity.html#sec-operation-identity" title="4.3. Understanding Domains, Projects, Users, Groups, and Roles">Section 4.3, “Understanding Domains, Projects, Users, Groups, and Roles”</a>
+    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>
+    </p></li></ul></div><p>
+   <span class="bold"><strong>Command-line interface (CLI)</strong></span>
+  </p><p>
+   Each service within <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> provides a command-line client, such as the
+   novaclient (sometimes referred to as the python-novaclient or nova CLI) for
+   the Compute service, the keystoneclient for the Identity service, etc. There
+   is also an effort in the OpenStack community to make a unified client,
+   called the openstackclient, which will combine the available commands in the
+   various service-specific clients into one tool. By default, we install each
+   of the necessary clients onto the hosts in your environment for you to use.
+  </p><p>
+   You will find processes defined in our documentation that use these
+   command-line tools. There is also a list of common cloud administration
+   tasks which we have outlined which you can use the command-line tools to do.
+   For more details, see <span class="intraxref">Book “User Guide”, Chapter 4 “Cloud Admin Actions with the Command Line”</span>.
+  </p><p>
+   There are references throughout the SUSE <span class="productname">OpenStack</span> Cloud documentation to the HPE Smart
+   Storage Administrator (HPE SSA) CLI. HPE-specific binaries that are not
+   based on open source are distributed directly from and supported by HPE. To
+   download and install the SSACLI utility, please refer to: <a class="link" href="https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_3d16386b418a443388c18da82f" target="_blank">https://support.hpe.com/hpsc/swd/public/detail?swItemId=MTX_3d16386b418a443388c18da82f</a>
+  </p></div><div class="sect1" id="id-1.6.3.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Daily tasks</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#id-1.6.3.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="bold"><strong>Ensure your cloud is running correctly</strong></span>:
+     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> is deployed as a set of highly available services to minimize the
+     impact of failures. That said, hardware and software systems can fail.
+     Detection of failures early in the process will enable you to address
+     issues before they affect the broader system. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> provides a
+     monitoring solution, based on OpenStack’s Monasca, which provides
+     monitoring and metrics for all OpenStack components and much of the
+     underlying system, including service status, performance metrics, compute
+     node, and virtual machine status. Failures are exposed via the Operations Console
+     and/or alarm notifications. In the case where more detailed
+     diagnostics are required, you can use a centralized logging system based
+     on the Elasticsearch, Logstash, and Kibana (ELK) stack. This provides the
+     ability to search service logs to get detailed information on behavior and
+     errors.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Perform critical maintenance</strong></span>: To ensure
+     your OpenStack installation is running correctly, provides the right
+     access and functionality, and is secure, you should make ongoing
+     adjustments to the environment. Examples of daily maintenance tasks
+     include:
+    </p><div class="itemizedlist " id="ul-nx2-z4x-rv"><ul class="itemizedlist"><li class="listitem "><p>
+       Add/remove projects and users. The frequency of this task depends on
+       your policy.
+      </p></li><li class="listitem "><p>
+       Apply security patches (if released).
+      </p></li><li class="listitem "><p>
+       Run daily backups.
+      </p></li></ul></div></li></ul></div></div><div class="sect1" id="id-1.6.3.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Weekly or monthly tasks</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#id-1.6.3.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="itemizedlist " id="ul-nz4-npx-rv"><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="bold"><strong>Do regular capacity planning</strong></span>: Your
+     initial deployment will likely reflect the known near to mid-term scale
+     requirements, but at some point your needs will outgrow your initial
+     deployment’s capacity. You can expand <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> in a variety of ways,
+     such as by adding compute and storage capacity.
+    </p></li></ul></div><p>
+   To manage your cloud’s capacity, begin by determining the load on the
+   existing system. OpenStack is a set of relatively independent components and
+   services, so there are multiple subsystems that can affect capacity. These
+   include control plane nodes, compute nodes, object storage nodes, block
+   storage nodes, and an image management system. At the most basic level, you
+   should look at the CPU used, RAM used, I/O load, and the disk space used
+   relative to the amounts available. For compute nodes, you can also evaluate
+   the allocation of resource to hosted virtual machines. This information can
+   be viewed in the Operations Console. You can pull historical information
+   from the monitoring service (OpenStack’s Monasca) by using its client or
+   API. Also, OpenStack provides you some ability to manage the hosted resource
+   utilization by using quotas for projects. You can track this usage over time
+   to get your growth trend so that you can project when you will need to add
+   capacity.
+  </p></div><div class="sect1" id="id-1.6.3.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Semi-annual tasks</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#id-1.6.3.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="itemizedlist " id="ul-y1v-5sx-rv"><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="bold"><strong>Perform upgrades</strong></span>: OpenStack releases new
+     versions on a six-month cycle. In general, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> will release new
+     major versions annually with minor versions and maintenance updates more
+     often. Each new release consists of both new functionality and services,
+     as well as bug fixes for existing functionality.
+    </p></li></ul></div><div id="id-1.6.3.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    If you are planning to upgrade, this is also an excellent time to evaluate
+    your existing capabilities, especially in terms of capacity (see Capacity
+    Planning above).
+   </p></div></div><div class="sect1" id="id-1.6.3.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#id-1.6.3.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   As part of managing your cloud, you should be ready to troubleshoot issues,
+   as needed. The following are some common troubleshooting scenarios and
+   solutions:
+  </p><p>
+   <span class="bold"><strong>How do I determine if my cloud is operating correctly
+   now?</strong></span>: <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> provides a monitoring solution based on
+   OpenStack’s Monasca service. This service provides monitoring and metrics
+   for all OpenStack components, as well as much of the underlying system. By
+   default, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> comes with a set of alarms that provide coverage of the
+   primary systems. In addition, you can define alarms based on threshold
+   values for any metrics defined in the system. You can view alarm information
+   in the Operations Console. You can also receive or deliver this information
+   to others by configuring email or other mechanisms. Alarms provide
+   information about whether a component failed and is affecting the system,
+   and also what condition triggered the alarm.
+  </p><p>
+   <span class="bold"><strong>How do I troubleshoot and resolve performance issues
+   for my cloud?</strong></span>: There are a variety of factors that can affect the
+   performance of a cloud system, such as the following:
+  </p><div class="itemizedlist " id="ul-vb3-ttx-rv"><ul class="itemizedlist"><li class="listitem "><p>
+     Health of the control plane
+    </p></li><li class="listitem "><p>
+     Health of the hosting compute node and virtualization layer
+    </p></li><li class="listitem "><p>
+     Resource allocation on the compute node
+    </p></li></ul></div><p>
+   If your cloud users are experiencing performance issues on your cloud, use
+   the following approach:
+  </p><div class="orderedlist " id="ol-wb3-ttx-rv"><ol class="orderedlist" type="1"><li class="listitem "><p>
+     View the compute summary page on the Operations Console to determine if
+     any alarms have been triggered.
+    </p></li><li class="listitem "><p>
+     Determine the hosting node of the virtual machine that is having issues.
+    </p></li><li class="listitem "><p>
+     On the compute hosts page, view the status and resource utilization of the
+     compute node to determine if it has errors or is over-allocated.
+    </p></li><li class="listitem "><p>
+     On the compute instances page you can view the status of the VM along with
+     its metrics.
+    </p></li></ol></div><p>
+   <span class="bold"><strong>How do I troubleshoot and resolve availability issues
+   for my cloud?</strong></span>: If your cloud users are experiencing availability
+   issues, determine what your users are experiencing that indicates to them
+   the cloud is down. For example, can they not access the Dashboard service
+   (Horizon) console or APIs, indicating a problem with the control plane? Or
+   are they having trouble accessing resources? Console/API issues would
+   indicate a problem with the control planes. Use the Operations Console to
+   view the status of services to see if there is an issue. However, if it is
+   an issue of accessing a virtual machine, then also search the consolidated
+   logs that are available in the ELK stack or errors related to the virtual
+   machine and supporting networking.
+  </p></div><div class="sect1" id="idg-all-operations-operations-overview-xml-11"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Common Questions</span> <a title="Permalink" class="permalink" href="gettingstarted-ops.html#idg-all-operations-operations-overview-xml-11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-operations_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-operations_overview.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-operations-overview-xml-11</li></ul></div></div></div></div><p>
+   <span class="bold"><strong>To manage a cloud, how many administrators do I
+   need?</strong></span>
+  </p><p>
+   A 24x7 cloud needs a 24x7 cloud operations team. If you already have a NOC,
+   managing the cloud can be added to their workload.
+  </p><p>
+   A cloud with 20 nodes will need a part-time person. You can manage a cloud
+   with 200 nodes with two people. As the amount of nodes increases and
+   processes and automation are put in place, you will need to increase the
+   number of administrators but the need is not linear. As an example, if you
+   have 3000 nodes and 15 clouds you will probably need 6 administrators.
+  </p><p>
+   <span class="bold"><strong>What skills do my cloud administrators need?</strong></span>
+  </p><p>
+   Your administrators should be experienced Linux admins. They should have
+   experience in application management, as well as experience with Ansible.
+   It is a plus if they have experience with Bash shell scripting and Python
+   programming skills.
+  </p><p>
+   In addition, you will need networking engineers. A 3000 node environment
+   will need two networking engineers.
+  </p><p>
+   <span class="bold"><strong>What operations should I plan on performing daily,
+   weekly, monthly, or semi-annually?</strong></span>
+  </p><p>
+   You should plan for operations by understanding what tasks you need to do
+   daily, weekly, monthly, or semi-annually. The specific list of tasks that
+   you need to perform depends on your cloud configuration, but should include
+   the following high-level tasks specified in the <a class="xref" href="tutorials.html" title="Chapter 2. Tutorials">Chapter 2, <em>Tutorials</em></a>
+  </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="tutorials.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 2 </span>Tutorials</span></a><a class="nav-link" href="book-operations.html"><span class="prev-icon">←</span><span class="nav-label">Operations Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

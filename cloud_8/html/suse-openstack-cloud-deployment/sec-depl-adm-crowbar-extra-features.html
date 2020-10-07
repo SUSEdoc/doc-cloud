@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Customizing Crowbar | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Deploying With Crowbar" /><meta name="chapter-title" content="Chapter 9. Customizing Crowbar" /><meta name="description" content="In large deployments with many nodes, there are always some nodes that are in a fail or unknown state. New barclamps cannot be applied to them and values cannot be updated in some barclamps that are already deployed. This happens because Crowbar will refuse to apply a barclamp to a list of nodes if …" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-admserv.html" title="Part II. Setting Up the Administration Server" /><link rel="prev" href="sec-depl-adm-start-crowbar.html" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" /><link rel="next" href="part-depl-ostack.html" title="Part III. Setting Up OpenStack Nodes and Services" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="part-depl-admserv.html">Setting Up the Administration Server</a><span> › </span><a class="crumb" href="sec-depl-adm-crowbar-extra-features.html">Customizing Crowbar</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deploying With Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">16 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-maintenance.html"><span class="number">V </span><span class="name">Maintenance and Support</span></a><ol><li class="inactive"><a href="cha-depl-maintenance.html"><span class="number">17 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Maintenance</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">18 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="cha-deploy-logs.html"><span class="number">19 </span><span class="name">Log Files</span></a></li><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">20 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="part-depl-poc.html"><span class="number">VI </span><span class="name">Proof of Concepts Deployments</span></a><ol><li class="inactive"><a href="cha-deploy-poc.html"><span class="number">21 </span><span class="name">Building a SUSE <span class="productname">OpenStack</span> Cloud Test lab</span></a></li></ol></li><li class="inactive"><a href="app-deploy-vmware.html"><span class="number">A </span><span class="name">VMware vSphere Installation Instructions</span></a></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">B </span><span class="name">Using Cisco Nexus Switches with Neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">C </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" href="sec-depl-adm-start-crowbar.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part III. Setting Up OpenStack Nodes and Services" href="part-depl-ostack.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deploying With Crowbar</a><span> › </span><a class="crumb" href="part-depl-admserv.html">Setting Up the Administration Server</a><span> › </span><a class="crumb" href="sec-depl-adm-crowbar-extra-features.html">Customizing Crowbar</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 8. Starting the SUSE OpenStack Cloud Crowbar installation" href="sec-depl-adm-start-crowbar.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part III. Setting Up OpenStack Nodes and Services" href="part-depl-ostack.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="sec-depl-adm-crowbar-extra-features"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Customizing Crowbar</span> <a title="Permalink" class="permalink" href="sec-depl-adm-crowbar-extra-features.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_crowbar_extra-features.xml</li><li><span class="ds-label">ID: </span>sec-depl-adm-crowbar-extra-features</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.2"><span class="number">9.1 </span><span class="name">Skip Unready Nodes</span></a></span></dt><dt><span class="section"><a href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.3"><span class="number">9.2 </span><span class="name">Skip Unchanged Nodes</span></a></span></dt><dt><span class="section"><a href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.4"><span class="number">9.3 </span><span class="name">Controlling Chef Restarts Manually</span></a></span></dt><dt><span class="section"><a href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.5"><span class="number">9.4 </span><span class="name">Prevent Automatic Restart</span></a></span></dt></dl></div></div><div class="sect1" id="id-1.3.4.8.2"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Skip Unready Nodes</span> <a title="Permalink" class="permalink" href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.2">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_crowbar_extra-features.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   In large deployments with many nodes, there are always some nodes that are
+   in a fail or unknown state. New barclamps cannot be applied to them and
+   values cannot be updated in some barclamps that are already deployed. This
+   happens because Crowbar will refuse to apply a barclamp to a list of nodes if
+   they are not all in <code class="literal">ready</code> state.
+  </p><p>
+   To avoid having to manually take out nodes that are not
+   <code class="literal">ready</code>, there is a feature called <code class="literal">skip unready
+   nodes</code>. Instead of refusing to apply the barclamp, it will skip the
+   nodes that it finds in any other state than <code class="literal">ready</code>.
+  </p><p>
+   <span class="bold"><strong>Enabling the Feature</strong></span>
+  </p><p>
+   In <code class="filename">/opt/dell/crowbar_framework/config/crowbar.yml</code>, set
+   the option <code class="literal">skip_unready_nodes</code> to <code class="literal">true</code>.
+  </p><div class="verbatim-wrap"><pre class="screen">default: &amp;default
+skip_unready_nodes:
+  enabled: false <span class="bold"><strong>&lt;&lt;&lt; change to true</strong></span></pre></div><p>
+   <span class="bold"><strong>Roles Affected</strong></span>
+  </p><p>
+   All Barclamp roles are affected. The default config file includes all the
+   roles that have been tested and found to be working. Adding roles to the
+   default list is not supported for the <code class="literal">skip_unready_nodes</code>
+   feature. Removing default roles is supported.
+  </p><p>
+   The list of currently supported roles to skip:
+  </p><div class="verbatim-wrap"><pre class="screen">- bmc-nat-client
+- ceilometer-agent
+- deployer-client
+- dns-client
+- ipmi
+- logging-client
+- nova-compute-ironic
+- nova-compute-kvm
+- nova-compute-qemu
+- nova-compute-vmware
+- nova-compute-xen
+- ntp-client
+- provisioner-base
+- suse-manager-client
+- swift-storage
+- updater</pre></div><p>
+   <span class="bold"><strong>Determining Which Nodes Were Skipped</strong></span>
+  </p><p>
+   Skipped nodes are logged to the Crowbar log
+   (<code class="filename">/var/log/crowbar/production.log</code>) where you can search
+   for the text <code class="literal">skipped until next chef run</code>. This will print
+   the log lines where nodes were skipped, the name of the node, and the
+   barclamp which was being applied.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>grep "skipped until next chef run" /var/log/crowbar/production.log</pre></div><div id="id-1.3.4.8.2.14" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    After enabling/disabling the <code class="literal">skip_unready_nodes</code> feature
+    or adding/removing roles, the Crowbar framework service must be restarted
+    (<code class="command">systemctl restart crowbar</code>) in order to use the updated
+    settings.
+   </p></div></div><div class="sect1" id="id-1.3.4.8.3"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Skip Unchanged Nodes</span> <a title="Permalink" class="permalink" href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.3">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_crowbar_extra-features.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   When a barclamp is applied, all nodes will run <code class="literal">chef-client</code>. Sometimes it is
+   not necessary to run chef for each node as attributes or roles may have not
+   changed for some of the nodes.
+  </p><p>
+   The <code class="literal">skip unchanged nodes</code> feature allows nodes to be
+   skipped if their attributes or roles have not changed. This can help speed
+   up applying a barclamp, especially in large deployments and with roles that
+   are usually applied to a lot of nodes, such as Nova.
+  </p><p>
+   <span class="bold"><strong>Enabling the Feature</strong></span>
+  </p><p>
+   In <code class="filename">/opt/dell/crowbar_framework/config/crowbar.yml</code>, set
+   the option <code class="literal">skip_unchanged_nodes</code> to
+   <code class="literal">true</code>.
+  </p><div class="verbatim-wrap"><pre class="screen">default: &amp;default
+skip_unchanged_nodes:
+  enabled: false <span class="bold"><strong>&lt;&lt;&lt; change to true</strong></span></pre></div></div><div class="sect1" id="id-1.3.4.8.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Controlling Chef Restarts Manually</span> <a title="Permalink" class="permalink" href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_crowbar_extra-features.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   When a service configuration has changed, Chef forces this service to
+   restart. Sometimes it is useful to have manual control of these
+   restarts. This feature supports avoiding automatic restart of services and
+   including them in a pending restart list.  Disabling restarts is
+   enabled/disabled by barclamp and cannot be done on a service level. In other
+   words, enabling this feature on the Cinder barclamp will disable
+   automatic restarts for all Cinder-* services.
+  </p><p>
+   Two steps are necessary to activate this feature:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Enable <code class="literal">disallow_restart</code> in the Crowbar configuration file
+    </p></li><li class="step "><p>
+     Set the <code class="literal">disable_restart</code> flag for a specific barclamp
+     using <code class="literal">crowbar-client</code> or API
+    </p></li></ol></div></div><p>
+   <span class="bold"><strong>Enabling the Feature</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     In <code class="filename">/opt/dell/crowbar_framework/config/crowbar.yml</code>, set
+     the option <code class="literal">disallow_restart</code> to <code class="literal">true</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">default: &amp;default
+disallow_restart:
+  enabled: false <span class="bold"><strong>&lt;&lt;&lt; change to true</strong></span></pre></div></li><li class="step "><p>
+     The <code class="literal">disable_restart</code> flag can be set with the Crowbar
+     client or with the API.
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Set Flag with Crowbar Client
+      </p><p>
+       The crowbar client options for this feature are accessed with the
+       <code class="command">crowbarctl services</code> command, and only work for
+       OpenStack services. The options are:
+      </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.8.4.6.2.2.1.3.1"><span class="term ">disable_restart</span></dt><dd><p>
+          The parameters are the barclamp name and the flag value
+          (<code class="literal">true</code> to disable automatic restart and
+          <code class="literal">false</code> to enable automatic restart). The command is
+          <code class="literal">crowbarctl services disable_restart
+          <em class="replaceable ">BARCLAMP</em> &lt;true|false&gt;</code>. For
+          example, to disable restart of the Keystone barclamp, enter the
+          command <code class="command">crowbarctl services disable_restart keystone
+          true</code>.
+         </p></dd><dt id="id-1.3.4.8.4.6.2.2.1.3.2"><span class="term ">restart_flags</span></dt><dd><p>
+          Used to check the <code class="literal">disable_restart</code> flag for each
+          barclamp
+         </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services restart_flags
+{
+  "nova": true,
+  "keystone": true,
+  "database": true
+}</pre></div></dd><dt id="id-1.3.4.8.4.6.2.2.1.3.3"><span class="term ">list_restarts</span></dt><dd><p>
+          Displays the list of pending restarts. The <code class="literal">pending
+          restart</code> flag indicates that a service tried to
+          restart due to the Chef run but it did not due to the automatic
+          restart being disabled. It also indicates that the service might have
+          a new configuration and it will not be applied until it is manually
+          restarted.
+         </p><p>
+          In the following example, the <code class="literal">pacemaker_service</code>
+          attribute indicates whether this service is managed by Pacemaker
+          (usually in an HA environment) or it is a standalone service managed
+          by <code class="literal">systemd</code> (usually in non-HA environments). More
+          on Pacemaker at <a class="xref" href="cha-depl-ostack.html#sec-depl-ostack-pacemaker" title="12.2. Deploying Pacemaker (Optional, HA Setup Only)">Section 12.2, “Deploying Pacemaker (Optional, HA Setup Only)”</a>. The
+          service to restart will be <code class="literal">apache2</code> not managed by
+          Pacemaker.
+         </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services list_restarts
+{
+  "<em class="replaceable ">NODE_IP</em>": {
+    "alias": "controller1",
+    "keystone": {
+      "apache2": {
+        "pacemaker_service": false,
+        "timestamp": "2017-11-22 11:17:49 UTC"
+      }
+    }
+  }
+}</pre></div></dd><dt id="id-1.3.4.8.4.6.2.2.1.3.4"><span class="term ">clear_restart</span></dt><dd><p>
+          Removes the flag on a specific node for a specific service. It can
+          be executed when the service has restarted manually. The command is
+          <code class="literal">crowbarctl services clear_restart
+          <em class="replaceable ">NODE</em>
+          <em class="replaceable ">SERVICE</em></code>. For example, <code class="command">crowbarctl
+          services clear_restart <em class="replaceable ">NODE_IP</em>
+          apache2</code>
+         </p></dd></dl></div></li><li class="listitem "><p>
+       Using the API to List, Get Status, Set and Clear Flags
+      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         /restart_management/configuration
+        </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.8.4.6.2.2.2.2.1.2.1"><span class="term ">GET</span></dt><dd><p>
+           Lists the barclamps and the status of service reboots disallowed
+          </p></dd><dt id="id-1.3.4.8.4.6.2.2.2.2.1.2.2"><span class="term ">POST (parameters: disallow_restarts, barclamp)</span></dt><dd><p>
+            Sets the disallow_restart flag for a barclamp
+           </p></dd></dl></div></li><li class="listitem "><p>
+         /restart_management/restarts
+        </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.8.4.6.2.2.2.2.2.2.1"><span class="term ">GET</span></dt><dd><p>
+           Lists all of the services needing restarts
+          </p></dd><dt id="id-1.3.4.8.4.6.2.2.2.2.2.2.2"><span class="term ">POST (parameters: node, service)</span></dt><dd><p>
+            Clears the restart flag for the given service in the given node
+           </p></dd></dl></div></li></ul></div></li></ul></div></li></ol></div></div></div><div class="sect1" id="id-1.3.4.8.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prevent Automatic Restart</span> <a title="Permalink" class="permalink" href="sec-depl-adm-crowbar-extra-features.html#id-1.3.4.8.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_crowbar_extra-features.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Sometimes a change in a proposal requires services to be restarted on all
+   implicated nodes. This could be a problem in a production environment where
+   interrupting a service completely is not an option, and where manual restart
+   control is needed. With the service <code class="literal">disable_restart</code>
+   feature in <code class="literal">crowbarctl</code>, you can set a flag for certain
+   proposals to prevent the automatic restart.
+  </p><p>
+   <span class="bold"><strong>Enabling the Feature</strong></span>
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     In <code class="filename">/opt/dell/crowbar_framework/config/crowbar.yml</code>, set
+     the option <code class="literal">disallow_restart</code> to <code class="literal">true</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">default: &amp;default
+disallow_restart:
+  enabled: false <span class="bold"><strong>&lt;&lt;&lt; change to true</strong></span></pre></div></li><li class="step "><p>
+     Restart Crowbar
+    </p></li><li class="step "><p>
+     Enable the <code class="literal">disable_restart</code> flag in the affected
+     cookbook.
+    </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services disable_restart <em class="replaceable ">COOKBOOK</em> true</pre></div><p>
+     For example, to disable Keystone and RabbitMQ restarts:
+    </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services disable_restart keystone true
+crowbarctl services disable_restart rabbitmq true</pre></div></li><li class="step "><p>
+     To check the proposals that have <code class="literal">disable_restart</code>
+     enabled:
+    </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services restart_flags
+{
+  "rabbitmq": true,
+  "keystone": true,
+}</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>Check Pending Restarts</strong></span>
+  </p><p>
+   When a proposal is applied with the <code class="literal">disable_restart</code> flag
+   enabled, the implicated nodes will not restart. They will be listed as
+   pending restarts. To check this list, run the command <code class="command">crowbarctl
+   services list_restarts</code>.
+  </p><p>
+   In the following example, <code class="literal">disable_restart</code> is enabled for
+   RabbitMQ. After applying rabbitmq, <code class="literal">list_restarts</code> will
+   show the affected nodes, the proposal, and the services to restart.
+  </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services list_restarts
+{
+   "d52-54-77-77-01-01.vo5.cloud.suse.de": {
+    "alias": "controller1",
+    "rabbitmq": {
+      "rabbitmq-server": {
+        "pacemaker_service": false,
+        "timestamp": "2018-03-07 15:30:30 UTC"
+      }
+    }
+  }
+}</pre></div><p>
+   After a manual restart of the service, the flags should be cleaned. The
+   following command will clean the flag for a specific node, for a specific
+   proposal or all proposals, and for a specific service.
+  </p><div class="verbatim-wrap"><pre class="screen">crowbarctl services clear_restart <em class="replaceable ">NODE [COOKBOOK [SERVICE]]</em></pre></div><p>
+   For example, to clean the RabbitMQ flag from the
+   <code class="literal">controller1</code> node, run the command:
+  </p><div class="verbatim-wrap"><pre class="screen">crowbarctl service clear_restart controller1 rabbitmq</pre></div><p>
+   To clean the <code class="literal">controller1</code> node, run the command:
+  </p><div class="verbatim-wrap"><pre class="screen">crowbarctl service clear_restart controller1</pre></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-depl-ostack.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part III </span>Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><a class="nav-link" href="sec-depl-adm-start-crowbar.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 8 </span>Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

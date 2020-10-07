@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Identity management | OpenStack Administrator Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="OpenStack Administrator Guide" /><meta name="chapter-title" content="Chapter 3. Identity management" /><meta name="description" content="OpenStack Identity, code-named keystone, is the default Identity management system for OpenStack. After you install Identity, you configure it through the /etc/keystone/keystone.conf configuration file and, possibly, a separate logging configuration file. You initialize data into Identity by using t…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-upstream-admin.html" title="OpenStack Administrator Guide" /><link rel="prev" href="bk02ch02.html" title="Chapter 2. Get started with OpenStack" /><link rel="next" href="bk02ch04.html" title="Chapter 4. Dashboard" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-upstream-admin.html">OpenStack Administrator Guide</a><span> › </span><a class="crumb" href="cha-identity.html">Identity management</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02ch01.html"><span class="number">1 </span><span class="name">Documentation Conventions</span></a></li><li class="inactive"><a href="bk02ch02.html"><span class="number">2 </span><span class="name">Get started with OpenStack</span></a></li><li class="inactive"><a href="cha-identity.html"><span class="number">3 </span><span class="name">Identity management</span></a></li><li class="inactive"><a href="bk02ch04.html"><span class="number">4 </span><span class="name">Dashboard</span></a></li><li class="inactive"><a href="bk02ch05.html"><span class="number">5 </span><span class="name">Compute</span></a></li><li class="inactive"><a href="bk02ch06.html"><span class="number">6 </span><span class="name">Object Storage</span></a></li><li class="inactive"><a href="bk02ch07.html"><span class="number">7 </span><span class="name">Block Storage</span></a></li><li class="inactive"><a href="bk02ch08.html"><span class="number">8 </span><span class="name">Shared File Systems</span></a></li><li class="inactive"><a href="networking.html"><span class="number">9 </span><span class="name">Networking</span></a></li><li class="inactive"><a href="bk02ch10.html"><span class="number">10 </span><span class="name">Telemetry</span></a></li><li class="inactive"><a href="bk02ch11.html"><span class="number">11 </span><span class="name">Database</span></a></li><li class="inactive"><a href="bk02ch12.html"><span class="number">12 </span><span class="name">Bare Metal</span></a></li><li class="inactive"><a href="bk02ch13.html"><span class="number">13 </span><span class="name">Orchestration</span></a></li><li class="inactive"><a href="osadm-os-cli.html"><span class="number">14 </span><span class="name">OpenStack command-line clients</span></a></li><li class="inactive"><a href="bk02ch15.html"><span class="number">15 </span><span class="name">Cross-project features</span></a></li><li class="inactive"><a href="bk02ch16.html"><span class="number">16 </span><span class="name">Appendix</span></a></li><li class="inactive"><a href="bk02go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Get started with OpenStack" href="bk02ch02.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Dashboard" href="bk02ch04.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-upstream-admin.html">OpenStack Administrator Guide</a><span> › </span><a class="crumb" href="cha-identity.html">Identity management</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Get started with OpenStack" href="bk02ch02.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Dashboard" href="bk02ch04.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-identity"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud</span> <span class="productnumber ">8</span></div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identity management</span> <a title="Permalink" class="permalink" href="cha-identity.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>cha-identity</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.4"><span class="number">3.1 </span><span class="name">Identity concepts</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#cha-certificates-pki"><span class="number">3.2 </span><span class="name">Certificates for PKI</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.6"><span class="number">3.3 </span><span class="name">Domain-specific configuration</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.7"><span class="number">3.4 </span><span class="name">External authentication with Identity</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.8"><span class="number">3.5 </span><span class="name">Integrate Identity with LDAP</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.9"><span class="number">3.6 </span><span class="name">Keystone tokens</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.10"><span class="number">3.7 </span><span class="name">Configure Identity service for token binding</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#cha-fernet-faq"><span class="number">3.8 </span><span class="name">Fernet - Frequently Asked Questions</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.12"><span class="number">3.9 </span><span class="name">Use trusts</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.13"><span class="number">3.10 </span><span class="name">Caching layer</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.14"><span class="number">3.11 </span><span class="name">Security compliance and PCI-DSS</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.15"><span class="number">3.12 </span><span class="name">Example usage and Identity features</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.16"><span class="number">3.13 </span><span class="name">Authentication middleware with user name and password</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.17"><span class="number">3.14 </span><span class="name">Identity API protection with role-based access control (RBAC)</span></a></span></dt><dt><span class="sect1"><a href="cha-identity.html#id-1.4.5.18"><span class="number">3.15 </span><span class="name">Troubleshoot the Identity service</span></a></span></dt></dl></div></div><p>OpenStack Identity, code-named keystone, is the default Identity
+management system for OpenStack. After you install Identity, you
+configure it through the <code class="literal">/etc/keystone/keystone.conf</code>
+configuration file and, possibly, a separate logging configuration
+file. You initialize data into Identity by using the <code class="literal">keystone</code>
+command-line client.</p><div class="sect1 " id="id-1.4.5.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identity concepts</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.4.2.1"><span class="term ">Authentication</span></dt><dd><p>The process of confirming the identity of a user. To confirm an incoming
+request, OpenStack Identity validates a set of credentials users
+supply. Initially, these credentials are a user name and password, or a
+user name and API key. When OpenStack Identity validates user credentials,
+it issues an authentication token. Users provide the token in
+subsequent requests.</p></dd><dt id="id-1.4.5.4.2.2"><span class="term ">Credentials</span></dt><dd><p>Data that confirms the identity of the user. For example, user
+name and password, user name and API key, or an authentication
+token that the Identity service provides.</p></dd><dt id="id-1.4.5.4.2.3"><span class="term ">Domain</span></dt><dd><p>An Identity service API v3 entity. Domains are a collection of
+projects and users that define administrative boundaries for
+managing Identity entities. Domains can represent an
+individual, company, or operator-owned space. They expose
+administrative activities directly to system users. Users can be
+granted the administrator role for a domain. A domain
+administrator can create projects, users, and groups in a domain
+and assign roles to users and groups in a domain.</p></dd><dt id="id-1.4.5.4.2.4"><span class="term ">Endpoint</span></dt><dd><p>A network-accessible address, usually a URL, through which you can
+access a service. If you are using an extension for templates, you
+can create an endpoint template that represents the templates of
+all consumable services that are available across the regions.</p></dd><dt id="id-1.4.5.4.2.5"><span class="term ">Group</span></dt><dd><p>An Identity service API v3 entity. Groups are a collection of
+users owned by a domain. A group role, granted to a domain
+or project, applies to all users in the group. Adding or removing
+users to or from a group grants or revokes their role and
+authentication to the associated domain or project.</p></dd><dt id="id-1.4.5.4.2.6"><span class="term ">OpenStackClient</span></dt><dd><p>A command-line interface for several OpenStack services including
+the Identity API. For example, a user can run the
+<code class="command">openstack service create</code> and
+<code class="command">openstack endpoint create</code> commands to register services
+in their OpenStack installation.</p></dd><dt id="id-1.4.5.4.2.7"><span class="term ">Project</span></dt><dd><p>A container that groups or isolates resources or identity objects.
+Depending on the service operator, a project might map to a
+customer, account, organization, or tenant.</p></dd><dt id="id-1.4.5.4.2.8"><span class="term ">Region</span></dt><dd><p>An Identity service API v3 entity. Represents a general
+            division in an OpenStack deployment. Zero or more sub-regions can be
+            associated with a region to make a tree-like structured hierarchy.
+            However Cloud 8 does not support multiple regions, so this
+            guide uses the default <code class="literal">RegionOne</code> region. </p></dd><dt id="id-1.4.5.4.2.9"><span class="term ">Role</span></dt><dd><p>A personality with a defined set of user rights and privileges to
+perform a specific set of operations. The Identity service issues
+a token to a user that includes a list of roles. When a user calls
+a service, that service interprets the user role set, and
+determines to which operations or resources each role grants
+access.</p></dd><dt id="id-1.4.5.4.2.10"><span class="term ">Service</span></dt><dd><p>An OpenStack service, such as Compute (nova), Object Storage
+(swift), or Image service (glance), that provides one or more
+endpoints through which users can access resources and perform
+operations.</p></dd><dt id="id-1.4.5.4.2.11"><span class="term ">Token</span></dt><dd><p>An alpha-numeric text string that enables access to OpenStack APIs
+and resources. A token may be revoked at any time and is valid for
+a finite duration. While OpenStack Identity supports token-based
+authentication in this release, it intends to support additional
+protocols in the future. OpenStack Identity is an integration
+service that does not aspire to be a full-fledged identity store
+and management solution.</p></dd><dt id="id-1.4.5.4.2.12"><span class="term ">User</span></dt><dd><p>A digital representation of a person, system, or service that uses
+OpenStack cloud services. The Identity service validates that
+incoming requests are made by the user who claims to be making the
+call. Users have a login and can access resources by using
+assigned tokens. Users can be directly assigned to a particular
+project and behave as if they are contained in that project.</p></dd></dl></div><div class="sect2 " id="id-1.4.5.4.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User management</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.4.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Identity user management examples:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Create a user named <code class="literal">alice</code>:</p><div class="verbatim-wrap"><pre class="screen">$ openstack user create --password-prompt --email alice@example.com alice</pre></div></li><li class="listitem "><p>Create a project named <code class="literal">acme</code>:</p><div class="verbatim-wrap"><pre class="screen">$ openstack project create acme --domain default</pre></div></li><li class="listitem "><p>Create a domain named <code class="literal">emea</code>:</p><div class="verbatim-wrap"><pre class="screen">$ openstack --os-identity-api-version=3 domain create emea</pre></div></li><li class="listitem "><p>Create a role named <code class="literal">compute-user</code>:</p><div class="verbatim-wrap"><pre class="screen">$ openstack role create compute-user</pre></div><div id="id-1.4.5.4.3.3.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Individual services assign meaning to roles, typically through
+limiting or granting access to users with the role to the
+operations that the service supports. Role access is typically
+configured in the service's <code class="literal">policy.json</code> file. For example,
+to limit Compute access to the <code class="literal">compute-user</code> role, edit the
+Compute service's <code class="literal">policy.json</code> file to require this role for
+Compute operations.</p></div></li></ul></div><p>The Identity service assigns a project and a role to a user. You might
+assign the <code class="literal">compute-user</code> role to the <code class="literal">alice</code> user in the <code class="literal">acme</code>
+project:</p><div class="verbatim-wrap"><pre class="screen">$ openstack role add --project acme --user alice compute-user</pre></div><p>A user can have different roles in different projects. For example, Alice
+might also have the <code class="literal">admin</code> role in the <code class="literal">Cyberdyne</code> project. A user
+can also have multiple roles in the same project.</p><p>The <code class="literal">/etc/[SERVICE_CODENAME]/policy.json</code> file controls the
+tasks that users can perform for a given service. For example, the
+<code class="literal">/etc/nova/policy.json</code> file specifies the access policy for the
+Compute service, the <code class="literal">/etc/glance/policy.json</code> file specifies
+the access policy for the Image service, and the
+<code class="literal">/etc/keystone/policy.json</code> file specifies the access policy for
+the Identity service.</p><p>The default <code class="literal">policy.json</code> files in the Compute, Identity, and
+Image services recognize only the <code class="literal">admin</code> role. Any user with
+any role in a project can access all operations that do not require the
+<code class="literal">admin</code> role.</p><p>To restrict users from performing operations in, for example, the
+Compute service, you must create a role in the Identity service and
+then modify the <code class="literal">/etc/nova/policy.json</code> file so that this role
+is required for Compute operations.</p><p>For example, the following line in the <code class="literal">/etc/cinder/policy.json</code>
+file does not restrict which users can create volumes:</p><div class="verbatim-wrap highlight json"><pre class="screen">"volume:create": "",</pre></div><p>If the user has any role in a project, he can create volumes in that
+project.</p><p>To restrict the creation of volumes to users who have the
+<code class="literal">compute-user</code> role in a particular project, you add <code class="literal">"role:compute-user"</code>:</p><div class="verbatim-wrap highlight json"><pre class="screen">"volume:create": "role:compute-user",</pre></div><p>To restrict all Compute service requests to require this role, the
+resulting file looks like:</p><div class="verbatim-wrap highlight json"><pre class="screen">{
+   "admin_or_owner": "role:admin or project_id:%(project_id)s",
+   "default": "rule:admin_or_owner",
+   "compute:create": "role:compute-user",
+   "compute:create:attach_network": "role:compute-user",
+   "compute:create:attach_volume": "role:compute-user",
+   "compute:get_all": "role:compute-user",
+   "compute:unlock_override": "rule:admin_api",
+   "admin_api": "role:admin",
+   "compute_extension:accounts": "rule:admin_api",
+   "compute_extension:admin_actions": "rule:admin_api",
+   "compute_extension:admin_actions:pause": "rule:admin_or_owner",
+   "compute_extension:admin_actions:unpause": "rule:admin_or_owner",
+   "compute_extension:admin_actions:suspend": "rule:admin_or_owner",
+   "compute_extension:admin_actions:resume": "rule:admin_or_owner",
+   "compute_extension:admin_actions:lock": "rule:admin_or_owner",
+   "compute_extension:admin_actions:unlock": "rule:admin_or_owner",
+   "compute_extension:admin_actions:resetNetwork": "rule:admin_api",
+   "compute_extension:admin_actions:injectNetworkInfo": "rule:admin_api",
+   "compute_extension:admin_actions:createBackup": "rule:admin_or_owner",
+   "compute_extension:admin_actions:migrateLive": "rule:admin_api",
+   "compute_extension:admin_actions:migrate": "rule:admin_api",
+   "compute_extension:aggregates": "rule:admin_api",
+   "compute_extension:certificates": "role:compute-user",
+   "compute_extension:cloudpipe": "rule:admin_api",
+   "compute_extension:console_output": "role:compute-user",
+   "compute_extension:consoles": "role:compute-user",
+   "compute_extension:createserverext": "role:compute-user",
+   "compute_extension:deferred_delete": "role:compute-user",
+   "compute_extension:disk_config": "role:compute-user",
+   "compute_extension:evacuate": "rule:admin_api",
+   "compute_extension:extended_server_attributes": "rule:admin_api",
+   "compute_extension:extended_status": "role:compute-user",
+   "compute_extension:flavorextradata": "role:compute-user",
+   "compute_extension:flavorextraspecs": "role:compute-user",
+   "compute_extension:flavormanage": "rule:admin_api",
+   "compute_extension:floating_ip_dns": "role:compute-user",
+   "compute_extension:floating_ip_pools": "role:compute-user",
+   "compute_extension:floating_ips": "role:compute-user",
+   "compute_extension:hosts": "rule:admin_api",
+   "compute_extension:keypairs": "role:compute-user",
+   "compute_extension:multinic": "role:compute-user",
+   "compute_extension:networks": "rule:admin_api",
+   "compute_extension:quotas": "role:compute-user",
+   "compute_extension:rescue": "role:compute-user",
+   "compute_extension:security_groups": "role:compute-user",
+   "compute_extension:server_action_list": "rule:admin_api",
+   "compute_extension:server_diagnostics": "rule:admin_api",
+   "compute_extension:simple_tenant_usage:show": "rule:admin_or_owner",
+   "compute_extension:simple_tenant_usage:list": "rule:admin_api",
+   "compute_extension:users": "rule:admin_api",
+   "compute_extension:virtual_interfaces": "role:compute-user",
+   "compute_extension:virtual_storage_arrays": "role:compute-user",
+   "compute_extension:volumes": "role:compute-user",
+   "compute_extension:volume_attachments:index": "role:compute-user",
+   "compute_extension:volume_attachments:show": "role:compute-user",
+   "compute_extension:volume_attachments:create": "role:compute-user",
+   "compute_extension:volume_attachments:delete": "role:compute-user",
+   "compute_extension:volumetypes": "role:compute-user",
+   "volume:create": "role:compute-user",
+   "volume:get_all": "role:compute-user",
+   "volume:get_volume_metadata": "role:compute-user",
+   "volume:get_snapshot": "role:compute-user",
+   "volume:get_all_snapshots": "role:compute-user",
+   "network:get_all_networks": "role:compute-user",
+   "network:get_network": "role:compute-user",
+   "network:delete_network": "role:compute-user",
+   "network:disassociate_network": "role:compute-user",
+   "network:get_vifs_by_instance": "role:compute-user",
+   "network:allocate_for_instance": "role:compute-user",
+   "network:deallocate_for_instance": "role:compute-user",
+   "network:validate_networks": "role:compute-user",
+   "network:get_instance_uuids_by_ip_filter": "role:compute-user",
+   "network:get_floating_ip": "role:compute-user",
+   "network:get_floating_ip_pools": "role:compute-user",
+   "network:get_floating_ip_by_address": "role:compute-user",
+   "network:get_floating_ips_by_project": "role:compute-user",
+   "network:get_floating_ips_by_fixed_address": "role:compute-user",
+   "network:allocate_floating_ip": "role:compute-user",
+   "network:deallocate_floating_ip": "role:compute-user",
+   "network:associate_floating_ip": "role:compute-user",
+   "network:disassociate_floating_ip": "role:compute-user",
+   "network:get_fixed_ip": "role:compute-user",
+   "network:add_fixed_ip_to_instance": "role:compute-user",
+   "network:remove_fixed_ip_from_instance": "role:compute-user",
+   "network:add_network_to_project": "role:compute-user",
+   "network:get_instance_nw_info": "role:compute-user",
+   "network:get_dns_domains": "role:compute-user",
+   "network:add_dns_entry": "role:compute-user",
+   "network:modify_dns_entry": "role:compute-user",
+   "network:delete_dns_entry": "role:compute-user",
+   "network:get_dns_entries_by_address": "role:compute-user",
+   "network:get_dns_entries_by_name": "role:compute-user",
+   "network:create_private_dns_domain": "role:compute-user",
+   "network:create_public_dns_domain": "role:compute-user",
+   "network:delete_dns_domain": "role:compute-user"
+}</pre></div></div><div class="sect2 " id="id-1.4.5.4.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Service management</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.4.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Identity service provides identity, token, catalog, and policy
+services. It consists of:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.4.4.3.1.1.1"><span class="term ">keystone Web Server Gateway Interface (WSGI) service</span></dt><dd><p>Can be run in a WSGI-capable web server such as Apache httpd to provide
+the Identity service. The service and administrative APIs are run as
+separate instances of the WSGI service.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.4.4.3.2.1.1"><span class="term ">Identity service functions</span></dt><dd><p>Each has a pluggable back end that allow different ways to use the
+particular service. Most support standard back ends like LDAP or SQL.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.4.4.3.3.1.1"><span class="term ">keystone-all</span></dt><dd><p>Starts both the service and administrative APIs in a single process.
+Using federation with keystone-all is not supported. keystone-all is
+deprecated in favor of the WSGI service. Also, this will be removed
+in Newton.</p></dd></dl></div></li></ul></div><p>The Identity service also maintains a user that corresponds to each
+service, such as, a user named <code class="literal">nova</code> for the Compute service, and a
+special service project called <code class="literal">service</code>.</p><p>For information about how to create services and endpoints, see the
+<a class="link" href="http://docs.openstack.org/admin-guide/cli-manage-services.html" target="_blank">OpenStack Administrator Guide</a>.</p></div><div class="sect2 " id="id-1.4.5.4.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Groups</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.4.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>A group is a collection of users in a domain. Administrators can
+create groups and add users to them. A role can then be assigned to
+the group, rather than individual users. Groups were introduced with
+the Identity API v3.</p><p>Identity API V3 provides the following group-related operations:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Create a group</p></li><li class="listitem "><p>Delete a group</p></li><li class="listitem "><p>Update a group (change its name or description)</p></li><li class="listitem "><p>Add a user to a group</p></li><li class="listitem "><p>Remove a user from a group</p></li><li class="listitem "><p>List group members</p></li><li class="listitem "><p>List groups for a user</p></li><li class="listitem "><p>Assign a role on a project to a group</p></li><li class="listitem "><p>Assign a role on a domain to a group</p></li><li class="listitem "><p>Query role assignments to groups</p></li></ul></div><div id="id-1.4.5.4.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The Identity service server might not allow all operations. For
+example, if you use the Identity server with the LDAP Identity
+back end and group updates are disabled, a request to create,
+delete, or update a group fails.</p></div><p>Here are a couple of examples:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Group A is granted Role A on Project A. If User A is a member of Group
+A, when User A gets a token scoped to Project A, the token also
+includes Role A.</p></li><li class="listitem "><p>Group B is granted Role B on Domain B. If User B is a member of
+Group B, when User B gets a token scoped to Domain B, the token also
+includes Role B.</p></li></ul></div></div></div><div class="sect1 " id="cha-certificates-pki"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Certificates for PKI</span> <a title="Permalink" class="permalink" href="cha-identity.html#cha-certificates-pki">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>cha-certificates-pki</li></ul></div></div></div></div><p>PKI stands for Public Key Infrastructure. Tokens are documents,
+cryptographically signed using the X509 standard. In order to work
+correctly token generation requires a public/private key pair. The
+public key must be signed in an X509 certificate, and the certificate
+used to sign it must be available as a <a class="xref" href="bk02go01.html#term-certificate-authority-ca" title="certificate authority (CA)">certificate authority (CA)</a>
+certificate. These files can be generated either using the
+<code class="command">keystone-manage</code> utility, or externally generated. The files need to
+be in the locations specified by the top level Identity service
+configuration file <code class="literal">/etc/keystone/keystone.conf</code> as specified in the
+above section. Additionally, the private key should only be readable by
+the system user that will run the Identity service.</p><div id="id-1.4.5.5.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>The certificates can be world readable, but the private key cannot
+be. The private key should only be readable by the account that is
+going to sign tokens. When generating files with the
+<code class="command">keystone-manage pki_setup</code> command, your best option is to run
+as the pki user. If you run <code class="command">keystone-manage</code> as root, you can
+append <code class="literal">--keystone-user</code> and <code class="literal">--keystone-group</code> parameters
+to set the user name and group keystone is going to run under.</p></div><p>The values that specify where to read the certificates are under the
+<code class="literal">[signing]</code> section of the configuration file. The configuration
+values are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.1.1.1"><span class="term ">
+                <code class="literal">certfile</code>
+              </span></dt><dd><p>Location of certificate used to verify tokens. Default is
+<code class="literal">/etc/keystone/ssl/certs/signing_cert.pem</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.2.1.1"><span class="term ">
+                <code class="literal">keyfile</code>
+              </span></dt><dd><p>Location of private key used to sign tokens. Default is
+<code class="literal">/etc/keystone/ssl/private/signing_key.pem</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.3.1.1"><span class="term ">
+                <code class="literal">ca_certs</code>
+              </span></dt><dd><p>Location of certificate for the authority that issued
+the above certificate. Default is
+<code class="literal">/etc/keystone/ssl/certs/ca.pem</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.4.1.1"><span class="term ">
+                <code class="literal">ca_key</code>
+              </span></dt><dd><p>Location of the private key used by the CA. Default is
+<code class="literal">/etc/keystone/ssl/private/cakey.pem</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.5.1.1"><span class="term ">
+                <code class="literal">key_size</code>
+              </span></dt><dd><p>Default is <code class="literal">2048</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.6.1.1"><span class="term ">
+                <code class="literal">valid_days</code>
+              </span></dt><dd><p>Default is <code class="literal">3650</code>.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.5.7.1.1"><span class="term ">
+                <code class="literal">cert_subject</code>
+              </span></dt><dd><p>Certificate subject (auto generated certificate) for token signing.
+Default is <code class="literal">/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com</code>.</p></dd></dl></div></li></ul></div><p>When generating certificates with the <code class="command">keystone-manage pki_setup</code>
+command, the <code class="literal">ca_key</code>, <code class="literal">key_size</code>, and <code class="literal">valid_days</code> configuration
+options are used.</p><p>If the <code class="command">keystone-manage pki_setup</code> command is not used to generate
+certificates, or you are providing your own certificates, these values
+do not need to be set.</p><p>If <code class="literal">provider=keystone.token.providers.uuid.Provider</code> in the
+<code class="literal">[token]</code> section of the keystone configuration file, a typical token
+looks like <code class="literal">53f7f6ef0cc344b5be706bcc8b1479e1</code>. If
+<code class="literal">provider=keystone.token.providers.pki.Provider</code>, a typical token is a
+much longer string, such as:</p><div class="verbatim-wrap"><pre class="screen">MIIKtgYJKoZIhvcNAQcCoIIKpzCCCqMCAQExCTAHBgUrDgMCGjCCCY8GCSqGSIb3DQEHAaCCCYAEggl8eyJhY2Nlc3MiOiB7InRva2VuIjogeyJpc3N1ZWRfYXQiOiAiMjAxMy0wNS0z
+MFQxNTo1MjowNi43MzMxOTgiLCAiZXhwaXJlcyI6ICIyMDEzLTA1LTMxVDE1OjUyOjA2WiIsICJpZCI6ICJwbGFjZWhvbGRlciIsICJ0ZW5hbnQiOiB7ImRlc2NyaXB0aW9uIjogbnVs
+bCwgImVuYWJsZWQiOiB0cnVlLCAiaWQiOiAiYzJjNTliNGQzZDI4NGQ4ZmEwOWYxNjljYjE4MDBlMDYiLCAibmFtZSI6ICJkZW1vIn19LCAic2VydmljZUNhdGFsb2ciOiBbeyJlbmRw
+b2ludHMiOiBbeyJhZG1pblVSTCI6ICJodHRwOi8vMTkyLjE2OC4yNy4xMDA6ODc3NC92Mi9jMmM1OWI0ZDNkMjg0ZDhmYTA5ZjE2OWNiMTgwMGUwNiIsICJyZWdpb24iOiAiUmVnaW9u
+T25lIiwgImludGVybmFsVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDo4Nzc0L3YyL2MyYzU5YjRkM2QyODRkOGZhMDlmMTY5Y2IxODAwZTA2IiwgImlkIjogIjFmYjMzYmM5M2Y5
+ODRhNGNhZTk3MmViNzcwOTgzZTJlIiwgInB1YmxpY1VSTCI6ICJodHRwOi8vMTkyLjE2OC4yNy4xMDA6ODc3NC92Mi9jMmM1OWI0ZDNkMjg0ZDhmYTA5ZjE2OWNiMTgwMGUwNiJ9XSwg
+ImVuZHBvaW50c19saW5rcyI6IFtdLCAidHlwZSI6ICJjb21wdXRlIiwgIm5hbWUiOiAibm92YSJ9LCB7ImVuZHBvaW50cyI6IFt7ImFkbWluVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3
+LjEwMDozMzMzIiwgInJlZ2lvbiI6ICJSZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDovLzE5Mi4xNjguMjcuMTAwOjMzMzMiLCAiaWQiOiAiN2JjMThjYzk1NWFiNDNkYjhm
+MGU2YWNlNDU4NjZmMzAiLCAicHVibGljVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDozMzMzIn1dLCAiZW5kcG9pbnRzX2xpbmtzIjogW10sICJ0eXBlIjogInMzIiwgIm5hbWUi
+OiAiczMifSwgeyJlbmRwb2ludHMiOiBbeyJhZG1pblVSTCI6ICJodHRwOi8vMTkyLjE2OC4yNy4xMDA6OTI5MiIsICJyZWdpb24iOiAiUmVnaW9uT25lIiwgImludGVybmFsVVJMIjog
+Imh0dHA6Ly8xOTIuMTY4LjI3LjEwMDo5MjkyIiwgImlkIjogIjczODQzNTJhNTQ0MjQ1NzVhM2NkOTVkN2E0YzNjZGY1IiwgInB1YmxpY1VSTCI6ICJodHRwOi8vMTkyLjE2OC4yNy4x
+MDA6OTI5MiJ9XSwgImVuZHBvaW50c19saW5rcyI6IFtdLCAidHlwZSI6ICJpbWFnZSIsICJuYW1lIjogImdsYW5jZSJ9LCB7ImVuZHBvaW50cyI6IFt7ImFkbWluVVJMIjogImh0dHA6
+Ly8xOTIuMTY4LjI3LjEwMDo4Nzc2L3YxL2MyYzU5YjRkM2QyODRkOGZhMDlmMTY5Y2IxODAwZTA2IiwgInJlZ2lvbiI6ICJSZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDov
+LzE5Mi4xNjguMjcuMTAwOjg3NzYvdjEvYzJjNTliNGQzZDI4NGQ4ZmEwOWYxNjljYjE4MDBlMDYiLCAiaWQiOiAiMzQ3ZWQ2ZThjMjkxNGU1MGFlMmJiNjA2YWQxNDdjNTQiLCAicHVi
+bGljVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDo4Nzc2L3YxL2MyYzU5YjRkM2QyODRkOGZhMDlmMTY5Y2IxODAwZTA2In1dLCAiZW5kcG9pbnRzX2xpbmtzIjogW10sICJ0eXBl
+IjogInZvbHVtZSIsICJuYW1lIjogImNpbmRlciJ9LCB7ImVuZHBvaW50cyI6IFt7ImFkbWluVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDo4NzczL3NlcnZpY2VzL0FkbWluIiwg
+InJlZ2lvbiI6ICJSZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDovLzE5Mi4xNjguMjcuMTAwOjg3NzMvc2VydmljZXMvQ2xvdWQiLCAiaWQiOiAiMmIwZGMyYjNlY2U4NGJj
+YWE1NDAzMDMzNzI5YzY3MjIiLCAicHVibGljVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDo4NzczL3NlcnZpY2VzL0Nsb3VkIn1dLCAiZW5kcG9pbnRzX2xpbmtzIjogW10sICJ0
+eXBlIjogImVjMiIsICJuYW1lIjogImVjMiJ9LCB7ImVuZHBvaW50cyI6IFt7ImFkbWluVVJMIjogImh0dHA6Ly8xOTIuMTY4LjI3LjEwMDozNTM1Ny92Mi4wIiwgInJlZ2lvbiI6ICJS
+ZWdpb25PbmUiLCAiaW50ZXJuYWxVUkwiOiAiaHR0cDovLzE5Mi4xNjguMjcuMTAwOjUwMDAvdjIuMCIsICJpZCI6ICJiNTY2Y2JlZjA2NjQ0ZmY2OWMyOTMxNzY2Yjc5MTIyOSIsICJw
+dWJsaWNVUkwiOiAiaHR0cDovLzE5Mi4xNjguMjcuMTAwOjUwMDAvdjIuMCJ9XSwgImVuZHBvaW50c19saW5rcyI6IFtdLCAidHlwZSI6ICJpZGVudGl0eSIsICJuYW1lIjogImtleXN0
+b25lIn1dLCAidXNlciI6IHsidXNlcm5hbWUiOiAiZGVtbyIsICJyb2xlc19saW5rcyI6IFtdLCAiaWQiOiAiZTVhMTM3NGE4YTRmNDI4NWIzYWQ3MzQ1MWU2MDY4YjEiLCAicm9sZXMi
+OiBbeyJuYW1lIjogImFub3RoZXJyb2xlIn0sIHsibmFtZSI6ICJNZW1iZXIifV0sICJuYW1lIjogImRlbW8ifSwgIm1ldGFkYXRhIjogeyJpc19hZG1pbiI6IDAsICJyb2xlcyI6IFsi
+YWRiODM3NDVkYzQzNGJhMzk5ODllNjBjOTIzYWZhMjgiLCAiMzM2ZTFiNjE1N2Y3NGFmZGJhNWUwYTYwMWUwNjM5MmYiXX19fTGB-zCB-AIBATBcMFcxCzAJBgNVBAYTAlVTMQ4wDAYD
+VQQIEwVVbnNldDEOMAwGA1UEBxMFVW5zZXQxDjAMBgNVBAoTBVVuc2V0MRgwFgYDVQQDEw93d3cuZXhhbXBsZS5jb20CAQEwBwYFKw4DAhowDQYJKoZIhvcNAQEBBQAEgYCAHLpsEs2R
+nouriuiCgFayIqCssK3SVdhOMINiuJtqv0sE-wBDFiEj-Prcudqlz-n+6q7VgV4mwMPszz39-rwp+P5l4AjrJasUm7FrO-4l02tPLaaZXU1gBQ1jUG5e5aL5jPDP08HbCWuX6wr-QQQB
+SrWY8lF3HrTcJT23sZIleg==</pre></div><div class="sect2 " id="id-1.4.5.5.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sign certificate issued by external CA</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.5.10">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>You can use a signing certificate issued by an external CA instead of
+generated by <code class="command">keystone-manage</code>. However, a certificate issued by an
+external CA must satisfy the following conditions:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>All certificate and key files must be in Privacy Enhanced Mail (PEM)
+format</p></li><li class="listitem "><p>Private key files must not be protected by a password</p></li></ul></div><p>When using a signing certificate issued by an external CA, you do not
+need to specify <code class="literal">key_size</code>, <code class="literal">valid_days</code>, and <code class="literal">ca_password</code> as
+they will be ignored.</p><p>The basic workflow for using a signing certificate issued by an external
+CA involves:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Request Signing Certificate from External CA</p></li><li class="step "><p>Convert certificate and private key to PEM if needed</p></li><li class="step "><p>Install External Signing Certificate</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.5.5.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Request a signing certificate from an external CA</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.5.11">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>One way to request a signing certificate from an external CA is to first
+generate a PKCS #10 Certificate Request Syntax (CRS) using OpenSSL CLI.</p><p>Create a certificate request configuration file. For example, create the
+<code class="literal">cert_req.conf</code> file, as follows:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ req ]
+default_bits            = 4096
+default_keyfile         = keystonekey.pem
+default_md              = sha256
+
+prompt                  = no
+distinguished_name      = distinguished_name
+
+[ distinguished_name ]
+countryName             = US
+stateOrProvinceName     = CA
+localityName            = Sunnyvale
+organizationName        = OpenStack
+organizationalUnitName  = Keystone
+commonName              = Keystone Signing
+emailAddress            = keystone@openstack.org</pre></div><p>Then generate a CRS with OpenSSL CLI. <span class="bold"><strong>Do not encrypt the generated
+private key. You must use the -nodes option.</strong></span></p><p>For example:</p><div class="verbatim-wrap"><pre class="screen">$ openssl req -newkey rsa:1024 -keyout signing_key.pem -keyform PEM \
+  -out signing_cert_req.pem -outform PEM -config cert_req.conf -nodes</pre></div><p>If everything is successful, you should end up with
+<code class="literal">signing_cert_req.pem</code> and <code class="literal">signing_key.pem</code>. Send
+<code class="literal">signing_cert_req.pem</code> to your CA to request a token signing certificate
+and make sure to ask the certificate to be in PEM format. Also, make sure your
+trusted CA certificate chain is also in PEM format.</p></div><div class="sect2 " id="id-1.4.5.5.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Install an external signing certificate</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.5.12">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Assuming you have the following already:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.12.3.1.1.1"><span class="term ">
+                  <code class="literal">signing_cert.pem</code>
+                </span></dt><dd><p>(Keystone token) signing certificate in PEM format</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.12.3.2.1.1"><span class="term ">
+                  <code class="literal">signing_key.pem</code>
+                </span></dt><dd><p>Corresponding (non-encrypted) private key in PEM format</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.5.12.3.3.1.1"><span class="term ">
+                  <code class="literal">cacert.pem</code>
+                </span></dt><dd><p>Trust CA certificate chain in PEM format</p></dd></dl></div></li></ul></div><p>Copy the above to your certificate directory. For example:</p><div class="verbatim-wrap"><pre class="screen"># mkdir -p /etc/keystone/ssl/certs
+# cp signing_cert.pem /etc/keystone/ssl/certs/
+# cp signing_key.pem /etc/keystone/ssl/certs/
+# cp cacert.pem /etc/keystone/ssl/certs/
+# chmod -R 700 /etc/keystone/ssl/certs</pre></div><div id="id-1.4.5.5.12.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Make sure the certificate directory is only accessible by root.</p></div><div id="id-1.4.5.5.12.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The procedure of copying the key and cert files may be improved if
+done after first running <code class="command">keystone-manage pki_setup</code> since this
+command also creates other needed files, such as the <code class="literal">index.txt</code>
+and <code class="literal">serial</code> files.</p><p>Also, when copying the necessary files to a different server for
+replicating the functionality, the entire directory of files is
+needed, not just the key and cert files.</p></div><p>If your certificate directory path is different from the default
+<code class="literal">/etc/keystone/ssl/certs</code>, make sure it is reflected in the
+<code class="literal">[signing]</code> section of the configuration file.</p></div><div class="sect2 " id="id-1.4.5.5.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Switching out expired signing certificates</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.5.13">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The following procedure details how to switch out expired signing
+certificates with no cloud outages.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Generate a new signing key.</p></li><li class="step "><p>Generate a new certificate request.</p></li><li class="step "><p>Sign the new certificate with the existing CA to generate a new
+<code class="literal">signing_cert</code>.</p></li><li class="step "><p>Append the new <code class="literal">signing_cert</code> to the old <code class="literal">signing_cert</code>. Ensure the
+old certificate is in the file first.</p></li><li class="step "><p>Remove all signing certificates from all your hosts to force OpenStack
+Compute to download the new <code class="literal">signing_cert</code>.</p></li><li class="step "><p>Replace the old signing key with the new signing key. Move the new
+signing certificate above the old certificate in the <code class="literal">signing_cert</code>
+file.</p></li><li class="step "><p>After the old certificate reads as expired, you can safely remove the
+old signing certificate from the file.</p></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.5.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Domain-specific configuration</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Identity service supports domain-specific Identity drivers.
+The drivers allow a domain to have its own LDAP or SQL back end.
+By default, domain-specific drivers are disabled.</p><p>Domain-specific Identity configuration options can be stored in
+domain-specific configuration files, or in the Identity SQL
+database using API REST calls.</p><div id="id-1.4.5.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Storing and managing configuration options in an SQL database is
+experimental in Kilo, and added to the Identity service in the
+Liberty release.</p></div><div class="sect2 " id="id-1.4.5.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable drivers for domain-specific configuration files</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.6.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To enable domain-specific drivers, set these options in the
+<code class="literal">/etc/keystone/keystone.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[identity]
+domain_specific_drivers_enabled = True
+domain_config_dir = /etc/keystone/domains</pre></div><p>When you enable domain-specific drivers, Identity looks in the
+<code class="literal">domain_config_dir</code> directory for configuration files that are named as
+<code class="literal">keystone.DOMAIN_NAME.conf</code>. A domain without a domain-specific
+configuration file uses options in the primary configuration file.</p></div><div class="sect2 " id="id-1.4.5.6.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable drivers for storing configuration options in SQL database</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.6.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To enable domain-specific drivers, set these options in the
+<code class="literal">/etc/keystone/keystone.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[identity]
+domain_specific_drivers_enabled = True
+domain_configurations_from_database = True</pre></div><p>Any domain-specific configuration options specified through the
+Identity v3 API will override domain-specific configuration files in the
+<code class="literal">/etc/keystone/domains</code> directory.</p></div><div class="sect2 " id="id-1.4.5.6.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Migrate domain-specific configuration files to the SQL database</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.6.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>You can use the <code class="literal">keystone-manage</code> command to migrate configuration
+options in domain-specific configuration files to the SQL database:</p><div class="verbatim-wrap"><pre class="screen"># keystone-manage domain_config_upload --all</pre></div><p>To upload options from a specific domain-configuration file, specify the
+domain name:</p><div class="verbatim-wrap"><pre class="screen"># keystone-manage domain_config_upload --domain-name DOMAIN_NAME</pre></div></div></div><div class="sect1 " id="id-1.4.5.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">External authentication with Identity</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.7">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>When Identity runs in <code class="literal">apache-httpd</code>, you can use external
+authentication methods that differ from the authentication provided by
+the identity store back end. For example, you can use an SQL identity
+back end together with X.509 authentication and Kerberos, instead of
+using the user name and password combination.</p><div class="sect2 " id="id-1.4.5.7.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Use HTTPD authentication</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.7.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Web servers, like Apache HTTP, support many methods of authentication.
+Identity can allow the web server to perform the authentication. The web
+server then passes the authenticated user to Identity by using the
+<code class="literal">REMOTE_USER</code> environment variable. This user must already exist in
+the Identity back end to get a token from the controller. To use this
+method, Identity should run on <code class="literal">apache-httpd</code>.</p></div><div class="sect2 " id="id-1.4.5.7.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Use X.509</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.7.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The following Apache configuration snippet authenticates the user based
+on a valid X.509 certificate from a known CA:</p><div class="verbatim-wrap"><pre class="screen">&lt;VirtualHost _default_:5000&gt;
+    SSLEngine on
+    SSLCertificateFile    /etc/ssl/certs/ssl.cert
+    SSLCertificateKeyFile /etc/ssl/private/ssl.key
+
+    SSLCACertificatePath /etc/ssl/allowed_cas
+    SSLCARevocationPath  /etc/ssl/allowed_cas
+    SSLUserName          SSL_CLIENT_S_DN_CN
+    SSLVerifyClient      require
+    SSLVerifyDepth       10
+
+    (...)
+&lt;/VirtualHost&gt;</pre></div></div></div><div class="sect1 " id="id-1.4.5.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrate Identity with LDAP</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Identity service supports integration with existing LDAP
+directories for authentication and authorization services. LDAP back
+ends require initialization before configuring the OpenStack Identity
+service to work with it. For more information, see <a class="link" href="https://wiki.openstack.org/wiki/OpenLDAP" target="_blank">Setting up LDAP
+for use with Keystone</a>.</p><p>When the OpenStack Identity service is configured to use LDAP back ends,
+you can split authentication (using the <span class="emphasis"><em>identity</em></span> feature) and
+authorization (using the <span class="emphasis"><em>assignment</em></span> feature).</p><p>The <span class="emphasis"><em>identity</em></span> feature enables administrators to manage users and groups
+by each domain or the OpenStack Identity service entirely.</p><p>The <span class="emphasis"><em>assignment</em></span> feature enables administrators to manage project role
+authorization using the OpenStack Identity service SQL database, while
+providing user authentication through the LDAP directory.</p><div class="sect2 " id="identity-ldap-server-setup"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identity LDAP server set up</span> <a title="Permalink" class="permalink" href="cha-identity.html#identity-ldap-server-setup">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>identity-ldap-server-setup</li></ul></div></div></div></div><div id="id-1.4.5.8.6.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>For the OpenStack Identity service to access LDAP servers, you must
+enable the <code class="literal">authlogin_nsswitch_use_ldap</code> boolean value for SELinux
+on the server running the OpenStack Identity service. To enable and
+make the option persistent across reboots, set the following boolean
+value as the root user:</p><div class="verbatim-wrap"><pre class="screen"># setsebool -P authlogin_nsswitch_use_ldap on</pre></div></div><p>The Identity configuration is split into two separate back ends; identity
+(back end for users and groups), and assignments (back end for domains,
+projects, roles, role assignments). To configure Identity, set options
+in the <code class="literal">/etc/keystone/keystone.conf</code> file. See
+<a class="xref" href="cha-identity.html#integrate-identity-backend-ldap" title="3.5.2. Integrate Identity back end with LDAP">Section 3.5.2, “Integrate Identity back end with LDAP”</a> for Identity back end configuration
+examples. Modify these examples as needed.</p><p>
+          <span class="bold"><strong>To define the destination LDAP server</strong></span>
+        </p><div class="procedure "><div class="procedure-contents"><ul class="procedure"><li class="step "><p>Define the destination LDAP server in the
+<code class="literal">/etc/keystone/keystone.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+url = ldap://localhost
+user = dc=Manager,dc=example,dc=org
+password = samplepassword
+suffix = dc=example,dc=org</pre></div></li></ul></div></div><p>
+          <span class="bold"><strong>Additional LDAP integration settings</strong></span>
+        </p><p>Set these options in the <code class="literal">/etc/keystone/keystone.conf</code> file for a
+single LDAP server, or <code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code>
+files for multiple back ends. Example configurations appear below each
+setting summary:</p><p>
+          <span class="bold"><strong>Query option</strong></span>
+        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Use <code class="literal">query_scope</code> to control the scope level of data presented
+(search only the first level or search an entire sub-tree)
+through LDAP.</p></li><li class="listitem "><p>Use <code class="literal">page_size</code> to control the maximum results per page. A value
+of zero disables paging.</p></li><li class="listitem "><p>Use <code class="literal">alias_dereferencing</code> to control the LDAP dereferencing
+option for queries.</p></li></ul></div><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+query_scope = sub
+page_size = 0
+alias_dereferencing = default
+chase_referrals =</pre></div><p>
+          <span class="bold"><strong>Debug</strong></span>
+        </p><p>Use <code class="literal">debug_level</code> to set the LDAP debugging level for LDAP calls.
+A value of zero means that debugging is not enabled.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+debug_level = 0</pre></div><div id="id-1.4.5.8.6.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>This value is a bitmask, consult your LDAP documentation for
+possible values.</p></div><p>
+          <span class="bold"><strong>Connection pooling</strong></span>
+        </p><p>Use <code class="literal">use_pool</code> to enable LDAP connection pooling. Configure the
+connection pool size, maximum retry, reconnect trials, timeout (-1
+indicates indefinite wait) and lifetime in seconds.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+use_pool = true
+pool_size = 10
+pool_retry_max = 3
+pool_retry_delay = 0.1
+pool_connection_timeout = -1
+pool_connection_lifetime = 600</pre></div><p>
+          <span class="bold"><strong>Connection pooling for end user authentication</strong></span>
+        </p><p>Use <code class="literal">use_auth_pool</code> to enable LDAP connection pooling for end user
+authentication. Configure the connection pool size and lifetime in
+seconds.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+use_auth_pool = false
+auth_pool_size = 100
+auth_pool_connection_lifetime = 60</pre></div><p>When you have finished the configuration, restart the OpenStack Identity
+service.</p><div id="id-1.4.5.8.6.22" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>During the service restart, authentication and authorization are
+unavailable.</p></div></div><div class="sect2 " id="integrate-identity-backend-ldap"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrate Identity back end with LDAP</span> <a title="Permalink" class="permalink" href="cha-identity.html#integrate-identity-backend-ldap">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>integrate-identity-backend-ldap</li></ul></div></div></div></div><p>The Identity back end contains information for users, groups, and group
+member lists. Integrating the Identity back end with LDAP allows
+administrators to use users and groups in LDAP.</p><div id="id-1.4.5.8.7.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>For OpenStack Identity service to access LDAP servers, you must
+define the destination LDAP server in the
+<code class="literal">/etc/keystone/keystone.conf</code> file. For more information,
+see <a class="xref" href="cha-identity.html#identity-ldap-server-setup" title="3.5.1. Identity LDAP server set up">Section 3.5.1, “Identity LDAP server set up”</a>.</p></div><p>
+          <span class="bold"><strong>To integrate one Identity back end with LDAP</strong></span>
+        </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Enable the LDAP Identity driver in the <code class="literal">/etc/keystone/keystone.conf</code>
+file. This allows LDAP as an identity back end:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[identity]
+#driver = sql
+driver = ldap</pre></div></li><li class="step "><p>Create the organizational units (OU) in the LDAP directory, and define
+the corresponding location in the <code class="literal">/etc/keystone/keystone.conf</code>
+file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_tree_dn = ou=Users,dc=example,dc=org
+user_objectclass = inetOrgPerson
+
+group_tree_dn = ou=Groups,dc=example,dc=org
+group_objectclass = groupOfNames</pre></div><div id="id-1.4.5.8.7.5.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>These schema attributes are extensible for compatibility with
+various schemas. For example, this entry maps to the person
+attribute in Active Directory:</p><div class="verbatim-wrap highlight ini"><pre class="screen">user_objectclass = person</pre></div></div></li><li class="step "><p>Restart the OpenStack Identity service.</p><div id="id-1.4.5.8.7.5.3.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>During service restart, authentication and authorization are
+unavailable.</p></div></li></ol></div></div><p>
+          <span class="bold"><strong>To integrate multiple Identity back ends with LDAP</strong></span>
+        </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Set the following options in the <code class="literal">/etc/keystone/keystone.conf</code>
+file:</p><ol type="a" class="substeps "><li class="step "><p>Enable the LDAP driver:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[identity]
+#driver = sql
+driver = ldap</pre></div></li><li class="step "><p>Enable domain-specific drivers:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[identity]
+domain_specific_drivers_enabled = True
+domain_config_dir = /etc/keystone/domains</pre></div></li></ol></li><li class="step "><p>Restart the OpenStack Identity service.</p><div id="id-1.4.5.8.7.7.2.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>During service restart, authentication and authorization are
+unavailable.</p></div></li><li class="step "><p>List the domains using the dashboard, or the OpenStackClient CLI. Refer
+to the <a class="link" href="http://docs.openstack.org/developer/python-openstackclient/command-list.html" target="_blank">Command List</a>
+for a list of OpenStackClient commands.</p></li><li class="step "><p>Create domains using OpenStack dashboard, or the OpenStackClient CLI.</p></li><li class="step "><p>For each domain, create a domain-specific configuration file in the
+<code class="literal">/etc/keystone/domains</code> directory. Use the file naming convention
+<code class="literal">keystone.DOMAIN_NAME.conf</code>, where DOMAIN_NAME is the domain name
+assigned in the previous step.</p><div id="id-1.4.5.8.7.7.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The options set in the
+<code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code> file will
+override options in the <code class="literal">/etc/keystone/keystone.conf</code> file.</p></div></li><li class="step "><p>Define the destination LDAP server in the
+<code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code> file. For example:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+url = ldap://localhost
+user = dc=Manager,dc=example,dc=org
+password = samplepassword
+suffix = dc=example,dc=org</pre></div></li><li class="step "><p>Create the organizational units (OU) in the LDAP directories, and define
+their corresponding locations in the
+<code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code> file. For example:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_tree_dn = ou=Users,dc=example,dc=org
+user_objectclass = inetOrgPerson
+
+group_tree_dn = ou=Groups,dc=example,dc=org
+group_objectclass = groupOfNames</pre></div><div id="id-1.4.5.8.7.7.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>These schema attributes are extensible for compatibility with
+various schemas. For example, this entry maps to the person
+attribute in Active Directory:</p><div class="verbatim-wrap highlight ini"><pre class="screen">user_objectclass = person</pre></div></div></li><li class="step "><p>A read-only implementation is recommended for LDAP integration. These
+permissions are applied to object types in the
+<code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_allow_create = False
+user_allow_update = False
+user_allow_delete = False
+
+group_allow_create = False
+group_allow_update = False
+group_allow_delete = False</pre></div></li><li class="step "><p>Restart the OpenStack Identity service.</p><div id="id-1.4.5.8.7.7.9.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>During service restart, authentication and authorization are
+unavailable.</p></div></li></ol></div></div><p>
+          <span class="bold"><strong>Additional LDAP integration settings</strong></span>
+        </p><p>Set these options in the <code class="literal">/etc/keystone/keystone.conf</code> file for a
+single LDAP server, or <code class="literal">/etc/keystone/domains/keystone.DOMAIN_NAME.conf</code>
+files for multiple back ends. Example configurations appear below each
+setting summary:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.8.7.10.1"><span class="term ">Filters</span></dt><dd><p>Use filters to control the scope of data presented through LDAP.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_filter = (memberof=cn=openstack-users,ou=workgroups,dc=example,dc=org)
+group_filter =</pre></div></dd><dt id="id-1.4.5.8.7.10.2"><span class="term ">Identity attribute mapping</span></dt><dd><p>Mask account status values (include any additional attribute
+mappings) for compatibility with various directory services.
+Superfluous accounts are filtered with <code class="literal">user_filter</code>.</p><p>Setting attribute ignore to list of attributes stripped off on
+update.</p><p>For example, you can mask Active Directory account status attributes
+in the <code class="literal">/etc/keystone/keystone.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_id_attribute      = cn
+user_name_attribute    = sn
+user_mail_attribute    = mail
+user_pass_attribute    = userPassword
+user_enabled_attribute = userAccountControl
+user_enabled_mask      = 2
+user_enabled_invert    = false
+user_enabled_default   = 512
+user_default_project_id_attribute =
+user_additional_attribute_mapping =
+
+group_id_attribute     = cn
+group_name_attribute   = ou
+group_member_attribute = member
+group_desc_attribute   = description
+group_additional_attribute_mapping =</pre></div></dd><dt id="id-1.4.5.8.7.10.3"><span class="term ">Enabled emulation</span></dt><dd><p>An alternative method to determine if a user is enabled or not is by
+checking if that user is a member of the emulation group.</p><p>Use DN of the group entry to hold enabled user when using enabled
+emulation.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[ldap]
+user_enabled_emulation = false
+user_enabled_emulation_dn = false</pre></div></dd></dl></div><p>When you have finished configuration, restart the OpenStack Identity
+service.</p><div id="id-1.4.5.8.7.12" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>During service restart, authentication and authorization are
+unavailable.</p></div></div><div class="sect2 " id="id-1.4.5.8.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Secure the OpenStack Identity service connection to an LDAP back end</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.8.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Identity service supports the use of TLS to encrypt LDAP traffic.
+Before configuring this, you must first verify where your certificate
+authority file is located. For more information, see the
+<a class="link" href="http://docs.openstack.org/security-guide/secure-communication/introduction-to-ssl-and-tls.html" target="_blank">OpenStack Security Guide SSL introduction</a>.</p><p>Once you verify the location of your certificate authority file:</p><p>
+          <span class="bold"><strong>To configure TLS encryption on LDAP traffic</strong></span>
+        </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Open the <code class="literal">/etc/keystone/keystone.conf</code> configuration file.</p></li><li class="step "><p>Find the <code class="literal">[ldap]</code> section.</p></li><li class="step "><p>In the <code class="literal">[ldap]</code> section, set the <code class="literal">use_tls</code> configuration key to
+<code class="literal">True</code>. Doing so will enable TLS.</p></li><li class="step "><p>Configure the Identity service to use your certificate authorities file.
+To do so, set the <code class="literal">tls_cacertfile</code> configuration key in the <code class="literal">ldap</code>
+section to the certificate authorities file's path.</p><div id="id-1.4.5.8.8.5.4.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>You can also set the <code class="literal">tls_cacertdir</code> (also in the <code class="literal">ldap</code>
+section) to the directory where all certificate authorities files
+are kept. If both <code class="literal">tls_cacertfile</code> and <code class="literal">tls_cacertdir</code> are set,
+then the latter will be ignored.</p></div></li><li class="step "><p>Specify what client certificate checks to perform on incoming TLS
+sessions from the LDAP server. To do so, set the <code class="literal">tls_req_cert</code>
+configuration key in the <code class="literal">[ldap]</code> section to <code class="literal">demand</code>, <code class="literal">allow</code>, or
+<code class="literal">never</code>:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">demand</code> - The LDAP server always receives certificate
+requests. The session terminates if no certificate
+is provided, or if the certificate provided cannot be verified
+against the existing certificate authorities file.</p></li><li class="listitem "><p><code class="literal">allow</code> - The LDAP server always receives certificate
+requests. The session will proceed as normal even if a certificate
+is not provided. If a certificate is provided but it cannot be
+verified against the existing certificate authorities file, the
+certificate will be ignored and the session will proceed as
+normal.</p></li><li class="listitem "><p><code class="literal">never</code> - A certificate will never be requested.</p></li></ul></div></li></ol></div></div><p>On distributions that include openstack-config, you can configure TLS
+encryption on LDAP traffic by running the following commands instead.</p><div class="verbatim-wrap"><pre class="screen"># openstack-config --set /etc/keystone/keystone.conf \
+  ldap use_tls True
+# openstack-config --set /etc/keystone/keystone.conf \
+  ldap tls_cacertfile ``CA_FILE``
+# openstack-config --set /etc/keystone/keystone.conf \
+  ldap tls_req_cert ``CERT_BEHAVIOR``</pre></div><p>Where:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">CA_FILE</code> is the absolute path to the certificate authorities file
+that should be used to encrypt LDAP traffic.</p></li><li class="listitem "><p><code class="literal">CERT_BEHAVIOR</code> specifies what client certificate checks to perform
+on an incoming TLS session from the LDAP server (<code class="literal">demand</code>,
+<code class="literal">allow</code>, or <code class="literal">never</code>).</p></li></ul></div></div></div><div class="sect1 " id="id-1.4.5.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Keystone tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Tokens are used to authenticate and authorize your interactions with the
+various OpenStack APIs. Tokens come in many flavors, representing various
+authorization scopes and sources of identity. There are also several different
+"token providers", each with their own user experience, performance, and
+deployment characteristics.</p><div class="sect2 " id="id-1.4.5.9.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authorization scopes</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Tokens can express your authorization in different scopes. You likely have
+different sets of roles, in different projects, and in different domains.
+While tokens always express your identity, they may only ever express one set
+of roles in one authorization scope at a time.</p><p>Each level of authorization scope is useful for certain types of operations in
+certain OpenStack services, and are not interchangeable.</p><div class="sect3 " id="id-1.4.5.9.3.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Unscoped tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.3.4">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>An unscoped token contains neither a service catalog, any roles, a project
+scope, nor a domain scope. Their primary use case is simply to prove your
+identity to keystone at a later time (usually to generate scoped tokens),
+without repeatedly presenting your original credentials.</p><p>The following conditions must be met to receive an unscoped token:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>You must not specify an authorization scope in your authentication request
+(for example, on the command line with arguments such as
+<code class="literal">--os-project-name</code> or <code class="literal">--os-domain-id</code>),</p></li><li class="listitem "><p>Your identity must not have a "default project" associated with it that you
+also have role assignments, and thus authorization, upon.</p></li></ul></div></div><div class="sect3 " id="id-1.4.5.9.3.5"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Project-scoped tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.3.5">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Project-scoped tokens are the bread and butter of OpenStack. They express your
+authorization to operate in a specific tenancy of the cloud and are useful to
+authenticate yourself when working with most other services.</p><p>They contain a service catalog, a set of roles, and details of the project upon
+which you have authorization.</p></div><div class="sect3 " id="id-1.4.5.9.3.6"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Domain-scoped tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.3.6">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Domain-scoped tokens also have limited use cases in OpenStack. They express
+your authorization to operate a domain-level, above that of the user and
+projects contained therein (typically as a domain-level administrator).
+Depending on Keystone's configuration, they are useful for working with a
+single domain in Keystone.</p><p>They contain a limited service catalog (only those services which do not
+explicitly require per-project endpoints), a set of roles, and details of the
+project upon which you have authorization.</p><p>They can also be used to work with domain-level concerns in other services,
+such as to configure domain-wide quotas that apply to all users or projects in
+a specific domain.</p></div></div><div class="sect2 " id="id-1.4.5.9.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Token providers</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The token type issued by keystone is configurable through the
+<code class="literal">/etc/keystone/keystone.conf</code> file. Currently, there are four supported
+token types and they include <code class="literal">UUID</code>, <code class="literal">fernet</code>, <code class="literal">PKI</code>, and <code class="literal">PKIZ</code>.</p><div class="sect3 " id="id-1.4.5.9.4.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">UUID tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.4.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>UUID was the first token type supported and is currently the default token
+provider. UUID tokens are 32 bytes in length and must be persisted in a back
+end. Clients must pass their UUID token to the Identity service in order to
+validate it.</p></div><div class="sect3 " id="id-1.4.5.9.4.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Fernet tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.4.4">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The fernet token format was introduced in the OpenStack Kilo release. Unlike
+the other token types mentioned in this document, fernet tokens do not need to
+be persisted in a back end. <code class="literal">AES256</code> encryption is used to protect the
+information stored in the token and integrity is verified with a <code class="literal">SHA256
+HMAC</code> signature. Only the Identity service should have access to the keys used
+to encrypt and decrypt fernet tokens. Like UUID tokens, fernet tokens must be
+passed back to the Identity service in order to validate them. For more
+information on the fernet token type, see the <a class="xref" href="cha-identity.html#cha-fernet-faq" title="3.8. Fernet - Frequently Asked Questions">Section 3.8, “Fernet - Frequently Asked Questions”</a>.</p></div><div class="sect3 " id="id-1.4.5.9.4.5"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.6.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PKI and PKIZ tokens</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.9.4.5">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>PKI tokens are signed documents that contain the authentication context, as
+well as the service catalog. Depending on the size of the OpenStack deployment,
+these tokens can be very long. The Identity service uses public/private key
+pairs and certificates in order to create and validate PKI tokens.</p><p>The same concepts from PKI tokens apply to PKIZ tokens. The only difference
+between the two is PKIZ tokens are compressed to help mitigate the size issues
+of PKI. For more information on the certificate setup for PKI and PKIZ tokens,
+see the <a class="xref" href="cha-identity.html#cha-certificates-pki" title="3.2. Certificates for PKI">Section 3.2, “Certificates for PKI”</a>.</p></div></div></div><div class="sect1 " id="id-1.4.5.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure Identity service for token binding</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.10">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Token binding embeds information from an external authentication
+mechanism, such as a Kerberos server or X.509 certificate, inside a
+token. By using token binding, a client can enforce the use of a
+specified external authentication mechanism with the token. This
+additional security mechanism ensures that if a token is stolen, for
+example, it is not usable without external authentication.</p><p>You configure the authentication types for a token binding in the
+<code class="literal">/etc/keystone/keystone.conf</code> file:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[token]
+bind = kerberos</pre></div><p>or</p><div class="verbatim-wrap highlight ini"><pre class="screen">[token]
+bind = x509</pre></div><p>Currently <code class="literal">kerberos</code> and <code class="literal">x509</code> are supported.</p><p>To enforce checking of token binding, set the <code class="literal">enforce_token_bind</code>
+option to one of these modes:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.1.1.1"><span class="term ">
+                <code class="literal">disabled</code>
+              </span></dt><dd><p>Disables token bind checking.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.2.1.1"><span class="term ">
+                <code class="literal">permissive</code>
+              </span></dt><dd><p>Enables bind checking. If a token is bound to an unknown
+authentication mechanism, the server ignores it. The default is this
+mode.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.3.1.1"><span class="term ">
+                <code class="literal">strict</code>
+              </span></dt><dd><p>Enables bind checking. If a token is bound to an unknown
+authentication mechanism, the server rejects it.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.4.1.1"><span class="term ">
+                <code class="literal">required</code>
+              </span></dt><dd><p>Enables bind checking. Requires use of at least authentication
+mechanism for tokens.</p></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.5.1.1"><span class="term ">
+                <code class="literal">kerberos</code>
+              </span></dt><dd><p>Enables bind checking. Requires use of kerberos as the authentication
+mechanism for tokens:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[token]
+enforce_token_bind = kerberos</pre></div></dd></dl></div></li><li class="listitem "><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.10.9.6.1.1"><span class="term ">
+                <code class="literal">x509</code>
+              </span></dt><dd><p>Enables bind checking. Requires use of X.509 as the authentication
+mechanism for tokens:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[token]
+enforce_token_bind = x509</pre></div></dd></dl></div></li></ul></div></div><div class="sect1 " id="cha-fernet-faq"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Fernet - Frequently Asked Questions</span> <a title="Permalink" class="permalink" href="cha-identity.html#cha-fernet-faq">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>cha-fernet-faq</li></ul></div></div></div></div><p>The following questions have been asked periodically since the initial release
+of the fernet token format in Kilo.</p><div class="sect2 " id="id-1.4.5.11.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What are the different types of keys?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>A key repository is required by keystone in order to create fernet tokens.
+These keys are used to encrypt and decrypt the information that makes up the
+payload of the token. Each key in the repository can have one of three states.
+The state of the key determines how keystone uses a key with fernet tokens. The
+different types are as follows:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.11.3.3.1"><span class="term ">Primary key:</span></dt><dd><p>There is only ever one primary key in a key repository. The primary key is
+allowed to encrypt and decrypt tokens. This key is always named as the
+highest index in the repository.</p></dd><dt id="id-1.4.5.11.3.3.2"><span class="term ">Secondary key:</span></dt><dd><p>A secondary key was at one point a primary key, but has been demoted in place
+of another primary key. It is only allowed to decrypt tokens. Since it was
+the primary at some point in time, its existence in the key repository is
+justified. Keystone needs to be able to decrypt tokens that were created with
+old primary keys.</p></dd><dt id="id-1.4.5.11.3.3.3"><span class="term ">Staged key:</span></dt><dd><p>The staged key is a special key that shares some similarities with secondary
+keys. There can only ever be one staged key in a repository and it must
+exist. Just like secondary keys, staged keys have the ability to decrypt
+tokens. Unlike secondary keys, staged keys have never been a primary key. In
+fact, they are opposites since the staged key will always be the next primary
+key. This helps clarify the name because they are the next key staged to be
+the primary key. This key is always named as <code class="literal">0</code> in the key repository.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.5.11.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">So, how does a staged key help me and why do I care about it?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The fernet keys have a natural lifecycle. Each key starts as a staged key, is
+promoted to be the primary key, and then demoted to be a secondary key. New
+tokens can only be encrypted with a primary key. Secondary and staged keys are
+never used to encrypt token. The staged key is a special key given the order of
+events and the attributes of each type of key. The staged key is the only key
+in the repository that has not had a chance to encrypt any tokens yet, but it
+is still allowed to decrypt tokens. As an operator, this gives you the chance
+to perform a key rotation on one keystone node, and distribute the new key set
+over a span of time. This does not require the distribution to take place in an
+ultra short period of time. Tokens encrypted with a primary key can be
+decrypted, and validated, on other nodes where that key is still staged.</p></div><div class="sect2 " id="id-1.4.5.11.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Where do I put my key repository?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The key repository is specified using the <code class="literal">key_repository</code> option in the
+keystone configuration file. The keystone process should be able to read and
+write to this location but it should be kept secret otherwise. Currently,
+keystone only supports file-backed key repositories.</p><div class="verbatim-wrap highlight ini"><pre class="screen">[fernet_tokens]
+key_repository = /etc/keystone/fernet-keys/</pre></div></div><div class="sect2 " id="id-1.4.5.11.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What is the recommended way to rotate and distribute keys?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The <code class="command">keystone-manage</code> command line utility includes a key rotation
+mechanism. This mechanism will initialize and rotate keys but does not make
+an effort to distribute keys across keystone nodes. The distribution of keys
+across a keystone deployment is best handled through configuration management
+tooling. Use <code class="command">keystone-manage fernet_rotate</code> to rotate the key
+repository.</p></div><div class="sect2 " id="id-1.4.5.11.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Do fernet tokens still expire?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Yes, fernet tokens can expire just like any other keystone token formats.</p></div><div class="sect2 " id="id-1.4.5.11.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Why should I choose fernet tokens over UUID tokens?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Even though fernet tokens operate very similarly to UUID tokens, they do not
+require persistence. The keystone token database no longer suffers bloat as a
+side effect of authentication. Pruning expired tokens from the token database
+is no longer required when using fernet tokens. Because fernet tokens do not
+require persistence, they do not have to be replicated. As long as each
+keystone node shares the same key repository, fernet tokens can be created and
+validated instantly across nodes.</p></div><div class="sect2 " id="id-1.4.5.11.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Why should I choose fernet tokens over PKI or PKIZ tokens?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.9">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The arguments for using fernet over PKI and PKIZ remain the same as UUID, in
+addition to the fact that fernet tokens are much smaller than PKI and PKIZ
+tokens. PKI and PKIZ tokens still require persistent storage and can sometimes
+cause issues due to their size. This issue is mitigated when switching to
+fernet because fernet tokens are kept under a 250 byte limit. PKI and PKIZ
+tokens typically exceed 1600 bytes in length. The length of a PKI or PKIZ token
+is dependent on the size of the deployment. Bigger service catalogs will result
+in longer token lengths. This pattern does not exist with fernet tokens because
+the contents of the encrypted payload is kept to a minimum.</p></div><div class="sect2 " id="id-1.4.5.11.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Should I rotate and distribute keys from the same keystone node every rotation?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.10">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>No, but the relationship between rotation and distribution should be lock-step.
+Once you rotate keys on one keystone node, the key repository from that node
+should be distributed to the rest of the cluster. Once you confirm that each
+node has the same key repository state, you could rotate and distribute from
+any other node in the cluster.</p><p>If the rotation and distribution are not lock-step, a single keystone node in
+the deployment will create tokens with a primary key that no other node has as
+a staged key. This will cause tokens generated from one keystone node to fail
+validation on other keystone nodes.</p></div><div class="sect2 " id="id-1.4.5.11.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How do I add new keystone nodes to a deployment?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.11">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The keys used to create fernet tokens should be treated like super secret
+configuration files, similar to an SSL secret key. Before a node is allowed to
+join an existing cluster, issuing and validating tokens, it should have the
+same key repository as the rest of the nodes in the cluster.</p></div><div class="sect2 " id="id-1.4.5.11.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How should I approach key distribution?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.12">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Remember that key distribution is only required in multi-node keystone
+deployments. If you only have one keystone node serving requests in your
+deployment, key distribution is unnecessary.</p><p>Key distribution is a problem best approached from the deployment's current
+configuration management system. Since not all deployments use the same
+configuration management systems, it makes sense to explore options around what
+is already available for managing keys, while keeping the secrecy of the keys
+in mind. Many configuration management tools can leverage something like
+<code class="literal">rsync</code> to manage key distribution.</p><p>Key rotation is a single operation that promotes the current staged key to
+primary, creates a new staged key, and prunes old secondary keys. It is easiest
+to do this on a single node and verify the rotation took place properly before
+distributing the key repository to the rest of the cluster. The concept behind
+the staged key breaks the expectation that key rotation and key distribution
+have to be done in a single step. With the staged key, we have time to inspect
+the new key repository before syncing state with the rest of the cluster. Key
+distribution should be an operation that can run in succession until it
+succeeds. The following might help illustrate the isolation between key
+rotation and key distribution.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Ensure all keystone nodes in the deployment have the same key repository.</p></li><li class="step "><p>Pick a keystone node in the cluster to rotate from.</p></li><li class="step "><p>Rotate keys.</p><ol type="a" class="substeps "><li class="step "><p>Was it successful?</p><ol type="i" class="substeps "><li class="step "><p>If no, investigate issues with the particular keystone node you
+rotated keys on. Fernet keys are small and the operation for
+rotation is trivial. There should not be much room for error in key
+rotation. It is possible that the user does not have the ability to
+write new keys to the key repository. Log output from
+<code class="literal">keystone-manage fernet_rotate</code> should give more information into
+specific failures.</p></li><li class="step "><p>If yes, you should see a new staged key. The old staged key should
+be the new primary. Depending on the <code class="literal">max_active_keys</code> limit you
+might have secondary keys that were pruned. At this point, the node
+that you rotated on will be creating fernet tokens with a primary
+key that all other nodes should have as the staged key. This is why
+we checked the state of all key repositories in Step one. All other
+nodes in the cluster should be able to decrypt tokens created with
+the new primary key. At this point, we are ready to distribute the
+new key set.</p></li></ol></li></ol></li><li class="step "><p>Distribute the new key repository.</p><ol type="a" class="substeps "><li class="step "><p>Was it successful?</p><ol type="i" class="substeps "><li class="step "><p>If yes, you should be able to confirm that all nodes in the cluster
+have the same key repository that was introduced in Step 3.  All
+nodes in the cluster will be creating tokens with the primary key
+that was promoted in Step 3. No further action is required until the
+next schedule key rotation.</p></li><li class="step "><p>If no, try distributing again. Remember that we already rotated the
+repository and performing another rotation at this point will
+result in tokens that cannot be validated across certain hosts.
+Specifically, the hosts that did not get the latest key set. You
+should be able to distribute keys until it is successful. If certain
+nodes have issues syncing, it could be permission or network issues
+and those should be resolved before subsequent rotations.</p></li></ol></li></ol></li></ol></div></div></div><div class="sect2 " id="id-1.4.5.11.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How long should I keep my keys around?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.13">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The fernet tokens that keystone creates are only secure as the keys creating
+them. With staged keys the penalty of key rotation is low, allowing you to err
+on the side of security and rotate weekly, daily, or even hourly.  Ultimately,
+this should be less time than it takes an attacker to break a <code class="literal">AES256</code> key
+and a <code class="literal">SHA256 HMAC</code>.</p></div><div class="sect2 " id="id-1.4.5.11.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Is a fernet token still a bearer token?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.14">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Yes, and they follow exactly the same validation path as UUID tokens, with the
+exception of being written to, and read from, a back end. If someone
+compromises your fernet token, they have the power to do all the operations you
+are allowed to do.</p></div><div class="sect2 " id="id-1.4.5.11.15"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What if I need to revoke all my tokens?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.15">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To invalidate every token issued from keystone and start fresh, remove the
+current key repository, create a new key set, and redistribute it to all nodes
+in the cluster. This will render every token issued from keystone as invalid
+regardless if the token has actually expired. When a client goes to
+re-authenticate, the new token will have been created with a new fernet key.</p></div><div class="sect2 " id="id-1.4.5.11.16"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What can an attacker do if they compromise a fernet key in my deployment?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.16">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>If any key used in the key repository is compromised, an attacker will be able
+to build their own tokens. If they know the ID of an administrator on a
+project, they could generate administrator tokens for the project. They will be
+able to generate their own tokens until the compromised key has been removed
+from from the repository.</p></div><div class="sect2 " id="id-1.4.5.11.17"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.8.15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">I rotated keys and now tokens are invalidating early, what did I do?</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.11.17">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Using fernet tokens requires some awareness around token expiration and the key
+lifecycle. You do not want to rotate so often that secondary keys are removed
+that might still be needed to decrypt unexpired tokens. If this happens, you
+will not be able to decrypt the token because the key the was used to encrypt
+it is now gone. Only remove keys that you know are not being used to encrypt or
+decrypt tokens.</p><p>For example, your token is valid for 24 hours and we want to rotate keys every
+six hours. We will need to make sure tokens that were created at 08:00 AM on
+Monday are still valid at 07:00 AM on Tuesday, assuming they were not
+prematurely revoked. To accomplish this, we will want to make sure we set
+<code class="literal">max_active_keys=6</code> in our keystone configuration file. This will allow us to
+hold all keys that might still be required to validate a previous token, but
+keeps the key repository limited to only the keys that are needed.</p><p>The number of <code class="literal">max_active_keys</code> for a deployment can be determined by
+dividing the token lifetime, in hours, by the frequency of rotation in hours
+and adding two. Better illustrated as:</p><div class="verbatim-wrap"><pre class="screen">token_expiration = 24
+rotation_frequency = 6
+max_active_keys = (token_expiration / rotation_frequency) + 2</pre></div><p>The reason for adding two additional keys to the count is to include the staged
+key and a buffer key. This can be shown based on the previous example. We
+initially setup the key repository at 6:00 AM on Monday, and the initial state
+looks like:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 1    (primary key)</pre></div><p>All tokens created after 6:00 AM are encrypted with key <code class="literal">1</code>. At 12:00 PM we
+will rotate keys again, resulting in,</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 1    (secondary key)
+-rw------- 1 keystone keystone   44 2    (primary key)</pre></div><p>We are still able to validate tokens created between 6:00 - 11:59 AM because
+the <code class="literal">1</code> key still exists as a secondary key. All tokens issued after 12:00 PM
+will be encrypted with key <code class="literal">2</code>. At 6:00 PM we do our next rotation, resulting
+in:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 1    (secondary key)
+-rw------- 1 keystone keystone   44 2    (secondary key)
+-rw------- 1 keystone keystone   44 3    (primary key)</pre></div><p>It is still possible to validate tokens issued from 6:00 AM - 5:59 PM because
+keys <code class="literal">1</code> and <code class="literal">2</code> exist as secondary keys. Every token issued until 11:59 PM
+will be encrypted with key <code class="literal">3</code>, and at 12:00 AM we do our next rotation:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 1    (secondary key)
+-rw------- 1 keystone keystone   44 2    (secondary key)
+-rw------- 1 keystone keystone   44 3    (secondary key)
+-rw------- 1 keystone keystone   44 4    (primary key)</pre></div><p>Just like before, we can still validate tokens issued from 6:00 AM the previous
+day until 5:59 AM today because keys <code class="literal">1</code> - <code class="literal">4</code> are present. At 6:00 AM,
+tokens issued from the previous day will start to expire and we do our next
+scheduled rotation:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 1    (secondary key)
+-rw------- 1 keystone keystone   44 2    (secondary key)
+-rw------- 1 keystone keystone   44 3    (secondary key)
+-rw------- 1 keystone keystone   44 4    (secondary key)
+-rw------- 1 keystone keystone   44 5    (primary key)</pre></div><p>Tokens will naturally expire after 6:00 AM, but we will not be able to remove
+key <code class="literal">1</code> until the next rotation because it encrypted all tokens from 6:00 AM
+to 12:00 PM the day before. Once we do our next rotation, which is at 12:00 PM,
+the <code class="literal">1</code> key will be pruned from the repository:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /etc/keystone/fernet-keys/
+drwx------ 2 keystone keystone 4096 .
+drwxr-xr-x 3 keystone keystone 4096 ..
+-rw------- 1 keystone keystone   44 0    (staged key)
+-rw------- 1 keystone keystone   44 2    (secondary key)
+-rw------- 1 keystone keystone   44 3    (secondary key)
+-rw------- 1 keystone keystone   44 4    (secondary key)
+-rw------- 1 keystone keystone   44 5    (secondary key)
+-rw------- 1 keystone keystone   44 6    (primary key)</pre></div><p>If keystone were to receive a token that was created between 6:00 AM and 12:00
+PM the day before, encrypted with the <code class="literal">1</code> key, it would not be valid because
+it was already expired. This makes it possible for us to remove the <code class="literal">1</code> key
+from the repository without negative validation side-effects.</p></div></div><div class="sect1 " id="id-1.4.5.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Use trusts</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.12">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>OpenStack Identity manages authentication and authorization. A trust is
+an OpenStack Identity extension that enables delegation and, optionally,
+impersonation through <code class="literal">keystone</code>. A trust extension defines a
+relationship between:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.12.3.1"><span class="term ">
+            <span class="bold"><strong>Trustor</strong></span>
+          </span></dt><dd><p>The user delegating a limited set of their own rights to another user.</p></dd><dt id="id-1.4.5.12.3.2"><span class="term ">
+            <span class="bold"><strong>Trustee</strong></span>
+          </span></dt><dd><p>The user trust is being delegated to, for a limited time.</p><p>The trust can eventually allow the trustee to impersonate the trustor.
+For security reasons, some safeties are added. For example, if a trustor
+loses a given role, any trusts the user issued with that role, and the
+related tokens, are automatically revoked.</p></dd></dl></div><p>The delegation parameters are:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.5.12.5.1"><span class="term ">
+            <span class="bold"><strong>User ID</strong></span>
+          </span></dt><dd><p>The user IDs for the trustor and trustee.</p></dd><dt id="id-1.4.5.12.5.2"><span class="term ">
+            <span class="bold"><strong>Privileges</strong></span>
+          </span></dt><dd><p>The delegated privileges are a combination of a project ID and a
+number of roles that must be a subset of the roles assigned to the
+trustor.</p><p>If you omit all privileges, nothing is delegated. You cannot
+delegate everything.</p></dd><dt id="id-1.4.5.12.5.3"><span class="term ">
+            <span class="bold"><strong>Delegation depth</strong></span>
+          </span></dt><dd><p>Defines whether or not the delegation is recursive. If it is
+recursive, defines the delegation chain length.</p><p>Specify one of the following values:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">0</code>. The delegate cannot delegate these permissions further.</p></li><li class="listitem "><p><code class="literal">1</code>. The delegate can delegate the permissions to any set of
+delegates but the latter cannot delegate further.</p></li><li class="listitem "><p><code class="literal">inf</code>. The delegation is infinitely recursive.</p></li></ul></div></dd><dt id="id-1.4.5.12.5.4"><span class="term ">
+            <span class="bold"><strong>Endpoints</strong></span>
+          </span></dt><dd><p>A list of endpoints associated with the delegation.</p><p>This parameter further restricts the delegation to the specified
+endpoints only. If you omit the endpoints, the delegation is
+useless. A special value of <code class="literal">all_endpoints</code> allows the trust to be
+used by all endpoints associated with the delegated project.</p></dd><dt id="id-1.4.5.12.5.5"><span class="term ">
+            <span class="bold"><strong>Duration</strong></span>
+          </span></dt><dd><p>(Optional) Comprised of the start time and end time for the trust.</p></dd></dl></div></div><div class="sect1 " id="id-1.4.5.13"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Caching layer</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.13">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>OpenStack Identity supports a caching layer that is above the
+configurable subsystems (for example, token). OpenStack Identity uses the
+<a class="link" href="http://docs.openstack.org/developer/oslo.cache/" target="_blank">oslo.cache</a>
+library which allows flexible cache back ends. The majority of the
+caching configuration options are set in the <code class="literal">[cache]</code> section of the
+<code class="literal">/etc/keystone/keystone.conf</code> file. However, each section that has
+the capability to be cached usually has a caching boolean value that
+toggles caching.</p><p>So to enable only the token back end caching, set the values as follows:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[cache]
+enabled=true
+
+[catalog]
+caching=false
+
+[domain_config]
+caching=false
+
+[federation]
+caching=false
+
+[resource]
+caching=false
+
+[revoke]
+caching=false
+
+[role]
+caching=false
+
+[token]
+caching=true</pre></div><div id="id-1.4.5.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Since the Newton release, the default setting is enabled for subsystem
+caching and the global toggle. As a result, all subsystems that support
+caching are doing this by default.</p></div><div class="sect2 " id="id-1.4.5.13.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Caching for tokens and tokens validation</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.13.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The token system has a separate <code class="literal">cache_time</code> configuration option,
+that can be set to a value above or below the global <code class="literal">expiration_time</code>
+default, allowing for different caching behavior from the other systems
+in OpenStack Identity. This option is set in the <code class="literal">[token]</code> section of
+the configuration file. Fernet tokens do not need to be persisted in a
+back end and therefore must not be cached.</p><p>The token revocation list cache time is handled by the configuration
+option <code class="literal">revocation_cache_time</code> in the <code class="literal">[token]</code> section. The
+revocation list is refreshed whenever a token is revoked. It typically
+sees significantly more requests than specific token retrievals or token
+validation calls.</p><p>Here is a list of actions that are affected by the cached time: getting
+a new token, revoking tokens, validating tokens, checking v2 tokens, and
+checking v3 tokens.</p><p>The delete token API calls invalidate the cache for the tokens being
+acted upon, as well as invalidating the cache for the revoked token list
+and the validate/check token calls.</p><p>Token caching is configurable independently of the <code class="literal">revocation_list</code>
+caching. Lifted expiration checks from the token drivers to the token
+manager. This ensures that cached tokens will still raise a
+<code class="literal">TokenNotFound</code> flag when expired.</p><p>For cache consistency, all token IDs are transformed into the short
+token hash at the provider and token driver level. Some methods have
+access to the full ID (PKI Tokens), and some methods do not. Cache
+invalidation is inconsistent without token ID normalization.</p></div><div class="sect2 " id="id-1.4.5.13.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Caching for non-token resources</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.13.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Various other keystone components have a separate <code class="literal">cache_time</code> configuration
+option, that can be set to a value above or below the global
+<code class="literal">expiration_time</code> default, allowing for different caching behavior
+from the other systems in Identity service. This option can be set in various
+sections (for example, <code class="literal">[role]</code> and <code class="literal">[resource]</code>) of the configuration
+file.
+The create, update, and delete actions for domains, projects and roles
+will perform proper invalidations of the cached methods listed above.</p><p>For more information about the different back ends (and configuration
+options), see:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <a class="link" href="http://dogpilecache.readthedocs.io/en/latest/api.html#memory-backend" target="_blank">dogpile.cache.memory</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="http://dogpilecache.readthedocs.io/en/latest/api.html#memcached-backends" target="_blank">dogpile.cache.memcached</a>
+            </p><div id="id-1.4.5.13.7.4.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The memory back end is not suitable for use in a production
+environment.</p></div></li><li class="listitem "><p>
+              <a class="link" href="http://dogpilecache.readthedocs.io/en/latest/api.html#redis-backends" target="_blank">dogpile.cache.redis</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="http://dogpilecache.readthedocs.io/en/latest/api.html#file-backends" target="_blank">dogpile.cache.dbm</a>
+            </p></li></ul></div></div><div class="sect2 " id="id-1.4.5.13.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.10.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure the Memcached back end example</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.13.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The following example shows how to configure the memcached back end:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[cache]
+
+enabled = true
+backend = dogpile.cache.memcached
+backend_argument = url:127.0.0.1:11211</pre></div><p>You need to specify the URL to reach the <code class="literal">memcached</code> instance with the
+<code class="literal">backend_argument</code> parameter.</p></div></div><div class="sect1 " id="id-1.4.5.14"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Security compliance and PCI-DSS</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>As of the Newton release, the Identity service contains additional security
+compliance features, specifically to satisfy Payment Card Industry -
+Data Security Standard (PCI-DSS) v3.1 requirements. See
+<a class="link" href="http://specs.openstack.org/openstack/keystone-specs/specs/keystone/newton/pci-dss.html" target="_blank">Security Hardening PCI-DSS</a> for more information on PCI-DSS.</p><p>Security compliance features are disabled by default and most of the features
+only apply to the SQL backend for the identity driver. Other identity backends,
+such as LDAP, should implement their own security controls.</p><p>Enable these features by changing the configuration settings under the
+<code class="literal">[security_compliance]</code> section in <code class="literal">keystone.conf</code>.</p><div class="sect2 " id="id-1.4.5.14.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting the account lockout threshold</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The account lockout feature limits the number of incorrect password attempts.
+If a user fails to authenticate after the maximum number of attempts, the
+service disables the user. Re-enable the user by explicitly setting the
+enable user attribute with the update user API call, either
+<a class="link" href="http://developer.openstack.org/api-ref/identity/v2-admin/index.html?expanded=update-user-admin-endpoint-detail#update-user-admin-endpoint" target="_blank">v2.0</a> or <a class="link" href="http://developer.openstack.org/api-ref/identity/v3/index.html#update-user" target="_blank">v3</a>.</p><p>You set the maximum number of failed authentication attempts by setting
+the <code class="literal">lockout_failure_attempts</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+lockout_failure_attempts = 6</pre></div><p>You set the number of minutes a user would be locked out by setting
+the <code class="literal">lockout_duration</code> in seconds:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+lockout_duration = 1800</pre></div><p>If you do not set the <code class="literal">lockout_duration</code>, users may be locked out
+indefinitely until the user is explicitly enabled via the API.</p></div><div class="sect2 " id="id-1.4.5.14.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disabling inactive users</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>PCI-DSS 8.1.4 requires that inactive user accounts be removed or disabled
+within 90 days. You can achieve this by setting the
+<code class="literal">disable_user_account_days_inactive</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+disable_user_account_days_inactive = 90</pre></div><p>This above example means that users that have not authenticated (inactive) for
+the past 90 days are automatically disabled. Users can be re-enabled by
+explicitly setting the enable user attribute via the API.</p></div><div class="sect2 " id="id-1.4.5.14.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.11.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring password expiration</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Passwords can be configured to expire within a certain number of days by
+setting the <code class="literal">password_expires_days</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+password_expires_days = 90</pre></div><p>Once set, any new password changes have an expiration date based on the
+date/time of the password change plus the number of days defined here. Existing
+passwords will not be impacted. If you want existing passwords to have an
+expiration date, you would need to run a SQL script against the password table
+in the database to update the expires_at column.</p><p>In addition, you can set it so that passwords never expire for some users by
+adding their user ID to <code class="literal">password_expires_ignore_user_ids</code> list:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+password_expires_ignore_user_ids = [3a54353c9dcc44f690975ea768512f6a]</pre></div><p>In this example, the password for user ID <code class="literal">3a54353c9dcc44f690975ea768512f6a</code>
+would never expire.</p></div><div class="sect2 " id="id-1.4.5.14.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.11.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Indicating password strength requirements</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>You set password strength requirements, such as requiring numbers in passwords
+or setting a minimum password length, by adding a regular expression to the
+<code class="literal">password_regex</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+password_regex = ^(?=.*\d)(?=.*[a-zA-Z]).{7,}$</pre></div><p>The above example is a regular expression that requires a password to have
+one letter, one digit, and a minimum length of seven characters.</p><p>If you do set the <code class="literal">password_regex</code>, you should provide text that
+describes your password strength requirements. You can do this by setting the
+<code class="literal">password_regex_description</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+password_regex_description = Passwords must contain at least 1 letter, 1
+                             digit, and be a minimum length of 7
+                             characters.</pre></div><p>The service returns that description to users to explain why their requested
+password did not meet requirements.</p><div id="id-1.4.5.14.8.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>You must ensure the <code class="literal">password_regex_description</code> accurately and
+completely describes the <code class="literal">password_regex</code>. If the two options are out of
+sync, the help text could inaccurately describe the password requirements
+being applied to the password. This would lead to poor user experience.</p></div></div><div class="sect2 " id="id-1.4.5.14.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.11.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Requiring a unique password history</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.14.9">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The password history requirements controls the number of passwords for a user
+that must be unique before an old password can be reused. You can enforce this
+by setting the <code class="literal">unique_last_password_count</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+unique_last_password_count= 5</pre></div><p>The above example does not allow a user to create a new password that is the
+same as any of their last four previous passwords.</p><p>Similarly, you can set the number of days that a password must be used before
+the user can change it by setting the <code class="literal">minimum_password_age</code>:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[security_compliance]
+minimum_password_age = 1</pre></div><p>In the above example, once a user changes their password, they would not be
+able to change it again for one day. This prevents users from changing their
+passwords immediately in order to wipe out their password history and reuse an
+old password.</p><div id="id-1.4.5.14.9.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>When you set <code class="literal">password_expires_days</code>, the value for the
+<code class="literal">minimum_password_age</code> should be less than the <code class="literal">password_expires_days</code>.
+Otherwise, users would not be able to change their passwords before they
+expire.</p></div></div></div><div class="sect1 " id="id-1.4.5.15"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example usage and Identity features</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.15">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The <code class="literal">openstack</code> CLI is used to interact with the Identity service.
+It is set up to expect commands in the general
+form of <code class="literal">openstack command argument</code>, followed by flag-like keyword
+arguments to provide additional (often optional) information. For
+example, the <code class="command">user list</code> and <code class="command">project create</code>
+commands can be invoked as follows:</p><div class="verbatim-wrap highlight bash"><pre class="screen"># Using token auth env variables
+export OS_SERVICE_ENDPOINT=http://127.0.0.1:5000/v2.0/
+export OS_SERVICE_TOKEN=secrete_token
+openstack user list
+openstack project create demo --domain default
+
+# Using token auth flags
+openstack --os-token secrete --os-endpoint http://127.0.0.1:5000/v2.0/ user list
+openstack --os-token secrete --os-endpoint http://127.0.0.1:5000/v2.0/ project create demo
+
+# Using user + password + project_name env variables
+export OS_USERNAME=admin
+export OS_PASSWORD=secrete
+export OS_PROJECT_NAME=admin
+openstack user list
+openstack project create demo --domain default
+
+# Using user + password + project-name flags
+openstack --os-username admin --os-password secrete --os-project-name admin user list
+openstack --os-username admin --os-password secrete --os-project-name admin project create demo</pre></div><div class="sect2 " id="id-1.4.5.15.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Logging</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.15.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>You configure logging externally to the rest of Identity. The name of
+the file specifying the logging configuration is set using the
+<code class="literal">log_config</code> option in the <code class="literal">[DEFAULT]</code> section of the
+<code class="literal">/etc/keystone/keystone.conf</code> file. To route logging through syslog,
+set <code class="literal">use_syslog=true</code> in the <code class="literal">[DEFAULT]</code> section.</p><p>A sample logging configuration file is available with the project in
+<code class="literal">etc/logging.conf.sample</code>. Like other OpenStack projects, Identity
+uses the Python logging module, which provides extensive configuration
+options that let you define the output levels and formats.</p></div><div class="sect2 " id="id-1.4.5.15.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User CRUD</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.15.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Identity provides a user CRUD (Create, Read, Update, and Delete) filter that
+Administrators can add to the <code class="literal">public_api</code> pipeline. The user CRUD filter
+enables users to use a HTTP PATCH to change their own password. To enable
+this extension you should define a <code class="literal">user_crud_extension</code> filter, insert
+it after the <code class="literal">*_body</code> middleware and before the <code class="literal">public_service</code>
+application in the <code class="literal">public_api</code> WSGI pipeline in
+<code class="literal">keystone-paste.ini</code>. For example:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[filter:user_crud_extension]
+paste.filter_factory = keystone.contrib.user_crud:CrudExtension.factory
+
+[pipeline:public_api]
+pipeline = sizelimit url_normalize request_id build_auth_context token_auth admin_token_auth json_body ec2_extension user_crud_extension public_service</pre></div><p>Each user can then change their own password with a HTTP PATCH.</p><div class="verbatim-wrap"><pre class="screen">$ curl -X PATCH http://localhost:5000/v2.0/OS-KSCRUD/users/USERID -H "Content-type: application/json"  \
+  -H "X_Auth_Token: AUTHTOKENID" -d '{"user": {"password": "ABCD", "original_password": "DCBA"}}'</pre></div><p>In addition to changing their password, all current tokens for the user
+are invalidated.</p><div id="id-1.4.5.15.5.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Only use a KVS back end for tokens when testing.</p></div></div></div><div class="sect1 " id="id-1.4.5.16"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication middleware with user name and password</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.16">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>You can also configure Identity authentication middleware using the
+<code class="literal">admin_user</code> and <code class="literal">admin_password</code> options.</p><div id="id-1.4.5.16.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The <code class="literal">admin_token</code> option is deprecated and no longer used for
+configuring auth_token middleware.</p></div><p>For services that have a separate paste-deploy <code class="literal">.ini</code> file, you can
+configure the authentication middleware in the <code class="literal">[keystone_authtoken]</code>
+section of the main configuration file, such as <code class="literal">nova.conf</code>. In
+Compute, for example, you can remove the middleware parameters from
+<code class="literal">api-paste.ini</code>, as follows:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[filter:authtoken]
+paste.filter_factory = keystonemiddleware.auth_token:filter_factory</pre></div><p>And set the following values in <code class="literal">nova.conf</code> as follows:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[DEFAULT]
+...
+auth_strategy=keystone
+
+[keystone_authtoken]
+auth_uri = http://controller:5000/v2.0
+identity_uri = http://controller:35357
+admin_user = admin
+admin_password = SuperSekretPassword
+admin_tenant_name = service</pre></div><div id="id-1.4.5.16.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The middleware parameters in the paste config take priority. You
+must remove them to use the values in the <code class="literal">[keystone_authtoken]</code>
+section.</p></div><div id="id-1.4.5.16.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Comment out any <code class="literal">auth_host</code>, <code class="literal">auth_port</code>, and
+<code class="literal">auth_protocol</code> options because the <code class="literal">identity_uri</code> option
+replaces them.</p></div><p>This sample paste config filter makes use of the <code class="literal">admin_user</code> and
+<code class="literal">admin_password</code> options:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[filter:authtoken]
+paste.filter_factory = keystonemiddleware.auth_token:filter_factory
+auth_uri = http://controller:5000/v2.0
+identity_uri = http://controller:35357
+auth_token = 012345SECRET99TOKEN012345
+admin_user = admin
+admin_password = keystone123</pre></div><div id="id-1.4.5.16.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Using this option requires an admin project/role relationship. The
+admin user is granted access to the admin role on the admin project.</p></div><div id="id-1.4.5.16.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Comment out any <code class="literal">auth_host</code>, <code class="literal">auth_port</code>, and
+<code class="literal">auth_protocol</code> options because the <code class="literal">identity_uri</code> option
+replaces them.</p></div></div><div class="sect1 " id="id-1.4.5.17"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identity API protection with role-based access control (RBAC)</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.17">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Like most OpenStack projects, Identity supports the protection of its
+APIs by defining policy rules based on an RBAC approach. Identity stores
+a reference to a policy JSON file in the main Identity configuration
+file, <code class="literal">/etc/keystone/keystone.conf</code>. Typically this file is named
+<code class="literal">policy.json</code>, and contains the rules for which roles have access to
+certain actions in defined services.</p><p>Each Identity API v3 call has a line in the policy file that dictates
+which level of governance of access applies.</p><div class="verbatim-wrap highlight ini"><pre class="screen">API_NAME: RULE_STATEMENT or MATCH_STATEMENT</pre></div><p>Where:</p><p><code class="literal">RULE_STATEMENT</code> can contain <code class="literal">RULE_STATEMENT</code> or
+<code class="literal">MATCH_STATEMENT</code>.</p><p><code class="literal">MATCH_STATEMENT</code> is a set of identifiers that must match between the
+token provided by the caller of the API and the parameters or target
+entities of the API call in question. For example:</p><div class="verbatim-wrap highlight ini"><pre class="screen">"identity:create_user": "role:admin and domain_id:%(user.domain_id)s"</pre></div><p>Indicates that to create a user, you must have the admin role in your
+token. The <code class="literal">domain_id</code> in your token must match the
+<code class="literal">domain_id</code> in the user object that you are trying
+to create, which implies this must be a domain-scoped token.
+In other words, you must have the admin role on the domain
+in which you are creating the user, and the token that you use
+must be scoped to that domain.</p><p>Each component of a match statement uses this format:</p><div class="verbatim-wrap highlight ini"><pre class="screen">ATTRIB_FROM_TOKEN:CONSTANT or ATTRIB_RELATED_TO_API_CALL</pre></div><p>The Identity service expects these attributes:</p><p>Attributes from token:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+            <code class="literal">user_id</code>
+          </p></li><li class="listitem "><p>
+            <code class="literal">domain_id</code>
+          </p></li><li class="listitem "><p>
+            <code class="literal">project_id</code>
+          </p></li></ul></div><p>The <code class="literal">project_id</code> attribute requirement depends on the scope, and the
+list of roles you have within that scope.</p><p>Attributes related to API call:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+            <code class="literal">user.domain_id</code>
+          </p></li><li class="listitem "><p>Any parameters passed into the API call</p></li><li class="listitem "><p>Any filters specified in the query string</p></li></ul></div><p>You reference attributes of objects passed with an object.attribute
+syntax (such as, <code class="literal">user.domain_id</code>). The target objects of an API are
+also available using a target.object.attribute syntax. For instance:</p><div class="verbatim-wrap highlight ini"><pre class="screen">"identity:delete_user": "role:admin and domain_id:%(target.user.domain_id)s"</pre></div><p>would ensure that Identity only deletes the user object in the same
+domain as the provided token.</p><p>Every target object has an <code class="literal">id</code> and a <code class="literal">name</code> available as
+<code class="literal">target.OBJECT.id</code> and <code class="literal">target.OBJECT.name</code>. Identity retrieves
+other attributes from the database, and the attributes vary between
+object types. The Identity service filters out some database fields,
+such as user passwords.</p><p>List of object attributes:</p><div class="verbatim-wrap highlight ini"><pre class="screen">role:
+     target.role.id
+     target.role.name
+
+user:
+     target.user.default_project_id
+     target.user.description
+     target.user.domain_id
+     target.user.enabled
+     target.user.id
+     target.user.name
+
+group:
+     target.group.description
+     target.group.domain_id
+     target.group.id
+     target.group.name
+
+domain:
+     target.domain.enabled
+     target.domain.id
+     target.domain.name
+
+project:
+     target.project.description
+     target.project.domain_id
+     target.project.enabled
+     target.project.id
+     target.project.name</pre></div><p>The default <code class="literal">policy.json</code> file supplied provides a somewhat
+basic example of API protection, and does not assume any particular
+use of domains. Refer to <code class="literal">policy.v3cloudsample.json</code> as an
+example of multi-domain configuration installations where a cloud
+provider wants to delegate administration of the contents of a domain
+to a particular <code class="literal">admin domain</code>. This example policy file also
+shows the use of an <code class="literal">admin_domain</code> to allow a cloud provider to
+enable administrators to have wider access across the APIs.</p><p>A clean installation could start with the standard policy file, to
+allow creation of the <code class="literal">admin_domain</code> with the first users within
+it. You could then obtain the <code class="literal">domain_id</code> of the admin domain,
+paste the ID into a modified version of
+<code class="literal">policy.v3cloudsample.json</code>, and then enable it as the main
+<code class="literal">policy file</code>.</p></div><div class="sect1 " id="id-1.4.5.18"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshoot the Identity service</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To troubleshoot the Identity service, review the logs in the
+<code class="literal">/var/log/keystone/keystone.log</code> file.</p><p>Use the <code class="literal">/etc/keystone/logging.conf</code> file to configure the
+location of log files.</p><div id="id-1.4.5.18.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The <code class="literal">insecure_debug</code> flag is unique to the Identity service.
+If you enable <code class="literal">insecure_debug</code>, error messages from the API change
+to return security-sensitive information. For example, the error message
+on failed authentication includes information on why your authentication
+failed.</p></div><p>The logs show the components that have come in to the WSGI request, and
+ideally show an error that explains why an authorization request failed.
+If you do not see the request in the logs, run keystone with the
+<code class="literal">--debug</code> parameter. Pass the <code class="literal">--debug</code> parameter before the
+command parameters.</p><div class="sect2 " id="id-1.4.5.18.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.15.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Debug PKI middleware</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3 " id="id-1.4.5.18.6.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Problem</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.6.2">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>If you receive an <code class="literal">Invalid OpenStack Identity Credentials</code> message when
+you accessing and reaching an OpenStack service, it might be caused by
+the changeover from UUID tokens to PKI tokens in the Grizzly release.</p><p>The PKI-based token validation scheme relies on certificates from
+Identity that are fetched through HTTP and stored in a local directory.
+The location for this directory is specified by the <code class="literal">signing_dir</code>
+configuration option.</p></div><div class="sect3 " id="id-1.4.5.18.6.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Solution</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.6.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>In your services configuration file, look for a section like this:</p><div class="verbatim-wrap highlight ini"><pre class="screen">[keystone_authtoken]
+signing_dir = /var/cache/glance/api
+auth_uri = http://controller:5000/v2.0
+identity_uri = http://controller:35357
+admin_tenant_name = service
+admin_user = glance</pre></div><p>The first thing to check is that the <code class="literal">signing_dir</code> does, in fact,
+exist. If it does, check for certificate files:</p><div class="verbatim-wrap"><pre class="screen">$ ls -la /var/cache/glance/api/
+
+total 24
+drwx------. 2 ayoung root 4096 Jul 22 10:58 .
+drwxr-xr-x. 4 root root 4096 Nov 7 2012 ..
+-rw-r-----. 1 ayoung ayoung 1424 Jul 22 10:58 cacert.pem
+-rw-r-----. 1 ayoung ayoung 15 Jul 22 10:58 revoked.pem
+-rw-r-----. 1 ayoung ayoung 4518 Jul 22 10:58 signing_cert.pem</pre></div><p>This directory contains two certificates and the token revocation list.
+If these files are not present, your service cannot fetch them from
+Identity. To troubleshoot, try to talk to Identity to make sure it
+correctly serves files, as follows:</p><div class="verbatim-wrap"><pre class="screen">$ curl http://localhost:35357/v2.0/certificates/signing</pre></div><p>This command fetches the signing certificate:</p><div class="verbatim-wrap highlight yaml"><pre class="screen">Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=Unset, L=Unset, O=Unset, CN=www.example.com
+        Validity
+            Not Before: Jul 22 14:57:31 2013 GMT
+            Not After : Jul 20 14:57:31 2023 GMT
+        Subject: C=US, ST=Unset, O=Unset, CN=www.example.com</pre></div><p>Note the expiration dates of the certificate:</p><div class="verbatim-wrap"><pre class="screen">Not Before: Jul 22 14:57:31 2013 GMT
+Not After : Jul 20 14:57:31 2023 GMT</pre></div><p>The token revocation list is updated once a minute, but the certificates
+are not. One possible problem is that the certificates are the wrong
+files or garbage. You can remove these files and run another command
+against your server; they are fetched on demand.</p><p>The Identity service log should show the access of the certificate files. You
+might have to turn up your logging levels. Set <code class="literal">debug = True</code> in your
+Identity configuration file and restart the Identity server.</p><div class="verbatim-wrap"><pre class="screen">(keystone.common.wsgi): 2013-07-24 12:18:11,461 DEBUG wsgi __call__
+arg_dict: {}
+(access): 2013-07-24 12:18:11,462 INFO core __call__ 127.0.0.1 - - [24/Jul/2013:16:18:11 +0000]
+"GET http://localhost:35357/v2.0/certificates/signing HTTP/1.0" 200 4518</pre></div><p>If the files do not appear in your directory after this, it is likely
+one of the following issues:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Your service is configured incorrectly and cannot talk to Identity.
+Check the <code class="literal">auth_port</code> and <code class="literal">auth_host</code> values and make sure that
+you can talk to that service through cURL, as shown previously.</p></li><li class="listitem "><p>Your signing directory is not writable. Use the <code class="literal">chmod</code> command to
+change its permissions so that the service (POSIX) user can write to
+it. Verify the change through <code class="literal">su</code> and <code class="literal">touch</code> commands.</p></li><li class="listitem "><p>The SELinux policy is denying access to the directory.</p></li></ul></div><p>SELinux troubles often occur when you use Fedora or RHEL-based packages and
+you choose configuration options that do not match the standard policy.
+Run the <code class="literal">setenforce permissive</code> command. If that makes a difference,
+you should relabel the directory. If you are using a sub-directory of
+the <code class="literal">/var/cache/</code> directory, run the following command:</p><div class="verbatim-wrap"><pre class="screen"># restorecon /var/cache/</pre></div><p>If you are not using a <code class="literal">/var/cache</code> sub-directory, you should. Modify
+the <code class="literal">signing_dir</code> configuration option for your service and restart.</p><p>Set back to <code class="literal">setenforce enforcing</code> to confirm that your changes solve
+the problem.</p><p>If your certificates are fetched on demand, the PKI validation is
+working properly. Most likely, the token from Identity is not valid for
+the operation you are attempting to perform, and your user needs a
+different role for the operation.</p></div></div><div class="sect2 " id="id-1.4.5.18.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.15.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Debug signing key file errors</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3 " id="id-1.4.5.18.7.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Problem</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.7.2">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>If an error occurs when the signing key file opens, it is possible that
+the person who ran the <code class="command">keystone-manage pki_setup</code> command to
+generate certificates and keys did not use the correct user.</p></div><div class="sect3 " id="id-1.4.5.18.7.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Solution</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.7.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>When you run the <code class="command">keystone-manage pki_setup</code> command, Identity
+generates a set of certificates and keys in <code class="literal">/etc/keystone/ssl*</code>, which
+is owned by <code class="literal">root:root</code>. This can present a problem when you run the
+Identity daemon under the keystone user account (nologin) when you try
+to run PKI. Unless you run the <code class="command">chown</code> command against the
+files <code class="literal">keystone:keystone</code>, or run the <code class="command">keystone-manage pki_setup</code>
+command with the <code class="literal">--keystone-user</code> and
+<code class="literal">--keystone-group</code> parameters, you will get an error.
+For example:</p><div class="verbatim-wrap"><pre class="screen">2012-07-31 11:10:53 ERROR [keystone.common.cms] Error opening signing key file
+/etc/keystone/ssl/private/signing_key.pem
+140380567730016:error:0200100D:system library:fopen:Permission
+denied:bss_file.c:398:fopen('/etc/keystone/ssl/private/signing_key.pem','r')
+140380567730016:error:20074002:BIO routines:FILE_CTRL:system lib:bss_file.c:400:
+unable to load signing key file</pre></div></div></div><div class="sect2 " id="id-1.4.5.18.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.15.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Flush expired tokens from the token database table</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3 " id="id-1.4.5.18.8.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Problem</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.8.2">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>As you generate tokens, the token database table on the Identity server
+grows.</p></div><div class="sect3 " id="id-1.4.5.18.8.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">3.15.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Solution</span> <a title="Permalink" class="permalink" href="cha-identity.html#id-1.4.5.18.8.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To clear the token table, an administrative user must run the
+<code class="command">keystone-manage token_flush</code> command to flush the tokens. When you
+flush tokens, expired tokens are deleted and traceability is eliminated.</p><p>Use <code class="literal">cron</code> to schedule this command to run frequently based on your
+workload. For large workloads, running it every minute is recommended.</p></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02ch04.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Dashboard</span></a><a class="nav-link" href="bk02ch02.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Get started with OpenStack</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

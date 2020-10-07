@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Role-Based Access Control in neutron | Security Guide | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Security Guide" /><meta name="chapter-title" content="Chapter 5. Role-Based Access Control in neutron" /><meta name="description" content="This topic explains how to achieve more granular access control for your neutron networks." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-security.html" title="Security Guide" /><link rel="prev" href="roleSegregation.html" title="Chapter 4. Service Admin Role Segregation in the Identity Service" /><link rel="next" href="sg-logging.html" title="Chapter 6. Enabling Network Security Group Logging" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-security.html">Security Guide</a><span> › </span><a class="crumb" href="cha-security-rbac.html">Role-Based Access Control in neutron</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Security Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="newsecurity.html"><span class="number">1 </span><span class="name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Security Planning and Features</span></a></li><li class="inactive"><a href="barbican.html"><span class="number">2 </span><span class="name">Key Management with the barbican Service</span></a></li><li class="inactive"><a href="barbicanAdmin.html"><span class="number">3 </span><span class="name">Key Management Service Administration</span></a></li><li class="inactive"><a href="roleSegregation.html"><span class="number">4 </span><span class="name">Service Admin Role Segregation in the Identity Service</span></a></li><li class="inactive"><a href="cha-security-rbac.html"><span class="number">5 </span><span class="name">Role-Based Access Control in neutron</span></a></li><li class="inactive"><a href="sg-logging.html"><span class="number">6 </span><span class="name">Enabling Network Security Group Logging</span></a></li><li class="inactive"><a href="x509-certificate-auth.html"><span class="number">7 </span><span class="name">Configuring keystone and horizon to use X.509 Client Certificates</span></a></li><li class="inactive"><a href="tls30overview.html"><span class="number">8 </span><span class="name">Transport Layer Security (TLS) Overview</span></a></li><li class="inactive"><a href="header-poisoning.html"><span class="number">9 </span><span class="name">Preventing Host Header Poisoning</span></a></li><li class="inactive"><a href="password-encryption.html"><span class="number">10 </span><span class="name">Encryption of Passwords and Sensitive Data</span></a></li><li class="inactive"><a href="encryption-ephemeral.html"><span class="number">11 </span><span class="name">Encryption of Ephemeral Volumes</span></a></li><li class="inactive"><a href="topic-rmq-j1v-4t.html"><span class="number">12 </span><span class="name">Refining Access Control with AppArmor</span></a></li><li class="inactive"><a href="dar.html"><span class="number">13 </span><span class="name">Data at Rest Encryption</span></a></li><li class="inactive"><a href="glance-rate-limit.html"><span class="number">14 </span><span class="name">glance-API Rate Limit (CVE-2016-8611)</span></a></li><li class="inactive"><a href="idg-all-security-middleware-auditing-xml-1.html"><span class="number">15 </span><span class="name">Security Audit Logs</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 4. Service Admin Role Segregation in the Identity Service" href="roleSegregation.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Enabling Network Security Group Logging" href="sg-logging.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-security.html">Security Guide</a><span> › </span><a class="crumb" href="cha-security-rbac.html">Role-Based Access Control in neutron</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 4. Service Admin Role Segregation in the Identity Service" href="roleSegregation.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Enabling Network Security Group Logging" href="sg-logging.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-security-rbac"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Role-Based Access Control in neutron</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span>cha-security-rbac</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.7"><span class="number">5.1 </span><span class="name">Creating a Network</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.8"><span class="number">5.2 </span><span class="name">Creating an RBAC Policy</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.9"><span class="number">5.3 </span><span class="name">Listing RBACs</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.10"><span class="number">5.4 </span><span class="name">Listing the Attributes of an RBAC</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.11"><span class="number">5.5 </span><span class="name">Deleting an RBAC Policy</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.12"><span class="number">5.6 </span><span class="name">Sharing a Network with All Tenants</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.13"><span class="number">5.7 </span><span class="name">Target Project (<code class="literal">demo2</code>) View of Networks and Subnets</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.14"><span class="number">5.8 </span><span class="name">Target Project: Creating a Port Using demo-net</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#id-1.4.7.15"><span class="number">5.9 </span><span class="name">Target Project Booting a VM Using Demo-Net</span></a></span></dt><dt><span class="section"><a href="cha-security-rbac.html#sec-security-rbac-limitation"><span class="number">5.10 </span><span class="name">Limitations</span></a></span></dt></dl></div></div><p>
+   This topic explains how to achieve more granular access control for your
+   neutron networks.
+  </p><p>
+   Previously in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, a network object was either private to a project or
+   could be used by all projects. If the network's shared attribute was True,
+   then the network could be used by every project in the cloud. If false, only
+   the members of the owning project could use it. There was no way for the
+   network to be shared by only a subset of the projects.
+  </p><p>
+  <span class="phrase">neutron Role Based Access Control (RBAC) solves this problem for
+   networks. Now the network owner can create RBAC policies that give network
+   access to target projects. Members of a targeted project can use the
+   network named in the RBAC policy the same way as if the network was owned
+   by the project. Constraints are described in the
+   section</span>
+  <a class="xref" href="cha-security-rbac.html#sec-security-rbac-limitation" title="5.10. Limitations">Section 5.10, “Limitations”</a>.
+ </p><p>
+   With RBAC you are able to let another tenant use a network that you created,
+   but as the owner of the network, you need to create the subnet and the
+   router for the network.
+  </p><p>
+   To use RBAC, neutron configuration files do not need to be changed.
+  </p><div class="sect1" id="id-1.4.7.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Network</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create demo-net
++---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | UP                                   |
+| availability_zone_hints   |                                      |
+| availability_zones        |                                      |
+| created_at                | 2018-07-25T17:43:59Z                 |
+| description               |                                      |
+| dns_domain                |                                      |
+| id                        | 9c801954-ec7f-4a65-82f8-e313120aabc4 |
+| ipv4_address_scope        | None                                 |
+| ipv6_address_scope        | None                                 |
+| is_default                | False                                |
+| is_vlan_transparent       | None                                 |
+| mtu                       | 1450                                 |
+| name                      | demo-net                             |
+| port_security_enabled     | False                                |
+| project_id                | cb67c79e25a84e328326d186bf703e1b     |
+| provider:network_type     | vxlan                                |
+| provider:physical_network | None                                 |
+| provider:segmentation_id  | 1009                                 |
+| qos_policy_id             | None                                 |
+| revision_number           | 2                                    |
+| router:external           | Internal                             |
+| segments                  | None                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tags                      |                                      |
+| updated_at                | 2018-07-25T17:43:59Z                 |
++---------------------------+--------------------------------------+</pre></div></div><div class="sect1" id="id-1.4.7.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating an RBAC Policy</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Here we will create an RBAC policy where a member of the project called
+   'demo' will share the network with members of project 'demo2'
+  </p><p>
+   To create the RBAC policy, run:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac create  --target-project <em class="replaceable ">DEMO2-PROJECT-ID</em> --type network --action access_as_shared demo-net</pre></div><p>
+   Here is an example where the <em class="replaceable ">DEMO2-PROJECT-ID</em> is
+   5a582af8b44b422fafcd4545bd2b7eb5
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac create --target-tenant 5a582af8b44b422fafcd4545bd2b7eb5 \
+  --type network --action access_as_shared demo-net</pre></div></div><div class="sect1" id="id-1.4.7.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing RBACs</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To list all the RBAC rules/policies, execute:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac list
++--------------------------------------+-------------+--------------------------------------+
+| ID                                   | Object Type | Object ID                            |
++--------------------------------------+-------------+--------------------------------------+
+| 0fdec7f0-9b94-42b4-a4cd-b291d04282c1 | network     | 7cd94877-4276-488d-b682-7328fc85d721 |
++--------------------------------------+-------------+--------------------------------------+</pre></div></div><div class="sect1" id="id-1.4.7.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing the Attributes of an RBAC</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To see the attributes of a specific RBAC policy, run
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac show <em class="replaceable ">POLICY-ID</em></pre></div><p>
+   For example:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac show 0fd89dcb-9809-4a5e-adc1-39dd676cb386</pre></div><p>
+   Here is the output:
+  </p><div class="verbatim-wrap"><pre class="screen">+---------------+--------------------------------------+
+| Field         | Value                                |
++---------------+--------------------------------------+
+| action        | access_as_shared                     |
+| id            | 0fd89dcb-9809-4a5e-adc1-39dd676cb386 |
+| object_id     | c3d55c21-d8c9-4ee5-944b-560b7e0ea33b |
+| object_type   | network                              |
+| target_tenant | 5a582af8b44b422fafcd4545bd2b7eb5     |
+| tenant_id     | 75eb5efae5764682bca2fede6f4d8c6f     |
++---------------+--------------------------------------+</pre></div></div><div class="sect1" id="id-1.4.7.11"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deleting an RBAC Policy</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To delete an RBAC policy, run <code class="literal">openstack network rbac delete</code> passing the policy id:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac delete <em class="replaceable ">POLICY-ID</em></pre></div><p>
+   For example:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac delete 0fd89dcb-9809-4a5e-adc1-39dd676cb386</pre></div><p>
+   Here is the output:
+  </p><div class="verbatim-wrap"><pre class="screen">Deleted rbac_policy: 0fd89dcb-9809-4a5e-adc1-39dd676cb386</pre></div></div><div class="sect1" id="id-1.4.7.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sharing a Network with All Tenants</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Either the administrator or the network owner can make a network shareable
+   by all tenants.
+  </p><p>
+   The administrator can make a tenant's network shareable by all tenants.
+   To make the network <code class="literal">demo-shareall-net</code> accessible by all
+   tenants in the cloud:
+  </p><p>
+   To share a network with all tenants:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Get a list of all projects
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>~/service.osrc
+<code class="prompt user">ardana &gt; </code>openstack project list</pre></div><p>
+      which produces the list:
+    </p><div class="verbatim-wrap"><pre class="screen">+----------------------------------+------------------+
+| ID                               | Name             |
++----------------------------------+------------------+
+| 1be57778b61645a7a1c07ca0ac488f9e | demo             |
+| 5346676226274cd2b3e3862c2d5ceadd | admin            |
+| 749a557b2b9c482ca047e8f4abf348cd | swift-monitor    |
+| 8284a83df4df429fb04996c59f9a314b | swift-dispersion |
+| c7a74026ed8d4345a48a3860048dcb39 | demo-sharee      |
+| e771266d937440828372090c4f99a995 | glance-swift     |
+| f43fb69f107b4b109d22431766b85f20 | services         |
++----------------------------------+------------------+</pre></div></li><li class="step "><p>
+     Get a list of networks:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network list</pre></div><p>
+     This produces the following list:
+    </p><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+-------------------+----------------------------------------------------+
+| id                                   | name              | subnets                                            |
++--------------------------------------+-------------------+----------------------------------------------------+
+| f50f9a63-c048-444d-939d-370cb0af1387 | ext-net           | ef3873db-fc7a-4085-8454-5566fb5578ea 172.31.0.0/16 |
+| 9fb676f5-137e-4646-ac6e-db675a885fd3 | demo-net          | 18fb0b77-fc8b-4f8d-9172-ee47869f92cc 10.0.1.0/24   |
+| 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e | demo-shareall-net | 2bbc85a9-3ffe-464c-944b-2476c7804877 10.0.250.0/24 |
+| 73f946ee-bd2b-42e9-87e4-87f19edd0682 | demo-share-subset | c088b0ef-f541-42a7-b4b9-6ef3c9921e44 10.0.2.0/24   |
++--------------------------------------+-------------------+----------------------------------------------------+</pre></div></li><li class="step "><p>
+     Set the network you want to share to a shared value of True:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network set --share 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e</pre></div><p>
+     You should see the following output:
+    </p><div class="verbatim-wrap"><pre class="screen">Updated network: 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e</pre></div></li><li class="step "><p>
+     Check the attributes of that network by running the following command
+     using the ID of the network in question:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network show 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e</pre></div><p>
+     The output will look like this:
+    </p><div class="verbatim-wrap"><pre class="screen">+---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | UP                                   |
+| availability_zone_hints   |                                      |
+| availability_zones        |                                      |
+| created_at                | 2018-07-25T17:43:59Z                 |
+| description               |                                      |
+| dns_domain                |                                      |
+| id                        | 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e |
+| ipv4_address_scope        | None                                 |
+| ipv6_address_scope        | None                                 |
+| is_default                | None                                 |
+| is_vlan_transparent       | None                                 |
+| mtu                       | 1450                                 |
+| name                      | demo-net                             |
+| port_security_enabled     | False                                |
+| project_id                | cb67c79e25a84e328326d186bf703e1b     |
+| provider:network_type     | vxlan                                |
+| provider:physical_network | None                                 |
+| provider:segmentation_id  | 1009                                 |
+| qos_policy_id             | None                                 |
+| revision_number           | 2                                    |
+| router:external           | Internal                             |
+| segments                  | None                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tags                      |                                      |
+| updated_at                | 2018-07-25T17:43:59Z                 |
++---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     As the owner of the <code class="literal">demo-shareall-net</code> network, view
+     the RBAC attributes for
+     <code class="literal">demo-shareall-net</code>
+     (<code class="literal">id=8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e</code>) by first
+     getting an RBAC list:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>echo $OS_USERNAME ; echo $OS_PROJECT_NAME
+demo
+demo
+<code class="prompt user">ardana &gt; </code>openstack network rbac list</pre></div><p>
+     This produces the list:
+    </p><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+--------------------------------------+
+| id                                   | object_id                            |
++--------------------------------------+--------------------------------------+
+| ...                                                                         |
+| 3e078293-f55d-461c-9a0b-67b5dae321e8 | 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e |
++--------------------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     View the RBAC information:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac show 3e078293-f55d-461c-9a0b-67b5dae321e8
+
++---------------+--------------------------------------+
+| Field         | Value                                |
++---------------+--------------------------------------+
+| action        | access_as_shared                     |
+| id            | 3e078293-f55d-461c-9a0b-67b5dae321e8 |
+| object_id     | 8eada4f7-83cf-40ba-aa8c-5bf7d87cca8e |
+| object_type   | network                              |
+| target_tenant | *                                    |
+| tenant_id     | 1be57778b61645a7a1c07ca0ac488f9e     |
++---------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     With network RBAC, the owner of the network can also make the network
+     shareable by all tenants. First create the network:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>echo $OS_PROJECT_NAME ; echo $OS_USERNAME
+demo
+demo
+<code class="prompt user">ardana &gt; </code>openstack network create test-net</pre></div><p>
+     The network is created:
+    </p><div class="verbatim-wrap"><pre class="screen">+---------------------------+--------------------------------------+
+| Field                     | Value                                |
++---------------------------+--------------------------------------+
+| admin_state_up            | UP                                   |
+| availability_zone_hints   |                                      |
+| availability_zones        |                                      |
+| created_at                | 2018-07-25T18:04:25Z                 |
+| description               |                                      |
+| dns_domain                |                                      |
+| id                        | a4bd7c3a-818f-4431-8cdb-fedf7ff40f73 |
+| ipv4_address_scope        | None                                 |
+| ipv6_address_scope        | None                                 |
+| is_default                | False                                |
+| is_vlan_transparent       | None                                 |
+| mtu                       | 1450                                 |
+| name                      | test-net                             |
+| port_security_enabled     | False                                |
+| project_id                | cb67c79e25a84e328326d186bf703e1b     |
+| provider:network_type     | vxlan                                |
+| provider:physical_network | None                                 |
+| provider:segmentation_id  | 1073                                 |
+| qos_policy_id             | None                                 |
+| revision_number           | 2                                    |
+| router:external           | Internal                             |
+| segments                  | None                                 |
+| shared                    | False                                |
+| status                    | ACTIVE                               |
+| subnets                   |                                      |
+| tags                      |                                      |
+| updated_at                | 2018-07-25T18:04:25Z                 |
++---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
+     Create the RBAC. It is important that the asterisk is surrounded by
+     single-quotes to prevent the shell from expanding it to all files in the
+     current directory.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network rbac create --type network \
+  --action access_as_shared --target-project '*' test-net</pre></div><p>
+     Here are the resulting RBAC attributes:
+    </p><div class="verbatim-wrap"><pre class="screen">+---------------+--------------------------------------+
+| Field         | Value                                |
++---------------+--------------------------------------+
+| action        | access_as_shared                     |
+| id            | 0b797cc6-debc-48a1-bf9d-d294b077d0d9 |
+| object_id     | a4bd7c3a-818f-4431-8cdb-fedf7ff40f73 |
+| object_type   | network                              |
+| target_tenant | *                                    |
+| tenant_id     | 1be57778b61645a7a1c07ca0ac488f9e     |
++---------------+--------------------------------------+</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.4.7.13"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Target Project (<code class="literal">demo2</code>) View of Networks and Subnets</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Note that the owner of the network and subnet is not the tenant named
+   <code class="literal">demo2</code>. Both the network and subnet are owned by tenant <code class="literal">demo</code>.
+   <code class="literal">Demo2</code>members cannot create subnets of the network. They also cannot
+   modify or delete subnets owned by <code class="literal">demo</code>.
+  </p><p>
+   As the tenant <code class="literal">demo2</code>, you can get a list of neutron networks:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network list</pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+-----------+--------------------------------------------------+
+| id                                   | name      | subnets                                          |
++--------------------------------------+-----------+--------------------------------------------------+
+| f60f3896-2854-4f20-b03f-584a0dcce7a6 | ext-net   | 50e39973-b2e3-466b-81c9-31f4d83d990b             |
+| c3d55c21-d8c9-4ee5-944b-560b7e0ea33b | demo-net  | d9b765da-45eb-4543-be96-1b69a00a2556 10.0.1.0/24 |
+   ...
++--------------------------------------+-----------+--------------------------------------------------+</pre></div><p>
+   And get a list of subnets:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet list --network c3d55c21-d8c9-4ee5-944b-560b7e0ea33b</pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+---------+--------------------------------------+---------------+
+| ID                                   | Name    | Network                              | Subnet        |
++--------------------------------------+---------+--------------------------------------+---------------+
+| a806f28b-ad66-47f1-b280-a1caa9beb832 | ext-net | c3d55c21-d8c9-4ee5-944b-560b7e0ea33b | 10.0.1.0/24   |
++--------------------------------------+---------+--------------------------------------+---------------+</pre></div><p>
+To show details of the subnet:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet show d9b765da-45eb-4543-be96-1b69a00a2556</pre></div><div class="verbatim-wrap"><pre class="screen">+-------------------+--------------------------------------------+
+| Field             | Value                                      |
++-------------------+--------------------------------------------+
+| allocation_pools  | {"start": "10.0.1.2", "end": "10.0.1.254"} |
+| cidr              | 10.0.1.0/24                                |
+| dns_nameservers   |                                            |
+| enable_dhcp       | True                                       |
+| gateway_ip        | 10.0.1.1                                   |
+| host_routes       |                                            |
+| id                | d9b765da-45eb-4543-be96-1b69a00a2556       |
+| ip_version        | 4                                          |
+| ipv6_address_mode |                                            |
+| ipv6_ra_mode      |                                            |
+| name              | sb-demo-net                                |
+| network_id        | c3d55c21-d8c9-4ee5-944b-560b7e0ea33b       |
+| subnetpool_id     |                                            |
+| tenant_id         | 75eb5efae5764682bca2fede6f4d8c6f           |
++-------------------+--------------------------------------------+</pre></div></div><div class="sect1" id="id-1.4.7.14"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Target Project: Creating a Port Using demo-net</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.14">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The owner of the port is <code class="literal">demo2</code>. Members of the network owner project
+   (<code class="literal">demo</code>) will not see this port.
+  </p><p>
+   Running the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack port create c3d55c21-d8c9-4ee5-944b-560b7e0ea33b</pre></div><p>
+   Creates a new port:
+  </p><div class="verbatim-wrap"><pre class="screen">+-----------------------+-----------------------------------------------------------------------------------------------------+
+| Field                 | Value                                                                                               |
++-----------------------+-----------------------------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                                                |
+| allowed_address_pairs |                                                                                                     |
+| binding:vnic_type     | normal                                                                                              |
+| device_id             |                                                                                                     |
+| device_owner          |                                                                                                     |
+| dns_assignment        | {"hostname": "host-10-0-1-10", "ip_address": "10.0.1.10", "fqdn": "host-10-0-1-10.openstacklocal."} |
+| dns_name              |                                                                                                     |
+| fixed_ips             | {"subnet_id": "d9b765da-45eb-4543-be96-1b69a00a2556", "ip_address": "10.0.1.10"}                    |
+| id                    | 03ef2dce-20dc-47e5-9160-942320b4e503                                                                |
+| mac_address           | fa:16:3e:27:8d:ca                                                                                   |
+| name                  |                                                                                                     |
+| network_id            | c3d55c21-d8c9-4ee5-944b-560b7e0ea33b                                                                |
+| security_groups       | 275802d0-33cb-4796-9e57-03d8ddd29b94                                                                |
+| status                | DOWN                                                                                                |
+| tenant_id             | 5a582af8b44b422fafcd4545bd2b7eb5                                                                    |
++-----------------------+-----------------------------------------------------------------------------------------------------+</pre></div></div><div class="sect1" id="id-1.4.7.15"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Target Project Booting a VM Using Demo-Net</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#id-1.4.7.15">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Here the tenant <code class="literal">demo2</code> boots a VM that uses the <code class="literal">demo-net</code> shared network:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server create --flavor 1 --image $OS_IMAGE --nic net-id=c3d55c21-d8c9-4ee5-944b-560b7e0ea33b demo2-vm-using-demo-net-nic</pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+------------------------------------------------+
+| Property                             | Value                                          |
++--------------------------------------+------------------------------------------------+
+| OS-EXT-AZ:availability_zone          |                                                |
+| OS-EXT-STS:power_state               | 0                                              |
+| OS-EXT-STS:task_state                | scheduling                                     |
+| OS-EXT-STS:vm_state                  | building                                       |
+| OS-SRV-USG:launched_at               | -                                              |
+| OS-SRV-USG:terminated_at             | -                                              |
+| accessIPv4                           |                                                |
+| accessIPv6                           |                                                |
+| adminPass                            | sS9uSv9PT79F                                   |
+| config_drive                         |                                                |
+| created                              | 2016-01-04T19:23:24Z                           |
+| flavor                               | m1.tiny (1)                                    |
+| hostId                               |                                                |
+| id                                   | 3a4dc44a-027b-45e9-acf8-054a7c2dca2a           |
+| image                                | cirros-0.3.3-x86_64 (6ae23432-8636-4e...1efc5) |
+| key_name                             | -                                              |
+| metadata                             | {}                                             |
+| name                                 | demo2-vm-using-demo-net-nic                    |
+| os-extended-volumes:volumes_attached | []                                             |
+| progress                             | 0                                              |
+| security_groups                      | default                                        |
+| status                               | BUILD                                          |
+| tenant_id                            | 5a582af8b44b422fafcd4545bd2b7eb5               |
+| updated                              | 2016-01-04T19:23:24Z                           |
+| user_id                              | a0e6427b036344fdb47162987cb0cee5               |
++--------------------------------------+------------------------------------------------+</pre></div><p>
+   Run openstack server list:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server list</pre></div><p>
+   See the VM running:
+  </p><div class="verbatim-wrap"><pre class="screen">+-------------------+-----------------------------+--------+------------+-------------+--------------------+
+| ID                | Name                        | Status | Task State | Power State | Networks           |
++-------------------+-----------------------------+--------+------------+-------------+--------------------+
+| 3a4dc...a7c2dca2a | demo2-vm-using-demo-net-nic | ACTIVE | -          | Running     | demo-net=10.0.1.11 |
++-------------------+-----------------------------+--------+------------+-------------+--------------------+</pre></div><p>
+   Run openstack port list:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstask port list --device-id 3a4dc44a-027b-45e9-acf8-054a7c2dca2a</pre></div><p>
+   View the subnet:
+  </p><div class="verbatim-wrap"><pre class="screen">+---------------------+------+-------------------+-------------------------------------------------------------------+
+| id                  | name | mac_address       | fixed_ips                                                         |
++---------------------+------+-------------------+-------------------------------------------------------------------+
+| 7d14ef8b-9...80348f |      | fa:16:3e:75:32:8e | {"subnet_id": "d9b765da-45...00a2556", "ip_address": "10.0.1.11"} |
++---------------------+------+-------------------+-------------------------------------------------------------------+</pre></div><p>
+   Run openstack port show:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack port show 7d14ef8b-9d48-4310-8c02-00c74d80348f</pre></div><div class="verbatim-wrap"><pre class="screen">+-----------------------+-----------------------------------------------------------------------------------------------------+
+| Field                 | Value                                                                                               |
++-----------------------+-----------------------------------------------------------------------------------------------------+
+| admin_state_up        | True                                                                                                |
+| allowed_address_pairs |                                                                                                     |
+| binding:vnic_type     | normal                                                                                              |
+| device_id             | 3a4dc44a-027b-45e9-acf8-054a7c2dca2a                                                                |
+| device_owner          | compute:None                                                                                        |
+| dns_assignment        | {"hostname": "host-10-0-1-11", "ip_address": "10.0.1.11", "fqdn": "host-10-0-1-11.openstacklocal."} |
+| dns_name              |                                                                                                     |
+| extra_dhcp_opts       |                                                                                                     |
+| fixed_ips             | {"subnet_id": "d9b765da-45eb-4543-be96-1b69a00a2556", "ip_address": "10.0.1.11"}                    |
+| id                    | 7d14ef8b-9d48-4310-8c02-00c74d80348f                                                                |
+| mac_address           | fa:16:3e:75:32:8e                                                                                   |
+| name                  |                                                                                                     |
+| network_id            | c3d55c21-d8c9-4ee5-944b-560b7e0ea33b                                                                |
+| security_groups       | 275802d0-33cb-4796-9e57-03d8ddd29b94                                                                |
+| status                | ACTIVE                                                                                              |
+| tenant_id             | 5a582af8b44b422fafcd4545bd2b7eb5                                                                    |
++-----------------------+-----------------------------------------------------------------------------------------------------+</pre></div></div><div class="sect1" id="sec-security-rbac-limitation"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Limitations</span> <a title="Permalink" class="permalink" href="cha-security-rbac.html#sec-security-rbac-limitation">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/security-rbac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-rbac.xml</li><li><span class="ds-label">ID: </span>sec-security-rbac-limitation</li></ul></div></div></div></div><p>
+   Note the following limitations of RBAC in neutron.
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     neutron network is the only supported RBAC neutron object type.
+    </p></li><li class="listitem "><p>
+     The "access_as_external" action is not supported – even though it is
+     listed as a valid action by python-neutronclient.
+    </p></li><li class="listitem "><p>
+     The neutron-api server will not accept action value of
+     'access_as_external'. The <code class="literal">access_as_external</code> definition
+     is not found in the specs.
+    </p></li><li class="listitem "><p>
+     The target project users cannot create, modify, or delete subnets on
+     networks that have RBAC policies.
+    </p></li><li class="listitem "><p>
+     The subnet of a network that has an RBAC policy cannot be added as an
+     interface of a target tenant's router. For example, the command
+     <code class="literal">openstack router add subnet tgt-tenant-router &lt;sb-demo-net
+     uuid&gt;</code> will error out.
+    </p></li><li class="listitem "><p>
+     The security group rules on the network owner do not apply to other
+     projects that can use the network.
+    </p></li><li class="listitem "><p>
+     A user in target project can boot up VMs using a VNIC using the shared
+     network. The user of the target project can assign a floating IP (FIP) to
+     the VM. The target project must have SG rules that allows SSH and/or ICMP
+     for VM connectivity.
+    </p></li><li class="listitem "><p>
+     neutron RBAC creation and management are currently not supported in
+     horizon. For now, the neutron CLI has to be used to manage RBAC rules.
+    </p></li><li class="listitem "><p>
+     A RBAC rule tells neutron whether a tenant can access a network (Allow).
+     Currently there is no DENY action.
+    </p></li><li class="listitem "><p>
+     Port creation on a shared network fails if <code class="literal">--fixed-ip</code>
+     is specified in the <code class="literal">openstack port create</code> command.
+     
+     
+    </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="sg-logging.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 6 </span>Enabling Network Security Group Logging</span></a><a class="nav-link" href="roleSegregation.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 4 </span>Service Admin Role Segregation in the Identity Service</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

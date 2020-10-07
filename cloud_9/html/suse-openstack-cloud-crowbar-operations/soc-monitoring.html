@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>SUSE OpenStack Cloud Monitoring | Operations Guide Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide Crowbar" /><meta name="chapter-title" content="Chapter 4. SUSE OpenStack Cloud Monitoring" /><meta name="description" content="As more and more applications are deployed on cloud systems and cloud systems are growing in complexity, managing the cloud infrastructure is becoming increasingly difficult. SUSE OpenStack Cloud Crowbar Monitoring helps mastering this challenge by providing a sophisticated Monitoring as a Service s…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><link rel="next" href="monitoring-log-management.html" title="Chapter 5. Log Management" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="soc-monitoring.html">SUSE OpenStack Cloud Monitoring</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="sec-maintenance.html"><span class="number">1 </span><span class="name">Maintenance</span></a></li><li class="inactive"><a href="gpu-passthrough.html"><span class="number">2 </span><span class="name">GPU passthrough</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">3 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="soc-monitoring.html"><span class="number">4 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></li><li class="inactive"><a href="monitoring-log-management.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="troubleshooting.html"><span class="number">6 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" href="self-assign-certs.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Log Management" href="monitoring-log-management.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="soc-monitoring.html">SUSE OpenStack Cloud Monitoring</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" href="self-assign-certs.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Log Management" href="monitoring-log-management.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="soc-monitoring"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-monitoring.xml</li><li><span class="ds-label">ID: </span>soc-monitoring</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="soc-monitoring.html#about-operations-monitoring"><span class="number">4.1 </span><span class="name">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#monitoring-architecture"><span class="number">4.2 </span><span class="name">Architecture</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#basic-usage-scenario"><span class="number">4.3 </span><span class="name">Basic Usage Scenario</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#key-features"><span class="number">4.4 </span><span class="name">Key Features</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#components"><span class="number">4.5 </span><span class="name">Components</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#users-roles"><span class="number">4.6 </span><span class="name">Users and Roles</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#ops-maintenance"><span class="number">4.7 </span><span class="name">Operation and Maintenance</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#data-virtualizations"><span class="number">4.8 </span><span class="name">Working with Data Visualizations</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#defining-alarms"><span class="number">4.9 </span><span class="name">Defining Alarms</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#defining-notifcations"><span class="number">4.10 </span><span class="name">Defining Notifications</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#status-servers-log-data"><span class="number">4.11 </span><span class="name">Status of Services, Servers, and Log Data</span></a></span></dt><dt><span class="section"><a href="soc-monitoring.html#supported-metrics"><span class="number">4.12 </span><span class="name">Supported Metrics</span></a></span></dt></dl></div></div><p>
+  As more and more applications are deployed on cloud systems and cloud systems
+  are growing in complexity, managing the cloud infrastructure is becoming
+  increasingly difficult. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  helps mastering this challenge by providing a sophisticated Monitoring as a
+  Service solution that is operated on top of <span class="productname">OpenStack</span>-based cloud computing
+  platforms.
+ </p><p>
+  The component architecture of <span class="productname">OpenStack</span> provides for high flexibility, yet it
+  increases the burden of system operation because multiple services must be
+  handled. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring offers an
+  integrated view of all services and assembles and presents related metrics
+  and log data in one convenient access point. While being flexible and
+  scalable to instantly reflect changes in the <span class="productname">OpenStack</span> platform,
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides the ways and means required to
+  ensure multi-tenancy, high availability, and data security. The high
+  availability architecture of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  ensures an optimum level of operational performance eliminating the risk of
+  component failures and providing for reliable crossover.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring covers all aspects of a
+  Monitoring as a Service solution:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Central management of monitoring and log data from medium and large-size
+    <span class="productname">OpenStack</span> deployments.
+   </p></li><li class="listitem "><p>
+    Storage of metrics and log data in a resilient way.
+   </p></li><li class="listitem "><p>
+    Multi-tenancy architecture to ensure the secure isolation of metrics and
+    log data.
+   </p></li><li class="listitem "><p>
+    Horizontal and vertical scalability to support constantly evolving cloud
+    infrastructures. When physical and virtual servers are scaled up or down to
+    varying loads, the monitoring and log management solution can be adapted
+    accordingly.
+   </p></li></ul></div><div class="sect1" id="about-operations-monitoring"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#about-operations-monitoring">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-about-monitoring.xml</li><li><span class="ds-label">ID: </span>about-operations-monitoring</li></ul></div></div></div></div><p>
+  The monitoring solution of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  addresses the requirements of large-scale public and private clouds where
+  high numbers of physical and virtual servers need to be monitored and huge
+  amounts of monitoring data need to be managed. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  consolidates metrics, alarms, and notifications, as well
+  as health and status information from multiple systems, thus reducing the
+  complexity and allowing for a higher level analysis of the monitoring data.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring covers all aspects of a
+  Monitoring as a Service solution:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Storage of monitoring data in a resilient way.
+   </p></li><li class="listitem "><p>
+    Multi-tenancy architecture for submitting and streaming metrics. The
+    architecture ensures the secure isolation of metrics data.
+   </p></li><li class="listitem "><p>
+    Horizontal and vertical scalability to support constantly evolving cloud
+    infrastructures. When physical and virtual servers are scaled up or down to
+    varying loads, the monitoring solution can be adapted accordingly.
+   </p></li></ul></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring offers various
+  features which support you in proactively managing your cloud resources. A
+  large number of metrics in combination with early warnings about problems and
+  outages assists you in analyzing and troubleshooting any issue you encounter
+  in your environment.
+ </p><p>
+  The monitoring features include:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    A monitoring overview which allows you to access all monitoring
+    information.
+   </p></li><li class="listitem "><p>
+    Metrics dashboards for visualizing your monitoring data.
+   </p></li><li class="listitem "><p>
+    Alerting features for monitoring.
+   </p></li></ul></div><p>
+  In the following sections, you will find information on the monitoring
+  overview and the metrics dashboards as well as details on how to define and
+  handle alarms and notifications.
+ </p><div class="sect2" id="accessing-soc-monitoring"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#accessing-soc-monitoring">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-about-monitoring.xml</li><li><span class="ds-label">ID: </span>accessing-soc-monitoring</li></ul></div></div></div></div><p>
+  For accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and performing
+  monitoring tasks, you must have access to the <span class="productname">OpenStack</span> platform as a user with
+  the <span class="guimenu ">monasca-user</span> or <span class="guimenu ">monasca-read-only-user</span>
+  role in the <span class="guimenu ">monasca</span> tenant.
+  </p><p>
+  Log in to <span class="productname">OpenStack</span> horizon with your user name and password. The functions
+  you can use in <span class="productname">OpenStack</span> horizon depend on your access permissions. To access
+  logs and metrics, switch to the <span class="guimenu ">monasca</span> tenant in
+  horizon. This allows you to access all monitoring data for
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+ </p><div class="figure" id="fig-socm-monasca"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/socm-horizon-monasca.png" target="_blank"><img src="images/socm-horizon-monasca.png" width="" alt="SUSE OpenStack Cloud horizon Dashboard—Monitoring" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.1: </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud horizon Dashboard—Monitoring </span><a title="Permalink" class="permalink" href="soc-monitoring.html#fig-socm-monasca">#</a></h6></div></div></div><div class="sect2" id="monitoring-overview-data"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#monitoring-overview-data">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-about-monitoring.xml</li><li><span class="ds-label">ID: </span>monitoring-overview-data</li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides one convenient
+   access point to your monitoring data. Use <span class="guimenu ">Monitoring &gt;
+   Overview</span> to keep track of your services and servers and quickly
+   check their status. The overview also indicates any irregularities in the log
+   data of the system components you are monitoring.
+  </p><p>
+   On the <span class="guimenu ">Overview</span> page, you can:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     View the status of your services, servers, and log data at a glance. As
+     soon as you have defined an alarm for a service, a server, or log data and
+     metrics data has been received, there is status information displayed on
+     the <span class="guimenu ">Overview</span> page. Different colors are used for the
+     different statuses.
+    </p></li></ul></div></div></div><div class="sect1" id="monitoring-architecture"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Architecture</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#monitoring-architecture">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-architecture.xml</li><li><span class="ds-label">ID: </span>monitoring-architecture</li></ul></div></div></div></div><p>
+  The following illustration provides an overview of the main components of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and their interaction:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-cmm-architecture.png" target="_blank"><img src="images/images-cmm-architecture.png" width="" alt="cmm-architecture.png" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.8.4"><span class="name"><span class="productname">OpenStack</span></span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.4">#</a></h5></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring relies on <span class="productname">OpenStack</span> as
+  technology for building cloud computing platforms for public and private
+  clouds. <span class="productname">OpenStack</span> consists of a series of interrelated projects delivering
+  various components for a cloud infrastructure solution and allowing for the
+  deployment and management of Infrastructure as a Service (IaaS) platforms.
+ </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.8.6"><span class="name">Monitoring Service</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.6">#</a></h5></div><p>
+  The Monitoring Service is the central <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  component. It is responsible for receiving, persisting,
+  and processing monitoring and log data, as well as providing the data to the
+  users.
+ </p><p>
+  The Monitoring Service relies on monasca, an open source Monitoring as a
+  Service solution. It uses monasca for high-speed metrics querying and
+  integrates the Threshold Engine (streaming alarm engine) and the Notification
+  Engine of monasca.
+ </p><p>
+  The Monitoring Service consists of the following components:
+ </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.6.8.10.1"><span class="term ">Monitoring API</span></dt><dd><p>
+     A RESTful API for monitoring. It is primarily focused on the following
+     areas:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Metrics: Store and query massive amounts of metrics in real time.
+      </p></li><li class="listitem "><p>
+       Statistics: Provide statistics for metrics.
+      </p></li><li class="listitem "><p>
+       Alarm Definitions: Create, update, query, and delete alarm definitions.
+      </p></li><li class="listitem "><p>
+       Alarms: Query and delete the alarm history.
+      </p></li><li class="listitem "><p>
+       Notification Methods: Create and delete notification methods and
+       associate them with alarms. Users can be notified directly when alarms
+       are triggered, for example, via email.
+      </p></li></ul></div></dd><dt id="id-1.5.6.8.10.2"><span class="term ">Message Queue</span></dt><dd><p>
+     A component that primarily receives published metrics from the Monitoring
+     API, alarm state transition messages from the Threshold Engine, and log
+     data from the Log API. The data is consumed by other components, such as
+     the Persister, the Notification Engine, and the Log Persister. The Message
+     Queue is also used to publish and consume other events in the system. It
+     is based on Kafka, a high-performance, distributed, fault-tolerant, and
+     scalable message queue with durability built-in. For administrating the
+     Message Queue, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses
+     Zookeeper, a centralized service for maintaining configuration
+     information, naming, providing distributed synchronization, and providing
+     group services.
+    </p></dd><dt id="id-1.5.6.8.10.3"><span class="term ">Persister</span></dt><dd><p>
+     A monasca component that consumes metrics and alarm state transitions from
+     the Message Queue and stores them in the Metrics and Alarms Database
+     (InfluxDB).
+    </p></dd><dt id="id-1.5.6.8.10.4"><span class="term ">Notification Engine</span></dt><dd><p>
+     A monasca component that consumes alarm state transition messages from the
+     Message Queue and sends notifications for alarms, such as emails.
+    </p></dd><dt id="id-1.5.6.8.10.5"><span class="term ">Threshold Engine</span></dt><dd><p>
+     A monasca component that computes thresholds on metrics and publishes
+     alarms to the Message Queue when they are triggered. The Threshold Engine
+     is based on Apache Storm, a free and open distributed real-time
+     computation system.
+    </p></dd><dt id="id-1.5.6.8.10.6"><span class="term ">Metrics and Alarms Database</span></dt><dd><p>
+     An InfluxDB database used for storing metrics and the alarm history.
+    </p></dd><dt id="id-1.5.6.8.10.7"><span class="term ">Config Database</span></dt><dd><p>
+     A MariaDB database used for storing configuration information, alarm
+     definitions, and notification methods.
+    </p></dd><dt id="id-1.5.6.8.10.8"><span class="term ">Log API</span></dt><dd><p>
+     A RESTful API for log management. It gathers log data from the Log Agents
+     and forwards it to the Message Queue.
+    </p><p>
+     The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring log management is
+     based on Logstash, a tool for receiving, processing, and publishing all
+     kinds of logs. It provides a powerful pipeline for querying and analyzing
+     logs. Elasticsearch is used as the back-end datastore, and Kibana as the
+     front-end tool for retrieving and visualizing the log data.
+    </p></dd><dt id="id-1.5.6.8.10.9"><span class="term ">Log Transformer</span></dt><dd><p>
+     A Logstash component that consumes the log data from the Message Queue,
+     performs transformation and aggregation operations on the data, and
+     publishes the data that it creates back to the Message Queue.
+    </p></dd><dt id="id-1.5.6.8.10.10"><span class="term ">Log Metrics</span></dt><dd><p>
+     A monasca component that consumes log data from the Message Queue, filters
+     the data according to severity, and generates metrics for specific
+     severities, for example, for errors or warnings. The generated metrics are
+     published to the Message Queue and can be further processed by the
+     Threshold Engine like any other metrics.
+    </p></dd><dt id="id-1.5.6.8.10.11"><span class="term ">Log Persister</span></dt><dd><p>
+     A Logstash component that consumes the transformed and aggregated log data
+     from the Message Queue and stores it in the Log Database.
+    </p></dd><dt id="id-1.5.6.8.10.12"><span class="term ">Kibana Server</span></dt><dd><p>
+     A Web browser-based analytics and search interface to the Log Database.
+    </p></dd><dt id="id-1.5.6.8.10.13"><span class="term ">Log Database</span></dt><dd><p>
+     An Elasticsearch database for storing the log data.
+    </p></dd></dl></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.8.11"><span class="name">horizon Plugin</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.11">#</a></h5></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring comes with a plugin for the
+  <span class="productname">OpenStack</span> horizon dashboard. The plugin extends the main dashboard in
+  <span class="productname">OpenStack</span> with a view for monitoring. This enables <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  users to access the monitoring functions from a
+  central Web-based graphical user interface. For details, refer to the
+  <a class="link" href="http://docs.openstack.org/developer/horizon/" target="_blank"><span class="productname">OpenStack</span> horizon
+  documentation</a>.
+ </p><p>
+  Based on <span class="productname">OpenStack</span> horizon, the monitoring data is visualized on a
+  comfortable and easy-to-use dashboard which fully integrates with the
+  following applications:
+ </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.6.8.14.1"><span class="term ">Grafana (for metrics data)</span></dt><dd><p>
+     An open source application for visualizing large-scale measurement data.
+    </p></dd><dt id="id-1.5.6.8.14.2"><span class="term ">Kibana (for log data)</span></dt><dd><p>
+     An open source analytics and visualization platform
+     designed to work with Elasticsearch.
+    </p></dd></dl></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.8.15"><span class="name">Metrics Agent</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.15">#</a></h5></div><p>
+  A Metrics Agent is required for retrieving metrics data from the host on
+  which it runs and sending the metrics data to the Monitoring Service. The
+  agent supports metrics from a variety of sources as well as a number of
+  built-in system and service checks.
+ </p><p>
+  A Metrics Agent can be installed on each virtual or physical server to be
+  monitored.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_blank">monasca Wiki</a>.
+ </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.8.19"><span class="name">Log Agent</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.19">#</a></h5></div><p>
+  A Log Agent is needed for collecting log data from the host on which it runs
+  and forwarding the log data to the Monitoring Service for further processing.
+  It can be installed on each virtual or physical server from which log data is
+  to be retrieved.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_blank">monasca Wiki</a>.
+ </p><div class="sect2" id="id-1.5.6.8.22"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Agents and Services</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.8.22">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-architecture.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
+      </td><td>Centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</td></tr><tr><td><code class="literal">storm-nimbus</code>
+      </td><td>Storm is a distributed real-time computation system for processing large volumes of high-velocity data. The Storm Nimbus daemon is responsible for distributing code around a cluster, assigning tasks to machines, and monitoring for failures. </td></tr><tr><td><code class="literal">storm-supervisor</code>
+      </td><td>The Storm supervisor listens for work assigned to its machine and starts and stops worker processes as necessary based on what Nimbus has assigned to it.</td></tr><tr><td><code class="literal">mariadb</code>
+      </td><td>MariaDB database service. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring stores configuration information in this database. </td></tr><tr><td><code class="literal">kafka</code>
+      </td><td>Message queue service.</td></tr><tr><td><code class="literal">influxdb</code>
+      </td><td>InfluxDB database service. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring stores metrics and alarms in this database.</td></tr><tr><td><code class="literal">elasticsearch</code>
+      </td><td>Elasticsearch database service. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring stores the log data in this database.</td></tr><tr><td><code class="literal">memcached</code>
+      </td><td>Memcached service. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses it for caching authentication and authorization information required for the communication between the Log API and <span class="productname">OpenStack</span> keystone.</td></tr><tr><td><code class="literal">openstack-monasca-notification</code>
+      </td><td>Notification Engine. </td></tr><tr><td><code class="literal">openstack-monasca-thresh</code>
+      </td><td>Threshold Engine. </td></tr><tr><td><code class="literal">openstack-monasca-log-transformer</code>
+      </td><td>Log Transformer. </td></tr><tr><td><code class="literal">apache2</code>
+      </td><td>Log and monitoring API.</td></tr><tr><td><code class="literal">openstack-monasca-persister </code>
+      </td><td>Persister. </td></tr><tr><td><code class="literal">openstack-monasca-agent</code>
+      </td><td>Metrics Agent.</td></tr><tr><td><code class="literal">kibana</code>
+      </td><td>Kibana server.</td></tr><tr><td><code class="literal">openstack-monasca-log-persister</code>
+      </td><td>Log Persister. </td></tr><tr><td><code class="literal">openstack-monasca-log-metrics</code>
+      </td><td>Log Metrics.</td></tr><tr><td><code class="literal">openstack-monasca-log-agent</code>
+      </td><td>Log Agent.</td></tr></tbody></table></div></div></div><div class="sect1" id="basic-usage-scenario"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Basic Usage Scenario</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#basic-usage-scenario">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-basic-usage.xml</li><li><span class="ds-label">ID: </span>basic-usage-scenario</li></ul></div></div></div></div><p>
+  The monitoring solution of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  addresses the requirements of large-scale public and private clouds where
+  high numbers of physical and virtual servers need to be monitored and huge
+  amounts of monitoring data need to be managed. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  consolidates metrics, alarms, and notifications, as well
+  as health and status information from multiple systems, thus reducing the
+  complexity and allowing for a higher level analysis of the monitoring data.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring covers all aspects of a
+  Monitoring as a Service solution:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Storage of monitoring data in a resilient way.
+   </p></li><li class="listitem "><p>
+    Multi-tenancy architecture for submitting and streaming metrics. The
+    architecture ensures the secure isolation of metrics data.
+   </p></li><li class="listitem "><p>
+    horizontal and vertical scalability to support constantly evolving cloud
+    infrastructures. When physical and virtual servers are scaled up or down to
+    varying loads, the monitoring solution can be adapted accordingly.
+   </p></li></ul></div><p>
+  The basic usage scenario of setting up and using the monitoring features of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring looks as follows:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-metricslogs.png" target="_blank"><img src="images/images-metricslogs.png" width="" alt="MetricsLogs.png" /></a></div></div><p>
+  The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+  responsible for providing the monitoring features to the application
+  operators and the <span class="productname">OpenStack</span> operator. This enables the application operators
+  and the <span class="productname">OpenStack</span> operator to focus on operation and ensure the quality of
+  their services without having to carry out the tedious tasks implied by
+  setting up and administrating their own system monitoring software. The
+  Monitoring Service operator uses the features for monitoring the
+  operation of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+ </p><p>
+  As the Monitoring Service operator, you have the following responsibilities:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Deploying the Monitoring Service, thus providing the monitoring features to
+    the application operators, and the monitoring and log management features
+    to the <span class="productname">OpenStack</span> operator.
+   </p></li><li class="listitem "><p>
+    Regular maintenance of the components and services for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+   </p></li><li class="listitem "><p>
+    Backup of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring databases,
+    configuration files, and customized dashboards.
+   </p></li><li class="listitem "><p>
+    Monitoring of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring for quality
+    assurance.</p></li></ul></div><p>
+  <span class="bold"><strong>Application operators</strong></span> monitor the virtual
+  machines on which they provide services to <span class="bold"><strong>end
+  users</strong></span> or services they need for their development activities. They
+  ensure that the physical and virtual servers on which their services are
+  provided are up and running as required.
+ </p><p>
+  The <span class="bold"><strong><span class="productname">OpenStack</span> operator</strong></span> is responsible for
+  administrating and maintaining the underlying <span class="productname">OpenStack</span> platform. The
+  monitoring and log management services of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  enable you to ensure the availability and quality of your platform.
+  You use <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring for:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Monitoring physical and virtual servers, hypervisors, and <span class="productname">OpenStack</span>
+    services.
+   </p></li><li class="listitem "><p>
+    Monitoring middleware components, for example, database services.
+   </p></li><li class="listitem "><p>
+    Retrieving and analyzing the log data of the <span class="productname">OpenStack</span> services and
+    servers, the middleware components, and the operating system.
+   </p></li></ul></div><div class="sect2" id="metrics-monitoring"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metrics</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#metrics-monitoring">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-basic-usage.xml</li><li><span class="ds-label">ID: </span>metrics-monitoring</li></ul></div></div></div></div><p>
+   A Metrics Agent can be installed and configured on each physical and virtual
+   server where cloud resources are to be monitored. The agent is responsible
+   for querying metrics and sending the data to the Monitoring Service for
+   further processing.
+  </p><p>
+   Metrics are self-describing data structures that are uniquely identified by a
+   name and a set of dimensions. Each dimension consists of a key/value pair
+   that allows for a flexible and concise description of the data to be
+   monitored, for example, region, availability zone, service tier, or resource
+   ID.
+  </p><p>
+   The Metrics Agent supports various types of metrics including the following:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     System metrics, for example, CPU usage, consumed disk space, or network
+     traffic.
+    </p></li><li class="listitem "><p>
+     Host alive checks. The agent can perform active checks on a host to
+     determine whether it is alive using ping (ICMP) or SSH.
+    </p></li><li class="listitem "><p>
+     Process checks. The agent can check and monitor a process, for example, the
+     number of instances, memory size, or number of threads.
+    </p></li><li class="listitem "><p>
+     HTTP endpoint checks. The agent can perform up/down checks on HTTP
+     endpoints by sending an HTTP request and reporting success or failure to
+     the Monitoring Service.
+    </p></li><li class="listitem "><p>
+     Service checks. The agent can check middleware services, for example,
+     MySQL, Kafka, or RabbitMQ.
+    </p></li><li class="listitem "><p>
+     <span class="productname">OpenStack</span> services. The agent can perform specific checks on each process
+     that is part of an <span class="productname">OpenStack</span> service.
+    </p></li><li class="listitem "><p>
+     Log metrics. The agent can check and monitor the number of critical log
+     entries in the log data retrieved from the cloud resources.
+    </p></li></ul></div></div><div class="sect2" id="data-visualization-analysis"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Data Visualization and Analysis</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#data-visualization-analysis">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-basic-usage.xml</li><li><span class="ds-label">ID: </span>data-visualization-analysis</li></ul></div></div></div></div><p>
+    All <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring user groups work with a
+    graphical user interface that is seamlessly integrated into their cloud
+    infrastructure. <span class="phrase">Based on <span class="productname">OpenStack</span> horizon, the user interface
+    enables access to all monitoring functionality and the resulting large-scale
+    monitoring data.</span>
+   </p><p>
+    A comfortable dashboard visualizes the health and status of the cloud
+    resources. It allows <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users
+    to experiment with many ways of analyzing the performance of their cloud
+    resources in real-time. They cannot only view but also share and explore
+    visualizations of their monitoring data.
+   </p></div><div class="sect2" id="alarms-notifications"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Alarms and Notifications</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#alarms-notifications">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-basic-usage.xml</li><li><span class="ds-label">ID: </span>alarms-notifications</li></ul></div></div></div></div><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports GUI-based alarm and
+    notification management. <span class="phrase">Template-based alarm definitions allow for
+    monitoring a dynamically changing set of resources without the need for
+    reconfiguration. While the number of underlying virtual machines is changing,
+    for example, this ensures the efficient monitoring of scalable cloud
+    services. Alarm definitions allow you to specify expressions that are
+    evaluated based on the metrics data that is received. Alarm definitions can
+    be combined to form compound alarms. Compound alarms allow you to track and
+    process even more complex events. Notifications can be configured in order to
+    inform <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users when an alarm
+    is triggered.</span>
+   </p></div></div><div class="sect1" id="key-features"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Key Features</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#key-features">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-key-features.xml</li><li><span class="ds-label">ID: </span>key-features</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring is an out-of-the-box
+  solution for monitoring <span class="productname">OpenStack</span>-based cloud environments. It is provided as
+  a cloud service to users. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  meets different challenges, ranging from small-scale deployments to
+  high-availability deployments and deployments with high levels of
+  scalability.
+ </p><p>
+  The core of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring is monasca, an
+  open source Monitoring as a Service solution that integrates with <span class="productname">OpenStack</span>.
+  The key features of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring form an
+  integral part of the monasca project. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  extends the source code base of the project through
+  active contributions.
+ </p><p>
+  Compared to the monasca community edition, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  provides the following added value:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Packaging as a commercial enterprise solution
+   </p></li><li class="listitem "><p>
+    Enterprise-level support
+   </p></li></ul></div><p>
+  The key features of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring address
+  public as well as private cloud service providers. They include:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Monitoring
+   </p></li><li class="listitem "><p>
+    Metrics
+   </p></li><li class="listitem "><p>
+    Log management
+   </p></li><li class="listitem "><p>
+    Integration with <span class="productname">OpenStack</span>
+   </p></li></ul></div><div class="sect2" id="monitoring"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#monitoring">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-key-features.xml</li><li><span class="ds-label">ID: </span>monitoring</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring is a highly scalable and
+  fault tolerant monitoring solution for <span class="productname">OpenStack</span>-based cloud infrastructures.
+ </p><p>
+  The system operator of the cloud infrastructure and the service providers do
+  not have to care for system monitoring software any longer. They use
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring to check whether their
+  services and servers are working appropriately.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides comprehensive and
+  configurable metrics with reasonable defaults for monitoring the status,
+  capacity, throughput, and latency of cloud systems. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  users can set their own warnings and critical
+  thresholds and can combine multiple warnings and thresholds to support the
+  processing of complex events. Combined with a notification system, these
+  alerting features enable them to quickly analyze and resolve problems in the
+  cloud infrastructure.
+ </p></div><div class="sect2" id="metrics"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metrics</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#metrics">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-key-features.xml</li><li><span class="ds-label">ID: </span>metrics</li></ul></div></div></div></div><p>
+  The Metrics agent is responsible for querying metrics and sending them to the
+  Monitoring Service for further processing.
+ </p><p>
+  Metrics are self-describing data structures that are uniquely identified by a
+  name and a set of dimensions. Each dimension consists of a key/value pair
+  that allows for a flexible and concise description of the data to be
+  monitored, for example, region, availability zone, service tier, or resource
+  ID.
+ </p><p>
+  The Metrics Agent supports various types of metrics including the following:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    System metrics, for example, CPU usage, consumed disk space, or network
+    traffic.
+   </p></li><li class="listitem "><p>
+    Host alive checks. The agent can perform active checks on a host to
+    determine whether it is alive using ping (ICMP) or SSH.
+   </p></li><li class="listitem "><p>
+    Process checks. The agent can check and monitor a process, for example, the
+    number of instances, memory size, or number of threads.
+   </p></li><li class="listitem "><p>
+    HTTP endpoint checks. The agent can perform up/down checks on HTTP
+    endpoints by sending an HTTP request and reporting success or failure to
+    the Monitoring Service.
+   </p></li><li class="listitem "><p>
+    Service checks. The agent can check middleware services, for example,
+    MySQL, Kafka, or RabbitMQ.
+   </p></li><li class="listitem "><p>
+    <span class="productname">OpenStack</span> services. The agent can perform specific checks on each process
+    that is part of an <span class="productname">OpenStack</span> service.
+   </p></li><li class="listitem "><p>
+    Log metrics. The agent can check and monitor the number of critical log
+    entries in the log data retrieved from the cloud resources.
+   </p></li></ul></div><p>
+  Your individual agent configuration determines which metrics are available
+  for monitoring your services and servers. For details on installing and
+  configuring a Metrics Agent, see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”</span>.
+ </p><p>
+  As soon as an agent is available, you have access to the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  monitoring features. You work with a
+  graphical user interface that is seamlessly integrated into your cloud
+  infrastructure. Based on <span class="productname">OpenStack</span> horizon, the user interface enables access
+  to all monitoring functionality and the resulting large-scale monitoring
+  data. A comfortable dashboard visualizes the health and status of your cloud
+  resources.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides functions for alarm
+  and notification management. <span class="phrase">Template-based alarm definitions allow
+  for monitoring a dynamically changing set of resources without the need for
+  reconfiguration. While the number of underlying virtual machines is changing,
+  for example, this ensures the efficient monitoring of scalable cloud
+  services. Alarm definitions allow you to specify expressions that are
+  evaluated based on the metrics data that is received. Alarm definitions can
+  be combined to form compound alarms. Compound alarms allow you to track and
+  process even more complex events. Notifications can be configured in order to
+  inform <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users when an alarm
+  is triggered.</span>
+ </p></div><div class="sect2" id="log-management"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Management</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#log-management">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-key-features.xml</li><li><span class="ds-label">ID: </span>log-management</li></ul></div></div></div></div><p>
+  With the increasing complexity of cloud infrastructures, it is becoming more
+  and more difficult and time-consuming for the system operator to gather,
+  store, and query the large amounts of log data manually. To cope with these
+  problems, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides
+  centralized log management features.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring stores the log data in a
+  central database. This forms the basis for visualizing the log data for the
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users. Advanced data
+  analysis and visualization of the log data is supported in a variety of
+  charts, tables, and maps. Visualizations can easily be combined in dynamic
+  dashboards that display changes to search queries in real time.
+ </p><p>The log data from a large number of sources can be accessed from a
+  single dashboard. Integrated search, filter, and graphics options enable
+  system operators to isolate problems and narrow down potential root causes.
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring thus provides valuable
+  insights into the log data, even with large amounts of data resulting
+  from highly complex environments.
+ </p><p>
+  Based on <span class="productname">OpenStack</span> horizon, the customizable dashboards are seamlessly
+  integrated into your cloud infrastructure. They enable user access to all log
+  management functionality.
+ </p><p>
+  GUI-based alarm and notification management is also supported for log data.
+  Based on a template mechanism, you can configure alarms and notifications to
+  monitor the number of critical log events over time. Compound alarms can be
+  created to analyze more complex log events. This automation of log handling
+  guarantees that you can identify problems in your their infrastructure early
+  and find the root cause quickly.
+ </p></div><div class="sect2" id="openstack-integration"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integration with <span class="productname">OpenStack</span></span> <a title="Permalink" class="permalink" href="soc-monitoring.html#openstack-integration">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-key-features.xml</li><li><span class="ds-label">ID: </span>openstack-integration</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring is integrated with <span class="productname">OpenStack</span>
+  core services. These include:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <span class="productname">OpenStack</span> horizon dashboard for visualizing monitoring metrics and log data
+   </p></li><li class="listitem "><p>
+    <span class="productname">OpenStack</span> user management
+   </p></li><li class="listitem "><p>
+    <span class="productname">OpenStack</span> security and access control
+   </p></li></ul></div></div></div><div class="sect1" id="components"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Components</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#components">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-components.xml</li><li><span class="ds-label">ID: </span>components</li></ul></div></div></div></div><p>
+  The following illustration provides an overview of the main components of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-overview-structure.png" target="_blank"><img src="images/images-overview-structure.png" width="" alt="structure_new.png" /></a></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring relies on <span class="productname">OpenStack</span> as
+  technology for building cloud computing platforms for public and private
+  clouds. <span class="productname">OpenStack</span> consists of a series of interrelated projects delivering
+  various components for a cloud infrastructure solution and allowing for the
+  deployment and management of Infrastructure as a Service (IaaS) platforms.
+ </p><p>
+  For details on <span class="productname">OpenStack</span>, refer to the
+  <a class="link" href="http://docs.openstack.org/" target="_blank"><span class="productname">OpenStack</span> documentation</a>.
+ </p><div class="sect2" id="monitoring-service"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring Service</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#monitoring-service">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-components.xml</li><li><span class="ds-label">ID: </span>monitoring-service</li></ul></div></div></div></div><p>
+  The Monitoring Service is the central <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  component. It is responsible for receiving, persisting,
+  and processing metrics and log data, as well as providing the data to the
+  users.
+ </p><p>
+  The Monitoring Service relies on monasca. It uses monasca for high-speed
+  metrics querying and integrates the streaming alarm engine and the
+  notification engine of monasca. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_blank">monasca Wiki</a>.
+ </p></div><div class="sect2" id="horizon-plugin"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Horizon Plugin</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#horizon-plugin">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-components.xml</li><li><span class="ds-label">ID: </span>horizon-plugin</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring comes with a plugin for the
+  <span class="productname">OpenStack</span> horizon dashboard. The horizon plugin extends the main dashboard in
+  <span class="productname">OpenStack</span> with a view for monitoring. This enables <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  users to access the monitoring and log management
+  functions from a central Web-based graphical user interface. Metrics and log
+  data are visualized on a comfortable and easy-to-use dashboard.
+ </p><p>
+  For details, refer to the
+  <a class="link" href="http://docs.openstack.org/developer/horizon/" target="_blank"><span class="productname">OpenStack</span> horizon
+  documentation</a>.
+ </p><p>
+  Based on <span class="productname">OpenStack</span> horizon, the monitoring data is visualized on a
+  comfortable and easy-to-use dashboard which fully integrates with the
+  following applications:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Grafana (for metrics data). An open source application for visualizing
+     large-scale measurement data.
+    </p></li><li class="listitem "><p>
+     Kibana (for log data). An open source analytics and visualization platform
+     designed to work with Elasticsearch.
+    </p></li></ul></div></div><div class="sect2" id="metrics-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metrics Agent</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#metrics-agent">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-components.xml</li><li><span class="ds-label">ID: </span>metrics-agent</li></ul></div></div></div></div><p>
+  A Metrics Agent is required for retrieving metrics data from the host on
+  which it runs and sending the metrics data to the Monitoring Service. The
+  agent supports metrics from a variety of sources as well as a number of
+  built-in system and service checks.
+ </p><p>
+  A Metrics Agent can be installed on each virtual or physical server to be
+  monitored.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_blank">monasca Wiki</a>.
+ </p></div><div class="sect2" id="log-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Agent</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#log-agent">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-components.xml</li><li><span class="ds-label">ID: </span>log-agent</li></ul></div></div></div></div><p>
+  A Log Agent is needed for collecting log data from the host on which it runs
+  and forwarding the log data to the Monitoring Service for further processing.
+  It can be installed on each virtual or physical server from which log data is
+  to be retrieved.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_blank">monasca Wiki</a>.
+ </p></div></div><div class="sect1" id="users-roles"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Users and Roles</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#users-roles">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-user-roles.xml</li><li><span class="ds-label">ID: </span>users-roles</li></ul></div></div></div></div><p>
+  <span class="phrase">CMM</span> users can be grouped by their role. The following user
+  roles are distinguished:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    An <span class="bold"><strong>application operator</strong></span> acts as a service
+    provider in the <span class="productname">OpenStack</span> environment. He books virtual machines in
+    <span class="productname">OpenStack</span> to provide services to end users or to host services that he
+    needs for his own development activities. <span class="phrase">CMM</span> helps
+    application operators to ensure the quality of their services in the cloud.
+   </p><p>
+    For details on the tasks of the application operator, refer to the
+    <span class="emphasis"><em>Application Operator's Guide</em></span>.
+   </p></li><li class="listitem "><p>
+    The<span class="bold"><strong> <span class="productname">OpenStack</span> operator</strong></span> is a special
+    application operator. He is responsible for administrating and maintaining
+    the underlying <span class="productname">OpenStack</span> platform and ensures the availability and quality
+    of the <span class="productname">OpenStack</span> services (e.g. heat, nova, cinder, swift, glance, or
+    keystone).
+   </p><p>
+    For details on the tasks of the <span class="productname">OpenStack</span> operator, refer to the
+    <span class="emphasis"><em><span class="productname">OpenStack</span> Operator's Guide</em></span>.
+   </p></li><li class="listitem "><p>
+    The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+    responsible for administrating and maintaining <span class="phrase">CMM</span>. He
+    provides the cloud monitoring services to the other users and ensures the
+    quality of the Monitoring Service.
+   </p><p>
+    For details on the tasks of the Monitoring Service operator, refer to the
+    <span class="emphasis"><em>Monitoring Service Operator's Guide</em></span>.
+   </p></li></ul></div><div class="sect2" id="user-management"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User Management</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#user-management">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-user-roles.xml</li><li><span class="ds-label">ID: </span>user-management</li></ul></div></div></div></div><p>
+  <span class="phrase">CMM</span> is fully integrated with keystone, the identity service
+  which serves as the common authentication and authorization system in
+  <span class="productname">OpenStack</span>.
+ </p><p>
+  The <span class="phrase">CMM</span> integration with keystone requires any
+  <span class="phrase">CMM</span> user to be registered as an <span class="productname">OpenStack</span> user. All
+  authentication and authorization in <span class="phrase">CMM</span> is done through
+  keystone. If a user requests monitoring data, for example,
+  <span class="phrase">CMM</span> verifies that the user is a valid user in <span class="productname">OpenStack</span> and
+  allowed to access the requested metrics.
+ </p><p>
+  <span class="phrase">CMM</span> users are created and administrated in <span class="productname">OpenStack</span>:
+ </p><div class="itemizedlist " id="Each-user-assumes-a-role-in-O-concept-conbody-section-2-ul"><ul class="itemizedlist"><li class="listitem "><p>
+    Each user assumes a role in <span class="productname">OpenStack</span> to perform a specific set of
+    operations. The <span class="productname">OpenStack</span> role specifies a set of rights and privileges.
+   </p></li><li class="listitem "><p>
+    Each user is assigned to at least one project in <span class="productname">OpenStack</span>. A project is an
+    organizational unit that defines a set of resources which can be accessed
+    by the assigned users.
+   </p><p>
+    Application operators in <span class="phrase">CMM</span> can monitor the set of
+    resources that is defined for the projects to which they are assigned.
+   </p></li></ul></div><p>
+  For details on user management, refer to the
+  <a class="link" href="http://docs.openstack.org/" target="_blank"><span class="productname">OpenStack</span> documentation</a>.
+ </p></div></div><div class="sect1" id="ops-maintenance"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operation and Maintenance</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#ops-maintenance">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-ops-maintenance.xml</li><li><span class="ds-label">ID: </span>ops-maintenance</li></ul></div></div></div></div><p>
+  Regular operation and maintenance includes:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Configuring data retention for the InfluxDB database. This can be
+    configured in the monasca barclamp. For details, see
+    <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”</span>.
+   </p></li><li class="listitem "><p>
+    Configuring data retention for the Elasticsearch database. This can be
+    configured in the monasca barclamp. For details, see
+    <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”</span>.
+   </p></li><li class="listitem "><p>
+    Removing metrics data from the InfluxDB database.
+   </p></li><li class="listitem "><p>
+    Removing log data from the Elasticsearch database.
+   </p></li><li class="listitem "><p>
+    Handling log files of agents and services.
+   </p></li><li class="listitem "><p>
+    Backup and recovery of databases, configuration files, and dashboards.
+   </p></li></ul></div><div class="sect2" id="id-1.5.6.13.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing Metrics Data</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-remove-metrics.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  Metrics data is stored in the Metrics and Alarms InfluxDB Database. InfluxDB
+  features an SQL-like query language for querying data and performing
+  aggregations on that data.
+ </p><p>
+  The Metrics Agent configuration defines the metrics and types of measurement
+  for which data is stored. For each measurement, a so-called series is written
+  to the InfluxDB database. A series consists of a timestamp, the metrics, and
+  the value measured.
+ </p><p>
+  Every series can be assigned key tags. In the case of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring,
+  this is the <code class="literal">_tenant_id</code> tag.
+  This tag identifies the <span class="productname">OpenStack</span> project for which the metrics data has been
+  collected.
+ </p><p>
+  From time to time, you may want to delete outdated or unnecessary metrics
+  data from the Metrics and Alarms Database, for example, to save space or
+  remove data for metrics you are no longer interested in. To delete data, you
+  use the InfluxDB command line interface, the interactive shell that is
+  provided for the InfluxDB database.
+ </p><p>
+  Proceed as follows to delete metrics data from the database:
+ </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+    Create a backup of the database.
+   </p></li><li class="listitem "><p>
+    Determine the ID of the <span class="productname">OpenStack</span> project for the data to be deleted:
+   </p><p>
+    Log in to the <span class="productname">OpenStack</span> dashboard and go to <span class="bold"><strong>Identity
+    &gt; Projects</strong></span>!m. The <code class="literal">monasca</code> project initially
+    provides all metrics data related to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+   </p><p>
+    In the course of the productive operation of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring,
+    additional projects may be created, for example, for
+    application operators.
+   </p><p>
+    The <span class="bold"><strong>Project ID</strong></span> field shows the relevant
+    tenant ID.
+   </p></li><li class="listitem "><p>
+    Log in to the host where the Monitoring Service is installed.
+   </p></li><li class="listitem "><p>
+    Go to the directory where InfluxDB is installed:
+   </p><div class="verbatim-wrap"><pre class="screen">cd /usr/bin</pre></div></li><li class="listitem "><p>
+    Connect to InfluxDB using the InfluxDB command line interface as follows:
+   </p><div class="verbatim-wrap"><pre class="screen">./influx -host &lt;host_ip&gt;</pre></div><p>
+    Replace <code class="literal">&lt;host_ip&gt;</code> with the IP address of the
+    machine on which <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring is
+    installed.
+   </p><p>
+    The output of this command is, for example, as follows:
+   </p><div class="verbatim-wrap"><pre class="screen">Connected to http://localhost:8086 version 1.1.1
+InfluxDB shell version: 1.1.1</pre></div></li><li class="listitem "><p>
+    Connect to the InfluxDB database of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+    (<code class="literal">mon</code>):
+   </p><div class="verbatim-wrap"><pre class="screen">&gt; show databases
+name: databases
+name
+----
+mon
+_internal
+
+&gt; use mon
+Using database mon</pre></div></li><li class="listitem "><p>
+    Check the outdated or unnecessary data to be deleted.
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      You can view all measurements for a specific project as follows:
+     </p><div class="verbatim-wrap"><pre class="screen">SHOW MEASUREMENTS WHERE _tenant_id = '&lt;project ID&gt;'</pre></div></li><li class="listitem "><p>
+      You can view the series for a specific metrics and project, for example,
+      as follows:
+     </p><div class="verbatim-wrap"><pre class="screen">SHOW SERIES FROM "cpu.user_perc" WHERE _tenant_id = '&lt;project ID&gt;'</pre></div></li></ul></div></li><li class="listitem "><p>
+    Delete the desired data.
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      When a project is no longer relevant or a specific tenant is no longer
+      used, delete all series for the project as follows:
+     </p><div class="verbatim-wrap"><pre class="screen">DROP SERIES WHERE _tenant_id = '&lt;project ID&gt;'</pre></div><p>
+      Example:
+     </p><div class="verbatim-wrap"><pre class="screen">DROP SERIES WHERE _tenant_id = '27620d7ee6e948e29172f1d0950bd6f4'</pre></div></li><li class="listitem "><p>
+      When a metrics is no longer relevant for a project, delete all series for
+      the specific project and metrics as follows:
+     </p><div class="verbatim-wrap"><pre class="screen">DROP SERIES FROM "&lt;metrics&gt;" WHERE _tenant_id = '&lt;project ID&gt;'</pre></div><p>
+      Example:
+     </p><div class="verbatim-wrap"><pre class="screen">DROP SERIES FROM "cpu.user_perc" WHERE _tenant_id = '27620d7e'</pre></div></li></ul></div></li><li class="listitem "><p>
+    Restart the <code class="literal">influxdb</code> service, for example, as follows:
+   </p><div class="verbatim-wrap"><pre class="screen">sudo systemctl restart influxdb</pre></div></li></ol></div></div><div class="sect2" id="id-1.5.6.13.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing Log Data</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-remove-logs.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  Log data is stored in the Elasticsearch database. Elasticsearch stores the
+  data in indices. One index per day is created for every <span class="productname">OpenStack</span> project.
+ </p><p>
+  By default, the indices are stored in the following directory on the host
+  where the Monitoring Service is installed:
+ </p><p>
+  <code class="literal">/var/data/elasticsearch/&lt;cluster-name&gt;/nodes/&lt;node-name&gt;</code>
+ </p><p>
+  Example:
+ </p><p>
+  <code class="literal">/var/data/elasticsearch/elasticsearch/nodes/0</code>
+ </p><div id="id-1.5.6.13.5.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   If your system uses a different directory, look up the
+   <code class="literal">path.data</code> parameter in the Elasticsearch configuration
+   file, <code class="literal">/etc/elasticsearch/elasticsearch.yml</code>.
+  </p></div><p>
+  If you want to delete outdated or unnecessary log data from the Elasticsearch
+  database, proceed as follows:
+ </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+    Make sure that <code class="literal">curl</code> is installed. If this is not the
+    case, install the package with
+   </p><div class="verbatim-wrap"><pre class="screen">sudo zypper in curl</pre></div></li><li class="listitem "><p>
+    Create a backup of the Elasticsearch database.
+   </p></li><li class="listitem "><p>
+    Determine the ID of the <span class="productname">OpenStack</span> project for the data to be deleted:
+   </p><p>
+    Log in to the <span class="productname">OpenStack</span> dashboard and go to <span class="bold"><strong>Identity
+    &gt; Projects</strong></span>.  The <code class="literal">monasca</code> project initially
+    provides a ll metrics data related to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+   </p><p>
+    In the course of the productive operation of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring,
+    additional projects may be created.
+   </p><p>
+    The <span class="bold"><strong>Project ID</strong></span> field shows the relevant
+    ID.
+   </p></li><li class="listitem "><p>
+    Log in to the host where the Monitoring Service is installed.
+   </p></li><li class="listitem "><p>
+    Make sure that the data you want to delete exists by executing the
+    following command:
+   </p><div class="verbatim-wrap"><pre class="screen">curl -XHEAD -i 'http://localhost:&lt;port&gt;/&lt;projectID-date&gt;'</pre></div><p>
+    For example, if Elasticsearch is listening at port 9200 (default), the ID
+    of the <span class="productname">OpenStack</span> project is <code class="literal">abc123</code>, and you want to
+    check the index of 2015, July 1st, the command is as follows:
+   </p><div class="verbatim-wrap"><pre class="screen">curl -XHEAD -i 'http://localhost:9200/abc123-2015-07-01'</pre></div><p>
+    If the HTTP response is <code class="literal">200</code>, the index exists; if the
+    response is <code class="literal">404</code>, it does not exist.
+   </p></li><li class="listitem "><p>
+    Delete the index as follows:
+   </p><div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:&lt;port&gt;/&lt;projectID-date&gt;'</pre></div><p>
+    Example:
+   </p><div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-01'</pre></div><p>
+    This command either returns an error, such as
+    <code class="literal">IndexMissingException</code>, or acknowledges the successful
+    deletion of the index.
+   </p></li></ol></div><div id="id-1.5.6.13.5.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   Be aware that the <code class="literal">-XDELETE</code> command immediately deletes
+   the index file!
+  </p></div><p>
+  Both, for <code class="literal">-XHEAD</code> and <code class="literal">-XDELETE</code>, you can
+  use wildcards for processing several indices. For example, you can delete all
+  indices of a specific project for the whole month of July, 2015:
+ </p><div class="verbatim-wrap"><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-*'</pre></div><div id="id-1.5.6.13.5.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   Take extreme care when using wildcards for the deletion of indices. You
+   could delete all existing indices with one single command!
+  </p></div></div><div class="sect2" id="id-1.5.6.13.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log File Handling</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-log-file-handling.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  In case of trouble with the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  services, you can study their log files to find the reason. The log files are
+  also useful if you need to contact your support organization. For storing the
+  log files, the default installation uses the <code class="literal">/var/log</code>
+  directory on the hosts where the agents or services are installed.
+ </p><p>
+  You can use <code class="literal">systemd</code>, a system and session manager for
+  LINUX, and <code class="literal">journald</code>, a LINUX logging interface, for
+  addressing dispersed log files.
+ </p><p>
+  The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring installer automatically
+  puts all <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring services under the
+  control of <code class="literal">systemd</code>. <code class="literal">journald</code> provides a
+  centralized management solution for the logging of all processes that are
+  controlled by <code class="literal">systemd</code>. The logs are collected and managed
+  in a so-called journal controlled by the <code class="literal">journald</code> daemon.
+ </p><p>
+  For details on the <code class="literal">systemd</code> and <code class="literal">journald</code>
+  utilities, refer to the
+  <a class="link" href="https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#part-system" target="_blank">https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#part-system</a>.
+ </p></div><div class="sect2" id="backup-recovery"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Recovery</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#backup-recovery">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-backup-recovery.xml</li><li><span class="ds-label">ID: </span>backup-recovery</li></ul></div></div></div></div><p>
+  Typical tasks of the Monitoring Service operator are to make regular backups,
+  particularly of the data created during operation.
+ </p><p>
+  At regular intervals, you should make a backup of all:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Databases.
+   </p></li><li class="listitem "><p>
+    Configuration files of the individual agents and services.
+   </p></li><li class="listitem "><p>
+    Monitoring and log dashboards you have created and saved.
+   </p></li></ul></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring does not offer integrated
+  backup and recovery mechanisms. Instead, use the mechanisms and
+  procedures of the individual components.
+ </p><div class="sect3" id="id-1.5.6.13.7.6"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.7.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Databases</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.6">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-backup-recovery.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   You need to create regular backups of the following databases on the host
+   where the Monitoring Service is installed:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Elasticsearch database for historic log data.
+    </p></li><li class="listitem "><p>
+     InfluxDB database for historic metrics data.
+    </p></li><li class="listitem "><p>
+     MariaDB database for historic configuration information.
+    </p></li></ul></div><p>
+   It is recommended that backup and restore operations for databases are
+   carried out by experienced operators only.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.13.7.6.5"><span class="name">Preparations</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.6.5">#</a></h5></div><p>
+ Before backing up and restoring a database, we recommend stopping the Monitoring
+ API and the Log API on the <code class="literal">monasca-server</code> node, and check that all data is processed.
+ This ensures that no data is written to a database during a backup and restore operation.
+ After backing up and restoring a database, restart the APIs.
+ </p><p>
+ To stop the Monitoring API and the Log API, use the following command:
+ </p><div class="verbatim-wrap"><pre class="screen">systemctl stop apache2</pre></div><p>
+ To check that all Kafka queues are empty, list the existing consumer groups and
+ check the LAG column for each group. It should be 0. For example:
+ </p><div class="verbatim-wrap"><pre class="screen"> kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --list
+ kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+  --group 1_metrics | column -t -s ','
+ kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+  --group transformer-logstash-consumer | column -t -s ','
+ kafka-consumer-groups.sh --zookeeper 192.168.56.81:2181 --describe \
+  --group thresh-metric | column -t -s ','</pre></div><p>
+ To restart the Monitoring API and the Log API, use the following command:
+ </p><div class="verbatim-wrap"><pre class="screen">systemctl start apache2</pre></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.13.7.6.13"><span class="name">Elasticsearch Database</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.6.13">#</a></h5></div><p>
+   For backing up and restoring your Elasticsearch database, use the
+   Snapshot and Restore module of Elasticsearch.
+  </p><p>
+   To create a backup of the database, proceed as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Make sure that <code class="command">curl</code> is installed, <code class="command">zypper in curl</code>.
+    </p></li><li class="listitem "><p>
+     Log in to the host where the Monitoring Service is installed.
+    </p></li><li class="listitem "><p>
+     Create a snapshot repository. You need the Elasticsearch bind address for
+     all commands. run <code class="command">grep network.bind_host /etc/elasticsearch/elasticsearch.yml</code>
+     to find the bind address, and replace <em class="replaceable ">IP</em> in the
+     following commands with this address. For example:
+    </p><div class="verbatim-wrap"><pre class="screen">curl -XPUT http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup -d '{
+   "type": "fs",
+   "settings": {
+        "location": "/mount/backup/elasticsearch1/my_backup",
+        "compress": true
+   }
+ }'</pre></div><p>
+     The example registers a shared file system repository (<code class="literal">"type":
+     "fs"</code>) that uses the
+     <code class="filename">/mount/backup/elasticsearch1</code> directory for storing
+     snapshots.
+    </p><div id="id-1.5.6.13.7.6.16.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      The directory for storing snapshots must be configured in the <code class="literal">elasticsearch/repo_dir</code>
+      setting in the monasca barclamp (see <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Crowbar</em>”, Chapter 12 “Deploying the <span class="productname">OpenStack</span> Services”, Section 12.19 “Deploying monasca”</span>).
+      The directory must be manually mounted before creating the snapshot. The
+      <code class="literal">elasticsearch</code> user must be specified as the owner of the directory.
+     </p></div><p>
+     <code class="literal">compress</code> is turned on to compress the metadata files.
+    </p></li><li class="listitem "><p>
+     Check whether the repository was created successfully:
+    </p><div class="verbatim-wrap"><pre class="screen">curl -XGET http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup</pre></div><p>
+     This example response shows a successfully created repository:
+    </p><div class="verbatim-wrap"><pre class="screen">{
+   "my_backup": {
+     "type": "fs",
+     "settings": {
+       "compress": "true",
+       "location": "/mount/backup/elasticsearch1/my_backup"
+     }
+   }
+ }</pre></div></li><li class="listitem "><p>
+     Create a snapshot of your database that contains all indices. A repository
+     can contain multiple snapshots of the same database. The name of a snapshot
+     must be unique within the snapshots created for your database, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">curl -XPUT http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup/snapshot_1?wait_for_completion=true</pre></div><p>
+     The example creates a snapshot named <code class="literal">snapshot_1</code> for all
+     indices in the <code class="literal">my_backup</code> repository.
+    </p></li></ol></div><p>
+   To restore the database instance, proceed as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Close all indices of your database, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">curl -XPOST http://<em class="replaceable ">IP</em>:9200/_all/_close</pre></div></li><li class="listitem "><p>
+     Restore all indices from the snapshot you have created, for example:
+ </p><div class="verbatim-wrap"><pre class="screen">curl -XPOST http://<em class="replaceable ">IP</em>:9200/_snapshot/my_backup/snapshot_1/_restore</pre></div><p>
+     The example restores all indices from <code class="literal">snapshot_1</code> that is
+     stored in the <code class="literal">my_backup</code> repository.
+    </p></li></ol></div><p>
+   For additional information on backing up and restoring an Elasticsearch
+   database, refer to the
+   <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-snapshots.html" target="_blank">Elasticsearch documentation</a>.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.13.7.6.20"><span class="name">InfluxDB Database</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.6.20">#</a></h5></div><p>
+   For backing up and restoring your InfluxDB database, you can use the InfluxDB
+   shell. The shell is part of your InfluxDB distribution. If you installed
+   InfluxDB via a package manager, the shell is, by default, installed in the
+   <code class="filename">/usr/bin</code> directory.
+  </p><p>
+   To create a backup of the database, proceed as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the InfluxDB database as a user who is allowed to run the
+     <code class="literal">influxdb</code> service, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">su influxdb -s /bin/bash</pre></div></li><li class="listitem "><p>
+     Back up the database, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">influxd backup -database mon /mount/backup/mysnapshot</pre></div><p>
+        monasca is using <code class="literal">mon</code> as the name of the database
+     The example creates the backup for the database in
+     <code class="filename">/mount/backup/mysnapshot</code>.
+    </p></li></ol></div><p>
+   Before restoring the database, make sure that all database processes are shut
+   down. To restore the database, you can then proceed as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     If required, delete all files not included in the backup by dropping the database
+     before you carry out the restore operation. A restore operation restores all
+     files included in the backup. Files created or merged at a later point in time
+     are not affected. For example:
+    </p><div class="verbatim-wrap"><pre class="screen">influx -host <em class="replaceable ">IP</em> -execute 'drop database mon;'</pre></div><p>
+        Replace <em class="replaceable ">IP</em> with the IP address that the database
+        is listening to. You can run <code class="command">influxd config</code> and look up
+        the IP address in the <code class="literal">[http]</code> section.
+        </p></li><li class="listitem "><p>
+        Stop the InfluxDB database service:
+    </p><div class="verbatim-wrap"><pre class="screen"> systemctl stop influxdb</pre></div></li><li class="listitem "><p>
+     Log in to the InfluxDB database as a user who is allowed to run the
+     <code class="literal">influxdb</code> service:
+    </p><div class="verbatim-wrap"><pre class="screen">su influxdb -s /bin/bash</pre></div></li><li class="listitem "><p>
+    Restore the metastore:
+    </p><div class="verbatim-wrap"><pre class="screen">influxd restore -metadir /var/opt/influxdb/meta /mount/backup/mysnapshot</pre></div></li><li class="listitem "><p>
+     Restore the database, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">influxd restore -database mon -datadir /var/opt/influxdb/data /mount/backup/mysnapshot</pre></div><p>
+     The example restores the backup from
+     <code class="filename">/mount/backup/mysnapshot</code> to
+     <code class="filename">/var/opt/influxdb/influxdb.conf</code>.
+    </p></li><li class="listitem "><p>
+     Ensure that the file permissions for the restored database are set
+     correctly:
+    </p><div class="verbatim-wrap"><pre class="screen">chown -R influxdb:influxdb /var/opt/influxdb</pre></div></li><li class="listitem "><p>
+     Start the InfluxDB database service:
+    </p><div class="verbatim-wrap"><pre class="screen">systemctl start influxdb</pre></div></li></ol></div><p>
+   For additional information on backing up and restoring an InfluxDB database,
+   refer to the
+   <a class="link" href="https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/" target="_blank">InfluxDB documentation</a>.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.13.7.6.27"><span class="name">MariaDB Database</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.6.27">#</a></h5></div><p>
+   For backing up and restoring your MariaDB database, you can use the
+   <code class="command">mysqldump</code> utility program. <code class="command">mysqldump</code>
+   performs a logical backup that produces a set of SQL statements. These
+   statements can later be executed to restore the database.
+  </p><p>
+   To back up your MariaDB database, you must be the owner of the database or a
+   user with superuser privileges, for example:
+  </p><div class="verbatim-wrap"><pre class="screen">mysqldump -u root -p mon &gt; dumpfile.sql</pre></div><p>
+   In addition to the name of the database, you have to specify the name and the
+   location where <code class="command">mysqldump</code> stores its output.
+  </p><p>
+   To restore your MariaDB database, proceed as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the host where the Monitoring Service is installed as a user with
+     root privileges.
+    </p></li><li class="listitem "><p>
+        Make sure that the <code class="command">mariadb</code> service is running:
+    </p><div class="verbatim-wrap"><pre class="screen">systemctl start mariadb</pre></div></li><li class="listitem "><p>
+     Log in to the database you have backed up as a user with root privileges, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">mysql -u root -p mon</pre></div></li><li class="listitem "><p>
+     Remove and then re-create the database:
+    </p><div class="verbatim-wrap"><pre class="screen"> DROP DATABASE mon;
+ CREATE DATABASE mon;</pre></div></li><li class="listitem "><p>
+ Exit mariadb:
+    </p><div class="verbatim-wrap"><pre class="screen">\q</pre></div></li><li class="listitem "><p>
+     Restore the database, for example:
+    </p><div class="verbatim-wrap"><pre class="screen">mysql -u root -p mon &lt; dumpfile.sql</pre></div></li></ol></div><p>
+   For additional information on backing up and restoring a MariaDB database
+   with <code class="literal">mysqldump</code>, refer to the
+   <a class="link" href="https://mariadb.com/kb/en/mariadb/mysqldump/" target="_blank">MariaDB
+   documentation</a>.
+  </p></div><div class="sect3" id="id-1.5.6.13.7.7"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.7.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration Files</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.7">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-backup-recovery.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Below you find a list of the configuration files of the agents and the
+   individual services included in the Monitoring Service. Back up these files
+   at least after you have installed and configured <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+   and after each change in the configuration.
+  </p><div class="verbatim-wrap"><pre class="screen">/etc/influxdb/influxdb.conf
+ /etc/kafka/server.properties
+ /etc/my.cnf
+ /etc/my.cnf.d/client.cnf
+ /etc/my.cnf.d/mysql-clients.cnf
+ /etc/my.cnf.d/server.cnf
+ /etc/monasca/agent/agent.yaml
+ /etc/monasca/agent/conf.d/*
+ /etc/monasca/agent/supervisor.conf
+ /etc/monasca/api-config.conf
+ /etc/monasca/log-api-config.conf
+ /etc/monasca/log-api-config.ini
+ /etc/monasca-log-persister/monasca-log-persister.conf
+ /etc/monasca-log-transformer/monasca-log-transformer.conf
+ /etc/monasca-log-agent/agent.conf
+ /etc/monasca-notification/monasca-notification.yaml
+ /etc/monasca-persister/monasca-persister.yaml
+ /etc/monasca-thresh/thresh.yaml
+ /etc/elasticsearch/elasticsearch.yml
+ /etc/elasticsearch/logging.yml
+ /etc/kibana/kibana.yml</pre></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.13.7.7.4"><span class="name">Recovery</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.7.4">#</a></h5></div><p>
+   If you need to recover the configuration of one or more agents or services,
+   the recommended procedure is as follows:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     If necessary, uninstall the agents or services, and install them again.
+    </p></li><li class="listitem "><p>
+     Stop the agents or services.
+    </p></li><li class="listitem "><p>
+     Copy the backup of your configuration files to the correct location
+     according to the table above.
+    </p></li><li class="listitem "><p>
+     Start the agents or services again.
+    </p></li></ol></div></div><div class="sect3" id="id-1.5.6.13.7.8"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.7.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dashboards</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.13.7.8">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-backup-recovery.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Kibana can persist customized log dashboard designs to the Elasticsearch
+   database, and allows you to recall them. For details on saving, loading, and
+   sharing log management dashboards, refer to the
+   <a class="link" href="https://www.elastic.co/guide/en/kibana/4.5/dashboard.html#saving-dashboards" target="_blank">Kibana documentation</a>.
+  </p><p>
+   Grafana allows you to export a monitoring dashboard to a JSON file, and to
+   re-import it when necessary. For backing up and restoring the exported
+   dashboards, use the standard mechanisms of your file system. For details on
+   exporting monitoring dashboards, refer to the
+   <a class="link" href="https://grafana.com/docs/guides/getting_started/" target="_blank">Getting
+   Started</a> tutorial of Grafana.
+  </p></div></div></div><div class="sect1" id="data-virtualizations"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Working with Data Visualizations</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#data-virtualizations">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>data-virtualizations</li></ul></div></div></div></div><p>
+  The user interface for monitoring your services, servers, and log data
+  integrates with Grafana, an open source application for visualizing
+  large-scale monitoring data. Use the options at the top border of the
+  <span class="guimenu ">Overview</span> page to access Grafana.
+ </p><p>
+  <span class="phrase">CMM</span> ships with preconfigured metrics dashboards. You can
+  instantly use them for monitoring your environment. You can also use them as
+  a starting point for building your own dashboards.
+ </p><div class="sect2" id="metrics-dashboard-openstack"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preconfigured Metrics Dashboard for <span class="productname">OpenStack</span></span> <a title="Permalink" class="permalink" href="soc-monitoring.html#metrics-dashboard-openstack">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>metrics-dashboard-openstack</li></ul></div></div></div></div><p>
+  As an <span class="productname">OpenStack</span> operator, you use the <span class="guimenu ">Dashboard</span> option
+  on the <span class="guimenu ">Overview</span> page to view the metrics data on the
+  <span class="productname">OpenStack</span> services. The Monitoring Service operator uses the
+  <span class="guimenu ">Dashboard</span> option to view the metrics data on the
+  Monitoring Service.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-grafana-os.png" target="_blank"><img src="images/images-grafana-os.png" width="" alt="grafana-os.png" /></a></div></div><p>
+  To monitor <span class="productname">OpenStack</span>, the preconfigured dashboard shows the following:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Status of the main <span class="productname">OpenStack</span> Services (<code class="literal">UP</code> or
+    <code class="literal">DOWN</code>). Information on nova, neutron, glance, cinder,
+    swift, and keystone is displayed.
+   </p></li><li class="listitem "><p>
+    Information on system resources.
+   </p><p>
+    The dashboard shows metrics data on CPU usage: the percentage of time the
+    CPU is used in total (<code class="literal">cpu.percent</code>), at user level
+    (<code class="literal">cpu.user_perc</code>), and at system level
+    (<code class="literal">cpu.system_perc</code>), as well as the percentage of time the
+    CPU is idle when no I/O requests are in progress
+    (<code class="literal">cpu.wait_perc</code>).
+   </p><p>
+    The dashboard shows metrics data on memory usage: the number of megabytes
+    of total memory (<code class="literal">mem.total_mb</code>), used memory
+    (<code class="literal">mem.used_mb</code>), total swap memory
+    (<code class="literal">mem.swap_total_mb</code>), and used swap memory
+    (<code class="literal">mem.swap_used_mb</code>), as well as the number of megabytes
+    used for the page cache (<code class="literal">mem.used_cache</code>).
+   </p><p>
+    The dashboard shows metrics data on the percentage of disk space that is
+    being used on a device (<code class="literal">disk.space_used_perc</code>).
+   </p><p>
+    The dashboard shows metrics data on the <span class="phrase">CMM</span> system load
+    over different periods (<code class="literal">load.avg_1_min</code>,
+    <code class="literal">load.avg_5_min</code>, and <code class="literal">load.avg_15_min</code>).
+   </p></li><li class="listitem "><p>
+    The network usage of <span class="phrase">CMM</span>.
+   </p><p>
+    The dashboard shows the number of network bytes received and sent per
+    second (<code class="literal">net.in_bytes_sec</code> and
+    <code class="literal">net.out_bytes_sec</code>).
+   </p></li></ul></div></div><div class="sect2" id="building-dashboards"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Building Dashboards</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#building-dashboards">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>building-dashboards</li></ul></div></div></div></div><p>
+  Each metrics dashboard is composed of one or more panels that are arranged in
+  one or more rows. A row serves as a logical divider within a dashboard. It
+  organizes your panels in groups. The panel is the basic building block for
+  visualizing your metrics data.
+ </p><p>
+  For building dashboards, you have two options:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Start from scratch and create a new dashboard.
+   </p></li><li class="listitem "><p>
+    Take the dashboard that is shipped with <span class="phrase">CMM</span> as a starting
+    point and customize it.
+   </p></li></ul></div><p>
+  The following sections provide introductory information on dashboards, rows,
+  and panels, and make you familiar with the first steps involved in building a
+  dashboard. For additional information, you can also refer to the
+  <a class="link" href="https://grafana.com/docs/" target="_blank">Grafana documentation</a>.
+ </p></div><div class="sect2" id="creating-dashboards"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Dashboards</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#creating-dashboards">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>creating-dashboards</li></ul></div></div></div></div><p>
+  To create a new dashboard, you use <span class="guimenu ">Open Dashboard</span> in the
+  top right corner of your dashboard window. The option provides access to
+  various features for administrating dashboards. Use <span class="guimenu ">New</span>
+  to create an empty dashboard that serves as a starting point for adding rows
+  and panels.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-grafana-emptydb.png" target="_blank"><img src="images/images-grafana-emptydb.png" width="" alt="grafana-cmm.png" /></a></div></div><p>
+  On the left side of an empty dashboard, there is a green rectangle displayed.
+  Hover over this rectangle to access a <span class="guimenu ">Row</span> menu. To
+  insert your first panel, you can use the options in the <span class="guimenu ">Add
+  Panel</span> submenu. See below for details on the available panel types.
+ </p><p>
+  As soon as you have inserted an empty panel, you can add additional rows. For
+  this purpose, use the <span class="guimenu ">Add Row</span> option on the right side
+  of the dashboard.
+ </p></div><div class="sect2" id="editing-rows"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Editing Rows</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#editing-rows">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>editing-rows</li></ul></div></div></div></div><p>
+  Features for editing rows can be accessed via the green rectangle that is
+  displayed to the left of each row.
+ </p><p>
+  In addition to adding panels to a row, you can collapse or remove a row, move
+  the position of the row within your dashboard, or set the row height. Row
+  settings allows you, for example, to insert a row title or to hide the
+  <span class="guimenu ">Row</span> menu so that the row can no longer be edited.
+ </p></div><div class="sect2" id="editing-panels"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Editing Panels</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#editing-panels">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>editing-panels</li></ul></div></div></div></div><p>
+  Grafana distinguishes between three panel types:
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/images-grafana-panels.png" target="_blank"><img src="images/images-grafana-panels.png" width="" alt="grafana-cmm.png" /></a></div></div><p>
+  Panels of type <span class="guimenu ">Graph</span> are used to visualize metrics data.
+  A query editor is provided to define the data to be visualized. The editor
+  allows you to combine multiple queries. This means that any number of metrics
+  and data series can be visualized in one panel.
+ </p><p>
+  Panels of type <span class="guimenu ">Singlestat</span> are also used to visualize
+  metrics data, yet they reduce a single query to a single number. The single
+  number can be, for example, the minimum, maximum, average, or sum of values
+  of the data series. The single number can be translated into a text value, if
+  required.
+ </p><p>
+  Panels of type <span class="guimenu ">Text</span> are used to insert static text. The
+  text may, for example, provide information for the dashboard users. Text
+  panels are not connected to any metrics data.
+ </p><p>
+  As soon as you have added a panel to your dashboard, you can access the
+  options for editing the panel content. For this purpose, click the panel
+  title and use <span class="guimenu ">Edit</span>:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    For panels of type <span class="guimenu ">Text</span>, a simple text editor is
+    displayed for entering text. Plain text, HTML, and markdown format are
+    supported.
+   </p></li><li class="listitem "><p>
+    For panels of type <span class="guimenu ">Graph</span> and
+    <span class="guimenu ">Singlestat</span>, a query editor is displayed to define
+    which data it to be shown. You can add multiple metrics, and apply
+    functions to the metrics. The query results will be visualized in your
+    panel in real time.
+   </p></li></ul></div><p>
+  A large number of display and formatting features are provided to customize
+  how the content is presented in a panel. Click the panel title to access the
+  corresponding options. The menu that is displayed also allows you to
+  duplicate or remove a panel. To change the size of a panel, click the
+  <span class="guimenu ">+</span> and <span class="guimenu ">-</span> icons.
+ </p><p>
+  You can move panels on your dashboard by simply dragging and dropping them
+  within and between rows.
+ </p><p>
+  By default, the time range for panels is controlled by dashboard settings.
+  Use the time picker in the top right corner of your dashboard window to
+  define relative or absolute time ranges. You can also set an auto-refresh
+  interval, or manually refresh the data that is displayed.
+ </p></div><div class="sect2" id="saving-sharing-dashboards"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Saving and Sharing Dashboards</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#saving-sharing-dashboards">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-data-visualizations.xml</li><li><span class="ds-label">ID: </span>saving-sharing-dashboards</li></ul></div></div></div></div><p>
+  <span class="phrase">CMM</span> allows you to save your metrics dashboards locally.
+  Saving a dashboard means exporting it to a JSON file. The JSON file can be
+  edited, it can be shared with other users, and it can be imported to
+  <span class="phrase">CMM</span> again.
+ </p><p>
+  To save a dashboard, use <span class="guimenu ">Save</span> in the top right corner of
+  your dashboard window. The option allows you to directly view the JSON syntax
+  and export the dashboard to a JSON file. The JSON file can be forwarded to
+  other users, if required. To import a JSON file, use <span class="guimenu ">Open
+  dashboard</span> in the top left corner of the dashboard window.
+ </p></div></div><div class="sect1" id="defining-alarms"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Defining Alarms</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#defining-alarms">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-define-alarms.xml</li><li><span class="ds-label">ID: </span>defining-alarms</li></ul></div></div></div></div><p>
+  You have to define alarms to monitor your cloud resources. An alarm
+  definition specifies the metrics to be collected and the threshold at which
+  an alarm is to be triggered for a cloud resource. If the specified threshold
+  is reached or exceeded, the alarm is triggered and notifications can be sent
+  to inform users. By default, an alarm definition is evaluated every minute.
+ </p><p>
+  To handle a large variety of monitoring requirements, you can create either
+  simple alarm definitions that refer to one metrics only, or compound alarm
+  definitions that combine multiple metrics and allow you to track and process
+  more complex events.
+ </p><p>
+  Example for a simple alarm definition that checks whether the system-level
+  load of the CPU exceeds a threshold of 90 percent:
+ </p><div class="verbatim-wrap"><pre class="screen">cpu.system_perc{hostname=monasca} &gt; 90</pre></div><p>
+  Example for a simple alarm definition that checks the average time of the
+  system-level load of the CPU over a period of 480 seconds. The alarm is
+  triggered only if this average is greater than 95 percent:
+ </p><div class="verbatim-wrap"><pre class="screen">avg(cpu.system_perc{hostname=monasca}, 120) &gt; 95 times 4</pre></div><p>
+  Example for a compound alarm definition that evaluates two metrics. The alarm
+  is triggered if either the system-level load of the CPU exceeds a threshold
+  of 90 percent, or if the disk space that is used by the specified service
+  exceeds a threshold of 90 percent:
+ </p><div class="verbatim-wrap"><pre class="screen">avg(cpu.system_perc{hostname=monasca}) &gt; 90 OR
+max(disk.space_used_perc{service=monitoring}) &gt; 90</pre></div><p>
+  To create, edit, and delete alarms, use <span class="guimenu ">Monitoring &gt; Alarm
+  Definitions</span>.
+ </p><p>
+  The elements that define an alarm are grouped into
+  <span class="guimenu ">Details</span>, <span class="guimenu ">Expression</span>, and
+  <span class="guimenu ">Notifications</span>. They are described in the following
+  sections.
+ </p><div class="sect2" id="alarm-details"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Details</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#alarm-details">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-define-alarms.xml</li><li><span class="ds-label">ID: </span>alarm-details</li></ul></div></div></div></div><p>
+  For an alarm definition, you specify the following details:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <span class="guimenu ">Name</span>. Mandatory identifier of the alarm. The name must
+    be unique within the project for which you define the alarm.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Description</span>. Optional. A short description that
+    depicts the purpose of the alarm.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Severity</span>. The following severities for an alarm are
+    supported: <span class="guimenu ">Low</span> (default), <span class="guimenu ">Medium</span>,
+    <span class="guimenu ">High</span>, or <span class="guimenu ">Critical</span>.
+   </p><p>
+    The severity affects the status information on the
+    <span class="guimenu ">Overview</span> page. If an alarm that is defined as
+    <span class="guimenu ">Critical</span> is triggered, the corresponding resource is
+    displayed in a red box. If an alarm that is defined as
+    <span class="guimenu ">Low</span>, <span class="guimenu ">Medium</span>, or
+    <span class="guimenu ">High</span> is triggered, the corresponding resource is
+    displayed in a yellow box only.
+   </p><p>
+    The severity level is subjective. Choose a level that is appropriate for
+    prioritizing the alarms in your environment.
+   </p></li></ul></div><div class="figure" id="id-1.5.6.15.12.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create.png" target="_blank"><img src="images/socm-alarmdef-create.png" width="" alt="Creating an Alarm Definition" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.2: </span><span class="name">Creating an Alarm Definition </span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.15.12.4">#</a></h6></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.15.12.5"><span class="name">Expression</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.15.12.5">#</a></h5></div><p>
+  The expression defines how to evaluate a metrics. The expression syntax is
+  based on a simple expressive grammar. For details, refer to the
+  <a class="link" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md" target="_blank">monasca API documentation</a>.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create-expression.png" target="_blank"><img src="images/socm-alarmdef-create-expression.png" width="" /></a></div></div><p>
+  To define an alarm expression, proceed as follows:
+ </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Select the metrics to be evaluated.
+   </p></li><li class="listitem "><p>
+    Select a statistical function for the metrics: <code class="literal">min</code> to
+    monitor the minimum values, <code class="literal">max</code> to monitor the maximum
+    values, <code class="literal">sum</code> to monitor the sum of the values,
+    <code class="literal">count</code> for the monitored number, or
+    <code class="literal">avg</code> for the arithmetic average.
+   </p></li><li class="listitem "><p>
+    Enter one or multiple dimensions in the <span class="guimenu ">Add a
+    dimension</span> field to further qualify the metrics.
+   </p><p>
+    Dimensions filter the data to be monitored. They narrow down the evaluation
+    to specific entities. Each dimension consists of a key/value pair that
+    allows for a flexible and concise description of the data to be monitored,
+    for example, region, availability zone, service tier, or resource ID.
+   </p><p>
+    The dimensions available for the selected metrics are displayed in the
+    <span class="guimenu ">Matching Metrics</span> section. Type the name of the key you
+    want to associate with the metrics in the <span class="guimenu ">Add a
+    dimension</span> field. You are offered a select list for adding the
+    required key/value pair.
+   </p></li><li class="listitem "><p>
+    Enter the threshold value at which an alarm is to be triggered, and combine
+    it with a relational operator <code class="literal">&lt;</code>,
+    <code class="literal">&gt;</code>, <code class="literal">&lt;=</code>, or
+    <code class="literal">&gt;=</code>.
+   </p><p>
+    The unit of the threshold value is related to the metrics for which you
+    define the threshold, for example, the unit is percentage for
+    <code class="literal">cpu.idle_perc</code> or MB for
+    <code class="literal">disk.total_used_space_mb</code>.
+   </p></li><li class="listitem "><p>
+    Switch on the <span class="guimenu ">Deterministic</span> option if you evaluate a
+    metrics for which data is received only sporadically. The option should be
+    switched on, for example, for all log metrics. This ensures that the alarm
+    status is <code class="literal">OK</code> and displayed as a green box on the
+    <span class="guimenu ">Overview</span> page although metrics data has not yet been
+    received.
+   </p><p>
+    Do not switch on the option if you evaluate a metrics for which data is
+    received regularly. This ensures that you instantly notice, for example,
+    that a host machine is offline and that there is no metrics data for the
+    agent to collect. On the <span class="guimenu ">Overview</span> page, the alarm
+    status therefore changes from <code class="literal">OK</code> to
+    <code class="literal">UNDETERMINED</code> and is displayed as a gray box.
+   </p></li><li class="listitem "><p>
+    Enter one or multiple dimensions in the <span class="guimenu ">Match by</span> field
+    if you want these dimensions to be taken into account for triggering
+    alarms.
+   </p><p>
+    Example: If you enter <code class="literal">hostname</code> as dimension, individual
+    alarms will be created for each host machine on which metrics data is
+    collected. The expression you have defined is not evaluated as a whole but
+    individually for each host machine in your environment.
+   </p><p>
+    If <span class="guimenu ">Match by</span> is set to a dimension, the number of
+    alarms depends on the number of dimension values on which metrics data is
+    received. An empty <span class="guimenu ">Match by</span> field results in exactly
+    one alarm.
+   </p><p>
+    To enter a dimension, you can simply type the name of the dimension in the
+    <span class="guimenu ">Match by</span> field. The dimensions you enter cannot be
+    changed once the alarm definition is saved.
+   </p></li><li class="listitem "><p>
+    Build a compound alarm definition to combine multiple metrics in one
+    expression. Using the logical operators <code class="literal">AND</code> or
+    <code class="literal">OR</code>, any number of sub-expressions can be combined.
+   </p><p>
+    Use the <span class="guimenu ">Add</span> button to create a second expression, and
+    choose either <code class="literal">AND</code> or <code class="literal">OR</code> as
+    <span class="guimenu ">Operator</span> to connect it to the one you have already
+    defined. Proceed with the second expression as described in Step 1 to Step
+    6 above.
+   </p><p>
+    The following options are provided for creating and organizing compound
+    alarm definitions:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Create additional sub-expressions using the <span class="guimenu ">Add</span>
+      button.
+     </p></li><li class="listitem "><p>
+      Finish editing a sub-expression using the <span class="guimenu ">Submit</span>
+      button.
+     </p></li><li class="listitem "><p>
+      Delete a sub-expression using the <span class="guimenu ">Remove</span> button.
+     </p></li><li class="listitem "><p>
+      Change the position of a sub-expression using the <span class="guimenu ">Up</span>
+      or <span class="guimenu ">Down</span> button.
+     </p></li></ul></div></li></ol></div><div id="id-1.5.6.15.12.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   You can also edit the expression syntax directly. For this purpose, save
+   your alarm definition and update it using the <span class="guimenu ">Edit Alarm
+   Definition</span> option.
+  </p><p>
+   By default, an alarm definition is evaluated every minute. When updating the
+   alarm definition, you can change this interval. For syntax details, refer to
+   the monasca API documentation on
+   <a class="link" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md#alarm-definition-expressions" target="_blank">Alarm Definition Expressions</a>.
+  </p></div></div><div class="sect2" id="alarm-notifications"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Notifications</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#alarm-notifications">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-define-alarms.xml</li><li><span class="ds-label">ID: </span>alarm-notifications</li></ul></div></div></div></div><p>
+  You can enable notifications for an alarm definition. As soon as an alarm is
+  triggered, the enabled notifications will be sent.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/socm-alarmdef-create-notifications.png" target="_blank"><img src="images/socm-alarmdef-create-notifications.png" width="" /></a></div></div><p>
+  The <span class="guimenu ">Notifications</span> tab allows you to select the
+  notifications from the ones that are predefined in your environment. For a
+  selected notification, you specify whether you want to send it for a status
+  transition to <span class="guimenu ">Alarm</span>, <span class="guimenu ">OK</span>, and/or
+  <span class="guimenu ">Undetermined</span>.
+ </p></div></div><div class="sect1" id="defining-notifcations"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Defining Notifications</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#defining-notifcations">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-define-notifications.xml</li><li><span class="ds-label">ID: </span>defining-notifcations</li></ul></div></div></div></div><p>
+  Notifications define how users are informed when a threshold value defined
+  for an alarm is reached or exceeded. In the alarm definition, you can assign
+  one or multiple notifications.
+ </p><p>
+  For a notification, you specify the following elements:\o/
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <span class="guimenu ">Name</span>. A unique identifier of the notification. The
+    name is offered for selection when defining an alarm.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Type</span>. <code class="literal">Email</code> is the notification
+    method supported by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring. If
+    you want to use <code class="literal">WebHook</code> or <code class="literal">PagerDuty</code>,
+    contact your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring support for
+    further information.
+   </p></li><li class="listitem "><p>
+    <span class="guimenu ">Address</span>. The email address to be notified when an
+    alarm is triggered.
+   </p><div id="id-1.5.6.16.4.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     Generic top-level domains such as business domain names are not supported
+     in email addresses (for example, <code class="literal">user@xyz.company</code>).
+    </p></div></li></ul></div><p>
+  To create, edit, and delete notifications, use <span class="guimenu ">Monitoring &gt;
+  Notifications</span>.
+ </p></div><div class="sect1" id="status-servers-log-data"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Status of Services, Servers, and Log Data</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#status-servers-log-data">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-statuses.xml</li><li><span class="ds-label">ID: </span>status-servers-log-data</li></ul></div></div></div></div><p>
+  An alarm definition for a service, server, or log data is evaluated over the
+  interval specified in the alarm expression. The alarm definition is
+  re-evaluated in each subsequent interval. The following alarm statuses are
+  distinguished:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <code class="literal">Alarm</code>. The alarm expression has evaluated to
+    <code class="literal">true</code>. An alarm has been triggered for the cloud
+    resource.
+   </p></li><li class="listitem "><p>
+    <code class="literal">OK</code>. The alarm expression has evaluated to
+    <code class="literal">false</code>. There is no need to trigger an alarm.
+   </p></li><li class="listitem "><p>
+    <code class="literal">Undetermined</code>. No metrics data has been received within
+    the defined interval.
+   </p></li></ul></div><p>
+  As soon as you have defined an alarm for a cloud resource, there is status
+  information displayed for it on the <span class="guimenu ">Overview</span> page:
+ </p><p>
+  The color of the boxes in the three sections indicates the status:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    A green box for a service or server indicates that it is up and running. A
+    green box for a log path indicates that a defined threshold for errors or
+    warnings, for example, has not yet been reached or exceeded. There are
+    alarms defined for the services, servers, or log paths, but no alarms have
+    been triggered.
+   </p></li><li class="listitem "><p>
+    A red box for a service, server, or log path indicates that there is a
+    severe problem that needs to be checked. One or multiple alarms defined for
+    a service, a server, or log data have been triggered.
+   </p></li><li class="listitem "><p>
+    A yellow box indicates a problem. One or multiple alarms have already been
+    triggered, yet, the severity of these alarms is low.
+   </p></li><li class="listitem "><p>
+    A gray box indicates that alarms have been defined. Yet, metrics data has
+    not been received.
+   </p></li></ul></div><p>
+  The status information on the <span class="guimenu ">Overview</span> page results from
+  one or multiple alarms that have been defined for the corresponding resource.
+  If multiple alarms are defined, the severity of the individual alarms
+  controls the status color.
+ </p><p>
+  You can click a resource on the <span class="guimenu ">Overview</span> page to display
+  details on the related alarms. The details include the status of each alarm
+  and the expression that is evaluated. For each alarm, you can drill down on
+  the alarm history. To narrow down the problem, the history presents detailed
+  information on the status transitions.
+ </p></div><div class="sect1" id="supported-metrics"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Supported Metrics</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#supported-metrics">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-supported-metrics.xml</li><li><span class="ds-label">ID: </span>supported-metrics</li></ul></div></div></div></div><p>
+  The sections below describe the metrics supported by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Standard metrics for general monitoring of servers and networks.
+   </p></li><li class="listitem "><p>
+    Additional metrics for monitoring specific servers and services.
+   </p></li></ul></div><div class="sect2" id="id-1.5.6.18.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Standard Metrics</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-supported-metrics.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports the following
+   standard metrics for monitoring servers and networks. These metrics usually
+   do not require specific settings. The metrics are grouped by metrics types.
+   Each metrics type references a set of related metrics.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.4.3"><span class="name">cpu.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4.3">#</a></h5></div><p>
+   Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
+   requests are in progress, or the percentage of time the CPU is used at system
+   level or user level.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.4.5"><span class="name">disk.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4.5">#</a></h5></div><p>
+   Metrics on disk space, e.g. the percentage of disk space that is used on a
+   device, or the total amount of disk space aggregated across all the disks on
+   a particular node.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.4.7"><span class="name">load.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4.7">#</a></h5></div><p>
+   Metrics on the average system load over different periods (e.g. 1 minute, 5
+   minutes, or 15 minutes).
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.4.9"><span class="name">memory.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4.9">#</a></h5></div><p>
+   Metrics on memory usage, e.g. the number of megabytes of total memory or free
+   memory, or the percentage of free swap memory.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.4.11"><span class="name">network.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.4.11">#</a></h5></div><p>
+   Metrics on the network, e.g. the number of network bytes received or sent per
+   second, or the number of network errors on incoming or outgoing network
+   traffic per second.
+  </p><p>
+   These metrics are configured automatically on all machines and nodes that have
+   the <code class="literal">monasca-agent</code> role assigned. This applies not only to
+   <code class="filename">network.yaml</code> but also to all metrics covered in this chapter.
+  </p></div><div class="sect2" id="id-1.5.6.18.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Metrics</span> <a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-monitoring-operations-supported-metrics.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   In addition to the standard metrics, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring automatically
+   adds the following
+   additional metrics to the monasca agent configuration on the <span class="productname">OpenStack</span>
+   Controller.
+   </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.5.3"><span class="name">http_check.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.5.3">#</a></h5></div><p>
+   HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
+   list of URLs, the agent sends an HTTP request and reports success or failure
+   to the Monitoring Service.
+  </p><p>
+   The following barclamps will automatically create an HTTP check for the API
+   services they deploy if the <code class="literal">monasca</code> barclamp is active:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>barbican</p></li><li class="listitem "><p>cinder</p></li><li class="listitem "><p>glance</p></li><li class="listitem "><p>heat</p></li><li class="listitem "><p>keystone</p></li><li class="listitem "><p>Magnum</p></li><li class="listitem "><p>manila</p></li><li class="listitem "><p>neutron</p></li><li class="listitem "><p>nova</p></li><li class="listitem "><p>sahara</p></li><li class="listitem "><p>swift</p></li></ul></div><p>
+   By default, the monitoring dashboard is configured to display the service status for the following services:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>cinder</p></li><li class="listitem "><p>glance</p></li><li class="listitem "><p>keystone</p></li><li class="listitem "><p>neutron</p></li><li class="listitem "><p>nova</p></li><li class="listitem "><p>swift</p></li></ul></div><p>
+   The status visualization for additional services can be added manually.
+  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.5.6.18.5.10"><span class="name">postgres.yaml</span><a title="Permalink" class="permalink" href="soc-monitoring.html#id-1.5.6.18.5.10">#</a></h5></div><p>
+   Postgres checks gather various CRUD and system statistics for a database
+   hosted by a PostgreSQL DBMS.
+  </p><p>
+   The following barclamps will automatically create Postgres checks for their
+   service database if the <code class="literal">monasca</code> barclamp is active:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>barbican</p></li><li class="listitem "><p>cinder</p></li><li class="listitem "><p>glance</p></li><li class="listitem "><p>heat</p></li><li class="listitem "><p>keystone</p></li><li class="listitem "><p>Magnum</p></li><li class="listitem "><p>manila</p></li><li class="listitem "><p>neutron</p></li><li class="listitem "><p>nova</p></li><li class="listitem "><p>sahara</p></li></ul></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="monitoring-log-management.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Log Management</span></a><a class="nav-link" href="self-assign-certs.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Modifying Example Configurations for Object Storage using Swift | Deployment Guide using Cloud Lifecycle Manager | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 11. Modifying Example Configurations for Object Storage using Swift" /><meta name="description" content="This section contains detailed descriptions about the swift-specific parts of the input model. For example input models, see Chapter 9, Example Configurations. For general descriptions of the input model, see Section 6.14, “Networks”. In addition, the swift ring specifications are available in the ~…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="prev" href="modify-compute-input-model.html" title="Chapter 10. Modifying Example Configurations for Compute Nodes" /><link rel="next" href="alternative-configurations.html" title="Chapter 12. Alternative Configurations" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="modify-input-model.html">Modifying Example Configurations for Object Storage using Swift</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li><li class="inactive"><a href="preinstall.html"><span class="number">III </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">13 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">14 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">15 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">16 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">17 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">18 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">IV </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">19 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">20 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">21 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">22 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">23 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">24 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">25 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">26 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">27 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">28 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">29 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">30 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">31 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">32 </span><span class="name">Installing manila and Creating manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">33 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">34 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">35 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">36 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">37 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">V </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="cloud-verification.html"><span class="number">38 </span><span class="name">Post Installation Tasks</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">39 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">40 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">41 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">42 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">43 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">44 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">VI </span><span class="name">Support</span></a><ol><li class="inactive"><a href="sec-depl-trouble-faq.html"><span class="number">45 </span><span class="name">FAQ</span></a></li><li class="inactive"><a href="sec-installation-trouble-support.html"><span class="number">46 </span><span class="name">Support</span></a></li><li class="inactive"><a href="inst-support-ptf.html"><span class="number">47 </span><span class="name">
+    Applying PTFs (Program Temporary Fixes) Provided by SUSE L3 Support
+   </span></a></li><li class="inactive"><a href="inst-support-ptf-test.html"><span class="number">48 </span><span class="name">
+    Testing PTFs (Program Temporary Fixes) on a Single Node
+   </span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 10. Modifying Example Configurations for Compute Nodes" href="modify-compute-input-model.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Alternative Configurations" href="alternative-configurations.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-deployment.html">Deployment Guide using Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="modify-input-model.html">Modifying Example Configurations for Object Storage using Swift</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 10. Modifying Example Configurations for Compute Nodes" href="modify-compute-input-model.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Alternative Configurations" href="alternative-configurations.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="modify-input-model"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Modifying Example Configurations for Object Storage using Swift</span> <a title="Permalink" class="permalink" href="modify-input-model.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-swift_input_model.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-swift_input_model.xml</li><li><span class="ds-label">ID: </span>modify-input-model</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="modify-input-model.html#objectstorage-overview"><span class="number">11.1 </span><span class="name">Object Storage using swift Overview</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-r3k-v2c-jt"><span class="number">11.2 </span><span class="name">Allocating Proxy, Account, and Container (PAC) Servers for Object Storage</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-tq1-xt5-dt"><span class="number">11.3 </span><span class="name">Allocating Object Servers</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-uh2-td1-kt"><span class="number">11.4 </span><span class="name">Creating Roles for swift Nodes</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#allocating-disk-drives"><span class="number">11.5 </span><span class="name">Allocating Disk Drives for Object Storage</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-d1s-hht-tt"><span class="number">11.6 </span><span class="name">Swift Requirements for Device Group Drives</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-rvj-21c-jt"><span class="number">11.7 </span><span class="name">Creating a Swift Proxy, Account, and Container (PAC) Cluster</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-jzk-q1c-jt"><span class="number">11.8 </span><span class="name">Creating Object Server Resource Nodes</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-pcj-hzv-dt"><span class="number">11.9 </span><span class="name">Understanding Swift Network and Service Requirements</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#ring-specification"><span class="number">11.10 </span><span class="name">Understanding Swift Ring Specifications</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#swift-storage-policies"><span class="number">11.11 </span><span class="name">Designing Storage Policies</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#designing-swift-zones"><span class="number">11.12 </span><span class="name">Designing Swift Zones</span></a></span></dt><dt><span class="section"><a href="modify-input-model.html#topic-rdf-hkp-rt"><span class="number">11.13 </span><span class="name">Customizing Swift Service Configuration Files</span></a></span></dt></dl></div></div><p>
+  This section contains detailed descriptions about the swift-specific parts of
+  the input model. For example input models, see
+  <a class="xref" href="example-configurations.html" title="Chapter 9. Example Configurations">Chapter 9, <em>Example Configurations</em></a>. For general descriptions of the
+  input model, see <a class="xref" href="configurationobjects.html#configobj-networks" title="6.14. Networks">Section 6.14, “Networks”</a>. In addition, the swift
+  ring specifications are available in the
+  <code class="filename">~/openstack/my_cloud/definition/data/swift/swift_config.yml</code>
+  file.
+ </p><p>
+  Usually, the example models provide most of the data that is required to
+  create a valid input model. However, before you start to deploy, you must do
+  the following:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Check the disk model used by your nodes and that all disk drives are
+    correctly named and used as described in
+    <a class="xref" href="modify-input-model.html#topic-d1s-hht-tt" title="11.6. Swift Requirements for Device Group Drives">Section 11.6, “Swift Requirements for Device Group Drives”</a>.
+   </p></li><li class="listitem "><p>
+    Select an appropriate partition power for your rings. For more information,
+    see <a class="xref" href="modify-input-model.html#ring-specification" title="11.10. Understanding Swift Ring Specifications">Section 11.10, “Understanding Swift Ring Specifications”</a>.
+   </p></li></ul></div><p>
+  For further information, read these related pages:
+ </p><div class="sect1" id="objectstorage-overview"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Object Storage using swift Overview</span> <a title="Permalink" class="permalink" href="modify-input-model.html#objectstorage-overview">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-objectstorage_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-objectstorage_overview.xml</li><li><span class="ds-label">ID: </span>objectstorage-overview</li></ul></div></div></div></div><div class="sect2" id="about"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What is the Object Storage (swift) Service?</span> <a title="Permalink" class="permalink" href="modify-input-model.html#about">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-objectstorage_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-objectstorage_overview.xml</li><li><span class="ds-label">ID: </span>about</li></ul></div></div></div></div><p>
+   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Object Storage using swift service leverages swift which uses
+   software-defined storage (SDS) layered on top of industry-standard servers
+   using native storage devices. swift presents an object paradigm, using an
+   underlying set of disk drives. The disk drives are managed by a data
+   structure called a "ring" and you can store, retrieve, and delete objects in
+   containers using RESTful APIs.
+  </p><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Object Storage using swift provides a highly-available, resilient,
+   and scalable storage pool for unstructured data. It has a highly-durable
+   architecture, with no single point of failure. In addition, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+   includes the concept of cloud models, where the user can modify the cloud
+   input model to provide the configuration required for their environment.
+  </p></div><div class="sect2" id="services"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Object Storage (swift) Services</span> <a title="Permalink" class="permalink" href="modify-input-model.html#services">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-objectstorage_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-objectstorage_overview.xml</li><li><span class="ds-label">ID: </span>services</li></ul></div></div></div></div><p>
+   A swift system consists of a number of services:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     swift-proxy provides the API for all requests to the swift system.
+    </p></li><li class="listitem "><p>
+     Account and container services provide storage management of the accounts
+     and containers.
+    </p></li><li class="listitem "><p>
+     Object services provide storage management for object storage.
+    </p></li></ul></div><p>
+   These services can be co-located in a number of ways. The following general
+   pattern exists in the example cloud models distributed in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     The swift-proxy, account, container, and object services run on the same
+     (PACO) node type in the control plane. This is used for smaller clouds or
+     where swift is a minor element in a larger cloud. This is the model seen
+     in most of the entry-scale models.
+    </p></li><li class="listitem "><p>
+     The swift-proxy, account, and container services run on one (PAC) node
+     type in a cluster in a control plane and the object services run on
+     another (OBJ) node type in a resource pool. This deployment model, known
+     as the Entry-Scale swift model, is used in larger clouds or where a larger
+     swift system is in use or planned. See <a class="xref" href="example-configurations.html#entryscale-swift" title="9.5.1. Entry-scale swift Model">Section 9.5.1, “Entry-scale swift Model”</a>
+     for more details.
+    </p></li></ul></div><p>
+   The swift storage service can be scaled both vertically (nodes with larger
+   or more disks) and horizontally (more swift storage nodes) to handle an
+   increased number of simultaneous user connections and provide larger storage
+   space.
+  </p><p>
+   swift is configured through a number of YAML files in the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+   implementation of the OpenStack Object Storage (swift) service. For more
+   details on the configuration of the YAML files, see
+   <a class="xref" href="modify-input-model.html" title="Chapter 11. Modifying Example Configurations for Object Storage using Swift">Chapter 11, <em>Modifying Example Configurations for Object Storage using Swift</em></a>.
+  </p></div></div><div class="sect1" id="topic-r3k-v2c-jt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Allocating Proxy, Account, and Container (PAC) Servers for Object Storage</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-r3k-v2c-jt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocate_pac.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocate_pac.xml</li><li><span class="ds-label">ID: </span>topic-r3k-v2c-jt</li></ul></div></div></div></div><p>
+  A swift proxy, account, and container (PAC) server is a node that runs the
+  swift-proxy, swift-account and swift-container services. It is used to
+  respond to API requests and to store account and container data. The PAC node
+  does not store object data.
+ </p><p>
+  This section describes the procedure to allocate PAC servers during the
+  <span class="bold"><strong>initial</strong></span> deployment of the system.
+ </p><div class="sect2" id="id-1.3.4.9.7.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To Allocate Swift PAC Servers</span> <a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.7.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocate_pac.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocate_pac.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to allocate PAC servers:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Verify if the example input model already contains a suitable server role.
+     The server roles are usually described in the
+     <code class="literal">data/server_roles.yml</code> file. If the server role is not
+     described, you must add a suitable server role and allocate drives to
+     store object data. For instructions, see
+     <a class="xref" href="modify-input-model.html#topic-uh2-td1-kt" title="11.4. Creating Roles for swift Nodes">Section 11.4, “Creating Roles for swift Nodes”</a> and
+     <a class="xref" href="modify-input-model.html#allocating-disk-drives" title="11.5. Allocating Disk Drives for Object Storage">Section 11.5, “Allocating Disk Drives for Object Storage”</a>.
+    </p></li><li class="listitem "><p>
+     Verify if the example input model has assigned a cluster to swift proxy,
+     account, container servers. It is usually mentioned in the
+     <code class="literal">data/control_plane.yml</code> file. If the cluster is not
+     assigned, then add a suitable cluster. For instructions, see
+     <a class="xref" href="modify-input-model.html#topic-rvj-21c-jt" title="11.7. Creating a Swift Proxy, Account, and Container (PAC) Cluster">Section 11.7, “Creating a Swift Proxy, Account, and Container (PAC) Cluster”</a>.
+    </p></li><li class="listitem "><p>
+     Identify the physical servers and their IP address and other detailed
+     information.
+    </p><div class="itemizedlist " id="ul-tzf-pqb-jt"><ul class="itemizedlist"><li class="listitem "><p>
+       You add these details to the servers list (usually in the
+       <code class="literal">data/servers.yml</code> file).
+      </p></li><li class="listitem "><p>
+       As with all servers, you must also verify and/or modify the
+       server-groups information (usually in
+       <code class="literal">data/server_groups.yml</code>)
+      </p></li></ul></div></li></ul></div><p>
+   The only part of this process that is unique to swift is the allocation of
+   disk drives for use by the account and container rings. For instructions,
+   see <a class="xref" href="modify-input-model.html#allocating-disk-drives" title="11.5. Allocating Disk Drives for Object Storage">Section 11.5, “Allocating Disk Drives for Object Storage”</a>.
+  </p></div></div><div class="sect1" id="topic-tq1-xt5-dt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Allocating Object Servers</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-tq1-xt5-dt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_server.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocating_server.xml</li><li><span class="ds-label">ID: </span>topic-tq1-xt5-dt</li></ul></div></div></div></div><p>
+  A swift object server is a node that runs the swift-object service
+  (<span class="bold"><strong>only</strong></span>) and is used to store object
+  data. It does not run the swift-proxy, swift-account, or swift-container
+  services.
+  
+ </p><p>
+  This section describes the procedure to allocate a swift object server during
+  the <span class="bold"><strong>initial</strong></span> deployment of the system.
+ </p><div class="sect2" id="procedure"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To Allocate a Swift Object Server</span> <a title="Permalink" class="permalink" href="modify-input-model.html#procedure">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_server.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocating_server.xml</li><li><span class="ds-label">ID: </span>procedure</li></ul></div></div></div></div><p>
+   Perform the following steps to allocate one or more swift object servers:
+  </p><div class="itemizedlist " id="ul-fbk-fj3-kt"><ul class="itemizedlist"><li class="listitem "><p>
+     Verify if the example input model already contains a suitable server role.
+     The server roles are usually described in the
+     <code class="literal">data/server_roles.yml</code> file. If the server role is not
+     described, you must add a suitable server role. For instructions, see
+     <a class="xref" href="modify-input-model.html#topic-uh2-td1-kt" title="11.4. Creating Roles for swift Nodes">Section 11.4, “Creating Roles for swift Nodes”</a>. While adding a server role for the
+     swift object server, you will also allocate drives to store object data.
+     For instructions, see <a class="xref" href="modify-input-model.html#allocating-disk-drives" title="11.5. Allocating Disk Drives for Object Storage">Section 11.5, “Allocating Disk Drives for Object Storage”</a>.
+    </p></li><li class="listitem "><p>
+     Verify if the example input model has a resource node assigned to swift
+     object servers. The resource nodes are usually assigned in the
+     <code class="literal">data/control_plane.yml</code> file. If it is not assigned, you
+     must add a suitable resource node. For instructions, see
+     <a class="xref" href="modify-input-model.html#topic-jzk-q1c-jt" title="11.8. Creating Object Server Resource Nodes">Section 11.8, “Creating Object Server Resource Nodes”</a>.
+    </p></li><li class="listitem "><p>
+     Identify the physical servers and their IP address and other detailed
+     information. Add the details for the servers in either of the following
+     YAML files and verify the server-groups information:
+    </p><div class="itemizedlist " id="ul-gmj-ng3-kt"><ul class="itemizedlist"><li class="listitem "><p>
+       Add details in the servers list (usually in the
+       <code class="literal">data/servers.yml</code> file).
+      </p></li><li class="listitem "><p>
+       As with all servers, you must also verify and/or modify the
+       server-groups information (usually in the
+       <code class="literal">data/server_groups.yml</code> file).
+      </p></li></ul></div><p>
+     The only part of this process that is unique to swift is the allocation of
+     disk drives for use by the object ring. For instructions, see
+     <a class="xref" href="modify-input-model.html#allocating-disk-drives" title="11.5. Allocating Disk Drives for Object Storage">Section 11.5, “Allocating Disk Drives for Object Storage”</a>.
+    </p></li></ul></div></div></div><div class="sect1" id="topic-uh2-td1-kt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Roles for swift Nodes</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-uh2-td1-kt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-creating_roles_swift_nodes.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-creating_roles_swift_nodes.xml</li><li><span class="ds-label">ID: </span>topic-uh2-td1-kt</li></ul></div></div></div></div><p>
+  To create roles for swift nodes, you must edit the
+  <code class="literal">data/server_roles.yml</code> file and add an entry to the
+  server-roles list using the following syntax:
+ </p><div class="verbatim-wrap"><pre class="screen">server-roles:
+- name: <em class="replaceable ">PICK-A-NAME</em>
+  interface-model: <em class="replaceable ">SPECIFY-A-NAME</em>
+  disk-model: <em class="replaceable ">SPECIFY-A-NAME</em></pre></div><p>
+  The fields for server roles are defined as follows:
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /></colgroup><tbody><tr><td><span class="bold"><strong><code class="literal">name</code></strong></span>
+     </td><td>
+      Specifies a name assigned for the role. In the following example,
+      <span class="bold"><strong>SWOBJ-ROLE</strong></span> is the role name.
+     </td></tr><tr><td><span class="bold"><strong><code class="literal">interface-model</code></strong></span>
+     </td><td>
+      You can either select an existing interface model or create one
+      specifically for swift object servers. In the following example
+      <span class="bold"><strong>SWOBJ-INTERFACES</strong></span> is used. For more
+      information, see <a class="xref" href="modify-input-model.html#topic-pcj-hzv-dt" title="11.9. Understanding Swift Network and Service Requirements">Section 11.9, “Understanding Swift Network and Service Requirements”</a>.
+     </td></tr><tr><td><span class="bold"><strong><code class="literal">disk-model</code></strong></span>
+     </td><td>
+      You can either select an existing model or create one specifically for
+      swift object servers. In the following example
+      <span class="bold"><strong>SWOBJ-DISKS</strong></span> is used. For more
+      information, see <a class="xref" href="modify-input-model.html#allocating-disk-drives" title="11.5. Allocating Disk Drives for Object Storage">Section 11.5, “Allocating Disk Drives for Object Storage”</a>.
+     </td></tr></tbody></table></div><div class="verbatim-wrap"><pre class="screen">server-roles:
+- name: <span class="bold"><strong>SWOBJ-ROLE</strong></span>
+  interface-model: <span class="bold"><strong>SWOBJ-INTERFACES</strong></span>
+  disk-model: <span class="bold"><strong>SWOBJ-DISKS</strong></span></pre></div></div><div class="sect1" id="allocating-disk-drives"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Allocating Disk Drives for Object Storage</span> <a title="Permalink" class="permalink" href="modify-input-model.html#allocating-disk-drives">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_disk_drives.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocating_disk_drives.xml</li><li><span class="ds-label">ID: </span>allocating-disk-drives</li></ul></div></div></div></div><p>
+  The disk model describes the configuration of disk drives
+  
+  and their usage. The examples include several disk models.
+  
+  You must always review the disk devices before making any changes to the
+  existing the disk model.
+ </p><div class="sect2" id="making-changes-disk-model"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Making Changes to a Swift Disk Model</span> <a title="Permalink" class="permalink" href="modify-input-model.html#making-changes-disk-model">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_disk_drives.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocating_disk_drives.xml</li><li><span class="ds-label">ID: </span>making-changes-disk-model</li></ul></div></div></div></div><p>
+   There are several reasons for changing the disk model:
+  </p><div class="itemizedlist " id="ul-d5y-255-dt"><ul class="itemizedlist"><li class="listitem "><p>
+     If you have additional drives available, you can add them to the devices
+     list.
+    </p></li><li class="listitem "><p>
+     If the disk devices listed in the example disk model have different names
+     on your servers. This may be due to different hardware drives. Edit the
+     disk model and change the device names to the correct names.
+    </p></li><li class="listitem "><p>
+     If you prefer a different disk drive than the one listed in the model. For
+     example, if <code class="literal">/dev/sdb</code> and <code class="literal">/dev/sdc</code>
+     are slow hard drives and you have SDD drives available in
+     <code class="literal">/dev/sdd</code> and <code class="literal">/dev/sde</code>. In this case,
+     delete <code class="literal">/dev/sdb</code> and <code class="literal">/dev/sdc</code> and
+     replace them with <code class="literal">/dev/sdd</code> and
+     <code class="literal">/dev/sde</code>.
+    </p><div id="id-1.3.4.9.10.3.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      Disk drives must not contain labels or file systems from a prior usage.
+      For more information, see <a class="xref" href="modify-input-model.html#topic-d1s-hht-tt" title="11.6. Swift Requirements for Device Group Drives">Section 11.6, “Swift Requirements for Device Group Drives”</a>.
+     </p></div><div id="id-1.3.4.9.10.3.3.3.3" class="admonition tip normal"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.png" /><h6>Tip</h6><p>
+      The terms <span class="bold"><strong>add</strong></span> and
+      <span class="bold"><strong>delete</strong></span> in the document
+      means editing the respective YAML files to add or delete the
+      configurations/values.
+     </p></div></li></ul></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.3.4.9.10.3.4"><span class="name">Swift Consumer Syntax</span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_disk_drives.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+   The consumer field determines the usage of a disk drive or logical volume by
+   swift. The syntax of the consumer field is as follows:
+  </p><div class="verbatim-wrap"><pre class="screen">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: <em class="replaceable ">RING-NAME</em>
+        - name: <em class="replaceable ">RING-NAME</em>
+        - etc...</pre></div><p>
+   The fields for consumer are defined as follows:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /></colgroup><tbody><tr><td>
+       <code class="literal">name</code>
+      </td><td>
+       Specifies the service that uses the device group. A
+       <code class="literal">name</code> field containing
+       <span class="bold"><strong>swift</strong></span> indicates that the drives or
+       logical volumes are used by swift.
+      </td></tr><tr><td>
+       <code class="literal">attrs</code>
+      </td><td>
+       Lists the rings that the devices are allocated to. It must contain a
+       <code class="literal">rings</code> item.
+      </td></tr><tr><td>
+       <code class="literal">rings</code>
+      </td><td>
+       Contains a list of ring names. In the <code class="literal">rings</code> list,
+       the <code class="literal">name</code> field is optional.
+      </td></tr></tbody></table></div><p>
+   The following are the different configurations (patterns) of the proxy,
+   account, container, and object services:
+  </p><div class="itemizedlist " id="ul-dvq-kyb-jt"><ul class="itemizedlist"><li class="listitem "><p>
+     Proxy, account, container, and object (PACO) run on same node type.
+    </p></li><li class="listitem "><p>
+     Proxy, account, and container run on a node type (PAC) and the object
+     services run on a dedicated object server (OBJ).
+    </p></li></ul></div><div id="id-1.3.4.9.10.3.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    The proxy service does not have any rings associated with it.
+   </p></div><div class="example" id="id-1.3.4.9.10.3.12"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 11.1: </span><span class="name">
+    <span class="bold">PACO</span> - proxy, account, container,
+    and object run on the same node type.
+    </span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.12">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container
+        - name: object-0</pre></div></div></div><div class="example" id="id-1.3.4.9.10.3.13"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 11.2: </span><span class="name">
+    <span class="bold">PAC</span> - proxy, account, and
+    container run on the same node type.
+    </span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.13">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: account
+        - name: container</pre></div></div></div><div class="complex-example"><div class="example" id="id-1.3.4.9.10.3.14"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 11.3: </span><span class="name"><span class="bold">OBJ</span> - Dedicated object
+    server </span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.14">#</a></h6></div><div class="example-contents"><p>
+    The following example shows two Storage Policies (object-0 and object-1).
+    For more information, see
+    <a class="xref" href="modify-input-model.html#swift-storage-policies" title="11.11. Designing Storage Policies">Section 11.11, “Designing Storage Policies”</a>.
+   </p><div class="verbatim-wrap"><pre class="screen">consumer:
+    name: swift
+    attrs:
+        rings:
+        - name: object-0
+        - name: object-1</pre></div></div></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.3.4.9.10.3.15"><span class="name">Swift Device Groups</span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.15">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_disk_drives.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+   You may have several device groups if you have several different uses for
+   different sets of drives.
+  </p><p>
+   The following example shows a configuration where one drive is used for
+   account and container rings and the other drives are used by the object-0
+   ring:
+  </p><div class="verbatim-wrap"><pre class="screen">device-groups:
+
+- name: swiftpac
+  devices:
+  - name: /dev/sdb
+  consumer:
+      name: swift
+      attrs:
+      - name: account
+      - name: container
+  - name: swiftobj
+    devices:
+    - name: /dev/sdc
+    - name: /dev/sde
+    - name: /dev/sdf
+    consumer:
+       name: swift
+       attrs:
+           rings:
+              - name: object-0</pre></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.3.4.9.10.3.19"><span class="name">Swift Logical Volumes</span><a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.10.3.19">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_disk_drives.xml" title="Edit the source file for this section">Edit source</a></h5></div><div id="id-1.3.4.9.10.3.20" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+    Be careful while using logical volumes to store swift data. The data
+    remains intact during an upgrade, but will be lost if the server is
+    reimaged. If you use logical volumes you must ensure that you only reimage
+    one server at a time. This is to allow the data from the other replicas to
+    be replicated back to the logical volume once the reimage is complete.
+   </p></div><p>
+   swift can use a logical volume. To do this, ensure you meet the requirements
+   listed in the table below:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /></colgroup><tbody><tr><td>
+       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+          <code class="literal">mount</code>
+         </p></li><li class="listitem "><p>
+          <code class="literal">mkfs-opts</code>
+         </p></li><li class="listitem "><p>
+          <code class="literal">fstype</code>
+         </p></li></ul></div>
+      </td><td>Do not specify these attributes.</td></tr><tr><td>
+       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+          <code class="literal">name</code>
+         </p></li><li class="listitem "><p>
+          <code class="literal">size</code>
+         </p></li></ul></div>
+      </td><td>Specify both of these attributes.</td></tr><tr><td>
+       <div class="itemizedlist " id="ul-z5d-s3n-pt"><ul class="itemizedlist"><li class="listitem "><p>
+          <code class="literal">consumer</code>
+         </p></li></ul></div>
+      </td><td>
+       This attribute must have a <code class="literal">name</code> field set to
+       <span class="bold"><strong>swift</strong></span>.
+      </td></tr></tbody></table></div><div id="id-1.3.4.9.10.3.23" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    When setting up swift as a logical volume, the configuration processor
+    will give a warning. This warning is normal and does not affect the
+    configuration.
+   </p></div><p>
+   Following is an example of swift logical volumes:
+  </p><div class="verbatim-wrap"><pre class="screen">...
+   - name: swift
+     size: 50%
+     consumer:
+         name: swift
+         attrs:
+             rings:
+             - name: object-0
+             - name: object-1</pre></div></div></div><div class="sect1" id="topic-d1s-hht-tt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Swift Requirements for Device Group Drives</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-d1s-hht-tt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-swift_device_groups.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-swift_device_groups.xml</li><li><span class="ds-label">ID: </span>topic-d1s-hht-tt</li></ul></div></div></div></div><p>
+  To install and deploy, swift requires that the disk drives listed in the
+  devices list of the device-groups item in a disk model meet the following
+  criteria (if not, the deployment will fail):
+ </p><div class="itemizedlist " id="ul-fsy-255-dt"><ul class="itemizedlist"><li class="listitem "><p>
+    The disk device must exist on the server. For example, if you add
+    <code class="filename">/dev/sd<em class="replaceable ">X</em></code> to a server with
+    only three devices, then the deploy process will fail.
+   </p></li><li class="listitem "><p>
+    The disk device must be unpartitioned or have a single partition that uses
+    the whole drive.
+   </p></li><li class="listitem "><p>
+    The partition must not be labeled.
+
+   </p></li><li class="listitem "><p>
+    The XFS file system must not contain a file system label.
+
+   </p></li><li class="listitem "><p>
+    If the disk drive is already labeled as described above, the
+    <code class="literal">swiftlm-drive-provision</code> process will assume that the
+    drive has valuable data and will not use or modify the drive.
+   </p></li></ul></div></div><div class="sect1" id="topic-rvj-21c-jt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Swift Proxy, Account, and Container (PAC) Cluster</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-rvj-21c-jt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-creating_pac_cluster.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-creating_pac_cluster.xml</li><li><span class="ds-label">ID: </span>topic-rvj-21c-jt</li></ul></div></div></div></div><p>
+  If you already have a cluster with the server-role
+  <code class="literal">SWPAC-ROLE</code> there is no need to proceed through these
+  steps.
+ </p><div class="sect2" id="steps"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Steps to Create a swift Proxy, Account, and Container (PAC) Cluster</span> <a title="Permalink" class="permalink" href="modify-input-model.html#steps">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-creating_pac_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-creating_pac_cluster.xml</li><li><span class="ds-label">ID: </span>steps</li></ul></div></div></div></div><p>
+   To create a cluster for swift proxy, account, and container (PAC) servers,
+   you must identify the control plane and node type/role:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     In the
+     <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>
+     file, identify the control plane that the PAC servers are associated with.
+    </p></li><li class="step "><p>
+     Next, identify the node type/role used by the swift PAC servers. In the
+     following example, <code class="literal">server-role</code> is set to
+     <span class="bold"><strong>SWPAC-ROLE</strong></span>.
+    </p><p>
+     Add an entry to the <code class="literal">clusters</code> item in the
+     <code class="literal">control-plane</code> section.
+    </p><p>
+     Example:
+    </p><div class="verbatim-wrap"><pre class="screen">control-planes:
+    - name: control-plane-1
+      control-plane-prefix: cp1
+
+  . . .
+  clusters:
+  . . .
+     - name: swpac
+       cluster-prefix: swpac
+       server-role: SWPAC-ROLE
+       member-count: 3
+       allocation-policy: strict
+       service-components:
+         - ntp-client
+         - swift-ring-builder
+         - swift-proxy
+         - swift-account
+         - swift-container
+         - swift-client</pre></div><div id="id-1.3.4.9.12.3.3.2.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      Do not change the name of the cluster <code class="literal">swpac</code> to ensure
+      that it remains unique among clusters. Use names for its servers such as
+      <code class="literal">swpac1</code>, <code class="literal">swpac2</code>, and
+      <code class="literal">swpac3</code>.
+     </p></div></li><li class="step "><p>
+     If you have more than three servers available that have the
+     <code class="literal">SWPAC-ROLE</code> assigned to them, you must change
+     <code class="literal">member-count</code> to match the number of servers.
+    </p><p>
+     For example, if you have four servers with a role of
+     <code class="literal">SWPAC-ROLE</code>, then the <code class="literal">member-count</code>
+     should be 4.
+    </p></li></ol></div></div></div><div class="sect2" id="components"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Service Components</span> <a title="Permalink" class="permalink" href="modify-input-model.html#components">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-creating_pac_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-creating_pac_cluster.xml</li><li><span class="ds-label">ID: </span>components</li></ul></div></div></div></div><p>
+   A swift PAC server requires the following service components:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     ntp-client
+    </p></li><li class="listitem "><p>
+     swift-proxy
+    </p></li><li class="listitem "><p>
+     swift-account
+    </p></li><li class="listitem "><p>
+     swift-container
+    </p></li><li class="listitem "><p>
+     swift-ring-builder
+    </p></li><li class="listitem "><p>
+     swift-client
+    </p></li></ul></div></div></div><div class="sect1" id="topic-jzk-q1c-jt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Object Server Resource Nodes</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-jzk-q1c-jt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-creating_object_server_resource.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-creating_object_server_resource.xml</li><li><span class="ds-label">ID: </span>topic-jzk-q1c-jt</li></ul></div></div></div></div><p>
+  To create a resource node for swift object servers, you must identify the
+  control plane and node type/role:
+ </p><div class="itemizedlist " id="ul-r4r-r1c-jt"><ul class="itemizedlist"><li class="listitem "><p>
+    In the <code class="literal">data/control_plane.yml</code> file, identify the control
+    plane that the object servers are associated with.
+   </p></li><li class="listitem "><p>
+    Next, identify the node type/role used by the swift object servers. In the
+    following example, <code class="literal">server-role</code> is set to
+    <span class="bold"><strong>SWOBJ-ROLE</strong></span>:
+   </p><p>
+    Add an entry to the <code class="literal">resources</code> item in the
+    <span class="bold"><strong>control-plane</strong></span>:
+   </p><div class="verbatim-wrap"><pre class="screen">control-planes:
+    - name: control-plane-1
+      control-plane-prefix: cp1
+      region-name: region1
+  . . .
+  resources:
+  . . .
+  - name: swobj
+    resource-prefix: swobj
+    server-role: SWOBJ-ROLE
+    allocation-policy: strict
+    min-count: 0
+    service-components:
+    - ntp-client
+    - swift-object</pre></div></li></ul></div><p>
+  <span class="bold"><strong>Service Components</strong></span>
+ </p><p>
+  A swift object server requires the following service components:
+ </p><div class="itemizedlist " id="ul-fyb-51c-jt"><ul class="itemizedlist"><li class="listitem "><p>
+    <code class="literal">ntp-client</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">swift-object</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">swift-client</code> is optional; installs the
+    <code class="literal">python-swiftclient</code> package on the server.
+   </p></li></ul></div><p>
+  Resource nodes do not have a member count attribute. So the number of servers
+  allocated with the <span class="bold"><strong>SWOBJ-ROLE</strong></span> is the number
+  of servers in the <code class="literal">data/servers.yml</code> file with a server role
+  of <span class="bold"><strong>SWOBJ-ROLE</strong></span>.
+ </p></div><div class="sect1" id="topic-pcj-hzv-dt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Understanding Swift Network and Service Requirements</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-pcj-hzv-dt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-allocating_network.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-allocating_network.xml</li><li><span class="ds-label">ID: </span>topic-pcj-hzv-dt</li></ul></div></div></div></div><p>
+  This topic describes swift’s requirements for which service components must
+  exist in the input model and how these relate to the network model. This
+  information is useful if you are creating a cluster or resource node, or when
+  defining the networks used by swift. The network model allows many options
+  and configurations. For smooth swift operation, the following must be
+  <span class="bold"><strong>true</strong></span>:
+ </p><div class="itemizedlist " id="ul-ggm-rkc-jt"><ul class="itemizedlist"><li class="listitem "><p>
+    The following services must have a
+    <span class="bold"><strong>direct</strong></span>
+    connection to the same network:
+   </p><div class="itemizedlist " id="ul-x1c-5kc-jt"><ul class="itemizedlist"><li class="listitem "><p>
+      <code class="literal">swift-proxy</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">swift-account</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">swift-container</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">swift-object</code>
+     </p></li><li class="listitem "><p>
+      <code class="literal">swift-ring-builder</code>
+     </p></li></ul></div></li><li class="listitem "><p>
+    The <code class="literal">swift-proxy</code> service must have a
+    <span class="bold"><strong>direct</strong></span> connection to the same network as
+    the <code class="literal">cluster-ip</code> service.
+   </p></li><li class="listitem "><p>
+    The memcached service must be configured on a cluster of the control plane.
+    In small deployments, it is convenient to run it on the same cluster as the
+    horizon service. For larger deployments, with many nodes running the
+    <code class="literal">swift-proxy</code> service, it is better to
+    <span class="bold"><strong>co-locate</strong></span>
+    the <code class="literal">swift-proxy</code> and <code class="literal">memcached</code>
+    services. The <code class="literal">swift-proxy</code> and
+    <code class="literal">swift-container</code> services must have a
+    <span class="bold"><strong>direct</strong></span> connection to the same network as
+    the <code class="literal">memcached</code> service.
+   </p></li><li class="listitem "><p>
+    The <code class="literal"> swift-proxy</code> and
+    <code class="literal">swift-ring-builder</code> service must be
+    <span class="bold"><strong>co-located</strong></span> in the same cluster of the
+    control plane.
+   </p></li><li class="listitem "><p>
+    The <code class="literal">ntp-client</code> service must be
+    <span class="bold"><strong>present</strong></span> on all swift nodes.
+   </p></li></ul></div></div><div class="sect1" id="ring-specification"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Understanding Swift Ring Specifications</span> <a title="Permalink" class="permalink" href="modify-input-model.html#ring-specification">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-ring_specifications.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-ring_specifications.xml</li><li><span class="ds-label">ID: </span>ring-specification</li></ul></div></div></div></div><p>
+  In swift, the ring is responsible for mapping data on particular disks. There
+  is a separate ring for account databases, container databases, and each
+  object storage policy, but each ring works similarly. The
+  <code class="literal">swift-ring-builder</code> utility is used to build and manage
+  rings. This utility uses a builder file to contain ring information and
+  additional data required to build future rings. In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9, you will
+  use the cloud model to specify how the rings are configured and used. This
+  model is used to automatically invoke the
+  <code class="literal">swift-ring-builder</code> utility as part of the deploy process.
+  (Normally, you will not run the <code class="literal">swift-ring-builder</code> utility
+  directly.)
+ </p><p>
+  The rings are specified in the input model using the
+  <span class="bold"><strong>configuration-data</strong></span> key. The
+  <code class="literal">configuration-data</code> in the
+  <code class="literal">control-planes</code> definition is given a name that you will
+  then use in the <code class="literal">swift_config.yml</code> file. If you have several
+  control planes hosting swift services, the ring specifications can use a
+  shared <code class="literal">configuration-data</code> object, however it is considered
+  best practice to give each swift instance its own
+  <code class="literal">configuration-data</code> object.
+ </p><div class="sect2" id="input-model"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ring Specifications in the Input Model</span> <a title="Permalink" class="permalink" href="modify-input-model.html#input-model">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-ring_specifications.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-ring_specifications.xml</li><li><span class="ds-label">ID: </span>input-model</li></ul></div></div></div></div><p>
+   In most models, the ring-specification is mentioned in the
+   <code class="filename">~/openstack/my_cloud/definition/data/swift/swift_config.yml</code>
+   file. For example:
+  </p><div class="verbatim-wrap"><pre class="screen">configuration-data:
+  - name: SWIFT-CONFIG-CP1
+    services:
+      - swift
+    data:
+      control_plane_rings:
+        swift-zones:
+          - id: 1
+            server-groups:
+              - AZ1
+          - id: 2
+            server-groups:
+              - AZ2
+          - id: 3
+            server-groups:
+              - AZ3
+        rings:
+          - name: account
+            display-name: Account Ring
+            min-part-hours: 16
+            partition-power: 12
+            replication-policy:
+              replica-count: 3
+
+          - name: container
+            display-name: Container Ring
+            min-part-hours: 16
+            partition-power: 12
+            replication-policy:
+              replica-count: 3
+
+          - name: object-0
+            display-name: General
+            default: yes
+            min-part-hours: 16
+            partition-power: 12
+            replication-policy:
+              replica-count: 3</pre></div><p>
+   The above sample file shows that the rings are specified using the
+   <code class="literal">configuration-data</code> object
+   <span class="bold"><strong>SWIFT-CONFIG-CP1</strong></span> and has three
+   rings as follows:
+  </p><div class="itemizedlist " id="ul-hl3-q55-dt"><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="bold"><strong>Account ring</strong></span>: You must always specify a
+     ring called <span class="bold"><strong>account</strong></span>. The account ring is
+     used by swift to store metadata about the projects in your system. In
+     swift, a keystone project maps to a swift account. The
+     <code class="literal">display-name</code> is informational and not used.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Container ring</strong></span>:You must always specify a
+     ring called <span class="bold"><strong>container</strong></span>. The
+     <code class="literal">display-name</code> is informational and not used.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Object ring</strong></span>: This ring is also known as a
+     storage policy. You must always specify a ring called
+     <span class="bold"><strong>object-0</strong></span>. It is possible to have multiple
+     object rings, which is known as <span class="emphasis"><em>storage policies</em></span>. The
+     <code class="literal">display-name</code> is the name of the storage policy and can
+     be used by users of the swift system when they create containers. It
+     allows them to specify the storage policy that the container uses. In the
+     example, the storage policy is called
+     <span class="bold"><strong>General</strong></span>. There are also two aliases for
+     the storage policy name: <code class="literal">GeneralPolicy</code> and
+     <code class="literal">AnotherAliasForGeneral</code>. In this example, you can use
+     <code class="literal">General</code>, <code class="literal">GeneralPolicy</code>, or
+     <code class="literal">AnotherAliasForGeneral</code> to refer to this storage policy.
+     The aliases item is optional. The <code class="literal">display-name</code> is
+     required.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Min-part-hours, partition-power,
+     replication-policy</strong></span> and
+     <span class="bold"><strong>replica-count</strong></span> are described in the
+     following section.
+    </p></li></ul></div></div><div class="sect2" id="ring-parameters"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Replication Ring Parameters</span> <a title="Permalink" class="permalink" href="modify-input-model.html#ring-parameters">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-ring_specifications.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-ring_specifications.xml</li><li><span class="ds-label">ID: </span>ring-parameters</li></ul></div></div></div></div><p>
+   The ring parameters for traditional replication rings are defined as
+   follows:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">replica-count</code>
+      </td><td>
+       <p>
+        Defines the number of copies of object created.
+       </p>
+       <p>
+        Use this to control the degree of resiliency or availability. The
+        <code class="literal">replica-count</code> is normally set to
+        <code class="literal">3</code> (that means swift will
+        keep three copies of accounts, containers, or objects). As a best
+        practice, do not set the value below <code class="literal">3</code>. To achieve
+        higher resiliency, increase the value.
+       </p>
+      </td></tr><tr><td><code class="literal">min-part-hours</code>
+      </td><td>
+       <p>
+        Changes the value used to decide when a given partition can be moved.
+        This is the number of hours that the
+        <code class="command">swift-ring-builder</code> tool will enforce between ring
+        rebuilds. On a small system, this can be as low as
+        <code class="literal">1</code> (one hour). The
+        value can be different for each ring.
+       </p>
+       <p>
+        In the example above, the <code class="literal">swift-ring-builder</code> will
+        enforce a minimum of 16 hours between ring rebuilds. However, this time
+        is system-dependent so you will be unable to determine the appropriate
+        value for <code class="literal">min-part-hours</code> until you have more
+        experience with your system.
+       </p>
+       <p>
+        A value of <code class="literal">0</code> (zero) is not allowed.
+       </p>
+       <p>
+        In prior releases, this parameter was called
+        <code class="literal">min-part-time</code>. The older name is still supported,
+        however do not specify both <code class="literal">min-part-hours</code> and
+        <code class="literal">min-part-time</code> in the same files.
+       </p>
+      </td></tr><tr><td><code class="literal">partition-power</code>
+      </td><td>The optimal value for this parameter is related to the number of disk drives that
+              you allocate to swift storage. As a best practice, you should use the same drives for
+              both the account and container rings. In this case, the
+                <code class="literal">partition-power</code> value should be the same. For more information,
+              see <a class="xref" href="modify-input-model.html#selecting-partition-power" title="11.10.4. Selecting a Partition Power">Section 11.10.4, “Selecting a Partition Power”</a>.</td></tr><tr><td><code class="literal">replication-policy</code>
+      </td><td>Specifies that a ring uses replicated storage. The duplicate copies of the object
+              are created and stored on different disk drives. All replicas are identical. If one is
+              lost or corrupted, the system automatically copies one of the remaining replicas to
+              restore the missing replica.</td></tr><tr><td><code class="literal">default</code>
+      </td><td>The default value in the above sample file of ring-specification is set to
+                <span class="bold"><strong>yes</strong></span>, which means that the storage policy is enabled
+              to store objects. For more information, see
+              <a class="xref" href="modify-input-model.html#swift-storage-policies" title="11.11. Designing Storage Policies">Section 11.11, “Designing Storage Policies”</a>.</td></tr></tbody></table></div></div><div class="sect2" id="erasure-coded"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.10.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Erasure Coded Rings</span> <a title="Permalink" class="permalink" href="modify-input-model.html#erasure-coded">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-ring_specifications.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-ring_specifications.xml</li><li><span class="ds-label">ID: </span>erasure-coded</li></ul></div></div></div></div><p>
+   In the cloud model, a <code class="literal">ring-specification</code> is mentioned in
+   the <code class="filename">~/openstack/my_cloud/definition/data/swift/swift_config.yml</code>
+   file. A typical erasure coded ring in this file looks like this:
+  </p><div class="verbatim-wrap"><pre class="screen">- name: object-1
+  display-name: EC_ring
+  default: no
+  min-part-hours: 16
+  partition-power: 12
+  erasure-coding-policy:
+    ec-type: jerasure_rs_vand
+    ec-num-data-fragments: 10
+    ec-num-parity-fragments: 4
+    ec-object-segment-size: 1048576</pre></div><p>
+   The additional parameters are defined as follows:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>ec-type</td><td>
+       <p>
+        This is the particular erasure policy scheme that is being used. The
+        supported ec_types in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 are:
+       </p>
+       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+          <code class="literal">jerasure_rs_vand</code> =&gt; Vandermonde Reed-Solomon
+          encoding, based on Jerasure
+         </p></li></ul></div>
+      </td></tr><tr><td>erasure-coding-policy</td><td>This line indicates that the object ring will be of type "erasure coding"</td></tr><tr><td>ec-num-data-fragments</td><td>This indicated the number of data fragments for an object in the ring.</td></tr><tr><td>ec-num-parity-fragments</td><td>This indicated the number of parity fragments for an object in the ring.</td></tr><tr><td>ec-object-segment-size</td><td>The amount of data that will be buffered up before feeding a segment into the
+              encoder/decoder. The default value is 1048576.</td></tr></tbody></table></div><p>
+   When using an erasure coded ring, the number of devices in the ring must be
+   greater than or equal to the total number of fragments of an object. For
+   example, if you define an erasure coded ring with 10 data fragments and 4
+   parity fragments, there must be at least 14 (10+4) devices added to the
+   ring.
+  </p><p>
+   When using erasure codes, for a PUT object to be successful it must store
+   <code class="literal">ec_ndata + 1</code> fragment to achieve quorum. Where the number
+   of data fragments (<code class="literal">ec_ndata</code>) is 10 then at least 11
+   fragments must be saved for the object PUT to be successful. The 11
+   fragments must be saved to different drives. To tolerate a single object
+   server going down, say in a system with 3 object servers, each object server
+   must have at least 6 drives assigned to the erasure coded storage policy. So
+   with a single object server down, 12 drives are available between the
+   remaining object servers. This allows an object PUT to save 12 fragments,
+   one more than the minimum to achieve quorum.
+  </p><p>
+   Unlike replication rings, none of the erasure coded parameters may be edited
+   after the initial creation. Otherwise there is potential for permanent loss
+   of access to the data.
+  </p><p>
+   On the face of it, you would expect that an erasure coded configuration that
+   uses a data to parity ratio of 10:4, that the data consumed storing the
+   object is 1.4 times the size of the object just like the x3 replication
+   takes x3 times the size of the data when storing the object. However, for
+   erasure coding, this 10:4 ratio is not correct. The efficiency (that is how
+   much storage is needed to store the object) is very poor for small objects
+   and improves as the object size grows. However, the improvement is not
+   linear. If all of your files are less than 32K in size, erasure coding will
+   take more space to store than the x3 replication.
+  </p></div><div class="sect2" id="selecting-partition-power"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.10.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Selecting a Partition Power</span> <a title="Permalink" class="permalink" href="modify-input-model.html#selecting-partition-power">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-ring_specifications.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-ring_specifications.xml</li><li><span class="ds-label">ID: </span>selecting-partition-power</li></ul></div></div></div></div><p>
+   When storing an object, the object storage system hashes the name. This hash
+   results in a hit on a partition (so a number of different object names
+   result in the same partition number). Generally, the partition is mapped to
+   available disk drives. With a replica count of 3, each partition is mapped
+   to three different disk drives. The hashing algorithm used hashes over a
+   fixed number of partitions. The partition-power attribute determines the
+   number of partitions you have.
+  </p><p>
+   Partition power is used to distribute the data uniformly across drives in a
+   swift nodes. It also defines the storage cluster capacity. You must set the
+   partition power value based on the total amount of storage you expect your
+   entire ring to use.
+  </p><p>
+   You should select a partition power for a given ring that is appropriate to
+   the number of disk drives you allocate to the ring for the following
+   reasons:
+  </p><div class="itemizedlist " id="ul-i4b-gv5-dt"><ul class="itemizedlist"><li class="listitem "><p>
+     If you use a high partition power and have a few disk drives, each disk
+     drive will have thousands of partitions. With too many partitions, audit
+     and other processes in the Object Storage system cannot walk the
+     partitions in a reasonable time and updates will not occur in a timely
+     manner.
+    </p></li><li class="listitem "><p>
+     If you use a low partition power and have many disk drives, you will have
+     tens (or maybe only one) partition on a drive. The Object Storage system
+     does not use size when hashing to a partition - it hashes the name.
+    </p><p>
+     With many partitions on a drive, a large partition is cancelled out by a
+     smaller partition so the overall drive usage is similar. However, with
+     very small numbers of partitions, the uneven distribution of sizes can be
+     reflected in uneven disk drive usage (so one drive becomes full while a
+     neighboring drive is empty).
+    </p></li></ul></div><p>
+   An ideal number of partitions per drive is 100. If you know the number of
+   drives, select a partition power that will give you approximately 100
+   partitions per drive. Usually, you install a system with a specific number
+   of drives and add drives as needed. However, you cannot change the value of
+   the partition power. Hence you must select a value that is a compromise
+   between current and planned capacity.
+  </p><div id="id-1.3.4.9.15.7.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    If you are installing a small capacity system and you need to grow to a
+    very large capacity but you cannot fit within any of the ranges in the
+    table, please seek help from Sales Engineering to plan your system.
+   </p></div><p>
+   There are additional factors that can help mitigate the fixed nature of the
+   partition power:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Account and container storage represents a small fraction (typically 1
+     percent) of your object storage needs. Hence, you can select a smaller
+     partition power (relative to object ring partition power) for the account
+     and container rings.
+    </p></li></ul></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     For object storage, you can add additional storage policies (that is, another
+     object ring). When you have reached capacity in an existing storage
+     policy, you can add a new storage policy with a higher partition power
+     (because you now have more disk drives in your system). This means that
+     you can install your system using a small partition power appropriate to a
+     small number of initial disk drives. Later, when you have many disk
+     drives, the new storage policy can have a higher value appropriate to the
+     larger number of drives.
+    </p></li></ul></div><p>
+   However, when you continue to add storage capacity, existing containers will
+   continue to use their original storage policy. Hence, the additional objects
+   must be added to new containers to take advantage of the new storage policy.
+  </p><p>
+   Use the following table to select an appropriate partition power for each
+   ring. The partition power of a ring cannot be changed, so it is important to
+   select an appropriate value. This table is based on a replica count of 3. If
+   your replica count is different, or you are unable to find your system in
+   the table, then see <a class="xref" href="modify-input-model.html#selecting-partition-power" title="11.10.4. Selecting a Partition Power">Section 11.10.4, “Selecting a Partition Power”</a> for
+   information of selecting a partition power.
+  </p><p>
+   The table assumes that when you first deploy swift, you have a small number
+   of drives (the minimum column in the table), and later you add drives.
+  </p><div id="id-1.3.4.9.15.7.14" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Use the total number of drives. For example, if you have three servers,
+      each with two drives, the total number of drives is six.
+     </p></li><li class="listitem "><p>
+      The lookup should be done separately for each of the account, container
+      and object rings. Since account and containers represent approximately 1
+      to 2 percent of object storage, you will probably use fewer drives for
+      the account and container rings (that is, you will have fewer proxy,
+      account, and container (PAC) servers) so that your object rings may have
+      a higher partition power.
+     </p></li><li class="listitem "><p>
+      The largest anticipated number of drives imposes a limit in the minimum
+      drives you can have. (For more information, see
+      <a class="xref" href="modify-input-model.html#selecting-partition-power" title="11.10.4. Selecting a Partition Power">Section 11.10.4, “Selecting a Partition Power”</a>.) This means that, if you
+      anticipate significant growth, your initial system can be small, but
+      under a certain limit. For example, if you determine that the maximum
+      number of drives the system will grow to is 40,000, then use a partition
+      power of 17 as listed in the table below. In addition, a minimum of 36
+      drives is required to build the smallest system with this partition
+      power.
+     </p></li><li class="listitem "><p>
+      The table assumes that disk drives are the same size. The actual size of
+      a drive is not significant.
+     </p></li></ul></div></div></div></div><div class="sect1" id="swift-storage-policies"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Designing Storage Policies</span> <a title="Permalink" class="permalink" href="modify-input-model.html#swift-storage-policies">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-storage_policies.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-storage_policies.xml</li><li><span class="ds-label">ID: </span>swift-storage-policies</li></ul></div></div></div></div><p>
+  Storage policies enable you to differentiate the way objects are stored.
+ </p><p>
+  Reasons to use storage policies include the following:
+ </p><div class="itemizedlist " id="ul-q4t-cxd-jt"><ul class="itemizedlist"><li class="listitem "><p>
+    Different types or classes of disk drive
+   </p><p>
+    You can use different drives to store various type of data. For example,
+    you can use 7.5K RPM high-capacity drives for one type of data and fast SSD
+    drives for another type of data.
+   </p></li><li class="listitem "><p>
+    Different redundancy or availability needs
+   </p><p>
+    You can define the redundancy and availability based on your requirement.
+    You can use a replica count of 3 for "normal" data and a replica count of 4
+    for "critical" data.
+   </p></li><li class="listitem "><p>
+    Growing of cluster capacity
+   </p><p>
+    If the storage cluster capacity grows beyond the recommended partition
+    power as described in <a class="xref" href="modify-input-model.html#ring-specification" title="11.10. Understanding Swift Ring Specifications">Section 11.10, “Understanding Swift Ring Specifications”</a>.
+   </p></li><li class="listitem "><p>
+    Erasure-coded storage and replicated storage
+   </p><p>
+    If you use erasure-coded storage for some objects and replicated storage
+    for other objects.
+   </p></li></ul></div><p>
+  Storage policies are implemented on a per-container basis. If you want a
+  non-default storage policy to be used for a new container, you can explicitly
+  specify the storage policy to use when you create the container. You can
+  change which storage policy is the default. However, this does not affect
+  existing containers. Once the storage policy of a container is set, the
+  policy for that container cannot be changed.
+ </p><p>
+  The disk drives used by storage policies can overlap or be distinct. If the
+  storage policies overlap (that is, have disks in common between two storage
+  policies), it is recommended to use the same set of disk drives for both
+  policies. But in the case where there is a partial overlap in disk drives,
+  because one storage policy receives many objects, the drives that are common
+  to both policies must store more objects than drives that are only allocated
+  to one storage policy. This can be appropriate for a situation where the
+  overlapped disk drives are larger than the non-overlapped drives.
+
+ </p><div class="sect2" id="id-1.3.4.9.16.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Specifying Storage Policies</span> <a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.16.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-storage_policies.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-storage_policies.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   There are two places where storage policies are specified in the input
+   model:
+  </p><div class="itemizedlist " id="ul-psf-lg2-jt"><ul class="itemizedlist"><li class="listitem "><p>
+     The attribute of the storage policy is specified in ring-specification in
+     the <code class="filename">data/swift/swift_config.yml</code> file.
+    </p></li><li class="listitem "><p>
+     When associating disk drives with specific rings in a disk model. This
+     specifies which drives and nodes use the storage policy. In other word
+     words, where data associated with a storage policy is stored.
+    </p></li></ul></div><p>
+   A storage policy is specified similar to other rings. However, the following
+   features are unique to storage policies:
+  </p><div class="itemizedlist " id="ul-k3j-ng2-jt"><ul class="itemizedlist"><li class="listitem "><p>
+     Storage policies are applicable to object rings only. The account or
+     container rings cannot have storage policies.
+    </p></li><li class="listitem "><p>
+     There is a format for the ring name:
+     object-<em class="replaceable ">index</em>, where index is a number in the
+     range 0 to 9 (in this release). For example: object-0.
+    </p></li><li class="listitem "><p>
+     The object-0 ring must always be specified.
+    </p></li><li class="listitem "><p>
+     Once a storage policy is deployed, it should never be deleted. You can
+     remove all disk drives for the storage policy, however the ring
+     specification itself cannot be deleted.
+    </p></li><li class="listitem "><p>
+     You can use the <code class="literal">display-name</code> attribute when creating a
+     container to indicate which storage policy you want to use for that
+     container.
+    </p></li><li class="listitem "><p>
+     One of the storage policies can be the default policy. If you do not
+     specify the storage policy then the object created in new container uses
+     the default storage policy.
+    </p></li><li class="listitem "><p>
+     If you change the default, only containers created later will have that
+     changed default policy.
+    </p></li></ul></div><p>
+   The following example shows three storage policies in use. Note that the
+   third storage policy example is an erasure coded ring.
+  </p><div class="verbatim-wrap"><pre class="screen">rings:
+. . .
+- name: object-0
+  display-name: General
+  default: no
+  min-part-hours: 16
+  partition-power: 12
+  replication-policy:
+      replica-count: 3
+- name: object-1
+  display-name: Data
+  default: yes
+  min-part-hours: 16
+  partition-power: 20
+  replication-policy:
+      replica-count: 3
+- name: object-2
+  display-name: Archive
+  default: no
+  min-part-hours: 16
+  partition-power: 20
+  erasure-coded-policy:
+    ec-type: jerasure_rs_vand
+    ec-num-data-fragments: 10
+    ec-num-parity-fragments: 4
+    ec-object-segment-size: 1048576</pre></div></div></div><div class="sect1" id="designing-swift-zones"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Designing Swift Zones</span> <a title="Permalink" class="permalink" href="modify-input-model.html#designing-swift-zones">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-swift_zones.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-swift_zones.xml</li><li><span class="ds-label">ID: </span>designing-swift-zones</li></ul></div></div></div></div><p>
+  The concept of swift zones allows you to control the placement of replicas on
+  different groups of servers. When constructing rings and allocating replicas
+  to specific disk drives, swift will, where possible, allocate replicas using
+  the following hierarchy so that the greatest amount of resiliency is achieved
+  by avoiding single points of failure:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    swift will place each replica on a different disk drive within the same
+    server.
+   </p></li><li class="listitem "><p>
+    swift will place each replica on a different server.
+   </p></li><li class="listitem "><p>
+    swift will place each replica in a different swift zone.
+   </p></li></ul></div><p>
+  If you have three servers and a replica count of three, it is easy for swift
+  to place each replica on a different server. If you only have two servers
+  though, swift will place two replicas on one server (different drives on the
+  server) and one copy on the other server.
+ </p><p>
+  With only three servers there is no need to use the swift zone concept.
+  However, if you have more servers than your replica count, the swift zone
+  concept can be used to control the degree of resiliency. The following table
+  shows how data is placed and explains what happens under various failure
+  scenarios. In all cases, a replica count of three is assumed and that there
+  are a total of six servers.
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>Number of swift Zones</th><th>Replica Placement</th><th>Failure Scenarios</th><th>Details</th></tr></thead><tbody><tr><td rowspan="3">
+      One (all servers in the same zone)
+     </td><td rowspan="3">
+      Replicas are placed on different servers. For any given object, you
+      have no control over which servers the replicas are placed on.
+     </td><td>
+      One server fails
+     </td><td>
+      You are guaranteed that there are two other replicas.
+     </td></tr><tr><td>Two servers fail</td><td>You are guaranteed that there is one remaining replica.</td></tr><tr><td>Three servers fail</td><td>
+      1/3 of the objects cannot be accessed. 2/3 of the objects have three
+      replicas.
+     </td></tr><tr><td>Two (three servers in each swift zone)</td><td>
+      Half the objects have two replicas in swift zone 1 with one replica in
+      swift zone The other objects are reversed, with one replica in swift
+      zone 1 and two replicas in swift zone 2.
+     </td><td>One swift zone fails</td><td>
+      You are guaranteed to have at least one replica. Half the objects have
+      two remaining replicas and the other half have a single replica.
+     </td></tr><tr><td rowspan="2">Three (two servers in each swift zone)</td><td rowspan="2">
+      Each zone contains a replica. For any given object, there is a replica
+      in each swift zone.
+     </td><td>One swift zone fails</td><td>You are guaranteed to have two replicas of every object.</td></tr><tr><td>Two swift zones fail</td><td>You are guaranteed to have one replica of every object.</td></tr></tbody></table></div><p>
+  The following sections show examples of how to specify the swift zones in
+  your input model.
+ </p><div class="sect2" id="server-groups"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Server Groups to Specify swift Zones</span> <a title="Permalink" class="permalink" href="modify-input-model.html#server-groups">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-swift_zones.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-swift_zones.xml</li><li><span class="ds-label">ID: </span>server-groups</li></ul></div></div></div></div><p>
+   swift zones are specified in the ring specifications using the server group
+   concept. To define a swift zone, you specify:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     An id - this is the swift zone number
+    </p></li><li class="listitem "><p>
+     A list of associated server groups
+    </p></li></ul></div><p>
+   Server groups are defined in your input model. The example input models
+   typically define a number of server groups. You can use these pre-defined
+   server groups or create your own.
+  </p><p>
+   For example, the following three models use the example server groups
+   <code class="literal">CLOUD</code>, <code class="literal">AZ1</code>, <code class="literal">AZ2</code> and
+   <code class="literal">AZ3</code>. Each of these examples achieves the same effect –
+   creating a single swift zone.
+  </p><div class="verbatim-wrap"><pre class="screen">ring-specifications:
+              - region: region1
+              swift-zones:
+              - id: 1
+              server-groups:
+              - CLOUD
+              rings:
+              …</pre></div><div class="verbatim-wrap"><pre class="screen">ring-specifications:
+              - region: region1
+              swift-zones:
+              - id: 1
+              server-groups:
+              - AZ1
+              - AZ2
+              - AZ3
+              rings:
+              …</pre></div><div class="verbatim-wrap"><pre class="screen">server-groups:
+              - name: ZONE_ONE
+              server-groups:
+              - AZ1
+              - AZ2
+              - AZ3
+              ring-specifications:
+              - region: region1
+              swift-zones:
+              - id: 1
+              server-groups:
+              - ZONE_ONE
+              rings:
+              …</pre></div><p>
+   Alternatively, if you omit the <code class="literal">swift-zones</code> specification,
+   a single swift zone is used by default for all servers.
+  </p><p>
+   In the following example, three swift zones are specified and mapped to the
+   same availability zones that nova uses (assuming you are using one of the
+   example input models):
+  </p><div class="verbatim-wrap"><pre class="screen">ring-specifications:
+      - region: region1
+      swift-zones:
+      - id: 1
+      server-groups:
+      - AZ1
+      - id: 2
+      server-groups:
+      - AZ2
+      - id: 3
+      server-groups:
+      - AZ3</pre></div><p>
+   In this example, it shows a datacenter with four availability zones which
+   are mapped to two swift zones. This type of setup may be used if you had two
+   buildings where each building has a duplicated network infrastructure:
+  </p><div class="verbatim-wrap"><pre class="screen">ring-specifications:
+      - region: region1
+      swift-zones:
+      - id: 1
+      server-groups:
+      - AZ1
+      - AZ2
+      - id: 2
+      server-groups:
+      - AZ3
+      - AZ4</pre></div></div><div class="sect2" id="zones-ring-level"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Specifying Swift Zones at Ring Level</span> <a title="Permalink" class="permalink" href="modify-input-model.html#zones-ring-level">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-swift_zones.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-swift_zones.xml</li><li><span class="ds-label">ID: </span>zones-ring-level</li></ul></div></div></div></div><p>
+   Usually, you would use the same swift zone layout for all rings in your
+   system. However, it is possible to specify a different layout for a given
+   ring. The following example shows that the account, container and object-0
+   rings have two zones, but the object-1 ring has a single zone.
+  </p><div class="verbatim-wrap"><pre class="screen">ring-specifications:
+        - region: region1
+        swift-zones:
+        - id: 1
+        server-groups:
+        - AZ1
+        - id: 2
+        server-groups:
+        - AZ2
+        rings
+        - name: account
+        …
+        - name: container
+        …
+        - name: object-0
+        …
+        - name: object-1
+        swift-zones:
+        - id: 1
+        server-groups:
+        - CLOUD
+        …</pre></div></div></div><div class="sect1" id="topic-rdf-hkp-rt"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Customizing Swift Service Configuration Files</span> <a title="Permalink" class="permalink" href="modify-input-model.html#topic-rdf-hkp-rt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-modify_swift_service_config_files.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-modify_swift_service_config_files.xml</li><li><span class="ds-label">ID: </span>topic-rdf-hkp-rt</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 enables you to modify various swift service configuration
+  files. The following swift service configuration files are located on the
+  Cloud Lifecycle Manager in the <code class="filename">~/openstack/my_cloud/config/swift/</code> directory:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <code class="literal">account-server.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">container-reconciler.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">container-server.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">container-sync-realms.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">object-expirer.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">object-server.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">proxy-server.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">rsyncd.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">swift.conf.j2</code>
+   </p></li><li class="listitem "><p>
+    <code class="literal">swift-recon.j2</code>
+   </p></li></ul></div><p>
+  There are many configuration options that can be set or changed, including
+  <span class="bold"><strong>container rate limit</strong></span>
+  and <span class="bold"><strong>logging level</strong></span>:
+ </p><div class="sect2" id="configuring-swift-contianer-rate-limit"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.13.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Swift Container Rate Limit</span> <a title="Permalink" class="permalink" href="modify-input-model.html#configuring-swift-contianer-rate-limit">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-modify_swift_service_config_files.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-modify_swift_service_config_files.xml</li><li><span class="ds-label">ID: </span>configuring-swift-contianer-rate-limit</li></ul></div></div></div></div><p>
+   The swift container rate limit allows you to limit the number of
+   <code class="literal">PUT</code> and <code class="literal">DELETE</code> requests of an object
+   based on the number of objects in a container. For example, suppose the
+   <code class="literal">container_ratelimit_x = r </code>. It means that for containers
+   of size <code class="literal">x</code>, limit requests per second to
+   <code class="literal">r</code>.
+  </p><p>
+   To enable container rate limiting:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Edit the <code class="literal">DEFAULT</code> section of
+     <code class="filename">~/openstack/my_cloud/config/swift/proxy-server.conf.j2</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">container_ratelimit_0 = 100
+container_ratelimit_1000000 = 100
+container_ratelimit_5000000 = 50</pre></div><p>
+     This will set the <code class="literal">PUT</code> and <code class="literal">DELETE</code>
+     object rate limit to 100 requests per second for containers with up to
+     1,000,000 objects. Also, the <code class="literal">PUT</code> and
+     <code class="literal">DELETE</code> rate for containers with between 1,000,000 and
+     5,000,000 objects will vary linearly from between 100 and 50 requests per
+     second as the container object count increases.
+    </p></li><li class="step "><p>
+     Commit your changes to git:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git commit -m "<em class="replaceable ">COMMIT_MESSAGE</em>" \
+~/openstack/my_cloud/config/swift/proxy-server.conf.j2</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Create a deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the <code class="literal">swift-reconfigure.yml</code> playbook to reconfigure
+     the swift servers:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="modifying-swift-account-server-logging-level"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.13.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring swift Account Server Logging Level</span> <a title="Permalink" class="permalink" href="modify-input-model.html#modifying-swift-account-server-logging-level">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-modify_swift_service_config_files.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-modify_swift_service_config_files.xml</li><li><span class="ds-label">ID: </span>modifying-swift-account-server-logging-level</li></ul></div></div></div></div><p>
+   By default the swift logging level is set to <code class="literal">INFO</code>. As a
+   best practice, do not set the log level to DEBUG for a long period of time.
+   Use it for troubleshooting issues and then change it back to INFO.
+  </p><p>
+   Perform the following steps to set the logging level of the
+   <code class="literal">account-server</code> to <code class="literal">DEBUG</code>:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Edit the <code class="literal">DEFAULT</code> section of
+     <code class="filename">~/openstack/my_cloud/config/swift/account-server.conf.j2</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">[DEFAULT] . . log_level = DEBUG</pre></div></li><li class="step "><p>
+     Commit your changes to git:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git commit -m "<em class="replaceable ">COMMIT_MESSAGE</em>" \
+~/openstack/my_cloud/config/swift/account-server.conf.j2</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Create a deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the <code class="literal">swift-reconfigure.yml</code> playbook to reconfigure
+     the swift servers:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.4.9.18.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.13.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="modify-input-model.html#id-1.3.4.9.18.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-planning-objectstorage-modify_swift_service_config_files.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-planning-objectstorage-modify_swift_service_config_files.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   For more information, see:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="intraxref">Book “Operations Guide CLM”, Chapter 13 “Managing Monitoring, Logging, and Usage Reporting”, Section 13.2 “Centralized Logging Service”, Section 13.2.5 “Configuring Centralized Logging”</span>
+    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “Operations Guide CLM”, Chapter 13 “Managing Monitoring, Logging, and Usage Reporting”, Section 13.2 “Centralized Logging Service”</span>
+    </p></li></ul></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="alternative-configurations.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 12 </span>Alternative Configurations</span></a><a class="nav-link" href="modify-compute-input-model.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 10 </span>Modifying Example Configurations for Compute Nodes</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

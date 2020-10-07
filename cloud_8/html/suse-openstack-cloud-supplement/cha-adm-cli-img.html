@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Managing Images | Supplement to Administrator Guide and End User Guide | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Supplement to Administrator Guide and End User Guide" /><meta name="chapter-title" content="Chapter 2. Managing Images" /><meta name="description" content="" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="taroth@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 7" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-supplement.html" title="Supplement to Administrator Guide and End User Guide" /><link rel="prev" href="cha-suppl-horizon-theme.html" title="Chapter 1. Changing the SUSE OpenStack Cloud Dashboard Theme" /><link rel="next" href="cha-user-dash-inst.html" title="Chapter 3. Launching Instances from the SUSE OpenStack Cloud Dashboard" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-supplement.html">Supplement to Administrator Guide and End User Guide</a><span> › </span><a class="crumb" href="cha-adm-cli-img.html">Managing Images</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Supplement to Administrator Guide and End User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-suppl.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="cha-suppl-horizon-theme.html"><span class="number">1 </span><span class="name">Changing the SUSE <span class="productname">OpenStack</span> Cloud Dashboard Theme</span></a></li><li class="inactive"><a href="cha-adm-cli-img.html"><span class="number">2 </span><span class="name">Managing Images</span></a></li><li class="inactive"><a href="cha-user-dash-inst.html"><span class="number">3 </span><span class="name">Launching Instances from the SUSE <span class="productname">OpenStack</span> Cloud Dashboard</span></a></li><li class="inactive"><a href="cha-user-dash-inst-access.html"><span class="number">4 </span><span class="name">Configuring Access to the Instances</span></a></li><li class="inactive"><a href="cha-deploy-kubernetes.html"><span class="number">5 </span><span class="name">Deploying Kubernetes</span></a></li><li class="inactive"><a href="app-suppl-docupdates.html"><span class="number">A </span><span class="name">Documentation Updates</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Changing the SUSE OpenStack Cloud Dashboard Theme" href="cha-suppl-horizon-theme.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Launching Instances from the SUSE OpenStack Cloud Dashboard" href="cha-user-dash-inst.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 8 Documentation</span></a><span> › </span><a class="crumb" href="book-supplement.html">Supplement to Administrator Guide and End User Guide</a><span> › </span><a class="crumb" href="cha-adm-cli-img.html">Managing Images</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Changing the SUSE OpenStack Cloud Dashboard Theme" href="cha-suppl-horizon-theme.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Launching Instances from the SUSE OpenStack Cloud Dashboard" href="cha-user-dash-inst.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-adm-cli-img"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Images</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>cha-adm-cli-img</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-build-req"><span class="number">2.1 </span><span class="name">Image Requirements</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-build"><span class="number">2.2 </span><span class="name">Building Images with SUSE Studio</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-props"><span class="number">2.3 </span><span class="name">Image Properties</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-upload"><span class="number">2.4 </span><span class="name">Uploading Images</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-props-modify"><span class="number">2.5 </span><span class="name">Modifying Image Properties</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-suppl-img-custom-kernel"><span class="number">2.6 </span><span class="name">Using a Custom Kernel to Boot Btrfs Images Under Xen</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-view"><span class="number">2.7 </span><span class="name">Viewing Images and Image Properties, Deleting Images</span></a></span></dt><dt><span class="sect1"><a href="cha-adm-cli-img.html#sec-adm-cli-img-member"><span class="number">2.8 </span><span class="name">Viewing and Modifying Membership of Private Images</span></a></span></dt></dl></div></div><p>
+   
+  </p><p>
+   In the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> context, images are virtual disk images that represent
+   the contents and structure of a storage medium or device, such as a hard
+   disk, in a single file. Images are used as a template from which a virtual
+   machine can be started. For starting a virtual machine, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> always
+   uses a copy of the image.
+  </p><p>
+   Images have both content and metadata. The latter are also called image
+   properties.
+  </p><p>
+   Permissions to manage images are defined by the cloud operator during setup
+   of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. Image upload and management may be restricted to cloud
+   administrators or cloud operators only.
+  </p><p>
+   Managing images for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> requires the following basic steps:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     <a class="xref" href="cha-adm-cli-img.html#sec-adm-cli-img-build" title="2.2. Building Images with SUSE Studio">Building Images with SUSE Studio</a>.
+     
+    </p><p>
+     For general and hypervisor-specific requirements, refer to
+     <a class="xref" href="cha-adm-cli-img.html#sec-adm-cli-img-build-req" title="2.1. Image Requirements">Section 2.1, “Image Requirements”</a>.
+    </p></li><li class="step "><p>
+     <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-upload" title="Uploading Disk Images to SUSE OpenStack Cloud Crowbar">Uploading Disk Images to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></a>.
+    </p><p>
+     Images can either be uploaded to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> with the
+     unified <code class="command">python-openstackclient</code> from command line or with
+     the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Dashboard. As the Dashboard has some limitations
+     regarding image upload and modification of properties, it is recommended
+     to use the unified <code class="command">python-openstackclient</code> for comprehensive image
+     management.
+    </p></li><li class="step "><p>
+     Specifying Image Properties. You can do so during image upload (using
+     <code class="command">openstack image create</code>) or with
+     <code class="command">openstack image set</code> after the image has already
+     been uploaded. Refer to <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-upload" title="Uploading Disk Images to SUSE OpenStack Cloud Crowbar">Procedure 2.2, “Uploading Disk Images to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>”</a> and
+     <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-props-modify" title="Modifying Image Properties">Procedure 2.3, “Modifying Image Properties”</a>.
+    </p><div id="id-1.5.4.7.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Properties for Architecture, Hypervisor and VM Mode</h6><p>
+      <span class="productname">OpenStack</span> Image does <span class="emphasis"><em>not</em></span> check nor automatically
+      detect any image properties. Therefore you need to specify the
+      image's properties manually.
+     </p><p>
+      This is especially important when using mixed virtualization environments
+      to make sure that an image is only launched on appropriate hypervisors.
+      The properties can specify a certain architecture, hypervisor type, or
+      application binary interface (ABI) that the image requires.
+     </p></div></li></ol></div></div><div class="sect1 " id="sec-adm-cli-img-build-req"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Requirements</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-build-req">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-build-req</li></ul></div></div></div></div><p>
+   
+  </p><p>
+    To build the images to use within the cloud, use SUSE Studio or
+    SUSE Studio Onsite as they provide automatic insertion of management scripts and
+    agents. Make sure any images that you build for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> fulfill the
+    following requirements.
+   </p><div class="sect2 " id="vl-adm-img-req-general"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Image Requirements</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#vl-adm-img-req-general">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>vl-adm-img-req-general</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       The network is set to DHCP.
+      </p></li><li class="listitem "><p>
+       The image does not include YaST2 Firstboot.
+      </p></li><li class="listitem "><p>
+       The image does not include any end-user license agreement (EULA)
+       dialogs.
+      </p></li><li class="listitem "><p>
+       The image contains the
+       <code class="systemitem">cloud-init</code> package. The
+       package will be automatically added to the image if the following check
+       box in SUSE Studio or SUSE Studio Onsite is enabled: <span class="guimenu ">Integrate with
+       <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>/OpenStack</span>.
+      </p><p>
+       The <code class="systemitem">cloud-init</code> package
+       contains tools used for communication with the instance metadata API,
+       which is provided by Compute. The metadata API is only accessible from
+       inside the VM. The package is needed to pull keypairs into the virtual
+       machine that will run the image.
+      </p></li></ul></div><p>
+     If you intend to manage the image by the Orchestration module, you also need to
+     include the following package:
+     <code class="systemitem">openstack-heat-cfntools</code> (part of
+     the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> ISO).
+    </p></div><div class="sect2 " id="vl-adm-img-req-virt"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Requirements Depending on Hypervisor</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#vl-adm-img-req-virt">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>vl-adm-img-req-virt</li></ul></div></div></div></div><p>
+     For a list of supported VM guests, refer to the SUSE® Linux Enterprise Server <em class="citetitle ">Virtualization Guide</em>,
+     section <em class="citetitle ">Supported VM Guests</em>. It is available at
+     <a class="link" href="https://documentation.suse.com/sles/12-SP5/single-html/SLES-virtualization/#virt-support-guests" target="_blank">https://documentation.suse.com/sles/12-SP5/single-html/SLES-virtualization/#virt-support-guests</a>.
+    </p><p>
+     Depending on the virtualization platform on which you want to use the
+     image, make sure the image also fulfills the following requirements.
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.4.8.5.4.1"><span class="term ">KVM</span></dt><dd><p>
+        Appliance format: If you are using SUSE Studio or SUSE Studio Onsite 1.3 to
+        build images, use the <code class="literal"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>/OpenStack/KVM
+        (.qcow2)</code> format.
+       </p></dd><dt id="id-1.5.4.8.5.4.2"><span class="term ">Xen</span></dt><dd><p>
+        Appliance format: If you are using SUSE Studio or SUSE Studio Onsite 1.3 to
+        build images, use the <code class="literal"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>/OpenStack/KVM
+        (.qcow2)</code> format.
+       </p></dd><dt id="id-1.5.4.8.5.4.3"><span class="term ">VMware</span></dt><dd><p>
+        Appliance format: If you are using SUSE Studio or SUSE Studio Onsite 1.3 to
+        build images, use the <code class="literal">VMware/VirtualBox/KVM (.vmdk)</code>
+        format.
+       </p><p>
+        If you are using SUSE Studio or SUSE Studio Onsite to build images, the
+        resulting image will be a monolithic <code class="literal">sparse</code> file.
+       </p><div id="id-1.5.4.8.5.4.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Image Conversion</h6><p>
+         Sparse images can be uploaded to <span class="productname">OpenStack</span> Image. However, it is
+         recommended to convert sparse images into a different format before
+         uploading them to <span class="productname">OpenStack</span> Image (because starting VMs from sparse
+         images may take longer).
+        </p><p>
+         For a list of supported image types, refer to
+         <a class="link" href="https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html" target="_blank">https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html</a>,
+         section <em class="citetitle ">Supported image types</em>.
+        </p><p>
+         For details on how to convert a sparse image into different formats,
+         refer to
+         <a class="link" href="https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html" target="_blank">https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html</a>,
+         section <em class="citetitle ">Optimize images</em>.
+        </p></div></dd></dl></div></div><div class="sect2 " id="tip-adm-img-req-virt-mult"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Images for Use With Multiple Hypervisors</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#tip-adm-img-req-virt-mult">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>tip-adm-img-req-virt-mult</li></ul></div></div></div></div><p>
+     If you build the images for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> in SUSE Studio or SUSE Studio Onsite,
+     they are compatible with multiple hypervisors by default—even if you
+     may need to convert the resulting image formats before uploading them to
+     <span class="productname">OpenStack</span> Image. See <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-convert" title="Converting Disk Images to Different Formats">Procedure 2.1, “Converting Disk Images to Different Formats”</a> for details.
+    </p><p>
+     If your image is not made in SUSE Studio or SUSE Studio Onsite, configure the
+     image as follows to create an image that can be booted on KVM and Xen,
+     for example:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.4.8.6.4.1"><span class="term ">/etc/sysconfig/kernel
+       </span></dt><dd><div class="verbatim-wrap"><pre class="screen">INITRD_MODULES="virtio_blk virtio_pci ata_piix ata_generic hv_storvsc"</pre></div></dd><dt id="id-1.5.4.8.6.4.2"><span class="term ">/boot/grub/menu.lst
+       </span></dt><dd><p>
+        To name the partition that should be booted, use:
+       </p><div class="verbatim-wrap"><pre class="screen">root=UUID=...</pre></div><p>
+        To find the respective UUID value to use, execute the following
+        command:
+       </p><div class="verbatim-wrap"><pre class="screen">tune2fs -l /dev/sda2|grep UUID</pre></div></dd><dt id="id-1.5.4.8.6.4.3"><span class="term ">/etc/fstab
+       </span></dt><dd><p>
+        Do not use device names (<code class="filename">/dev/...</code>), but
+        <code class="literal">UUID=...</code> or <code class="literal">LABEL=root</code> entries.
+        For the latter, add the label <code class="literal">root</code> to the root file
+        system of your image (in this case, <code class="filename">/dev/sda2</code>):
+       </p><div class="verbatim-wrap"><pre class="screen">tune2fs -L root /dev/sda2</pre></div></dd><dt id="id-1.5.4.8.6.4.4"><span class="term ">Disk Format</span></dt><dd><p>
+        Use <code class="filename">*.qcow2</code> as disk format for your image.
+       </p></dd><dt id="id-1.5.4.8.6.4.5"><span class="term ">Image Properties in <span class="productname">OpenStack</span> Image</span></dt><dd><p>
+        To upload the image to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> only once and to use the same
+        image for KVM and Xen, specify the following image
+        options during or after upload:
+       </p><div class="verbatim-wrap"><pre class="screen">--public --container-format bare \
+--property architecture=x86_64 \
+--property vm_mode=hvm \
+--disk-format qcow2</pre></div></dd></dl></div></div></div><div class="sect1 " id="sec-adm-cli-img-build"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Building Images with SUSE Studio</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-build">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-build</li></ul></div></div></div></div><p>
+    When creating an appliance for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> the following steps are
+    essential:
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      In SUSE Studio or SUSE Studio Onsite, switch to the <span class="guimenu ">Configuration</span> › <span class="guimenu ">Appliance</span> tab.
+     </p></li><li class="step "><p>
+      Enable the <span class="guimenu ">Integrate with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>/OpenStack</span>
+      check box.
+     </p></li><li class="step "><p>
+      On the <span class="guimenu ">Build</span> tab, choose the respective appliance
+      format. It mainly depends on the hypervisor on which you want to use the
+      image—see <a class="xref" href="cha-adm-cli-img.html#vl-adm-img-req-virt" title="2.1.2. Image Requirements Depending on Hypervisor">Section 2.1.2, “Image Requirements Depending on Hypervisor”</a>.
+     </p></li></ol></div></div></div><div class="sect1 " id="sec-adm-cli-img-props"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Properties</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-props">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-props</li></ul></div></div></div></div><p>
+    Images have both contents and metadata. The latter are also called
+    properties. The following properties can be attached to an image in
+    SUSE <span class="productname">OpenStack</span> Cloud. Set them from the command line when uploading or modifying images.
+    For a list of image properties, see <a class="link" href="http://docs.openstack.org/developer/python-openstackclient/command-objects/image.html" target="_blank">http://docs.openstack.org/developer/python-openstackclient/command-objects/image.html</a>.
+   </p></div><div class="sect1 " id="sec-adm-cli-img-upload"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Uploading Images</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-upload">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-upload</li></ul></div></div></div></div><p>
+    If you have created an image for
+    <code class="literal"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>/OpenStack/KVM</code> with SUSE Studio or with
+    SUSE Studio Onsite 1.3, you can upload the image directly as described in
+    <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-upload" title="Uploading Disk Images to SUSE OpenStack Cloud Crowbar">Procedure 2.2, “Uploading Disk Images to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>”</a>.
+   </p><div class="procedure " id="pro-adm-cli-img-convert"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.1: </span><span class="name">Converting Disk Images to Different Formats </span><a title="Permalink" class="permalink" href="cha-adm-cli-img.html#pro-adm-cli-img-convert">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Make sure the <code class="systemitem">virt-utils</code>
+      package is installed on the machine used for conversion.
+     </p></li><li class="step "><p>
+      Download the image from SUSE Studio.
+     </p></li><li class="step "><p>
+      To convert <code class="literal">qcow2</code> to <code class="literal">vhd</code> images, use
+      the following command:
+     </p><div class="verbatim-wrap"><pre class="screen">qemu-img convert -O vpc <em class="replaceable ">CURRENT_IMAGE_FILE</em> <em class="replaceable ">FINAL_IMAGE_FILE</em>.vhd</pre></div></li></ol></div></div><div class="procedure " id="pro-adm-cli-img-upload"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.2: </span><span class="name">Uploading Disk Images to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> </span><a title="Permalink" class="permalink" href="cha-adm-cli-img.html#pro-adm-cli-img-upload">#</a></h6></div><div class="procedure-contents"><p>
+     
+    </p><p>
+     Upload a disk image using the <code class="systemitem">python-openstackclient</code> client.</p><p>
+     Images are owned by projects and can be <code class="literal">private</code>
+     (accessible to members of the particular project only) or
+     <code class="literal">public</code> (accessible to members of all projects). Private
+     images can also be explicitly shared with other projects, so that members
+     of those projects can access the images, too. Any image uploaded to
+     <span class="productname">OpenStack</span> Image will get an <code class="literal">owner</code> attribute. By default,
+     ownership is set to the primary project of the user that uploads the
+     image.
+    </p><p>
+     Set or modify hypervisor-specific properties with the
+     <code class="option">--property <em class="replaceable ">key</em>=<em class="replaceable ">value</em></code>
+     option. This can be done directly during image upload (as shown in the
+     examples below). To change the properties after image upload, refer to
+     <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-props-modify" title="Modifying Image Properties">Procedure 2.3, “Modifying Image Properties”</a>.
+    </p><ol class="procedure" type="1"><li class="step "><p>
+      In a shell, source the <span class="productname">OpenStack</span> RC file for the project that you want to
+      upload an image to. For details, refer to
+      <a class="link" href="http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html" target="_blank">http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html</a>.
+     </p></li><li class="step " id="step-adm-cli-img-upload"><p>
+      Upload the image using <code class="command">openstack image create</code>. Find some
+      example commands for different hypervisors below:
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        For KVM:
+       </p><div class="verbatim-wrap"><pre class="screen">openstack image create <em class="replaceable ">IMAGE_NAME</em> \
+  --public --container-format bare \
+  --property architecture=x86_64 \
+  --property hypervisor_type=kvm \
+  --disk-format qcow2 \
+  --file <em class="replaceable ">PATH_TO_IMAGE_FILE</em>.qcow2</pre></div></li><li class="listitem "><p>
+        For Xen:
+       </p><div class="verbatim-wrap"><pre class="screen">openstack image create <em class="replaceable ">IMAGE_NAME</em> \
+  --public --container-format bare \
+  --property architecture=x86_64 \
+  --property hypervisor_type=xen \
+  --property vm_mode=xen \
+  --disk-format qcow2 \
+  --file <em class="replaceable ">PATH_TO_IMAGE_FILE</em>.qcow2</pre></div><div id="id-1.5.4.11.4.7.2.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Value of <code class="option">vm_mode</code></h6><p>
+         For Xen PV image import, use <code class="option">vm_mode=xen</code>, for Xen
+         HVM image import use <code class="option">vm_mode=hvm</code>.
+        </p></div></li><li class="listitem "><p>
+        For VMware:
+       </p><div class="verbatim-wrap"><pre class="screen">openstack image create <em class="replaceable ">IMAGE_NAME</em> \
+  --public --container-format bare \
+  --property vmware_adaptertype="lsiLogic" \
+  --property vmware_disktype="preallocated" \
+  --property hypervisor_type=vmware \
+  --disk-format vmdk --file <em class="replaceable ">PATH_TO_IMAGE_FILE</em>.vmdk</pre></div><div id="id-1.5.4.11.4.7.2.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Value of <code class="literal">vmware_disktype</code></h6><p>
+         Depending on which disk type you use, adjust the value of
+         <code class="literal">vmware_disktype</code> accordingly. For an overview of
+         which values to use, refer to
+         <a class="link" href="https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html" target="_blank">https://docs.openstack.org/nova/pike/admin/configuration/hypervisor-vmware.html</a>,
+         <em class="citetitle ">section <span class="productname">OpenStack</span> Image Service disk type
+         settings</em>.
+        </p></div></li><li class="listitem "><p>
+        For Docker:
+       </p><p>
+        Find an image in the Docker registry you want to use and save it
+        locally with <code class="command">docker pull
+        <em class="replaceable ">IMAGE_NAME</em></code>, where
+        <em class="replaceable ">IMAGE_NAME</em> is the name of the image in the
+        Docker registry. The same name needs to be used when uploading the image
+        with the following command:
+       </p><div class="verbatim-wrap"><pre class="screen">docker save <em class="replaceable ">IMAGE_NAME</em> | openstack image create \
+--public --property hypervisor_type=docker \
+--container-format=docker --disk-format=raw <em class="replaceable ">IMAGE_NAME</em></pre></div><div id="id-1.5.4.11.4.7.2.4.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Docker Images Need to Run a Long-Living Process</h6><p>
+         Docker instances will only be able to spawn successfully, when
+         running a long-living process, for example
+         <code class="systemitem">sshd</code>. Such a process
+         can be configured with
+         <a class="link" href="https://docs.docker.com/engine/reference/builder/#cmd" target="_blank">CMD</a>
+         or
+         <a class="link" href="https://docs.docker.com/engine/reference/builder/#entrypoint" target="_blank">ENTRYPOINT</a>
+         in the <code class="filename">Docker</code>.
+        </p><p>
+         Alternatively, such a process can be specified on the command line
+         with the image property
+         <code class="option">os_command_line</code>.
+        </p><div class="verbatim-wrap"><pre class="screen">openstack image set --property os_command_line='/usr/sbin/sshd -D' \
+       <em class="replaceable ">IMAGE_ID</em></pre></div></div></li></ul></div><p>
+      If the image upload has been successful, a message appears, displaying
+      the ID that has been assigned to the image.
+     </p></li></ol></div></div><div id="id-1.5.4.11.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Updating Images</h6><p>
+     After having uploaded an image to SUSE <span class="productname">OpenStack</span> Cloud, the image contents cannot be
+     modified—only the image's metadata, see
+     <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-props-modify" title="Modifying Image Properties">Procedure 2.3</a>.
+     To update image contents, you need to delete the current image and upload
+     a modified version of the image. You can also launch an instance from the
+     respective image, change it, create a snapshot of the instance and use the
+     snapshot as a new image.
+    </p></div></div><div class="sect1 " id="sec-adm-cli-img-props-modify"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Modifying Image Properties</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-props-modify">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-props-modify</li></ul></div></div></div></div><p>
+    
+   </p><p>
+    Set or modify hypervisor-specific properties with the
+    <code class="option">--property <em class="replaceable ">key</em>=<em class="replaceable ">value</em></code>
+    option. This can be done directly during image upload (see
+    <a class="xref" href="cha-adm-cli-img.html#pro-adm-cli-img-upload" title="Uploading Disk Images to SUSE OpenStack Cloud Crowbar">Procedure 2.2</a>) or after
+    the image has been uploaded (as described below).
+   </p><div class="procedure " id="pro-adm-cli-img-props-modify"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.3: </span><span class="name">Modifying Image Properties </span><a title="Permalink" class="permalink" href="cha-adm-cli-img.html#pro-adm-cli-img-props-modify">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      In a shell, source the <span class="productname">OpenStack</span> RC file for the project that you want to
+      upload an image to. For details, refer to
+      <a class="link" href="http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html" target="_blank">http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html</a>.
+     </p></li><li class="step "><p>
+      If you do not know the ID or the exact name of the image whose properties
+      you want to modify, look it up with:
+     </p><div class="verbatim-wrap"><pre class="screen">openstack image list</pre></div></li><li class="step "><p>
+      Use the <code class="command">openstack image set</code> command to set the
+      properties for architecture, hypervisor type, and virtual machine mode.
+      In the following, find some examples with properties for different
+      hypervisors:
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        For KVM:
+       </p><div class="verbatim-wrap"><pre class="screen">openstacke image set <em class="replaceable ">IMAGE_ID_OR_NAME</em> \
+  --property architecture=x86_64 \
+  --property hypervisor_type=kvm</pre></div></li><li class="listitem "><p>
+        For Xen:
+       </p><div class="verbatim-wrap"><pre class="screen">openstack image set <em class="replaceable ">IMAGE_ID_OR_NAME</em> \
+  --property architecture=x86_64 \
+  --property hypervisor_type=xen \
+  --property vm_mode=xen</pre></div><div id="id-1.5.4.12.4.4.2.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Value of <code class="option">vm_mode</code></h6><p>
+         For Xen PV image import, use <code class="option">vm_mode=xen</code>, for Xen
+         HVM image import use <code class="option">vm_mode=hvm</code>.
+        </p></div></li><li class="listitem "><p>
+        For VMware:
+       </p><div class="verbatim-wrap"><pre class="screen">openstack image update <em class="replaceable ">IMAGE_ID_OR_NAME</em> \
+  --property vmware_adaptertype="lsiLogic" \
+  --property vmware_disktype="preallocated" \
+  --property hypervisor_type=vmware</pre></div><div id="id-1.5.4.12.4.4.2.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Value of <code class="literal">vmware_disktype</code></h6><p>
+         Depending on which disk type you use, adjust the value of
+         <code class="literal">vmware_disktype</code> accordingly. For an overview of
+         which values to use, refer to
+         <a class="link" href="https://docs.openstack.org/glance/latest/admin/useful-image-properties.html" target="_blank">https://docs.openstack.org/glance/latest/admin/useful-image-properties.html</a>,
+         <em class="citetitle ">section <span class="productname">OpenStack</span> Image Service disk type
+         settings</em>.
+        </p></div></li></ul></div></li></ol></div></div><p>
+    For more information about the <code class="systemitem">architecture</code>,
+    <code class="systemitem">hypervisor_type</code>, and
+    <code class="systemitem">vm_mode</code> properties, refer toq
+    <a class="link" href="https://docs.openstack.org/glance/latest/admin/useful-image-properties.html" target="_blank">https://docs.openstack.org/glance/latest/admin/useful-image-properties.html</a>.
+   </p></div><div class="sect1 " id="sec-suppl-img-custom-kernel"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using a Custom Kernel to Boot Btrfs Images Under Xen</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-suppl-img-custom-kernel">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-suppl-img-custom-kernel</li></ul></div></div></div></div><p>
+    On Xen hosts, starting instances from an image that uses Btrfs as root
+    file system may fail with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> <span class="phrase"><span class="phrase">8</span></span>. As a work-around,
+    boot the Btrfs image with a custom kernel to start the instances. Prepare
+    the Btrfs image as described in
+    <a class="xref" href="cha-adm-cli-img.html#pro-suppl-img-brtfs-custom-kernel" title="Booting Btrfs Images with a Custom Kernel">Procedure 2.4, “Booting Btrfs Images with a Custom Kernel”</a>.
+   </p><div class="procedure " id="pro-suppl-img-brtfs-custom-kernel"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.4: </span><span class="name">Booting Btrfs Images with a Custom Kernel </span><a title="Permalink" class="permalink" href="cha-adm-cli-img.html#pro-suppl-img-brtfs-custom-kernel">#</a></h6></div><div class="procedure-contents"><div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Requirements </span><a title="Permalink" class="permalink" href="cha-adm-cli-img.html#id-1.5.4.13.3.2">#</a></h6></div><ul class="itemizedlist"><li class="listitem "><p>
+       The <code class="systemitem">python-openstackclient</code> is
+       installed. After you have sourced an <span class="productname">OpenStack</span> RC file, use the command
+       line client to upload images from a machine outside of the cloud.
+      </p></li><li class="listitem "><p>
+       To run the
+       <code class="systemitem">python-openstackclient</code>: An
+       <span class="productname">OpenStack</span> RC file containing the credentials for the <span class="productname">OpenStack</span> project to
+       which you want to upload the images.
+      </p></li></ul></div><ol class="procedure" type="1"><li class="step "><p>
+      Install the <code class="systemitem">grub2-xen</code> package.
+      It provides the <code class="filename">grub.xen</code> file required to boot
+      para-virtualized VMs that use the Btrfs file system:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>zypper in grub2-x86_64-xen</pre></div></li><li class="step "><p>
+      Create a Glance image with the kernel from this package. For example:
+     </p><div class="verbatim-wrap"><pre class="screen">openstack image create img-grub-xen-x64 \
+ --file /usr/lib/grub2/x86_64-xen/grub.xen --public \
+ --container-format bare --disk-format raw</pre></div></li><li class="step "><p>
+      Create a second image which uses Btrfs as root file system. For example:
+     </p><div class="verbatim-wrap"><pre class="screen">openstack image create img-btrfs \
+  --file openSUSE-Leap-42.1-JeOS-for-XEN.x86_64.qcow2 \
+  --container-format bare --disk-format qcow2</pre></div></li><li class="step "><p>
+      Update the image named <code class="literal">img-btrfs</code> by adding a
+      <code class="literal">kernel_id</code> property to it:
+     </p><div class="verbatim-wrap"><pre class="screen">openstack image set 376c245d-24fe-41e2-8abd-655d4ed8da95 \
+--property kernel_id=72ad3069-6003-4653-86f2-b5914ce33f66</pre></div><p>
+      where <code class="literal">376c245d-24fe-41e2-8abd-655d4ed8da95</code> is the ID
+      of the image named <code class="literal">img-btrfs</code> and
+      <code class="literal">72ad3069-6003-4653-86f2-b5914ce33f66</code> is the ID of the
+      image named <code class="literal">img-grub-xen-x64</code>
+     </p></li><li class="step "><p>
+      Boot the image to start the instance:
+     </p><div class="verbatim-wrap"><pre class="screen">nova boot --flavor <em class="replaceable ">FLAVOR</em> --image 376c245d-24fe-41e2-8abd-655d4ed8da95</pre></div><p>
+      This results in a domain XML which contains the kernel you need:
+     </p><div class="verbatim-wrap"><pre class="screen">&lt;domain type='xen' id="2"&gt;
+ &lt;name&gt;instance-00000003&lt;/name&gt;
+ &lt;uuid&gt;12b2ce2b-ba1d-4c14-847f-9476dbae7199&lt;/uuid&gt;
+ &lt;memory unit='KiB'&gt;524288&lt;/memory&gt;
+ &lt;currentMemory unit='KiB'&gt;524288&lt;/currentMemory&gt;
+ &lt;vcpu placement='static'&gt;1&lt;/vcpu&gt;
+ &lt;bootloader&gt;&lt;/bootloader&gt;
+ &lt;os&gt;
+   &lt;type&gt;linux&lt;/type&gt;
+   &lt;kernel&gt;/var/lib/nova/instances/12b2ce2b-ba1d-4c14-847f-9476dbae7199/kernel&lt;/kernel&gt;
+   &lt;cmdline&gt;ro root=/dev/xvda&lt;/cmdline&gt;
+ &lt;/os&gt;</pre></div></li></ol></div></div></div><div class="sect1 " id="sec-adm-cli-img-view"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Viewing Images and Image Properties, Deleting Images</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-view">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-view</li></ul></div></div></div></div><p>
+    In the following, find some examples on how to view images or image
+    properties or how to remove images from <span class="productname">OpenStack</span> Image.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.4.14.3.1"><span class="term ">Listing Images</span></dt><dd><div class="verbatim-wrap"><pre class="screen">openstack image list</pre></div><p>
+       Lists ID, name, and status for all images in
+       Image that the current user can access.
+      </p></dd><dt id="id-1.5.4.14.3.2"><span class="term ">Showing Metadata for a Particular Image</span></dt><dd><div class="verbatim-wrap"><pre class="screen">openstack image show <em class="replaceable ">IMAGE_ID_OR_NAME</em></pre></div><p>
+       Shows metadata of the specified image.
+      </p></dd><dt id="id-1.5.4.14.3.3"><span class="term ">Removing Image Properties</span></dt><dd><div class="verbatim-wrap"><pre class="screen">openstack image unset --property <em class="replaceable ">PROPERTY</em> <em class="replaceable ">IMAGE_ID_OR_NAME</em></pre></div></dd><dt id="id-1.5.4.14.3.4"><span class="term ">Deleting an Image</span></dt><dd><div class="verbatim-wrap"><pre class="screen">openstack image delete <em class="replaceable ">IMAGE_ID_OR_NAME</em></pre></div><p>
+       Removes the specified image from <span class="productname">OpenStack</span> Image.
+      </p></dd></dl></div></div><div class="sect1 " id="sec-adm-cli-img-member"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Viewing and Modifying Membership of Private Images</span> <a title="Permalink" class="permalink" href="cha-adm-cli-img.html#sec-adm-cli-img-member">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>book_cloud_suppl.xml</li><li><span class="ds-label">ID: </span>sec-adm-cli-img-member</li></ul></div></div></div></div><p>
+    In the following, find some examples on how to view or modify membership of
+    private images:
+    
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.4.15.3.1"><span class="term ">Listing Members a Private Image is Shared With</span></dt><dd><div class="verbatim-wrap"><pre class="screen">glance member-list --image-id <em class="replaceable ">IMAGE_ID</em></pre></div><p>
+       Lists the IDs of the projects whose members have access to the private
+       image.
+      </p></dd><dt id="id-1.5.4.15.3.2"><span class="term ">Listing Private Images Shared With a Member</span></dt><dd><div class="verbatim-wrap"><pre class="screen">glance member-list --tenant-id <em class="replaceable ">PROJECT_ID</em></pre></div><p>
+       Lists the IDs of private images that members of the specified project
+       can access.
+      </p></dd><dt id="id-1.5.4.15.3.3"><span class="term ">Granting Members Access to a Private Image</span></dt><dd><div class="verbatim-wrap"><pre class="screen">glance member-create [--can-share] <em class="replaceable ">IMAGE_ID_OR_NAME</em> <em class="replaceable ">PROJECT_ID_OR_NAME</em></pre></div><p>
+       Grants the specified member access to the specified private image.
+      </p><p>
+       By adding the <code class="option">--can-share</code> option, you can allow the
+       members to further share the image.
+       
+      </p></dd><dt id="id-1.5.4.15.3.4"><span class="term ">Revoking Member Access to a Private Image</span></dt><dd><div class="verbatim-wrap"><pre class="screen">glance member-delete <em class="replaceable ">IMAGE_ID_OR_NAME</em> <em class="replaceable ">PROJECT_ID_OR_NAME</em></pre></div><p>
+       Revokes the access of the specified member to the specified private
+       image.
+      </p></dd></dl></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha-user-dash-inst.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Launching Instances from the SUSE <span class="productname">OpenStack</span> Cloud Dashboard</span></a><a class="nav-link" href="cha-suppl-horizon-theme.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Changing the SUSE <span class="productname">OpenStack</span> Cloud Dashboard Theme</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

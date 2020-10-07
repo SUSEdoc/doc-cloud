@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using the Operations Console | User Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 1. Using the Operations Console" /><meta name="description" content="Often referred to as the Ops Console, you can use this web-based graphical user interface (GUI) to view data about your cloud infrastructure and ensure your cloud is operating correctly." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="user-cloudadmin.html" title="Part I. Cloud Admin User Guide" /><link rel="prev" href="user-cloudadmin.html" title="Part I. Cloud Admin User Guide" /><link rel="next" href="user-dashboard-overview.html" title="Chapter 2. Using the Dashboard" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="using-opsconsole.html">Using the Operations Console</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="user-cloudadmin.html"><span class="number">I </span><span class="name">Cloud Admin User Guide</span></a><ol><li class="inactive"><a href="using-opsconsole.html"><span class="number">1 </span><span class="name">Using the Operations Console</span></a></li><li class="inactive"><a href="user-dashboard-overview.html"><span class="number">2 </span><span class="name">Using the Dashboard</span></a></li><li class="inactive"><a href="cloudadmin-gui.html"><span class="number">3 </span><span class="name">Cloud Admin Actions with the Dashboard</span></a></li><li class="inactive"><a href="CreateCloudAdmin.html"><span class="number">4 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></li><li class="inactive"><a href="install-cli.html"><span class="number">5 </span><span class="name">Installing the Command-Line Clients</span></a></li><li class="inactive"><a href="CreateHARouter.html"><span class="number">6 </span><span class="name">Creating a Highly Available Router</span></a></li></ol></li><li class="inactive"><a href="user-nonadmin.html"><span class="number">II </span><span class="name">Project User Guide</span></a><ol><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">7 </span><span class="name">Using Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="idg-all-userguide-create-network-xml-1.html"><span class="number">8 </span><span class="name">Creating a Private Network</span></a></li><li class="inactive"><a href="create-keypair.html"><span class="number">9 </span><span class="name">Creating a Key Pair</span></a></li><li class="inactive"><a href="user-image-upload.html"><span class="number">10 </span><span class="name">Creating and Uploading a Glance Image</span></a></li><li class="inactive"><a href="lbaas-dashboard.html"><span class="number">11 </span><span class="name">Creating a Load Balancer with the Dashboard</span></a></li><li class="inactive"><a href="HP2-0LBaaS.html"><span class="number">12 </span><span class="name">Using Load Balancing as a Service (LBaaS)</span></a></li><li class="inactive"><a href="LBaaSHeat.html"><span class="number">13 </span><span class="name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li class="inactive"><a href="HP2-0FWaaS.html"><span class="number">14 </span><span class="name">Using Firewall as a Service (FWaaS)</span></a></li><li class="inactive"><a href="UsingVPNaaS.html"><span class="number">15 </span><span class="name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part I. Cloud Admin User Guide" href="user-cloudadmin.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Using the Dashboard" href="user-dashboard-overview.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-user.html">User Guide</a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="using-opsconsole.html">Using the Operations Console</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part I. Cloud Admin User Guide" href="user-cloudadmin.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Using the Dashboard" href="user-dashboard-overview.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="using-opsconsole"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Operations Console</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-using_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-using_opsconsole.xml</li><li><span class="ds-label">ID: </span>using-opsconsole</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="using-opsconsole.html#opsconsole"><span class="number">1.1 </span><span class="name">Operations Console Overview</span></a></span></dt><dt><span class="section"><a href="using-opsconsole.html#connect-opsconsole"><span class="number">1.2 </span><span class="name">Connecting to the Operations Console</span></a></span></dt><dt><span class="section"><a href="using-opsconsole.html#manage-compute-instances"><span class="number">1.3 </span><span class="name">Managing Compute Hosts</span></a></span></dt><dt><span class="section"><a href="using-opsconsole.html#manage-swift-perf"><span class="number">1.4 </span><span class="name">Managing Swift Performance</span></a></span></dt><dt><span class="section"><a href="using-opsconsole.html#charts"><span class="number">1.5 </span><span class="name">Visualizing Data in Charts</span></a></span></dt><dt><span class="section"><a href="using-opsconsole.html#help-opsconsole"><span class="number">1.6 </span><span class="name">Getting Help with the Operations Console</span></a></span></dt></dl></div></div><div class="sect1" id="opsconsole"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operations Console Overview</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#opsconsole">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole_overview.xml</li><li><span class="ds-label">ID: </span>opsconsole</li></ul></div></div></div></div><p>
+  Often referred to as the Ops Console, you can use this web-based graphical
+  user interface (GUI) to view data about your cloud infrastructure and ensure
+  your cloud is operating correctly.
+ </p><p>
+  You can use the Operations Console for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> to view
+  data about your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> infrastructure in a web-based graphical user
+  interface (GUI) and ensure your cloud is operating correctly. By logging on
+  to the console, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> administrators can manage data in the following
+  ways: <span class="bold"><strong>Triage alarm notifications</strong></span>.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Alarm Definitions and notifications now have their own screens and are
+    collected under the <span class="bold"><strong>Alarm Explorer</strong></span> menu
+    item which can be accessed from the Central Dashboard. Central Dashboard
+    now allows you to customize the view in the following ways:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Rename or re-configure existing alarm cards to include services
+      different from the defaults
+     </p></li><li class="listitem "><p>
+      Create a new alarm card with the services you want to select
+     </p></li><li class="listitem "><p>
+      Reorder alarm cards using drag and drop
+     </p></li><li class="listitem "><p>
+      View all alarms that have no service dimension now grouped in an
+      <span class="bold"><strong>Uncategorized Alarms</strong></span> card
+     </p></li><li class="listitem "><p>
+      View all alarms that have a service dimension that does not match any of
+      the other cards -now grouped in an <span class="bold"><strong>Other
+      Alarms</strong></span> card
+     </p></li></ul></div></li><li class="listitem "><p>
+    You can also easily access alarm data for a specific component. On the
+    Summary page for the following components, a link is provided to an alarms
+    screen specifically for that component:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Compute Instances: <a class="xref" href="using-opsconsole.html#manage-compute-instances" title="1.3. Managing Compute Hosts">Section 1.3, “Managing Compute Hosts”</a>
+     </p></li><li class="listitem "><p>
+      Object Storage: <a class="xref" href="using-opsconsole.html#Ops-Swift-AlarmSumm" title="1.4.4. Alarm Summary">Section 1.4.4, “Alarm Summary”</a>
+     </p></li></ul></div></li></ul></div><div class="sect2" id="monitor-env"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitor the environment by giving priority to alarms that take precedence.</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#monitor-env">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole_overview.xml</li><li><span class="ds-label">ID: </span>monitor-env</li></ul></div></div></div></div><p>
+   Alarm Explorer now allows you to manage alarms in the following ways:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Refine the monitoring environment by creating new alarms to specify a
+     combination of metrics, services, and hosts that match the triggers unique
+     to an environment
+    </p></li><li class="listitem "><p>
+     Filter alarms in one place using an enumerated filter box instead of
+     service badges
+    </p></li><li class="listitem "><p>
+     Specify full alarm IDs as dimension key-value pairs in the form of
+     <span class="bold"><strong>dimension=value</strong></span>
+    </p></li></ul></div></div><div class="sect2" id="support-changes"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Changes</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#support-changes">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole_overview.xml</li><li><span class="ds-label">ID: </span>support-changes</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     To resolve scalability issues, plain text search through alarm sets is no
+     longer supported
+    </p></li></ul></div><p>
+   The Business Logic Layer of Operations Console is a middleware component that
+   serves as a single point of contact for the user interface to communicate
+   with OpenStack services such as Monasca, Nova, and others.
+  </p></div></div><div class="sect1" id="connect-opsconsole"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Connecting to the Operations Console</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#connect-opsconsole">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-connect_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-connect_opsconsole.xml</li><li><span class="ds-label">ID: </span>connect-opsconsole</li></ul></div></div></div></div><p>
+  Instructions for accessing the Operations Console through a web browser.
+ </p><p>
+  To connect to Operations Console, perform the following:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Ensure your login has the required access credentials:
+    <a class="xref" href="using-opsconsole.html#access-creds" title="1.2.1. Required Access Credentials">Section 1.2.1, “Required Access Credentials”</a>
+   </p></li><li class="listitem "><p>
+    Connect through a browser: <a class="xref" href="using-opsconsole.html#command" title="1.2.2. Connect Through a Browser">Section 1.2.2, “Connect Through a Browser”</a>
+   </p></li><li class="listitem "><p>
+    Optionally use a Hostname OR virtual IP address to access Operations Console:
+    <a class="xref" href="using-opsconsole.html#find-nameIP" title="1.2.3. Optionally use a Hostname OR virtual IP address to access Operations Console">Section 1.2.3, “Optionally use a Hostname OR virtual IP address to access Operations Console”</a>
+   </p></li></ul></div><p>
+  Operations Console will always be accessed over port 9095.
+ </p><div class="sect2" id="access-creds"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Required Access Credentials</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#access-creds">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-connect_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-connect_opsconsole.xml</li><li><span class="ds-label">ID: </span>access-creds</li></ul></div></div></div></div><p>
+   In previous versions of Operations Console you were required to have only the
+   password for the Administrator account (admin by default). Now the
+   Administrator user account must also have all of the following credentials:
+  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>Project</th><th>Domain</th><th>Role</th><th>Description</th></tr></thead><tbody><tr><td>*All projects*</td><td>*not specific*</td><td>Admin</td><td>Admin role on at least one project</td></tr><tr><td>*All projects*</td><td>*not specific*</td><td>Admin</td><td>Admin role in default domain</td></tr><tr><td>Admin</td><td>default</td><td>Admin or Monasca-user</td><td>Admin or Monasca-user role on admin project</td></tr></tbody></table></div><div id="id-1.7.3.2.3.6.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    If your login account has administrator role on the administrator project,
+    then you only need to make sure you have the administrator role on the
+    default domain.
+   </p></div><p>
+   <span class="bold"><strong>Administrator account</strong></span>
+  </p><p>
+   During installation, an administrator account called
+   <code class="systemitem">admin</code> is created by default.
+  </p><p>
+   <span class="bold"><strong>Administrator password</strong></span>
+  </p><p>
+   During installation, an administrator password is randomly created by
+   default. It is not recommend that you change the default password.
+  </p><p>
+   To find the randomized password:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To display the password, log on to the Cloud Lifecycle Manager and run:
+    </p><div class="verbatim-wrap"><pre class="screen">cat ~/service.osrc</pre></div></li></ol></div></div><div class="sect2" id="command"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Connect Through a Browser</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#command">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-connect_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-connect_opsconsole.xml</li><li><span class="ds-label">ID: </span>command</li></ul></div></div></div></div><p>
+   The following instructions will show you how to find the URL to access
+   Operations Console. You will use SSH, also known as Secure Socket Shell, which provides
+   administrators with a secure way to access a remote computer.
+  </p><p>
+   <span class="bold"><strong>To access Operations Console:</strong></span>
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Locate the URL or IP address for the Operations Console with the following
+     command:
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/service.osrc &amp;&amp; openstack endpoint list | grep opsconsole | grep admin</pre></div><p>
+     <span class="bold"><strong>Sample output:</strong></span>
+    </p><div class="verbatim-wrap"><pre class="screen">| 8ef10dd9c00e4abdb18b5b22adc93e87 | region1 | opsconsole | opsconsole | True | admin | https://192.168.24.169:9095/api/v1/</pre></div><p>
+     To access Operations Console, in the sample output, remove everything after port
+     9095 (api/v1/) and in a browser, type:
+    </p><div class="verbatim-wrap"><pre class="screen">https://192.168.24.169:9095</pre></div></li></ol></div></div><div class="sect2" id="find-nameIP"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optionally use a Hostname OR virtual IP address to access Operations Console</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#find-nameIP">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-connect_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-connect_opsconsole.xml</li><li><span class="ds-label">ID: </span>find-nameIP</li></ul></div></div></div></div><div id="id-1.7.3.2.3.8.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    If you can access Operations Console using the above instructions, then you can
+    skip this section. These steps provide an alternate way to access Operations Console
+    if the above steps do not work for you.
+   </p></div><p>
+   To find your hostname OR IP address:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Navigate to and open in a text editor the following file:
+    </p><div class="verbatim-wrap"><pre class="screen">network_groups.yml</pre></div></li><li class="listitem "><p>
+     Find the following entry:
+    </p><div class="verbatim-wrap"><pre class="screen">external-name</pre></div></li><li class="listitem "><p>
+     If your administrator set a hostname value in the external-name field, you
+     will use that hostname when logging in to Operations Console. or example, in a
+     browser you would type:
+    </p><div class="verbatim-wrap"><pre class="screen">https://VIP:9095</pre></div></li><li class="listitem "><p>
+     If your administrator did not set a hostname value, then to determine the
+     IP address to use, from your Cloud Lifecycle Manager, run:
+    </p><div class="verbatim-wrap"><pre class="screen">grep HZN-WEB /etc/hosts</pre></div><p>
+     The output of that command will show you the virtual IP address you should
+     use. For example, in a browser you would type:
+    </p><div class="verbatim-wrap"><pre class="screen">https://VIP:9095</pre></div></li></ol></div></div></div><div class="sect1" id="manage-compute-instances"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Compute Hosts</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#manage-compute-instances">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>manage-compute-instances</li></ul></div></div></div></div><p>
+  Operations Console (Ops Console) provides a graphical interface for you to
+  add and delete compute hosts.
+ </p><p>
+  As your deployment grows and changes, you may need to add more compute hosts
+  to increase your capacity for VMs, or delete a host to reallocate hardware
+  for a different use. To accomplish these tasks, in previous versions of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> you had to use the command line to update configuration files and
+  run ansible playbooks. Now Operations Console provides a
+  graphical interface for you to complete the same tasks quickly using menu
+  items in the console.
+ </p><div id="id-1.7.3.2.4.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+   Do not refresh the Operations Console page or open Operations Console in another window
+   during the following tasks. If you do, you will not see any notifications or
+   be able to review the error log for more information. This would make
+   troubleshooting difficult since you would not know the error that was
+   encountered, or why it occurred.
+  </p></div><p>
+  Use Operations Console to perform the following tasks:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Create a Compute Host: <a class="xref" href="using-opsconsole.html#ops-create-hosts" title="1.3.1. Create a Compute Host">Section 1.3.1, “Create a Compute Host”</a>
+   </p></li><li class="listitem "><p>
+    Deactivate a Compute Host: <a class="xref" href="using-opsconsole.html#ops-deactivate" title="1.3.2. Deactivate a Compute Host">Section 1.3.2, “Deactivate a Compute Host”</a>
+   </p></li><li class="listitem "><p>
+    Activate a Compute Host: <a class="xref" href="using-opsconsole.html#ops-activate" title="1.3.3. Activate a Compute Host">Section 1.3.3, “Activate a Compute Host”</a>
+   </p></li><li class="listitem "><p>
+    Delete a Compute Host: <a class="xref" href="using-opsconsole.html#ops-delete" title="1.3.4. Delete a Compute Host">Section 1.3.4, “Delete a Compute Host”</a>
+   </p></li></ul></div><div id="id-1.7.3.2.4.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+   To use Operations Console, you need to have the correct permissions and
+   know the URL or VIP connected to Operations Console during installation. For steps
+   on how to complete these tasks, see
+   <a class="xref" href="using-opsconsole.html#opsconsole" title="1.1. Operations Console Overview">Section 1.1, “Operations Console Overview”</a>.
+  </p></div><div class="sect2" id="ops-create-hosts"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a Compute Host</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-create-hosts">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>ops-create-hosts</li></ul></div></div></div></div><p>
+   If you need to create additional compute hosts for more virtual machine
+   capacity, you can do this easily on the Compute Hosts screen.
+  </p><p>
+   To add a compute host:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser, enter either the URL or Virtual
+     IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     From the menu that slides in on the left side, click
+     <span class="bold"><strong>Compute</strong></span>, and
+     then <span class="bold"><strong>Compute Hosts</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Compute Hosts</strong></span> page, click
+     <span class="bold"><strong>Create Host</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Add &amp; Activate Compute Host</strong></span>
+     tab that slides in from the right, enter the following information:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.2.4.8.4.5.2.1"><span class="term ">Host ID</span></dt><dd><p>
+        Cloud Lifecycle Manager model's server ID
+       </p></dd><dt id="id-1.7.3.2.4.8.4.5.2.2"><span class="term ">Host Role</span></dt><dd><p>
+        Defined in the Cloud Lifecycle Manager model and cannot be modified in Operations Console
+       </p></dd><dt id="id-1.7.3.2.4.8.4.5.2.3"><span class="term ">Host Group</span></dt><dd><p>
+        Defined in the Cloud Lifecycle Manager model and cannot be modified in Operations Console
+       </p></dd><dt id="id-1.7.3.2.4.8.4.5.2.4"><span class="term ">Host NIC Mapping</span></dt><dd><p>
+        Defined in the Cloud Lifecycle Manager model and cannot be modified in Operations Console
+       </p></dd><dt id="id-1.7.3.2.4.8.4.5.2.5"><span class="term ">Encryption Key</span></dt><dd><p>
+        If the configuration is encrypted, enter the encryption key here
+       </p></dd></dl></div></li><li class="listitem "><p>
+     Click <span class="guimenu ">Create Host</span>, and in the
+     confirmation screen that opens, click
+     <span class="guimenu ">Confirm</span>.
+    </p></li><li class="listitem "><p>
+     Wait for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to complete the pre deployment steps. This process can
+     take up to 2 minutes.
+    </p></li><li class="listitem "><p>
+     If pre-deployment is successful, you will see a notification that
+     deployment has started.
+    </p><div id="id-1.7.3.2.4.8.4.8.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you receive a notice that pre-deployment did not complete
+      successfully, read the notification explaining at which step the error
+      occured. You can click on the error notification and see the ansible log
+      for the configuration processor playbook. Then you can click
+      <span class="bold"><strong>Create Host</strong></span>
+      in step 4 again and correct the mistake.
+     </p></div></li><li class="listitem "><p>
+     Wait for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to complete the deployments steps. This process can take
+     up to 20 minutes.
+    </p></li><li class="listitem "><p>
+     If deployment is successful, you will see a notification and a new entry
+     will appear in the compute hosts table.
+    </p><div id="id-1.7.3.2.4.8.4.10.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you receive a notice that deployment did not complete successfully,
+      read the notification explaining at which step the error occured. You can
+      click on the error notification for more details.
+     </p></div></li></ol></div></div><div class="sect2" id="ops-deactivate"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deactivate a Compute Host</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-deactivate">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>ops-deactivate</li></ul></div></div></div></div><p>
+   If you have multiple compute hosts and for debugging reasons you want to
+   disable them all except one, you may need to deactivate and then activate a
+   compute host. If you want to delete a host, you will also have to deactivate
+   it first. This can be done easily in the Operations Console.
+  </p><div id="id-1.7.3.2.4.9.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    The host must be in the following state:
+    <span class="bold"><strong>ACTIVATED</strong></span>
+   </p></div><p>
+   To deactivate a compute host:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser, enter either the URL or Virtual
+     IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     From the menu that slides in on the left side, click
+     <span class="bold"><strong>Compute</strong></span>, and
+     then <span class="bold"><strong>Compute Hosts</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Compute Hosts</strong></span> page, in the row for
+     the host you want to deactivate, click the details button
+     (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-DetailDots.png" width="" alt="Ellipsis Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     Click <span class="bold"><strong>Deactivate</strong></span>, and in the confirmation
+     screen that opens, click <span class="bold"><strong>Confirm</strong></span>.
+    </p></li><li class="listitem "><p>
+     Wait for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to complete the operation. This process can take up to 2
+     minutes.
+    </p></li><li class="listitem "><p>
+     If deactivation is successful, you will see a notification and in the
+     compute hosts table the <span class="bold"><strong>STATE</strong></span> will change
+     to <span class="bold"><strong>DEACTIVATED</strong></span>.
+    </p><div id="id-1.7.3.2.4.9.5.7.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you receive a notice that the operation did not complete successfully,
+      read the notification explaining at which step the error occured. You can
+      click on the link in the error notification for more details. In the
+      compute hosts table the <span class="bold"><strong>STATE</strong></span> will
+      remain
+      <span class="bold"><strong>ACTIVATED</strong></span>.
+     </p></div></li></ol></div></div><div class="sect2" id="ops-activate"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Activate a Compute Host</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-activate">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>ops-activate</li></ul></div></div></div></div><div id="id-1.7.3.2.4.10.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    The host must be in the following state:
+    <span class="bold"><strong>DEACTIVATED</strong></span>
+   </p></div><p>
+   To activate a compute host:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser, enter either the URL or Virtual
+     IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     From the menu that slides in on the left side, click
+     <span class="bold"><strong>Compute</strong></span>, and
+     then <span class="bold"><strong>Compute Hosts</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Compute Hosts</strong></span> page, in the row for
+     the host you want to activate, click the details button
+     (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-DetailDots.png" width="" alt="Ellipsis Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     Click <span class="bold"><strong>Activate</strong></span>, and in the confirmation
+     screen that opens, click <span class="bold"><strong>Confirm</strong></span>.
+    </p></li><li class="listitem "><p>
+     Wait for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to complete the operation. This process can take up to 2
+     minutes.
+    </p></li><li class="listitem "><p>
+     If activation is successful, you will see a notification and in the
+     compute hosts table the <span class="bold"><strong>STATE</strong></span> will change
+     to <span class="bold"><strong>ACTIVATED</strong></span>.
+    </p><div id="id-1.7.3.2.4.10.4.7.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you receive a notice that the operation did not complete successfully,
+      read the notification explaining at which step the error occured. You can
+      click on the link in the error notification for more details. In the
+      compute hosts table the <span class="bold"><strong>STATE</strong></span> will
+      remain
+      <span class="bold"><strong>DEACTIVATED</strong></span>.
+     </p></div></li></ol></div></div><div class="sect2" id="ops-delete"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete a Compute Host</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-delete">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>ops-delete</li></ul></div></div></div></div><p>
+   If you need to scale down the size of your current deployment to use the
+   hardware for other purposes, you may want to delete a compute host.
+  </p><div id="id-1.7.3.2.4.11.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    Complete the following steps before deleting a host:
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      host must be in the following state:
+      <span class="bold"><strong>DEACTIVATED</strong></span>
+     </p></li><li class="listitem "><p>
+      Optionally you can migrate the instance off the host to be deleted. To do
+      this, complete the following sections in
+      <span class="intraxref">Book “Operations Guide”, Chapter 13 “System Maintenance”, Section 13.1 “Planned System Maintenance”, Section 13.1.3 “Planned Compute Maintenance”, Section 13.1.3.5 “Removing a Compute Node”</span>:
+     </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+        Disable provisioning on the compute host.
+       </p></li><li class="listitem "><p>
+        Use live migration to move any instances on this host to other hosts.
+       </p></li></ol></div></li></ul></div></div><p>
+   To delete a compute host:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser, enter either the URL or Virtual
+     IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     From the menu that slides in on the left side, click
+     <span class="bold"><strong>Compute</strong></span>, and
+     then <span class="bold"><strong>Compute Hosts</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Compute Hosts</strong></span> page, in the row for
+     the host you want to delete, click the details button
+     (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-DetailDots.png" width="" alt="Ellipsis Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     Click <span class="bold"><strong>Delete</strong></span>, and if the configuration is
+     encrypted, enter the encryption key.
+    </p></li><li class="listitem "><p>
+     in the confirmation screen that opens, click
+     <span class="bold"><strong>Confirm</strong></span>.
+    </p></li><li class="listitem "><p>
+     In the compute hosts table you will see the
+     <span class="bold"><strong>STATE</strong></span> change to
+     <span class="bold"><strong>Deleting</strong></span>.
+    </p></li><li class="listitem "><p>
+     Wait for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> to complete the operation. This process can take up to 2
+     minutes.
+    </p></li><li class="listitem "><p>
+     If deletion is successful, you will see a notification and in the compute
+     hosts table the host will not be listed.
+    </p><div id="id-1.7.3.2.4.11.5.9.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      If you receive a notice that the operation did not complete successfully,
+      read the notification explaining at which step the error occured. You can
+      click on the link in the error notification for more details. In the
+      compute hosts table the <span class="bold"><strong>STATE</strong></span> will
+      remain <span class="bold"><strong>DEACTIVATED</strong></span>.
+     </p></div></li></ol></div></div><div class="sect2" id="more-info"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#more-info">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-manage_compute_instances.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-manage_compute_instances.xml</li><li><span class="ds-label">ID: </span>more-info</li></ul></div></div></div></div><p>
+   For more information on how to complete these tasks through the command
+   line, see the following topics:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="intraxref">Book “Operations Guide”, Chapter 13 “System Maintenance”, Section 13.1 “Planned System Maintenance”, Section 13.1.3 “Planned Compute Maintenance”, Section 13.1.3.4 “Adding Compute Node”</span>
+    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “Operations Guide”, Chapter 13 “System Maintenance”, Section 13.1 “Planned System Maintenance”, Section 13.1.3 “Planned Compute Maintenance”, Section 13.1.3.5 “Removing a Compute Node”</span>
+    </p></li></ul></div></div></div><div class="sect1" id="manage-swift-perf"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Swift Performance</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#manage-swift-perf">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-OpsConsole_manage_swift.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-OpsConsole_manage_swift.xml</li><li><span class="ds-label">ID: </span>manage-swift-perf</li></ul></div></div></div></div><p>
+  In Operations Console you can monitor your Swift cluster to ensure long-term
+  data protection as well as sufficient performance.
+ </p><p>
+  OpenStack Swift is an object storage solution with a focus on availability.
+  While there are various mechanisms inside Swift to protect stored data and
+  ensure a high availability, you must still closely monitor your Swift cluster
+  to ensure long-term data protection as well as sufficient performance. The
+  best way to manage Swift is to collect useful data that will detect possible
+  performance impacts early on.
+ </p><p>
+  The new Object Summary Dashboard in Operations Console provides
+  an overview of your Swift environment.
+ </p><div id="id-1.7.3.2.5.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+   If Swift is not installed and configured, you will not be able to access
+   this dashboard. The Swift endpoint must be present in Keystone for the
+   Object Summary to be present in the menu.
+  </p></div><p>
+  In Operations Console's object storage dashboard, you can easily review the
+  following information:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Performance Summary: <a class="xref" href="using-opsconsole.html#Ops-Swift-PerfSumm" title="1.4.1. Performance Summary">Section 1.4.1, “Performance Summary”</a>
+   </p></li><li class="listitem "><p>
+    Inventory Summary: <a class="xref" href="using-opsconsole.html#Ops-Swift-Inventory" title="1.4.2. Inventory Summary">Section 1.4.2, “Inventory Summary”</a>
+   </p></li><li class="listitem "><p>
+    Capacity Summary: <a class="xref" href="using-opsconsole.html#Ops-Swift-Capacity" title="1.4.3. Capacity Summary">Section 1.4.3, “Capacity Summary”</a>
+   </p></li><li class="listitem "><p>
+    Alarm Summary: <a class="xref" href="using-opsconsole.html#Ops-Swift-AlarmSumm" title="1.4.4. Alarm Summary">Section 1.4.4, “Alarm Summary”</a>
+   </p></li></ul></div><div class="sect2" id="Ops-Swift-PerfSumm"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Performance Summary</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#Ops-Swift-PerfSumm">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-OpsConsole_manage_swift.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-OpsConsole_manage_swift.xml</li><li><span class="ds-label">ID: </span>Ops-Swift-PerfSumm</li></ul></div></div></div></div><p>
+   View a comprehensive summary of current performance values.
+  </p><p>
+   To access the object storage performance dashboard:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser enter either the URL or
+     Virtual IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     In the menu, click <span class="guimenu ">Storage</span> › <span class="guimenu ">Object Storage Summary</span>.
+    </p></li></ol></div><p>
+   Performance data includes:
+  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.2.5.8.6.1"><span class="term ">Healthcheck Latency from Monasca</span></dt><dd><p>
+      This latency is the average time it takes for Swift to respond to a
+      healthcheck, or ping, request. The swiftlm-uptime monitor program reports
+      the value. A large difference between average and maximum may indicate a
+      problem with one node.
+     </p></dd><dt id="id-1.7.3.2.5.8.6.2"><span class="term ">Operational Latency from Monasca</span></dt><dd><p>
+      Operational latency is the average time it takes for Swift to respond to
+      an upload, download, or object delete request. The swiftlm-uptime monitor
+      program reports the value. A large difference between average and maximum
+      may indicate a problem with one node.
+     </p></dd><dt id="id-1.7.3.2.5.8.6.3"><span class="term ">Service Availability</span></dt><dd><p>
+      This is the availability over the last 24 hours as a percentage.
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        <span class="bold"><strong>100%</strong></span> - No outages in the last 24 hours
+       </p></li><li class="listitem "><p>
+        <span class="bold"><strong>50%</strong></span> - Swift was unavailable for a
+        total of 12 hours in the last 24-hour period
+       </p></li></ul></div></dd><dt id="id-1.7.3.2.5.8.6.4"><span class="term ">Graph of Performance Over Time</span></dt><dd><p>
+      Create a visual representation of performance data to see when Swift
+      encountered longer-than-normal response times.
+     </p><p>
+      To create a graph:
+     </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+        Choose the length of time you want to graph in
+        <span class="guimenu ">Date Range</span>.
+        This sets the length of time for the x-axis which
+        counts backwards until it reaches the present time. In the example
+        below, 1 day is selected, and so the x axis shows performance starting
+        from 24 hours ago (-24) until the present time.
+       </p></li><li class="listitem "><p>
+        Look at the y-axis to understand the range of response times. The first
+        number is the smallest value in the data collected from the backend,
+        and the last number is the longest amount of time it took Swift to
+        respond to a request. In the example below, the shortest time for a
+        response from Swift was 16.1 milliseconds.
+       </p></li><li class="listitem "><p>
+        Look for spikes which represent longer than normal response times. In
+        the example below, Swift experienced long response times 21 hours ago
+        and again 1 hour ago.
+       </p></li><li class="listitem "><p>
+        Look for the latency value at the present time. The line running across
+        the x-axis at 16.1 milliseconds shows you what the response time is
+        currently.
+       </p></li></ol></div></dd></dl></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-ObjStorageSumm2.png" target="_blank"><img src="images/media-opsconsole-ObjStorageSumm2.png" width="" /></a></div></div></div><div class="sect2" id="Ops-Swift-Inventory"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Inventory Summary</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#Ops-Swift-Inventory">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-OpsConsole_manage_swift.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-OpsConsole_manage_swift.xml</li><li><span class="ds-label">ID: </span>Ops-Swift-Inventory</li></ul></div></div></div></div><p>
+   Monitor details about all the Swift resources deployed in your cloud.
+  </p><p>
+   To access the object storage inventory screen:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser enter either the URL or
+     Virtual IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="guimenu ">Home</span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     In the menu, click
+     <span class="guimenu ">Storage</span> › <span class="guimenu ">Object Storage Summary</span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="guimenu ">Summary</span> page, click
+     <span class="guimenu ">Inventory Summary</span>.
+    </p></li></ol></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-ObjStorageInventory1.png" target="_blank"><img src="images/media-opsconsole-ObjStorageInventory1.png" width="" /></a></div></div><p>
+   General Swift metrics are available for the following attributes:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="guimenu ">Time to replicate</span>: The average time in
+     seconds it takes all hosts to complete a replication cycle.
+    </p></li><li class="listitem "><p>
+     <span class="guimenu ">Oldest replication</span>: The time in seconds
+     that has elapsed since the object replication process completed its last
+     replication cycle.
+    </p></li><li class="listitem "><p>
+     <span class="guimenu ">Async Pending</span>: This is the number of
+     failed requests to add an entry in the container server's database.There
+     is one async queue per Swift disk, and a cron job queries all Swift
+     servers to calculate the total. When an object is uploaded into Swift, and
+     it is successfully stored, a request is sent to the container server to
+     add a new entry for the object in the database. If the container update
+     fails, the request is stored in what Swift calls an Async Pending Queue.
+    </p><div id="id-1.7.3.2.5.9.7.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      On a public cloud deployment, this value can reach millions. If it
+      continues to grow, it means that the container updates are not keeping up
+      with the requests. It is also normal for it this number to grow if a node
+      hosting the Swift container service is down.
+     </p></div></li><li class="listitem "><p>
+     <span class="guimenu ">Total number of alarms</span>: This number
+     includes all nodes that host Swift services, including proxy, account,
+     container, and object storage services.
+    </p></li><li class="listitem "><p>
+     <span class="guimenu ">Total nodes</span>: This number includes all
+     nodes that host Swift services, including proxy, account, container, and
+     object storage services. The number in the colored box represents the
+     number of alarms in that state. The following colors are used to show the
+     most severe alarm triggered on all nodes:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.2.5.9.7.5.2.1"><span class="term ">Green</span></dt><dd><p>
+        Indicates all alarms are in a known and untriggered state. For example,
+        if there are 5 nodes and they are all known with no alarms, you will
+        see the number 5 in the green box, and a zero in all the other colored
+        boxes.
+       </p></dd><dt id="id-1.7.3.2.5.9.7.5.2.2"><span class="term ">Yellow</span></dt><dd><p>
+        Indicates that some low or medium alarms have been triggered but no
+        critical or high alarms. For example, if there are 5 nodes, and there
+        are 3 nodes with untriggered alarms and 2 nodes with medium severity
+        alarms, you will see the number 3 in the green box, the number 2 in the
+        yellow box, and zeros in all the other colored boxes.
+       </p></dd><dt id="id-1.7.3.2.5.9.7.5.2.3"><span class="term ">Red</span></dt><dd><p>
+        Indicates at least one critical or high severity alarm has been
+        triggered on a node. For example, if there are 5 nodes, and there are 3
+        nodes with untriggered alarms, 1 node with a low severity, and 1 node
+        with a critical alarm, you will see the number 3 in the green box, the
+        number 1 in the yellow box, the number 1 in the red box,and a zero in
+        the gray box.
+       </p></dd><dt id="id-1.7.3.2.5.9.7.5.2.4"><span class="term ">Gray</span></dt><dd><p>
+        Indicates that all alarms on the nodes are unknown. For example, if
+        there are 5 nodes with no data reported, you will see the number 5 in
+        the gray box, and zeros in all the other colored boxes.
+       </p></dd></dl></div></li><li class="listitem "><p>
+     <span class="guimenu ">Cluster breakdown of nodes</span>: In the
+     example screen above, the cluster consists of 2 nodes named SWPAC and
+     SWOBJ. Click a node name to bring up more detailed information about
+     that node.
+    </p></li></ul></div></div><div class="sect2" id="Ops-Swift-Capacity"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Capacity Summary</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#Ops-Swift-Capacity">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-OpsConsole_manage_swift.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-OpsConsole_manage_swift.xml</li><li><span class="ds-label">ID: </span>Ops-Swift-Capacity</li></ul></div></div></div></div><p>
+   Use this screen to view the size of the file system space on all nodes and
+   disk drives assigned to Swift. Also shown is the remaining space available
+   and the total size of all file systems used by Swift. Values are given in
+   megabytes (MB).
+  </p><p>
+   To access the object storage alarm summary screen:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser enter either the URL or
+     Virtual IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="guimenu ">Home</span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     In the menu, click <span class="guimenu ">Storage</span> › <span class="guimenu ">Object Storage Summary</span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Summary</strong></span> page, click
+     <span class="bold"><strong>Capacity Summary</strong></span>.
+    </p></li></ol></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-ObjStorageCapacity.png" target="_blank"><img src="images/media-opsconsole-ObjStorageCapacity.png" width="" /></a></div></div></div><div class="sect2" id="Ops-Swift-AlarmSumm"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Alarm Summary</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#Ops-Swift-AlarmSumm">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-OpsConsole_manage_swift.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-OpsConsole_manage_swift.xml</li><li><span class="ds-label">ID: </span>Ops-Swift-AlarmSumm</li></ul></div></div></div></div><p>
+   Use this page to quickly see the most recent alarms and triage all alarms
+   related to object storage.
+  </p><p>
+   To access the object storage alarm summary screen:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser enter either the URL or
+     Virtual IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="guimenu ">Home</span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     In the menu, click <span class="guimenu ">Storage</span> › <span class="guimenu ">Object Storage Summary</span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Summary</strong></span> page, click
+     <span class="bold"><strong>Alarm Summary</strong></span>.
+    </p></li></ol></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-OpsConsoleSwiftAlarmSumm.png" target="_blank"><img src="images/media-opsconsole-OpsConsoleSwiftAlarmSumm.png" width="" /></a></div></div><p>
+   Each row has a checkbox to allow you to select multiple alarms and set the
+   same condition on them.
+  </p><p>
+   The <span class="guimenu ">State</span> column displays a graphical
+   indicator representing the state of each alarm:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Green indicator: OK. Good operating state.
+    </p></li><li class="listitem "><p>
+     Yellow indicator: Warning. Low severity, not requiring
+     immediate action.
+    </p></li><li class="listitem "><p>
+     Red indicator: Alarm. Varying severity levels and must be
+     addressed.
+    </p></li><li class="listitem "><p>
+     Gray indicator: Undetermined.
+    </p></li></ul></div><p>
+   The <span class="guimenu ">Alarm</span> column identifies the alarm by
+   the name it was given when it was originally created.
+  </p><p>
+   The <span class="guimenu ">Last Check</span> column displays the date and
+   time the most recent occurrence of the alarm.
+  </p><p>
+   The <span class="guimenu ">Dimension</span> column describes the
+   components to check in order to clear the alarm.
+  </p><p>
+   The last column, depicted by three dots, reveals an
+   <span class="guimenu ">Actions</span> menu that allows
+   you to choose:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="guimenu ">View Details</span>, which opens a separate window that shows
+     all the information from the table view and the alarm history.
+    </p><p>
+     Comments can be updated by clicking <span class="guimenu ">Update Comment</span>.
+     Click <span class="guimenu ">View Alarm Definition</span> to go
+     to the <span class="guimenu ">Alarm Definition</span> tab showing that specific alarm
+     definition.
+    </p></li></ul></div></div></div><div class="sect1" id="charts"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Visualizing Data in Charts</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#charts">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-charts.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-charts.xml</li><li><span class="ds-label">ID: </span>charts</li></ul></div></div></div></div><p>
+  Operations Console allows you to create a new chart and select the time range
+  and the metric you want to chart, based on Monasca metrics.
+ </p><p>
+  Present data in a pictorial or graphical format to enable administrators and
+  decision makers to grasp difficult concepts or identify new patterns.
+ </p><p>
+  <span class="bold"><strong>Create new time-series graphs from
+  <span class="emphasis"><em>My Dashboard</em></span>.</strong></span>
+ </p><p>
+  <span class="emphasis"><em>My Dashboard</em></span> also allows you to customize the view in
+  the following ways:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Include alarm cards from the Central Dashboard
+   </p></li><li class="listitem "><p>
+    Customize graphs in new ways
+   </p></li><li class="listitem "><p>
+    Reorder items using drag and drop
+   </p></li></ul></div><p>
+  <span class="bold"><strong>Plan for future storage</strong></span>
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Track capacity over time to predict with some degree of reliability the
+    amount of additional storage needed.
+   </p></li></ul></div><p>
+  Charts and graphs provide a quick way to visualize large amounts of complex
+  data. It is especially useful when trying to find relationships and
+  understand your data, which could include thousands or even millions of
+  variables. You can create a new chart in Operations Console from
+  <span class="bold"><strong>My Dashboard</strong></span>.
+ </p><p>
+  The charts in Operations Console are based on Monasca data. When you create a
+  new chart you will be able to select the time range and the metric you want
+  to chart. The list of Metrics you can choose from is equivalent to using the
+  <span class="bold"><strong>monasca metric-name-list</strong></span> on the command
+  line. After you select a metric, you can then specify a dimension, which is
+  derived from the <span class="bold"><strong>monasca metric-list –name
+  &lt;metric_name&gt;</strong></span> command line results. The dimension list
+  changes based on the selected metric.
+ </p><p>
+  This topic provides instructions on how to create a basic chart, and how to
+  create a chart specifically to visualize your Cinder capacity.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    Create a Chart: <a class="xref" href="using-opsconsole.html#ops-create-charts" title="1.5.1. Create a Chart">Section 1.5.1, “Create a Chart”</a>
+   </p></li><li class="listitem "><p>
+    Chart Cinder Capacity: <a class="xref" href="using-opsconsole.html#ops-Cinder-chart" title="1.5.2. Chart Cinder Capacity">Section 1.5.2, “Chart Cinder Capacity”</a>
+   </p></li></ul></div><div class="sect2" id="ops-create-charts"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a Chart</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-create-charts">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-charts.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-charts.xml</li><li><span class="ds-label">ID: </span>ops-create-charts</li></ul></div></div></div></div><p>
+   Create a chart to visually display data for up to 6 metrics over a period of
+   time.
+  </p><p>
+   To create a chart:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     To open Operations Console, in a browser, enter either the URL or Virtual
+     IP connected to Operations Console.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">https://myardana.test:9095
+https://VIP:9095</pre></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Home</strong></span> screen, click the menu
+     represented by 3 horizontal lines (<span class="inlinemediaobject"><img xmlns="" src="images/media-opsconsole-OpsConsoleBurgerMenu.png" width="" alt="Three-Line Icon" /></span>).
+    </p></li><li class="listitem "><p>
+     From the menu that slides in on the left, select
+     <span class="bold"><strong>Home</strong></span>, and then
+     select <span class="bold"><strong>My Dashboard</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>My Dashboard</strong></span> screen, select
+     <span class="bold"><strong>Create New Chart</strong></span>.
+    </p></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Add New Time Series Chart</strong></span> screen,
+     in <span class="bold"><strong>Chart Definition</strong></span> complete any of the
+     optional fields:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.2.6.13.4.5.2.1"><span class="term ">Name</span></dt><dd><p>
+        Short description of chart.
+       </p></dd><dt id="id-1.7.3.2.6.13.4.5.2.2"><span class="term ">Time Range</span></dt><dd><p>
+        Specifies the interval between metric collection. The default is
+        <span class="bold"><strong>1 hour</strong></span>. Can be set to hours
+        (1,2,4,8,24) or days (7,30,45).
+       </p></dd><dt id="id-1.7.3.2.6.13.4.5.2.3"><span class="term ">Chart Update Rate</span></dt><dd><p>
+        Collects metric data and adds it to the chart at the specified
+        interval. The default is <span class="bold"><strong>1 minute</strong></span>. Can
+        be set to minutes (1,5,10,30) or 1 hour.
+       </p></dd><dt id="id-1.7.3.2.6.13.4.5.2.4"><span class="term ">Chart Type</span></dt><dd><p>
+        Determines how the data is displayed. The default type is
+        <span class="bold"><strong>Line</strong></span>. Can be set to the following
+        values:
+       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-LineChartIcon.png" target="_blank"><img src="images/media-opsconsole-LineChartIcon.png" width="" /></a></div></div><p>
+          Line
+         </p></li><li class="listitem "><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-BarChartIcon.png" target="_blank"><img src="images/media-opsconsole-BarChartIcon.png" width="" /></a></div></div><p>
+          Bar
+         </p></li><li class="listitem "><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-StackedBarIcon.png" target="_blank"><img src="images/media-opsconsole-StackedBarIcon.png" width="" /></a></div></div><p>
+          Stacked Bar
+         </p></li><li class="listitem "><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-AreaIcon.png" target="_blank"><img src="images/media-opsconsole-AreaIcon.png" width="" /></a></div></div><p>
+          Area
+         </p></li><li class="listitem "><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-AreaStackedIcon.png" target="_blank"><img src="images/media-opsconsole-AreaStackedIcon.png" width="" /></a></div></div><p>
+          Stacked Area
+         </p></li></ul></div></dd><dt id="id-1.7.3.2.6.13.4.5.2.5"><span class="term ">Chart Size</span></dt><dd><p>
+        This controls the visual display of the chart width as it appears on
+        <span class="bold"><strong>My Dashboard</strong></span>. The default is
+        <span class="bold"><strong>Small</strong></span>. This field can be set to
+        <span class="bold"><strong>Small</strong></span> to display it at 50% or
+        <span class="bold"><strong>Large</strong></span> for 100%.
+       </p></dd></dl></div></li><li class="listitem "><p>
+     On the <span class="bold"><strong>Add New Time Series Chart</strong></span> screen,
+     in <span class="bold"><strong>Added Chart Data</strong></span> complete the
+     following fields:
+    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.3.2.6.13.4.6.2.1"><span class="term ">Metric</span></dt><dd><p>
+        In Monasca, a metric is a multi-dimensional description that consists
+        of the following fields: name, dimensions, timestamp, value and
+        value_meta. The pre-populated list is equivalent to using the
+        <span class="bold"><strong>monasca metric-name-list</strong></span> on the
+        command line.
+       </p></dd><dt id="id-1.7.3.2.6.13.4.6.2.2"><span class="term ">Dimension</span></dt><dd><p>
+        The set of unique dimensions that are defined for a specific metric.
+        Dimensions are a dictionary of key-value pairs. This pre-populated list
+        is equivalent to using the
+        <span class="bold"><strong>monasca
+        metric-list –name &lt;metric_name&gt;</strong></span> on the command line.
+       </p></dd><dt id="id-1.7.3.2.6.13.4.6.2.3"><span class="term ">Function</span></dt><dd><p>
+        Operations Console uses Monasca to provide the results of all
+        mathematical functions. Monasca in turns uses Graphite to perform the
+        mathematical calculations and return the results. The default is
+        <span class="bold"><strong>AVG</strong></span>. The
+        <span class="bold"><strong>Function</strong></span>
+        field can be set to
+        <span class="bold"><strong>AVG</strong></span>
+        (default), <span class="bold"><strong>MIN</strong></span>,
+        <span class="bold"><strong>MAX</strong></span>. and
+        <span class="bold"><strong>COUNT</strong></span>.
+        For more information on these functions, see the Graphite
+        documentation at
+        <a class="link" href="http://www.aosabook.org/en/graphite.html" target="_blank">http://www.aosabook.org/en/graphite.html</a>.
+       </p></dd></dl></div></li><li class="listitem "><p>
+     Click <span class="bold"><strong>Add Data To Chart</strong></span>. To add another
+     metric to the chart, repeat the previous step until all metrics are added.
+     The maximum you can have in one chart is 6 metrics.
+    </p></li><li class="listitem "><p>
+     To create the chart, click <span class="bold"><strong>Create New
+     Chart</strong></span>.
+    </p></li></ol></div><p>
+   After you click <span class="bold"><strong>Create New Chart</strong></span>, you will
+   be returned to <span class="emphasis"><em>My Dashboard</em></span> where the new chart will be
+   shown. From the <span class="emphasis"><em>My Dashboard</em></span> screen you can use the menu
+   in the top-right corner of the card to
+   delete or edit the chart. You can also select an option to create a
+   comma-delimited file of the data in the chart.
+  </p></div><div class="sect2" id="ops-Cinder-chart"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Chart Cinder Capacity</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-Cinder-chart">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-charts.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-charts.xml</li><li><span class="ds-label">ID: </span>ops-Cinder-chart</li></ul></div></div></div></div><p>
+   To visualize the use of storage capacity over time, you can create a chart
+   that graphs the total block storage backend capacity. To find out how much
+   of that total is being used, you can also create a chart that graphs the
+   available block storage capacity.
+  </p><p>
+   <span class="bold"><strong>Visualizing Cinder:</strong></span>
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     Chart Total Capacity: <a class="xref" href="using-opsconsole.html#ops-Cinder-chart-total" title="1.5.3. Chart Total Capacity">Section 1.5.3, “Chart Total Capacity”</a>
+    </p></li><li class="listitem "><p>
+     Chart Available Capacity: <a class="xref" href="using-opsconsole.html#ops-Cinder-chart-avail" title="1.5.4. Chart Available Capacity">Section 1.5.4, “Chart Available Capacity”</a>
+    </p></li></ul></div><div id="id-1.7.3.2.6.14.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    The total and free capacity values are based on the available capacity
+    reported by the Cinder backend. Be aware that some backends can be
+    configured to thinly provision.
+   </p></div></div><div class="sect2" id="ops-Cinder-chart-total"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Chart Total Capacity</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-Cinder-chart-total">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-charts.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-charts.xml</li><li><span class="ds-label">ID: </span>ops-Cinder-chart-total</li></ul></div></div></div></div><p>
+   To chart the total block-storage backend capacity:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to Operations Console.
+    </p></li><li class="listitem "><p>
+     Follow the steps in the previous instructions to start creating a chart.
+    </p></li><li class="listitem "><p>
+     To chart the total backend capacity, on the <span class="bold"><strong>Add New
+     Time Series Chart</strong></span> screen, in <span class="bold"><strong>Chart
+     Definition</strong></span> use the following settings:
+    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Field</th><th>Setting</th></tr></thead><tbody><tr><td>Metrics</td><td>cinderlm.cinder.backend.total.size</td></tr><tr><td>Dimension</td><td><p>any hostname. If multiple backends are available, select any one. The backends will all return the same metric data.</p></td></tr></tbody></table></div></li><li class="listitem "><p>
+     Add the data to the chart and click
+     <span class="bold"><strong>Create</strong></span>.
+    </p></li></ol></div><p>
+   Example of a Cinder Total Capacity Chart:
+  </p></div><div class="sect2" id="ops-Cinder-chart-avail"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Chart Available Capacity</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#ops-Cinder-chart-avail">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-charts.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-charts.xml</li><li><span class="ds-label">ID: </span>ops-Cinder-chart-avail</li></ul></div></div></div></div><p>
+   To chart the available block-storage backend capacity:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to Operations Console.
+    </p></li><li class="listitem "><p>
+     Follow the steps in the previous instructions to start creating a chart.
+    </p></li><li class="listitem "><p>
+     To chart the available backend capacity, on the <span class="bold"><strong>Add
+     New Time Series Chart</strong></span> screen, in <span class="bold"><strong>Chart
+     Definition</strong></span> use the following settings:
+    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Field</th><th>Setting</th></tr></thead><tbody><tr><td>Metrics</td><td>cinderlm.cinder.backend.total.avail</td></tr><tr><td>Dimension</td><td><p>any hostname. If multiple backends are available, select any one. The backends will all return the same metric data.</p></td></tr></tbody></table></div></li><li class="listitem "><p>
+     Add the data to the chart and click
+     <span class="bold"><strong>Create</strong></span>.
+    </p></li></ol></div><p>
+   Example of a chart showing Cinder Available Capacity:
+  </p><div id="id-1.7.3.2.6.16.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    The source data for the Capacity Summary pages is only refreshed at the top
+    of each hour. This affects the latency of the displayed data on those
+    pages.
+   </p></div></div></div><div class="sect1" id="help-opsconsole"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Getting Help with the Operations Console</span> <a title="Permalink" class="permalink" href="using-opsconsole.html#help-opsconsole">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/operations-opsconsole-help_opsconsole.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-opsconsole-help_opsconsole.xml</li><li><span class="ds-label">ID: </span>help-opsconsole</li></ul></div></div></div></div><p>
+  On each of the Operations Console pages there is a help menu that you can
+  click on to take you to a help page specific to the console you are
+  currently viewing.
+ </p><p>
+  To reach the help page:
+ </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+    Click the help menu option in the upper-right corner of the page, depicted
+    by the question mark seen in the screenshot below.
+   </p></li><li class="listitem "><p>
+    Click the <span class="guimenu ">Get Help For This Page</span> link which will
+    open the help page in a new tab in your browser.
+   </p></li></ol></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-opsconsole-OpsConsoleGetHelp.png" target="_blank"><img src="images/media-opsconsole-OpsConsoleGetHelp.png" width="" /></a></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="user-dashboard-overview.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 2 </span>Using the Dashboard</span></a><a class="nav-link" href="user-cloudadmin.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part I </span>Cloud Admin User Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

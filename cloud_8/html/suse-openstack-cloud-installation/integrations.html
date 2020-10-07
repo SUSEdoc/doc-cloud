@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Integrations | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 22. Integrations" /><meta name="description" content="Once you have completed your cloud installation, these are some of the common integrations you may want to perform." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="install-heat-templates.html" title="Chapter 21. Installing SUSE CaaS Platform Heat Templates" /><link rel="next" href="troubleshooting-installation.html" title="Chapter 23. Troubleshooting the Installation" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="integrations.html">Integrations</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 21. Installing SUSE CaaS Platform Heat Templates" href="install-heat-templates.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 23. Troubleshooting the Installation" href="troubleshooting-installation.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-installation.html">Installing with Cloud Lifecycle Manager</a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="integrations.html">Integrations</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 21. Installing SUSE CaaS Platform Heat Templates" href="install-heat-templates.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 23. Troubleshooting the Installation" href="troubleshooting-installation.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="integrations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">22 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrations</span> <a title="Permalink" class="permalink" href="integrations.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-integrations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-integrations.xml</li><li><span class="ds-label">ID: </span>integrations</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="integrations.html#config-3par"><span class="number">22.1 </span><span class="name">Configuring for 3PAR Block Storage Backend</span></a></span></dt><dt><span class="section"><a href="integrations.html#ironic-oneview-integration"><span class="number">22.2 </span><span class="name">Ironic HPE OneView Integration</span></a></span></dt><dt><span class="section"><a href="integrations.html#ses-integration"><span class="number">22.3 </span><span class="name">SUSE Enterprise Storage Integration</span></a></span></dt></dl></div></div><p>
+  Once you have completed your cloud installation, these are some of the common
+  integrations you may want to perform.
+ </p><div class="sect1" id="config-3par"><div class="titlepage"><div><div><h2 class="title"><span class="number">22.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring for 3PAR Block Storage Backend</span> <a title="Permalink" class="permalink" href="integrations.html#config-3par">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>config-3par</li></ul></div></div></div></div><p>
+  This page describes how to configure your 3PAR backend for the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
+  Entry-scale with KVM cloud model.
+ </p><div class="sect2" id="idg-installation-installation-configure-3par-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="integrations.html#idg-installation-installation-configure-3par-xml-7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>idg-installation-installation-configure-3par-xml-7</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     You must have the license for the following software before you start your
+     3PAR backend configuration for the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale with KVM cloud
+     model:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       Thin Provisioning
+      </p></li><li class="listitem "><p>
+       Virtual Copy
+      </p></li><li class="listitem "><p>
+       System Reporter
+      </p></li><li class="listitem "><p>
+       Dynamic Optimization
+      </p></li><li class="listitem "><p>
+       Priority Optimization
+      </p></li></ul></div></li><li class="listitem "><p>
+     Your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale KVM Cloud should be up and running.
+     Installation steps can be found in
+     <a class="xref" href="install-kvm.html" title="Chapter 12. Installing Mid-scale and Entry-scale KVM">Chapter 12, <em>Installing Mid-scale and Entry-scale KVM</em></a>.
+    </p></li><li class="listitem "><p>
+     Your 3PAR Storage Array should be available in the cloud management
+     network or routed to the cloud management network and the 3PAR FC and
+     iSCSI ports configured.
+    </p></li><li class="listitem "><p>
+     The 3PAR management IP and iSCSI port IPs must have connectivity from the
+     controller and compute nodes.
+    </p></li><li class="listitem "><p>
+     Please refer to the system requirements for 3PAR in the OpenStack
+     configuration guide, which can be found here:
+     <a class="link" href="http://docs.openstack.org/liberty/config-reference/content/hp-3par-sys-reqs.html" target="_blank">3PAR
+     System Requirements</a>.
+    </p></li></ul></div></div><div class="sect2" id="idg-installation-installation-configure-3par-xml-9"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Notes</span> <a title="Permalink" class="permalink" href="integrations.html#idg-installation-installation-configure-3par-xml-9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>idg-installation-installation-configure-3par-xml-9</li></ul></div></div></div></div><p>
+   The <code class="literal">cinder_admin</code> role must be added in order to configure
+   3Par ICSI as a volume type in Horizon.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
+<code class="prompt user">ardana &gt; </code>openstack role add --user admin --project admin cinder_admin</pre></div><p>
+   <span class="bold"><strong>Encrypted 3Par Volume</strong></span>: Attaching an
+   encrypted 3Par volume is possible after installation by setting
+   <code class="literal">volume_use_multipath = true</code> under the libvirt stanza in
+   the <code class="literal">nova/kvm-hypervisor.conf.j2</code> file and reconfigure
+   nova.
+  </p><p>
+   <span class="bold"><strong>Concerning using multiple backends:</strong></span> If you
+   are using multiple backend options, ensure that you specify each of the
+   backends you are using when configuring your
+   <code class="literal">cinder.conf.j2</code> file using a comma-delimited list.
+   Also create multiple volume types so you can specify a backend to utilize
+   when creating volumes. Instructions are included below.
+   You can also read the OpenStack documentation about <a class="link" href="https://wiki.openstack.org/wiki/Cinder-multi-backend" target="_blank">Cinder
+   multiple storage backends</a>.
+  </p><p>
+   <span class="bold"><strong>Concerning iSCSI and Fiber Channel:</strong></span> You
+   should not configure cinder backends so that multipath volumes are exported
+   over both iSCSI and Fiber Channel from a 3PAR backend to the same Nova
+   compute server.
+  </p><p>
+   <span class="bold"><strong>3PAR driver correct name:</strong></span> In a previous
+   release, the 3PAR driver used for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> integration had its name
+   updated from <code class="literal">HP3PARFCDriver</code> and
+   <code class="literal">HP3PARISCSIDriver</code> to <code class="literal">HPE3PARFCDriver</code>
+   and <code class="literal">HPE3PARISCSIDriver</code> respectively
+   (<code class="literal">HP</code> changed to <code class="literal">HPE</code>). You may get a
+   warning or an error if the deprecated filenames are used. The correct values
+   are those in
+   <code class="filename">~/openstack/my_cloud/config/cinder/cinder.conf.j2</code>.
+  </p></div><div class="sect2" id="sec-3par-multipath"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Multipath Support</span> <a title="Permalink" class="permalink" href="integrations.html#sec-3par-multipath">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>sec-3par-multipath</li></ul></div></div></div></div><p>
+   Setting up multipath support is highly recommended for 3PAR FC/iSCSI
+   backends, and should be considered a default best practice.
+   For instructions on this process, refer to the
+   <code class="filename">~/openstack/ardana/ansible/roles/multipath/README.md</code>
+   file on the Cloud Lifecycle Manager. The <code class="filename">README.md</code> file contains
+   detailed procedures for configuring multipath for 3PAR FC/iSCSI Cinder
+   volumes.
+  </p><div id="id-1.4.5.17.3.5.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+    If multipath functionality is enabled, ensure that all 3PAR fibre channel ports are active and zoned correctly in the 3PAR storage for proper operation.
+   </p></div><p>
+   In addition, take the following steps to enable 3PAR FC/iSCSI multipath
+   support in <span class="productname">OpenStack</span> configuration files:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Edit the
+     <code class="literal">~/openstack/my_cloud/config/nova/kvm-hypervisor.conf.j2</code>
+     file and add this line under the <code class="literal">[libvirt]</code> section:
+    </p><p>
+     Example:
+    </p><div class="verbatim-wrap"><pre class="screen">[libvirt]
+...
+iscsi_use_multipath=true</pre></div><p>
+     Additionally, if you are planning on attaching an encrypted 3PAR volume
+     after installation, set <code class="literal">volume_use_multipath=true</code>
+     in the same section.
+    </p></li><li class="step "><p>
+     Edit the file
+     <code class="literal">~/openstack/my_cloud/config/cinder/cinder.conf.j2</code>
+     and add the following lines in the <code class="literal">[3par]</code> section:
+    </p><p>
+     Example:
+    </p><div class="verbatim-wrap"><pre class="screen">[3par]
+...
+enforce_multipath_for_image_xfer=True
+use_multipath_for_image_xfer=True</pre></div></li><li class="step "><p>
+     Commit your configuration to the local git repo
+     (<a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>), as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Use the playbook below to create a deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the Nova reconfigure playbook:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="config-fc"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure 3PAR FC as a Cinder Backend</span> <a title="Permalink" class="permalink" href="integrations.html#config-fc">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>config-fc</li></ul></div></div></div></div><p>
+   You must modify the <code class="literal">cinder.conf.j2</code> to configure the FC
+   details.
+  </p><p>
+   Perform the following steps to configure 3PAR FC as Cinder backend:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Make the following changes to the
+     <code class="literal">~/openstack/my_cloud/config/cinder/cinder.conf.j2</code> file:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Add your 3PAR backend to the <code class="literal">enabled_backends</code>
+       section:
+      </p><div class="verbatim-wrap"><pre class="screen"># Configure the enabled backends
+enabled_backends=3par_FC</pre></div><div id="id-1.4.5.17.3.6.4.2.2.1.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        If you are using multiple backend types, you can use a comma-delimited
+        list here.
+       </p></div></li><li class="step "><p>
+       <code class="literal">[OPTIONAL]</code> If you want your volumes to use a default
+       volume type, then enter the name of the volume type in the
+       <code class="literal">[DEFAULT]</code> section with the syntax below.
+       <span class="bold"><strong>Remember this value for when you
+       create your volume type in the next section.</strong></span>
+      </p><div id="id-1.4.5.17.3.6.4.2.2.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        If you do not specify a default type then your volumes will default
+        unpredictably. We recommended that you create a volume type that meets
+        the needs of your environment and specify it here.
+       </p></div><div class="verbatim-wrap"><pre class="screen">[DEFAULT]
+# Set the default volume type
+default_volume_type = &lt;your new volume type&gt;</pre></div></li><li class="step "><p>
+       Uncomment the <code class="literal">StoreServ (3par) iscsi cluster</code> section
+       and fill the values per your cluster information. Storage performance
+       can be improved by enabling the <code class="literal">Image-Volume</code>
+       cache. Here is an example:
+      </p><div class="verbatim-wrap"><pre class="screen">[3par_FC]
+san_ip: &lt;3par-san-ipaddr&gt;
+san_login: &lt;3par-san-username&gt;
+san_password: &lt;3par-san-password&gt;
+hpe3par_username: &lt;3par-username&gt;
+hpe3par_password: &lt;hpe3par_password&gt;
+hpe3par_api_url: https://&lt;3par-san-ipaddr&gt;:8080/api/v1
+hpe3par_cpg: &lt;3par-cpg-name-1&gt;[,&lt;3par-cpg-name-2&gt;, ...]
+volume_backend_name: &lt;3par-backend-name&gt;
+volume_driver = cinder.volume.drivers.hpe.hpe_3par_iscsi.HPE3PARISCSIDriver
+image_volume_cache_enabled = True</pre></div></li></ol><div id="id-1.4.5.17.3.6.4.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+      Do not use <code class="literal">backend_host</code> variable in
+      <code class="literal">cinder.conf</code> file. If <code class="literal">backend_host</code>
+      is set, it will override the [DEFAULT]/host value which <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>
+      is dependent on.
+     </p></div></li><li class="step "><p>
+     Commit your configuration to the local git repo
+     (<a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>), as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the following playbook to complete the configuration:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="config-iscsi"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure 3PAR iSCSI as Cinder backend</span> <a title="Permalink" class="permalink" href="integrations.html#config-iscsi">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>config-iscsi</li></ul></div></div></div></div><p>
+   You must modify the <code class="literal">cinder.conf.j2</code> to configure the iSCSI
+   details.
+  </p><p>
+   Perform the following steps to configure 3PAR iSCSI as Cinder backend:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to Cloud Lifecycle Manager.
+    </p></li><li class="step "><p>
+     Make the following changes to the
+     <code class="literal">~/openstack/my_cloud/config/cinder/cinder.conf.j2</code> file:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       Add your 3PAR backend to the <code class="literal">enabled_backends</code>
+       section:
+      </p><div class="verbatim-wrap"><pre class="screen"># Configure the enabled backends
+enabled_backends=3par_iSCSI</pre></div></li><li class="step "><p>
+       Uncomment the <code class="literal">StoreServ (3par) iscsi cluster</code> section
+       and fill the values per your cluster information. Here is an example:
+      </p><div class="verbatim-wrap"><pre class="screen">[3par_iSCSI]
+san_ip: &lt;3par-san-ipaddr&gt;
+san_login: &lt;3par-san-username&gt;
+san_password: &lt;3par-san-password&gt;
+hpe3par_username: &lt;3par-username&gt;
+hpe3par_password: &lt;hpe3par_password&gt;
+hpe3par_api_url: https://&lt;3par-san-ipaddr&gt;:8080/api/v1
+hpe3par_cpg: &lt;3par-cpg-name-1&gt;[,&lt;3par-cpg-name-2&gt;, ...]
+volume_backend_name: &lt;3par-backend-name&gt;
+volume_driver: cinder.volume.drivers.san.hp.hp_3par_iscsi.hpe3parISCSIDriver
+hpe3par_iscsi_ips: &lt;3par-ip-address-1&gt;[,&lt;3par-ip-address-2&gt;,&lt;3par-ip-address-3&gt;, ...]
+hpe3par_iscsi_chap_enabled=true</pre></div><div id="id-1.4.5.17.3.7.4.2.2.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        Do not use <code class="literal">backend_host</code> variable in
+        <code class="literal">cinder.conf</code> file. If <code class="literal">backend_host</code>
+        is set, it will override the [DEFAULT]/host value which <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>
+        is dependent on.
+       </p></div></li></ol></li><li class="step "><p>
+     Commit your configuration your local git repository:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre></div></li><li class="step "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div><p>
+     When you run the configuration processor you will be prompted for two
+     passwords. Enter the first password to make the configuration processor
+     encrypt its sensitive data, which consists of the random inter-service
+     passwords that it generates and the Ansible group_vars and host_vars that
+     it produces for subsequent deploy runs. You will need this key for
+     subsequent Ansible deploy runs and subsequent configuration processor
+     runs. If you wish to change an encryption password that you have already
+     used when running the configuration processor then enter the new password
+     at the second prompt, otherwise press <span class="keycap">Enter</span>.
+    </p><p>
+     For CI purposes you can specify the required passwords on the ansible
+     command line. For example, the command below will disable encryption by
+     the configuration processor
+    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost config-processor-run.yml \
+  -e encrypt="" -e rekey=""</pre></div><p>
+     If you receive an error during either of these steps then there is an
+     issue with one or more of your configuration files. We recommend that you
+     verify that all of the information in each of your configuration files is
+     correct for your environment and then commit those changes to git using
+     the instructions above.
+    </p></li><li class="step "><p>
+     Run the following command to create a deployment directory.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run the following command to complete the configuration:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="idg-installation-installation-configure-3par-xml-16"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Post-Installation Tasks</span> <a title="Permalink" class="permalink" href="integrations.html#idg-installation-installation-configure-3par-xml-16">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-configure_3par.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_3par.xml</li><li><span class="ds-label">ID: </span>idg-installation-installation-configure-3par-xml-16</li></ul></div></div></div></div><p>
+   After configuring 3PAR as your Block Storage backend, perform the
+   following tasks:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="intraxref">Book “Operations Guide”, Chapter 7 “Managing Block Storage”, Section 7.1 “Managing Block Storage using Cinder”, Section 7.1.2 “Creating a Volume Type for your Volumes”</span>
+    </p></li><li class="listitem "><p>
+     <a class="xref" href="ui-verification.html#sec-verify-block-storage-volume" title="27.1. Verifying Your Block Storage Backend">Section 27.1, “Verifying Your Block Storage Backend”</a>
+    </p></li></ul></div></div></div><div class="sect1" id="ironic-oneview-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">22.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ironic HPE OneView Integration</span> <a title="Permalink" class="permalink" href="integrations.html#ironic-oneview-integration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ironic_oneview_integration.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ironic_oneview_integration.xml</li><li><span class="ds-label">ID: </span>ironic-oneview-integration</li></ul></div></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> supports integration of Ironic (Baremetal) service with
+  HPE OneView using <span class="emphasis"><em>agent_pxe_oneview</em></span> driver. Please refer to
+  <a class="link" href="https://docs.openstack.org/developer/ironic/drivers/oneview.html" target="_blank">OpenStack
+  Documentation</a> for more information.
+ </p><div class="sect2" id="id-1.4.5.17.4.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.4.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ironic_oneview_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ironic_oneview_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="orderedlist " id="prereq-list"><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Installed <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> with entry-scale-ironic-flat-network or
+     entry-scale-ironic-multi-tenancy model.
+    </p></li><li class="listitem "><p>
+     HPE OneView 3.0 instance is running and connected to management network.
+    </p></li><li class="listitem "><p>
+     HPE OneView configuration is set into
+     <code class="literal">definition/data/ironic/ironic_config.yml</code> (and
+     <code class="literal">ironic-reconfigure.yml</code> playbook ran if needed). This
+     should enable <span class="emphasis"><em>agent_pxe_oneview</em></span> driver in ironic
+     conductor.
+    </p></li><li class="listitem "><p>
+     Managed node(s) should support PXE booting in legacy BIOS mode.
+    </p></li><li class="listitem "><p>
+     Managed node(s) should have PXE boot NIC listed first. That is, embedded
+     1Gb NIC must be disabled (otherwise it always goes first).
+    </p></li></ol></div></div><div class="sect2" id="id-1.4.5.17.4.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integrating with HPE OneView</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.4.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ironic_oneview_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ironic_oneview_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     On the Cloud Lifecycle Manager, open the file
+     <code class="literal">~/openstack/my_cloud/definition/data/ironic/ironic_config.yml</code>
+    </p><div class="verbatim-wrap"><pre class="screen">~$ cd ~/openstack
+vi my_cloud/definition/data/ironic/ironic_config.yml</pre></div></li><li class="step "><p>
+     Modify the settings listed below:
+    </p><ol type="a" class="substeps "><li class="step "><p>
+       <code class="literal">enable_oneview</code>: should be set to "true" for HPE OneView
+       integration
+      </p></li><li class="step "><p>
+       <code class="literal">oneview_manager_url</code>: HTTPS endpoint of HPE OneView
+       management interface, for example:
+       <span class="bold"><strong>https://10.0.0.10/</strong></span>
+      </p></li><li class="step "><p>
+       <code class="literal">oneview_username</code>: HPE OneView username, for example:
+       <span class="bold"><strong>Administrator</strong></span>
+      </p></li><li class="step "><p>
+       <code class="literal">oneview_encrypted_password</code>: HPE OneView password in
+       encrypted or clear text form. The encrypted form is distinguished by
+       presence of <code class="literal">@ardana@</code> at the beginning of the
+       string. The encrypted form can be created by running the
+       <code class="command">ardanaencrypt.py</code>
+       program. This program is shipped as part of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> and can be found in
+       <code class="filename">~/openstack/ardana/ansible</code> directory on Cloud Lifecycle Manager.
+      </p></li><li class="step "><p>
+       <code class="literal">oneview_allow_insecure_connections</code>: should be set to
+       "true" if HPE OneView is using self-generated certificate.
+      </p></li></ol></li><li class="step "><p>
+     Once you have saved your changes and exited the editor, add files, commit
+     changes to local git repository, and run
+     <code class="literal">config-processor-run.yml</code> and
+     <code class="literal">ready-deployment.yml</code> playbooks, as described in
+     <a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>.
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack$ git add my_cloud/definition/data/ironic/ironic_config.yml
+~/openstack$ cd ardana/ansible
+~/openstack/ardana/ansible$ ansible-playbook -i hosts/localhost \
+  config-processor-run.yml
+...
+~/openstack/ardana/ansible$ ansible-playbook -i hosts/localhost \
+  ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run ironic-reconfigure.yml playbook.
+    </p><div class="verbatim-wrap"><pre class="screen">$ cd ~/scratch/ansible/next/ardana/ansible/
+
+# This is needed if password was encrypted in ironic_config.yml file
+~/scratch/ansible/next/ardana/ansible$ export ARDANA_USER_PASSWORD_ENCRYPT_KEY=your_password_encrypt_key
+~/scratch/ansible/next/ardana/ansible$ ansible-playbook -i hosts/verb_hosts ironic-reconfigure.yml
+...</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.4.5.17.4.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Registering Node in HPE OneView</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.4.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ironic_oneview_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ironic_oneview_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   In the HPE OneView web interface:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Navigate to
+     <span class="guimenu ">Menu</span> › <span class="guimenu ">Server Hardware</span>.
+     Add new <span class="guimenu ">Server Hardware</span> item, using
+     managed node IPMI IP and credentials. If this is the first node of this
+     type being added, corresponding
+     <span class="guimenu ">Server Hardware Type</span> will be created automatically.
+    </p></li><li class="step "><p>
+     Navigate to
+     <span class="guimenu ">Menu</span> › <span class="guimenu ">Server Profile Template</span>.
+     Add <span class="guimenu ">Server Profile Template</span>. Use
+     <span class="guimenu ">Server Hardware Type</span> corresponding to node being
+     registered. In <span class="guimenu ">BIOS Settings</span> section, set
+     <span class="guimenu ">Manage Boot Mode</span> and <span class="guimenu ">Manage Boot
+     Order</span> options must be turned on:
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-ironic-OneViewWebRegister.png" target="_blank"><img src="images/media-ironic-OneViewWebRegister.png" width="" /></a></div></div></li><li class="step "><p>
+     Verify that node is powered off. Power the node off if needed.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.4.5.17.4.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Provisioning Ironic Node</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.4.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ironic_oneview_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ironic_oneview_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Login to the Cloud Lifecycle Manager and source respective credentials file
+     (for example <code class="filename">service.osrc</code> for admin account).
+    </p></li><li class="step "><p>
+     Review glance images with <code class="literal">glance image list</code>
+    </p><div class="verbatim-wrap"><pre class="screen">$ glance image list
++--------------------------------------+--------------------------+
+| ID                                   | Name                     |
++--------------------------------------+--------------------------+
+| c61da588-622c-4285-878f-7b86d87772da | cirros-0.3.4-x86_64      |
++--------------------------------------+--------------------------+</pre></div><p>
+     Ironic deploy images (boot image,
+     <code class="literal">ir-deploy-kernel</code>, <code class="literal">ir-deploy-ramdisk</code>,
+     <code class="literal">ir-deploy-iso</code>) are created automatically. The
+     <code class="systemitem">agent_pxe_oneview</code> Ironic driver requires
+     <code class="systemitem">ir-deploy-kernel</code> and
+     <code class="systemitem">ir-deploy-ramdisk</code> images.
+    </p></li><li class="step "><p>
+     Create node using <code class="literal">agent_pxe_oneview</code> driver.
+    </p><div class="verbatim-wrap"><pre class="screen">$ ironic --ironic-api-version 1.22 node-create -d agent_pxe_oneview --name test-node-1 \
+  --network-interface neutron -p memory_mb=131072 -p cpu_arch=x86_64 -p local_gb=80 -p cpus=2 \
+  -p 'capabilities=boot_mode:bios,boot_option:local,server_hardware_type_uri:\
+     /rest/server-hardware-types/E5366BF8-7CBF-48DF-A752-8670CF780BB2,server_profile_template_uri:\
+     /rest/server-profile-templates/00614918-77f8-4146-a8b8-9fc276cd6ab2' \
+  -i 'server_hardware_uri=/rest/server-hardware/32353537-3835-584D-5135-313930373046' \
+  -i dynamic_allocation=True \
+  -i deploy_kernel=633d379d-e076-47e6-b56d-582b5b977683 \
+  -i deploy_ramdisk=d5828785-edf2-49fa-8de2-3ddb7f3270d5
+
++-------------------+--------------------------------------------------------------------------+
+| Property          | Value                                                                    |
++-------------------+--------------------------------------------------------------------------+
+| chassis_uuid      |                                                                          |
+| driver            | agent_pxe_oneview                                                        |
+| driver_info       | {u'server_hardware_uri': u'/rest/server-                                 |
+|                   | hardware/32353537-3835-584D-5135-313930373046', u'dynamic_allocation':   |
+|                   | u'True', u'deploy_ramdisk': u'd5828785-edf2-49fa-8de2-3ddb7f3270d5',     |
+|                   | u'deploy_kernel': u'633d379d-e076-47e6-b56d-582b5b977683'}               |
+| extra             | {}                                                                       |
+| name              | test-node-1                                                              |
+| network_interface | neutron                                                                  |
+| properties        | {u'memory_mb': 131072, u'cpu_arch': u'x86_64', u'local_gb': 80, u'cpus': |
+|                   | 2, u'capabilities':                                                      |
+|                   | u'boot_mode:bios,boot_option:local,server_hardware_type_uri:/rest        |
+|                   | /server-hardware-types/E5366BF8-7CBF-                                    |
+|                   | 48DF-A752-8670CF780BB2,server_profile_template_uri:/rest/server-profile- |
+|                   | templates/00614918-77f8-4146-a8b8-9fc276cd6ab2'}                         |
+| resource_class    | None                                                                     |
+| uuid              | c202309c-97e2-4c90-8ae3-d4c95afdaf06                                     |
++-------------------+--------------------------------------------------------------------------+</pre></div><div id="id-1.4.5.17.4.6.2.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        For deployments created via Ironic/HPE OneView integration,
+        <code class="literal">memory_mb</code> property must reflect physical amount of
+        RAM installed in the managed node. That is, for a server with 128 Gb of RAM
+        it works out to 132*1024=13072.
+       </p></li><li class="listitem "><p>
+        Boot mode in capabilities property must reflect boot mode used by the
+        server, that is 'bios' for Legacy BIOS and 'uefi' for UEFI.
+       </p></li><li class="listitem "><p>
+        Values for <code class="literal">server_hardware_type_uri</code>,
+        <code class="literal">server_profile_template_uri</code> and
+        <code class="literal">server_hardware_uri</code> can be grabbed from browser URL
+        field while navigating to respective objects in HPE OneView UI. URI
+        corresponds to the part of URL which starts form the token
+        <code class="literal">/rest</code>.
+        That is, the URL
+        <code class="literal">https://oneview.mycorp.net/#/profile-templates/show/overview/r/rest/server-profile-templates/12345678-90ab-cdef-0123-012345678901</code>
+        corresponds to the URI
+        <code class="literal">/rest/server-profile-templates/12345678-90ab-cdef-0123-012345678901</code>.
+       </p></li><li class="listitem "><p>
+        Grab IDs of <code class="literal">deploy_kernel</code> and
+        <code class="literal">deploy_ramdisk</code> from <span class="bold"><strong>glance
+        image list</strong></span> output above.
+       </p></li></ul></div></div></li><li class="step "><p>
+     Create port.
+    </p><div class="verbatim-wrap"><pre class="screen">$ ironic --ironic-api-version 1.22 port-create \
+  --address aa:bb:cc:dd:ee:ff \
+  --node c202309c-97e2-4c90-8ae3-d4c95afdaf06 \
+  -l switch_id=ff:ee:dd:cc:bb:aa \
+  -l switch_info=MY_SWITCH \
+  -l port_id="Ten-GigabitEthernet 1/0/1" \
+  --pxe-enabled true
++-----------------------+----------------------------------------------------------------+
+| Property              | Value                                                          |
++-----------------------+----------------------------------------------------------------+
+| address               | 8c:dc:d4:b5:7d:1c                                              |
+| extra                 | {}                                                             |
+| local_link_connection | {u'switch_info': u'C20DATA', u'port_id': u'Ten-GigabitEthernet |
+|                       | 1/0/1',    u'switch_id': u'ff:ee:dd:cc:bb:aa'}                 |
+| node_uuid             | c202309c-97e2-4c90-8ae3-d4c95afdaf06                           |
+| pxe_enabled           | True                                                           |
+| uuid                  | 75b150ef-8220-4e97-ac62-d15548dc8ebe                           |
++-----------------------+----------------------------------------------------------------+</pre></div><div id="id-1.4.5.17.4.6.2.4.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+      Ironic Multi-Tenancy networking model is used in this example.
+      Therefore, ironic port-create command contains information about the
+      physical switch. HPE OneView integration can also be performed using the
+      Ironic Flat Networking model. For more information, see
+      <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 9 “Example Configurations”, Section 9.6 “Ironic Examples”</span>.
+     </p></div></li><li class="step "><p>
+     Move node to manageable provisioning state. The connectivity between
+     Ironic and HPE OneView will be verified, Server Hardware Template settings
+     validated, and Server Hardware power status retrieved from HPE OneView and set
+     into the Ironic node.
+    </p><div class="verbatim-wrap"><pre class="screen">$ ironic node-set-provision-state test-node-1 manage</pre></div></li><li class="step "><p>
+     Verify that node power status is populated.
+    </p><div class="verbatim-wrap"><pre class="screen">$ ironic node-show test-node-1
++-----------------------+-----------------------------------------------------------------------+
+| Property              | Value                                                                 |
++-----------------------+-----------------------------------------------------------------------+
+| chassis_uuid          |                                                                       |
+| clean_step            | {}                                                                    |
+| console_enabled       | False                                                                 |
+| created_at            | 2017-06-30T21:00:26+00:00                                             |
+| driver                | agent_pxe_oneview                                                     |
+| driver_info           | {u'server_hardware_uri': u'/rest/server-                              |
+|                       | hardware/32353537-3835-584D-5135-313930373046', u'dynamic_allocation':|
+|                       | u'True', u'deploy_ramdisk': u'd5828785-edf2-49fa-8de2-3ddb7f3270d5',  |
+|                       | u'deploy_kernel': u'633d379d-e076-47e6-b56d-582b5b977683'}            |
+| driver_internal_info  | {}                                                                    |
+| extra                 | {}                                                                    |
+| inspection_finished_at| None                                                                  |
+| inspection_started_at | None                                                                  |
+| instance_info         | {}                                                                    |
+| instance_uuid         | None                                                                  |
+| last_error            | None                                                                  |
+| maintenance           | False                                                                 |
+| maintenance_reason    | None                                                                  |
+| name                  | test-node-1                                                           |
+| network_interface     |                                                                       |
+| power_state           | power off                                                             |
+| properties            | {u'memory_mb': 131072, u'cpu_arch': u'x86_64', u'local_gb': 80,       |
+|                       | u'cpus': 2, u'capabilities':                                          |
+|                       | u'boot_mode:bios,boot_option:local,server_hardware_type_uri:/rest     |
+|                       | /server-hardware-types/E5366BF8-7CBF-                                 |
+|                       | 48DF-A752-86...BB2,server_profile_template_uri:/rest/server-profile-  |
+|                       | templates/00614918-77f8-4146-a8b8-9fc276cd6ab2'}                      |
+| provision_state       | manageable                                                            |
+| provision_updated_at  | 2017-06-30T21:04:43+00:00                                             |
+| raid_config           |                                                                       |
+| reservation           | None                                                                  |
+| resource_class        |                                                                       |
+| target_power_state    | None                                                                  |
+| target_provision_state| None                                                                  |
+| target_raid_config    |                                                                       |
+| updated_at            | 2017-06-30T21:04:43+00:00                                             |
+| uuid                  | c202309c-97e2-4c90-8ae3-d4c95afdaf06                                  |
++-----------------------+-----------------------------------------------------------------------+</pre></div></li><li class="step "><p>
+     Move node to available provisioning state. The Ironic node will be
+     reported to Nova as available.
+    </p><div class="verbatim-wrap"><pre class="screen">$ ironic node-set-provision-state test-node-1 provide</pre></div></li><li class="step "><p>
+     Verify that node resources were added to Nova hypervisor stats.
+    </p><div class="verbatim-wrap"><pre class="screen">$ nova hypervisor-stats
++----------------------+--------+
+| Property             | Value  |
++----------------------+--------+
+| count                | 1      |
+| current_workload     | 0      |
+| disk_available_least | 80     |
+| free_disk_gb         | 80     |
+| free_ram_mb          | 131072 |
+| local_gb             | 80     |
+| local_gb_used        | 0      |
+| memory_mb            | 131072 |
+| memory_mb_used       | 0      |
+| running_vms          | 0      |
+| vcpus                | 2      |
+| vcpus_used           | 0      |
++----------------------+--------+</pre></div></li><li class="step "><p>
+     Create Nova flavor.
+    </p><div class="verbatim-wrap"><pre class="screen">$ nova flavor-create m1.ironic auto 131072 80 2
++-------------+-----------+--------+------+-----------+------+-------+-------------+-----------+
+| ID          | Name      | Mem_MB | Disk | Ephemeral | Swap | VCPUs | RXTX_Factor | Is_Public |
++-------------+-----------+--------+------+-----------+------+-------+-------------+-----------+
+| 33c8...f8d8 | m1.ironic | 131072 | 80   | 0         |      | 2     | 1.0         | True      |
++-------------+-----------+--------+------+-----------+------+-------+-------------+-----------+
+$ nova flavor-key m1.ironic set capabilities:boot_mode="bios"
+$ nova flavor-key m1.ironic set capabilities:boot_option="local"
+$ nova flavor-key m1.ironic set cpu_arch=x86_64</pre></div><div id="id-1.4.5.17.4.6.2.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      All parameters (specifically, amount of RAM and boot mode) must
+      correspond to ironic node parameters.
+     </p></div></li><li class="step "><p>
+     Create Nova keypair if needed.
+    </p><div class="verbatim-wrap"><pre class="screen">$ nova keypair-add ironic_kp --pub-key ~/.ssh/id_rsa.pub</pre></div></li><li class="step "><p>
+     Boot Nova instance.
+    </p><div class="verbatim-wrap"><pre class="screen">$ nova boot --flavor m1.ironic --image d6b5...e942 --key-name ironic_kp \
+  --nic net-id=5f36...dcf3 test-node-1
++-------------------------------+-----------------------------------------------------+
+| Property                      | Value                                               |
++-------------------------------+-----------------------------------------------------+
+| OS-DCF:diskConfig             | MANUAL                                              |
+| OS-EXT-AZ:availability_zone   |                                                     |
+| OS-EXT-SRV-ATTR:host          | -                                                   |
+| OS-EXT-SRV-ATTR:              |                                                     |
+|       hypervisor_hostname     | -                                                   |
+| OS-EXT-SRV-ATTR:instance_name |                                                     |
+| OS-EXT-STS:power_state        | 0                                                   |
+| OS-EXT-STS:task_state         | scheduling                                          |
+| OS-EXT-STS:vm_state           | building                                            |
+| OS-SRV-USG:launched_at        | -                                                   |
+| OS-SRV-USG:terminated_at      | -                                                   |
+| accessIPv4                    |                                                     |
+| accessIPv6                    |                                                     |
+| adminPass                     | pE3m7wRACvYy                                        |
+| config_drive                  |                                                     |
+| created                       | 2017-06-30T21:08:42Z                                |
+| flavor                        | m1.ironic (33c81884-b8aa-46...3b72f8d8)             |
+| hostId                        |                                                     |
+| id                            | b47c9f2a-e88e-411a-abcd-6172aea45397                |
+| image                         | Ubuntu Trusty 14.04 BIOS (d6b5d971-42...5f2d88e942) |
+| key_name                      | ironic_kp                                           |
+| metadata                      | {}                                                  |
+| name                          | test-node-1                                         |
+| os-extended-volumes:          |                                                     |
+|       volumes_attached        | []                                                  |
+| progress                      | 0                                                   |
+| security_groups               | default                                             |
+| status                        | BUILD                                               |
+| tenant_id                     | c8573f7026d24093b40c769ca238fddc                    |
+| updated                       | 2017-06-30T21:08:42Z                                |
+| user_id                       | 2eae99221545466d8f175eeb566cc1b4                    |
++-------------------------------+-----------------------------------------------------+</pre></div><p>
+     During nova instance boot, the following operations will be performed by
+     Ironic via HPE OneView REST API.
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       In HPE OneView, new Server Profile is generated for specified Server
+       Hardware, using specified Server Profile Template. Boot order in Server
+       Profile is set to list PXE as the first boot source.
+      </p></li><li class="listitem "><p>
+       The managed node is powered on and boots IPA image from PXE.
+      </p></li><li class="listitem "><p>
+       IPA image writes user image onto disk and reports success back to
+       Ironic.
+      </p></li><li class="listitem "><p>
+       Ironic modifies Server Profile in HPE OneView to list 'Disk' as default boot
+       option.
+      </p></li><li class="listitem "><p>
+       Ironic reboots the node (via HPE OneView REST API call).
+      </p></li></ul></div></li></ol></div></div></div></div><div class="sect1" id="ses-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">22.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE Enterprise Storage Integration</span> <a title="Permalink" class="permalink" href="integrations.html#ses-integration">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span>ses-integration</li></ul></div></div></div></div><p>
+  The current version of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supports integration with SUSE Enterprise Storage (SES).
+  Integrating SUSE Enterprise Storage enables Ceph block storage as well as object and image
+  storage services in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
+ </p><div class="sect2" id="ses-installation"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling SUSE Enterprise Storage Integration</span> <a title="Permalink" class="permalink" href="integrations.html#ses-installation">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span>ses-installation</li></ul></div></div></div></div><p>
+   The SUSE Enterprise Storage integration is provided through the <span class="package ">ardana-ses</span>
+   RPM package. This package is included in the
+   <code class="systemitem">patterns-cloud-ardana</code> pattern, its installation is
+   covered in <a class="xref" href="cha-depl-dep-inst.html" title="Chapter 3. Installing the Cloud Lifecycle Manager server">Chapter 3, <em>Installing the Cloud Lifecycle Manager server</em></a>. The update repositories and
+   the installation covered there are required to support SUSE Enterprise Storage integration.
+   The latest updates should be applied before proceeding.
+  </p></div><div class="sect2" id="ses-config"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="integrations.html#ses-config">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span>ses-config</li></ul></div></div></div></div><p>
+   After the SUSE Enterprise Storage integration package has been installed, it must be
+   configured. Files that contain relevant SUSE Enterprise Storage/Ceph deployment information
+   must be placed into a directory on the deployer node. This includes the
+   configuration file that describes various aspects of the Ceph environment
+   as well as keyrings for each user and pool created in the Ceph
+   environment. In addition to that, you need to edit the
+   <code class="filename">settings.yml</code> file to enable the SUSE Enterprise Storage integration to
+   run and update all of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> service configuration files.
+  </p><p>
+   The <code class="filename">settings.yml</code> file resides in the
+   <code class="filename">~/openstack/my_cloud/config/ses/</code> directory. Open the
+   file for editing, uncomment the <code class="literal">ses_config_path:</code>
+   parameter to specify the location on the deployer host containing the
+   <code class="filename">ses_config.yml</code> file and all Ceph keyring files. For example:
+  </p><div class="verbatim-wrap"><pre class="screen"># the directory where the ses config files are.
+ses_config_path: /var/lib/ardana/openstack/my_cloud/config/ses/
+ses_config_file: ses_config.yml
+
+# Allow nova libvirt images_type to be set to rbd?
+# Set this to false, if you only want rbd_user and rbd_secret to be set
+# in the [libvirt] section of hypervisor.conf
+ses_nova_set_images_type: True
+
+# The unique uuid for use with virsh for cinder and nova
+ses_secret_id: 457eb676-33da-42ec-9a8c-9293d545c337</pre></div><div id="id-1.4.5.17.5.4.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    If you are integrating with SUSE Enterprise Storage and do not want to store Nova images
+    in Ceph, change the line in <code class="filename">settings.yml</code> from
+    <code class="literal">ses_nova_set_images_type: True</code> to
+    <code class="literal">ses_nova_set_images_type: False</code>
+   </p><p>
+    For security reasons, you should use a unique UUID in the
+    <code class="filename">settings.yml</code> file for
+    <code class="literal">ses_secret_id</code>, replacing the fixed, hard-coded UUID in
+    that file. You can generate a UUID that will be unique to your deployment
+    using the command <code class="command">uuidgen</code>.
+   
+   </p></div><p>
+   For SES deployments that have version 5.5 and higher, there is a Salt runner
+   that can create all the users, keyrings, and pools. It will also generate a yaml
+   configuration that is needed to integrate with SUSE <span class="productname">OpenStack</span> Cloud. The integration
+   runner will create the <code class="literal">cinder</code>, <code class="literal">cinder-backup</code>, and <code class="literal">glance</code>
+   Ceph users. Both the Cinder and Nova services will have the
+   same user, as Cinder needs access to create objects that Nova
+   uses.
+  </p><p>
+   Login in as root to run the SES 5.5 Salt runner on the salt admin host.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>salt-run --out=yaml openstack.integrate prefix=<em class="replaceable ">mycloud</em></pre></div><p>
+   The prefix parameter allows pools to be created with the specified prefix.
+   In this way, multiple cloud deployments can use different users and pools on
+   the same SES deployment.
+  </p><p>
+   The sample yaml output:
+  </p><div class="verbatim-wrap"><pre class="screen">ceph_conf:
+ cluster_network: 10.84.56.0/21
+ fsid: d5d7c7cb-5858-3218-a36f-d028df7b0673
+ mon_host: 10.84.56.8, 10.84.56.9, 10.84.56.7
+ mon_initial_members: ses-osd1, ses-osd2, ses-osd3
+ public_network: 10.84.56.0/21
+ cinder:
+ key: AQCdfIRaxefEMxAAW4zp2My/5HjoST2Y8mJg8A==
+ rbd_store_pool: mycloud-cinder
+ rbd_store_user: cinder
+ cinder-backup:
+ key: AQBb8hdbrY2bNRAAqJC2ZzR5Q4yrionh7V5PkQ==
+ rbd_store_pool: mycloud-backups
+ rbd_store_user: cinder-backup
+ glance:
+ key: AQD9eYRachg1NxAAiT6Hw/xYDA1vwSWLItLpgA==
+ rbd_store_pool: mycloud-glance
+ rbd_store_user: glance
+ nova:
+ rbd_store_pool: mycloud-nova
+ radosgw_urls:
+     - http://10.84.56.7:80/swift/v1
+     - http://10.84.56.8:80/swift/v1</pre></div><p>
+      After you have run the <code class="literal">openstack.integrate</code> runner,
+      copy the yaml output into the new <code class="filename">ses_config.yml</code>
+      file, and save this file in the path specified in the
+      <code class="filename">settings.yml</code> file on the deployer node. In this
+      case, the file <code class="filename">ses_config.yml</code> must be saved in the
+      <code class="filename">/var/lib/ardana/openstack/my_cloud/config/ses/</code>
+      directory on the deployer node.
+     </p><p>
+      For SUSE Enterprise Storage/Ceph deployments that have version older than 5.5, the
+      following applies. For Ceph, it is necessary to create pools and users
+      to allow the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services to use the SUSE Enterprise Storage/Ceph
+      cluster. Pools and users must be created for the Cinder,
+      Cinder backup, and Glance services. Both the Cinder and
+      Nova services must have the same user, as Cinder needs access
+      to create objects that Nova uses.  Instructions for creating and
+      managing pools, users and keyrings is covered in the SUSE Enterprise Storage documentation
+      under <a class="link" href="https://documentation.suse.com/en-us/ses/5.5/single-html/ses-admin/#storage-cephx-keymgmt" target="_blank">Key
+      Management</a>.
+     </p><p>
+      Example of <code class="filename">ses_config.yml</code>:
+     </p><div class="verbatim-wrap"><pre class="screen">ses_cluster_configuration:
+    ses_cluster_name: ceph
+    ses_radosgw_url: "https://192.168.56.8:8080/swift/v1"
+
+    conf_options:
+        ses_fsid: d5d7c7cb-5858-3218-a36f-d028df7b1111
+        ses_mon_initial_members: ses-osd2, ses-osd3, ses-osd1
+        ses_mon_host: 192.168.56.8, 192.168.56.9, 192.168.56.7
+        ses_public_network: 192.168.56.0/21
+        ses_cluster_network: 192.168.56.0/21
+
+    cinder:
+        rbd_store_pool: cinder
+        rbd_store_pool_user: cinder
+        keyring_file_name: ceph.client.cinder.keyring
+
+    cinder-backup:
+        rbd_store_pool: backups
+        rbd_store_pool_user: cinder_backup
+        keyring_file_name: ceph.client.cinder-backup.keyring
+
+    # Nova uses the cinder user to access the nova pool, cinder pool
+    # So all we need here is the nova pool name.
+    nova:
+        rbd_store_pool: nova
+
+    glance:														
+        rbd_store_pool: glance												
+        rbd_store_pool_user: glance
+        keyring_file_name: ceph.client.glance.keyring</pre></div><p>
+	 Example contents of the directory specified in <code class="filename">settings.yml</code> file:
+	</p><div class="verbatim-wrap"><pre class="screen">ardana &gt; ~/openstack/my_cloud/config/ses&gt; ls -al
+ceph.client.cinder-backup.keyring											
+ceph.client.cinder.keyring												
+ceph.client.glance.keyring					
+ses_config.yml</pre></div><p>
+ Modify the <code class="literal">glance_default_store</code> option in <code class="filename">~/openstack/my_cloud/definition/data/control_plane.yml</code>:
+</p><div class="verbatim-wrap"><pre class="screen">.
+.
+            - rabbitmq
+#            - glance-api
+            - glance-api:
+                glance_default_store: 'rbd'
+            - glance-registry
+            - glance-client</pre></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Commit your configuration to your local git repo:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "add SES integration"</pre></div></li><li class="step "><p>
+     Run the configuration processor.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Create a deployment directory.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run a series of reconfiguration playbooks.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ses-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div></div><p>
+   <span class="bold"><strong>Configuring SUSE Enterprise Storage for Integration with RADOS
+   Gateway</strong></span>
+  </p><p>
+   RADOS gateway integration can be enabled (disabled) by adding (removing)
+   the following line in the <code class="filename">ses_config.yml</code>:
+  </p><div class="verbatim-wrap"><pre class="screen">ses_radosgw_url: "https://192.168.56.8:8080/swift/v1"</pre></div><p>
+   If RADOS gateway integration is enabled, additional SUSE Enterprise Storage configuration is
+   needed. RADOS gateway must be configured to use Keystone for
+   authentication. This is done by adding the configuration statements below to
+   the rados section of <code class="filename">ceph.conf</code> on the RADOS node.
+  </p><div class="verbatim-wrap"><pre class="screen">[client.rgw.<em class="replaceable ">HOSTNAME</em>]
+rgw frontends = "civetweb port=80+443s"
+rgw enable usage log = true
+rgw keystone url = <em class="replaceable ">KEYSTONE_ENDPOINT</em> (for example:
+https://192.168.24.204:5000)
+rgw keystone admin user = <em class="replaceable ">KEYSTONE_ADMIN_USER</em>
+rgw keystone admin password = <em class="replaceable ">KEYSTONE_ADMIN_PASSWORD</em>
+rgw keystone admin project = <em class="replaceable ">KEYSTONE_ADMIN_PROJECT</em>
+rgw keystone admin domain = <em class="replaceable ">KEYSTONE_ADMIN_DOMAIN</em>
+rgw keystone api version = 3
+rgw keystone accepted roles = admin,Member,_member_
+rgw keystone accepted admin roles = admin
+rgw keystone revocation interval = 0
+rgw keystone verify ssl = false # If keystone is using self-signed
+   certificate</pre></div><p>
+   After making these changes to <code class="filename">ceph.conf</code>, the RADOS
+   gateway service needs to be restarted.
+  </p><p>
+   Enabling RADOS gateway replaces the existing Object Storage endpoint with the
+   RADOS gateway endpoint.
+  </p><p>
+   <span class="bold"><strong>Enabling HTTPS, Creating and Importing a
+   Certificate</strong></span>
+  </p><p>
+   SUSE Enterprise Storage integration uses the HTTPS protocol to connect to the RADOS gateway.
+   However, with SUSE Enterprise Storage 5, HTTPS is not enabled by default. To enable the
+   gateway role to communicate securely using SSL, you need to either have a
+   CA-issued certificate or create a self-signed one. Instructions for both are
+   available in the
+   <a class="link" href="https://documentation.suse.com/ses/5.5/single-html/ses-admin/#ceph-rgw-access" target="_blank">SUSE Enterprise Storage
+   documentation</a>.
+  </p><p>
+   The certificate needs to be installed on your Cloud Lifecycle Manager. On the Cloud Lifecycle Manager, copy the
+   cert to <code class="filename">/tmp/ardana_tls_cacerts</code>. Then deploy it.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-trust-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml</pre></div><p>
+   When creating the certificate, the <code class="literal">subjectAltName</code> must
+   match the <code class="literal">ses_radosgw_url</code> entry in
+   <code class="filename">ses_config.yml</code>. Either an IP address or FQDN can be
+   used, but these values must be the same in both places.
+  </p></div><div class="sect2" id="id-1.4.5.17.5.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying SUSE Enterprise Storage Configuration for RADOS Integration</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.5.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   The following steps will deploy your configuration.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Commit your configuration to your local git repo.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "add SES integration"</pre></div></li><li class="step "><p>
+     Run the configuration processor.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     Create a deployment directory.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+     Run a series of reconfiguration playbooks.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ses-deploy.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li><li class="step "><p>
+     Reconfigure the Cloud Lifecycle Manager to complete the deployment.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.4.5.17.5.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable Copy-On-Write Cloning of Images</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.5.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    Due to a security issue described in <a class="link" href="http://docs.ceph.com/docs/master/rbd/rbd-openstack/?highlight=uuid#enable-copy-on-write-cloning-of-images" target="_blank">http://docs.ceph.com/docs/master/rbd/rbd-openstack/?highlight=uuid#enable-copy-on-write-cloning-of-images</a>, we do not recommend the copy-on-write cloning of images when
+    Glance and Cinder are both using a Ceph back-end.
+    However, if you want to use this feature for faster operation,
+    you can enable it as follows.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       Open the
+       <code class="literal">~/openstack/my_cloud/config/glance/glance-api.conf.j2</code>
+       file for editing and add <code class="literal">show_image_direct_url = True</code>
+       under the <code class="literal">[DEFAULT]</code> section.
+      </p></li><li class="step "><p>
+       Commit changes:</p><div class="verbatim-wrap"><pre class="screen">git add -A
+git commit -m "Enable Copy-on-Write Cloning"</pre></div></li><li class="step "><p>
+       Run the required playbooks:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml
+cd /var/lib/ardana/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li></ol></div></div><div id="id-1.4.5.17.5.6.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+     Note that this exposes the back-end location via Glance's API, so the
+     end-point should not be publicly accessible when Copy-On-Write image
+     cloning is enabled.
+    </p></div></div><div class="sect2" id="id-1.4.5.17.5.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">22.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Improve SUSE Enterprise Storage Storage Performance</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.4.5.17.5.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/develop/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    SUSE Enterprise Storage performance can be improved with Image-Volume cache. Be aware that
+    Image-Volume cache and Copy-on-Write cloning cannot be used for the same
+    storage back-end. For more information, see the <a class="link" href="https://docs.openstack.org/cinder/pike/admin/blockstorage-image-volume-cache.html" target="_blank">OpenStack
+    documentation</a>.
+   </p><p>
+    Enable Image-Volume cache with the following steps:
+   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Open the
+      <code class="filename">~/openstack/my_cloud/config/cinder/cinder.conf.j2</code>
+      file for editing.
+     </p></li><li class="step "><p>
+      Add <code class="literal">image_volume_cache_enabled = True</code> option under the
+      <code class="literal">[ses_ceph]</code> section.
+     </p></li><li class="step "><p>
+      Commit changes:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
+<code class="prompt user">ardana &gt; </code>git commit -m "Enable Image-Volume cache"</pre></div></li><li class="step "><p>
+      Run the required playbooks:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml
+<code class="prompt user">ardana &gt; </code>cd /var/lib/ardana/scratch/ansible/next/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts cinder-reconfigure.yml</pre></div></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="troubleshooting-installation.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 23 </span>Troubleshooting the Installation</span></a><a class="nav-link" href="install-heat-templates.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 21 </span>Installing SUSE CaaS Platform Heat Templates</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

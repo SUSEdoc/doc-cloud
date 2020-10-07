@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Managing ESX | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 7. Managing ESX" /><meta name="description" content="Information about managing and configuring the ESX service." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="ops-managing-compute.html" title="Chapter 6. Managing Compute" /><link rel="next" href="ops-managing-blockstorage.html" title="Chapter 8. Managing Block Storage" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="ops-managing-esx.html">Managing ESX</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 6. Managing Compute" href="ops-managing-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Managing Block Storage" href="ops-managing-blockstorage.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="ops-managing-esx.html">Managing ESX</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 6. Managing Compute" href="ops-managing-compute.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Managing Block Storage" href="ops-managing-blockstorage.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="ops-managing-esx"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing ESX</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_esx.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_esx.xml</li><li><span class="ds-label">ID: </span>ops-managing-esx</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="ops-managing-esx.html#topic-odg-33x-rt"><span class="number">7.1 </span><span class="name">Networking for ESXi Hypervisor (OVSvApp)</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#verify-neutron"><span class="number">7.2 </span><span class="name">Validating the neutron Installation</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#sec-esx-remove-cluster"><span class="number">7.3 </span><span class="name">Removing a Cluster from the Compute Resource Pool</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#sec-esx-remove-esxi-host"><span class="number">7.4 </span><span class="name">Removing an ESXi Host from a Cluster</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#sec-esx-debug"><span class="number">7.5 </span><span class="name">Configuring Debug Logging</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#topic-ijt-dyh-rt"><span class="number">7.6 </span><span class="name">Making Scale Configuration Changes</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#idg-all-operations-monitoring-vcenter-clusters-xml-1"><span class="number">7.7 </span><span class="name">Monitoring vCenter Clusters</span></a></span></dt><dt><span class="section"><a href="ops-managing-esx.html#ovsvapp-monitoring"><span class="number">7.8 </span><span class="name">Monitoring Integration with OVSvApp Appliance</span></a></span></dt></dl></div></div><p>
+  Information about managing and configuring the ESX service.
+ </p><div class="sect1" id="topic-odg-33x-rt"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Networking for ESXi Hypervisor (OVSvApp)</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#topic-odg-33x-rt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-network_esx_ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-network_esx_ovsvapp.xml</li><li><span class="ds-label">ID: </span>topic-odg-33x-rt</li></ul></div></div></div></div><p>
+  To provide the network as a service for tenant VM's hosted on ESXi
+  Hypervisor, a service VM called <code class="literal">OVSvApp VM</code> is deployed on
+  each ESXi Hypervisor within a cluster managed by OpenStack nova, as shown
+  in the following figure.
+ </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-esx_ovsvapp.png" target="_blank"><img src="images/media-esx-esx_ovsvapp.png" width="" /></a></div></div><p>
+  The OVSvApp VM runs SLES as a guest operating system, and has Open vSwitch
+  2.1.0 or above installed. It also runs an agent called <code class="literal">OVSvApp
+  agent</code>, which is responsible for dynamically creating the port
+  groups for the tenant VMs and manages OVS bridges, which contain the flows
+  related to security groups and L2 networking.
+ </p><p>
+  To facilitate fault tolerance and mitigation of data path loss for tenant
+  VMs, run the <span class="bold"><strong>neutron-ovsvapp-agent-monitor</strong></span>
+  process as part of the <span class="bold"><strong>neutron-ovsvapp-agent
+  service</strong></span>, responsible for monitoring the Open vSwitch module within
+  the OVSvApp VM. It also uses a <code class="literal">nginx</code> server to provide the
+  health status of the Open vSwitch module to the neutron server for mitigation
+  actions. There is a mechanism to keep the
+  <span class="bold"><strong>neutron-ovsvapp-agent service</strong></span> alive through
+  a <code class="literal">systemd</code> script.
+ </p><p>
+  When a OVSvApp Service VM crashes, an agent monitoring mechanism starts a
+  cluster mitigation process. You can mitigate data path traffic loss for VMs
+  on the failed ESX host in that cluster by putting the failed ESX host in the
+  maintenance mode. This, in turn, triggers the vCenter DRS migrates tenant VMs
+  to other ESX hosts within the same cluster. This ensures data path continuity
+  of tenant VMs traffic.
+ </p><p>
+  <span class="bold"><strong>View Cluster Mitigation</strong></span>
+ </p><div id="id-1.5.9.3.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+   Install <code class="literal">python-networking-vsphere</code> so that neutron
+   ovsvapp commands will work properly.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo zypper in python-networking-vsphere</pre></div></div><p>
+  An administrator can view cluster mitigation status using the following
+  commands.
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    <code class="literal">neutron ovsvapp-mitigated-cluster-list</code>
+   </p><p>
+    Lists all the clusters where at least one round of host mitigation has
+    happened.
+   </p><p>
+    Example:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>neutron ovsvapp-mitigated-cluster-list
++----------------+--------------+-----------------------+---------------------------+
+| vcenter_id     | cluster_id   | being_mitigated       | threshold_reached         |
++----------------+--------------+-----------------------+---------------------------+
+| vcenter1       | cluster1     | True                  | False                     |
+| vcenter2       | cluster2     | False                 | True                      |
++---------------+------------+-----------------+------------------------------------+</pre></div></li><li class="listitem "><p>
+    <code class="literal">neutron ovsvapp-mitigated-cluster-show --vcenter-id
+    &lt;VCENTER_ID&gt; --cluster-id &lt;CLUSTER_ID&gt;</code>
+   </p><p>
+    Shows the status of a particular cluster.
+   </p><p>
+    Example :
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>neutron ovsvapp-mitigated-cluster-show --vcenter-id vcenter1 --cluster-id cluster1
++---------------------------+-------------+
+| Field                     | Value       |
++---------------------------+-------------+
+| being_mitigated           | True        |
+| cluster_id                | cluster1    |
+| threshold_reached         | False       |
+| vcenter_id                | vcenter1    |
++---------------------------+-------------+</pre></div><p>
+    There can be instances where a triggered mitigation may not succeed and the
+    neutron server is not informed of such failure (for example, if the
+    selected agent which had to mitigate the host, goes down before finishing
+    the task). In this case, the cluster will be locked. To unlock the cluster
+    for further mitigations, use the update command.
+   </p></li><li class="listitem "><p>
+    <code class="literal">neutron ovsvapp-mitigated-cluster-update --vcenter-id
+    &lt;VCENTER_ID&gt; --cluster-id &lt;CLUSTER_ID&gt;</code>
+   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      Update the status of a mitigated cluster:
+     </p><p>
+      Modify the values of <span class="bold"><strong>being-mitigated</strong></span>
+      from <span class="bold"><strong>True</strong></span> to
+      <span class="bold"><strong>False</strong></span> to unlock the cluster.
+     </p><p>
+      Example:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>neutron ovsvapp-mitigated-cluster-update --vcenter-id vcenter1 --cluster-id cluster1 --being-mitigated False</pre></div></li><li class="listitem "><p>
+      Update the threshold value:
+     </p><p>
+      Update the threshold-reached value to
+      <span class="bold"><strong>True</strong></span>, if no further migration is
+      required in the selected cluster.
+     </p><p>
+      Example :
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>neutron ovsvapp-mitigated-cluster-update --vcenter-id vcenter1 --cluster-id cluster1 --being-mitigated False --threshold-reached True</pre></div></li></ul></div><p>
+    <span class="bold"><strong>Rest API</strong></span>
+   </p><div class="itemizedlist " id="ul-rkp-4kx-rt"><ul class="itemizedlist"><li class="listitem "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl -i -X GET http://&lt;ip&gt;:9696/v2.0/ovsvapp_mitigated_clusters \
+  -H "User-Agent: python-neutronclient" -H "Accept: application/json" -H \
+  "X-Auth-Token: &lt;token_id&gt;"</pre></div></li></ul></div></li></ul></div><div class="sect2" id="id-1.5.9.3.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">More Information</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.3.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-network_esx_ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-network_esx_ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   For more information on the Networking for ESXi Hypervisor (OVSvApp), see
+   the following references:
+  </p><div class="itemizedlist " id="ul-b2c-n2c-vt"><ul class="itemizedlist"><li class="listitem "><p>
+     VBrownBag session in Vancouver OpenStack Liberty Summit:
+    </p><p>
+     <a class="link" href="https://www.youtube.com/watch?v=icYA_ixhwsM&amp;feature=youtu.be" target="_blank">https://www.youtube.com/watch?v=icYA_ixhwsM&amp;feature=youtu.be</a>
+    </p></li><li class="listitem "><p>
+     Wiki Link:
+    </p><p>
+     <a class="link" href="https://wiki.openstack.org/wiki/Neutron/Networking-vSphere" target="_blank">https://wiki.openstack.org/wiki/Neutron/Networking-vSphere</a>
+    </p></li><li class="listitem "><p>
+     Codebase:
+    </p><p>
+     <a class="link" href="https://github.com/openstack/networking-vsphere/" target="_blank">https://github.com/openstack/networking-vsphere/</a>
+    </p></li><li class="listitem "><p>
+     Whitepaper:
+    </p><p>
+     <a class="link" href="https://github.com/hp-networking/ovsvapp/blob/master/OVSvApp_Solution.pdf" target="_blank">https://github.com/hp-networking/ovsvapp/blob/master/OVSvApp_Solution.pdf</a>
+    </p></li></ul></div></div></div><div class="sect1" id="verify-neutron"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Validating the neutron Installation</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#verify-neutron">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-enable_new_cluster_compute_resource.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-enable_new_cluster_compute_resource.xml</li><li><span class="ds-label">ID: </span>verify-neutron</li></ul></div></div></div></div><p>
+   You can validate that the ESX compute cluster is added to the cloud
+   successfully using the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"># openstack network agent list
+
++------------------+----------------------+-----------------------+-------------------+-------+----------------+---------------------------+
+| id               | agent_type           | host                  | availability_zone | alive | admin_state_up | binary                    |
++------------------+----------------------+-----------------------+-------------------+-------+----------------+---------------------------+
+| 05ca6ef...999c09 | L3 agent             | doc-cp1-comp0001-mgmt | nova              | :-)   | True           | neutron-l3-agent          |
+| 3b9179a...28e2ef | Metadata agent       | doc-cp1-comp0001-mgmt |                   | :-)   | True           | neutron-metadata-agent    |
+| 4e8f84f...c9c58f | Metadata agent       | doc-cp1-comp0002-mgmt |                   | :-)   | True           | neutron-metadata-agent    |
+| 55a5791...c17451 | L3 agent             | doc-cp1-c1-m1-mgmt    | nova              | :-)   | True           | neutron-vpn-agent         |
+| 5e3db8f...87f9be | Open vSwitch agent   | doc-cp1-c1-m1-mgmt    |                   | :-)   | True           | neutron-openvswitch-agent |
+| 6968d9a...b7b4e9 | L3 agent             | doc-cp1-c1-m2-mgmt    | nova              | :-)   | True           | neutron-vpn-agent         |
+| 7b02b20...53a187 | Metadata agent       | doc-cp1-c1-m2-mgmt    |                   | :-)   | True           | neutron-metadata-agent    |
+| 8ece188...5c3703 | Open vSwitch agent   | doc-cp1-comp0002-mgmt |                   | :-)   | True           | neutron-openvswitch-agent |
+| 8fcb3c7...65119a | Metadata agent       | doc-cp1-c1-m1-mgmt    |                   | :-)   | True           | neutron-metadata-agent    |
+| 9f48967...36effe | OVSvApp agent        | doc-cp1-comp0002-mgmt |                   | :-)   | True           | ovsvapp-agent             |
+| a2a0b78...026da9 | Open vSwitch agent   | doc-cp1-comp0001-mgmt |                   | :-)   | True           | neutron-openvswitch-agent |
+| a2fbd4a...28a1ac | DHCP agent           | doc-cp1-c1-m2-mgmt    | nova              | :-)   | True           | neutron-dhcp-agent        |
+| b2428d5...ee60b2 | DHCP agent           | doc-cp1-c1-m1-mgmt    | nova              | :-)   | True           | neutron-dhcp-agent        |
+| c0983a6...411524 | Open vSwitch agent   | doc-cp1-c1-m2-mgmt    |                   | :-)   | True           | neutron-openvswitch-agent |
+| c32778b...a0fc75 | L3 agent             | doc-cp1-comp0002-mgmt | nova              | :-)   | True           | neutron-l3-agent          |
++------------------+----------------------+-----------------------+-------------------+-------+----------------+---------------------------+</pre></div></div><div class="sect1" id="sec-esx-remove-cluster"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing a Cluster from the Compute Resource Pool</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#sec-esx-remove-cluster">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span>sec-esx-remove-cluster</li></ul></div></div></div></div><div class="sect2" id="idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span>idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6</li></ul></div></div></div></div><p>
+   Write down the Hostname and ESXi configuration IP addresses of OVSvAPP VMs
+   of that ESX cluster before deleting the VMs. These IP address and Hostname
+   will be used to cleanup monasca alarm definitions.
+  </p><p>
+   Perform the following steps:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Login to vSphere client.
+    </p></li><li class="step "><p>
+     Select the ovsvapp node running on each ESXi host and click
+     <span class="bold"><strong>Summary</strong></span> tab as shown in the following
+     example.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-esx_hostname.png" target="_blank"><img src="images/media-esx-esx_hostname.png" width="" /></a></div></div><p>
+     Similarly you can retrieve the compute-proxy node information.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-esx_cluster2.png" target="_blank"><img src="images/media-esx-esx_cluster2.png" width="" /></a></div></div></li></ol></div></div></div><div class="sect2" id="id-1.5.9.5.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing an existing cluster from the compute resource pool</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.5.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following steps to remove an existing cluster from the compute
+   resource pool.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Run the following command to check for the instances launched in that
+     cluster:
+    </p><div class="verbatim-wrap"><pre class="screen"># openstack server list --host &lt;hostname&gt;
++--------------------------------------+------+--------+------------+-------------+------------------+
+| ID                                   | Name | Status | Task State | Power State | Networks         |
++--------------------------------------+------+--------+------------+-------------+------------------+
+| 80e54965-758b-425e-901b-9ea756576331 | VM1  | ACTIVE | -          | Running     | private=10.0.0.2 |
++--------------------------------------+------+--------+------------+-------------+------------------+</pre></div><p>
+     where:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <span class="bold"><strong>hostname</strong></span>: Specifies hostname of the
+       compute proxy present in that cluster.
+      </p></li></ul></div></li><li class="step "><p>
+     Delete all instances spawned in that cluster:
+    </p><div class="verbatim-wrap"><pre class="screen"># openstack server delete &lt;server&gt; [&lt;server ...&gt;]</pre></div><p>
+     where:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <span class="bold"><strong>server</strong></span>: Specifies the name or ID of
+       server (s)
+      </p></li></ul></div><p>
+     OR
+    </p><p>
+     Migrate all instances spawned in that cluster.
+    </p><div class="verbatim-wrap"><pre class="screen"># openstack server migrate &lt;server&gt;</pre></div></li><li class="step "><p>
+     Run the following playbooks for stop the Compute (nova) and Networking
+     (neutron) services:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-stop --limit &lt;hostname&gt;;
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts neutron-stop --limit &lt;hostname&gt;;</pre></div><p>
+     where:
+    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <span class="bold"><strong>hostname</strong></span>: Specifies hostname of the
+       compute proxy present in that cluster.
+      </p></li></ul></div></li></ol></div></div></div><div class="sect2" id="id-1.5.9.5.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cleanup monasca-agent for OVSvAPP Service</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.5.4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following procedure to cleanup monasca agents for ovsvapp-agent
+   service.
+  </p><div class="procedure " id="idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-14"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     If monasca-API is installed on different node, copy the
+     <code class="literal">service.orsc</code> from Cloud Lifecycle Manager to monasca API server.
+    </p><div class="verbatim-wrap"><pre class="screen">scp service.orsc $USER@ardana-cp1-mtrmon-m1-mgmt:</pre></div></li><li class="step "><p>
+     SSH to monasca API server. You must SSH to each monasca API server for
+     cleanup.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">ssh ardana-cp1-mtrmon-m1-mgmt</pre></div></li><li class="step "><p>
+     Edit <code class="literal">/etc/monasca/agent/conf.d/host_alive.yaml</code> file to
+     remove the reference to the OVSvAPP you removed. This requires
+     <code class="command">sudo</code> access.
+    </p><div class="verbatim-wrap"><pre class="screen">sudo vi /etc/monasca/agent/conf.d/host_alive.yaml</pre></div><p>
+     A sample of <code class="literal">host_alive.yaml</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">- alive_test: ping
+  built_by: HostAlive
+  host_name: esx-cp1-esx-ovsvapp0001-mgmt
+  name: esx-cp1-esx-ovsvapp0001-mgmt ping
+  target_hostname: esx-cp1-esx-ovsvapp0001-mgmt</pre></div><p>
+     where <em class="replaceable ">HOST_NAME</em> and
+     <em class="replaceable ">TARGET_HOSTNAME</em> is mentioned at the DNS name
+     field at the vSphere client. (Refer to
+     <a class="xref" href="ops-managing-esx.html#idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6" title="7.3.1. Prerequisites">Section 7.3.1, “Prerequisites”</a>).
+    </p></li><li class="step "><p>
+     After removing the reference on each of the monasca API servers, restart
+     the monasca-agent on each of those servers by executing the following
+     command.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo service openstack-monasca-agent restart</pre></div></li><li class="step "><p>
+     With the OVSvAPP references removed and the monasca-agent restarted, you
+     can delete the corresponding alarm to complete the cleanup process. We
+     recommend using the monasca CLI which is installed on each of your monasca
+     API servers by default. Execute the following command from the monasca API
+     server (for example: <code class="literal">ardana-cp1-mtrmon-mX-mgmt</code>).
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-name host_alive_status --metric-dimensions hostname=&lt;ovsvapp deleted&gt;</pre></div><p>
+     For example: You can execute the following command to get the alarm ID, if
+     the OVSvAPP appears as a preceding example.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-name host_alive_status --metric-dimensions hostname=MCP-VCP-cpesx-esx-ovsvapp0001-mgmt
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| id                                   | alarm_definition_id                  | alarm_definition_name | metric_name       | metric_dimensions                         | severity | state | lifecycle_state | link | state_updated_timestamp  | updated_timestamp        | created_timestamp        |
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| cfc6bfa4-2485-4319-b1e5-0107886f4270 | cca96c53-a927-4b0a-9bf3-cb21d28216f3 | Host Status           | host_alive_status | service: system                           | HIGH     | OK    | None            | None | 2016-10-27T06:33:04.256Z | 2016-10-27T06:33:04.256Z | 2016-10-23T13:41:57.258Z |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m1-mgmt  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       | host_alive_status | service: system                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m3-mgmt  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       | host_alive_status | service: system                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m2-mgmt  |          |       |                 |      |                          |                          |                          |
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+</pre></div></li><li class="step "><p>
+     Delete the monasca alarm.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete &lt;alarm ID&gt;</pre></div><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete cfc6bfa4-2485-4319-b1e5-0107886f4270Successfully deleted alarm</pre></div><p>
+     After deleting the alarms and updating the monasca-agent configuration,
+     those alarms will be removed from the Operations Console UI. You can login to
+     Operations Console and view the status.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.5.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing the Compute Proxy from Monitoring</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.5.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Once you have removed the Compute proxy, the alarms against them will still
+   trigger. Therefore to resolve this, you must perform the following steps.
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     SSH to monasca API server. You must SSH to each monasca API server for
+     cleanup.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">ssh ardana-cp1-mtrmon-m1-mgmt</pre></div></li><li class="step "><p>
+     Edit <code class="literal">/etc/monasca/agent/conf.d/host_alive.yaml</code> file to
+     remove the reference to the Compute proxy you removed. This requires
+     <code class="command">sudo</code> access.
+    </p><div class="verbatim-wrap"><pre class="screen">sudo vi /etc/monasca/agent/conf.d/host_alive.yaml</pre></div><p>
+     A sample of <code class="literal">host_alive.yaml</code> file.
+    </p><div class="verbatim-wrap"><pre class="screen">- alive_test: ping
+  built_by: HostAlive
+  host_name: MCP-VCP-cpesx-esx-comp0001-mgmt
+  name: MCP-VCP-cpesx-esx-comp0001-mgmt ping</pre></div></li><li class="step "><p>
+     Once you have removed the references on each of your monasca API servers,
+     execute the following command to restart the monasca-agent on each of
+     those servers.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo service openstack-monasca-agent restart</pre></div></li><li class="step "><p>
+     With the Compute proxy references removed and the monasca-agent restarted,
+     delete the corresponding alarm to complete this process. complete the
+     cleanup process. We recommend using the monasca CLI which is installed on
+     each of your monasca API servers by default.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-dimensions hostname= &lt;compute node deleted&gt;</pre></div><p>
+     For example: You can execute the following command to get the alarm ID, if
+     the Compute proxy appears as a preceding example.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-dimensions hostname=ardana-cp1-comp0001-mgmt</pre></div></li><li class="step "><p>
+     Delete the monasca alarm
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete &lt;alarm ID&gt;</pre></div></li></ol></div></div></div><div class="sect2" id="sec-esx-clean-monasca"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cleaning the monasca Alarms Related to ESX Proxy and vCenter Cluster</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#sec-esx-clean-monasca">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-remove_existing_cluster_compute_resource_pool.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-remove_existing_cluster_compute_resource_pool.xml</li><li><span class="ds-label">ID: </span>sec-esx-clean-monasca</li></ul></div></div></div></div><p>
+   Perform the following procedure:
+  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st-esx-clean-monasca-alarm"><p>
+     Using the ESX proxy hostname, execute the following command to list all
+     alarms.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-dimensions hostname=<em class="replaceable ">COMPUTE_NODE_DELETED</em></pre></div><p>
+     where <em class="replaceable ">COMPUTE_NODE_DELETED</em> - hostname is taken
+     from the vSphere client (refer to
+     <a class="xref" href="ops-managing-esx.html#idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6" title="7.3.1. Prerequisites">Section 7.3.1, “Prerequisites”</a>).
+    </p><div id="id-1.5.9.5.6.3.1.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      Make a note of all the alarm IDs that are displayed after executing the
+      preceding command.
+     </p></div><p>
+     For example, the compute proxy hostname is
+     <code class="literal">MCP-VCP-cpesx-esx-comp0001-mgmt</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-list --metric-dimensions hostname=MCP-VCP-cpesx-esx-comp0001-mgmt
+ardana@R28N6340-701-cp1-c1-m1-mgmt:~$ monasca alarm-list --metric-dimensions hostname=R28N6340-701-cp1-esx-comp0001-mgmt
++--------------------------------------+--------------------------------------+------------------------+------------------------+--------------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| id                                   | alarm_definition_id                  | alarm_definition_name  | metric_name            | metric_dimensions                                | severity | state | lifecycle_state | link | state_updated_timestamp  | updated_timestamp        | created_timestamp        |
++--------------------------------------+--------------------------------------+------------------------+------------------------+--------------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| 02342bcb-da81-40db-a262-09539523c482 | 3e302297-0a36-4f0e-a1bd-03402b937a4e | HTTP Status            | http_status            | service: compute                                 | HIGH     | OK    | None            | None | 2016-11-11T06:58:11.717Z | 2016-11-11T06:58:11.717Z | 2016-11-10T08:55:45.136Z |
+|                                      |                                      |                        |                        | cloud_name: entry-scale-esx-kvm                  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | url: https://10.244.209.9:8774                   |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | hostname: R28N6340-701-cp1-esx-comp0001-mgmt     |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | component: nova-api                              |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | control_plane: control-plane-1                   |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | cluster: esx-compute                             |          |       |                 |      |                          |                          |                          |
+| 04cb36ce-0c7c-4b4c-9ebc-c4011e2f6c0a | 15c593de-fa54-4803-bd71-afab95b980a4 | Disk Usage             | disk.space_used_perc   | mount_point: /proc/sys/fs/binfmt_misc            | HIGH     | OK    | None            | None | 2016-11-10T08:52:52.886Z | 2016-11-10T08:52:52.886Z | 2016-11-10T08:51:29.197Z |
+|                                      |                                      |                        |                        | service: system                                  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | cloud_name: entry-scale-esx-kvm                  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | hostname: R28N6340-701-cp1-esx-comp0001-mgmt     |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | control_plane: control-plane-1                   |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | cluster: esx-compute                             |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                        |                        | device: systemd-1                                |          |       |                 |      |                          |                          |                          |
++--------------------------------------+--------------------------------------+------------------------+------------------------+--------------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+</pre></div></li><li class="step "><p>
+     Delete the alarm using the alarm IDs.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete &lt;alarm ID&gt;</pre></div><p>
+     Perform this step for all alarm IDs listed from the preceding step
+     (<a class="xref" href="ops-managing-esx.html#st-esx-clean-monasca-alarm" title="Step 1">Step 1</a>).
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete 1cc219b1-ce4d-476b-80c2-0cafa53e1a12</pre></div></li></ol></div></div></div></div><div class="sect1" id="sec-esx-remove-esxi-host"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing an ESXi Host from a Cluster</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#sec-esx-remove-esxi-host">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span>sec-esx-remove-esxi-host</li></ul></div></div></div></div><p>
+  This topic describes how to remove an existing ESXi host from a cluster and
+  clean up of services for OVSvAPP VM.
+ </p><div id="id-1.5.9.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   Before performing this procedure, wait until VCenter migrates all the tenant
+   VMs to other active hosts in that same cluster.
+  </p></div><div class="sect2" id="sec-esxi-host-pre"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisite</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#sec-esxi-host-pre">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span>sec-esxi-host-pre</li></ul></div></div></div></div><p>
+   Write down the Hostname and ESXi configuration IP addresses of OVSvAPP VMs
+   of that ESX cluster before deleting the VMs. These IP address and Hostname
+   will be used to clean up monasca alarm definitions.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Login to vSphere client.
+    </p></li><li class="listitem "><p>
+     Select the ovsvapp node running on the ESXi host and click
+     <span class="bold"><strong>Summary</strong></span> tab.
+    </p></li></ol></div></div><div class="sect2" id="id-1.5.9.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Procedure</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Right-click and put the host in the maintenance mode. This will
+     automatically migrate all the tenant VMs except OVSvApp.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-eon_maintenance.png" target="_blank"><img src="images/media-esx-eon_maintenance.png" width="" /></a></div></div></li><li class="listitem "><p>
+     Cancel the maintenance mode task.
+    </p></li><li class="listitem "><p>
+     Right-click the <span class="bold"><strong>ovsvapp VM (IP Address)</strong></span>
+     node, select <span class="bold"><strong>Power</strong></span>, and then click
+     <span class="bold"><strong>Power Off</strong></span>.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-eon_poweroff_ovsvapp.png" target="_blank"><img src="images/media-esx-eon_poweroff_ovsvapp.png" width="" /></a></div></div></li><li class="listitem "><p>
+     Right-click the node and then click <span class="bold"><strong>Delete from
+     Disk</strong></span>.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-eon_delete_ovsvapp.png" target="_blank"><img src="images/media-esx-eon_delete_ovsvapp.png" width="" /></a></div></div></li><li class="listitem "><p>
+     Right-click the <span class="bold"><strong>Host</strong></span>, and then click
+     <span class="bold"><strong>Enter Maintenance Mode</strong></span>.
+    </p></li><li class="listitem "><p>
+     Disconnect the VM. Right-click the VM, and then click
+     <span class="bold"><strong>Disconnect</strong></span>.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-eon_disconnect_maintenance.png" target="_blank"><img src="images/media-esx-eon_disconnect_maintenance.png" width="" /></a></div></div></li></ol></div><p>
+   The ESXi node is removed from the vCenter.
+  </p></div><div class="sect2" id="id-1.5.9.6.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean up neutron-agent for OVSvAPP Service</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.6">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   After removing ESXi node from a vCenter, perform the following procedure to
+   clean up neutron agents for ovsvapp-agent service.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Login to Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Source the credentials.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source service.osrc</pre></div></li><li class="listitem "><p>
+     Execute the following command.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network agent list | grep &lt;OVSvapp hostname&gt;</pre></div><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network agent list | grep MCP-VCP-cpesx-esx-ovsvapp0001-mgmt
+| 92ca8ada-d89b-43f9-b941-3e0cd2b51e49 | OVSvApp Agent      | MCP-VCP-cpesx-esx-ovsvapp0001-mgmt |                   | :-)   | True           | ovsvapp-agent             |</pre></div></li><li class="listitem "><p>
+     Delete the OVSvAPP agent.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network agent delete &lt;Agent -ID&gt;</pre></div><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network agent delete 92ca8ada-d89b-43f9-b941-3e0cd2b51e49</pre></div></li></ol></div><p>
+   If you have more than one host, perform the preceding procedure for all the
+   hosts.
+  </p></div><div class="sect2" id="id-1.5.9.6.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean up monasca-agent for OVSvAPP Service</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following procedure to clean up monasca agents for ovsvapp-agent
+   service.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     If monasca-API is installed on different node, copy the
+     <code class="literal">service.orsc</code> from Cloud Lifecycle Manager to monasca API server.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>scp service.orsc $USER@ardana-cp1-mtrmon-m1-mgmt:</pre></div></li><li class="listitem "><p>
+     SSH to monasca API server. You must SSH to each monasca API server for
+     cleanup.
+    </p><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ssh ardana-cp1-mtrmon-m1-mgmt</pre></div></li><li class="listitem "><p>
+     Edit <code class="literal">/etc/monasca/agent/conf.d/host_alive.yaml</code> file to
+     remove the reference to the OVSvAPP you removed. This requires
+     <code class="command">sudo</code> access.
+    </p><div class="verbatim-wrap"><pre class="screen">sudo vi /etc/monasca/agent/conf.d/host_alive.yaml</pre></div><p>
+     A sample of <code class="literal">host_alive.yaml</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">- alive_test: ping
+  built_by: HostAlive
+  host_name: MCP-VCP-cpesx-esx-ovsvapp0001-mgmt
+  name: MCP-VCP-cpesx-esx-ovsvapp0001-mgmt ping
+  target_hostname: MCP-VCP-cpesx-esx-ovsvapp0001-mgmt</pre></div><p>
+     where <code class="literal">host_name</code> and <code class="literal">target_hostname</code>
+     are mentioned at the DNS name field at the vSphere client. (Refer to
+     <a class="xref" href="ops-managing-esx.html#sec-esxi-host-pre" title="7.4.1. Prerequisite">Section 7.4.1, “Prerequisite”</a>).
+    </p></li><li class="listitem "><p>
+     After removing the reference on each of the monasca API servers, restart
+     the monasca-agent on each of those servers by executing the following
+     command.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo service openstack-monasca-agent restart</pre></div></li><li class="listitem "><p>
+     With the OVSvAPP references removed and the monasca-agent restarted, you
+     can delete the corresponding alarm to complete the cleanup process. We
+     recommend using the monasca CLI which is installed on each of your monasca
+     API servers by default. Execute the following command from the monasca API
+     server (for example: <code class="literal">ardana-cp1-mtrmon-mX-mgmt</code>).
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-name host_alive_status --metric-dimensions hostname=&lt;ovsvapp deleted&gt;</pre></div><p>
+     For example: You can execute the following command to get the alarm ID, if
+     the OVSvAPP appears as a preceding example.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-name host_alive_status --metric-dimensions hostname=MCP-VCP-cpesx-esx-ovsvapp0001-mgmt
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| id                                   | alarm_definition_id                  | alarm_definition_name | metric_name       | metric_dimensions                         | severity | state | lifecycle_state | link | state_updated_timestamp  | updated_timestamp        | created_timestamp        |
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+
+| cfc6bfa4-2485-4319-b1e5-0107886f4270 | cca96c53-a927-4b0a-9bf3-cb21d28216f3 | Host Status           | host_alive_status | service: system                           | HIGH     | OK    | None            | None | 2016-10-27T06:33:04.256Z | 2016-10-27T06:33:04.256Z | 2016-10-23T13:41:57.258Z |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m1-mgmt  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       | host_alive_status | service: system                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m3-mgmt  |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       | host_alive_status | service: system                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cloud_name: entry-scale-kvm-esx-mml       |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | test_type: ping                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | hostname: ardana-cp1-esx-ovsvapp0001-mgmt |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | control_plane: control-plane-1            |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | cluster: mtrmon                           |          |       |                 |      |                          |                          |                          |
+|                                      |                                      |                       |                   | observer_host: ardana-cp1-mtrmon-m2-mgmt  |          |       |                 |      |                          |                          |                          |
++--------------------------------------+--------------------------------------+-----------------------+-------------------+-------------------------------------------+----------+-------+-----------------+------+--------------------------+--------------------------+--------------------------+</pre></div></li><li class="listitem "><p>
+     Delete the monasca alarm.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-delete &lt;alarm ID&gt;</pre></div><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-delete cfc6bfa4-2485-4319-b1e5-0107886f4270Successfully deleted alarm</pre></div><p>
+     After deleting the alarms and updating the monasca-agent configuration,
+     those alarms will be removed from the Operations Console UI. You can login to
+     Operations Console and view the status.
+    </p></li></ol></div></div><div class="sect2" id="id-1.5.9.6.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean up the entries of OVSvAPP VM from /etc/host</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following procedure to clean up the entries of OVSvAPP VM from
+   <code class="literal">/etc/hosts</code>.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Login to Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Edit <code class="literal">/etc/host</code>.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>vi /etc/host</pre></div><p>
+     For example: <code class="literal">MCP-VCP-cpesx-esx-ovsvapp0001-mgmt</code> VM is
+     present in the <code class="literal">/etc/host</code>.
+    </p><div class="verbatim-wrap"><pre class="screen">192.168.86.17    MCP-VCP-cpesx-esx-ovsvapp0001-mgmt</pre></div></li><li class="listitem "><p>
+     Delete the OVSvAPP entries from <code class="literal">/etc/hosts</code>.
+    </p></li></ol></div></div><div class="sect2" id="id-1.5.9.6.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remove the OVSVAPP VM from the servers.yml and pass_through.yml files and run the Configuration Processor</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Complete these steps from the Cloud Lifecycle Manager to remove the OVSvAPP VM:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the Cloud Lifecycle Manager
+    </p></li><li class="listitem "><p>
+     Edit <code class="literal">servers.yml</code> file to remove references to the
+     OVSvAPP VM(s) you want to remove:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/definition/data/servers.yml</pre></div><p>
+     For example:
+    </p><div class="verbatim-wrap"><pre class="screen">- ip-addr:192.168.86.17
+  server-group: AZ1    role:
+  OVSVAPP-ROLE    id:
+  6afaa903398c8fc6425e4d066edf4da1a0f04388</pre></div></li><li class="listitem "><p>
+     Edit
+     <code class="literal">~/openstack/my_cloud/definition/data/pass_through.yml</code>
+     file to remove the OVSvAPP VM references using the server-id above section
+     to find the references.
+    </p><div class="verbatim-wrap"><pre class="screen">- data:
+  vmware:
+  vcenter_cluster: Clust1
+  cluster_dvs_mapping: 'DC1/host/Clust1:TRUNK-DVS-Clust1'
+  esx_hostname: MCP-VCP-cpesx-esx-ovsvapp0001-mgmt
+  vcenter_id: 0997E2ED9-5E4F-49EA-97E6-E2706345BAB2
+id: 6afaa903398c8fc6425e4d066edf4da1a0f04388</pre></div></li><li class="listitem "><p>
+     Commit the changes to git:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git commit -a -m "Remove ESXi host &lt;name&gt;"</pre></div></li><li class="listitem "><p>
+     Run the configuration processor. You may want to use the
+     <code class="literal">remove_deleted_servers</code> and
+     <code class="literal">free_unused_addresses</code> switches to free up the resources
+     when running the configuration processor. See
+     <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 7 “Other Topics”, Section 7.3 “Persisted Data”</span> for more details.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml -e remove_deleted_servers="y" -e free_unused_addresses="y"</pre></div></li><li class="listitem "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li></ol></div></div><div class="sect2" id="id-1.5.9.6.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean Up nova Agent for ESX Proxy</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager
+    </p></li><li class="step "><p>
+     Source the credentials.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source service.osrc</pre></div></li><li class="step "><p>
+     Find the nova ID for ESX Proxy with <code class="command">openstack compute service
+     list</code>.
+    </p></li><li class="step "><p>
+     Delete the ESX Proxy service.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack compute service delete
+    <em class="replaceable ">ESX_PROXY_ID</em></pre></div></li></ol></div></div><p>
+   If you have more than one host, perform the preceding procedure for all the
+   hosts.
+  </p></div><div class="sect2" id="id-1.5.9.6.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean Up monasca Agent for ESX Proxy</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Using the ESX proxy hostname, execute the following command to list all
+     alarms.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-dimensions hostname=<em class="replaceable ">COMPUTE_NODE_DELETED</em></pre></div><p>
+     where <em class="replaceable ">COMPUTE_NODE_DELETED</em> - hostname is taken
+     from the vSphere client (refer to
+     <a class="xref" href="ops-managing-esx.html#idg-all-esx-remove-existing-cluster-compute-resource-pool-xml-6" title="7.3.1. Prerequisites">Section 7.3.1, “Prerequisites”</a>).
+    </p><div id="id-1.5.9.6.11.2.1.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      Make a note of all the alarm IDs that are displayed after executing the
+      preceding command.
+     </p></div></li><li class="step "><p>
+     Delete the ESX Proxy alarm using the alarm IDs.
+    </p><div class="verbatim-wrap"><pre class="screen">monasca alarm-delete &lt;alarm ID&gt;</pre></div><p>
+     This step has to be performed for all alarm IDs listed with the
+     <code class="command">monasca alarm-list</code> command.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.6.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Clean Up ESX Proxy Entries in <code class="filename">/etc/host</code></span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager
+    </p></li><li class="step "><p>
+     Edit the <code class="filename">/etc/hosts</code> file, removing ESX Proxy entries.
+    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.6.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remove ESX Proxy from <code class="filename">servers.yml</code> and <code class="filename">pass_through.yml</code> files; run the Configuration Processor</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     Log in to the Cloud Lifecycle Manager
+    </p></li><li class="step "><p>
+     Edit <code class="filename">servers.yml</code> file to remove references to ESX
+     Proxy:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/definition/data/servers.yml</pre></div></li><li class="step "><p>
+     Edit
+     <code class="literal">~/openstack/my_cloud/definition/data/pass_through.yml</code>
+     file to remove the ESX Proxy references using the
+     <code class="literal">server-id</code> fromm the <code class="filename">servers.yml</code>
+     file.
+    </p></li><li class="step "><p>
+     Commit the changes to git:
+    </p><div class="verbatim-wrap"><pre class="screen">git commit -a -m "Remove ESX Proxy references"</pre></div></li><li class="step "><p>
+     Run the configuration processor. You may want to use the
+     <code class="literal">remove_deleted_servers</code> and
+     <code class="literal">free_unused_addresses</code> switches to free up the resources
+     when running the configuration processor. See
+     <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 7 “Other Topics”, Section 7.3 “Persisted Data”</span> for more details.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml \
+-e remove_deleted_servers="y" -e free_unused_addresses="y"</pre></div></li><li class="step "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.5.9.6.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remove Distributed Resource Scheduler (DRS) Rules</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.6.14">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-removing_esx_host_from_cluster.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-removing_esx_host_from_cluster.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   Perform the following procedure to remove DRS rules, which is added by
+   OVSvAPP installer to ensure that OVSvAPP does not get migrated to other
+   hosts.
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Login to vCenter.
+    </p></li><li class="listitem "><p>
+     Right click on cluster and select <span class="bold"><strong>Edit
+     settings</strong></span>.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-drs-rule1.png" target="_blank"><img src="images/media-esx-drs-rule1.png" width="" /></a></div></div><p>
+     A cluster settings page appears.
+    </p></li><li class="listitem "><p>
+     Click <span class="bold"><strong>DRS Groups Manager</strong></span> on the left hand
+     side of the pop-up box. Select the group which is created for deleted
+     OVSvAPP and click Remove.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-drs-group2.png" target="_blank"><img src="images/media-esx-drs-group2.png" width="" /></a></div></div></li><li class="listitem "><p>
+     Click <span class="bold"><strong>Rules</strong></span> on the left hand side of the
+     pop-up box and select the checkbox for deleted OVSvAPP and click
+     <span class="bold"><strong>Remove</strong></span>.
+    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-esx-rules3.png" target="_blank"><img src="images/media-esx-rules3.png" width="" /></a></div></div></li><li class="listitem "><p>
+     Click <span class="bold"><strong>OK</strong></span>.
+    </p></li></ol></div></div></div><div class="sect1" id="sec-esx-debug"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Debug Logging</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#sec-esx-debug">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-eon_logging.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-eon_logging.xml</li><li><span class="ds-label">ID: </span>sec-esx-debug</li></ul></div></div></div></div><div class="sect2" id="id-1.5.9.7.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To Modify the OVSVAPP VM Log Level</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.7.2">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-eon_logging.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-eon_logging.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To change the OVSVAPP log level to DEBUG, do the following:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Edit the file below:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/neutron-common/templates/ovsvapp-agent-logging.conf.j2</pre></div></li><li class="listitem "><p>
+     Set the logging level value of the <code class="literal">logger_root</code> section
+     to <code class="literal">DEBUG</code>, like this:
+    </p><div class="verbatim-wrap"><pre class="screen">[logger_root]
+qualname: root
+handlers: watchedfile, logstash
+level: DEBUG</pre></div></li><li class="listitem "><p>
+     Commit your configuration to the Git repository
+     (<span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+     Deploy your changes:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/hos/ansible
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml</pre></div></li></ol></div></div><div class="sect2" id="id-1.5.9.7.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To Enable OVSVAPP Service for Centralized Logging</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#id-1.5.9.7.3">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-eon_logging.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-eon_logging.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   To enable OVSVAPP Service for centralized logging:
+  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+     Log in to the Cloud Lifecycle Manager.
+    </p></li><li class="listitem "><p>
+     Edit the file below:
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/logging/vars/neutron-ovsvapp-clr.yml</pre></div></li><li class="listitem "><p>
+     Set the value of <code class="literal">centralized_logging</code> to
+     <span class="bold"><strong>true</strong></span> as shown in the following sample:
+    </p><div class="verbatim-wrap"><pre class="screen">logr_services:
+  neutron-ovsvapp:
+    logging_options:
+    - centralized_logging:
+        enabled: <span class="bold"><strong>true</strong></span>
+        format: json
+        ...</pre></div></li><li class="listitem "><p>
+     Commit your configuration to the Git repository
+     (<span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+     Run the configuration processor:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+     Update your deployment directory:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+     Deploy your changes, specifying the hostname for your OVSAPP host:
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
+ansible-playbook -i hosts/verb_hosts neutron-reconfigure.yml --limit &lt;hostname&gt;</pre></div><p>
+     The hostname of the node can be found in the list generated from the
+     output of the following command:
+    </p><div class="verbatim-wrap"><pre class="screen">grep hostname ~/openstack/my_cloud/info/server_info.yml</pre></div></li></ol></div></div></div><div class="sect1" id="topic-ijt-dyh-rt"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Making Scale Configuration Changes</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#topic-ijt-dyh-rt">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-scale_config_changes.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-scale_config_changes.xml</li><li><span class="ds-label">ID: </span>topic-ijt-dyh-rt</li></ul></div></div></div></div><p>
+  This procedure describes how to make the recommended configuration changes to
+  achieve 8,000 virtual machine instances.
+ </p><div id="id-1.5.9.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   In a scale environment for ESX computes, the configuration of vCenter Proxy
+   VM has to be increased to 8 vCPUs and 16 GB RAM. By default it is 4 vCPUs
+   and 4 GB RAM.
+  </p></div><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+    Change the directory. The <code class="literal">nova.conf.j2</code> file is present
+    in following directories:
+   </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible/roles/nova-common/templates</pre></div></li><li class="listitem "><p>
+    Edit the DEFAULT section in the <code class="literal">nova.conf.j2</code> file as
+    below:
+   </p><div class="verbatim-wrap"><pre class="screen">[DEFAULT]
+rpc_responce_timeout = 180
+server_down_time = 300
+report_interval = 30</pre></div></li><li class="listitem "><p>
+    Commit your configuration:
+   </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+git add -A
+git commit -m "&lt;commit message&gt;"</pre></div></li><li class="listitem "><p>
+    Prepare your environment for deployment:
+   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost ready-deployment.yml;
+cd ~/scratch/ansible/next/ardana/ansible;</pre></div></li><li class="listitem "><p>
+    Execute the <code class="literal">nova-reconfigure</code> playbook:
+   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div></div><div class="sect1" id="idg-all-operations-monitoring-vcenter-clusters-xml-1"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring vCenter Clusters</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#idg-all-operations-monitoring-vcenter-clusters-xml-1">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring_vcenter_clusters.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring_vcenter_clusters.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-monitoring-vcenter-clusters-xml-1</li></ul></div></div></div></div><p>
+  Remote monitoring of activated ESX cluster is enabled through vCenter Plugin
+  of monasca. The monasca-agent running in each ESX Compute proxy node is
+  configured with the vcenter plugin, to monitor the cluster.
+ </p><p>
+  Alarm definitions are created with the default threshold values and whenever
+  the threshold limit breaches respective alarms (OK/ALARM/UNDETERMINED) are
+  generated.
+ </p><p>
+  The configuration file details is given below:
+ </p><div class="verbatim-wrap"><pre class="screen">init_config: {}
+instances:
+  - vcenter_ip: &lt;vcenter-ip&gt;
+      username: &lt;vcenter-username&gt;
+      password: &lt;center-password&gt;
+      clusters: &lt;[cluster list]&gt;</pre></div><p>
+  Metrics List of metrics posted to monasca by vCenter Plugin are listed below:
+ </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    vcenter.cpu.total_mhz
+   </p></li><li class="listitem "><p>
+    vcenter.cpu.used_mhz
+   </p></li><li class="listitem "><p>
+    vcenter.cpu.used_perc
+   </p></li><li class="listitem "><p>
+    vcenter.cpu.total_logical_cores
+   </p></li><li class="listitem "><p>
+    vcenter.mem.total_mb
+   </p></li><li class="listitem "><p>
+    vcenter.mem.used_mb
+   </p></li><li class="listitem "><p>
+    vcenter.mem.used_perc
+   </p></li><li class="listitem "><p>
+    vcenter.disk.total_space_mb
+   </p></li><li class="listitem "><p>
+    vcenter.disk.total_used_space_mb
+   </p></li><li class="listitem "><p>
+    vcenter.disk.total_used_space_perc
+   </p></li></ul></div><p>
+  monasca measurement-list --dimensions
+  esx_cluster_id=domain-c7.D99502A9-63A8-41A2-B3C3-D8E31B591224
+  vcenter.disk.total_used_space_mb 2016-08-30T11:20:08
+ </p><div class="verbatim-wrap"><pre class="screen">+----------------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+------------------+-----------------+
+| name                                         | dimensions                                                                                   | timestamp                         | value            | value_meta      |
++----------------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+------------------+-----------------+
+| vcenter.disk.total_used_space_mb             | vcenter_ip: 10.1.200.91                                                                      | 2016-08-30T11:20:20.703Z          | 100371.000       |                 |
+|                                              | esx_cluster_id: domain-c7.D99502A9-63A8-41A2-B3C3-D8E31B591224                               | 2016-08-30T11:20:50.727Z          | 100371.000       |                 |
+|                                              | hostname: MCP-VCP-cpesx-esx-comp0001-mgmt                                                    | 2016-08-30T11:21:20.707Z          | 100371.000       |                 |
+|                                              |                                                                                              | 2016-08-30T11:21:50.700Z          | 100371.000       |                 |
+|                                              |                                                                                              | 2016-08-30T11:22:20.700Z          | 100371.000       |                 |
+|                                              |                                                                                              | 2016-08-30T11:22:50.700Z          | 100371.000       |                 |
+|                                              |                                                                                              | 2016-08-30T11:23:20.620Z          | 100371.000       |                 |
++----------------------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+------------------+-----------------+</pre></div><p>
+  <span class="bold"><strong>Dimensions</strong></span>
+ </p><p>
+  Each metric will have the dimension as below
+ </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.9.9.12.1"><span class="term ">vcenter_ip</span></dt><dd><p>
+     FQDN/IP Address of the registered vCenter
+    </p></dd><dt id="id-1.5.9.9.12.2"><span class="term ">server esx_cluster_id</span></dt><dd><p>
+     clusterName.vCenter-id, as seen in the openstack hypervisor list
+    </p></dd><dt id="id-1.5.9.9.12.3"><span class="term ">hostname</span></dt><dd><p>
+     ESX compute proxy name
+    </p></dd></dl></div><p>
+  <span class="bold"><strong>Alarms</strong></span>
+ </p><p>
+  Alarms are created for monitoring cpu, memory and disk usages for each
+  activated clusters. The alarm definitions details are
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>Name</th><th>Expression</th><th>Severity</th><th>Match_by</th></tr></thead><tbody><tr><td>ESX cluster CPU Usage</td><td>avg(vcenter.cpu.used_perc) &gt; 90 times 3</td><td>High</td><td>esx_cluster_id</td></tr><tr><td>ESX cluster Memory Usage</td><td>avg(vcenter.mem.used_perc) &gt; 90 times 3</td><td>High</td><td>esx_cluster_id</td></tr><tr><td>ESX cluster Disk Usage</td><td>vcenter.disk.total_used_space_perc &gt; 90</td><td>High</td><td>esx_cluster_id</td></tr></tbody></table></div></div><div class="sect1" id="ovsvapp-monitoring"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring Integration with OVSvApp Appliance</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#ovsvapp-monitoring">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-esx_monitoring.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-esx_monitoring.xml</li><li><span class="ds-label">ID: </span>ovsvapp-monitoring</li></ul></div></div></div></div><div class="sect2" id="processes"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Processes Monitored with monasca-agent</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#processes">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-esx_monitoring.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-esx_monitoring.xml</li><li><span class="ds-label">ID: </span>processes</li></ul></div></div></div></div><p>
+   Using the monasca agent, the following services are monitored on the OVSvApp
+   appliance:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     <span class="bold"><strong>neutron_ovsvapp_agent service</strong></span> - This is
+     the neutron agent which runs in the appliance which will help enable
+     networking for the tenant virtual machines.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Openvswitch</strong></span> - This service is used by the
+     neutron_ovsvapp_agent service for enabling the datapath and security for
+     the tenant virtual machines.
+    </p></li><li class="listitem "><p>
+     <span class="bold"><strong>Ovsdb-server</strong></span> - This service is used by
+     the neutron_ovsvapp_agent service.
+    </p></li></ul></div><p>
+   If any of the above three processes fail to run on the OVSvApp appliance it
+   will lead to network disruption for the tenant virtual machines. This is why
+   they are monitored.
+  </p><p>
+   The monasca-agent periodically reports the status of these processes and
+   metrics data ('load' - cpu.load_avg_1min, 'process' - process.pid_count,
+   'memory' - mem.usable_perc, 'disk' - disk.space_used_perc, 'cpu' -
+   cpu.idle_perc for examples) to the monasca server.
+  </p></div><div class="sect2" id="how"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How It Works</span> <a title="Permalink" class="permalink" href="ops-managing-esx.html#how">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/esx-esx_monitoring.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>esx-esx_monitoring.xml</li><li><span class="ds-label">ID: </span>how</li></ul></div></div></div></div><p>
+   Once the vApp is configured and up, the monasca-agent will attempt to
+   register with the monasca server. After successful registration, the
+   monitoring begins on the processes listed above and you will be able to see
+   status updates on the server side.
+  </p><p>
+   The monasca-agent monitors the processes at the system level so, in the case
+   of failures of any of the configured processes, updates should be seen
+   immediately from monasca.
+  </p><p>
+   To check the events from the server side, log into the Operations Console.
+  </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-blockstorage.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span>Managing Block Storage</span></a><a class="nav-link" href="ops-managing-compute.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 6 </span>Managing Compute</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

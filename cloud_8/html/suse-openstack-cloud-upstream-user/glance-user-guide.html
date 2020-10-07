@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Glance User Guide | OpenStack User Guide | SUSE OpenStack Cloud Crowbar</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="book-title" content="OpenStack User Guide" /><meta name="chapter-title" content="Chapter 1. Glance User Guide" /><meta name="description" content="Images are uniquely identified by way of a URI that matches the following signature:" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="dpopov@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><meta name="tracker-bsc-version" content="" /><link rel="home" href="index.html" title="OpenStack User Guide" /><link rel="up" href="index.html" title="OpenStack User Guide" /><link rel="prev" href="index.html" title="OpenStack User Guide" /><link rel="next" href="ironic-user-guide.html" title="Chapter 2. Ironic User Guide" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack User Guide"><span class="book-icon">OpenStack User Guide</span></a><span> › </span><a class="crumb" href="glance-user-guide.html">Glance User Guide</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="glance-user-guide.html"><span class="number">1 </span><span class="name">Glance User Guide</span></a></li><li class="inactive"><a href="ironic-user-guide.html"><span class="number">2 </span><span class="name">Ironic User Guide</span></a></li><li class="inactive"><a href="horizon-user-guide.html"><span class="number">3 </span><span class="name">Horizon User Guide</span></a></li><li class="inactive"><a href="keystone-user-guide.html"><span class="number">4 </span><span class="name">Keystone User Guide</span></a></li><li class="inactive"><a href="magnum-user-guide.html"><span class="number">5 </span><span class="name">Magnum User Documentation</span></a></li><li class="inactive"><a href="nova-user-guide.html"><span class="number">6 </span><span class="name">Nova User Guide</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="OpenStack User Guide" href="index.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Ironic User Guide" href="ironic-user-guide.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack User Guide"><span class="book-icon">OpenStack User Guide</span></a><span> › </span><a class="crumb" href="glance-user-guide.html">Glance User Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="OpenStack User Guide" href="index.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. Ironic User Guide" href="ironic-user-guide.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="glance-user-guide"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span></div><div><h1 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Glance User Guide</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>glance-user-guide</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="glance-user-guide.html#image-identifiers"><span class="number">1.1 </span><span class="name">Image Identifiers</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#image-statuses"><span class="number">1.2 </span><span class="name">Image Statuses</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#task-statuses"><span class="number">1.3 </span><span class="name">Task Statuses</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#id-1.3.5"><span class="number">1.4 </span><span class="name">Image Statuses</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#id-1.3.6"><span class="number">1.5 </span><span class="name">Task Statuses</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#formats"><span class="number">1.6 </span><span class="name">Disk and Container Formats</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#common-image-properties"><span class="number">1.7 </span><span class="name">Common Image Properties</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#metadata-definition-concepts"><span class="number">1.8 </span><span class="name">Metadata Definition Concepts</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#using-glance-s-image-public-apis"><span class="number">1.9 </span><span class="name">Using Glance’s Image Public APIs</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#using-glance-s-client-tools"><span class="number">1.10 </span><span class="name">Using Glance’s Client Tools</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#using-glance-s-metadata-definitions-catalog-public-apis"><span class="number">1.11 </span><span class="name">Using Glance’s Metadata Definitions Catalog Public APIs</span></a></span></dt><dt><span class="section"><a href="glance-user-guide.html#image-signature-verification"><span class="number">1.12 </span><span class="name">Image Signature Verification</span></a></span></dt></dl></div></div><div class="sect1" id="image-identifiers"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Identifiers</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#image-identifiers">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>image-identifiers</li></ul></div></div></div></div><p>Images are uniquely identified by way of a URI that
+            matches the following signature:</p><div class="verbatim-wrap"><pre class="screen">&lt;Glance Server Location&gt;/v1/images/&lt;ID&gt;</pre></div><p>where <code class="literal">&lt;Glance Server Location&gt;</code> is the resource location of the Glance service
+            that knows about an image, and <code class="literal">&lt;ID&gt;</code> is the image’s identifier. Image
+            identifiers in Glance are <span class="emphasis"><em>uuids</em></span>, making them <span class="emphasis"><em>globally unique</em></span>.</p></div><div class="sect1" id="image-statuses"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Statuses</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#image-statuses">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>image-statuses</li></ul></div></div></div></div><p>Images in Glance can be in one the following statuses:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <code class="literal">queued</code>
+            </p><p>The image identifier has been reserved for an image in the Glance
+                    registry. No image data has been uploaded to Glance and the image
+                    size was not explicitly set to zero on creation.</p></li><li class="listitem "><p>
+              <code class="literal">saving</code>
+            </p><p>Denotes that an image’s raw data is currently being uploaded to Glance.
+                    When an image is registered with a call to <code class="literal">POST /images</code> and there
+                    is an <code class="literal">x-image-meta-location</code> header present, that image will never be in
+                    the <code class="literal">saving</code> status (as the image data is already available in some other
+                    location).</p></li><li class="listitem "><p>
+              <code class="literal">active</code>
+            </p><p>Denotes an image that is fully available in Glance. This occurs when
+                    the image data is uploaded, or the image size is explicitly set to
+                    zero on creation.</p></li><li class="listitem "><p>
+              <code class="literal">deactivated</code>
+            </p><p>Denotes that access to image data is not allowed to any non-admin user.
+                    Prohibiting downloads of an image also prohibits operations like image
+                    export and image cloning that may require image data.</p></li><li class="listitem "><p>
+              <code class="literal">killed</code>
+            </p><p>Denotes that an error occurred during the uploading of an image’s data,
+                    and that the image is not readable.</p></li><li class="listitem "><p>
+              <code class="literal">deleted</code>
+            </p><p>Glance has retained the information about the image, but it is no longer
+                    available to use. An image in this state will be removed automatically
+                    at a later date.</p></li><li class="listitem "><p>
+              <code class="literal">pending_delete</code>
+            </p><p>This is similar to <code class="literal">deleted</code>, however, Glance has not yet removed the
+                    image data. An image in this state is not recoverable.</p></li></ul></div><div class="figure" id="id-1.3.3.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/image_status_transition.png" target="_blank"><img src="images/image_status_transition.png" width="" alt="This is a representation of how the image move from one status to the next." /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 1.1: </span><span class="name">This is a representation of how the image move from one status to the next. </span><a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.3.4">#</a></h6></div></div></div><div class="sect1" id="task-statuses"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task Statuses</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#task-statuses">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>task-statuses</li></ul></div></div></div></div><p>Tasks in Glance can be in one the following statuses:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <code class="literal">pending</code>
+            </p><p>The task identifier has been reserved for a task in the Glance.
+                    No processing has begun on it yet.</p></li><li class="listitem "><p>
+              <code class="literal">processing</code>
+            </p><p>The task has been picked up by the underlying executor and is being run
+                    using the backend Glance execution logic for that task type.</p></li><li class="listitem "><p>
+              <code class="literal">success</code>
+            </p><p>Denotes that the task has had a successful run within Glance. The <code class="literal">result</code>
+                    field of the task shows more details about the outcome.</p></li><li class="listitem "><p>
+              <code class="literal">failure</code>
+            </p><p>Denotes that an error occurred during the execution of the task and it
+                    cannot continue processing. The <code class="literal">message</code> field of the task shows what the
+                    error was.</p></li></ul></div></div><div class="sect1" id="id-1.3.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Statuses</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Images in Glance can be in one the following statuses:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <code class="literal">queued</code>
+            </p><p>The image identifier has been reserved for an image in the Glance
+                    registry. No image data has been uploaded to Glance and the image
+                    size was not explicitly set to zero on creation.</p></li><li class="listitem "><p>
+              <code class="literal">saving</code>
+            </p><p>Denotes that an image’s raw data is currently being uploaded to Glance.
+                    When an image is registered with a call to <code class="literal">POST /images</code> and there
+                    is an <code class="literal">x-image-meta-location</code> header present, that image will never be in
+                    the <code class="literal">saving</code> status (as the image data is already available in some other
+                    location).</p></li><li class="listitem "><p>
+              <code class="literal">active</code>
+            </p><p>Denotes an image that is fully available in Glance. This occurs when
+                    the image data is uploaded, or the image size is explicitly set to
+                    zero on creation.</p></li><li class="listitem "><p>
+              <code class="literal">deactivated</code>
+            </p><p>Denotes that access to image data is not allowed to any non-admin user.
+                    Prohibiting downloads of an image also prohibits operations like image
+                    export and image cloning that may require image data.</p></li><li class="listitem "><p>
+              <code class="literal">killed</code>
+            </p><p>Denotes that an error occurred during the uploading of an image’s data,
+                    and that the image is not readable.</p></li><li class="listitem "><p>
+              <code class="literal">deleted</code>
+            </p><p>Glance has retained the information about the image, but it is no longer
+                    available to use. An image in this state will be removed automatically
+                    at a later date.</p></li><li class="listitem "><p>
+              <code class="literal">pending_delete</code>
+            </p><p>This is similar to <code class="literal">deleted</code>, however, Glance has not yet removed the
+                    image data. An image in this state is not recoverable.</p></li></ul></div><div class="figure" id="id-1.3.5.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/image_status_transition.png" target="_blank"><img src="images/image_status_transition.png" width="" alt="This is a representation of how the image move from one status to the next." /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 1.2: </span><span class="name">This is a representation of how the image move from one status to the next. </span><a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.5.4">#</a></h6></div></div></div><div class="sect1" id="id-1.3.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Task Statuses</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Tasks in Glance can be in one the following statuses:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <code class="literal">pending</code>
+            </p><p>The task identifier has been reserved for a task in the Glance.
+                    No processing has begun on it yet.</p></li><li class="listitem "><p>
+              <code class="literal">processing</code>
+            </p><p>The task has been picked up by the underlying executor and is being run
+                    using the backend Glance execution logic for that task type.</p></li><li class="listitem "><p>
+              <code class="literal">success</code>
+            </p><p>Denotes that the task has had a successful run within Glance. The <code class="literal">result</code>
+                    field of the task shows more details about the outcome.</p></li><li class="listitem "><p>
+              <code class="literal">failure</code>
+            </p><p>Denotes that an error occurred during the execution of the task and it
+                    cannot continue processing. The <code class="literal">message</code> field of the task shows what the
+                    error was.</p></li></ul></div></div><div class="sect1" id="formats"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disk and Container Formats</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#formats">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>formats</li></ul></div></div></div></div><p>When adding an image to Glance, you must specify what the virtual
+            machine image’s <span class="emphasis"><em>disk format</em></span> and <span class="emphasis"><em>container format</em></span> are. Disk and container
+            formats are configurable on a per-deployment basis. This document intends to
+            establish a global convention for what specific values of <span class="emphasis"><em>disk_format</em></span> and
+            <span class="emphasis"><em>container_format</em></span> mean.</p><div class="sect2" id="disk-format"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disk Format</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#disk-format">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>disk-format</li></ul></div></div></div></div><p>The disk format of a virtual machine image is the format of the underlying
+                disk image. Virtual appliance vendors have different formats for laying out
+                the information contained in a virtual machine disk image.</p><p>You can set your image’s disk format to one of the following:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                <span class="bold"><strong>raw</strong></span>
+              </p><p>This is an unstructured disk image format</p></li><li class="listitem "><p>
+                <span class="bold"><strong>vhd</strong></span>
+              </p><p>This is the VHD disk format, a common disk format used by virtual machine
+                        monitors from VMware, Xen, Microsoft, VirtualBox, and others.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>vhdx</strong></span>
+              </p><p>This is the VHDX disk format, an enhanced version of the VHD format which
+                        supports larger disk sizes among other features.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>vmdk</strong></span>
+              </p><p>Another common disk format supported by many common virtual machine monitors.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>vdi</strong></span>
+              </p><p>A disk format supported by VirtualBox virtual machine monitor and the QEMU
+                        emulator.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>iso</strong></span>
+              </p><p>An archive format for the data contents of an optical disc (For example, CDROM).</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ploop</strong></span>
+              </p><p>A disk format supported and used by Virtuozzo to run OS Containers.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>qcow2</strong></span>
+              </p><p>A disk format supported by the QEMU emulator that can expand dynamically and
+                        supports Copy on Write.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>aki</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon kernel image.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ari</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon ramdisk image.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ami</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon machine image.</p></li></ul></div></div><div class="sect2" id="container-format"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Container Format</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#container-format">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>container-format</li></ul></div></div></div></div><p>The container format refers to whether the virtual machine image is in a
+                file format that also contains metadata about the actual virtual machine.</p><div id="id-1.3.7.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The container format string is not currently used by Glance or
+                other OpenStack components, so it is safe to simply specify <span class="bold"><strong>bare</strong></span> as
+                the container format if you are unsure.</p></div><p>You can set your image’s container format to one of the following:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                <span class="bold"><strong>bare</strong></span>
+              </p><p>This indicates there is no container or metadata envelope for the image.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ovf</strong></span>
+              </p><p>This is the OVF container format.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>aki</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon kernel image.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ari</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon ramdisk image.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ami</strong></span>
+              </p><p>This indicates what is stored in Glance is an Amazon machine image</p></li><li class="listitem "><p>
+                <span class="bold"><strong>ova</strong></span>
+              </p><p>This indicates what is stored in Glance is an OVA tar archive file.</p></li><li class="listitem "><p>
+                <span class="bold"><strong>docker</strong></span>
+              </p><p>This indicates what is stored in Glance is a Docker tar archive of
+                        the container filesystem.</p></li></ul></div></div></div><div class="sect1" id="common-image-properties"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Common Image Properties</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#common-image-properties">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>common-image-properties</li></ul></div></div></div></div><p>When adding an image to Glance, you may specify some common image properties
+            that may prove useful to consumers of your image.</p><p>This document explains the names of these properties and the expected values.</p><p>The common image properties are also described in a JSON schema, found in
+              <code class="literal">/etc/glance/schema-image.json</code> in the Glance source code.</p><div class="sect2" id="architecture"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>architecture</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#architecture">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>architecture</li></ul></div></div></div></div><p>Operating system architecture as specified in
+                <a class="link" href="https://docs.openstack.org/python-glanceclient/latest/cli/property-keys.html" target="_blank">https://docs.openstack.org/python-glanceclient/latest/cli/property-keys.html</a>.</p></div><div class="sect2" id="instance-uuid"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>instance_uuid</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#instance-uuid">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>instance-uuid</li></ul></div></div></div></div><p>Metadata which can be used to record which instance this image is associated
+                with. (Informational only, does not create an instance snapshot.)</p></div><div class="sect2" id="kernel-id"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>kernel_id</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#kernel-id">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>kernel-id</li></ul></div></div></div></div><p>The ID of image stored in Glance that should be used as the kernel when booting
+                an AMI-style image.</p></div><div class="sect2" id="ramdisk-id"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>ramdisk_id</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#ramdisk-id">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>ramdisk-id</li></ul></div></div></div></div><p>The ID of image stored in Glance that should be used as the ramdisk when
+                booting an AMI-style image.</p></div><div class="sect2" id="os-distro"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>os_distro</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#os-distro">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>os-distro</li></ul></div></div></div></div><p>The common name of the operating system distribution as specified in
+                <a class="link" href="https://docs.openstack.org/python-glanceclient/latest/cli/property-keys.html" target="_blank">https://docs.openstack.org/python-glanceclient/latest/cli/property-keys.html</a>.</p></div><div class="sect2" id="os-version"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.7.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">
+            <span class="bold"><strong>os_version</strong></span>
+          </span> <a title="Permalink" class="permalink" href="glance-user-guide.html#os-version">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>os-version</li></ul></div></div></div></div><p>The operating system version as specified by the distributor.</p></div></div><div class="sect1" id="metadata-definition-concepts"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metadata Definition Concepts</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#metadata-definition-concepts">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>metadata-definition-concepts</li></ul></div></div></div></div><p>The metadata definition service was added to Glance in the Juno release of
+            OpenStack.</p><p>It provides a common API for vendors, admins, services, and users to
+            meaningfully <span class="bold"><strong>define</strong></span> available key and value pair metadata that
+            can be used on different types of resources (images, artifacts, volumes,
+            flavors, aggregates, and other resources). A definition includes a property’s
+            key, its description, its constraints, and the resource types to which it
+            can be associated.</p><p>This catalog does not store the values for specific instance properties.</p><p>For example, a definition of a virtual CPU topology property for the number of
+            cores will include the base key to use (for example, <code class="literal">cpu_cores</code>), a description,
+            and value constraints like requiring it to be an integer. So, a user,
+            potentially through Horizon, would be able to search this catalog to list the
+            available properties they can add to a flavor or image. They will see the
+            virtual CPU topology property in the list and know that it must be an integer.</p><p>When the user adds the property its key and value will be stored in the
+            service that owns that resource (for example, Nova for flavors and in Glance
+            for images). The catalog also includes any additional prefix required when
+            the property is applied to different types of resources, such as <code class="literal">hw_</code> for
+            images and <code class="literal">hw:</code> for flavors. So, on an image, the user would know to set the
+            property as <code class="literal">hw_cpu_cores=1</code>.</p><div class="sect2" id="terminology"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Terminology</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#terminology">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>terminology</li></ul></div></div></div></div><div class="sect3" id="background"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.8.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Background</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#background">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>background</li></ul></div></div></div></div><p>The term <span class="emphasis"><em>metadata</em></span> can become very overloaded and confusing. This
+                    catalog is about the additional metadata that is passed as arbitrary
+                    key and value pairs or tags across various artifacts and OpenStack services.</p><p>Below are a few examples of the various terms used for metadata across
+                    OpenStack services today:</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col width="25" class="c1" /><col width="27" class="c2" /><col width="22" class="c3" /></colgroup><thead><tr><th>
+                      <p>Nova</p>
+                    </th><th>
+                      <p>Cinder</p>
+                    </th><th>
+                      <p>Glance</p>
+                    </th></tr></thead><tbody><tr><td>
+                      <div class="variablelist "><dl class="variablelist"><dt id="id-1.3.9.7.2.4.1.5.1.1.1.1"><span class="term ">Flavor</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>extra specs</em></span>
+                                </p></li></ul></div></dd><dt id="id-1.3.9.7.2.4.1.5.1.1.1.2"><span class="term ">Host Aggregate</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>metadata</em></span>
+                                </p></li></ul></div></dd><dt id="id-1.3.9.7.2.4.1.5.1.1.1.3"><span class="term ">Servers</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>metadata</em></span>
+                                </p></li><li class="listitem "><p>
+                                  <span class="emphasis"><em>scheduler_hints</em></span>
+                                </p></li><li class="listitem "><p>
+                                  <span class="emphasis"><em>tags</em></span>
+                                </p></li></ul></div></dd></dl></div>
+                    </td><td>
+                      <div class="variablelist "><dl class="variablelist"><dt id="id-1.3.9.7.2.4.1.5.1.2.1.1"><span class="term ">Volume &amp; Snapshot</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>image metadata</em></span>
+                                </p></li><li class="listitem "><p>
+                                  <span class="emphasis"><em>metadata</em></span>
+                                </p></li></ul></div></dd><dt id="id-1.3.9.7.2.4.1.5.1.2.1.2"><span class="term ">VolumeType</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>extra specs</em></span>
+                                </p></li><li class="listitem "><p>
+                                  <span class="emphasis"><em>qos specs</em></span>
+                                </p></li></ul></div></dd></dl></div>
+                    </td><td>
+                      <div class="variablelist "><dl class="variablelist"><dt id="id-1.3.9.7.2.4.1.5.1.3.1.1"><span class="term ">Image &amp; Snapshot</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                                  <span class="emphasis"><em>properties</em></span>
+                                </p></li><li class="listitem "><p>
+                                  <span class="emphasis"><em>tags</em></span>
+                                </p></li></ul></div></dd></dl></div>
+                    </td></tr></tbody></table></div></div><div class="sect3" id="catalog-concepts"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.8.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Catalog Concepts</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#catalog-concepts">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>catalog-concepts</li></ul></div></div></div></div><p>The below figure illustrates the concept terminology used in the metadata
+                    definitions catalog:</p><div class="verbatim-wrap"><pre class="screen">A namespace is associated with 0 to many resource types, making it visible to
+the API and UI for applying to that type of resource. RBAC Permissions are
+managed at a namespace level.
+
++----------------------------------------------+
+|         Namespace                            |
+|                                              |
+| +-----------------------------------------+  |
+| |        Object Definition                |  |
+| |                                         |  |        +--------------------+
+| | +-------------------------------------+ |  |  +--&gt;  | Resource Type:     |
+| | | Property Definition A (key=integer) | |  |  |     | e.g. Nova Flavor   |
+| | +-------------------------------------+ |  |  |     +--------------------+
+| |                                         |  |  |
+| | +-------------------------------------+ |  |  |
+| | | Property Definition B (key=string)  | |  |  |     +--------------------+
+| | +-------------------------------------+ |  +--+--&gt;  | Resource Type:     |
+| |                                         |  |  |     | e.g. Glance Image  |
+| +-----------------------------------------+  |  |     +--------------------+
+|                                              |  |
+|  +-------------------------------------+     |  |
+|  | Property Definition C (key=boolean) |     |  |     +--------------------+
+|  +-------------------------------------+     |  +--&gt;  | Resource Type:     |
+|                                              |        | e.g. Cinder Volume |
++----------------------------------------------+        +--------------------+
+
+ Properties may be defined standalone or within the context of an object.</pre></div></div><div class="sect3" id="catalog-terminology"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.8.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Catalog Terminology</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#catalog-terminology">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>catalog-terminology</li></ul></div></div></div></div><p>The following terminology is used within the metadata definition catalog.</p><p>
+              <span class="bold"><strong>Namespaces</strong></span>
+            </p><p>Metadata definitions are contained in namespaces.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Specify the access controls (CRUD) for everything defined in it. Allows for
+                            admin only, different projects, or the entire cloud to define and use the
+                            definitions in the namespace.</p></li><li class="listitem "><p>Associates the contained definitions to different types of resources.</p></li></ul></div><p>
+              <span class="bold"><strong>Properties</strong></span>
+            </p><p>A property describes a single property and its primitive constraints. Each
+                    property can only be a primitive type:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>string, integer, number, boolean, array</p></li></ul></div><p>Each primitive type is described using simple JSON schema notation. This
+                    means no nested objects and no definition referencing.</p><p>
+              <span class="bold"><strong>Objects</strong></span>
+            </p><p>An object describes a group of one to many properties and their primitive
+                    constraints. Each property in the group can ONLY be a primitive type:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>string, integer, number, boolean, array</p></li></ul></div><p>Each primitive type is described using simple JSON schema notation. This
+                    means no nested objects.</p><p>The object may optionally define required properties under the semantic
+                    understanding that a user who uses the object should provide all required
+                    properties.</p><p>
+              <span class="bold"><strong>Resource Type Association</strong></span>
+            </p><p>Resource type association specifies the relationship between resource
+                    types and the namespaces that are applicable to them. This information can be
+                    used to drive UI and CLI views. For example, the same namespace of
+                    objects, properties, and tags may be used for images, snapshots, volumes, and
+                    flavors. Or a namespace may only apply to images.</p><p>Resource types should be aligned with Heat resource types whenever possible.
+                    <a class="link" href="http://docs.openstack.org/developer/heat/template_guide/openstack.html" target="_blank">http://docs.openstack.org/developer/heat/template_guide/openstack.html</a></p><p>It is important to note that the same base property key can require different
+                    prefixes depending on the target resource type. The API provides a way to
+                    retrieve the correct property based on the target resource type.</p><p>Below are a few examples:</p><p>The desired virtual CPU topology can be set on both images and flavors
+                    via metadata. The keys have different prefixes on images than on flavors.
+                    On flavors keys are prefixed with <code class="literal">hw:</code>, but on images the keys are prefixed
+                    with <code class="literal">hw_</code>.</p><p>For more: <a class="link" href="https://github.com/openstack/nova-specs/blob/master/specs/juno/implemented/virt-driver-vcpu-topology.rst" target="_blank">https://github.com/openstack/nova-specs/blob/master/specs/juno/implemented/virt-driver-vcpu-topology.rst</a>.</p><p>Another example is the <code class="literal">AggregateInstanceExtraSpecsFilter</code> and scoped properties
+                    (For example, properties with <code class="literal">something:something=value</code>). For scoped or namespaced
+                    properties, the <code class="literal">AggregateInstanceExtraSpecsFilter</code> requires a prefix of
+                    <code class="literal">aggregate_instance_extra_specs:</code> to be used on flavors but not on the
+                    aggregate itself. Otherwise, the filter will not evaluate the property during
+                    scheduling.</p><p>So, on a host aggregate, you may see:</p><p><code class="literal">companyx:fastio=true</code></p><p>But then when used on the flavor, the <code class="literal">AggregateInstanceExtraSpecsFilter</code> needs:</p><p><code class="literal">aggregate_instance_extra_specs:companyx:fastio=true</code></p><p>In some cases, there may be multiple different filters that may use
+                    the same property with different prefixes. In this case, the correct prefix
+                    needs to be set based on which filter is enabled.</p></div></div></div><div class="sect1" id="using-glance-s-image-public-apis"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Glance’s Image Public APIs</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-glance-s-image-public-apis">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-glance-s-image-public-apis</li></ul></div></div></div></div><p>Glance is the reference implementation of the OpenStack Images API. As such,
+            Glance fully implements versions 1 and 2 of the Images API.</p><div id="id-1.3.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The Images API v1 has been DEPRECATED in the Newton release. The
+                migration path is to use the <a class="link" href="http://developer.openstack.org/api-ref/image/v2/" target="_blank">Images API v2</a> instead of version 1
+                of the API. The Images API v1 will ultimately be removed, following the
+                <a class="link" href="https://governance.openstack.org/reference/tags/assert_follows-standard-deprecation.html" target="_blank">OpenStack standard deprecation policy</a>.</p></div><p>There used to be a sentence here saying, “The Images API specification is
+            developed alongside Glance, but is not considered part of the Glance project.”
+            That’s only partially true (or completely false, depending upon how strict you
+            are about these things). Conceptually, the OpenStack Images API is an
+            independent definition of a REST API. In practice, however, the only way
+            to participate in the evolution of the Images API is to work with the Glance
+            community to define the new functionality and provide its reference
+            implementation. Further, Glance falls under the designated sections provision
+            of the OpenStack DefCore Guidelines, which basically means that in order to
+            qualify as OpenStack, a cloud exposing an OpenStack Images API must include
+            the Glance Images API implementation code. Thus, although conceptually
+            independent, the OpenStack Images APIs are intimately associated with Glance.</p><p>
+          <span class="bold"><strong>References</strong></span>
+        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <a class="link" href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/Lexicon.rst#n54" target="_blank">Designated sections (definition)</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="https://governance.openstack.org/resolutions/20140402-defcore-designated-sections-guidelines.html" target="_blank">2014-04-02 DefCore Designated Sections Guidelines</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="https://github.com/openstack/defcore/blob/master/doc/source/process/CoreDefinition.rst" target="_blank">OpenStack Core Definition</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="https://github.com/openstack/defcore" target="_blank">DefCore Guidelines Repository</a>
+            </p></li></ul></div><div class="sect2" id="glance-and-the-images-apis-past-present-and-future"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Glance and the Images APIs: Past, Present, and Future</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#glance-and-the-images-apis-past-present-and-future">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>glance-and-the-images-apis-past-present-and-future</li></ul></div></div></div></div><p>Here’s a quick summary of the Images APIs that have been implemented by Glance.
+                If you’re interested in more details, you can consult the Release Notes for all
+                the OpenStack releases (beginning with “Bexar”) to follow the evolution of
+                features in Glance and the Images APIs.</p><div class="sect3" id="images-v1-api"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Images v1 API</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#images-v1-api">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>images-v1-api</li></ul></div></div></div></div><p>The v1 API was originally designed as a service API for use by Nova and other
+                    OpenStack services. In the Kilo release, the v1.1 API was downgraded from
+                    CURRENT to SUPPORTED. In the Newton release, the version 1 API is officially
+                    declared DEPRECATED.</p><p>During the deprecation period, the Images v1 API is closed to further
+                    development. The Glance code implementing the v1 API accepts only serious
+                    bug fixes.</p><p>Since Folsom, it has been possible to deploy OpenStack without exposing the
+                    Images v1 API to end users. The Compute v2 API contains image-related API
+                    calls allowing users to list images, list images details, show image details
+                    for a specific image, delete images, and manipulate image metadata. Nova acts
+                    as a proxy to Glance for these image-related calls. It’s important to note
+                    that the image-related calls in the Compute v2 API are a proper subset of the
+                    calls available in the Images APIs.</p><p>In the Newton release, Nova (and other OpenStack services that consume images)
+                    have been modified to use the Images v2 API by default.</p><p>
+              <span class="bold"><strong>Reference</strong></span>
+            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <a class="link" href="https://governance.openstack.org/reference/tags/assert_follows-standard-deprecation.html#requirements" target="_blank">OpenStack Standard Deprecation Requirements</a>
+                </p></li></ul></div></div><div class="sect3" id="images-v2-api"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Images v2 API</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#images-v2-api">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>images-v2-api</li></ul></div></div></div></div><p>The v2 API is the CURRENT OpenStack Images API. It provides a more friendly
+                    interface to consumers than did the v1 API, as it was specifically designed to
+                    expose images-related functionality as a public-facing endpoint. It’s the
+                    version that’s currently open to development.</p><p>A common strategy is to deploy multiple Glance nodes: internal-facing nodes
+                    providing the Images APIs for internal consumers like Nova, and external-facing
+                    nodes providing the Images v2 API for public use.</p></div><div class="sect3" id="the-future"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The Future</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#the-future">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>the-future</li></ul></div></div></div></div><p>During the long and tumultuous design phase of what has since become an
+                    independent service named “Glare” (the Glance Artifacts Repository), the Glance
+                    community loosely spoke about the Artifacts API being “Glance v3”. This,
+                    however, was only a shorthand way of speaking of the Artifacts effort. The
+                    Artifacts API can’t be the Images v3 API since Artifacts are not the same as
+                    Images. Conceptually, a virtual machine image could be an Artifact, and the
+                    Glare code has been designed to be compatible with the Images v2 API. But at
+                    this time, there are no plans to implement an Images v3 API.</p><p>During the Newton development cycle, Glare became an independent OpenStack
+                    project. While it’s evident that there’s a need for an Artifact Repository in
+                    OpenStack, whether it will be as ubiquitous as the need for an Images
+                    Repository isn’t clear. On the other hand, industry trends could go in the
+                    opposite direction where everyone needs Artifacts and deployers view images as
+                    simply another type of digital artifact.</p></div></div><div class="sect2" id="id-1.3.10.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.10.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Glance depends on Keystone and the OpenStack Identity API to handle
+                authentication of clients. You must obtain an authentication token from
+                Keystone using and send it along with all API requests to Glance through
+                the <code class="literal">X-Auth-Token</code> header. Glance will communicate back to Keystone to
+                verify the token validity and obtain your identity credentials.</p><p>See <a class="link" href="https://docs.openstack.org/glance/pike/admin/authentication.html#authentication" target="_blank">Authentication With Keystone</a>
+                for more information on integrating with Keystone.</p></div><div class="sect2" id="using-v1-x"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using v1.X</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-v1-x">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-v1-x</li></ul></div></div></div></div><div id="id-1.3.10.9.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The Images API v1 has been DEPRECATED in the Newton release. The
+                    migration path is to use the <a class="link" href="http://developer.openstack.org/api-ref/image/v2/" target="_blank">Images API v2</a>
+                    instead of version 1 of the API. The Images API v1 will ultimately be removed, following the
+                    <a class="link" href="https://governance.openstack.org/reference/tags/assert_follows-standard-deprecation.html" target="_blank">OpenStack standard deprecation policy</a>.</p></div><p>For the purpose of examples, assume there is a Glance API server running
+                at the URL <code class="literal">http://glance.openstack.example.org</code> on the default port 80.</p><div class="sect3" id="list-available-images"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Available Images</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-available-images">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-available-images</li></ul></div></div></div></div><p>We want to see a list of available images that the authenticated user has
+                    access to. This includes images owned by the user, images shared with the user
+                    and public images.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v1/images</code> to
+                    retrieve this list of available images. The data is returned as a JSON-encoded
+                    mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{'images': [
+  {'uri': 'http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9',
+   'name': 'SLES 15',
+   'disk_format': 'vhd',
+   'container_format': 'ovf',
+   'size': '5368709120'}
+  ...]}</pre></div></div><div class="sect3" id="list-available-images-in-more-detail"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Available Images in More Detail</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-available-images-in-more-detail">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-available-images-in-more-detail</li></ul></div></div></div></div><p>We want to see a more detailed list of available images that the authenticated
+                    user has access to. This includes images owned by the user, images shared with
+                    the user and public images.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v1/images/detail</code> to
+                    retrieve this list of available images. The data is returned as a
+                    JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{'images': [
+  {'uri': 'http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9',
+   'name': 'SLES 15',
+   'disk_format': 'vhd',
+   'container_format': 'ovf',
+   'size': '5368709120',
+   'checksum': 'c2e5db72bd7fd153f53ede5da5a06de3',
+   'created_at': '2010-02-03 09:34:01',
+   'updated_at': '2010-02-03 09:34:01',
+   'deleted_at': '',
+   'status': 'active',
+   'is_public': true,
+   'min_ram': 256,
+   'min_disk': 5,
+   'owner': null,
+   'properties': {'distro': 'SLES 15'}},
+  ...]}</pre></div><div id="id-1.3.10.9.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>All timestamps returned are in UTC.</p><p>The <code class="literal">updated_at</code> timestamp is the timestamp when an image’s metadata
+                        was last updated, not its image data, as all image data is immutable
+                        once stored in Glance.</p><p>The <code class="literal">properties</code> field is a mapping of free-form key and value pairs that
+                        have been saved with the image metadata.</p><p>The <code class="literal">checksum</code> field is an MD5 checksum of the image file data.</p><p>The <code class="literal">is_public</code> field is a boolean indicating whether the image is
+                        publicly available.</p><p>The <code class="literal">min_ram</code> field is an integer specifying the minimum amount of
+                        RAM needed to run this image on an instance in megabytes.</p><p>The <code class="literal">min_disk</code> field is an integer specifying the minimum amount of
+                        disk space needed to run this image on an instance in gigabytes.</p><p>The <code class="literal">owner</code> field is a string which may either be null or which will
+                        indicate the owner of the image.</p></div></div><div class="sect3" id="filtering-images-lists"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filtering Images Lists</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#filtering-images-lists">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>filtering-images-lists</li></ul></div></div></div></div><p>Both the <code class="literal">GET /v1/images</code> and <code class="literal">GET /v1/images/detail</code> requests take query
+                    parameters that serve to filter the returned list of images. The following
+                    list details these query parameters.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">name=NAME</code>
+                </p><p>Filters images having a <code class="literal">name</code> attribute matching <code class="literal">NAME</code>.</p></li><li class="listitem "><p>
+                  <code class="literal">container_format=FORMAT</code>
+                </p><p>Filters images having a <code class="literal">container_format</code> attribute matching <code class="literal">FORMAT</code>.</p><p>For more information, see <a class="xref" href="glance-user-guide.html#formats" title="1.6. Disk and Container Formats">Section 1.6, “Disk and Container Formats”</a>.</p></li><li class="listitem "><p>
+                  <code class="literal">disk_format=FORMAT</code>
+                </p><p>Filters images having a <code class="literal">disk_format</code> attribute matching <code class="literal">FORMAT</code>.</p><p>For more information, see <a class="xref" href="glance-user-guide.html#formats" title="1.6. Disk and Container Formats">Section 1.6, “Disk and Container Formats”</a>.</p></li><li class="listitem "><p>
+                  <code class="literal">status=STATUS</code>
+                </p><p>Filters images having a <code class="literal">status</code> attribute matching <code class="literal">STATUS</code>.</p><p>For more information, see <a class="xref" href="glance-user-guide.html#image-statuses" title="1.2. Image Statuses">Section 1.2, “Image Statuses”</a>.</p></li><li class="listitem "><p>
+                  <code class="literal">size_min=BYTES</code>
+                </p><p>Filters images having a <code class="literal">size</code> attribute greater than or equal to <code class="literal">BYTES</code>.</p></li><li class="listitem "><p>
+                  <code class="literal">size_max=BYTES</code>
+                </p><p>Filters images having a <code class="literal">size</code> attribute less than or equal to <code class="literal">BYTES</code>.</p></li></ul></div><p>These two resources also accept additional query parameters:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">sort_key=KEY</code>
+                </p><p>Results will be ordered by the specified image attribute <code class="literal">KEY</code>. Accepted
+                            values include <code class="literal">id</code>, <code class="literal">name</code>, <code class="literal">status</code>, <code class="literal">disk_format</code>,
+                            <code class="literal">container_format</code>, <code class="literal">size</code>, <code class="literal">created_at</code> (default) and <code class="literal">updated_at</code>.</p></li><li class="listitem "><p>
+                  <code class="literal">sort_dir=DIR</code>
+                </p><p>Results will be sorted in the direction <code class="literal">DIR</code>. Accepted values are <code class="literal">asc</code>
+                            for ascending or <code class="literal">desc</code> (default) for descending.</p></li><li class="listitem "><p>
+                  <code class="literal">marker=ID</code>
+                </p><p>An image identifier marker may be specified. When present, only images which
+                            occur after the identifier <code class="literal">ID</code> will be listed. (These are the images that
+                            have a <code class="literal">sort_key</code> later than that of the marker <code class="literal">ID</code> in the <code class="literal">sort_dir</code>
+                            direction.)</p></li><li class="listitem "><p>
+                  <code class="literal">limit=LIMIT</code>
+                </p><p>When present, the maximum number of results returned will not exceed <code class="literal">LIMIT</code>.</p></li></ul></div><div id="id-1.3.10.9.6.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>If the specified <code class="literal">LIMIT</code> exceeds the operator defined limit (<code class="literal">api_limit_max</code>)
+                        then the number of results returned may be less than <code class="literal">LIMIT</code>.</p></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">is_public=PUBLIC</code>
+                </p><p>An admin user may use the <code class="literal">is_public</code> parameter to control which results are
+                            returned.</p><p>When the <code class="literal">is_public</code> parameter is absent or set to <code class="literal">True</code> the following images
+                            will be listed: Images whose <code class="literal">is_public</code> field is <code class="literal">True</code>, owned images and
+                            shared images.</p><p>When the <code class="literal">is_public</code> parameter is set to <code class="literal">False</code> the following images will be
+                            listed: Images (owned, shared, or non-owned) whose <code class="literal">is_public</code> field is <code class="literal">False</code>.</p><p>When the <code class="literal">is_public</code> parameter is set to <code class="literal">None</code> all images will be listed
+                            irrespective of owner, shared status or the <code class="literal">is_public</code> field.</p></li></ul></div><div id="id-1.3.10.9.6.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Use of the <code class="literal">is_public</code> parameter is restricted to admin users. For all other
+                        users it will be ignored.</p></div></div><div class="sect3" id="retrieve-image-metadata"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Retrieve Image Metadata</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#retrieve-image-metadata">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>retrieve-image-metadata</li></ul></div></div></div></div><p>We want to see detailed information for a specific virtual machine image
+                    that the Glance server knows about.</p><p>We have queried the Glance server for a list of images and the
+                    data returned includes the <code class="literal">uri</code> field for each available image. This
+                    <code class="literal">uri</code> field value contains the exact location needed to get the metadata
+                    for a specific image.</p><p>Continuing the example from above, in order to get metadata about the
+                    first image returned, we can issue a <code class="literal">HEAD</code> request to the Glance
+                    server for the image’s URI.</p><p>We issue a <code class="literal">HEAD</code> request to
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9</code> to
+                    retrieve complete metadata for that image. The metadata is returned as a
+                    set of HTTP headers that begin with the prefix <code class="literal">x-image-meta-</code>. The
+                    following shows an example of the HTTP headers returned from the above
+                    <code class="literal">HEAD</code> request:</p><div class="verbatim-wrap"><pre class="screen">x-image-meta-uri              http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9
+x-image-meta-name             SLES 15
+x-image-meta-disk_format      vhd
+x-image-meta-container_format ovf
+x-image-meta-size             5368709120
+x-image-meta-checksum         c2e5db72bd7fd153f53ede5da5a06de3
+x-image-meta-created_at       2010-02-03 09:34:01
+x-image-meta-updated_at       2010-02-03 09:34:01
+x-image-meta-deleted_at
+x-image-meta-status           available
+x-image-meta-is_public        true
+x-image-meta-min_ram          256
+x-image-meta-min_disk         0
+x-image-meta-owner            null
+x-image-meta-property-distro  SLES 15</pre></div><div id="id-1.3.10.9.7.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>All timestamps returned are in UTC.</p><p>The <code class="literal">x-image-meta-updated_at</code> timestamp is the timestamp when an
+                        image’s metadata was last updated, not its image data, as all
+                        image data is immutable once stored in Glance.</p><p>There may be multiple headers that begin with the prefix
+                        <code class="literal">x-image-meta-property-</code>. These headers are free-form key and value pairs
+                        that have been saved with the image metadata. The key is the string
+                        after <code class="literal">x-image-meta-property-</code> and the value is the value of the header.</p><p>The response’s <code class="literal">ETag</code> header will always be equal to the
+                        <code class="literal">x-image-meta-checksum</code> value.</p><p>The response’s <code class="literal">x-image-meta-is_public</code> value is a boolean indicating
+                        whether the image is publicly available.</p><p>The response’s <code class="literal">x-image-meta-owner</code> value is a string which may either
+                        be null or which will indicate the owner of the image.</p></div></div><div class="sect3" id="retrieve-raw-image-data"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Retrieve Raw Image Data</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#retrieve-raw-image-data">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>retrieve-raw-image-data</li></ul></div></div></div></div><p>We want to retrieve that actual raw data for a specific virtual machine image
+                    that the Glance server knows about.</p><p>We have queried the Glance server for a list of images and the
+                    data returned includes the <code class="literal">uri</code> field for each available image. This
+                    <code class="literal">uri</code> field value contains the exact location needed to get the metadata
+                    for a specific image.</p><p>Continuing the example from above, in order to get metadata about the
+                    first image returned, we can issue a <code class="literal">HEAD</code> request to the Glance
+                    server for the image’s URI.</p><p>We issue a <code class="literal">GET</code> request to
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9</code> to
+                    retrieve metadata for that image as well as the image itself encoded
+                    into the response body.</p><p>The metadata is returned as a set of HTTP headers that begin with the
+                    prefix <code class="literal">x-image-meta-</code>. The following shows an example of the HTTP headers
+                    returned from the above <code class="literal">GET</code> request:</p><div class="verbatim-wrap"><pre class="screen">x-image-meta-uri              http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9
+x-image-meta-name             SLES 15
+x-image-meta-disk_format      vhd
+x-image-meta-container_format ovf
+x-image-meta-size             5368709120
+x-image-meta-checksum         c2e5db72bd7fd153f53ede5da5a06de3
+x-image-meta-created_at       2010-02-03 09:34:01
+x-image-meta-updated_at       2010-02-03 09:34:01
+x-image-meta-deleted_at
+x-image-meta-status           available
+x-image-meta-is_public        true
+x-image-meta-min_ram          256
+x-image-meta-min_disk         5
+x-image-meta-owner            null
+x-image-meta-property-distro  SLES 15</pre></div><div id="id-1.3.10.9.8.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>All timestamps returned are in UTC.</p><p>The <code class="literal">x-image-meta-updated_at</code> timestamp is the timestamp when an
+                        image’s metadata was last updated, not its image data, as all
+                        image data is immutable once stored in Glance.</p><p>There may be multiple headers that begin with the prefix
+                        <code class="literal">x-image-meta-property-</code>. These headers are free-form key and value pairs
+                        that have been saved with the image metadata. The key is the string
+                        after <code class="literal">x-image-meta-property-</code> and the value is the value of the header.</p><p>The response’s <code class="literal">Content-Length</code> header shall be equal to the value of
+                        the <code class="literal">x-image-meta-size</code> header.</p><p>The response’s <code class="literal">ETag</code> header will always be equal to the
+                        <code class="literal">x-image-meta-checksum</code> value.</p><p>The response’s <code class="literal">x-image-meta-is_public</code> value is a boolean indicating
+                        whether the image is publicly available.</p><p>The response’s <code class="literal">x-image-meta-owner</code> value is a string which may either
+                        be null or which will indicate the owner of the image.</p><p>The image data itself will be the body of the HTTP response returned
+                        from the request, which will have content-type of
+                        <code class="literal">application/octet-stream</code>.</p></div></div><div class="sect3" id="add-a-new-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add a New Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#add-a-new-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>add-a-new-image</li></ul></div></div></div></div><p>We have created a new virtual machine image in some way (created a
+                    snapshot or backed up an existing image) and we
+                    wish to do two things:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Store the disk image data in Glance.</p></li><li class="listitem "><p>Store metadata about this image in Glance.</p></li></ul></div><p>We can do the above two activities in a single call to the Glance API.
+                    Assuming, like in the examples above, that a Glance API server is running
+                    at <code class="literal">http://glance.openstack.example.org</code>, we issue a <code class="literal">POST</code> request to add an image to
+                    Glance:</p><div class="verbatim-wrap"><pre class="screen">POST http://glance.openstack.example.org/v1/images</pre></div><p>The metadata about the image is sent to Glance in HTTP headers. The body
+                    of the HTTP request to the Glance API will be the MIME-encoded disk
+                    image data.</p></div><div class="sect3" id="reserve-a-new-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Reserve a New Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#reserve-a-new-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>reserve-a-new-image</li></ul></div></div></div></div><p>We can also perform the activities described in <a class="xref" href="glance-user-guide.html#add-a-new-image" title="1.9.3.6. Add a New Image">Section 1.9.3.6, “Add a New Image”</a> using two
+                    separate calls to the Image API; the first to register the image metadata, and
+                    the second to add the image disk data. This is known as reserving an image.</p><p>The first call should be a <code class="literal">POST</code> to <code class="literal">http://glance.openstack.example.org/v1/images</code>,
+                    which will result in a new image id being registered with a status of
+                    <code class="literal">queued</code>:</p><div class="verbatim-wrap"><pre class="screen">{'image':
+ {'status': 'queued',
+  'id': '71c675ab-d94f-49cd-a114-e12490b328d9',
+  ...}
+ ...}</pre></div><p>The image data can then be added using a <code class="literal">PUT</code> to
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9</code>.
+                    The image status will then be set to <code class="literal">active</code> by Glance.</p><p>
+              <span class="bold"><strong>Image Metadata in HTTP Headers</strong></span>
+            </p><p>Glance will view as image metadata any HTTP header that it receives in a
+                    <code class="literal">POST</code> request where the header key is prefixed with the strings
+                    <code class="literal">x-image-meta-</code> and <code class="literal">x-image-meta-property-</code>.</p><p>The list of metadata headers that Glance accepts are listed below.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">x-image-meta-name</code>
+                </p><p>This header is required, unless reserving an image. Its value should be the
+                            name of the image.</p><div id="id-1.3.10.9.10.9.1.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The name of an image <span class="emphasis"><em>is not unique to a Glance node</em></span>. It
+                            would be an unrealistic expectation of users to know all the unique
+                            names of all other user’s images.</p></div></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-id</code>
+                </p><p>This header is optional.</p><p>When present, Glance will use the supplied identifier for the image.
+                            If the identifier already exists in that Glance node, then a
+                            <span class="bold"><strong>409 Conflict</strong></span> will be returned by Glance. The value of the header
+                            must be a uuid in hexadecimal string notation
+                            (that is 71c675ab-d94f-49cd-a114-e12490b328d9).</p><p>When this header is <span class="emphasis"><em>not</em></span> present, Glance will generate an identifier
+                            for the image and return this identifier in the response (see below).</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-store</code>
+                </p><p>This header is optional. Valid values are one of <code class="literal">file</code>, <code class="literal">rbd</code>,
+                            <code class="literal">swift</code>, <code class="literal">cinder</code>, <code class="literal">sheepdog</code> or <code class="literal">vsphere</code>.</p><p>When present, Glance will attempt to store the disk image data in the
+                            backing store indicated by the value of the header. If the Glance node
+                            does not support the backing store, Glance will return a <span class="bold"><strong>400 Bad Request</strong></span>.</p><p>When not present, Glance will store the disk image data in the backing
+                            store that is marked as default. See the configuration option <code class="literal">default_store</code>
+                            for more information.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-disk_format</code>
+                </p><p>This header is required, unless reserving an image. Valid values are one of
+                            <code class="literal">aki</code>, <code class="literal">ari</code>, <code class="literal">ami</code>, <code class="literal">raw</code>, <code class="literal">iso</code>, <code class="literal">vhd</code>, <code class="literal">vhdx</code>, <code class="literal">vdi</code>,
+                            <code class="literal">qcow2</code>, <code class="literal">vmdk</code> or <code class="literal">ploop</code>.</p><p>For more information, see <a class="xref" href="glance-user-guide.html#formats" title="1.6. Disk and Container Formats">Section 1.6, “Disk and Container Formats”</a>.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-container_format</code>
+                </p><p>This header is required, unless reserving an image. Valid values are one of
+                            <code class="literal">aki</code>, <code class="literal">ari</code>, <code class="literal">ami</code>, <code class="literal">bare</code>, <code class="literal">ova</code>, <code class="literal">ovf</code>, or <code class="literal">docker</code>.</p><p>For more information, see <a class="xref" href="glance-user-guide.html#formats" title="1.6. Disk and Container Formats">Section 1.6, “Disk and Container Formats”</a>.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-size</code>
+                </p><p>This header is optional.</p><p>When present, Glance assumes that the expected size of the request body
+                            will be the value of this header. If the length in bytes of the request
+                            body <span class="emphasis"><em>does not match</em></span> the value of this header, Glance will return a
+                            <span class="bold"><strong>400 Bad Request</strong></span>.</p><p>When not present, Glance will calculate the image’s size based on the size
+                            of the request body.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-checksum</code>
+                </p><p>This header is optional. When present, it specifies the <span class="bold"><strong>MD5</strong></span> checksum
+                            of the image file data.</p><p>When present, Glance will verify the checksum generated from the back-end
+                            store while storing your image against this value and return a
+                            <span class="bold"><strong>400 Bad Request</strong></span> if the values do not match.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-is_public</code>
+                </p><p>This header is optional.</p><p>When Glance finds the string <code class="literal">true</code> (case-insensitive), the image is marked as
+                            a public one, meaning that any user may view its metadata and may read
+                            the disk image from Glance.</p><p>When not present, the image is assumed to be <span class="emphasis"><em>not public</em></span> and owned by
+                            a user.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-min_ram</code>
+                </p><p>This header is optional. When present, it specifies the minimum amount of
+                            RAM in megabytes required to run this image on a server.</p><p>When not present, the image is assumed to have a minimum RAM requirement of 0.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-min_disk</code>
+                </p><p>This header is optional. When present, it specifies the expected minimum disk
+                            space in gigabytes required to run this image on a server.</p><p>When not present, the image is assumed to have a minimum disk space
+                            requirement of 0.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-owner</code>
+                </p><p>This header is optional and only meaningful for admins.</p><p>Glance normally sets the owner of an image to be the tenant or user
+                            (depending on the <code class="literal">owner_is_tenant</code> configuration option) of the
+                            authenticated user issuing the request. However, if the authenticated user
+                            has the Admin role, this default may be overridden by setting this header to
+                            null or to a string identifying the owner of the image.</p></li><li class="listitem "><p>
+                  <code class="literal">x-image-meta-property-*</code>
+                </p><p>When Glance receives any HTTP header whose key begins with the string prefix
+                            <code class="literal">x-image-meta-property-</code>, Glance adds the key and value to a set of custom,
+                            free-form image properties stored with the image. The key is a
+                            lower-cased string following the prefix <code class="literal">x-image-meta-property-</code> with dashes
+                            and punctuation replaced with underscores.</p><p>There is no limit on the number of free-form key and value attributes that can
+                            be attached to the image. However, keep in mind that the 8K limit on the
+                            size of all the HTTP headers sent in a request will effectively limit the
+                            number of image properties.</p></li></ul></div></div><div class="sect3" id="update-an-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update an Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#update-an-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>update-an-image</li></ul></div></div></div></div><p>Glance will consider any HTTP header that it receives in a <code class="literal">PUT</code> request
+                    as an instance of image metadata. In this case, the header key should be
+                    prefixed with the strings <code class="literal">x-image-meta-</code> and <code class="literal">x-image-meta-property-</code>.</p><p>If an image was previously reserved, and thus is in the <code class="literal">queued</code> state, then
+                    image data can be added by including it as the request body. If the image
+                    already has data associated with it (for example, it is not in the <code class="literal">queued</code>
+                    state), then including a request body will result in a <span class="bold"><strong>409 Conflict</strong></span>
+                    exception.</p><p>On success, the <code class="literal">PUT</code> request will return the image metadata encoded as HTTP
+                    headers.</p><p>See more about image statuses here <a class="xref" href="glance-user-guide.html#image-statuses" title="1.2. Image Statuses">Section 1.2, “Image Statuses”</a>.</p></div><div class="sect3" id="list-image-memberships"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Image Memberships</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-image-memberships">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-image-memberships</li></ul></div></div></div></div><p>We want to see a list of the other system tenants (or users, if
+                    <code class="literal">owner_is_tenant</code> is <code class="literal">False</code>) that may access a given virtual machine image that
+                    the Glance server knows about. We take the <code class="literal">uri</code> field of the image data,
+                    append <code class="literal">/members</code> to it, and issue a <code class="literal">GET</code> request on the resulting URL.</p><p>Continuing from the example above, in order to get the memberships for the
+                    first image returned, we can issue a <code class="literal">GET</code> request to the Glance
+                    server for
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9/members</code>.
+                    And we will get back JSON data such as the following:</p><div class="verbatim-wrap"><pre class="screen">{'members': [
+ {'member_id': 'tenant1',
+  'can_share': false}
+ ...]}</pre></div><p>The <code class="literal">member_id</code> field identifies a tenant with which the image is shared. If
+                    that tenant is authorized to further share the image, the <code class="literal">can_share</code> field is
+                    <code class="literal">true</code>.</p></div><div class="sect3" id="list-shared-images"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Shared Images</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-shared-images">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-shared-images</li></ul></div></div></div></div><p>We want to see a list of images which are shared with a given tenant. We issue
+                    a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v1/shared-images/tenant1</code>. We
+                    will get back JSON data such as the following:</p><div class="verbatim-wrap"><pre class="screen">{'shared_images': [
+ {'image_id': '71c675ab-d94f-49cd-a114-e12490b328d9',
+  'can_share': false}
+ ...]}</pre></div><p>The <code class="literal">image_id</code> field identifies an image shared with the tenant named by
+                    <span class="emphasis"><em>member_id</em></span>. If the tenant is authorized to further share the image, the
+                    <code class="literal">can_share</code> field is <code class="literal">true</code>.</p></div><div class="sect3" id="add-a-member-to-an-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add a Member to an Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#add-a-member-to-an-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>add-a-member-to-an-image</li></ul></div></div></div></div><p>We want to authorize a tenant to access a private image. We issue a <code class="literal">PUT</code>
+                    request to
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9/members/tenant1</code>.
+                    With no body, this will add the membership to the image, leaving existing
+                    memberships unmodified and defaulting new memberships to have <code class="literal">can_share</code>
+                    set to <code class="literal">false</code>. We may also optionally attach a body of the following form:</p><div class="verbatim-wrap"><pre class="screen">{'member':
+ {'can_share': true}
+}</pre></div><p>If such a body is provided, both existing and new memberships will have
+                    <code class="literal">can_share</code> set to the provided value (either <code class="literal">true</code> or <code class="literal">false</code>). This query
+                    will return a 204 (<code class="literal">No Content</code>) status code.</p></div><div class="sect3" id="remove-a-member-from-an-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remove a Member from an Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#remove-a-member-from-an-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>remove-a-member-from-an-image</li></ul></div></div></div></div><p>We want to revoke a tenant’s right to access a private image. We issue a
+                    <code class="literal">DELETE</code> request to <code class="literal">http://glance.openstack.example.org/v1/images/1/members/tenant1</code>.
+                    This query will return a 204 (<code class="literal">No Content</code>) status code.</p></div><div class="sect3" id="replace-a-membership-list-for-an-image"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.3.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Replace a Membership List for an Image</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#replace-a-membership-list-for-an-image">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>replace-a-membership-list-for-an-image</li></ul></div></div></div></div><p>The full membership list for a given image may be replaced. We issue a <code class="literal">PUT</code>
+                    request to
+                    <code class="literal">http://glance.openstack.example.org/v1/images/71c675ab-d94f-49cd-a114-e12490b328d9/members</code>
+                    with a body of the following form:</p><div class="verbatim-wrap"><pre class="screen">{'memberships': [
+ {'member_id': 'tenant1',
+  'can_share': false}
+ ...]}</pre></div><p>All existing memberships which are not named in the replacement body are
+                    removed, and those which are named have their <code class="literal">can_share</code> settings changed as
+                    specified. (The <code class="literal">can_share</code> setting may be omitted, which will cause that
+                    setting to remain unchanged in the existing memberships.) All new memberships
+                    will be created, with <code class="literal">can_share</code> defaulting to <code class="literal">false</code> unless it is specified
+                    otherwise.</p></div></div><div class="sect2" id="image-membership-changes-in-version-2-0"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Membership Changes in Version 2.0</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#image-membership-changes-in-version-2-0">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>image-membership-changes-in-version-2-0</li></ul></div></div></div></div><p>Version 2.0 of the Images API eliminates the <code class="literal">can_share</code> attribute of image
+                membership. In the version 2.0 model, image sharing is not transitive.</p><p>In version 2.0, image members have a <code class="literal">status</code> attribute that reflects
+                how the image should be treated with respect to that image member’s image-list.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>The <code class="literal">status</code> attribute may have one of three values: <code class="literal">pending</code>,
+                        <code class="literal">accepted</code>, or <code class="literal">rejected</code>.</p></li><li class="listitem "><p>By default, only those shared images with status <code class="literal">accepted</code> are included in
+                        an image member’s image-list.</p></li><li class="listitem "><p>Only an image member may change their membership status.</p></li><li class="listitem "><p>Only an image owner may create members on an image. The status of a newly
+                        created image member is <code class="literal">pending</code>. The image owner cannot change the
+                        status of a member.</p></li></ul></div><div class="sect3" id="distinctions-from-version-1-x-api-calls"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Distinctions from Version 1.x API Calls</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#distinctions-from-version-1-x-api-calls">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>distinctions-from-version-1-x-api-calls</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>The response to a request to list the members of an image has changed.</p><p>call: <code class="literal">GET</code> on <code class="literal">/v2/images/{imageId}/members</code></p><p>response: see the JSON schema at <code class="literal">/v2/schemas/members</code></p></li><li class="listitem "><p>The request body in the call to create an image member has changed.</p><p>call: <code class="literal">POST</code> to <code class="literal">/v2/images/{imageId}/members</code></p><p>request body:</p><div class="verbatim-wrap"><pre class="screen">{ "member": "&lt;MEMBER_ID&gt;" }</pre></div><p>Where the <code class="literal">{memberId}</code> is the tenant ID of the image member.</p><p>The member status of a newly created image member is <code class="literal">pending</code>.</p></li></ul></div></div><div class="sect3" id="new-api-calls"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">New API Calls</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#new-api-calls">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>new-api-calls</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Change the status of an image member</p><p>call: <code class="literal">PUT</code> on <code class="literal">/v2/images/{imageId}/members/{memberId}</code>.</p><p>Request body:</p><div class="verbatim-wrap"><pre class="screen">{ "status": "&lt;STATUS_VALUE&gt;" }</pre></div><p>Where &lt;STATUS_VALUE&gt; is <code class="literal">pending</code>, <code class="literal">accepted</code>, or <code class="literal">rejected</code>.
+                            The <code class="literal">{memberId}</code> is the tenant ID of the image member.</p></li></ul></div></div></div><div class="sect2" id="images-v2-tasks-api"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Images v2 Tasks API</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#images-v2-tasks-api">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>images-v2-tasks-api</li></ul></div></div></div></div><p>Version 2 of the OpenStack Images API introduces a Task resource that is used
+                to create and monitor long-running asynchronous image-related processes. See
+                the <a class="link" href="https://docs.openstack.org/glance/pike/admin/tasks.html#tasks" target="_blank">Tasks</a>
+                section of the Glance documentation for more information.</p><p>The following Task calls are available:</p><div class="sect3" id="create-a-task"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a Task</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#create-a-task">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>create-a-task</li></ul></div></div></div></div><p>A user wants to initiate a Task. The user issues a <code class="literal">POST</code> request to
+                    <code class="literal">/v2/tasks</code>. The request body is of Content-type <code class="literal">application/json</code> and
+                    must contain the following fields:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">type</code>: A string specified by the enumeration defined in the Task schema.</p></li><li class="listitem "><p><code class="literal">input</code>: A JSON object. The content is defined by the cloud provider who
+                            has exposed the endpoint being contacted.</p></li></ul></div><p>The response is a Task entity as defined by the Task schema. It includes an
+                    <code class="literal">id</code> field that can be used in a subsequent call to poll the Task for status
+                    changes.</p><p>A Task is created in <code class="literal">pending</code> status.</p></div><div class="sect3" id="show-a-task"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Show a Task</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#show-a-task">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>show-a-task</li></ul></div></div></div></div><p>A user wants to see detailed information about a Task the user owns. The user
+                    issues a <code class="literal">GET</code> request to <code class="literal">/v2/tasks/{taskId}</code>.</p><p>The response is in <code class="literal">application/json</code> format. The exact structure is given
+                    by the Task schema located at <code class="literal">/v2/schemas/task</code>.</p></div><div class="sect3" id="list-tasks"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Tasks</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-tasks">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-tasks</li></ul></div></div></div></div><p>A user wants to see what Tasks have been created in their project. The
+                    user issues a <code class="literal">GET</code> request to <code class="literal">/v2/tasks</code>.</p><p>The response is in <code class="literal">application/json</code> format. The exact structure is given
+                    by the task schema located at <code class="literal">/v2/schemas/tasks</code>.</p><div id="id-1.3.10.11.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>As indicated by the schema, the list of Tasks is provided in a
+                    sparse format. To see more information about a particular Task in the list,
+                    the user would use the show Task call described above.</p></div></div><div class="sect3" id="filtering-and-sorting-the-tasks-list"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filtering and Sorting the Tasks List</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#filtering-and-sorting-the-tasks-list">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>filtering-and-sorting-the-tasks-list</li></ul></div></div></div></div><p>The <code class="literal">GET /v2/tasks</code> request takes query parameters that server to filter the
+                    returned list of Tasks. The following list details these query parameters.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">status={status}</code>
+                </p><p>Filters the list to display only those tasks in the specified status. See
+                      the Task schema or the <a class="xref" href="glance-user-guide.html#task-statuses" title="1.3. Task Statuses">Section 1.3, “Task Statuses”</a> section of this
+                      documentation for the legal values to use for <code class="literal">{status}</code>.</p><p>For example, a request to <code class="literal">GET /v2/tasks?status=pending</code> would return only
+                            those Tasks whose current status is <code class="literal">pending</code>.</p></li><li class="listitem "><p>
+                  <code class="literal">type={type}</code>
+                </p><p>Filters the list to display only those Tasks of the specified type. See the
+                            enumeration defined in the Task schema for the legal values to use for
+                            <code class="literal">{type}</code>.</p><p>For example, a request to <code class="literal">GET /v2/tasks?type=import</code> would return only
+                            import Tasks.</p></li><li class="listitem "><p>
+                  <code class="literal">sort_dir={direction}</code>
+                </p><p>Sorts the list of tasks according to <code class="literal">updated_at</code> datetime. Legal values
+                            are <code class="literal">asc</code> (ascending) and <code class="literal">desc</code> (descending). By default, the Task list
+                            is sorted by <code class="literal">created_at</code> time in descending chronological order.</p></li></ul></div></div></div><div class="sect2" id="id-1.3.10.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.9.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">API Message Localization</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.10.12">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Glance supports HTTP message localization. For example, an HTTP client can
+                receive API messages in Chinese even if the locale language of the server is
+                English.</p><div class="sect3" id="id-1.3.10.12.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.9.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to use it</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.10.12.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To receive localized API messages, the HTTP client needs to specify the
+                    <span class="bold"><strong>Accept-Language</strong></span> header to indicate the language that will translate the
+                    message. For more information about Accept-Language, refer to <a class="link" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" target="_blank">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html</a></p><p>A typical curl API request will be like below:</p><div class="verbatim-wrap"><pre class="screen">curl -i -X GET -H 'Accept-Language: zh' -H 'Content-Type: application/json'
+http://glance.openstack.example.org/v2/images/aaa</pre></div><p>Then the response will be like the following:</p><div class="verbatim-wrap"><pre class="screen">HTTP/1.1 404 Not Found
+Content-Length: 234
+Content-Type: text/html; charset=UTF-8
+X-Openstack-Request-Id: req-54d403a0-064e-4544-8faf-4aeef086f45a
+Date: Sat, 22 Feb 2014 06:26:26 GMT
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;404 Not Found&lt;/h1&gt;
+&amp;#25214;&amp;#19981;&amp;#21040;&amp;#20219;&amp;#20309;&amp;#20855;&amp;#26377;&amp;#26631;&amp;#35782; aaa &amp;#30340;&amp;#26144;&amp;#20687;&lt;br /&gt;&lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div><div id="id-1.3.10.12.3.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Make sure to have a language package under <code class="literal">/usr/share/locale-langpack/</code> on
+                        the target Glance server.</p></div></div></div></div><div class="sect1" id="using-glance-s-client-tools"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Glance’s Client Tools</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-glance-s-client-tools">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-glance-s-client-tools</li></ul></div></div></div></div><p>The command-line tool and python library for Glance are both installed
+            through the python-glanceclient project. Explore the following resources
+            for more information:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+              <a class="link" href="http://docs.openstack.org/developer/python-glanceclient/" target="_blank">Official Docs</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="http://pypi.python.org/pypi/python-glanceclient" target="_blank">Pypi Page</a>
+            </p></li><li class="listitem "><p>
+              <a class="link" href="http://github.com/openstack/python-glanceclient" target="_blank">GitHub Project</a>
+            </p></li></ul></div></div><div class="sect1" id="using-glance-s-metadata-definitions-catalog-public-apis"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Glance’s Metadata Definitions Catalog Public APIs</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-glance-s-metadata-definitions-catalog-public-apis">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-glance-s-metadata-definitions-catalog-public-apis</li></ul></div></div></div></div><p>A common API hosted by the Glance service for vendors, admins, services, and
+            users to meaningfully define available key and value pair and tag metadata.
+            The intent is to enable better metadata collaboration across artifacts,
+            services, and projects for OpenStack users.</p><p>This is about the definition of the available metadata that can be used on
+            different types of resources (images, artifacts, volumes, flavors, aggregates,
+            etc). A definition includes the properties type, its key, its description,
+            and its constraints. This catalog will not store the values for specific
+            instance properties.</p><p>For example, a definition of a virtual CPU topology property for number of
+            cores will include the key to use, a description, and value constraints like
+            requiring it to be an integer. So, a user, potentially through Horizon, would
+            be able to search this catalog to list the available properties they can add to
+            a flavor or image. They will see the virtual CPU topology property in the list
+            and know that it must be an integer. In the Horizon example, when the user adds
+            the property, its key and value will be stored in the service that owns that
+            resource (Nova for flavors and in Glance for images).</p><p>Diagram: <a class="link" href="https://wiki.openstack.org/w/images/b/bb/Glance-Metadata-API.png" target="_blank">https://wiki.openstack.org/w/images/b/bb/Glance-Metadata-API.png</a></p><p>Glance Metadata Definitions Catalog implementation started with API version v2.</p><div class="sect2" id="id-1.3.12.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.12.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Glance depends on Keystone and the OpenStack Identity API to handle
+                authentication of clients. You must obtain an authentication token from
+                Keystone send it along with all API requests to Glance through the
+                <code class="literal">X-Auth-Token</code> header. Glance will communicate back to Keystone to verify
+                the token validity and obtain your identity credentials.</p><p>See <a class="link" href="https://docs.openstack.org/glance/pike/admin/authentication.html#authentication" target="_blank">Authentication With Keystone</a>
+                for more information on integrating with Keystone.</p></div><div class="sect2" id="using-v2-x"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using v2.X</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-v2-x">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-v2-x</li></ul></div></div></div></div><p>For the purpose of examples, assume there is a Glance API server running
+                at the URL <code class="literal">http://glance.openstack.example.org</code> on the default port 80.</p><div class="sect3" id="list-available-namespaces"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Available Namespaces</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-available-namespaces">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-available-namespaces</li></ul></div></div></div></div><p>We want to see a list of available namespaces that the authenticated user
+                    has access to. This includes namespaces owned by the user,
+                    namespaces shared with the user and public namespaces.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v2/metadefs/namespaces</code>
+                    to retrieve this list of available namespaces.
+                    The data is returned as a JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "namespaces": [
+      {
+          "namespace": "MyNamespace",
+          "display_name": "My User Friendly Namespace",
+          "description": "My description",
+          "visibility": "public",
+          "protected": true,
+          "owner": "The Test Owner",
+          "self": "/v2/metadefs/namespaces/MyNamespace",
+          "schema": "/v2/schemas/metadefs/namespace",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z",
+          "resource_type_associations": [
+              {
+                  "name": "OS::Nova::Aggregate",
+                  "created_at": "2014-08-28T17:13:06Z",
+                  "updated_at": "2014-08-28T17:13:06Z"
+              },
+              {
+                  "name": "OS::Nova::Flavor",
+                  "prefix": "aggregate_instance_extra_specs:",
+                  "created_at": "2014-08-28T17:13:06Z",
+                  "updated_at": "2014-08-28T17:13:06Z"
+              }
+          ]
+      }
+  ],
+  "first": "/v2/metadefs/namespaces?sort_key=created_at&amp;sort_dir=asc",
+  "schema": "/v2/schemas/metadefs/namespaces"
+}</pre></div><div id="id-1.3.12.8.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Listing namespaces will only show the summary of each namespace including
+                        counts and resource type associations. Detailed responses including all its
+                        objects definitions, property definitions will only be available on
+                        each individual GET namespace request.</p></div></div><div class="sect3" id="filtering-namespaces-lists"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filtering Namespaces Lists</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#filtering-namespaces-lists">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>filtering-namespaces-lists</li></ul></div></div></div></div><p><code class="literal">GET /v2/metadefs/namespaces</code> requests take query parameters that serve to
+                    filter the returned list of namespaces. The following
+                    list details these query parameters.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">resource_types=RESOURCE_TYPES</code>
+                </p><p>Filters namespaces having a <code class="literal">resource_types</code> within the list of
+                            comma separated <code class="literal">RESOURCE_TYPES</code>.</p></li></ul></div><p>GET resource also accepts additional query parameters:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">sort_key=KEY</code>
+                </p><p>Results will be ordered by the specified sort attribute <code class="literal">KEY</code>. Accepted
+                            values include <code class="literal">namespace</code>, <code class="literal">created_at</code> (default) and <code class="literal">updated_at</code>.</p></li><li class="listitem "><p>
+                  <code class="literal">sort_dir=DIR</code>
+                </p><p>Results will be sorted in the direction <code class="literal">DIR</code>. Accepted values are <code class="literal">asc</code>
+                            for ascending or <code class="literal">desc</code> (default) for descending.</p></li><li class="listitem "><p>
+                  <code class="literal">marker=NAMESPACE</code>
+                </p><p>A namespace identifier marker may be specified. When present only
+                            namespaces which occur after the identifier <code class="literal">NAMESPACE</code> will be listed,
+                            for example the namespaces which have a <code class="literal">sort_key</code> later than that of the marker
+                            <code class="literal">NAMESPACE</code> in the <code class="literal">sort_dir</code> direction.</p></li><li class="listitem "><p>
+                  <code class="literal">limit=LIMIT</code>
+                </p><p>When present the maximum number of results returned will not exceed <code class="literal">LIMIT</code>.</p></li></ul></div><div id="id-1.3.12.8.4.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>If the specified <code class="literal">LIMIT</code> exceeds the operator defined limit (<code class="literal">api_limit_max</code>)
+                        then the number of results returned may be less than <code class="literal">LIMIT</code>.</p></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                  <code class="literal">visibility=PUBLIC</code>
+                </p><p>An admin user may use the <code class="literal">visibility</code> parameter to control which results are
+                            returned (<code class="literal">PRIVATE</code> or <code class="literal">PUBLIC</code>).</p></li></ul></div></div><div class="sect3" id="retrieve-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Retrieve Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#retrieve-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>retrieve-namespace</li></ul></div></div></div></div><p>We want to see a more detailed information about a namespace that the
+                    authenticated user has access to. The detail includes the properties, objects,
+                    and resource type associations.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}</code>
+                    to retrieve the namespace details.
+                    The data is returned as a JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "namespace": "MyNamespace",
+  "display_name": "My User Friendly Namespace",
+  "description": "My description",
+  "visibility": "public",
+  "protected": true,
+  "owner": "The Test Owner",
+  "schema": "/v2/schemas/metadefs/namespace",
+  "resource_type_associations": [
+      {
+          "name": "OS::Glance::Image",
+          "prefix": "hw_",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z"
+      },
+      {
+          "name": "OS::Cinder::Volume",
+          "prefix": "hw_",
+          "properties_target": "image",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z"
+      },
+      {
+          "name": "OS::Nova::Flavor",
+          "prefix": "filter1:",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z"
+      }
+  ],
+  "properties": {
+      "nsprop1": {
+          "title": "My namespace property1",
+          "description": "More info here",
+          "type": "boolean",
+          "default": true
+      },
+      "nsprop2": {
+          "title": "My namespace property2",
+          "description": "More info here",
+          "type": "string",
+          "default": "value1"
+      }
+  },
+  "objects": [
+      {
+          "name": "object1",
+          "description": "my-description",
+          "self": "/v2/metadefs/namespaces/MyNamespace/objects/object1",
+          "schema": "/v2/schemas/metadefs/object",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z",
+          "required": [],
+          "properties": {
+              "prop1": {
+                  "title": "My object1 property1",
+                  "description": "More info here",
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          }
+      },
+      {
+          "name": "object2",
+          "description": "my-description",
+          "self": "/v2/metadefs/namespaces/MyNamespace/objects/object2",
+          "schema": "/v2/schemas/metadefs/object",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z",
+          "properties": {
+              "prop1": {
+                  "title": "My object2 property1",
+                  "description": "More info here",
+                  "type": "integer",
+                  "default": 20
+              }
+          }
+      }
+  ]
+}</pre></div></div><div class="sect3" id="retrieve-available-resource-types"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Retrieve available Resource Types</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#retrieve-available-resource-types">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>retrieve-available-resource-types</li></ul></div></div></div></div><p>We want to see the list of all resource types that are available in Glance.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v2/metadefs/resource_types</code>
+                    to retrieve all resource types.</p><p>The data is returned as a JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "resource_types": [
+      {
+          "created_at": "2014-08-28T17:13:04Z",
+          "name": "OS::Glance::Image",
+          "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+          "created_at": "2014-08-28T17:13:04Z",
+          "name": "OS::Cinder::Volume",
+          "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+          "created_at": "2014-08-28T17:13:04Z",
+          "name": "OS::Nova::Flavor",
+          "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+          "created_at": "2014-08-28T17:13:04Z",
+          "name": "OS::Nova::Aggregate",
+          "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+          "created_at": "2014-08-28T17:13:04Z",
+          "name": "OS::Nova::Server",
+          "updated_at": "2014-08-28T17:13:04Z"
+      }
+  ]
+}</pre></div></div><div class="sect3" id="retrieve-resource-types-associated-with-a-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Retrieve Resource Types associated with a Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#retrieve-resource-types-associated-with-a-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>retrieve-resource-types-associated-with-a-namespace</li></ul></div></div></div></div><p>We want to see the list of resource types that are associated for a specific
+                    namespace.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/resource_types</code>
+                    to retrieve resource types.</p><p>The data is returned as a JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "resource_type_associations" : [
+      {
+         "name" : "OS::Glance::Image",
+         "prefix" : "hw_",
+         "created_at": "2014-08-28T17:13:04Z",
+         "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+         "name" :"OS::Cinder::Volume",
+         "prefix" : "hw_",
+         "properties_target" : "image",
+         "created_at": "2014-08-28T17:13:04Z",
+         "updated_at": "2014-08-28T17:13:04Z"
+      },
+      {
+         "name" : "OS::Nova::Flavor",
+         "prefix" : "hw:",
+         "created_at": "2014-08-28T17:13:04Z",
+         "updated_at": "2014-08-28T17:13:04Z"
+      }
+  ]
+}</pre></div></div><div class="sect3" id="add-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#add-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>add-namespace</li></ul></div></div></div></div><p>We want to create a new namespace that can contain the properties, objects,
+                    etc.</p><p>We issue a <code class="literal">POST</code> request to add an namespace to Glance:</p><div class="verbatim-wrap"><pre class="screen">POST http://glance.openstack.example.org/v2/metadefs/namespaces/</pre></div><p>The input data is an JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "namespace": "MyNamespace",
+  "display_name": "My User Friendly Namespace",
+  "description": "My description",
+  "visibility": "public",
+  "protected": true
+}</pre></div><div id="id-1.3.12.8.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Optionally properties, objects and resource type associations could be
+                        added in the same input. See GET Namespace output above (input will be
+                        similar).</p></div></div><div class="sect3" id="update-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#update-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>update-namespace</li></ul></div></div></div></div><p>We want to update an existing namespace.</p><p>We issue a <code class="literal">PUT</code> request to update an namespace to Glance:</p><div class="verbatim-wrap"><pre class="screen">PUT http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}</pre></div><p>The input data is similar to Add Namespace.</p></div><div class="sect3" id="delete-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#delete-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>delete-namespace</li></ul></div></div></div></div><p>We want to delete an existing namespace including all its objects,
+                    properties etc.</p><p>We issue a <code class="literal">DELETE</code> request to delete an namespace to Glance:</p><div class="verbatim-wrap"><pre class="screen">DELETE http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}</pre></div></div><div class="sect3" id="associate-resource-type-with-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Associate Resource Type with Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#associate-resource-type-with-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>associate-resource-type-with-namespace</li></ul></div></div></div></div><p>We want to associate a resource type with an existing namespace.</p><p>We issue a <code class="literal">POST</code> request to associate resource type to Glance:</p><div class="verbatim-wrap"><pre class="screen">POST http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/resource_types</pre></div><p>The input data is an JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+        "name" :"OS::Cinder::Volume",
+        "prefix" : "hw_",
+        "properties_target" : "image",
+        "created_at": "2014-08-28T17:13:04Z",
+        "updated_at": "2014-08-28T17:13:04Z"
+}</pre></div></div><div class="sect3" id="remove-resource-type-associated-with-a-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remove Resource Type associated with a Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#remove-resource-type-associated-with-a-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>remove-resource-type-associated-with-a-namespace</li></ul></div></div></div></div><p>We want to de-associate namespace from a resource type.</p><p>We issue a <code class="literal">DELETE</code> request to de-associate namespace resource type to
+                    Glance:</p><div class="verbatim-wrap"><pre class="screen">DELETE http://glance.openstack.example.org/v2//metadefs/namespaces/{namespace}/resource_types/{resource_type}</pre></div></div><div class="sect3" id="list-objects-in-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">List Objects in Namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#list-objects-in-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>list-objects-in-namespace</li></ul></div></div></div></div><p>We want to see the list of meta definition objects in a specific namespace.</p><p>We issue a <code class="literal">GET</code> request to <code class="literal">http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/objects</code>
+                    to retrieve objects.</p><p>The data is returned as a JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+      "objects": [
+      {
+          "name": "object1",
+          "description": "my-description",
+          "self": "/v2/metadefs/namespaces/MyNamespace/objects/object1",
+          "schema": "/v2/schemas/metadefs/object",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z",
+          "required": [],
+          "properties": {
+              "prop1": {
+                  "title": "My object1 property1",
+                  "description": "More info here",
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          }
+      },
+      {
+          "name": "object2",
+          "description": "my-description",
+          "self": "/v2/metadefs/namespaces/MyNamespace/objects/object2",
+          "schema": "/v2/schemas/metadefs/object",
+          "created_at": "2014-08-28T17:13:06Z",
+          "updated_at": "2014-08-28T17:13:06Z",
+          "properties": {
+              "prop1": {
+                  "title": "My object2 property1",
+                  "description": "More info here",
+                  "type": "integer",
+                  "default": 20
+              }
+          }
+      }
+  ],
+  "schema": "/v2/schemas/metadefs/objects"
+}</pre></div></div><div class="sect3" id="add-object-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add object in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#add-object-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>add-object-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to create a new object which can group the properties.</p><p>We issue a <code class="literal">POST</code> request to add object to a namespace in Glance:</p><div class="verbatim-wrap"><pre class="screen">POST http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/objects</pre></div><p>The input data is an JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "name": "StorageQOS",
+  "description": "Our available storage QOS.",
+  "required": [
+      "minIOPS"
+  ],
+  "properties": {
+      "minIOPS": {
+          "type": "integer",
+          "description": "The minimum IOPs required",
+          "default": 100,
+          "minimum": 100,
+          "maximum": 30000369
+      },
+      "burstIOPS": {
+          "type": "integer",
+          "description": "The expected burst IOPs",
+          "default": 1000,
+          "minimum": 100,
+          "maximum": 30000377
+      }
+  }
+}</pre></div></div><div class="sect3" id="update-object-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update Object in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#update-object-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>update-object-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to update an existing object.</p><p>We issue a <code class="literal">PUT</code> request to update an object to Glance:</p><div class="verbatim-wrap"><pre class="screen">PUT http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/objects/{object_name}</pre></div><p>The input data is similar to Add Object.</p></div><div class="sect3" id="delete-object-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete Object in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#delete-object-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>delete-object-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to delete an existing object.</p><p>We issue a <code class="literal">DELETE</code> request to delete object in a namespace to Glance:</p><div class="verbatim-wrap"><pre class="screen">DELETE http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/objects/{object_name}</pre></div></div><div class="sect3" id="add-property-definition-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add property definition in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#add-property-definition-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>add-property-definition-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to create a new property definition in a namespace.</p><p>We issue a <code class="literal">POST</code> request to add property definition to a namespace in
+                    Glance:</p><div class="verbatim-wrap"><pre class="screen">POST http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/properties</pre></div><p>The input data is an JSON-encoded mapping in the following format:</p><div class="verbatim-wrap"><pre class="screen">{
+  "name": "hypervisor_type",
+  "title" : "Hypervisor",
+  "type": "array",
+  "description": "The type of hypervisor required",
+  "items": {
+      "type": "string",
+      "enum": [
+          "hyperv",
+          "qemu",
+          "kvm"
+      ]
+  }
+}</pre></div></div><div class="sect3" id="update-property-definition-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.16 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update property definition in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#update-property-definition-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>update-property-definition-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to update an existing object.</p><p>We issue a <code class="literal">PUT</code> request to update an property definition in a namespace to
+                    Glance:</p><div class="verbatim-wrap"><pre class="screen">PUT http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/properties/{property_name}</pre></div><p>The input data is similar to Add property definition.</p></div><div class="sect3" id="delete-property-definition-in-a-specific-namespace"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.2.17 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete property definition in a specific namespace</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#delete-property-definition-in-a-specific-namespace">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>delete-property-definition-in-a-specific-namespace</li></ul></div></div></div></div><p>We want to delete an existing object.</p><p>We issue a <code class="literal">DELETE</code> request to delete property definition in a namespace to
+                    Glance:</p><div class="verbatim-wrap"><pre class="screen">DELETE http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}/properties/{property_name}</pre></div></div></div><div class="sect2" id="id-1.3.12.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.11.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">API Message Localization</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.12.9">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Glance supports HTTP message localization. For example, an HTTP client can
+                receive API messages in Chinese even if the locale language of the server is
+                English.</p><div class="sect3" id="id-1.3.12.9.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.11.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to use it</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.12.9.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To receive localized API messages, the HTTP client needs to specify the
+                    <span class="bold"><strong>Accept-Language</strong></span> header to indicate the language to use to translate the
+                    message. For more info about Accept-Language, refer <a class="link" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html" target="_blank">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html</a></p><p>A typical curl API request will be like below:</p><div class="verbatim-wrap"><pre class="screen">curl -i -X GET -H 'Accept-Language: zh' -H 'Content-Type: application/json'
+http://glance.openstack.example.org/v2/metadefs/namespaces/{namespace}</pre></div><p>Then the response will be like the following:</p><div class="verbatim-wrap"><pre class="screen">HTTP/1.1 404 Not Found
+Content-Length: 234
+Content-Type: text/html; charset=UTF-8
+X-Openstack-Request-Id: req-54d403a0-064e-4544-8faf-4aeef086f45a
+Date: Sat, 22 Feb 2014 06:26:26 GMT
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;404 Not Found&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;404 Not Found&lt;/h1&gt;
+&amp;#25214;&amp;#19981;&amp;#21040;&amp;#20219;&amp;#20309;&amp;#20855;&amp;#26377;&amp;#26631;&amp;#35782; aaa &amp;#30340;&amp;#26144;&amp;#20687;&lt;br /&gt;&lt;br /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div><div id="id-1.3.12.9.3.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Ensure there is the language package under <code class="literal">/usr/share/locale-langpack/</code> on
+                        the target Glance server.</p></div></div></div></div><div class="sect1" id="image-signature-verification"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Signature Verification</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#image-signature-verification">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>image-signature-verification</li></ul></div></div></div></div><p>Glance has the ability to perform image validation using a digital
+            signature and asymmetric cryptography. To trigger this, you must define
+            specific image properties (described below), and have stored a
+            certificate signed with your private key in a local Barbican installation.</p><p>When the image properties exist on an image, Glance will validate
+            the uploaded image data against these properties before storing it.
+            If validation is unsuccessful, the upload will fail and the image will
+            be deleted.</p><p>Additionally, the image properties may be used by other services (for
+            example, Nova) to perform data verification when the image is downloaded
+            from Glance.</p><div class="sect2" id="id-1.3.13.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Requirements</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.13.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Barbican key manager - See <a class="link" href="http://docs.openstack.org/developer/barbican/setup/devstack.html" target="_blank">http://docs.openstack.org/developer/barbican/setup/devstack.html</a>.</p></div><div class="sect2" id="id-1.3.13.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#id-1.3.13.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The <code class="literal">etc/glance-api.conf</code> can be modified to change keystone endpoint of
+                barbican. By default barbican will try to connect to keystone at
+                <a class="link" href="http://localhost:5000/v3" target="_blank">http://localhost:5000/v3</a> but if keystone is on another host then this
+                should be changed.</p><p>In <code class="literal">glance-api.conf</code> find the following lines:</p><div class="verbatim-wrap"><pre class="screen">[barbican]
+auth_endpoint = http://localhost:5000/v3</pre></div><p>Then replace <a class="link" href="http://localhost:5000/v3" target="_blank">http://localhost:5000/v3</a> with the URL of keystone, also adding <code class="literal">/v3</code>
+                to the end of it. For example, ‘<a class="link" href="https://192.168.245.9:5000/v3" target="_blank">https://192.168.245.9:5000/v3</a>’.</p><p>Another option in <code class="literal">etc/glance-api.conf</code> which can be configured is which key manager
+                to use. By default Glance will use the default key manager defined by the Castellan
+                key manager interface, which is currently the Barbican key manager.</p><p>In <code class="literal">glance-api.conf</code> find the following lines:</p><div class="verbatim-wrap"><pre class="screen">[key_manager]
+api_class = castellan.key_manager.barbican_key_manager.BarbicanKeyManager</pre></div><p>Then replace the value with the desired key manager class.</p><div id="id-1.3.13.6.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>If those lines do not exist then simply add them to the end of the file.</p></div></div><div class="sect2" id="using-the-signature-verification"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.12.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Signature Verification</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#using-the-signature-verification">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>using-the-signature-verification</li></ul></div></div></div></div><p>An image will need a few properties for signature verification to be enabled,
+                these are:</p><div class="verbatim-wrap"><pre class="screen">img_signature
+img_signature_hash_method
+img_signature_key_type
+img_signature_certificate_uuid</pre></div><div class="sect3" id="property-img-signature"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.12.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Property img_signature</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#property-img-signature">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>property-img-signature</li></ul></div></div></div></div><p>This is the signature of your image.</p><div id="id-1.3.13.7.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The max character limit is 255.</p></div></div><div class="sect3" id="property-img-signature-hash-method"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.12.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Property img_signature_hash_method</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#property-img-signature-hash-method">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>property-img-signature-hash-method</li></ul></div></div></div></div><p>Hash methods is the method you hash with.</p><p>Current ones you can use are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>SHA-224</p></li><li class="listitem "><p>SHA-256</p></li><li class="listitem "><p>SHA-384</p></li><li class="listitem "><p>SHA-512</p></li></ul></div></div><div class="sect3" id="property-img-signature-key-type"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.12.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Property img_signature_key_type</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#property-img-signature-key-type">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>property-img-signature-key-type</li></ul></div></div></div></div><p>This is the key_types you can use for your image.</p><p>Current ones you can use are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>RSA-PSS</p></li><li class="listitem "><p>DSA</p></li><li class="listitem "><p>ECC-CURVES</p></li></ul></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>SECT571K1</p></li><li class="listitem "><p>SECT409K1</p></li><li class="listitem "><p>SECT571R1</p></li><li class="listitem "><p>SECT409R1</p></li><li class="listitem "><p>SECP521R1</p></li><li class="listitem "><p>SECP384R1</p></li></ul></div><div id="id-1.3.13.7.6.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>ECC curves - Only keysizes above 384 are included.
+                        Not all ECC curves may be supported by the back end.</p></div></div><div class="sect3" id="property-img-signature-certificate-uuid"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.12.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Property img_signature_certificate_uuid</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#property-img-signature-certificate-uuid">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>property-img-signature-certificate-uuid</li></ul></div></div></div></div><p>This is the UUID of the certificate that you upload to Barbican.</p><p>Therefore the type passed to glance is:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>UUID</p></li></ul></div><div id="id-1.3.13.7.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The supported certificate types are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>X_509</p></li></ul></div></div></div></div><div class="sect2" id="example-usage"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.12.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Usage</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#example-usage">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>example-usage</li></ul></div></div></div></div><p>Follow these instructions to create your keys:</p><div class="verbatim-wrap"><pre class="screen">$ openssl genrsa -out private_key.pem 1024
+Generating RSA private key, 1024 bit long modulus
+...............................................++++++
+..++++++
+e is 65537 (0x10001)
+
+$ openssl rsa -pubout -in private_key.pem -out public_key.pem
+writing RSA key
+
+$ openssl req -new -key private_key.pem -out cert_request.csr
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+
+$ openssl x509 -req -days 14 -in cert_request.csr -signkey private_key.pem -out new_cert.crt
+Signature ok
+subject=/C=AU/ST=Some-State/O=Internet Widgits Pty Ltd
+Getting Private key</pre></div><p>Upload your certificate. This only has to be done once as you can use
+                the same <code class="literal">Secret href</code> for many images until it expires:</p><div class="verbatim-wrap"><pre class="screen">$ openstack secret store --name test --algorithm RSA --expiration 2016-06-29 --secret-type certificate --payload-content-type "application/octet-stream" --payload-content-encoding base64 --payload "$(base64 new_cert.crt)"
++---------------+-----------------------------------------------------------------------+
+| Field         | Value                                                                 |
++---------------+-----------------------------------------------------------------------+
+| Secret href   | http://127.0.0.1:9311/v1/secrets/cd7cc675-e573-419c-8fff-33a72734a243 |
+
+$ cert_uuid=cd7cc675-e573-419c-8fff-33a72734a243</pre></div><p>Get an image and create the signature:</p><div class="verbatim-wrap"><pre class="screen">$ echo This is a dodgy image &gt; myimage
+
+$ openssl dgst -sha256 -sign private_key.pem -sigopt rsa_padding_mode:pss -out myimage.signature myimage
+
+$ base64 -w 0 myimage.signature &gt; myimage.signature.b64
+
+$ image_signature=$(cat myimage.signature.b64)</pre></div><div id="id-1.3.13.8.8" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Using Glance v1 requires <code class="literal">-w 0</code> due to not supporting multiline image properties.
+                    Glance v2 does support multiline image properties and does not require <code class="literal">-w 0</code> but may still be used.</p></div><p>Create the image:</p><div class="verbatim-wrap"><pre class="screen">$ glance image-create --name mySignedImage --container-format bare --disk-format qcow2 --property img_signature="$image_signature" --property img_signature_certificate_uuid="$cert_uuid" --property img_signature_hash_method='SHA-256' --property img_signature_key_type='RSA-PSS' &lt; myimage</pre></div><div id="id-1.3.13.8.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Creating the image can fail if validation does not succeed.
+                    This will cause the image to be deleted.</p></div></div><div class="sect2" id="other-links"><div class="titlepage"><div><div><h3 class="title"><span class="number">1.12.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Other Links</span> <a title="Permalink" class="permalink" href="glance-user-guide.html#other-links">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>user-glance.xml</li><li><span class="ds-label">ID: </span>other-links</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+                <a class="link" href="https://etherpad.openstack.org/p/mitaka-glance-image-signing-instructions" target="_blank">https://etherpad.openstack.org/p/mitaka-glance-image-signing-instructions</a>
+              </p></li><li class="listitem "><p>
+                <a class="link" href="http://docs.openstack.org/ops-guide/ops_user_facing_operations.html" target="_blank">http://docs.openstack.org/ops-guide/ops_user_facing_operations.html</a>
+              </p></li></ul></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ironic-user-guide.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 2 </span>Ironic User Guide</span></a><a class="nav-link" href="index.html"><span class="prev-icon">←</span><span class="nav-label"><span class="productname">OpenStack</span> User Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
