@@ -4310,8 +4310,11 @@ package updates] ***</pre></div></li><li class="step "><p>
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-update-pkgs.yml \
 --limit  <em class="replaceable ">TARGET_NODE_NAME</em> \
 -e zypper_update_include_reboot_patches=true</pre></div><p>
-       Run <code class="filename">ardana-reboot.yml</code>. This will cause cloud
-       service interruption.
+	If the output of <code class="filename">ardana-update-pkgs.yml</code> indicates 
+	that a reboot is required, run <code class="filename">ardana-reboot.yml</code> 
+	<span class="emphasis"><em>after</em></span> completing the <code class="filename">ardana-update.yml</code> 
+	step below. Running <code class="filename">ardana-reboot.yml</code>
+	will cause cloud service interruption.
       </p><div id="id-1.6.15.6.3.8.8.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
         To update a single package (for example, apply a PTF on a single node
         or on all nodes), run <code class="command">zypper update
