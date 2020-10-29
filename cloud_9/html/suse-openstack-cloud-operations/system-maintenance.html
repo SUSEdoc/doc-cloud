@@ -4820,12 +4820,44 @@ There are some running programs that might use files deleted by recent upgrade. 
  localhost                  : ok=24   changed=20   unreachable=0    failed=0</pre></div></li></ol></div></div></div><div class="sect2" id="upgrade-cloud-services"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrading Cloud Services</span> <a title="Permalink" class="permalink" href="system-maintenance.html#upgrade-cloud-services">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-upgrade_maintenance.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-upgrade_maintenance.xml</li><li><span class="ds-label">ID: </span>upgrade-cloud-services</li></ul></div></div></div></div><p>
      The deployer node is now ready to be used to upgrade the remaining
      cloud nodes and running services.
-   </p><div id="id-1.5.17.6.14.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   </p><div id="id-1.5.17.6.14.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+      If upgrading from Helion OpenStack 8, there is a manual file update that must
+      be applied before continuing the upgrade process. In the file
+      <code class="literal">/usr/share/ardana/ansible/roles/osconfig/tasks/check-product-status.yml</code>
+      replace `command` with `shell` in the first ansible entry. The correct version
+      of the file appears below.
+     </p><div class="verbatim-wrap"><pre class="screen">- name: deployer-setup | check-product-status | Check HOS product installed
+  shell: |-
+    zypper info hpe-helion-openstack-release | grep "^Installed *: *Yes"
+  ignore_errors: yes
+  register: product_flavor_hos
+
+- name: deployer-setup | check-product-status | Check SOC product availability
+  become: yes
+  zypper:
+    name: "suse-openstack-cloud-release&gt;=8"
+    state: present
+  ignore_errors: yes
+  register: product_flavor_soc
+
+- name: deployer-setup | check-product-status | Provide help
+  fail:
+    msg: &gt;
+      The deployer node does not have a Cloud Add-On product installed.
+      In YaST select Software/Add-On Products to see an overview of installed
+       add-on products and use "Add" to add the Cloud product.
+  when:
+    - product_flavor_soc|failed
+    - product_flavor_hos|failed</pre></div><p>
+      Changes to the <code class="literal">check-product-status.yml</code> file must be staged
+      and committed via git.
+   </p><div class="verbatim-wrap"><pre class="screen">git add -u
+git commit -m "applying osconfig fix prior to HOS8 to SOC9 upgrade"</pre></div></div><div id="id-1.5.17.6.14.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
        The <code class="filename">ardana-upgrade.yml</code> playbook runs the upgrade process
        against all nodes in parallel, though some of the steps are serialised
        to run on only one node at a time to avoid triggering potentially
        problematic race conditions. As such, the playbook can take a long time to run.
-     </p></div><div class="procedure " id="id-1.5.17.6.14.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 15.10: </span><span class="name">Generate the SUSE <span class="productname">OpenStack</span> Cloud 9 Cloud Lifecycle Manager Based Scratch Area </span><a title="Permalink" class="permalink" href="system-maintenance.html#id-1.5.17.6.14.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     </p></div><div class="procedure " id="id-1.5.17.6.14.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 15.10: </span><span class="name">Generate the SUSE <span class="productname">OpenStack</span> Cloud 9 Cloud Lifecycle Manager Based Scratch Area </span><a title="Permalink" class="permalink" href="system-maintenance.html#id-1.5.17.6.14.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
         Generate the updated scratch area using the SUSE <span class="productname">OpenStack</span> Cloud 9 Cloud Lifecycle Manager Ansible sources:
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml
@@ -4886,7 +4918,7 @@ msg: Playbook finished - ardana-update-pkgs.yml
 
 PLAY RECAP ********************************************************************
 ardana-cp-dplyr-m1         : ok=98   changed=12   unreachable=0    failed=0
-localhost                  : ok=6    changed=2    unreachable=0    failed=0</pre></div><div id="id-1.5.17.6.14.4.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+localhost                  : ok=6    changed=2    unreachable=0    failed=0</pre></div><div id="id-1.5.17.6.14.5.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
            If running the <code class="filename">ardana-update-pkgs.yml</code> playbook identifies that there
            were updates that needed to be installed on your deployer node, then you
            need to go back to running the <code class="command">ardana-init</code> command, followed by the
@@ -4956,7 +4988,7 @@ msg: Playbook finished - ardana-upgrade.yml</pre></div></li></ol></div></div><p>
        this time, the cloud should remain basically functional, though there
        may be brief interruptions to some services. However, it is recommended
        that any workload management tasks are avoided during this period.
-     </p><div id="id-1.5.17.6.14.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     </p><div id="id-1.5.17.6.14.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
          Until the <code class="filename">ardana-upgrade.yml</code> playbook run has
          ompleted successfully, other playbooks such as the <code class="filename">ardana-status.yml</code>,
          may report status problems. This is because some services that are
@@ -4969,7 +5001,7 @@ msg: Playbook finished - ardana-upgrade.yml</pre></div></li></ol></div></div><p>
        and in most cases it should continue past the stage that failed
        previously. However, if the same problem persists across multiple runs,
        contact your support team for assistance.
-     </p><div id="id-1.5.17.6.14.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+     </p><div id="id-1.5.17.6.14.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
          It is important to disable all SUSE Linux Enterprise 12 SP3 <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 8 Cloud Lifecycle Manager
          repositories before migrating the deployer to SUSE Linux Enterprise 12 SP4 <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
          9 Cloud Lifecycle Manager. If you did not do this, then the first time you
@@ -4987,7 +5019,7 @@ msg: Playbook finished - ardana-upgrade.yml</pre></div></li></ol></div></div><p>
      based load-balancer instances, you need to ensure that an appropriate Amphora
      image is registered for use when creating instances, by following
      <span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 43 “Configuring Load Balancer as a Service”</span>.
-   </p><div id="id-1.5.17.6.14.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   </p><div id="id-1.5.17.6.14.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
        While running the <code class="filename">ardana-upgrade.yml</code> playbook, a point will be
        reached when the Neutron services are upgraded. As part of this upgrade,
        any existing LBaaS V2 load-balancer definitions will be migrated to
