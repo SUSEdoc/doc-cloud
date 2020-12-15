@@ -617,8 +617,12 @@ $ openstack flavor set m1.ironic set cpu_arch=x86_64</pre></div><div id="id-1.3.
   (SES). Integrating SUSE Enterprise Storage enables Ceph to provide RADOS Block Device (RBD),
   block storage, image storage, object storage via RADOS Gateway (RGW),
   and CephFS (file storage) in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. The following documentation
-  outlines integration for SUSE Enterprise Storage 5 and 5.5.
- </p><p>
+  outlines integration for SUSE Enterprise Storage 5 , 5.5, and 6.0
+ </p><div id="id-1.3.6.18.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>Integration with SUSE Enterprise Storage 6.0 is configured using the same
+    steps as SUSE Enterprise Storage 5.5 except that salt-api queries authenticating with the 
+    <code class="literal">sharedsecret=</code> parameter should be updated to use 
+    <code class="literal">password=</code> 
+  </p></div><p>
    SUSE Enterprise Storage 5.5 uses a Salt runner that creates users and pools. Salt generates
    a yaml configuration that is needed to integrate with SUSE <span class="productname">OpenStack</span> Cloud.
    The integration runner creates separate users for cinder,
@@ -709,7 +713,7 @@ radosgw_urls:
    <code class="filename">ardana-reconfigure.yml</code> playbooks activate and configure
    the cinder, glance, and nova
    services.
-  </p><div id="id-1.3.6.18.5.7.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.3.6.18.5.8.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
     For security reasons, you should use a unique UUID in the
     <code class="filename">settings.yml</code> file for
     <code class="literal">ses_secret_id</code>, replacing the fixed, hard-coded UUID in
@@ -753,7 +757,7 @@ radosgw_urls:
    In the <code class="filename">control_plane.yml</code> file, the glance
    <code class="literal">default_store</code> option must be adjusted.
   </p><div class="verbatim-wrap"><pre class="screen">- glance-api:
-            glance_default_store: 'rbd'</pre></div><div id="id-1.3.6.18.5.7.15" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>The following content is only relevant if you are running a
+            glance_default_store: 'rbd'</pre></div><div id="id-1.3.6.18.5.8.15" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>The following content is only relevant if you are running a
     standalone Ceph cluster (not SUSE Enterprise Storage) or a SUSE Enterprise Storage cluster that is
     before version 5.5.
   </p></div><p>
@@ -776,7 +780,7 @@ radosgw_urls:
     Edit <code class="filename">settings.yml</code> and change the line
     <code class="literal">ses_nova_set_images_type: True</code>
     to <code class="literal">ses_nova_set_images_type: False</code>
-   </p><div class="example" id="id-1.3.6.18.5.7.20"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 35.1: </span><span class="name">ses_config.yml Example </span><a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.7.20">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">ses_cluster_configuration:
+   </p><div class="example" id="id-1.3.6.18.5.8.20"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 35.1: </span><span class="name">ses_config.yml Example </span><a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.8.20">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">ses_cluster_configuration:
     ses_cluster_name: ceph
     ses_radosgw_url: "https://192.168.56.8:8080/swift/v1"
 
@@ -827,7 +831,7 @@ ses_config_file: ses_config.yml
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
       Reconfigure Ardana:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add Missing Swift Endpoints</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.8">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Add Missing Swift Endpoints</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     If you deployed Cloud Lifecycle Manager using the SUSE Enterprise Storage integration without swift, the
     integration will not be set up properly. Swift object endpoints will be
     missing. Use the following process to create the necessary endpoints.
@@ -852,7 +856,7 @@ internal https://ses-osd3:8080/swift/v1</pre></div></li><li class="step "><p>
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack endpoint list | grep object
 5313b...e9412f  region1  swift  object-store  True  public    https://ses-osd3:8080/swift/v1
 83faf...1eb602  region1  swift  object-store  True  internal  https://ses-osd3:8080/swift/v1
-dc698...715b8c  region1  swift  object-store  True  admin     https://ses-osd3:8080/swift/v1</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring SUSE Enterprise Storage for Integration with RADOS Gateway</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.9">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+dc698...715b8c  region1  swift  object-store  True  admin     https://ses-osd3:8080/swift/v1</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring SUSE Enterprise Storage for Integration with RADOS Gateway</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     RADOS gateway integration can be enabled (disabled) by adding (removing)
     the following line in the <code class="filename">ses_config.yml</code>:
    </p><div class="verbatim-wrap"><pre class="screen">ses_radosgw_url: "https://192.168.56.8:8080/swift/v1"</pre></div><p>
@@ -880,7 +884,7 @@ rgw keystone verify ssl = false # If keystone is using self-signed
    </p><p>
     Enabling RADOS gateway replaces the existing Object Storage endpoint with the
     RADOS gateway endpoint.
-   </p></div><div class="sect2" id="id-1.3.6.18.5.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling HTTPS, Creating and Importing a Certificate</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div><div class="sect2" id="id-1.3.6.18.5.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling HTTPS, Creating and Importing a Certificate</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     SUSE Enterprise Storage integration uses the HTTPS protocol to connect to the RADOS
     gateway. However, with SUSE Enterprise Storage 5, HTTPS is not enabled by default. To enable the
     gateway role to communicate securely using SSL, you need to either have a
@@ -897,7 +901,7 @@ rgw keystone verify ssl = false # If keystone is using self-signed
     match the <code class="literal">ses_radosgw_url</code> entry in
     <code class="filename">ses_config.yml</code>. Either an IP address or FQDN can be
     used, but these values must be the same in both places.
-   </p></div><div class="sect2" id="id-1.3.6.18.5.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying SUSE Enterprise Storage Configuration for RADOS Integration</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.11">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div><div class="sect2" id="id-1.3.6.18.5.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying SUSE Enterprise Storage Configuration for RADOS Integration</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     The following steps deploy your configuration.
    </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
       Commit your configuration to your local git repo.
@@ -918,7 +922,7 @@ rgw keystone verify ssl = false # If keystone is using self-signed
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li><li class="step "><p>
       Reconfigure the Cloud Lifecycle Manager to complete the deployment.
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable Copy-On-Write Cloning of Images</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.12">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.3.6.18.5.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable Copy-On-Write Cloning of Images</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     Due to a security issue described in <a class="link" href="http://docs.ceph.com/docs/master/rbd/rbd-openstack/?highlight=uuid#enable-copy-on-write-cloning-of-images" target="_blank">http://docs.ceph.com/docs/master/rbd/rbd-openstack/?highlight=uuid#enable-copy-on-write-cloning-of-images</a>, we do not recommend the copy-on-write cloning of images when
     glance and cinder are both using a Ceph back-end.
     However, if you want to use this feature for faster operation,
@@ -934,11 +938,11 @@ git commit -m "Enable Copy-on-Write Cloning"</pre></div></li><li class="step "><
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml
 cd /var/lib/ardana/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li></ol></div></div><div id="id-1.3.6.18.5.12.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li></ol></div></div><div id="id-1.3.6.18.5.13.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
      Note that this exposes the back-end location via glance's API, so the
      end-point should not be publicly accessible when Copy-On-Write image
      cloning is enabled.
-    </p></div></div><div class="sect2" id="id-1.3.6.18.5.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Improve SUSE Enterprise Storage Storage Performance</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.13">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></div></div><div class="sect2" id="id-1.3.6.18.5.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">35.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Improve SUSE Enterprise Storage Storage Performance</span> <a title="Permalink" class="permalink" href="integrations.html#id-1.3.6.18.5.14">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-ses_integration.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-ses_integration.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
     SUSE Enterprise Storage performance can be improved with Image-Volume cache. Be aware that
     Image-Volume cache and Copy-on-Write cloning cannot be used for the same
     storage back-end. For more information, see the <a class="link" href="https://docs.openstack.org/cinder/pike/admin/blockstorage-image-volume-cache.html" target="_blank">OpenStack
