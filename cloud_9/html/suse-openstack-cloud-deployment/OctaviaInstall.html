@@ -116,12 +116,25 @@ if needed.
       </p></li><li class="listitem "><p>
        UDP 5555 (Octavia Health Manager)
       </p></li></ul></div></li></ul></div><p>
+   <span class="bold"><strong>Optimizing the Octavia memory footprint</strong></span>
+  </p><p>
+   By default the Octavia health monitor will use up to 4.2GB of memory, this
+   can be safely reduced in entry scale environments by modifying
+   <code class="literal">~/openstack/my_cloud/config/octavia/octavia-health-manager.conf.j2</code>
+   to add the following lines in the <code class="literal">[health manager]</code> section:
+  </p><div class="verbatim-wrap"><pre class="screen">health_update_threads = 2
+stats_update_threads = 2</pre></div><p>
+   After editing the <code class="literal">octavia-health-manager.conf.j2</code> file,
+   run the config-processor-run, ready-deployment and 
+   octavia-reconfigure playbooks to apply these changes. This will limit
+   the number of processes providing updates for the amphora health and stats.
+  </p><p>
    <span class="bold"><strong>Installing the Amphora Image</strong></span>
   </p><p>
    Octavia uses nova VMs for its load balancing function; SUSE
    provides images used to boot those VMs called
    <code class="literal">octavia-amphora</code>.
-  </p><div id="id-1.3.7.7.9.9" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+  </p><div id="id-1.3.7.7.9.13" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
     Without these images the Octavia load balancer will not work.
    </p></div><p>
    <span class="bold"><strong>Register the image.</strong></span> The <span class="productname">OpenStack</span> load
@@ -152,7 +165,7 @@ if needed.
 +--------------------------------------+------------------------+--------+
 ...
 | 1d4dd309-8670-46b6-801d-3d6af849b6a9 | octavia-amphora-x86_64 | active |
-...</pre></div><div id="id-1.3.7.7.9.11.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+...</pre></div><div id="id-1.3.7.7.9.15.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
       In the example above, the status of the
       <code class="literal">octavia-amphora-x86_64</code> image is
       <span class="emphasis"><em>active</em></span> which means the image was successfully
