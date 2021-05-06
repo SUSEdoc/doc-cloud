@@ -331,6 +331,9 @@ ansible-playbook -i hosts/verb_hosts monasca-start.yml</pre></div></div><div cla
    Use the following steps to re-create expired TLS certificates for MySQL
    Percona clusters.
   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Determine if the TLS certificates for MySQL / Percsona have expired.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd /etc/mysql/
+<code class="prompt user">ardana &gt; </code>openssl x509 -noout -enddate -in control-plane-1-mysql-internal-cert.pem</pre></div></li><li class="step "><p>
      Regenerate the TLS certificates on the deployer.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/hos/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit DEPLOYER_HOST</pre></div></li><li class="step "><p>
