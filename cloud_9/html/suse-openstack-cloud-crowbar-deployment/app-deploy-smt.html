@@ -125,10 +125,10 @@ hljs.configure({
 done</pre></div></div><div class="sect2 " id="app-deploy-smt-repos-optional"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Optional Repositories</span> <a title="Permalink" class="permalink" href="app-deploy-smt.html#app-deploy-smt-repos-optional">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_smt_setup.xml</li><li><span class="ds-label">ID: </span>app-deploy-smt-repos-optional</li></ul></div></div></div></div><p>
     The following optional repositories provide high availability and storage:
    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.3.6.4.3.1"><span class="term ">High Availability</span></dt><dd><p>
-       For the optional HA setup you need to mirror the SLE12-SP4-HA
+       For the optional HA setup you need to mirror the SLE-HA12-SP4
        repositories. Run the following commands as user <code class="systemitem">root</code> to add
        them to the list of mirrored repositories:
-      </p><div class="verbatim-wrap"><pre class="screen">for REPO in SLE12-SP4-HA-{Pool,Updates}; do
+      </p><div class="verbatim-wrap"><pre class="screen">for REPO in SLE-HA12-SP4-{Pool,Updates}; do
   smt-repos $REPO sle-12-x86_64 -e
 done</pre></div></dd><dt id="id-1.4.4.3.6.4.3.2"><span class="term ">SUSE Enterprise Storage</span></dt><dd><p>
        The SUSE Enterprise Storage repositories are needed if you plan to use an external
