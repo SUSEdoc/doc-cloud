@@ -1350,7 +1350,7 @@ node without any other services as a Monitoring Node.
     can optionally be made highly available with the SUSE Linux Enterprise
     High Availability Extension. The following repositories are
     required to deploy SLES High Availability Extension nodes:
-   </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Optional Repositories </span><a title="Permalink" class="permalink" href="#id-1.3.3.3.6.8.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.3.3.3.6.8.5.2"><span class="term ">SLE12-SP3-HA-Pool</span></dt><dd><p>
+   </p><div class="variablelist "><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Optional Repositories </span><a title="Permalink" class="permalink" href="#id-1.3.3.3.6.8.5">#</a></h6></div><dl class="variablelist"><dt id="id-1.3.3.3.6.8.5.2"><span class="term ">SLE12-HA12-SP3-Pool</span></dt><dd><p>
        The pool repositories contain all binary RPMs from the installation
        media, plus pattern information and support status metadata. These
        repositories are served from SUSE Customer Center and need to be kept in
@@ -1358,7 +1358,7 @@ node without any other services as a Monitoring Node.
        remotely via an existing SMT or SUSE Manager server. Alternatively, make
        them available locally on the Administration Server by installing a local SMT server, by
        mounting or synchronizing a remote directory, or by copying them.
-      </p></dd><dt id="id-1.3.3.3.6.8.5.3"><span class="term ">SLE12-SP3-HA-Updates</span></dt><dd><p>
+      </p></dd><dt id="id-1.3.3.3.6.8.5.3"><span class="term ">SLE12-HA12-SP3-Updates</span></dt><dd><p>
        These repositories contain maintenance updates to packages in the
        corresponding pool repositories. These repositories are served from
        SUSE Customer Center and need to be kept synchronized with their sources. Make them
@@ -2068,10 +2068,10 @@ node without any other services as a Monitoring Node.
 done</pre></div></div><div class="sect2 " id="app-deploy-smt-repos-optional"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Optional Repositories</span> <a title="Permalink" class="permalink" href="#app-deploy-smt-repos-optional">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_smt_setup.xml</li><li><span class="ds-label">ID: </span>app-deploy-smt-repos-optional</li></ul></div></div></div></div><p>
     The following optional repositories provide high availability and storage:
    </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.3.6.4.3.1"><span class="term ">High Availability</span></dt><dd><p>
-       For the optional HA setup you need to mirror the SLE12-SP3-HA
+       For the optional HA setup you need to mirror the SLE12-HA12-SP3
        repositories. Run the following commands as user <code class="systemitem">root</code> to add
        them to the list of mirrored repositories:
-      </p><div class="verbatim-wrap"><pre class="screen">for REPO in SLE12-SP3-HA-{Pool,Updates}; do
+      </p><div class="verbatim-wrap"><pre class="screen">for REPO in SLE12-HA12-SP3-{Pool,Updates}; do
   smt-repos $REPO sle-12-x86_64 -e
 done</pre></div></dd><dt id="id-1.3.4.3.6.4.3.2"><span class="term ">SUSE Enterprise Storage</span></dt><dd><p>
        The SUSE Enterprise Storage repositories are needed if you plan to use an external
@@ -2376,7 +2376,7 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Pool
+       SLE12-HA12-SP3-Pool
       </p>
      </td><td>
       <p>
@@ -2384,7 +2384,7 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Updates
+       SLE12-HA12-SP3-Updates
       </p>
      </td><td>
       <p>
@@ -2448,13 +2448,13 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Pool
+       SLE12-HA12-SP3-Pool
       </p>
      </td><td>
       <p>http://<em class="replaceable ">smt.example.com</em>/repo/SUSE/Products/SLE-HA/12-SP3/x86_64/product/</p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Updates
+       SLE12-HA12-SP3-Updates
       </p>
      </td><td>
       <p>http://<em class="replaceable ">smt.example.com</em>/repo/SUSE/Updates/SLE-HA/12-SP3/x86_64/update/</p>
@@ -2514,7 +2514,7 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Pool
+       SLE12-HA12-SP3-Pool
       </p>
      </td><td>
       <p>
@@ -2522,7 +2522,7 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Updates
+       SLE12-HA12-SP3-Updates
       </p>
      </td><td>
       <p>
@@ -2601,19 +2601,19 @@ The following tables show the locations of all repositories that can be used for
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Pool
+       SLE12-HA12-SP3-Pool
       </p>
      </td><td>
       <p>
-       <code class="filename">/srv/tftpboot/suse-12.3/x86_64/repos/SLE12-SP3-HA-Pool</code>
+       <code class="filename">/srv/tftpboot/suse-12.3/x86_64/repos/SLE12-HA12-SP3-Pool</code>
       </p>
      </td></tr><tr><td>
       <p>
-       SLE12-SP3-HA-Updates
+       SLE12-HA12-SP3-Updates
       </p>
      </td><td>
       <p>
-       <code class="filename">/srv/tftpboot/suse-12.3/x86_64/repos/SLE12-SP3-HA-Updates</code>
+       <code class="filename">/srv/tftpboot/suse-12.3/x86_64/repos/SLE12-HA12-SP3-Updates</code>
       </p>
      </td></tr><tr><td>
       <p>
@@ -9849,9 +9849,9 @@ i | sles12-velum-image | package    | 3.1.7-3.27.3  | x86_64 | update_caasp</pre
       have an HA setup. It is recommended to use the same server that also
       hosts the respective repositories of the current version.
      </p><table border="0" summary="Simple list" class="simplelist "><tr><td><code class="literal"><span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-8</span></span>-Pool</code></td></tr><tr><td><code class="literal"><span class="phrase"><span class="phrase">SUSE-OpenStack-Cloud-Crowbar-8</span></span>-Update</code></td></tr><tr><td><code class="literal">SLES12-SP3-Pool</code></td></tr><tr><td><code class="literal">SLES12-SP3-Update</code></td></tr><tr><td>
-       <code class="literal">SLE12-SP3-HA-Pool</code> (for HA setups only)
+       <code class="literal">SLE12-HA12-SP3-Pool</code> (for HA setups only)
       </td></tr><tr><td>
-       <code class="literal">SLE12-SP3-HA-Update</code> (for HA setups only)
+       <code class="literal">SLE12-HA12-SP3-Update</code> (for HA setups only)
       </td></tr></table><div id="id-1.3.7.2.6.5.3.8.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
       Do not add repositories to the SUSE <span class="productname">OpenStack</span> Cloud repository configuration. This
       needs to be done during the upgrade procedure.
