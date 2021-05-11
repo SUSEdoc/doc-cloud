@@ -1397,6 +1397,9 @@ git commit -a -m "Add node &lt;name&gt;"</pre></div></li><li class="step "><p>
      Run the configuration processor and resolve any errors that are indicated:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+     The following playbook confirms that your servers are accessible over their IPMI ports.
+    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
+ansible-playbook -i hosts/localhost bm-power-status.yml -e nodelist=compute4</pre></div></li><li class="step "><p>
      Add the new node into Cobbler:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
 ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre></div></li><li class="step "><p>
@@ -1407,7 +1410,7 @@ ansible-playbook -i hosts/localhost cobbler-deploy.yml</pre></div></li><li class
 <code class="prompt user">ardana &gt; </code>ansible-playbook prepare-sles-grub2.yml -e nodelist=node1[,node2,node3]</pre></div></li><li class="step "><p>
      Then you can image the node:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
-ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;node name&gt;</pre></div><div id="id-1.6.15.4.6.6.3.7.9.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=&lt;node name&gt;</pre></div><div id="id-1.6.15.4.6.6.3.7.9.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
        If you do not know the <code class="literal">&lt;node name&gt;</code>, you can
        get it by using <code class="command">sudo cobbler system list</code>.
       </p></div><p>
@@ -1430,7 +1433,7 @@ ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li cla
      <code class="filename">bm-reimage.yml</code>. If used for any other case, it may
      not wipe all of the expected partitions.
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible/
-ansible-playbook -i hosts/verb_hosts wipe_disks.yml --limit &lt;hostname&gt;</pre></div><div id="id-1.6.15.4.6.6.3.7.9.11.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ansible-playbook -i hosts/verb_hosts wipe_disks.yml --limit &lt;hostname&gt;</pre></div><div id="id-1.6.15.4.6.6.3.7.9.12.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
       You can obtain the <code class="literal">&lt;hostname&gt;</code> from the file
       <code class="filename">~/scratch/ansible/next/ardana/ansible/hosts/verb_hosts</code>.
      </p></div></li><li class="step "><p>
