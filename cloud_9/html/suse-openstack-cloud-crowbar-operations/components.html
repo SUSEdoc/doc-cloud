@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Components</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="key-features.html" title="Key Features" /><link rel="next" href="users-roles.html" title="Users and Roles" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="key-features.html">Prev</a> </td><th width="60%" align="center">Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</th><td width="20%" align="right"> <a accesskey="n" href="users-roles.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="components"></a>Components</h2></div></div></div><p>
+  The following illustration provides an overview of the main components of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring:
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-overview-structure.png" alt="structure_new.png" /></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring relies on <span class="productname">OpenStack</span> as
+  technology for building cloud computing platforms for public and private
+  clouds. <span class="productname">OpenStack</span> consists of a series of interrelated projects delivering
+  various components for a cloud infrastructure solution and allowing for the
+  deployment and management of Infrastructure as a Service (IaaS) platforms.
+ </p><p>
+  For details on <span class="productname">OpenStack</span>, refer to the
+  <a class="link" href="http://docs.openstack.org/" target="_top"><span class="productname">OpenStack</span> documentation</a>.
+ </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="monitoring-service"></a>Monitoring Service</h3></div></div></div><p>
+  The Monitoring Service is the central <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  component. It is responsible for receiving, persisting,
+  and processing metrics and log data, as well as providing the data to the
+  users.
+ </p><p>
+  The Monitoring Service relies on monasca. It uses monasca for high-speed
+  metrics querying and integrates the streaming alarm engine and the
+  notification engine of monasca. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_top">monasca Wiki</a>.
+ </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="horizon-plugin"></a>Horizon Plugin</h3></div></div></div><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring comes with a plugin for the
+  <span class="productname">OpenStack</span> horizon dashboard. The horizon plugin extends the main dashboard in
+  <span class="productname">OpenStack</span> with a view for monitoring. This enables <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  users to access the monitoring and log management
+  functions from a central Web-based graphical user interface. Metrics and log
+  data are visualized on a comfortable and easy-to-use dashboard.
+ </p><p>
+  For details, refer to the
+  <a class="link" href="http://docs.openstack.org/developer/horizon/" target="_top"><span class="productname">OpenStack</span> horizon
+  documentation</a>.
+ </p><p>
+  Based on <span class="productname">OpenStack</span> horizon, the monitoring data is visualized on a
+  comfortable and easy-to-use dashboard which fully integrates with the
+  following applications:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     Grafana (for metrics data). An open source application for visualizing
+     large-scale measurement data.
+    </p></li><li class="listitem"><p>
+     Kibana (for log data). An open source analytics and visualization platform
+     designed to work with Elasticsearch.
+    </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="metrics-agent"></a>Metrics Agent</h3></div></div></div><p>
+  A Metrics Agent is required for retrieving metrics data from the host on
+  which it runs and sending the metrics data to the Monitoring Service. The
+  agent supports metrics from a variety of sources as well as a number of
+  built-in system and service checks.
+ </p><p>
+  A Metrics Agent can be installed on each virtual or physical server to be
+  monitored.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_top">monasca Wiki</a>.
+ </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="log-agent"></a>Log Agent</h3></div></div></div><p>
+  A Log Agent is needed for collecting log data from the host on which it runs
+  and forwarding the log data to the Monitoring Service for further processing.
+  It can be installed on each virtual or physical server from which log data is
+  to be retrieved.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  monasca project. For details, refer to the
+  <a class="link" href="https://wiki.openstack.org/wiki/monasca" target="_top">monasca Wiki</a>.
+ </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="key-features.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="soc-monitoring.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="users-roles.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Key Features </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Users and Roles</td></tr></table></div></body></html>

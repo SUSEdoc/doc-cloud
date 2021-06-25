@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Updating MariaDB with Galera</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="sec-maintenance.html" title="Chapter 1. Maintenance" /><link rel="prev" href="sec-bootstrap-galera-cluster-with-missing-node.html" title="Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing" /><link rel="next" href="OctaviaMaintenance.html" title="Load Balancer: Octavia Administration" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Updating MariaDB with Galera</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-bootstrap-galera-cluster-with-missing-node.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Maintenance</th><td width="20%" align="right"> <a accesskey="n" href="OctaviaMaintenance.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id13876"></a>Updating MariaDB with Galera</h2></div></div></div><p>
+      Updating MariaDB with Galera must be done manually. Crowbar does not
+      install updates automatically. Updates can be done with Pacemaker or with
+      the CLI. In particular, manual updating applies to upgrades to MariaDB
+      10.2.17 or higher from MariaDB 10.2.16 or earlier. See <a class="link" href="https://mariadb.com/kb/en/library/mariadb-10222-release-notes/" target="_top">MariaDB
+        10.2.22 Release Notes - Notable Changes</a>.
+    </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+        In order to run the following update steps, the database cluster needs to
+        be up and healthy.
+      </p></div><p>
+      Using the Pacemaker GUI, update MariaDB with the following procedure:
+    </p><div class="procedure"><ol class="procedure" type="1"><li class="step"><p>
+          Put the cluster into maintenance mode. Detailed information about the
+          Pacemaker GUI and its operation is available in the <a class="link" href="https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/#cha-conf-hawk2" target="_top">https://documentation.suse.com/sle-ha/15-SP1/single-html/SLE-HA-guide/#cha-conf-hawk2</a>.
+        </p></li><li class="step"><p>
+          Perform a rolling upgrade to MariaDB following the instructions at <a class="link" href="https://mariadb.com/kb/en/library/upgrading-between-minor-versions-with-galera-cluster/" target="_top">Upgrading
+            Between Minor Versions with Galera Cluster</a>.
+        </p><p>
+          The process involves the following steps:
+        </p><ol type="a" class="substeps"><li class="step"><p>
+              Stop MariaDB
+            </p></li><li class="step"><p>
+              Uninstall the old versions of MariaDB and the Galera wsrep provider
+            </p></li><li class="step"><p>
+              Install the new versions of MariaDB and the Galera wsrep provider
+            </p></li><li class="step"><p>
+              Change configuration options if necessary
+            </p></li><li class="step"><p>
+              Start MariaDB
+            </p></li><li class="step"><p>
+              Run <span class="command"><strong>mysql_upgrade</strong></span> with the
+              <code class="literal">--skip-write-binlog</code> option
+            </p></li></ol></li><li class="step"><p>
+          Each node must upgraded individually so that the cluster is always
+          operational.
+        </p></li><li class="step"><p>
+          Using the Pacemaker GUI, take the cluster out of maintenance mode.
+        </p></li></ol></div><p>
+      When updating with the CLI, the database cluster must be up and
+      healthy. Update MariaDB with the following procedure:
+    </p><div class="procedure"><ol class="procedure" type="1"><li class="step"><p>
+          Mark Galera as unmanaged:
+        </p><pre class="screen">crm resource unmanage galera</pre><p>
+          Or put the whole cluster into maintenance mode:
+        </p><pre class="screen">crm configure property maintenance-mode=true</pre></li><li class="step"><p>
+          Pick a node other than the one currently targeted by the load balancer and
+          stop MariaDB on that node:
+        </p><pre class="screen">crm_resource --wait --force-demote -r galera -V</pre></li><li class="step"><p>
+          Perform updates with the following steps:
+        </p><ol type="a" class="substeps"><li class="step"><p>
+              Uninstall the old versions of MariaDB and the Galera wsrep provider.
+            </p></li><li class="step"><p>
+              Install the new versions of MariaDB and the Galera wsrep
+              provider. Select the appropriate instructions at <a class="link" href="https://mariadb.com/kb/en/library/installing-mariadb-with-zypper/" target="_top">Installing
+                MariaDB with zypper</a>.
+            </p></li><li class="step"><p>
+              Change configuration options if necessary.
+            </p></li></ol></li><li class="step"><p>
+          Start MariaDB on the node.
+        </p><pre class="screen">crm_resource --wait --force-promote -r galera -V</pre></li><li class="step"><p>
+          Run <span class="command"><strong>mysql_upgrade</strong></span> with the
+          <code class="literal">--skip-write-binlog</code> option.
+        </p></li><li class="step"><p>
+          On the other nodes, repeat the process detailed above: stop MariaDB,
+          perform updates, start MariaDB, run <span class="command"><strong>mysql_upgrade</strong></span>.
+        </p></li><li class="step"><p>
+          Mark Galera as managed:
+        </p><pre class="screen">crm resource manage galera</pre><p>
+          Or take the cluster out of maintenance mode.
+        </p></li></ol></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-bootstrap-galera-cluster-with-missing-node.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="sec-maintenance.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="OctaviaMaintenance.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Load Balancer: Octavia Administration</td></tr></table></div></body></html>

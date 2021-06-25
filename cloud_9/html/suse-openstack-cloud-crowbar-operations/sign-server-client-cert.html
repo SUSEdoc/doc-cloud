@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Sign server and client certificates</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><link rel="prev" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><link rel="next" href="deploy-cert.html" title="Deploying the certificate" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Sign server and client certificates</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="self-assign-certs.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</th><td width="20%" align="right"> <a accesskey="n" href="deploy-cert.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sign-server-client-cert"></a>Sign server and client certificates</h2></div></div></div><p>
+      This section is if you are the perspective certificate authority (CA).
+    </p><div class="procedure"><a id="id14263"></a><p class="title"><strong>Procedure 3.6. Prepare config file</strong></p><ol class="procedure" type="1"><li class="step"><p>
+          Modify the <code class="filename">penssl.cnf</code> config file and add a
+          line to the <code class="literal">[ v3_req ]</code> section:
+        </p><pre class="screen">
+          # cd ~/ssl/root/ca
+          # vi openssl.cnf
+          find v3_req
+          Add the following line:
+          subjectAltName = DNS:public.your_server_name.your_domain.com, DNS: cluster-control.your_domain.com
+          At the bottom of the file create section server_cert with the follwing:
+          [ server_cert ]
+          subjectAltName = subjectAltName = DNS:public.your_server_name.your_domain.com, DNS: cluster-control.your_domain.com
+        </pre></li><li class="step"><p>
+          The first DNS name would be used if you only have a single node
+          controller as you need the public URL for that server in your cluster.
+          For example, <code class="literal">public.db8-ae-ed-77-14-9e.susedojo.com</code>.
+
+          If you have a haproxy setup for your cluster or pacemaker, you have a
+          cluster URL. For example, you may have
+          <code class="literal">public.cluster.your_domain.com</code> and you need to
+          have <code class="literal">cluster.your_domain.com</code> and <code class="literal">public.cluster.your_domain.com</code>
+          as Alternative DNS names. This public URL can be used for all
+          endpoints unless you have multiple High Availability Clusters for
+          your control plane.
+        </p></li><li class="step"><p>
+          Save and close the file after you have those entered correctly.
+        </p></li></ol></div><div class="procedure"><a id="id14278"></a><p class="title"><strong>Procedure 3.7. Create a key</strong></p><ul class="procedure"><li class="step"><p>
+           Create a key minus the <code class="literal">-aes256</code> option so that
+           you are not presented with a password each time you restart a
+           service. (i.e. Apache service) also in 2048 bit so it is quicker to decrypt.
+         </p><pre class="screen">
+           # cd ~/ssl/root/ca
+           # openssl genrsa -out private/susedojo-com.key.pem 2048
+           # chmod 400 private/susedojo-com.key.pem
+         </pre></li></ul></div><div class="procedure"><a id="id14284"></a><p class="title"><strong>Procedure 3.8. Create a certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+            Use the private key we just created to create a certificate
+            signing request (CSR). The common name must be a fully qualified
+            domain name (i.e. www.susedojo.com) The Organization Name must be
+            the same as the Organization Name in the CA.
+          </p><pre class="screen">
+            # cd ~/ssl/root/ca
+            # openssl req -config openssl.cnf -key private/susedojo-com.key.pem -new -sha256 -out csr/susedojo-com.csr.pem
+            You are about to be asked to enter information that will be incorporated
+            into your certificate request.
+            -----
+            Country Name (2 letter code) [XX]:US
+            State or Province Name []:Idaho
+            Locality Name []:Meridian
+            Organization Name []:SUSEDojo
+            Organizational Unit Name []:dojo
+            Common Name []:susedojo.com
+            Email Address []:admin@susedojo.com
+          </pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+              You may be prompted for a challenge password and company name.
+              This can be left blank.
+            </p></div></li><li class="step"><p>
+            Create the certificate using the CA to sign the CSR, using the
+            <code class="literal">server_cert</code> extension as this will be used
+            on a server. We will give it one year of validity.
+          </p><pre class="screen">
+            # cd ~/ssl/root/ca
+            # openssl ca -config openssl.cnf -extensions server_cert -days 365 -notext -md sha256 -in  csr/susedojo-com.csr.pem -out certs/susedojo-com.cert.pem
+              Using configuration from openssl.cnf
+              Enter pass phrase for /root/ssl/root/ca/private/cakey.pem:
+              Check that the request matches the signature
+              Signature ok
+                      Serial Number: 4096 (0x1000)
+                      Validity
+                        Not Before: Aug  8 04:21:08 2018 GMT
+                        Not After: Aug  8 04:21:08 2019 GMT
+                     Subject:
+                          countryName               = US
+                          stateOrProvinceName       = Idaho
+                          organizationName          = SUSEDojo
+                          organizationalUnitName    = dojo
+                          commonName                = susedojo.com
+                          emailAddress              = admin@susedojo.com
+                     X509v3 extensions:
+                         X509v3 Basic Constraints:
+                            CA:FALSE
+                        X509v3 Key Usage:
+                              Digital Signature, Non Repudiation, Key Encipherment
+                         X509v3 Subject Alternative Name:
+                             DNS:public.db8-ae-ed-77-14-9e.susedojo.com
+            Certificate is to be certified until Aug  8 04:21:08 2019 GMT (365 days)
+            Sign the certificate? [y/n]:y
+
+            1 out of 1 certificate requests certified, commit? [y/n]y
+            Write out database with 1 new entries
+            Data Base Updated
+
+            # chmod 444 certs/susedojo-com.cert.pem
+          </pre></li><li class="step"><p>
+            The <code class="filename">index.txt</code> file should now contain a line
+            referring to the new certificate that has been created.
+            For example, the output should look like the following:
+          </p><pre class="screen">
+            V       190808042108Z           1000    unknown
+            /C=US/ST=Idaho/O=SUSEDojo/OU=dojo/CN=susedojo.com/emailAddress=admin@susedojo.com
+          </pre></li></ol></div><div class="procedure"><a id="id14299"></a><p class="title"><strong>Procedure 3.9. Verifying the certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+             Enter the following in your terminal:
+           </p><pre class="screen">
+             # openssl x509 -noout -text -in certs/susedojo-com.cert.pem
+           </pre></li><li class="step"><p>
+             You will notice the Issuer is the CA and you can also see the
+             Subject Alternative Name as well in the extensions section.
+           </p><pre class="screen">
+             # openssl verify -CAfile cacert.pem certs/susedojo-com.cert.pem
+             certs/susedojo-com.cert.pem: OK
+           </pre></li></ol></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="self-assign-certs.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="self-assign-certs.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="deploy-cert.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Deploying the certificate</td></tr></table></div></body></html>

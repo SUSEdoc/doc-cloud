@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="sec-maintenance.html" title="Chapter 1. Maintenance" /><link rel="prev" href="sec-bootstrap-compute-plane.html" title="Bootstrapping the Compute Plane" /><link rel="next" href="bk03ch01s07.html" title="Updating MariaDB with Galera" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-bootstrap-compute-plane.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Maintenance</th><td width="20%" align="right"> <a accesskey="n" href="bk03ch01s07.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-bootstrap-galera-cluster-with-missing-node"></a>Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</h2></div></div></div><p>
+      Pacemaker does not promote a node to master until it received from all
+      nodes the latest <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm"><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number (seqno)</a></em></a>.
+      That is a problem when one node of the MariaDB Galera Cluster is down (eg. due
+      to hardware or network problems) because the <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm"><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number</a></em></a>
+      can not be received from the unavailable node.
+      To recover a MariaDB Galera Cluster manual steps are needed to
+      select a bootstrap node for MariaDB Galera Cluster and to promote that node
+      with Pacemaker.
+    </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Important</h3><p>
+        Selecting the correct bootstrap node (depending on the highest
+        <a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number"><em class="glossterm"><a class="glossterm" href="gl-cloud.html#gloss-galera-sequence-number" title="Sequence number (seqno)">Sequence number (seqno)</a></em></a>)
+        is important. If the wrong node is selected data loss is possible.
+      </p></div><div class="procedure"><ol class="procedure" type="1"><li class="step"><p>
+          To find out which node has the latest Sequence number, call the following
+          command on all MariaDB Galera Cluster nodes and select the node with the
+          highest Sequence number.
+        </p><pre class="screen">mysqld_safe --wsrep-recover
+          tail -5 /var/log/mysql/mysqld.log
+          ...
+          [Note] WSREP: Recovered position: 7a477edc-757d-11e9-a01a-d218e7381711:2490</pre><p>
+          At the end of <code class="filename">/var/log/mysql/mysqld.log</code> the Sequence
+          number is written (in this example, the sequence number is 2490).
+          After all Sequence numbers are collected from all nodes, the node with
+          the highest Sequence number is selected for bootstrap node.
+          In this example, the node with the highest Sequence number is called
+          <code class="literal">node1</code>.
+        </p></li><li class="step"><p>
+          Temporarily mark the galera Pacemaker resource as unmanaged:
+        </p><pre class="screen">
+          crm resource unmanage galera
+        </pre></li><li class="step"><p>
+          Mark the node as bootstrap node (call the following commands from the
+          bootstrap node which is <code class="literal">node1</code> in this example):
+        </p><pre class="screen">
+          crm_attribute -N node1 -l reboot --name galera-bootstrap -v true
+          crm_attribute -N node1 -l reboot --name master-galera -v 100
+        </pre></li><li class="step"><p>
+          Promote the bootstrap node:
+        </p><pre class="screen">
+          crm_resource --force-promote -r galera -V
+        </pre></li><li class="step"><p>
+          Redetect the current state of the galera resource:
+        </p><pre class="screen">
+          crm resource cleanup galera
+        </pre></li><li class="step"><p>
+          Return the control to Pacemaker:
+        </p><pre class="screen">
+          crm resource manage galera
+          crm resource start galera
+        </pre></li></ol></div><p>
+      The MariaDB Galera Cluster is now running and Pacemaker is handling the cluster.
+    </p></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-bootstrap-compute-plane.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="sec-maintenance.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="bk03ch01s07.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Bootstrapping the Compute Plane </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Updating MariaDB with Galera</td></tr></table></div></body></html>

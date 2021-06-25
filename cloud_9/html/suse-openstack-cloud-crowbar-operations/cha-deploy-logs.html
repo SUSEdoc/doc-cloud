@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Log Files</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="monitoring-log-management.html" title="Chapter 5. Log Management" /><link rel="prev" href="bk03ch05s03.html" title="Monitoring Log Data" /><link rel="next" href="troubleshooting.html" title="Chapter 6. Troubleshooting" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Log Files</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="bk03ch05s03.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Log Management</th><td width="20%" align="right"> <a accesskey="n" href="troubleshooting.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="cha-deploy-logs"></a>Log Files</h2></div></div></div><p>
+  Find a list of log files below, sorted according to the nodes where they
+  can be found.
+ </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-deploy-logs-adminserv"></a>On the Administration Server</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+     Crowbar Web Interface:
+     <code class="filename">/var/log/crowbar/production.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Chef server: <code class="filename">/var/log/chef/server.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Chef expander: <code class="filename">/var/log/chef/expander.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Chef client (for the Administration Server only):
+     <code class="filename">/var/log/chef/client.log </code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Upgrade log files (only available if the Administration Server has been upgraded
+     from a previous version using <span class="command"><strong>suse-cloud-upgrade</strong></span>):
+     <code class="filename">/var/log/crowbar/upgrade/*</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Apache SOLR (Chef's search server):
+     <code class="filename">/var/log/chef/solr.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     HTTP (AutoYaST) installation server for provisioner barclamp:
+     <code class="filename">/var/log/apache2/provisioner-{access,error}_log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Log file from mirroring SMT repositories (optional):
+     <code class="filename">/var/log/smt/smt-mirror.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Default SUSE log files: <code class="filename">/var/log/messages</code>,
+     <code class="filename">/var/log/zypper.log </code> etc.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Syslogs for all nodes: <code class="filename">/var/log/nodes/*.log</code> (these
+     are collected via remote syslogging)
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Other client node log files saved on the Administration Server:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">/var/log/crowbar/sledgehammer/d*.log</code>: Initial
+       Chef client run on nodes booted using PXE prior to discovery by
+       Crowbar.
+      </p></li><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">/var/log/crowbar/chef-client/d*.log</code>: Output from
+       Chef client when proposals are applied to nodes. This is the
+       first place to look if a barclamp proposal fails to apply.
+      </p></li></ul></div></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-deploy-logs-crownodes"></a>On All Other Crowbar Nodes</h3></div></div></div><p>
+   Logs for when the node registers with the Administration Server:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/crowbar/crowbar_join/errlog</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/crowbar/crowbar_join/$TOPIC.{log,err}</code>:
+     STDOUT/STDERR from running commands associated with $TOPIC when the
+     node joins the Crowbar cluster. $TOPIC can be:
+    </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">zypper</code>: package management activity
+      </p></li><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">ifup</code>: network configuration activity
+      </p></li><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">Chef</code>: Chef client activity
+      </p></li><li class="listitem" style="list-style-type: disc"><p>
+       <code class="filename">time</code>: starting of ntp client
+      </p></li></ul></div></li><li class="listitem" style="list-style-type: disc"><p>
+     Chef client log: <code class="filename">/var/log/chef/client.log</code>
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     Default SUSE log files: <code class="filename">/var/log/messages</code>,
+     <code class="filename">/var/log/zypper.log </code> etc.
+    </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-deploy-logs-contrnode"></a>On the Control Node(s)</h3></div></div></div><p>
+   On setups with multiple Control Nodes log files for certain services
+   (such as <code class="filename">keystone.log</code>) are only available on the
+   nodes where the services are deployed.
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: bullet; "><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/apache2/openstack-dashboard-*</code>: Logs for
+     the <span class="productname">OpenStack</span> Dashboard
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/ceilometer/*</code>: ceilometer log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/cinder/*</code>: cinder log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/glance/*</code>: glance; log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/heat/*</code>: heat log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/keystone/*</code>: keystone log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/neutron/*</code>: neutron log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/nova/*</code>: various log files relating to
+     nova services.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/rabbitmq/*</code>: RabbitMQ log files.
+    </p></li><li class="listitem" style="list-style-type: disc"><p>
+     <code class="filename">/var/log/swift/*</code>: swift log files.
+    </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-deploy-logs-compnode"></a>On Compute Nodes</h3></div></div></div><p>
+   <code class="filename">/var/log/nova/nova-compute.log</code>
+  </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="bk03ch05s03.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="monitoring-log-management.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="troubleshooting.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Monitoring Log Data </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 6. Troubleshooting</td></tr></table></div></body></html>

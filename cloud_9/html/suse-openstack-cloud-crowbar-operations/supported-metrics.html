@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Supported Metrics</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="status-servers-log-data.html" title="Status of Services, Servers, and Log Data" /><link rel="next" href="monitoring-log-management.html" title="Chapter 5. Log Management" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Supported Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="status-servers-log-data.html">Prev</a> </td><th width="60%" align="center">Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</th><td width="20%" align="right"> <a accesskey="n" href="monitoring-log-management.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="supported-metrics"></a>Supported Metrics</h2></div></div></div><p>
+  The sections below describe the metrics supported by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Standard metrics for general monitoring of servers and networks.
+   </p></li><li class="listitem"><p>
+    Additional metrics for monitoring specific servers and services.
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15967"></a>Standard Metrics</h3></div></div></div><p>
+   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports the following
+   standard metrics for monitoring servers and networks. These metrics usually
+   do not require specific settings. The metrics are grouped by metrics types.
+   Each metrics type references a set of related metrics.
+  </p><h5><a id="id15973"></a>cpu.yaml</h5><p>
+   Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
+   requests are in progress, or the percentage of time the CPU is used at system
+   level or user level.
+  </p><h5><a id="id15975"></a>disk.yaml</h5><p>
+   Metrics on disk space, e.g. the percentage of disk space that is used on a
+   device, or the total amount of disk space aggregated across all the disks on
+   a particular node.
+  </p><h5><a id="id15977"></a>load.yaml</h5><p>
+   Metrics on the average system load over different periods (e.g. 1 minute, 5
+   minutes, or 15 minutes).
+  </p><h5><a id="id15979"></a>memory.yaml</h5><p>
+   Metrics on memory usage, e.g. the number of megabytes of total memory or free
+   memory, or the percentage of free swap memory.
+  </p><h5><a id="id15981"></a>network.yaml</h5><p>
+   Metrics on the network, e.g. the number of network bytes received or sent per
+   second, or the number of network errors on incoming or outgoing network
+   traffic per second.
+  </p><p>
+   These metrics are configured automatically on all machines and nodes that have
+   the <code class="literal">monasca-agent</code> role assigned. This applies not only to
+   <code class="filename">network.yaml</code> but also to all metrics covered in this chapter.
+  </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15986"></a>Additional Metrics</h3></div></div></div><p>
+   In addition to the standard metrics, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring automatically
+   adds the following
+   additional metrics to the monasca agent configuration on the <span class="productname">OpenStack</span>
+   Controller.
+   </p><h5><a id="id15993"></a>http_check.yaml</h5><p>
+   HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
+   list of URLs, the agent sends an HTTP request and reports success or failure
+   to the Monitoring Service.
+  </p><p>
+   The following barclamps will automatically create an HTTP check for the API
+   services they deploy if the <code class="literal">monasca</code> barclamp is active:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>barbican</p></li><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>heat</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>Magnum</p></li><li class="listitem"><p>manila</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>sahara</p></li><li class="listitem"><p>swift</p></li></ul></div><p>
+   By default, the monitoring dashboard is configured to display the service status for the following services:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>swift</p></li></ul></div><p>
+   The status visualization for additional services can be added manually.
+  </p><h5><a id="id16035"></a>postgres.yaml</h5><p>
+   Postgres checks gather various CRUD and system statistics for a database
+   hosted by a PostgreSQL DBMS.
+  </p><p>
+   The following barclamps will automatically create Postgres checks for their
+   service database if the <code class="literal">monasca</code> barclamp is active:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>barbican</p></li><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>heat</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>Magnum</p></li><li class="listitem"><p>manila</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>sahara</p></li></ul></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="status-servers-log-data.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="soc-monitoring.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="monitoring-log-management.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Status of Services, Servers, and Log Data </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Log Management</td></tr></table></div></body></html>

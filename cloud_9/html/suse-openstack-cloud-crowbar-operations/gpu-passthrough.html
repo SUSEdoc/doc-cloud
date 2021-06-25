@@ -1,64 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>GPU passthrough | Operations Guide Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide Crowbar" /><meta name="chapter-title" content="Chapter 2. GPU passthrough" /><meta name="description" content="SUSE OpenStack Cloud Crowbar GPU passthrough functionality provides the nova instance direct access to the GPU device for better performance. This section demonstrates the steps to pass through a NVIDIA GPU card supported by SUSE OpenStack Cloud Crowbar." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="sec-maintenance.html" title="Chapter 1. Maintenance" /><link rel="next" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" />
-<script type="text/javascript">
-
-if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
-}
-else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
-}
-
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="gpu-passthrough.html">GPU passthrough</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="sec-maintenance.html"><span class="number">1 </span><span class="name">Maintenance</span></a></li><li class="inactive"><a href="gpu-passthrough.html"><span class="number">2 </span><span class="name">GPU passthrough</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">3 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="soc-monitoring.html"><span class="number">4 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></li><li class="inactive"><a href="monitoring-log-management.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="troubleshooting.html"><span class="number">6 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Maintenance" href="sec-maintenance.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" href="self-assign-certs.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="gpu-passthrough.html">GPU passthrough</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Maintenance" href="sec-maintenance.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" href="self-assign-certs.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="gpu-passthrough"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GPU passthrough</span> <a title="Permalink" class="permalink" href="gpu-passthrough.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-gpu-passthrough.xml</li><li><span class="ds-label">ID: </span>gpu-passthrough</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="gpu-passthrough.html#crow-pci-passthrough"><span class="number">2.1 </span><span class="name">Leveraging PCI Passthrough</span></a></span></dt></dl></div></div><p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 2. GPU passthrough</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="sec-depl-maintenance-fernet-tokens.html" title="Rotating Fernet Tokens" /><link rel="next" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 2. GPU passthrough</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-depl-maintenance-fernet-tokens.html">Prev</a> </td><th width="60%" align="center"><em class="citetitle">Operations Guide Crowbar</em></th><td width="20%" align="right"> <a accesskey="n" href="self-assign-certs.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="gpu-passthrough"></a>Chapter 2. GPU passthrough</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="gpu-passthrough.html#crow-pci-passthrough">Leveraging PCI Passthrough</a></span></dt><dd><dl><dt><span class="section"><a href="gpu-passthrough.html#preparing-comp-passthrough">Preparing nova and glance for passthrough</a></span></dt><dt><span class="section"><a href="gpu-passthrough.html#flavor-creation">Flavor Creation</a></span></dt><dt><span class="section"><a href="gpu-passthrough.html#additional-examples">Additional examples</a></span></dt></dl></dd></dl></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> GPU passthrough functionality provides the nova
   instance direct access to the GPU device for better performance.
   This section demonstrates the steps to pass through a NVIDIA GPU
   card supported by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
- </p><div id="id-1.5.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
    When using PCI Passthrough, resizing the VM to the same host with the same
    PCI card is not supported.
-  </p></div><div class="sect1" id="crow-pci-passthrough"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Leveraging PCI Passthrough</span> <a title="Permalink" class="permalink" href="gpu-passthrough.html#crow-pci-passthrough">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-gpu-passthrough.xml</li><li><span class="ds-label">ID: </span>crow-pci-passthrough</li></ul></div></div></div></div><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="crow-pci-passthrough"></a>Leveraging PCI Passthrough</h2></div></div></div><p>
    Two parts are necessary to leverage PCI passthrough on a SUSE <span class="productname">OpenStack</span> Cloud
    9 Compute Node: preparing the Compute Node, preparing nova and
    glance.
   </p><p>To leverage PCI passthrough on a SUSE <span class="productname">OpenStack</span> Cloud
    9 Compute Node, follow the below procedures in sequence:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
-     <a class="xref" href="gpu-passthrough.html#crow-pci-passthrough-prep-node" title="Preparing the Compute Node">Procedure 2.1, “Preparing the Compute Node”</a>
-    </p></li><li class="listitem "><p>
-     <a class="xref" href="gpu-passthrough.html#preparing-comp-passthrough" title="2.1.1. Preparing nova and glance for passthrough">Section 2.1.1, “Preparing nova and glance for passthrough”</a>
-    </p></li><li class="listitem "><p>
-     <a class="xref" href="gpu-passthrough.html#flavor-creation" title="2.1.2. Flavor Creation">Section 2.1.2, “Flavor Creation”</a>
-    </p></li></ol></div><div class="procedure " id="crow-pci-passthrough-prep-node"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.1: </span><span class="name">Preparing the Compute Node </span><a title="Permalink" class="permalink" href="gpu-passthrough.html#crow-pci-passthrough-prep-node">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+     <a class="xref" href="gpu-passthrough.html#crow-pci-passthrough-prep-node" title="Procedure 2.1. Preparing the Compute Node">Procedure 2.1, “Preparing the Compute Node”</a>
+    </p></li><li class="listitem"><p>
+     <a class="xref" href="gpu-passthrough.html#preparing-comp-passthrough" title="Preparing nova and glance for passthrough">the section called “Preparing nova and glance for passthrough”</a>
+    </p></li><li class="listitem"><p>
+     <a class="xref" href="gpu-passthrough.html#flavor-creation" title="Flavor Creation">the section called “Flavor Creation”</a>
+    </p></li></ol></div><div class="procedure"><a id="crow-pci-passthrough-prep-node"></a><p class="title"><strong>Procedure 2.1. Preparing the Compute Node</strong></p><ol class="procedure" type="1"><li class="step"><p>
        There should be no kernel drivers or binaries with direct access to the
        PCI device. If there are kernel modules, they should be blacklisted.
       </p><p>
        For example, it is common to have a <code class="literal">nouveau</code> driver
        from when the node was installed. This driver is a graphics driver for
        NVIDIA-based GPUs. It must be blacklisted as shown in this example.
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>echo 'blacklist nouveau' &gt;&gt; /etc/modprobe.d/nouveau-default.conf</pre></div><p>
+      </p><pre class="screen"><code class="prompt">root # </code>echo 'blacklist nouveau' &gt;&gt; /etc/modprobe.d/nouveau-default.conf</pre><p>
        The file location and its contents are important, the name of
        the file is your choice. Other drivers can be blacklisted in
        the same manner, possibly including NVIDIA drivers.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        On the host, <code class="literal">iommu_groups</code> is necessary and may
        already be enabled. To check if IOMMU is enabled:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>virt-host-validate
+      </p><pre class="screen"><code class="prompt">root # </code>virt-host-validate
 .....
 QEMU: Checking if IOMMU is enabled by kernel
 : WARN (IOMMU appears to be disabled in kernel. Add intel_iommu=on to kernel cmdline arguments)
-.....</pre></div><p>
+.....</pre><p>
        To modify the kernel cmdline as suggested in the warning, edit the file
        <code class="filename">/etc/default/grub</code> and append
        <code class="literal">intel_iommu=on</code> to the
@@ -67,33 +54,34 @@ QEMU: Checking if IOMMU is enabled by kernel
       </p><p>
        A reboot is required for <code class="literal">iommu_groups</code> to be
        enabled.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        After the reboot, check that IOMMU is enabled:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>virt-host-validate
+      </p><pre class="screen"><code class="prompt">root # </code>virt-host-validate
 .....
 QEMU: Checking if IOMMU is enabled by kernel
 : PASS
-.....</pre></div></li><li class="step "><p>
+.....</pre></li><li class="step"><p>
        Confirm IOMMU groups are available by finding the group associated with
        your PCI device (for example NVIDIA GPU):
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>lspci -nn | grep -i nvidia
-84:00.0 3D controller [0302]: NVIDIA Corporation GV100GL [Tesla V100 PCIe 16GB] [10de:1db4] (rev a1)</pre></div><p>
+      </p><pre class="screen"><code class="prompt">root # </code>lspci -nn | grep -i nvidia
+84:00.0 3D controller [0302]: NVIDIA Corporation GV100GL [Tesla V100 PCIe 16GB] [10de:1db4] (rev a1)
+</pre><p>
         In this example, <code class="literal">84:00.0</code> is the address of
         the PCI device. The vendorID is <code class="literal">10de</code>. The
         product ID is <code class="literal">1db4</code>.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Confirm that the devices are available for passthrough:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>ls -ld /sys/kernel/iommu_groups/*/devices/*84:00.?/
-drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:84:00.0/</pre></div><div id="id-1.5.4.4.5.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      </p><pre class="screen"><code class="prompt">root # </code>ls -ld /sys/kernel/iommu_groups/*/devices/*84:00.?/
+drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:84:00.0/</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
        With PCI passthrough, only an entire IOMMU group can be passed.
        Parts of the group cannot be passed. In this example, the IOMMU
        group is <code class="literal">56</code>.
-       </p></div></li></ol></div></div><div class="sect2" id="preparing-comp-passthrough"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparing nova and glance for passthrough</span> <a title="Permalink" class="permalink" href="gpu-passthrough.html#preparing-comp-passthrough">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-gpu-passthrough.xml</li><li><span class="ds-label">ID: </span>preparing-comp-passthrough</li></ul></div></div></div></div><p>
+       </p></div></li></ol></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="preparing-comp-passthrough"></a>Preparing nova and glance for passthrough</h3></div></div></div><p>
       Information about configuring nova is available in the documentation at
-      <a class="link" href="https://docs.openstack.org/nova/rocky/admin/pci-passthrough.html" target="_blank">https://docs.openstack.org/nova/rocky/admin/pci-passthrough.html</a>.
+      <a class="link" href="https://docs.openstack.org/nova/rocky/admin/pci-passthrough.html" target="_top">https://docs.openstack.org/nova/rocky/admin/pci-passthrough.html</a>.
       Services like <code class="literal">nova-compute</code>, <code class="literal">nova-scheduler</code>
       and <code class="literal">nova-api</code> must be configured.
-     </p><div id="id-1.5.4.4.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
          We suggest user to create new <code class="filename">nova.conf</code>
          file specific to PCI passthrough usage
          under<code class="literal">/etc/nova/nova.conf.d</code> instead of
@@ -111,48 +99,56 @@ drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:8
        Here's an <span class="bold"><strong>example</strong></span> of the
        configuration of a single PCI device being passthrough to the
        nova instance:
-     </p><div class="procedure " id="id-1.5.4.4.6.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.2: </span><span class="name">Configure the Compute Host </span><a title="Permalink" class="permalink" href="gpu-passthrough.html#id-1.5.4.4.6.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
+     </p><div class="procedure"><a id="id14123"></a><p class="title"><strong>Procedure 2.2. Configure the Compute Host</strong></p><ol class="procedure" type="1"><li class="step"><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
     list all the files:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cd /etc/nova/nova.conf.d/
-ls -al</pre></div></li><li class="step "><p>
+    </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/
+ls -al
+</pre></li><li class="step"><p>
       Create a new nova configuration file under this folder and name
       the file appropriately. Note that configuration files are read
       and applied in lexicographic order. For example:
       <code class="filename">102-nova-pcipassthru.conf </code>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
       Add the following configuration entries to the file and the
       values for these entries are specific to your compute node as
-      obtained in Preparing the Compute Node step <a class="xref" href="gpu-passthrough.html#crow-pci-passthrough-prep-node" title="Preparing the Compute Node">Procedure 2.1, “Preparing the Compute Node”</a>. The configuration
+      obtained in Preparing the Compute Node step <a class="xref" href="gpu-passthrough.html#crow-pci-passthrough-prep-node" title="Procedure 2.1. Preparing the Compute Node">Procedure 2.1, “Preparing the Compute Node”</a>. The configuration
       entries specify the PCI device using whitelisting and the PCI
       alias for the device. Example:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/nova/nova.conf.d/102-nova-pcipassthru.conf
+    </p><pre class="screen"><code class="prompt">root # </code>cat /etc/nova/nova.conf.d/102-nova-pcipassthru.conf
 [pci]
 passthrough_whitelist = [{ "address": "0000:84:00.0" }]
-alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "name":"a1" }</pre></div><p>
+alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "name":"a1" }
+
+</pre><p>
     The example above shows how to configure a PCI alias a1 to request a PCI device with a <code class="literal">vendor_id</code>
     of <code class="literal">10de</code> and a
     <code class="literal">product_id</code> of <code class="literal">1db4</code>.
-    </p></li><li class="step "><p>Once the file is updated, restart nova compute on the compute node:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemctl restart openstack-nova-compute</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.4.4.6.6"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 2.3: </span><span class="name">Configure the Controller nodes </span><a title="Permalink" class="permalink" href="gpu-passthrough.html#id-1.5.4.4.6.6">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p></li><li class="step"><p>Once the file is updated, restart nova compute on the compute node:</p><pre class="screen"><code class="prompt">root # </code>systemctl restart openstack-nova-compute
+    </pre></li></ol></div><div class="procedure"><a id="id14147"></a><p class="title"><strong>Procedure 2.3. Configure the Controller nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
     Follow the following steps for all the controller nodes. Login to the controller host and
     change directory to <code class="filename">/etc/nova/nova.conf.d</code> and list all the files under that folder:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cd /etc/nova/nova.conf.d/
-ls -al</pre></div></li><li class="step "><p>Create a new nova configuration file under this folder and name the file appropriately in lexicographic
+    </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/
+ls -al
+</pre></li><li class="step"><p>Create a new nova configuration file under this folder and name the file appropriately in lexicographic
     increasing order. For example: <code class="filename">102-nova-pcipassthru.conf </code>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
     Add the following configuration entries to the file and the configuration entries for controller nodes
     only specify PCI alias for the device from the compute host. For example:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat /etc/nova/nova.conf.d/102-nova-pcipassthru.conf
+    </p><pre class="screen"><code class="prompt">root # </code>cat /etc/nova/nova.conf.d/102-nova-pcipassthru.conf
 [pci]
-alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "name":"a1" }</pre></div><p>
+alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "name":"a1" }
+</pre><p>
     The example above shows how to configure a PCI alias a1 to request a PCI device with a <code class="literal">vendor_id</code>
     of <code class="literal">10de</code> and a
     <code class="literal">product_id</code> of <code class="literal">1db4</code>.
-    </p></li><li class="step "><p>Once the file is updated, restart nova api on the controller node:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>systemctl restart openstack-nova-api</pre></div></li></ol></div></div></div><div class="sect2" id="flavor-creation"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Flavor Creation</span> <a title="Permalink" class="permalink" href="gpu-passthrough.html#flavor-creation">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-gpu-passthrough.xml</li><li><span class="ds-label">ID: </span>flavor-creation</li></ul></div></div></div></div><p>
+    </p></li><li class="step"><p>Once the file is updated, restart nova api on the controller node:</p><pre class="screen"><code class="prompt">root # </code>systemctl restart openstack-nova-api
+</pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="flavor-creation"></a>Flavor Creation</h3></div></div></div><p>
     Login into the controller node and create a new flavor or update an existing flavor with the property
     <code class="literal">"pci_passthrough:alias"</code>. For example:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>source .openrc
+    </p><pre class="screen"><code class="prompt">root # </code>source .openrc
 openstack flavor create --ram 8192 --disk 100 --vcpu 8 gpuflavor
-openstack flavor set gpuflavor --property "pci_passthrough:alias"="a1:1"</pre></div><p>
+openstack flavor set gpuflavor --property "pci_passthrough:alias"="a1:1"
+</pre><p>
     In the property, <code class="literal">"pci_passthrough:alias"="a1:1"</code>, <code class="literal">a1</code> before the <code class="literal">:</code>
     references the alias name as provided in the
     configuration entries while the number <code class="literal">1</code> after the <code class="literal">:</code> tells nova that a single GPU
@@ -162,22 +158,31 @@ openstack flavor set gpuflavor --property "pci_passthrough:alias"="a1:1"</pre></
     </p><p>
       Make sure the VM becomes <code class="literal">ACTIVE</code>. Login into the virtual instance and verify that GPU is seen
       from the guest
-      by running the <code class="command">lspci</code> command on the guest.
-    </p></div><div class="sect2" id="additional-examples"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional examples</span> <a title="Permalink" class="permalink" href="gpu-passthrough.html#additional-examples">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-gpu-passthrough.xml</li><li><span class="ds-label">ID: </span>additional-examples</li></ul></div></div></div></div><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>Example 1: Multiple compute hosts</p><p>Compute host x:</p><div class="verbatim-wrap"><pre class="screen">[pci]
+      by running the <span class="command"><strong>lspci</strong></span> command on the guest.
+    </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="additional-examples"></a>Additional examples</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Example 1: Multiple compute hosts</p><p>Compute host x:</p><pre class="screen">
+[pci]
 passthrough_whitelist = [{"address": "0000:84:00.0"}]
-alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><p>Compute host y:</p><div class="verbatim-wrap"><pre class="screen">[pci]
+alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}
+</pre><p>Compute host y:</p><pre class="screen">
+[pci]
 passthrough_whitelist = [{"address": "0000:85:00.0"}]
-alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><p>Controller nodes:</p><div class="verbatim-wrap"><pre class="screen">[pci]
-alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div></li><li class="listitem "><p>Example 2: Multiple PCI devices on the same host </p><p>Compute host z:</p><div class="verbatim-wrap"><pre class="screen">[pci]
+alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}
+</pre><p>Controller nodes:</p><pre class="screen">
+[pci]
+alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}
+</pre></li><li class="listitem"><p>Example 2: Multiple PCI devices on the same host </p><p>Compute host z:</p><pre class="screen">
+[pci]
 passthrough_whitelist = [{"vendor_id": "10de", "product_id": "1db4"}, {"vendor_id": "10de", "product_id":
 "1db1"}]
 alias = {"vendor_id": "10de", "name": "a2", "device_type": "type-PCI", "product_id": "1db1"}
-alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><p>Controller nodes:</p><div class="verbatim-wrap"><pre class="screen">[pci]
+alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}
+</pre><p>Controller nodes:</p><pre class="screen">
+[pci]
 alias = {"vendor_id": "10de", "name": "a2", "device_type": "type-PCI", "product_id": "1db1"}
-alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><p>In order to pass both the devices to the instance, you can set the
+alias = {"vendor_id": "10de", "name": "a1", "device_type": "type-PCI", "product_id": "1db4"}
+</pre><p>In order to pass both the devices to the instance, you can set the
          <code class="literal">"pci_passthrough:alias"="a1:1,a2:1"</code>
-         </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>source .openrc
+         </p><pre class="screen"><code class="prompt">root # </code>source .openrc
 openstack flavor create --ram 8192 --disk 100 --vcpu 8 gpuflavor2
-openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="self-assign-certs.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a><a class="nav-link" href="sec-maintenance.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Maintenance</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
+</pre></li></ol></div></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-depl-maintenance-fernet-tokens.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="book-crowbar-operations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="self-assign-certs.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Rotating Fernet Tokens </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</td></tr></table></div></body></html>

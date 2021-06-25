@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Basic Usage Scenario</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="monitoring-architecture.html" title="Architecture" /><link rel="next" href="key-features.html" title="Key Features" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Basic Usage Scenario</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="monitoring-architecture.html">Prev</a> </td><th width="60%" align="center">Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</th><td width="20%" align="right"> <a accesskey="n" href="key-features.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="basic-usage-scenario"></a>Basic Usage Scenario</h2></div></div></div><p>
+  The monitoring solution of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  addresses the requirements of large-scale public and private clouds where
+  high numbers of physical and virtual servers need to be monitored and huge
+  amounts of monitoring data need to be managed. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  consolidates metrics, alarms, and notifications, as well
+  as health and status information from multiple systems, thus reducing the
+  complexity and allowing for a higher level analysis of the monitoring data.
+ </p><p>
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring covers all aspects of a
+  Monitoring as a Service solution:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Storage of monitoring data in a resilient way.
+   </p></li><li class="listitem"><p>
+    Multi-tenancy architecture for submitting and streaming metrics. The
+    architecture ensures the secure isolation of metrics data.
+   </p></li><li class="listitem"><p>
+    horizontal and vertical scalability to support constantly evolving cloud
+    infrastructures. When physical and virtual servers are scaled up or down to
+    varying loads, the monitoring solution can be adapted accordingly.
+   </p></li></ul></div><p>
+  The basic usage scenario of setting up and using the monitoring features of
+  <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring looks as follows:
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-metricslogs.png" alt="MetricsLogs.png" /></div></div><p>
+  The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+  responsible for providing the monitoring features to the application
+  operators and the <span class="productname">OpenStack</span> operator. This enables the application operators
+  and the <span class="productname">OpenStack</span> operator to focus on operation and ensure the quality of
+  their services without having to carry out the tedious tasks implied by
+  setting up and administrating their own system monitoring software. The
+  Monitoring Service operator uses the features for monitoring the
+  operation of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+ </p><p>
+  As the Monitoring Service operator, you have the following responsibilities:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Deploying the Monitoring Service, thus providing the monitoring features to
+    the application operators, and the monitoring and log management features
+    to the <span class="productname">OpenStack</span> operator.
+   </p></li><li class="listitem"><p>
+    Regular maintenance of the components and services for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
+   </p></li><li class="listitem"><p>
+    Backup of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring databases,
+    configuration files, and customized dashboards.
+   </p></li><li class="listitem"><p>
+    Monitoring of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring for quality
+    assurance.</p></li></ul></div><p>
+  <span class="bold"><strong>Application operators</strong></span> monitor the virtual
+  machines on which they provide services to <span class="bold"><strong>end
+  users</strong></span> or services they need for their development activities. They
+  ensure that the physical and virtual servers on which their services are
+  provided are up and running as required.
+ </p><p>
+  The <span class="bold"><strong><span class="productname">OpenStack</span> operator</strong></span> is responsible for
+  administrating and maintaining the underlying <span class="productname">OpenStack</span> platform. The
+  monitoring and log management services of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+  enable you to ensure the availability and quality of your platform.
+  You use <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring for:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Monitoring physical and virtual servers, hypervisors, and <span class="productname">OpenStack</span>
+    services.
+   </p></li><li class="listitem"><p>
+    Monitoring middleware components, for example, database services.
+   </p></li><li class="listitem"><p>
+    Retrieving and analyzing the log data of the <span class="productname">OpenStack</span> services and
+    servers, the middleware components, and the operating system.
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="metrics-monitoring"></a>Metrics</h3></div></div></div><p>
+   A Metrics Agent can be installed and configured on each physical and virtual
+   server where cloud resources are to be monitored. The agent is responsible
+   for querying metrics and sending the data to the Monitoring Service for
+   further processing.
+  </p><p>
+   Metrics are self-describing data structures that are uniquely identified by a
+   name and a set of dimensions. Each dimension consists of a key/value pair
+   that allows for a flexible and concise description of the data to be
+   monitored, for example, region, availability zone, service tier, or resource
+   ID.
+  </p><p>
+   The Metrics Agent supports various types of metrics including the following:
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+     System metrics, for example, CPU usage, consumed disk space, or network
+     traffic.
+    </p></li><li class="listitem"><p>
+     Host alive checks. The agent can perform active checks on a host to
+     determine whether it is alive using ping (ICMP) or SSH.
+    </p></li><li class="listitem"><p>
+     Process checks. The agent can check and monitor a process, for example, the
+     number of instances, memory size, or number of threads.
+    </p></li><li class="listitem"><p>
+     HTTP endpoint checks. The agent can perform up/down checks on HTTP
+     endpoints by sending an HTTP request and reporting success or failure to
+     the Monitoring Service.
+    </p></li><li class="listitem"><p>
+     Service checks. The agent can check middleware services, for example,
+     MySQL, Kafka, or RabbitMQ.
+    </p></li><li class="listitem"><p>
+     <span class="productname">OpenStack</span> services. The agent can perform specific checks on each process
+     that is part of an <span class="productname">OpenStack</span> service.
+    </p></li><li class="listitem"><p>
+     Log metrics. The agent can check and monitor the number of critical log
+     entries in the log data retrieved from the cloud resources.
+    </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="data-visualization-analysis"></a>Data Visualization and Analysis</h3></div></div></div><p>
+    All <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring user groups work with a
+    graphical user interface that is seamlessly integrated into their cloud
+    infrastructure. <span class="phrase">Based on <span class="productname">OpenStack</span> horizon, the user interface
+    enables access to all monitoring functionality and the resulting large-scale
+    monitoring data.</span>
+   </p><p>
+    A comfortable dashboard visualizes the health and status of the cloud
+    resources. It allows <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users
+    to experiment with many ways of analyzing the performance of their cloud
+    resources in real-time. They cannot only view but also share and explore
+    visualizations of their monitoring data.
+   </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="alarms-notifications"></a>Alarms and Notifications</h3></div></div></div><p>
+    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports GUI-based alarm and
+    notification management. <span class="phrase">Template-based alarm definitions allow for
+    monitoring a dynamically changing set of resources without the need for
+    reconfiguration. While the number of underlying virtual machines is changing,
+    for example, this ensures the efficient monitoring of scalable cloud
+    services. Alarm definitions allow you to specify expressions that are
+    evaluated based on the metrics data that is received. Alarm definitions can
+    be combined to form compound alarms. Compound alarms allow you to track and
+    process even more complex events. Notifications can be configured in order to
+    inform <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring users when an alarm
+    is triggered.</span>
+   </p></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="monitoring-architecture.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="soc-monitoring.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="key-features.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Architecture </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Key Features</td></tr></table></div></body></html>

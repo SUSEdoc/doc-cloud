@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Service Order on SUSE OpenStack Cloud Start-up or Shutdown</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="sec-maintenance.html" title="Chapter 1. Maintenance" /><link rel="prev" href="sec-maintenance.html" title="Chapter 1. Maintenance" /><link rel="next" href="sec-upgrade-8-9.html" title="Upgrading from SUSE OpenStack Cloud Crowbar 8 to SUSE OpenStack Cloud Crowbar 9" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="sec-maintenance.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Maintenance</th><td width="20%" align="right"> <a accesskey="n" href="sec-upgrade-8-9.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-service-orders"></a>Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</h2></div></div></div><p>
+      In case you need to restart your complete SUSE <span class="productname">OpenStack</span> Cloud (after a complete shut
+      down or a power outage), ensure that the external Ceph cluster is started,
+      available and healthy.
+      Then start nodes and services in the order documented
+      below.
+    </p><div class="orderedlist"><p class="title"><strong>Service Order on Start-up</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p>
+          Control Node/Cluster on which the Database is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which RabbitMQ is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which keystone is deployed
+        </p></li><li class="listitem"><p>
+          For swift:
+        </p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
+              Storage Node on which the <code class="literal">swift-storage</code> role is deployed
+            </p></li><li class="listitem"><p>
+              Storage Node on which the <code class="literal">swift-proxy</code> role is deployed
+            </p></li></ol></div></li><li class="listitem"><p>
+          Any remaining Control Node/Cluster. The following additional rules apply:
+        </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+              The Control Node/Cluster on which the <code class="literal">neutron-server</code>
+              role is deployed needs to be started before starting the node/cluster
+              on which the <code class="literal">neutron-l3</code> role is deployed.
+            </p></li><li class="listitem"><p>
+              The Control Node/Cluster on which the <code class="literal">nova-controller</code>
+              role is deployed needs to be started before starting the node/cluster
+              on which heat is deployed.
+            </p></li></ul></div></li><li class="listitem"><p>
+          Compute Nodes
+        </p></li></ol></div><p>
+      If multiple roles are deployed on a single Control Node, the services are
+      automatically started in the correct order on that node. If you have more
+      than one node with multiple roles, make sure they are
+      started as closely as possible to the order listed above.
+    </p><p>
+      To shut down SUSE <span class="productname">OpenStack</span> Cloud, terminate nodes and services in the order documented
+      below (which is the reverse of the start-up order).
+    </p><div class="orderedlist"><p class="title"><strong>Service Order on Shutdown</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p>
+          Compute Nodes
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which heat is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which the <code class="literal">nova-controller</code>
+          role is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which the <code class="literal">neutron-l3</code>
+          role is deployed
+        </p></li><li class="listitem"><p>
+          All Control Node(s)/Cluster(s) on which neither of the following services
+          is deployed: Database, RabbitMQ, and keystone.
+        </p></li><li class="listitem"><p>
+          For swift:
+        </p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
+              Storage Node on which the <code class="literal">swift-proxy</code> role is
+              deployed
+            </p></li><li class="listitem"><p>
+              Storage Node on which the <code class="literal">swift-storage</code> role is
+              deployed
+            </p></li></ol></div></li><li class="listitem"><p>
+          Control Node/Cluster on which keystone is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which RabbitMQ is deployed
+        </p></li><li class="listitem"><p>
+          Control Node/Cluster on which the Database is deployed
+        </p></li><li class="listitem"><p>
+          If required, gracefully shut down an external Ceph cluster
+        </p></li></ol></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="sec-maintenance.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="sec-maintenance.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="sec-upgrade-8-9.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 1. Maintenance </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</td></tr></table></div></body></html>

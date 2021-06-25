@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Generate SUSE OpenStack Cloud Self Signed Certificate | Operations Guide Crowbar | SUSE OpenStack Cloud Crowbar 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide Crowbar" /><meta name="chapter-title" content="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><meta name="description" content="The purpose of this document is to help set up SSL Support for several services in SUSE OpenStack Cloud. The scope of this document covers all public endpoints in your OpenStack cluster. In most cases you want to have a Secure CA or External CA where your certificates are signed. You will sign with …" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="gpu-passthrough.html" title="Chapter 2. GPU passthrough" /><link rel="next" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" />
-<script type="text/javascript">
-
-if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
-}
-else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
-}
-
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="self-assign-certs.html">Generate SUSE OpenStack Cloud Self Signed Certificate</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="sec-maintenance.html"><span class="number">1 </span><span class="name">Maintenance</span></a></li><li class="inactive"><a href="gpu-passthrough.html"><span class="number">2 </span><span class="name">GPU passthrough</span></a></li><li class="inactive"><a href="self-assign-certs.html"><span class="number">3 </span><span class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span></a></li><li class="inactive"><a href="soc-monitoring.html"><span class="number">4 </span><span class="name">SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a></li><li class="inactive"><a href="monitoring-log-management.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="troubleshooting.html"><span class="number">6 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. GPU passthrough" href="gpu-passthrough.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. SUSE OpenStack Cloud Monitoring" href="soc-monitoring.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-operations.html">Operations Guide Crowbar</a><span> › </span><a class="crumb" href="self-assign-certs.html">Generate SUSE OpenStack Cloud Self Signed Certificate</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. GPU passthrough" href="gpu-passthrough.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. SUSE OpenStack Cloud Monitoring" href="soc-monitoring.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="self-assign-certs"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</span> <a title="Permalink" class="permalink" href="self-assign-certs.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-self-sign-cert.xml</li><li><span class="ds-label">ID: </span>self-assign-certs</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="self-assign-certs.html#create-root-pair"><span class="number">3.1 </span><span class="name">Create the CA Root Pair</span></a></span></dt><dt><span class="section"><a href="self-assign-certs.html#sign-server-client-cert"><span class="number">3.2 </span><span class="name">Sign server and client certificates</span></a></span></dt><dt><span class="section"><a href="self-assign-certs.html#deploy-cert"><span class="number">3.3 </span><span class="name">Deploying the certificate</span></a></span></dt><dt><span class="section"><a href="self-assign-certs.html#lets-encrypt-cert"><span class="number">3.4 </span><span class="name">Generate Public Certificate using Let’s Encrypt</span></a></span></dt></dl></div></div><p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="book-crowbar-operations.html" title="Operations Guide Crowbar" /><link rel="prev" href="gpu-passthrough.html" title="Chapter 2. GPU passthrough" /><link rel="next" href="sign-server-client-cert.html" title="Sign server and client certificates" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="gpu-passthrough.html">Prev</a> </td><th width="60%" align="center"><em class="citetitle">Operations Guide Crowbar</em></th><td width="20%" align="right"> <a accesskey="n" href="sign-server-client-cert.html">Next</a></td></tr></table><hr /></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="self-assign-certs"></a>Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="self-assign-certs.html#create-root-pair">Create the CA Root Pair</a></span></dt><dt><span class="section"><a href="sign-server-client-cert.html">Sign server and client certificates</a></span></dt><dt><span class="section"><a href="deploy-cert.html">Deploying the certificate</a></span></dt><dt><span class="section"><a href="lets-encrypt-cert.html">Generate Public Certificate using Let’s Encrypt</a></span></dt></dl></div><p>
    The purpose of this document is to help set up SSL Support for several services
    in SUSE OpenStack Cloud. The scope of this document covers all public
    endpoints in your OpenStack cluster. In most cases you want to have a
@@ -28,49 +15,62 @@ hljs.configure({
    sign with either a public CA or self signed CA, and include x509
    extensions for Subject Alt Names since there might be a highly available
    control plane with alternate names.
- </p><div class="sect1" id="create-root-pair"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create the CA Root Pair</span> <a title="Permalink" class="permalink" href="self-assign-certs.html#create-root-pair">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-self-sign-cert.xml</li><li><span class="ds-label">ID: </span>create-root-pair</li></ul></div></div></div></div><p>This section demonstrates how to create the certificate on the
-     crowbar or admin node of the SUSE OpenStack Cloud Cluster.</p><div id="id-1.5.5.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="create-root-pair"></a>Create the CA Root Pair</h2></div></div></div><p>This section demonstrates how to create the certificate on the
+     crowbar or admin node of the SUSE OpenStack Cloud Cluster.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
          To avoid external access to your CA Root Pair, put it on an air-gapped system
          that is permanently isolated from the internet and unplug any cables from the
          ethernet port.
-       </p></div><div class="procedure " id="id-1.5.5.3.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.1: </span><span class="name">Prepare the directory structure </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.3.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       </p></div><div class="procedure"><a id="id14217"></a><p class="title"><strong>Procedure 3.1. Prepare the directory structure</strong></p><ol class="procedure" type="1"><li class="step"><p>
            Create a directory for your CA Root pair:
-         </p><div class="verbatim-wrap"><pre class="screen">           # ssh root@crowbar
-           # mkdir -p ~/ssl/root/ca</pre></div></li><li class="step "><p>
+         </p><pre class="screen">
+           # ssh root@crowbar
+           # mkdir -p ~/ssl/root/ca
+         </pre></li><li class="step"><p>
            Create a directory structure and add <code class="filename">index.txt</code>
            and serial files to act as flat database of all signed certificates:
-         </p><div class="verbatim-wrap"><pre class="screen">           # cd ~/ssl/root/ca
+         </p><pre class="screen">
+           # cd ~/ssl/root/ca
            # mkdir certs crl newcerts private csr
            # chmod 700 private
            # touch index.txt
-           # echo 1000 &gt; serial</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.5.3.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.2: </span><span class="name">Prepare the configuration file </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.3.5">#</a></h6></div><div class="procedure-contents"><p>
+           # echo 1000 &gt; serial
+         </pre></li></ol></div><div class="procedure"><a id="id14226"></a><p class="title"><strong>Procedure 3.2. Prepare the configuration file</strong></p><p>
          This procedure takes you through the full set up. Note that
          when you setup the crowbar server, there is a structure already setup
          under <code class="filename">/etc/ssl</code>. This is where SUSE Linux typically
          contains the CA cert bundle created through YaST when the SMT server
          is set up. However, if you are using an external SMT server
          you will not have this.
-       </p><ol class="procedure" type="1"><li class="step "><p>
+       </p><ol class="procedure" type="1"><li class="step"><p>
            Copy <code class="filename">/etc/ssl/openssl.cnf</code> file to your setup.
            We can use this since it is completely annotated.
-         </p><div class="verbatim-wrap"><pre class="screen">           # cp /etc/ssl/openssl.cnf ./</pre></div></li><li class="step "><p>
+         </p><pre class="screen">
+           # cp /etc/ssl/openssl.cnf ./
+         </pre></li><li class="step"><p>
            Edit the file and change the location variable:
-         </p><div class="verbatim-wrap"><pre class="screen">           dir = /root/ssl/root/ca
-           # Where everything is kept</pre></div><div id="id-1.5.5.3.5.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+         </p><pre class="screen">
+           dir = /root/ssl/root/ca
+           # Where everything is kept
+         </pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
              Make sure <code class="literal">dir</code> is the directory where we created
              <code class="filename">/root/ssl/root/ca</code>.
-           </p></div></li></ol></div></div><div class="procedure " id="id-1.5.5.3.6"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.3: </span><span class="name">Create the root key </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.3.6">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+           </p></div></li></ol></div><div class="procedure"><a id="id14241"></a><p class="title"><strong>Procedure 3.3. Create the root key</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Create the root key encrypted with AES 256-bit encryption
           and a password, using 4096 bits for the creation.
-        </p><div class="verbatim-wrap"><pre class="screen">          # cd ~/ssl/root/ca
-          # openssl genrsa -aes256 -out private/cakey.pem 4096</pre></div></li><li class="step "><p>
+        </p><pre class="screen">
+          # cd ~/ssl/root/ca
+          # openssl genrsa -aes256 -out private/cakey.pem 4096
+        </pre></li><li class="step"><p>
           You will be asked to enter a password here and then verify it.
-        </p><div class="verbatim-wrap"><pre class="screen">          # chmod 400 private/cakey.pem</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.5.3.7"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.4: </span><span class="name">Create the root certificates </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.3.7">#</a></h6></div><div class="procedure-contents"><ul class="procedure"><li class="step "><p>
+        </p><pre class="screen">
+          # chmod 400 private/cakey.pem
+        </pre></li></ol></div><div class="procedure"><a id="id14249"></a><p class="title"><strong>Procedure 3.4. Create the root certificates</strong></p><ul class="procedure"><li class="step"><p>
            Use the root key (<code class="filename">cakey.pem</code>) to create the
            root certificate (cacert.pem). Its important to give it a long
            expiration since all the certificates signed from it will
            become invalid when it expires.
-         </p><div class="verbatim-wrap"><pre class="screen">           # cd ~/ssl/root/ca
+         </p><pre class="screen">
+           # cd ~/ssl/root/ca
            # openssl req -config openssl.cnf -key private/cakey.pem -new -x509 -days 10950 -sha256 -extensions v3_ca -out cacert.pem
            Enter pass phrase for cakey.pem: enteryourpassword
            You are about to be asked to enter information that will be incorporated
@@ -84,304 +84,12 @@ hljs.configure({
            Common Name []:susedojo.com
            Email Address []:admin@susedojo.com
 
-           # chmod 444 cacert.pem</pre></div></li></ul></div></div><div class="procedure " id="id-1.5.5.3.8"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.5: </span><span class="name">Verify the root certificates </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.3.8">#</a></h6></div><div class="procedure-contents"><ul class="procedure"><li class="step "><p>
+           # chmod 444 cacert.pem
+         </pre></li></ul></div><div class="procedure"><a id="id14255"></a><p class="title"><strong>Procedure 3.5. Verify the root certificates</strong></p><ul class="procedure"><li class="step"><p>
           Verify the certificate has the correct dates of validity and the
           algorithm used, Issuer, Subject, and x509v3 extensions. The issuer
           and subject are the same since it is self signed.
-        </p><div class="verbatim-wrap"><pre class="screen">          # cd ~/ssl/root/ca
-          # openssl x509 -noout -text -in cacert.pem</pre></div></li></ul></div></div></div><div class="sect1" id="sign-server-client-cert"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sign server and client certificates</span> <a title="Permalink" class="permalink" href="self-assign-certs.html#sign-server-client-cert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-self-sign-cert.xml</li><li><span class="ds-label">ID: </span>sign-server-client-cert</li></ul></div></div></div></div><p>
-      This section is if you are the perspective certificate authority (CA).
-    </p><div class="procedure " id="id-1.5.5.4.3"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.6: </span><span class="name">Prepare config file </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.4.3">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-          Modify the <code class="filename">penssl.cnf</code> config file and add a
-          line to the <code class="literal">[ v3_req ]</code> section:
-        </p><div class="verbatim-wrap"><pre class="screen">          # cd ~/ssl/root/ca
-          # vi openssl.cnf
-          find v3_req
-          Add the following line:
-          subjectAltName = DNS:public.your_server_name.your_domain.com, DNS: cluster-control.your_domain.com
-          At the bottom of the file create section server_cert with the follwing:
-          [ server_cert ]
-          subjectAltName = subjectAltName = DNS:public.your_server_name.your_domain.com, DNS: cluster-control.your_domain.com</pre></div></li><li class="step "><p>
-          The first DNS name would be used if you only have a single node
-          controller as you need the public URL for that server in your cluster.
-          For example, <code class="literal">public.db8-ae-ed-77-14-9e.susedojo.com</code>.
-
-          If you have a haproxy setup for your cluster or pacemaker, you have a
-          cluster URL. For example, you may have
-          <code class="literal">public.cluster.your_domain.com</code> and you need to
-          have <code class="literal">cluster.your_domain.com</code> and <code class="literal">public.cluster.your_domain.com</code>
-          as Alternative DNS names. This public URL can be used for all
-          endpoints unless you have multiple High Availability Clusters for
-          your control plane.
-        </p></li><li class="step "><p>
-          Save and close the file after you have those entered correctly.
-        </p></li></ol></div></div><div class="procedure " id="id-1.5.5.4.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.7: </span><span class="name">Create a key </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.4.4">#</a></h6></div><div class="procedure-contents"><ul class="procedure"><li class="step "><p>
-           Create a key minus the <code class="literal">-aes256</code> option so that
-           you are not presented with a password each time you restart a
-           service. (i.e. Apache service) also in 2048 bit so it is quicker to decrypt.
-         </p><div class="verbatim-wrap"><pre class="screen">           # cd ~/ssl/root/ca
-           # openssl genrsa -out private/susedojo-com.key.pem 2048
-           # chmod 400 private/susedojo-com.key.pem</pre></div></li></ul></div></div><div class="procedure " id="id-1.5.5.4.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.8: </span><span class="name">Create a certificate </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.4.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-            Use the private key we just created to create a certificate
-            signing request (CSR). The common name must be a fully qualified
-            domain name (i.e. www.susedojo.com) The Organization Name must be
-            the same as the Organization Name in the CA.
-          </p><div class="verbatim-wrap"><pre class="screen">            # cd ~/ssl/root/ca
-            # openssl req -config openssl.cnf -key private/susedojo-com.key.pem -new -sha256 -out csr/susedojo-com.csr.pem
-            You are about to be asked to enter information that will be incorporated
-            into your certificate request.
-            -----
-            Country Name (2 letter code) [XX]:US
-            State or Province Name []:Idaho
-            Locality Name []:Meridian
-            Organization Name []:SUSEDojo
-            Organizational Unit Name []:dojo
-            Common Name []:susedojo.com
-            Email Address []:admin@susedojo.com</pre></div><div id="id-1.5.5.4.5.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-              You may be prompted for a challenge password and company name.
-              This can be left blank.
-            </p></div></li><li class="step "><p>
-            Create the certificate using the CA to sign the CSR, using the
-            <code class="literal">server_cert</code> extension as this will be used
-            on a server. We will give it one year of validity.
-          </p><div class="verbatim-wrap"><pre class="screen">            # cd ~/ssl/root/ca
-            # openssl ca -config openssl.cnf -extensions server_cert -days 365 -notext -md sha256 -in  csr/susedojo-com.csr.pem -out certs/susedojo-com.cert.pem
-              Using configuration from openssl.cnf
-              Enter pass phrase for /root/ssl/root/ca/private/cakey.pem:
-              Check that the request matches the signature
-              Signature ok
-                      Serial Number: 4096 (0x1000)
-                      Validity
-                        Not Before: Aug  8 04:21:08 2018 GMT
-                        Not After: Aug  8 04:21:08 2019 GMT
-                     Subject:
-                          countryName               = US
-                          stateOrProvinceName       = Idaho
-                          organizationName          = SUSEDojo
-                          organizationalUnitName    = dojo
-                          commonName                = susedojo.com
-                          emailAddress              = admin@susedojo.com
-                     X509v3 extensions:
-                         X509v3 Basic Constraints:
-                            CA:FALSE
-                        X509v3 Key Usage:
-                              Digital Signature, Non Repudiation, Key Encipherment
-                         X509v3 Subject Alternative Name:
-                             DNS:public.db8-ae-ed-77-14-9e.susedojo.com
-            Certificate is to be certified until Aug  8 04:21:08 2019 GMT (365 days)
-            Sign the certificate? [y/n]:y
-
-            1 out of 1 certificate requests certified, commit? [y/n]y
-            Write out database with 1 new entries
-            Data Base Updated
-
-            # chmod 444 certs/susedojo-com.cert.pem</pre></div></li><li class="step "><p>
-            The <code class="filename">index.txt</code> file should now contain a line
-            referring to the new certificate that has been created.
-            For example, the output should look like the following:
-          </p><div class="verbatim-wrap"><pre class="screen">            V       190808042108Z           1000    unknown
-            /C=US/ST=Idaho/O=SUSEDojo/OU=dojo/CN=susedojo.com/emailAddress=admin@susedojo.com</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.5.4.6"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.9: </span><span class="name">Verifying the certificate </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.4.6">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-             Enter the following in your terminal:
-           </p><div class="verbatim-wrap"><pre class="screen">             # openssl x509 -noout -text -in certs/susedojo-com.cert.pem</pre></div></li><li class="step "><p>
-             You will notice the Issuer is the CA and you can also see the
-             Subject Alternative Name as well in the extensions section.
-           </p><div class="verbatim-wrap"><pre class="screen">             # openssl verify -CAfile cacert.pem certs/susedojo-com.cert.pem
-             certs/susedojo-com.cert.pem: OK</pre></div></li></ol></div></div></div><div class="sect1" id="deploy-cert"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying the certificate</span> <a title="Permalink" class="permalink" href="self-assign-certs.html#deploy-cert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-self-sign-cert.xml</li><li><span class="ds-label">ID: </span>deploy-cert</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Now you are ready to copy the newly created certificate and key
-         to the control node or controllers in the cluster.</p><div class="verbatim-wrap"><pre class="screen">         # scp newcerts/1000.pem control:/root/
-         # scp private/susedojo-com.key control:/root/</pre></div></li><li class="step "><p>
-         Copy them into the right location on the controller host:
-       </p><div class="verbatim-wrap"><pre class="screen">         # cp susedojo-com.key.pem /etc/keystone/ssl/private
-         # cp 1000.pem /etc/keystone/ssl/certs
-         # cd /etc/keystone/ssl/certs
-         # mv signing_cert.pem signing_cert.pem.todays_date
-         # cp 1000.pem signing_cert.pem
-         # cd /etc/keystone/ssl/private
-         # old signing_key.pem
-         # cp susedojo-com.key.pem signing_key.pem</pre></div></li><li class="step "><p>
-         Rerun the Barclamp for keystone in order to apply this change to
-         the cluster.
-       </p></li></ol></div></div></div><div class="sect1" id="lets-encrypt-cert"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate Public Certificate using Let’s Encrypt</span> <a title="Permalink" class="permalink" href="self-assign-certs.html#lets-encrypt-cert">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>soc-operations-self-sign-cert.xml</li><li><span class="ds-label">ID: </span>lets-encrypt-cert</li></ul></div></div></div></div><p>
-     <code class="literal">Let’s Encrypt</code> is a free, automated, and open Certificate Authority.
-     Its Root is trusted by all major operating systems now. For SUSE Linux
-     Enterprise Server 12 SP3 and higher, the ISRG Root X1 is available in
-     <code class="filename">/etc/ssl/certs/ISRG_Root_X1.pem</code>. If not, apply the
-     latest updates for your operating system.</p><p><code class="literal">Let’s Encrypt</code> has several clients to choose from depending on your needs.
-     For this example, we will be using the <code class="literal">acme.sh</code> client,
-     which is written in bash and gives us greater flexibility and ease in our
-     solution.</p><p>The next steps walk you through the installation of <code class="literal">acme.sh</code> and the issue
-     of a certificate with <code class="literal">Let’s Encrypt</code> followed by the automated load
-     of the certificate in OpenStack for the various API endpoints available.</p><div class="procedure " id="id-1.5.5.6.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.10: </span><span class="name">Installation of acme.sh letsencrypt client </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-         Login to your crowbar/admin server change to the root directory.
-       </p></li><li class="step "><p>
-         Create a new directory for letsencrypt and clone the
-         <code class="literal">acme.sh</code> repo:
-       </p><div class="verbatim-wrap"><pre class="screen">         # mkdir letsencrypt
-         # cd letsencrypt
-         # git clone https://github.com/Neilpang/acme.sh.git
-         # cd acme.sh</pre></div></li><li class="step "><p>
-         The system is prepared for installing <code class="literal">acme.sh</code>.
-       </p></li><li class="step "><p>
-         Install <code class="literal">socat</code>:
-       </p><div class="verbatim-wrap"><pre class="screen">         # export BRANCH=2 #this makes sure you are using the v2 api version of letsencrypt
-         # zypper in -y socat</pre></div></li><li class="step "><p>
-         Install <code class="literal">acme.sh</code>:
-       </p><div class="verbatim-wrap"><pre class="screen">         # ./acme.sh --install</pre></div></li><li class="step "><p>
-         After the install of <code class="filename">acme.sh</code> is finished, you
-         should see a new directory <code class="filename">/root/.acme.sh/</code> where
-         <code class="filename">acme.sh</code> lives and all of its environment,
-         account info, and certificates are stored.
-         We recommend using this as a backup location if you are using a
-         backup tool.
-       </p></li></ol></div></div><div class="procedure " id="id-1.5.5.6.6"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.11: </span><span class="name">Issue a wildcard SSL Certificate </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.6">#</a></h6></div><div class="procedure-contents"><p>
-      OpenStack and wildcard SSL uses the DNS validation method by
-      validating your domain using a TXT record that can either be added
-      manually or using the many (over 3 dozen) available DNS API’s.
-    </p><div id="id-1.5.5.6.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-        It is important to a wildcard certificate as you have the ability
-        to use the same one for all of your public API endpoints in the
-        OpenStack Cloud environment. Additional Cloud Native services
-        like Kubernetes can also take advantage of it.
-      </p></div><ol class="procedure" type="1"><li class="step "><p>
-        The manual DNS mode is a method that displays the DNS records that
-        have to be created in your DNS servers. It is beneficial to automate
-        the injection of DNS records as the maximum days a certificate is
-        viable is 60 days.
-        In order to issue your wildcard certificate, the command without
-        optional settings is:
-      </p><div class="verbatim-wrap"><pre class="screen">        # acme.sh --issue -d yourdomain.com -d *.yourdomain.com --dns</pre></div></li><li class="step "><p>
-        To debug or test, add the following optional settings:
-      </p><div class="verbatim-wrap"><pre class="screen">        # acme.sh --debug --test –issue -d yourdomain.com -d *.yourdomain.com --dns</pre></div></li><li class="step "><p>
-        A message returns. For example:
-      </p><div class="verbatim-wrap"><pre class="screen">        Add the following TXT record:
-        Domain: '_acme-challenge.yourdomain.com'
-        TXT value: 'KZvgq3MpOCjUNW7Uzz5nE5kkFdplNk66WGfxE9-H63k'
-        Please be aware that you prepend <code class="literal">_acme-challenge.</code> before your domain
-        so the resulting subdomain will be: <code class="literal">_acme-challenge.yourdomain.com</code></pre></div></li><li class="step "><p>
-        Using this information, you are ready to insert this TXT record into
-        your DNS.
-      </p><div id="id-1.5.5.6.6.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-          When setting this up for SUSE OpenStack Cloud with Crowbar, you need
-          to have your external DNS server appended to <code class="filename">/etc/resolv.conf</code>
-          in order to resolve as crowbar has its own internal
-          DNS. It is not enough to change it in the barclamp as you need the
-          DNS server entry to be at the top of the list in <code class="filename">resolv.conf</code>.
-          Crowbar returns to the default after a period of time.
-          Keep in mind that if you want to automate this step every 90 days
-          then you need to ensure the <code class="filename">resolv.conf</code> changes
-          every time to bypass the local crowbar DNS Server.
-        </p></div></li><li class="step "><p>
-        In order to set up TXT record in bind DNS, edit the zone file so
-        it looks like the following example:
-      </p><div class="verbatim-wrap"><pre class="screen">        yourdomain.com.     IN NS           admin.yourdomain.com.
-        _acme-challenge.yourdomain.com. IN TXT "xxxx...your TXT value string here"</pre></div></li><li class="step "><p>
-        Restart your named services for <code class="literal">bind</code>.
-      </p></li><li class="step "><p>
-        Issue the acme-challenge verification of the previous step with the
-        following command:
-      </p><div class="verbatim-wrap"><pre class="screen">        # acme.sh --renew -d yourdomain.com</pre></div></li><li class="step "><p>
-        If the DNS validation is okay, <code class="filename">acme.sh</code> issues a
-        wildcard certificate and displays the certificate and private-key path.
-        For example:
-      </p><div class="verbatim-wrap"><pre class="screen">        Your cert is in:  /root/.acme.sh/susedojo.com/susedojo.com.cer  
-        Your cert key is in:  /root/.acme.sh/susedojo.com/susedojo.com.key  
-        v2 chain.
-        The intermediate CA cert is in:  /root/.acme.sh/susedojo.com/ca.cer  
-        And the full chain certs is in:  /root/.acme.sh/susedojo.com/fullchain.cer_on_issue_success</pre></div></li><li class="step "><p>
-        Notice the location of your certificate and key. These are now
-        ready to be used by OpenStack Cloud.
-      </p></li><li class="step "><p>
-        To automate the process of setting up the TXT record in your DNS
-        servers and prepare it for automated validation, the file
-        <code class="filename">account.conf</code> holds account information
-        for the DNS Provider. After exporting the authentication variables,
-        it stores them automatically after the command is executed for later use.
-        To issue your wildcard certificate, the command without optional settings is:
-      </p><div class="verbatim-wrap"><pre class="screen">        # export LUA_Key=”your_API_token_from_account”
-        # export LUA_Email=”cameron@yourdomain.com”
-        # acme.sh -d yourdomain.com -d *.yourdomain.com --dns dns_lua</pre></div></li><li class="step "><p>
-       You can now view your DNS records and you will see a new TXT record
-       available. When it is finished and the DNS validation is okay,
-       <code class="filename">acme.sh</code> issue your wildcard certificate and displays
-       your certificate and private-key path just as before.
-      </p><div class="verbatim-wrap"><pre class="screen">        Your cert is in:  /root/.acme.sh/susedojo.com/susedojo.com.cer  
-        Your cert key is in:  /root/.acme.sh/susedojo.com/susedojo.com.key  
-        v2 chain.
-        The intermediate CA cert is in:  /root/.acme.sh/susedojo.com/ca.cer  
-        And the full chain certs is in:  /root/.acme.sh/susedojo.com/fullchain.cer_on_issue_success</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.5.6.7"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.12: </span><span class="name">Set Up Certificate Store on Control and Compute Nodes </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.7">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-        Create a shared location for all Certificates on the control nodes.
-        Execute these commands on all control nodes and compute nodes:
-      </p><div class="verbatim-wrap"><pre class="screen">        mkdir -p /etc/cloud/ssl/certs
-        mkdir -p /etc/cloud/ssl/private</pre></div></li><li class="step "><p>
-        Copy all certificates to their shared locations on the control nodes
-        and compute nodes:
-      </p><div class="verbatim-wrap"><pre class="screen">        # scp /root/.acme.sh/susedojo.com/susedojo.com.cer \ root@control:/etc/cloud/ssl/certs
-        # scp /root/.acme.sh/susedojo.com/ca.cer root@control:/etc/cloud/ssl/certs
-        # scp /root/.acme.sh/susedojo.com/fullchain.cer root@control:/etc/cloud/ssl/certs
-        # scp /root/.acme.sh/susedojo.com/susedojo.com.key \ root@control:/etc/cloud/ssl/private</pre></div></li></ol></div></div><div class="procedure " id="id-1.5.5.6.8"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3.13: </span><span class="name">Set Up Issued Certificates in Crowbar Barclamps </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.2.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/database-barclamp.png" target="_blank"><img src="images/database-barclamp.png" width="" alt="Database Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.1: </span><span class="name">Database Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.2.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.4.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/rabbitmq-barclamp.png" target="_blank"><img src="images/rabbitmq-barclamp.png" width="" alt="RabbitMQ Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.2: </span><span class="name">RabbitMQ Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.4.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.6.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/keystone-barclamp.png" target="_blank"><img src="images/keystone-barclamp.png" width="" alt="Keystone Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.3: </span><span class="name">Keystone Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.6.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false, and
-        <code class="literal">Require Client Certificates</code> is true.
-      </p><div class="figure" id="id-1.5.5.6.8.8.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/glance-barclamp.png" target="_blank"><img src="images/glance-barclamp.png" width="" alt="Glance Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.4: </span><span class="name">Glance Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.8.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false, and
-        <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.10.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/cinder-barclamp.png" target="_blank"><img src="images/cinder-barclamp.png" width="" alt="Cinder Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.5: </span><span class="name">Cinder Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.10.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false, and
-        <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.12.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/neutron-barclamp.png" target="_blank"><img src="images/neutron-barclamp.png" width="" alt="Neutron Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.6: </span><span class="name">Neutron Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.12.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li><li class="step "><p>
-        Set your Certificate File and Key File to the proper location, and
-        set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
-        in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
-        is false, and <code class="literal">Certificate is insecure</code> is false, and
-        <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure" id="id-1.5.5.6.8.14.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/nova-barclamp.png" target="_blank"><img src="images/nova-barclamp.png" width="" alt="Nova Barclamp" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 3.7: </span><span class="name">Nova Barclamp </span><a title="Permalink" class="permalink" href="self-assign-certs.html#id-1.5.5.6.8.14.2">#</a></h6></div></div></li><li class="step "><p>
-        Click <span class="guimenu ">Apply</span>. Your changes will apply in a
-        few minutes.
-      </p></li></ol></div></div><p>
-    Each Crowbar barclamp that have SSL support are the same. You can change
-    the same settings and apply your certificate to the remaining barclamps.</p><div id="id-1.5.5.6.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-      Once this is completed, we recommend automating this process as the
-      <code class="literal">Let's Encrypt</code> certificates expire after 90 days.
-    </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="soc-monitoring.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>SUSE <span class="productname">OpenStack</span> Cloud Monitoring</span></a><a class="nav-link" href="gpu-passthrough.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>GPU passthrough</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+        </p><pre class="screen">
+          # cd ~/ssl/root/ca
+          # openssl x509 -noout -text -in cacert.pem
+        </pre></li></ul></div></div></div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="gpu-passthrough.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="book-crowbar-operations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="sign-server-client-cert.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. GPU passthrough </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Sign server and client certificates</td></tr></table></div></body></html>
