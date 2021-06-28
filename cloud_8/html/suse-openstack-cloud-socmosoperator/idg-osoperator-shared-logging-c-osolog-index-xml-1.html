@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuring Index Patterns</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="OpenStack Operator's Guide" /><link rel="up" href="idg-osoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 4. Log Management" /><link rel="prev" href="idg-osoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 4. Log Management" /><link rel="next" href="ch04s03.html" title="Monitoring Log Data" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Configuring Index Patterns</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="idg-osoperator-shared-logging-c-osologging-xml-1.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Log Management</th><td width="20%" align="right"> <a accesskey="n" href="ch04s03.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idg-osoperator-shared-logging-c-osolog-index-xml-1"></a>Configuring Index Patterns</h2></div></div></div>
+ 
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> enables the dynamic mapping
+  of fields. After configuring an index pattern, the indices that match the
+  pattern are automatically scanned to display the list of index fields. This
+  guarantees that the fields are correctly visualized in the dashboard.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> ships with a preconfigured
+  index pattern that allows you to instantly explore your Elasticsearch indices
+  when accessing the dashboard for the first time. You can create additional
+  patterns to view and analyze specific sets of data. One or multiple patterns
+  can be created per project. When you create additional patterns, you have to
+  set one of them as the default.
+ </p>
+ <p>
+  To configure an additional index pattern, use <span class="guilabel">Settings &gt;
+  Indices</span>. Click the index pattern that is displayed in the
+  <span class="guilabel">Index Patterns</span> field on the left, and use the
+  <span class="guilabel">Add New</span> option.
+ </p>
+ <p>
+  Indices that match the pattern you define must exist in the Elasticsearch
+  database, and they must contain data. For an index pattern, you specify the
+  following elements:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    <span class="guilabel">Index contains time-based events</span>. It is recommended
+    that this option is selected. This improves search performance by enabling
+    searches only on those indices that contain data on time-based events.
+   </p>
+  </li><li class="listitem">
+   <p>
+    <span class="guilabel">Use event times to create index names</span>. It is
+    recommended that this option is selected. This improves search performance
+    by enabling searches only on those indices that contain data in the time
+    range you specify.
+   </p>
+  </li><li class="listitem">
+   <p>
+    <span class="guilabel">Index pattern interval</span>. Select
+    <code class="literal">Daily</code> as index pattern interval. Daily intervals are
+    supported by the Monitoring Service.
+   </p>
+  </li><li class="listitem">
+   <p>
+    <span class="guilabel">Index name or pattern</span>. The pattern allows you to
+    define dynamic index names. Static text in a pattern is denoted using
+    brackets. Replace the predefined pattern (<code class="literal">[logstash-]*</code>
+    or <code class="literal">[logstash-]YYYY.MM.DD</code>) as follows:
+   </p>
+   <p>
+    Replace <code class="literal">logstash-</code> by the project ID of the OpenStack
+    project whose log data is to be visualized in the dashboard.
+   </p>
+   <p>
+    Replace <code class="literal">*</code> or <code class="literal">YYYY.MM.DD</code> by
+    <code class="literal">YYYY-MM-DD</code> as naming pattern. This naming pattern is
+    supported by the Monitoring Service.
+   </p>
+   <p>
+    Example: <code class="literal">[557aff4bf007473d84069aca202a1633-]YYYY-MM-DD</code>
+   </p>
+  </li><li class="listitem">
+   <p>
+    <span class="guilabel">Time-field name</span>. Select <code class="literal">@timestamp</code>
+    as time-field name. <code class="literal">@timestamp</code> matches the
+    <code class="literal">YYYY-MM-DD</code> naming pattern.
+   </p>
+  </li></ul></div>
+ <p>
+  The default index pattern is automatically loaded when you access the log
+  management window. It is marked with an asterisk in front of the pattern name
+  in the <span class="guilabel">Index Patterns</span> field at the top left corner of
+  the <span class="guilabel">Settings</span> page. Select the pattern you want to set as
+  the default from the <span class="guilabel">Index Patterns</span> field. The
+  content of the log management window is instantly updated.
+ </p>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="idg-osoperator-shared-logging-c-osologging-xml-1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-osoperator-shared-logging-c-osologging-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 4. Log Management </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Monitoring Log Data</td></tr></table></div></body></html>

@@ -1,43 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Supported Metrics | Monitoring Service Operator's Guide | SUSE OpenStack Cloud Monitoring</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Monitoring" /><meta name="book-title" content="Monitoring Service Operator's Guide" /><meta name="chapter-title" content="Appendix A. Supported Metrics" /><meta name="description" content="The sections below describe the metrics supported by SUSE OpenStack Cloud Monitoring:" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="fs@suse.com" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><meta name="tracker-bsc-version" content="" /><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="prev" href="idg-msoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 5. Log Management" /><link rel="next" href="reference-7A5FB297419F4787832C9125D7CAC80F.html" title="Appendix B. Glossary" />
-<script type="text/javascript">
-
-if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
-}
-else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
-}
-
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="apa.html">Supported Metrics</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Monitoring Service Operator's Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Manual</span></a></li><li class="inactive"><a href="idg-msoperator-shared-intro-c-intro-xml-1.html"><span class="number">1 </span><span class="name">Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></span></a></li><li class="inactive"><a href="idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1.html"><span class="number">2 </span><span class="name">Installation</span></a></li><li class="inactive"><a href="idg-msoperator-shared-operationmaintenance-c-operate-xml-1.html"><span class="number">3 </span><span class="name">Operation and Maintenance</span></a></li><li class="inactive"><a href="idg-msoperator-shared-monitor-c-monitor-xml-1.html"><span class="number">4 </span><span class="name">Monitoring</span></a></li><li class="inactive"><a href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="number">5 </span><span class="name">Log Management</span></a></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">Supported Metrics</span></a></li><li class="inactive"><a href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="number">B </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Log Management" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix B. Glossary" href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Monitoring Service Operator's Guide"><span class="book-icon">Monitoring Service Operator's Guide</span></a><span> › </span><a class="crumb" href="apa.html">Supported Metrics</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Log Management" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix B. Glossary" href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="appendix " id="id-1.9"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud Monitoring</span></div><div><h1 class="title"><span class="number">A </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Supported Metrics</span> <a title="Permalink" class="permalink" href="apa.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-cmmoperator-appendix-r-cmmometrics.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="apa.html#id-1.9.4"><span class="number">A.1 </span><span class="name">Standard Metrics</span></a></span></dt><dt><span class="section"><a href="apa.html#id-1.9.5"><span class="number">A.2 </span><span class="name">Additional Metrics</span></a></span></dt></dl></div></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Appendix A. Supported Metrics</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="prev" href="ch05s04.html" title="Troubleshooting" /><link rel="next" href="apas02.html" title="Additional Metrics" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix A. Supported Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s04.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="apas02.html">Next</a></td></tr></table><hr /></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="id2802"></a>Appendix A. Supported Metrics</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="apa.html#id2811">Standard Metrics</a></span></dt><dt><span class="section"><a href="apas02.html">Additional Metrics</a></span></dt></dl></div>
  
  <p>
   The sections below describe the metrics supported by <span class="phrase">SUSE OpenStack
   Cloud Monitoring</span>:
  </p>
-  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+  <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
     <p>
      Standard metrics for general monitoring of servers and networks.
     </p>
-   </li><li class="listitem ">
+   </li><li class="listitem">
     <p>
      Additional metrics for monitoring specific servers and services.
     </p>
    </li></ul></div>
  
  
- <div class="sect1" id="id-1.9.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">A.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Standard Metrics</span> <a title="Permalink" class="permalink" href="apa.html#id-1.9.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-appendix-r-metricsstandard.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
+ <div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2811"></a>Standard Metrics</h2></div></div></div>
  
  <p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports the following
@@ -45,178 +32,34 @@ hljs.configure({
   do not require specific settings. The metrics are grouped by metrics types.
   Each metrics type references a set of related metrics.
  </p>
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.4.3"><span class="name">cpu.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.4.3">#</a></h5></div>
+ <h5><a id="id2815"></a>cpu.yaml</h5>
  <p>
   Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
   requests are in progress, or the percentage of time the CPU is used at system
   level or user level.
  </p>
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.4.5"><span class="name">disk.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.4.5">#</a></h5></div>
+ <h5><a id="id2817"></a>disk.yaml</h5>
  <p>
   Metrics on disk space, e.g. the percentage of disk space that is used on a
   device, or the total amount of disk space aggregated across all the disks on
   a particular node.
  </p>
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.4.7"><span class="name">load.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.4.7">#</a></h5></div>
+ <h5><a id="id2819"></a>load.yaml</h5>
  <p>
   Metrics on the average system load over different periods (e.g. 1 minute, 5
   minutes, or 15 minutes).
  </p>
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.4.9"><span class="name">memory.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.4.9">#</a></h5></div>
+ <h5><a id="id2821"></a>memory.yaml</h5>
  <p>
   Metrics on memory usage, e.g. the number of megabytes of total memory or free
   memory, or the percentage of free swap memory.
  </p>
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.4.11"><span class="name">network.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.4.11">#</a></h5></div>
+ <h5><a id="id2823"></a>network.yaml</h5>
  <p>
   Metrics on the network, e.g. the number of network bytes received or sent per
   second, or the number of network errors on incoming or outgoing network
   traffic per second.
  </p>
 </div>
- <div class="sect1" id="id-1.9.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">A.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Metrics</span> <a title="Permalink" class="permalink" href="apa.html#id-1.9.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>msoperator-shared-appendix-r-metricsadditional.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div>
  
- <p>
-  In addition to the standard metrics, SUSE OpenStack Cloud Monitoring
-  automatically adds the following additional metrics to the monasca agent
-  configuration on the Monitoring Node.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.3"><span class="name">elastic.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.3">#</a></h5></div>
- <p>
-  Elastic checks gather metrics for Elasticsearch databases, such as the Log
-  Database of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. The
-  configuration file must specify the URL for HTTP requests. If basic
-  authentication is used, for example,
-  <code class="literal">elasticsearch-http-basic</code>, the configuration file must also
-  specify the user name and password for every instance that requires
-  authentication.
- </p>
- <p>
-  The agent installer automatically creates the <code class="literal">elastic.yaml</code>
-  configuration file in the <code class="literal">/etc/monasca/agent/conf.d/</code>
-  directory. If there is an Elasticsearch database instance installed on the
-  machine where the agent is installed, you have to specify the configuration
-  information in the <code class="literal">elastic.yaml</code> file after the
-  installation.
- </p>
- <p>
-  Example configuration:
- </p>
-<div class="verbatim-wrap"><pre class="screen">init_config: null
-instances:
-- dimensions:
-    component: elasticsearch
-    service: monitoring
-  url: http://localhost:9200
-  username: username
-  password: password</pre></div>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.8"><span class="name">http_check.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.8">#</a></h5></div>
- <p>
-  HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
-  list of URLs, the agent sends an HTTP request and reports success or failure
-  to the Monitoring Service.
- </p>
-
- <p>
-  Crowbar configures HTTP checks for the following services on the Monitoring Node:
- </p>
- <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-   <p>
-    monasca-api
-   </p>
-  </li><li class="listitem ">
-   <p>
-    monasca-log-api
-   </p>
-  </li><li class="listitem ">
-   <p>
-    Kibana
-   </p>
-  </li><li class="listitem ">
-   <p>
-    Monasca Persister
-   </p>
-  </li></ul></div>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.12"><span class="name">http_metrics.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.12">#</a></h5></div>
- <p>
-  HTTP metrics checks retrieve metrics from any URL that returns a JSON response.
-  Based on a list of URLs, the agent can dispatch an HTTP request and parse the
-  desired metrics from the JSON response.
- </p>
- <p>
-  Crowbar configures a HTTP metrics check for the monasca-persister service
-  running on the Monitoring Node.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.15"><span class="name">kafka_consumer.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.15">#</a></h5></div>
- <p>
-  Kafka consumer checks gather metrics related to services consuming Kafka
-  topics, such as the Persister or Notification Engine of <span class="phrase">SUSE
-  OpenStack Cloud Monitoring</span>.
- </p>
- <p>
-  Crowbar configures Kafka consumer checks for the Kafka service running on
-  the Monitoring Node.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.18"><span class="name">kibana.yaml </span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.18">#</a></h5></div>
- <p>
-  Kibana checks gather various statistics such as load, heap size and usage, and
-  various request performance statistics from a Kibana server. The checks
-  retrieve these statistics from Kibana's status endpoint.
- </p>
- <p>
-  Crowbar configures Kibana checks for the Kibana service running on
-  the Monitoring Node.
-  </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.21"><span class="name">mysql.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.21">#</a></h5></div>
- <p>
-  MySQL checks gather various statistics such as buffer sizes and usage,
-  reads/writes, network connections, etc. from a MySQL database server. MariaDB
-  is also supported. The metrics are drawn from the server status variables of MySQL.
-  </p>
- <p>
-  Crowbar configures the MySQL checks for the MariaDB database service running on
-  the Monitoring Node.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.24"><span class="name">ntp.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.24">#</a></h5></div>
- <p>
-  Network Time Protocol checks monitor the time offset between an NTP server and
-  the machine the agent is running on.
- </p>
- <p>
-  Crowbar configures the NTP check to monitor the offset between the Monitoring
-  Node and the NTP server running on the Administration Server.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.27"><span class="name">postfix.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.27">#</a></h5></div>
- <p>
-  Postfix checks monitor the queue sizes (incoming, active, deferred) on a
-  Postfix mail server.
- </p>
- <p>
-  Crowbar configures Postfix checks for the Postfix service running on the
-  Monitoring Node.
- </p>
-
- <div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.9.5.30"><span class="name">zk.yaml</span><a title="Permalink" class="permalink" href="apa.html#id-1.9.5.30">#</a></h5></div>
- <p>
-  ZooKeeper checks gather metrics on nodes and connections covered by
-  ZooKeeper, a centralized service for maintaining configuration information,
-  naming, providing distributed synchronization, and providing group services.
-  The check parses the result of the ZooKeeper <code class="literal">stat</code> admin
-  command.
- </p>
- <p>
-  Crowbar configures ZooKeeper checks for the ZooKeeper instance running on the
-  Monitoring Node.
- </p>
-</div>
-</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="reference-7A5FB297419F4787832C9125D7CAC80F.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Appendix B </span>Glossary</span></a><a class="nav-link" href="idg-msoperator-shared-logging-c-osologging-xml-1.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 5 </span>Log Management</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s04.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="apas02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Troubleshooting </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Additional Metrics</td></tr></table></div></body></html>

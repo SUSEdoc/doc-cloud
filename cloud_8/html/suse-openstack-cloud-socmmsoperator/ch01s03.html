@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>User Management</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="idg-msoperator-shared-intro-c-intro-xml-1.html" title="Chapter 1. Introduction to SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="ch01s02.html" title="SUSE OpenStack Cloud Monitoring Architecture and Components" /><link rel="next" href="ch01s04.html" title="Distribution Media" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">User Management</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch01s02.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></th><td width="20%" align="right"> <a accesskey="n" href="ch01s04.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1760"></a>User Management</h2></div></div></div>
+ 
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is fully integrated with
+  Keystone, the identity service which serves as the common authentication and
+  authorization system in OpenStack.
+ </p>
+ <p>
+  The <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integration with
+  Keystone requires any <span class="phrase">SUSE OpenStack Cloud Monitoring</span> user,
+  including the Monitoring Service operator, to be registered as an OpenStack
+  user. All authentication and authorization in <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> is done through Keystone. If a user requests monitoring
+  data, for example, <span class="phrase">SUSE OpenStack Cloud Monitoring</span> verifies
+  that the user is a valid user in OpenStack and allowed to access the
+  requested metrics.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users are created and
+  administrated in OpenStack:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    Each user assumes a role in OpenStack to perform a specific set of
+    operations. The OpenStack role specifies a set of rights and privileges.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Each user is assigned to at least one project in OpenStack. A project is an
+    organizational unit that defines a set of resources which can be accessed
+    by the assigned users.
+   </p>
+   <p>
+    Application operators in <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    can monitor the set of resources that is defined for the projects to which
+    they are assigned.
+   </p>
+  </li></ul></div>
+ <p>
+  For details on user management, refer to the
+  <a class="ulink" href="http://docs.openstack.org/newton/" target="_top"> OpenStack documentation
+  </a>.
+ </p>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch01s02.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-msoperator-shared-intro-c-intro-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch01s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"><span class="phrase">SUSE OpenStack Cloud Monitoring</span> Architecture and Components </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Distribution Media</td></tr></table></div></body></html>

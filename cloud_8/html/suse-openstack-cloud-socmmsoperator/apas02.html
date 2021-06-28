@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Additional Metrics</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="prev" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="next" href="reference-7A5FB297419F4787832C9125D7CAC80F.html" title="Appendix B. Glossary" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Additional Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center">Appendix A. Supported Metrics</th><td width="20%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2825"></a>Additional Metrics</h2></div></div></div>
+ 
+ <p>
+  In addition to the standard metrics, SUSE OpenStack Cloud Monitoring
+  automatically adds the following additional metrics to the monasca agent
+  configuration on the Monitoring Node.
+ </p>
+
+ <h5><a id="id2828"></a>elastic.yaml</h5>
+ <p>
+  Elastic checks gather metrics for Elasticsearch databases, such as the Log
+  Database of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. The
+  configuration file must specify the URL for HTTP requests. If basic
+  authentication is used, for example,
+  <code class="literal">elasticsearch-http-basic</code>, the configuration file must also
+  specify the user name and password for every instance that requires
+  authentication.
+ </p>
+ <p>
+  The agent installer automatically creates the <code class="literal">elastic.yaml</code>
+  configuration file in the <code class="literal">/etc/monasca/agent/conf.d/</code>
+  directory. If there is an Elasticsearch database instance installed on the
+  machine where the agent is installed, you have to specify the configuration
+  information in the <code class="literal">elastic.yaml</code> file after the
+  installation.
+ </p>
+ <p>
+  Example configuration:
+ </p>
+<pre class="screen">init_config: null
+instances:
+- dimensions:
+    component: elasticsearch
+    service: monitoring
+  url: http://localhost:9200
+  username: username
+  password: password</pre>
+
+ <h5><a id="id2838"></a>http_check.yaml</h5>
+ <p>
+  HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
+  list of URLs, the agent sends an HTTP request and reports success or failure
+  to the Monitoring Service.
+ </p>
+
+ <p>
+  Crowbar configures HTTP checks for the following services on the Monitoring Node:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    monasca-api
+   </p>
+  </li><li class="listitem">
+   <p>
+    monasca-log-api
+   </p>
+  </li><li class="listitem">
+   <p>
+    Kibana
+   </p>
+  </li><li class="listitem">
+   <p>
+    Monasca Persister
+   </p>
+  </li></ul></div>
+
+ <h5><a id="id2850"></a>http_metrics.yaml</h5>
+ <p>
+  HTTP metrics checks retrieve metrics from any URL that returns a JSON response.
+  Based on a list of URLs, the agent can dispatch an HTTP request and parse the
+  desired metrics from the JSON response.
+ </p>
+ <p>
+  Crowbar configures a HTTP metrics check for the monasca-persister service
+  running on the Monitoring Node.
+ </p>
+
+ <h5><a id="id2853"></a>kafka_consumer.yaml</h5>
+ <p>
+  Kafka consumer checks gather metrics related to services consuming Kafka
+  topics, such as the Persister or Notification Engine of <span class="phrase">SUSE
+  OpenStack Cloud Monitoring</span>.
+ </p>
+ <p>
+  Crowbar configures Kafka consumer checks for the Kafka service running on
+  the Monitoring Node.
+ </p>
+
+ <h5><a id="id2857"></a>kibana.yaml </h5>
+ <p>
+  Kibana checks gather various statistics such as load, heap size and usage, and
+  various request performance statistics from a Kibana server. The checks
+  retrieve these statistics from Kibana's status endpoint.
+ </p>
+ <p>
+  Crowbar configures Kibana checks for the Kibana service running on
+  the Monitoring Node.
+  </p>
+
+ <h5><a id="id2860"></a>mysql.yaml</h5>
+ <p>
+  MySQL checks gather various statistics such as buffer sizes and usage,
+  reads/writes, network connections, etc. from a MySQL database server. MariaDB
+  is also supported. The metrics are drawn from the server status variables of MySQL.
+  </p>
+ <p>
+  Crowbar configures the MySQL checks for the MariaDB database service running on
+  the Monitoring Node.
+ </p>
+
+ <h5><a id="id2863"></a>ntp.yaml</h5>
+ <p>
+  Network Time Protocol checks monitor the time offset between an NTP server and
+  the machine the agent is running on.
+ </p>
+ <p>
+  Crowbar configures the NTP check to monitor the offset between the Monitoring
+  Node and the NTP server running on the Administration Server.
+ </p>
+
+ <h5><a id="id2866"></a>postfix.yaml</h5>
+ <p>
+  Postfix checks monitor the queue sizes (incoming, active, deferred) on a
+  Postfix mail server.
+ </p>
+ <p>
+  Crowbar configures Postfix checks for the Postfix service running on the
+  Monitoring Node.
+ </p>
+
+ <h5><a id="id2869"></a>zk.yaml</h5>
+ <p>
+  ZooKeeper checks gather metrics on nodes and connections covered by
+  ZooKeeper, a centralized service for maintaining configuration information,
+  naming, providing distributed synchronization, and providing group services.
+  The check parses the result of the ZooKeeper <code class="literal">stat</code> admin
+  command.
+ </p>
+ <p>
+  Crowbar configures ZooKeeper checks for the ZooKeeper instance running on the
+  Monitoring Node.
+ </p>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="apa.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix A. Supported Metrics </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix B. Glossary</td></tr></table></div></body></html>

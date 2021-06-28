@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Working with Data Visualizations</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html" title="Chapter 4. Monitoring" /><link rel="prev" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html" title="Chapter 4. Monitoring" /><link rel="next" href="sec-msoperator-alarms.html" title="Defining Alarms" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Working with Data Visualizations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Monitoring</th><td width="20%" align="right"> <a accesskey="n" href="sec-msoperator-alarms.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="concept-E8D43EB4494E41D2AB42D4A89396D1CMM"></a>Working with Data Visualizations</h2></div></div></div>
+ 
+ <p>
+  The user interface for monitoring your services, servers, and log data
+  integrates with Grafana, an open source application for visualizing
+  large-scale monitoring data. Use the options at the top border of the
+  <span class="guilabel">Overview</span> page to access Grafana.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> ships with preconfigured
+  metrics dashboards. You can instantly use them for monitoring your
+  environment. You can also use them as a starting point for building your own
+  dashboards.
+ </p>
+ <h5><a id="id2196"></a>Preconfigured Metrics Dashboard for <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+ </h5>
+ <p>
+  As a Monitoring Service operator, you use the <span class="guilabel">Monasca
+  Health</span> option on the <span class="guilabel">Overview</span> page to view
+  the metrics data on the Monitoring Service. The OpenStack operator uses the
+  <span class="guilabel">Dashboard</span> option to view the metrics data on the
+  OpenStack services.
+ </p>
+ <div class="figure"><a id="id2202"></a><p class="title"><strong>Figure 4.2. Metrics Dashboard—Monitoring Service Operator's View</strong></p><div class="figure-contents">
+  
+  <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-msoperator-dashboard.png" width="100%" alt="Metrics Dashboard—Monitoring Service Operator's View" /></td></tr></table></div>
+ </div></div><br class="figure-break" />
+ <p>
+  The preconfigured dashboard shows the following data on the Monitoring
+  Service:
+  
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    Status of the main <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    components (<code class="literal">UP</code> or <code class="literal">DOWN</code>).
+   </p>
+   <p>
+    In the upper part of the dashboard the components are grouped into metrics
+    and log management components as well as common components that are used by
+    metrics-based and log-based monitoring.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Information on system resources.
+   </p>
+   <p>
+    The dashboard shows metrics data on CPU usage: the percentage of time the
+    CPU is used in total (<code class="literal">cpu.percent</code>), at user level
+    (<code class="literal">cpu.user_perc</code>), and at system level
+    (<code class="literal">cpu.system_perc</code>), as well as the percentage of time the
+    CPU is idle when no I/O requests are in progress
+    (<code class="literal">cpu.wait_perc</code>).
+   </p>
+   <p>
+    The dashboard shows metrics data on memory usage: the number of megabytes
+    of total memory (<code class="literal">mem.total_mb</code>), used memory
+    (<code class="literal">mem.used_mb</code>), total swap memory
+    (<code class="literal">mem.swap_total_mb</code>), and used swap memory
+    (<code class="literal">mem.swap_used_mb</code>), as well as the number of megabytes
+    used for the page cache (<code class="literal">mem.used_cache</code>).
+   </p>
+   <p>
+    The dashboard visualizes metrics on the percentage of disk space that is
+    being used on a device (<code class="literal">disk.space_used_perc</code>).
+   </p>
+   <p>
+    The dashboard shows metrics data on the <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> system load over different periods
+    (<code class="literal">load.avg_1_min</code>, <code class="literal">load.avg_5_min</code>, and
+    <code class="literal">load.avg_15_min</code>).
+   </p>
+  </li><li class="listitem">
+   <p>
+    The network usage of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+   </p>
+   <p>
+    The dashboard shows the number of network bytes received and sent per
+    second (<code class="literal">net.in_bytes_sec</code> and
+    <code class="literal">net.out_bytes_sec</code>).
+   </p>
+  </li><li class="listitem">
+   <p>
+    Metrics data on each <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    component. The metrics that are visualized differ slightly from component
+    to component. The dashboard shows, for example, the percentage of CPU that
+    is consumed by a component (<code class="literal">process.cpu_perc.value </code>),
+    the amount of physical memory that is allocated to the component
+    (<code class="literal">process.mem.rss_mbytes.value</code>), or the number of
+    processes that exist with the corresponding component name
+    (<code class="literal">process.pid_count.value</code>).
+   </p>
+  </li></ul></div>
+ <h5><a id="id2250"></a>Building Dashboards</h5>
+ <p>
+  Each metrics dashboard is composed of one or more panels that are arranged in
+  one or more rows. A row serves as a logical divider within a dashboard. It
+  organizes your panels in groups. The panel is the basic building block for
+  visualizing your metrics data.
+ </p>
+ <p>
+  For building dashboards, you have two options:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    Start from scratch and create a new dashboard.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Take the dashboard that is shipped with <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> as a starting point and customize it.
+   </p>
+  </li></ul></div>
+ <p>
+  The following sections provide introductory information on dashboards, rows,
+  and panels, and make you familiar with the first steps involved in building a
+  dashboard. For additional information, you can also refer to the
+  <a class="ulink" href="http://docs.grafana.org/" target="_top"> Grafana documentation </a>.
+ </p>
+ <h5><a id="id2261"></a>Creating a Dashboard</h5>
+ <p>
+  To create a new dashboard, use the <span class="guilabel">Open</span> icon in the
+  top right corner of your dashboard window. The option provides access to
+  various features for administrating dashboards. Click <span class="guilabel">New</span>
+  to create an empty dashboard that serves as a starting point for adding rows
+  and panels.
+ </p>
+ <div class="informalfigure">
+  <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-new-dashboard.png" width="100%" /></td></tr></table></div>
+ </div>
+ <p>
+  On the left side of an empty dashboard, there is a green rectangle displayed.
+  Hover over this rectangle to access a <span class="guilabel">Row</span> menu. To
+  insert your first panel, you can use the options in the <span class="guilabel">Add
+  Panel</span> submenu. See below for details on the available panel types.
+ </p>
+ <p>
+  As soon as you have inserted an empty panel, you can add additional rows. For
+  this purpose, use the <span class="guilabel">Add Row</span> option on the right side
+  of the dashboard.
+ </p>
+ <h5><a id="id2276"></a>Editing Rows</h5>
+ <p>
+  Features for editing rows can be accessed via the green rectangle that is
+  displayed to the left of each row.
+ </p>
+ <p>
+  In addition to adding panels to a row, you can collapse or remove a row, move
+  the position of the row within your dashboard, or set the row height. Row
+  settings allows you, for example, to insert a row title or to hide the
+  <span class="guilabel">Row</span> menu so that the row can no longer be edited.
+ </p>
+ <h5><a id="id2280"></a>Editing Panels</h5>
+ <p>
+  Grafana distinguishes between three panel types:
+ </p>
+ <p>
+  Panels of type <span class="guilabel">Graph</span> are used to visualize metrics data.
+  A query editor is provided to define the data to be visualized. The editor
+  allows you to combine multiple queries. This means that any number of metrics
+  and data series can be visualized in one panel.
+ </p>
+ <div class="figure"><a id="id2284"></a><p class="title"><strong>Figure 4.3. A Graph Panel</strong></p><div class="figure-contents">
+  
+  <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-graph.png" width="100%" alt="A Graph Panel" /></td></tr></table></div>
+ </div></div><br class="figure-break" />
+ <p>
+  Panels of type <span class="guilabel">Singlestat</span> are also used to visualize
+  metrics data, yet they reduce a single query to a single number. The single
+  number can be, for example, the minimum, maximum, average, or sum of values
+  of the data series. The single number can be translated into a text value, if
+  required.
+ </p>
+ <p>
+  Panels of type <span class="guilabel">Text</span> are used to insert static text. The
+  text may, for example, provide information for the dashboard users. Text
+  panels are not connected to any metrics data.
+ </p>
+ <p>
+  As soon as you have added a panel to your dashboard, you can access the
+  options for editing the panel content. For this purpose, click the panel
+  title and use <span class="guilabel">Edit</span>:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    For panels of type <span class="guilabel">Text</span>, a simple text editor is
+    displayed for entering text. Plain text, HTML, and markdown format are
+    supported.
+   </p>
+   <div class="figure"><a id="id2301"></a><p class="title"><strong>Figure 4.4. Editing a Text Panel</strong></p><div class="figure-contents">
+    
+    <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-text.png" width="100%" alt="Editing a Text Panel" /></td></tr></table></div>
+   </div></div><br class="figure-break" />
+  </li><li class="listitem">
+   <p>
+    For panels of type <span class="guilabel">Graph</span> and
+    <span class="guilabel">Singlestat</span>, a query editor is displayed to define
+    which data it to be shown. You can add multiple metrics, and apply
+    functions to the metrics. The query results will be visualized in your
+    panel in real time.
+   </p>
+  </li></ul></div>
+ <p>
+  A large number of display and formatting features are provided to customize
+  how the content is presented in a panel. Click the panel title to access the
+  corresponding options. The menu that is displayed also allows you to
+  duplicate or remove a panel. To change the size of a panel, click the
+  <span class="guilabel">+</span> and <span class="guilabel">-</span> icons.
+ </p>
+ <p>
+  You can move panels on your dashboard by simply dragging and dropping them
+  within and between rows.
+ </p>
+ <p>
+  By default, the time range for panels is controlled by dashboard settings.
+  Use the time picker in the top right corner of your dashboard window to
+  define relative or absolute time ranges. You can also set an auto-refresh
+  interval, or manually refresh the data that is displayed.
+ </p>
+ <h5><a id="id2317"></a>Saving and Sharing Dashboards</h5>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> allows you to save a metrics
+  dashboard and export it to a JSON file. The JSON file can be edited, it can
+  be shared with other users, and it can be imported to <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span> again.
+ </p>
+ <p>
+  To save a dashboard, use <span class="guilabel">Save</span> in the top right corner of
+  your dashboard window. You can enter a name for the dashboard and simply save
+  it to your browser's local storage. Use <span class="guilabel">Dashboard JSON</span>
+  to directly view the corresponding JSON syntax, or use <span class="guilabel">Export
+  dashboard</span> to download the JSON file. The JSON file can be
+  forwarded to other users, if required. To import a JSON file, use
+  <span class="guilabel">Open dashboard</span> in the top left corner of the dashboard
+  window.
+ </p>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-msoperator-shared-monitor-c-monitor-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="sec-msoperator-alarms.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 4. Monitoring </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Defining Alarms</td></tr></table></div></body></html>

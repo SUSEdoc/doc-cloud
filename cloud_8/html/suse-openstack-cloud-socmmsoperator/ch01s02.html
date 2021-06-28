@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>SUSE OpenStack Cloud Monitoring Architecture and Components</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="idg-msoperator-shared-intro-c-intro-xml-1.html" title="Chapter 1. Introduction to SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="idg-msoperator-shared-intro-c-intro-xml-1.html" title="Chapter 1. Introduction to SUSE OpenStack Cloud Monitoring" /><link rel="next" href="ch01s03.html" title="User Management" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"><span class="phrase">SUSE OpenStack Cloud Monitoring</span> Architecture and Components</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="idg-msoperator-shared-intro-c-intro-xml-1.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></th><td width="20%" align="right"> <a accesskey="n" href="ch01s03.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1561"></a><span class="phrase">SUSE OpenStack Cloud Monitoring</span> Architecture and Components</h2></div></div></div>
+ 
+ <p>
+  The following illustration provides an overview of the main components of
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> and their interaction:
+ </p>
+ <div class="informalfigure">
+  <div class="mediaobject"><img src="images/images-cmm-architecture.png" alt="cmm-architecture.png" /></div>
+ </div>
+ <h5><a id="id1574"></a>OpenStack</h5>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> relies on OpenStack as
+  technology for building cloud computing platforms for public and private
+  clouds. OpenStack consists of a series of interrelated projects delivering
+  various components for a cloud infrastructure solution and allowing for the
+  deployment and management of Infrastructure as a Service (IaaS) platforms.
+ </p>
+ <h5><a id="id1577"></a>Monitoring Service</h5>
+ <p>
+  The Monitoring Service is the central <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> component. It is responsible for receiving, persisting,
+  and processing monitoring and log data, as well as providing the data to the
+  users.
+ </p>
+ <p>
+  The Monitoring Service relies on Monasca, an open source Monitoring as a
+  Service solution. It uses Monasca for high-speed metrics querying and
+  integrates the Threshold Engine (streaming alarm engine) and the Notification
+  Engine of Monasca.
+ </p>
+ <p>
+  The Monitoring Service consists of the following components:
+ </p>
+ <div class="variablelist"><dl class="variablelist"><dt><span class="term">Monitoring API</span></dt><dd>
+    <p>
+     A RESTful API for monitoring. It is primarily focused on the following
+     areas:
+    </p>
+    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+      <p>
+       Metrics: Store and query massive amounts of metrics in real time.
+      </p>
+     </li><li class="listitem">
+      <p>
+       Statistics: Provide statistics for metrics.
+      </p>
+     </li><li class="listitem">
+      <p>
+       Alarm Definitions: Create, update, query, and delete alarm definitions.
+      </p>
+     </li><li class="listitem">
+      <p>
+       Alarms: Query and delete the alarm history.
+      </p>
+     </li><li class="listitem">
+      <p>
+       Notification Methods: Create and delete notification methods and
+       associate them with alarms. Users can be notified directly when alarms
+       are triggered, for example, via email.
+      </p>
+     </li></ul></div>
+   </dd><dt><span class="term">Message Queue</span></dt><dd>
+    <p>
+     A component that primarily receives published metrics from the Monitoring
+     API, alarm state transition messages from the Threshold Engine, and log
+     data from the Log API. The data is consumed by other components, such as
+     the Persister, the Notification Engine, and the Log Persister. The Message
+     Queue is also used to publish and consume other events in the system. It
+     is based on Kafka, a high-performance, distributed, fault-tolerant, and
+     scalable message queue with durability built-in. For administrating the
+     Message Queue, <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
+     Zookeeper, a centralized service for maintaining configuration
+     information, naming, providing distributed synchronization, and providing
+     group services.
+    </p>
+   </dd><dt><span class="term">Persister</span></dt><dd>
+    <p>
+     A Monasca component that consumes metrics and alarm state transitions from
+     the Message Queue and stores them in the Metrics and Alarms Database
+     (InfluxDB).
+    </p>
+   </dd><dt><span class="term">Notification Engine</span></dt><dd>
+    <p>
+     A Monasca component that consumes alarm state transition messages from the
+     Message Queue and sends notifications for alarms, such as emails.
+    </p>
+   </dd><dt><span class="term">Threshold Engine</span></dt><dd>
+    <p>
+     A Monasca component that computes thresholds on metrics and publishes
+     alarms to the Message Queue when they are triggered. The Threshold Engine
+     is based on Apache Storm, a free and open distributed real-time
+     computation system.
+    </p>
+   </dd><dt><span class="term">Metrics and Alarms Database</span></dt><dd>
+    <p>
+     An InfluxDB database used for storing metrics and the alarm history.
+    </p>
+   </dd><dt><span class="term">Config Database</span></dt><dd>
+    <p>
+     A MariaDB database used for storing configuration information, alarm
+     definitions, and notification methods.
+    </p>
+   </dd><dt><span class="term">Log API</span></dt><dd>
+    <p>
+     A RESTful API for log management. It gathers log data from the Log Agents
+     and forwards it to the Message Queue.
+    </p>
+    <p>
+     The <span class="phrase">SUSE OpenStack Cloud Monitoring</span> log management is
+     based on Logstash, a tool for receiving, processing, and publishing all
+     kinds of logs. It provides a powerful pipeline for querying and analyzing
+     logs. Elasticsearch is used as the back-end datastore, and Kibana as the
+     front-end tool for retrieving and visualizing the log data.
+    </p>
+   </dd><dt><span class="term">Log Transformer</span></dt><dd>
+    <p>
+     A Logstash component that consumes the log data from the Message Queue,
+     performs transformation and aggregation operations on the data, and
+     publishes the data that it creates back to the Message Queue.
+    </p>
+   </dd><dt><span class="term">Log Metrics</span></dt><dd>
+    <p>
+     A Monasca component that consumes log data from the Message Queue, filters
+     the data according to severity, and generates metrics for specific
+     severities, for example, for errors or warnings. The generated metrics are
+     published to the Message Queue and can be further processed by the
+     Threshold Engine like any other metrics.
+    </p>
+   </dd><dt><span class="term">Log Persister</span></dt><dd>
+    <p>
+     A Logstash component that consumes the transformed and aggregated log data
+     from the Message Queue and stores it in the Log Database.
+    </p>
+   </dd><dt><span class="term">Kibana Server</span></dt><dd>
+    <p>
+     A Web browser-based analytics and search interface to the Log Database.
+    </p>
+   </dd><dt><span class="term">Log Database</span></dt><dd>
+    <p>
+     An Elasticsearch database for storing the log data.
+    </p>
+   </dd></dl></div>
+
+ <h5><a id="id1649"></a>Horizon Plugin</h5>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> comes with a plugin for the
+  OpenStack Horizon dashboard. The plugin extends the main dashboard in
+  OpenStack with a view for monitoring. This enables <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span> users to access the monitoring functions from a
+  central Web-based graphical user interface. For details, refer to the
+  <a class="ulink" href="http://docs.openstack.org/developer/horizon/" target="_top">OpenStack Horizon
+  documentation</a>.
+ </p>
+ <p>
+  Based on OpenStack Horizon, the monitoring data is visualized on a
+  comfortable and easy-to-use dashboard which fully integrates with the
+  following applications:
+ </p>
+ <div class="variablelist"><dl class="variablelist"><dt><span class="term">Grafana (for metrics data)</span></dt><dd>
+    <p>
+     An open source application for visualizing large-scale measurement data.
+    </p>
+   </dd><dt><span class="term">Kibana (for log data)</span></dt><dd>
+    <p>
+     An open source analytics and visualization platform
+     designed to work with Elasticsearch.
+    </p>
+   </dd></dl></div>
+
+ <h5><a id="id1664"></a>Metrics Agent</h5>
+ <p>
+  A Metrics Agent is required for retrieving metrics data from the host on
+  which it runs and sending the metrics data to the Monitoring Service. The
+  agent supports metrics from a variety of sources as well as a number of
+  built-in system and service checks.
+ </p>
+ <p>
+  A Metrics Agent can be installed on each virtual or physical server to be
+  monitored.
+ </p>
+ <p>
+  The agent functionality is fully integrated into the source code base of the
+  Monasca project. For details, refer to the
+  <a class="ulink" href="https://wiki.openstack.org/wiki/Monasca" target="_top">Monasca Wiki</a>.
+ </p>
+ <h5><a id="id1669"></a>Log Agent</h5>
+ <p>
+  A Log Agent is needed for collecting log data from the host on which it runs
+  and forwarding the log data to the Monitoring Service for further processing.
+  It can be installed on each virtual or physical server from which log data is
+  to be retrieved.
+ </p>
+ <p>
+  The agent functionality is fully integrated into the source code base of the
+  Monasca project. For details, refer to the
+  <a class="ulink" href="https://wiki.openstack.org/wiki/Monasca" target="_top">Monasca Wiki</a>.
+ </p>
+  <div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id1673"></a>
+  Agents and Services</h3></div></div></div>
+ 
+ <div class="informaltable">
+  <table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
+     </td><td>Centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</td></tr><tr><td><code class="literal">storm-nimbus</code>
+     </td><td>Storm is a distributed real-time computation system for processing large volumes of high-velocity data. The Storm Nimbus daemon is responsible for distributing code around a cluster, assigning tasks to machines, and monitoring for failures. </td></tr><tr><td><code class="literal">storm-supervisor</code>
+     </td><td>The Storm supervisor listens for work assigned to its machine and starts and stops worker processes as necessary based on what Nimbus has assigned to it.</td></tr><tr><td><code class="literal">mariadb</code>
+     </td><td>MariaDB database service. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores configuration information in this database. </td></tr><tr><td><code class="literal">kafka</code>
+     </td><td>Message queue service.</td></tr><tr><td><code class="literal">influxdb</code>
+     </td><td>InfluxDB database service. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores metrics and alarms in this database.</td></tr><tr><td><code class="literal">elasticsearch</code>
+     </td><td>Elasticsearch database service. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores the log data in this database.</td></tr><tr><td><code class="literal">memcached</code>
+     </td><td>Memcached service. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses it for caching authentication and authorization information required for the communication between the Log API and OpenStack Keystone.</td></tr><tr><td><code class="literal">openstack-monasca-notification</code>
+     </td><td>Notification Engine. </td></tr><tr><td><code class="literal">openstack-monasca-thresh</code>
+     </td><td>Threshold Engine. </td></tr><tr><td><code class="literal">openstack-monasca-log-transformer</code>
+     </td><td>Log Transformer. </td></tr><tr><td><code class="literal">apache2</code>
+     </td><td>Log and monitoring API.</td></tr><tr><td><code class="literal">openstack-monasca-persister </code>
+     </td><td>Persister. </td></tr><tr><td><code class="literal">openstack-monasca-agent</code>
+     </td><td>Metrics Agent.</td></tr><tr><td><code class="literal">kibana</code>
+     </td><td>Kibana server.</td></tr><tr><td><code class="literal">openstack-monasca-log-persister</code>
+     </td><td>Log Persister. </td></tr><tr><td><code class="literal">openstack-monasca-log-metrics</code>
+     </td><td>Log Metrics.</td></tr><tr><td><code class="literal">openstack-monasca-log-agent</code>
+     </td><td>Log Agent.</td></tr></tbody></table>
+ </div>
+</div>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="idg-msoperator-shared-intro-c-intro-xml-1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-msoperator-shared-intro-c-intro-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch01s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> User Management</td></tr></table></div></body></html>

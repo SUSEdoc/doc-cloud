@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Additional Metrics</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="OpenStack Operator's Guide" /><link rel="up" href="idg-osoperator-appendix-r-osometrics-xml-1.html" title="Appendix A. Supported Metrics" /><link rel="prev" href="idg-osoperator-appendix-r-osometrics-xml-1.html" title="Appendix A. Supported Metrics" /><link rel="next" href="reference-7A5FB297419F4787832C9125D7CAC80F.html" title="Appendix B. Glossary" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Additional Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="idg-osoperator-appendix-r-osometrics-xml-1.html">Prev</a> </td><th width="60%" align="center">Appendix A. Supported Metrics</th><td width="20%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2326"></a>Additional Metrics</h2></div></div></div>
+ 
+ <p>
+  In addition to the standard metrics, SUSE OpenStack Cloud Monitoring automatically adds the following
+  additional metrics to the monasca agent configuration on the OpenStack
+  Controller.
+  </p>
+
+ <h5><a id="id2329"></a>http_check.yaml</h5>
+ <p>
+  HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
+  list of URLs, the agent sends an HTTP request and reports success or failure
+  to the Monitoring Service.
+ </p>
+ <p>
+  The following barclamps will automatically create an HTTP check for the API
+  services they deploy if the <code class="literal">Monasca</code> barclamp is active:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>Barbican</p>
+  </li><li class="listitem">
+   <p>Cinder</p>
+  </li><li class="listitem">
+   <p>Glance</p>
+  </li><li class="listitem">
+   <p>Heat</p>
+  </li><li class="listitem">
+   <p>Keystone</p>
+  </li><li class="listitem">
+   <p>Magnum</p>
+  </li><li class="listitem">
+   <p>Manila</p>
+  </li><li class="listitem">
+   <p>Neutron</p>
+  </li><li class="listitem">
+   <p>Nova</p>
+  </li><li class="listitem">
+   <p>Sahara</p>
+  </li><li class="listitem">
+   <p>Swift</p>
+  </li></ul></div>
+ <p>
+  By default, the monitoring dashboard is configured to display the service status for the following services:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>Cinder</p>
+  </li><li class="listitem">
+   <p>Glance</p>
+  </li><li class="listitem">
+   <p>Keystone</p>
+  </li><li class="listitem">
+   <p>Neutron</p>
+  </li><li class="listitem">
+   <p>Nova</p>
+  </li><li class="listitem">
+   <p>Swift</p>
+  </li></ul></div>
+ <p>
+  The status visualization for additional services can be added manually.
+ </p>
+
+ <h5><a id="id2371"></a>postgres.yaml</h5>
+ <p>
+  Postgres checks gather various CRUD and system statistics for a database
+  hosted by a PostgreSQL DBMS.
+ </p>
+ <p>
+  The following barclamps will automatically create Postgres checks for their
+  service database if the <code class="literal">Monasca</code> barclamp is active:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>Barbican</p>
+  </li><li class="listitem">
+   <p>Cinder</p>
+  </li><li class="listitem">
+   <p>Glance</p>
+  </li><li class="listitem">
+   <p>Heat</p>
+  </li><li class="listitem">
+   <p>Keystone</p>
+  </li><li class="listitem">
+   <p>Magnum</p>
+  </li><li class="listitem">
+   <p>Manila</p>
+  </li><li class="listitem">
+   <p>Neutron</p>
+  </li><li class="listitem">
+   <p>Nova</p>
+  </li><li class="listitem">
+   <p>Sahara</p>
+  </li></ul></div>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="idg-osoperator-appendix-r-osometrics-xml-1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-osoperator-appendix-r-osometrics-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Appendix A. Supported Metrics </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix B. Glossary</td></tr></table></div></body></html>

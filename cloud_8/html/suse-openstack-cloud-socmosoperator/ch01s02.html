@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>The OpenStack Operator's Tasks</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style><link rel="home" href="index.html" title="OpenStack Operator's Guide" /><link rel="up" href="idg-osoperator-shared-intro-c-intro-xml-1.html" title="Chapter 1. Introduction to SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="idg-osoperator-shared-intro-c-intro-xml-1.html" title="Chapter 1. Introduction to SUSE OpenStack Cloud Monitoring" /><link rel="next" href="ch01s03.html" title="Components" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">The OpenStack Operator's Tasks</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="idg-osoperator-shared-intro-c-intro-xml-1.html">Prev</a> </td><th width="60%" align="center">Chapter 1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></th><td width="20%" align="right"> <a accesskey="n" href="ch01s03.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1535"></a>The OpenStack Operator's Tasks</h2></div></div></div>
+ 
+ <p>
+  In order to use <span class="phrase">SUSE OpenStack Cloud Monitoring</span> for
+  monitoring your OpenStack services and servers, so-called agents must be
+  installed and configured:
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    Metrics Agent is required for monitoring your services and servers.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Log Agent is required for collecting the log data that is generated for
+    your services and servers.
+   </p>
+  </li></ul></div>
+ <h5><a id="id1544"></a>Monitoring </h5>
+ <p>
+  The Metrics agent is responsible for querying metrics and sending them to the
+  Monitoring Service for further processing.
+ </p>
+ <p>
+  Metrics are self-describing data structures that are uniquely identified by a
+  name and a set of dimensions. Each dimension consists of a key/value pair
+  that allows for a flexible and concise description of the data to be
+  monitored, for example, region, availability zone, service tier, or resource
+  ID.
+ </p>
+ <p>
+  The Metrics Agent supports various types of metrics including the following:
+  
+ </p>
+ <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+   <p>
+    System metrics, for example, CPU usage, consumed disk space, or network
+    traffic.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Host alive checks. The agent can perform active checks on a host to
+    determine whether it is alive using ping (ICMP) or SSH.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Process checks. The agent can check and monitor a process, for example, the
+    number of instances, memory size, or number of threads.
+   </p>
+  </li><li class="listitem">
+   <p>
+    HTTP endpoint checks. The agent can perform up/down checks on HTTP
+    endpoints by sending an HTTP request and reporting success or failure to
+    the Monitoring Service.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Service checks. The agent can check middleware services, for example,
+    MySQL, Kafka, or RabbitMQ.
+   </p>
+  </li><li class="listitem">
+   <p>
+    OpenStack services. The agent can perform specific checks on each process
+    that is part of an OpenStack service.
+   </p>
+  </li><li class="listitem">
+   <p>
+    Log metrics. The agent can check and monitor the number of critical log
+    entries in the log data retrieved from the cloud resources.
+   </p>
+  </li></ul></div>
+ <p>
+  Your individual agent configuration determines which metrics are available
+  for monitoring your services and servers. For details on installing and
+  configuring a Metrics Agent, refer to
+  <a class="ulink" href="https://documentation.suse.com/soc/8/html/suse-openstack-cloud-crowbar-all/cha-depl-ostack.html#sec-depl-ostack-monasca" target="_top">https://documentation.suse.com/soc/8/html/suse-openstack-cloud-crowbar-all/cha-depl-ostack.html#sec-depl-ostack-monasca</a>.
+ </p>
+ <p>
+  As soon as an agent is available, you have access to the <span class="phrase">SUSE
+  OpenStack Cloud Monitoring</span> monitoring features. You work with a
+  graphical user interface that is seamlessly integrated into your cloud
+  infrastructure. Based on OpenStack Horizon, the user interface enables access
+  to all monitoring functionality and the resulting large-scale monitoring
+  data. A comfortable dashboard visualizes the health and status of your cloud
+  resources.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> provides functions for alarm
+  and notification management. <span class="phrase">Template-based alarm definitions allow
+  for monitoring a dynamically changing set of resources without the need for
+  reconfiguration. While the number of underlying virtual machines is changing,
+  for example, this ensures the efficient monitoring of scalable cloud
+  services. Alarm definitions allow you to specify expressions that are
+  evaluated based on the metrics data that is received. Alarm definitions can
+  be combined to form compound alarms. Compound alarms allow you to track and
+  process even more complex events. Notifications can be configured in order to
+  inform <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users when an alarm
+  is triggered.</span>
+ </p>
+ <p>
+  For details on the monitoring functions, refer to
+  <a class="xref" href="idg-osoperator-shared-monitor-c-monitor-xml-1.html" title="Chapter 3. Monitoring">Chapter 3, <em>Monitoring</em></a>.
+ </p>
+ <h5><a id="id1574"></a>Log Management</h5>
+ <p>
+  The Log Agent collects the log data from the services and servers and sends
+  them to the Monitoring Service for further processing. For details on
+  installing and configuring a Log Agent, refer to
+  <a class="ulink" href="https://documentation.suse.com/soc/8/html/suse-openstack-cloud-crowbar-all/cha-depl-ostack.html#sec-depl-ostack-monasca" target="_top">https://documentation.suse.com/soc/8/html/suse-openstack-cloud-crowbar-all/cha-depl-ostack.html#sec-depl-ostack-monasca</a>.
+ </p>
+ <p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores the log data in a
+  central database. This forms the basis for visualizing the log data for the
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users. Advanced data
+  analysis and visualization of the log data is supported in a variety of
+  charts, tables, and maps. Visualizations can easily be combined in dynamic
+  dashboards that display changes to search queries in real time.
+ </p>
+ <p>
+  Based on OpenStack Horizon, the customizable dashboards are seamlessly
+  integrated into your cloud infrastructure. They enable user access to all log
+  management functionality.
+ </p>
+ <p>
+  GUI-based alarm and notification management is also supported for log data.
+  Based on a template mechanism, you can configure alarms and notifications to
+  monitor the number of critical log events over time. Compound alarms can be
+  created to analyze more complex log events. This automation of log handling
+  guarantees that you can identify problems in your their infrastructure early
+  and find the root cause quickly.
+ </p>
+ <p>
+  For details on the log management functions, refer to
+  <a class="xref" href="idg-osoperator-shared-logging-c-osologging-xml-1.html" title="Chapter 4. Log Management">Chapter 4, <em>Log Management</em></a>.
+ </p>
+</div><div class="navfooter"><hr /><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="idg-osoperator-shared-intro-c-intro-xml-1.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="idg-osoperator-shared-intro-c-intro-xml-1.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch01s03.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Components</td></tr></table></div></body></html>

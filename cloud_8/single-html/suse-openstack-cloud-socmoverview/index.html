@@ -1,1 +1,542 @@
-book-socmoverview_draft.html
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Overview</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2" /><style type="text/css">
+body { background-image: url('static/images/draft.png');
+       background-repeat: no-repeat;
+       background-position: top left;
+       /* The following properties make the watermark "fixed" on the page. */
+       /* I think that's just a bit too distracting for the reader... */
+       /* background-attachment: fixed; */
+       /* background-position: center center; */
+     }</style></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="book-socmoverview"></a>Overview</h1></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="preface"><a href="#id1341">About this Manual</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id1373">Intended Audience</a></span></dt><dt><span class="sect1"><a href="#id1378">Notational Conventions</a></span></dt><dt><span class="sect1"><a href="#id1410">Abbreviations</a></span></dt><dt><span class="sect1"><a href="#id1431">Available Documentation</a></span></dt><dt><span class="sect1"><a href="#id1451">Copyright</a></span></dt><dt><span class="sect1"><a href="#id1461">Export Restrictions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-overview-overview-whatiscmm-c-cmm-xml-1">1. What is <span class="phrase">SUSE OpenStack Cloud Monitoring</span>?</a></span></dt><dd><dl><dt><span class="section"><a href="#id1475">Key Features</a></span></dt><dt><span class="section"><a href="#id1530">Components</a></span></dt><dt><span class="section"><a href="#id1567">Users and Roles</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-overview-overview-monitor-c-monitoring-xml-1">2. Monitoring</a></span></dt><dt><span class="chapter"><a href="#idg-overview-overview-log-c-logmanagement-xml-1">3. Log Management</a></span></dt><dt><span class="appendix"><a href="#reference-7A5FB297419F4787832C9125D7CAC80F">A. Glossary</a></span></dt></dl></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a id="id1341"></a>About this Manual</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="#id1373">Intended Audience</a></span></dt><dt><span class="sect1"><a href="#id1378">Notational Conventions</a></span></dt><dt><span class="sect1"><a href="#id1410">Abbreviations</a></span></dt><dt><span class="sect1"><a href="#id1431">Available Documentation</a></span></dt><dt><span class="sect1"><a href="#id1451">Copyright</a></span></dt><dt><span class="sect1"><a href="#id1461">Export Restrictions</a></span></dt></dl></div><p>
+  This manual is an introduction to
+
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+
+ </p><p>
+  The manual is structured as follows:
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col2" /><col class="col3" /></colgroup><thead><tr><th>Chapter</th><th>Description</th></tr></thead><tbody><tr><td><a class="xref" href="#idg-overview-overview-whatiscmm-c-cmm-xml-1" title="Chapter 1. What is SUSE OpenStack Cloud Monitoring?">Chapter 1, <em>What is <span class="phrase">SUSE OpenStack Cloud Monitoring</span>?</em></a>
+     </td><td>Introduces <span class="phrase">SUSE OpenStack Cloud Monitoring</span>, its key features, components, and users.</td></tr><tr><td><a class="xref" href="#idg-overview-overview-monitor-c-monitoring-xml-1" title="Chapter 2. Monitoring">Chapter 2, <em>Monitoring</em></a>
+     </td><td>Describes the basic concepts and features of monitoring.</td></tr><tr><td><a class="xref" href="#idg-overview-overview-log-c-logmanagement-xml-1" title="Chapter 3. Log Management">Chapter 3, <em>Log Management</em></a>
+     </td><td>Describes the basic concepts and features of log management.</td></tr><tr><td><a class="xref" href="#reference-7A5FB297419F4787832C9125D7CAC80F" title="Appendix A. Glossary">Appendix A, <em>Glossary</em></a>
+     </td><td>Defines the central terms relevant for <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.</td></tr></tbody></table></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1373"></a>Intended Audience</h2></div></div></div><p>
+  This manual is intended for anyone interested in <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span>. It offers an introduction for readers who are not familiar
+  with <span class="phrase">SUSE OpenStack Cloud Monitoring</span> and for those who have
+  already started using it. The manual does not require any special knowledge.
+ </p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1378"></a>Notational Conventions</h2></div></div></div><p>
+  This manual uses the following notational conventions:
+ </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col1" /><col class="col2" /></colgroup><tbody><tr><td><span class="guilabel">Add</span>
+     </td><td>Names of graphical user interface elements.</td></tr><tr><td><code class="literal">init</code>
+     </td><td>System names, for example command names and text that is entered from the keyboard. </td></tr><tr><td><code class="literal">&lt;variable&gt;</code>
+     </td><td>Variables for which values must be entered. </td></tr><tr><td><code class="literal">[option]</code>
+     </td><td>Optional items, for example optional command parameters. </td></tr><tr><td><code class="literal">one | two</code>
+     </td><td>Alternative entries. </td></tr><tr><td><code class="literal">{one | two}</code>
+     </td><td>Mandatory entries with alternatives.</td></tr></tbody></table></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1410"></a>Abbreviations</h2></div></div></div><p>
+  This manual uses the following abbreviations:
+ </p><p><strong>IaaS. </strong>Infrastructure as a Service</p><p><strong>ICMP. </strong>Internet Control Message Protocol</p><p><strong>OS. </strong>Operating System</p><p><strong>OSS. </strong>Open Source Software</p><p><strong>PaaS. </strong>Platform as a Service</p><p><strong>SaaS. </strong>Software as a Service</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1431"></a>Available Documentation</h2></div></div></div><p>
+  The following documentation on <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> is available:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    <span class="emphasis"><em>Overview:</em></span> A manual introducing <span class="phrase">SUSE OpenStack
+    Cloud Monitoring</span>. It is written for everybody interested in
+    <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+   </p></li><li class="listitem"><p>
+    <span class="emphasis"><em>OpenStack Operator's Guide:</em></span> A manual for OpenStack
+    operators describing how to prepare their OpenStack platform for
+    <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. The manual also describes
+    how the operators use <span class="phrase">SUSE OpenStack Cloud Monitoring</span> for
+    monitoring their OpenStack services.
+   </p></li><li class="listitem"><p>
+    <span class="emphasis"><em>Monitoring Service Operator's Guide:</em></span> A manual for
+    system operators describing how to install, operate, and maintain
+    <span class="phrase">SUSE OpenStack Cloud Monitoring</span> in single mode. The manual
+    also describes how the operators use <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> for monitoring their environment.
+   </p></li></ul></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1451"></a>Copyright</h2></div></div></div><p>
+  Copyright FUJITSU LIMITED 2015 - 2017
+ </p><p>
+  Copyright © 2021
+  SUSE LLC and contributors. All rights reserved.
+ </p><p>
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy of
+  the License at <a class="ulink" href="http://www.apache.org/licenses/LICENSE-2.0" target="_top">http://www.apache.org/licenses/LICENSE-2.0</a>.
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+  License for the specific language governing permissions and limitations under
+  the License.
+ </p><p>
+  For SUSE trademarks, see <a class="ulink" href="http://www.suse.com/company/legal/" target="_top">http://www.suse.com/company/legal/</a>.
+  All other third-party trademarks are the property of their respective owners.
+  Trademark symbols (®, ™ etc.) denote trademarks of SUSE and its
+  affiliates. Asterisks (*) denote third-party trademarks.
+ </p><p>
+  The OpenStack® Word Mark and OpenStack logo are registered
+  trademarks/service marks or trademarks/service marks of the OpenStack
+  Foundation in the United States and other countries and are used with the
+  OpenStack Foundation's permission.
+ </p><p>
+  All information found in this book has been compiled with utmost attention to
+  detail. However, this does not guarantee complete accuracy. Neither SUSE LLC,
+  its affiliates, the authors nor the translators shall be held liable for
+  possible errors or the consequences thereof.
+ </p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1461"></a>Export Restrictions</h2></div></div></div><p>
+  Exportation/release of this document may require necessary procedures in
+  accordance with the regulations of your resident country and/or US export
+  control laws.
+ </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idg-overview-overview-whatiscmm-c-cmm-xml-1"></a>Chapter 1. What is <span class="phrase">SUSE OpenStack Cloud Monitoring</span>?</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id1475">Key Features</a></span></dt><dt><span class="section"><a href="#id1530">Components</a></span></dt><dt><span class="section"><a href="#id1567">Users and Roles</a></span></dt></dl></div><p>
+  As more and more applications are deployed on cloud systems and cloud systems
+  are growing in complexity, managing the cloud infrastructure is becoming
+  increasingly difficult. <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+  helps mastering this challenge by providing a sophisticated Monitoring as a
+  Service solution that is operated on top of OpenStack-based cloud computing
+  platforms.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> allows enterprises to
+  manage, track, and optimize their cloud infrastructure and the services they
+  provide to end users. It offers a suite of monitoring and analytics tools
+  aimed at improving the health and performance of cloud systems.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> assembles and presents
+  metrics and log data in one convenient access point. It offers an integrated
+  view of cloud resources, based on its seamless integration with OpenStack.
+  While being flexible and scalable to instantly reflect changes in the cloud
+  infrastructure of an enterprise, <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> provides the ways and means required to ensure
+  multi-tenancy and data security. The high availability architecture of
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> ensures an optimum level of
+  operational performance eliminating the risk of component failures and
+  providing for reliable crossover.
+ </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1475"></a>Key Features</h2></div></div></div><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is an out-of-the-box
+  solution for monitoring OpenStack-based cloud environments. It is provided as
+  a cloud service to users. <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+  meets different challenges, ranging from small-scale deployments to
+  high-availability deployments and deployments with high levels of
+  scalability.
+ </p><p>
+  The core of <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is Monasca, an
+  open source Monitoring as a Service solution that integrates with OpenStack.
+  The key features of <span class="phrase">SUSE OpenStack Cloud Monitoring</span> form an
+  integral part of the Monasca project. <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> extends the source code base of the project through
+  active contributions.
+ </p><p>
+  Compared to the Monasca community edition, <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> provides the following added value:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Packaging as a commercial enterprise solution
+   </p></li><li class="listitem"><p>
+    Enterprise-level support
+   </p></li></ul></div><p>
+  The key features of <span class="phrase">SUSE OpenStack Cloud Monitoring</span> address
+  public as well as private cloud service providers. They include:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Monitoring
+   </p></li><li class="listitem"><p>
+    Log management
+   </p></li><li class="listitem"><p>
+    Integration with OpenStack
+   </p></li></ul></div><h5><a id="id1500"></a>Monitoring</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is a highly scalable and
+  fault tolerant monitoring solution for OpenStack-based cloud infrastructures.
+ </p><p>
+  The system operator of the cloud infrastructure and the service providers do
+  not have to care for system monitoring software any longer. They use
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> to check whether their
+  services and servers are working appropriately.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> provides comprehensive and
+  configurable metrics with reasonable defaults for monitoring the status,
+  capacity, throughput, and latency of cloud systems. <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span> users can set their own warnings and critical
+  thresholds and can combine multiple warnings and thresholds to support the
+  processing of complex events. Combined with a notification system, these
+  alerting features enable them to quickly analyze and resolve problems in the
+  cloud infrastructure.
+ </p><p>
+  For details, refer to
+  <a class="xref" href="#idg-overview-overview-monitor-c-monitoring-xml-1" title="Chapter 2. Monitoring">Chapter 2, <em>Monitoring</em></a>.
+ </p><h5><a id="id1510"></a>Log Management</h5><p>
+  With the increasing complexity of cloud infrastructures, it is becoming more
+  and more difficult and time-consuming for the system operator to gather,
+  store, and query the large amounts of log data manually. To cope with these
+  problems, <span class="phrase">SUSE OpenStack Cloud Monitoring</span> provides
+  centralized log management features.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> collects log data from all
+  services and servers the cloud infrastructure is composed of. The log data
+  from a large number of sources can be accessed from a single dashboard.
+  Integrated search, filter, and graphics options enable system operators to
+  isolate problems and narrow down potential root causes. <span class="phrase">SUSE
+  OpenStack Cloud Monitoring</span> thus provides valuable insights into the
+  log data, even with large amounts of data resulting from highly complex
+  environments.
+ </p><p>
+  Based on <span class="phrase">SUSE OpenStack Cloud Monitoring</span>'s alerting features
+  and notification system, users can also configure warnings and critical
+  thresholds for log data. If the number of critical log entries reaches a
+  defined threshold, the users receive a warning and can instantly analyze
+  their logs and start troubleshooting.
+ </p><p>
+  For details, refer to
+  <a class="xref" href="#idg-overview-overview-log-c-logmanagement-xml-1" title="Chapter 3. Log Management">Chapter 3, <em>Log Management</em></a>.
+ </p><h5><a id="id1520"></a>Integration with OpenStack </h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is integrated with OpenStack
+  core services. These include:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    OpenStack Horizon dashboard for visualizing monitoring metrics and log data
+   </p></li><li class="listitem"><p>
+    OpenStack user management
+   </p></li><li class="listitem"><p>
+    OpenStack security and access control
+   </p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1530"></a>Components</h2></div></div></div><p>
+  The following illustration provides an overview of the main components of
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span>:
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-overview-structure.png" alt="structure_new.png" /></div></div><h5><a id="id1542"></a>OpenStack</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> relies on OpenStack as
+  technology for building cloud computing platforms for public and private
+  clouds. OpenStack consists of a series of interrelated projects delivering
+  various components for a cloud infrastructure solution and allowing for the
+  deployment and management of Infrastructure as a Service (IaaS) platforms.
+ </p><p>
+  For details on OpenStack, refer to the
+  <a class="ulink" href="http://docs.openstack.org/" target="_top">OpenStack documentation</a>.
+ </p><h5><a id="id1547"></a>Monitoring Service</h5><p>
+  The Monitoring Service is the central <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> component. It is responsible for receiving, persisting,
+  and processing metrics and log data, as well as providing the data to the
+  users.
+ </p><p>
+  The Monitoring Service relies on Monasca. It uses Monasca for high-speed
+  metrics querying and integrates the streaming alarm engine and the
+  notification engine of Monasca. For details, refer to the
+  <a class="ulink" href="https://wiki.openstack.org/wiki/Monasca" target="_top">Monasca Wiki</a>.
+ </p><h5><a id="id1552"></a>Horizon Plugin</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> comes with a plugin for the
+  OpenStack Horizon dashboard. The Horizon plugin extends the main dashboard in
+  OpenStack with a view for monitoring. This enables <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span> users to access the monitoring and log management
+  functions from a central Web-based graphical user interface. Metrics and log
+  data are visualized on a comfortable and easy-to-use dashboard.
+ </p><p>
+  For details, refer to the
+  <a class="ulink" href="http://docs.openstack.org/developer/horizon/" target="_top">OpenStack Horizon
+  documentation</a>.
+ </p><h5><a id="id1558"></a>Metrics Agent</h5><p>
+  A Metrics Agent is required for retrieving metrics data from the host on
+  which it runs and sending the metrics data to the Monitoring Service. The
+  agent supports metrics from a variety of sources as well as a number of
+  built-in system and service checks.
+ </p><p>
+  A Metrics Agent can be installed on each virtual or physical server to be
+  monitored.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  Monasca project. For details, refer to the
+  <a class="ulink" href="https://wiki.openstack.org/wiki/Monasca" target="_top">Monasca Wiki</a>.
+ </p><h5><a id="id1563"></a>Log Agent</h5><p>
+  A Log Agent is needed for collecting log data from the host on which it runs
+  and forwarding the log data to the Monitoring Service for further processing.
+  It can be installed on each virtual or physical server from which log data is
+  to be retrieved.
+ </p><p>
+  The agent functionality is fully integrated into the source code base of the
+  Monasca project. For details, refer to the
+  <a class="ulink" href="https://wiki.openstack.org/wiki/Monasca" target="_top">Monasca Wiki</a>.
+ </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1567"></a>Users and Roles</h2></div></div></div><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users can be grouped by
+  their role. The following user roles are distinguished:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    An <span class="bold"><strong>application operator</strong></span> acts as a service
+    provider in the OpenStack environment. He books virtual machines in
+    OpenStack to provide services to end users or to host services that he
+    needs for his own development activities. <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span> helps application operators to ensure the quality of
+    their services in the cloud.
+   </p></li><li class="listitem"><p>
+    The<span class="bold"><strong> OpenStack operator</strong></span> is a special
+    application operator. He is responsible for administrating and maintaining
+    the underlying OpenStack platform and ensures the availability and quality
+    of the OpenStack services (e.g. Heat, Nova, Cinder, Swift, Glance, or
+    Keystone).
+   </p><p>
+    For details on the tasks of the OpenStack operator, refer to the
+    <span class="emphasis"><em>OpenStack Operator's Guide</em></span>.
+   </p></li><li class="listitem"><p>
+    The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+    responsible for administrating and maintaining <span class="phrase">SUSE OpenStack Cloud
+    Monitoring</span>. He provides the cloud monitoring services to the other
+    users and ensures the quality of the Monitoring Service.
+   </p><p>
+    For details on the tasks of the Monitoring Service operator, refer to the
+    <span class="emphasis"><em>Monitoring Service Operator's Guide</em></span>.
+   </p></li></ul></div><p>
+  The tasks of the Monitoring Service operator and the OpenStack Operator can
+  jointly be performed by one system operator. In this case, refer to the
+  <span class="emphasis"><em>Monitoring Service Operator's Guide</em></span> and the
+  <span class="emphasis"><em>OpenStack Operator's Guide</em></span>.
+ </p><h5><a id="id1590"></a>User Management</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is fully integrated with
+  Keystone, the identity service which serves as the common authentication and
+  authorization system in OpenStack.
+ </p><p>
+  The <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integration with
+  Keystone requires any <span class="phrase">SUSE OpenStack Cloud Monitoring</span> user
+  to be registered as an OpenStack user. All authentication and authorization
+  in <span class="phrase">SUSE OpenStack Cloud Monitoring</span> is done through Keystone.
+  If a user requests monitoring data, for example, <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> verifies that the user is a valid user in OpenStack and
+  allowed to access the requested metrics.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users are created and
+  administrated in OpenStack:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Each user assumes a role in OpenStack to perform a specific set of
+    operations. The OpenStack role specifies a set of rights and privileges.
+   </p></li><li class="listitem"><p>
+    Each user is assigned to at least one project in OpenStack. A project is an
+    organizational unit that defines a set of resources which can be accessed
+    by the assigned users.
+   </p><p>
+    Application operators in <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+    can monitor the set of resources that is defined for the projects to which
+    they are assigned.
+   </p></li></ul></div><p>
+  For details on user management, refer to the
+  <a class="ulink" href="http://docs.openstack.org/" target="_top">OpenStack documentation</a>.
+ </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idg-overview-overview-monitor-c-monitoring-xml-1"></a>Chapter 2. Monitoring</h1></div></div></div><p>
+  The monitoring solution of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+  addresses the requirements of large-scale public and private clouds where
+  high numbers of physical and virtual servers need to be monitored and huge
+  amounts of monitoring data need to be managed. <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> consolidates metrics, alarms, and notifications, as well
+  as health and status information from multiple systems, thus reducing the
+  complexity and allowing for a higher level analysis of the monitoring data.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> covers all aspects of a
+  Monitoring as a Service solution:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Storage of monitoring data in a resilient way.
+   </p></li><li class="listitem"><p>
+    Multi-tenancy architecture for submitting and streaming metrics. The
+    architecture ensures the secure isolation of metrics data.
+   </p></li><li class="listitem"><p>
+    Horizontal and vertical scalability to support constantly evolving cloud
+    infrastructures. When physical and virtual servers are scaled up or down to
+    varying loads, the monitoring solution can be adapted accordingly.
+   </p></li></ul></div><h5><a id="id1623"></a>Basic Usage Scenario</h5><p>
+  The basic usage scenario of setting up and using the monitoring features of
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> looks as follows:
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-overview-monitoring.png" alt="monitoring.png" /></div></div><p>
+  The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+  responsible for providing the monitoring features to the application
+  operators and the OpenStack operator. This enables the application operators
+  and the OpenStack operator to focus on operation and ensure the quality of
+  their services without having to carry out the tedious tasks implied by
+  setting up and administrating their own system monitoring software. The
+  Monitoring Service operator uses the features himself for monitoring the
+  operation of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+ </p><p>
+  <span class="bold"><strong>Application operators</strong></span> monitor the virtual
+  machines on which they provide services to <span class="bold"><strong>end
+  users</strong></span> or services they need for their development activities. They
+  ensure that the physical and virtual servers on which their services are
+  provided are up and running as required.
+ </p><p>
+  The <span class="bold"><strong>OpenStack operator</strong></span> monitors physical and
+  virtual servers, hypervisors, and services of the underlying platform. In
+  addition, he is responsible for the middleware components, for example, the
+  database services.
+ </p><h5><a id="id1642"></a>Metrics</h5><p>
+  A Metrics Agent can be installed and configured on each physical and virtual
+  server where cloud resources are to be monitored. The agent is responsible
+  for querying metrics and sending the data to the Monitoring Service for
+  further processing.
+ </p><p>
+  Metrics are self-describing data structures that are uniquely identified by a
+  name and a set of dimensions. Each dimension consists of a key/value pair
+  that allows for a flexible and concise description of the data to be
+  monitored, for example, region, availability zone, service tier, or resource
+  ID.
+ </p><p>
+  The Metrics Agent supports various types of metrics including the following:
+
+  
+
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    System metrics, for example, CPU usage, consumed disk space, or network
+    traffic.
+   </p></li><li class="listitem"><p>
+    Host alive checks. The agent can perform active checks on a host to
+    determine whether it is alive using ping (ICMP) or SSH.
+   </p></li><li class="listitem"><p>
+    Process checks. The agent can check and monitor a process, for example, the
+    number of instances, memory size, or number of threads.
+   </p></li><li class="listitem"><p>
+    HTTP endpoint checks. The agent can perform up/down checks on HTTP
+    endpoints by sending an HTTP request and reporting success or failure to
+    the Monitoring Service.
+   </p></li><li class="listitem"><p>
+    Service checks. The agent can check middleware services, for example,
+    MySQL, Kafka, or RabbitMQ.
+   </p></li><li class="listitem"><p>
+    OpenStack services. The agent can perform specific checks on each process
+    that is part of an OpenStack service.
+   </p></li><li class="listitem"><p>
+    Log metrics. The agent can check and monitor the number of critical log
+    entries in the log data retrieved from the cloud resources.
+   </p></li></ul></div><h5><a id="id1662"></a>Data Visualization and Analysis</h5><p>
+  All <span class="phrase">SUSE OpenStack Cloud Monitoring</span> user groups work with a
+  graphical user interface that is seamlessly integrated into their cloud
+  infrastructure. <span class="phrase">Based on OpenStack Horizon, the user interface
+  enables access to all monitoring functionality and the resulting large-scale
+  monitoring data.</span>
+ </p><p>
+  A comfortable dashboard visualizes the health and status of the cloud
+  resources. It allows <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users
+  to experiment with many ways of analyzing the performance of their cloud
+  resources in real-time. They cannot only view but also share and explore
+  visualizations of their monitoring data.
+ </p><h5><a id="id1668"></a>Alarms and Notifications</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports GUI-based alarm and
+  notification management. <span class="phrase">Template-based alarm definitions allow for
+  monitoring a dynamically changing set of resources without the need for
+  reconfiguration. While the number of underlying virtual machines is changing,
+  for example, this ensures the efficient monitoring of scalable cloud
+  services. Alarm definitions allow you to specify expressions that are
+  evaluated based on the metrics data that is received. Alarm definitions can
+  be combined to form compound alarms. Compound alarms allow you to track and
+  process even more complex events. Notifications can be configured in order to
+  inform <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users when an alarm
+  is triggered.</span>
+ </p></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idg-overview-overview-log-c-logmanagement-xml-1"></a>Chapter 3. Log Management</h1></div></div></div><p>
+  Services and servers in a cloud infrastructure generate huge amounts of log
+  data, from simply announcing that everything is healthy to detailed
+  information on events or processes. The logs are distributed over many
+  physical and virtual servers. <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span> collects, stores, and queries these logs and makes them
+  accessible to <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users in one
+  central place.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> covers all aspects of an
+  enterprise-class log management solution:
+ </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+    Central management of log data from medium and large-size OpenStack
+    deployments.
+   </p></li><li class="listitem"><p>
+    Buffered exchange of log data to provide high data throughput.
+   </p></li><li class="listitem"><p>
+    Logical isolation of log data through multi-tenancy.
+   </p></li><li class="listitem"><p>
+    Scalable architecture capable of mastering the data load from a large
+    number of nodes in OpenStack environments. The log management solution can
+    be horizontally and vertically adapted to constantly changing data loads.
+   </p></li></ul></div><h5><a id="id1689"></a>Basic Usage Scenario</h5><p>
+  The basic usage scenario of setting up and using the log management features
+  of <span class="phrase">SUSE OpenStack Cloud Monitoring</span> looks as follows:
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-overview-logmgmt.png" alt="logmanagement.png" /></div></div><p>
+  The <span class="bold"><strong>Monitoring Service operator</strong></span> is
+  responsible for providing the log management features to the OpenStack
+  operator. He uses the features himself for retrieving log data on
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span>.
+ </p><p>
+  The <span class="bold"><strong>OpenStack operator</strong></span> uses the log
+  management features for retrieving log data on the OpenStack services and the
+  middleware components that make up the underlying OpenStack platform.
+ </p><h5><a id="id1705"></a>Data Collection</h5><p>
+  A Log Agent can be installed and configured on each physical and virtual
+  server where log data is to be retrieved. The agent is responsible for
+  collecting the log data from the cloud resources and sending it to the
+  Monitoring Service for further processing.
+ </p><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores the log data in a
+  central database. The central database forms the basis for visualizing the
+  log data for the <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users.
+ </p><h5><a id="id1710"></a>Data Visualization and Analysis</h5><p>
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports advanced data
+  visualization and analysis of the log data in a variety of charts, tables, or
+  maps. Visualizations can easily be combined in dynamic dashboards that
+  display changes to search queries in real time.
+ </p><p>
+  Based on OpenStack Horizon, the customizable dashboards are seamlessly
+  integrated into the cloud infrastructure. They enable user access to all log
+  management functionality.
+ </p><h5><a id="id1714"></a>Alarms and Notifications</h5><p>
+  GUI-based alarm and notification management is also supported for log data.
+  <span class="phrase"><span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports a template
+  mechanism for alarms on log data that is not limited to a single cloud
+  resource but can analyze a scalable set of resources.</span>
+ </p><p>
+  <span class="phrase">Alarms and notifications can be configured to inform system operators
+  when the number of critical log entries exceeds a defined threshold. Compound
+  alarms can be used to analyze more complex log events.</span> This
+  automation of log handling guarantees that system operators identify problems
+  in their infrastructure early and find the root cause of these problems
+  quickly.
+ </p></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="reference-7A5FB297419F4787832C9125D7CAC80F"></a>Appendix A. Glossary</h1></div></div></div><h5><a id="id1722"></a>Application Operator</h5><p>
+  A person with limited access to cloud resources in OpenStack. An application
+  operator provides services to end users or hosts services for his own
+  development activities.
+ </p><h5><a id="id1724"></a>Dimension</h5><p>
+  A key/value pair that allows for a flexible and concise description of the
+  data to be monitored, for example, region, availability zone, service tier,
+  or resource ID. Each dimension describes a specific characteristic of the
+  metrics to be monitored.
+ </p><p>
+  In <span class="phrase">SUSE OpenStack Cloud Monitoring</span>, metrics are uniquely
+  identified by a name and a set of dimensions. Dimensions can serve as a
+  filter for the monitoring data.
+ </p><h5><a id="id1728"></a>Elasticsearch</h5><p>
+  An open source application that provides a highly scalable full-text search
+  and analytics engine. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
+  Elasticsearch as the underlying technology for storing, searching, and
+  analyzing large volumes of log data.
+ </p><h5><a id="id1731"></a>Grafana</h5><p>
+  An open source application for visualizing large-scale measurement data.
+  <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates with Grafana for
+  visualizing the monitoring data.
+ </p><h5><a id="id1734"></a>Infrastructure as a Service (IaaS)</h5><p>
+  The delivery of computer infrastructure (typically a platform virtualization
+  environment) as a service.
+ </p><h5><a id="id1736"></a>InfluxDB</h5><p>
+  An open source time-series database that supports high write loads and large
+  data set storage. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
+  InfluxDB as the underlying technology for storing metrics and the alarm
+  history.
+ </p><h5><a id="id1739"></a>Kibana</h5><p>
+  An open source analytics and visualization platform designed to work with
+  Elasticsearch. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates
+  with Kibana for visualizing the log data.
+ </p><h5><a id="id1742"></a>Logstash</h5><p>
+  An open source application that provides a data collection engine with
+  pipelining capabilities. <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+  integrates with Logstash for collecting, processing, and outputting logs.
+ </p><h5><a id="id1745"></a>MariaDB</h5><p>
+  An open source relational database that provides an SQL-compliant interface
+  for accessing data. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
+  MariaDB as the underlying technology for storing configuration information,
+  alarm definitions, and notification methods.
+ </p><h5><a id="id1748"></a>Metrics</h5><p>
+  Self-describing data structures that allow for a flexible and concise
+  description of the data to be monitored. Metrics values represent the actual
+  monitoring data that is collected and presented in <span class="phrase">SUSE OpenStack
+  Cloud Monitoring</span>.
+ </p><h5><a id="id1751"></a>Monasca</h5><p>
+  An open source Monitoring as a Service solution that integrates with
+  OpenStack. It forms the core of <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span>.
+ </p><h5><a id="id1754"></a>Monitoring Service Operator</h5><p>
+  A person responsible for maintaining and administrating <span class="phrase">SUSE
+  OpenStack Cloud Monitoring</span>.
+ </p><h5><a id="id1757"></a>OpenStack Operator</h5><p>
+  A person responsible for maintaining and administrating OpenStack, the
+  underlying platform technology of <span class="phrase">SUSE OpenStack Cloud
+  Monitoring</span>.
+ </p><h5><a id="id1760"></a>Platform as a Service (PaaS)</h5><p>
+  The delivery of a computing platform and solution stack as a service.
+ </p><h5><a id="id1762"></a>Software as a Service (SaaS)</h5><p>
+  A model of software deployment where a provider licenses an application to
+  customers for use as a service on demand.
+ </p></div></div></body></html>
