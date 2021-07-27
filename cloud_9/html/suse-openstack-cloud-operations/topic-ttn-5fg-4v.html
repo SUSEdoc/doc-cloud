@@ -3,11 +3,8 @@
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
-}
-else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
-}
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
 
 </script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
@@ -20,7 +17,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="topic-ttn-5fg-4v.html">Managing Monitoring, Logging, and Usage Reporting</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 12. Managing Orchestration" href="ops-managing-orchestration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. Managing Container as a Service (Magnum)" href="using-container-as-a-service-overview.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="topic-ttn-5fg-4v.html">Managing Monitoring, Logging, and Usage Reporting</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 12. Managing Orchestration" href="ops-managing-orchestration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. Managing Container as a Service (Magnum)" href="using-container-as-a-service-overview.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="topic-ttn-5fg-4v"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Monitoring, Logging, and Usage Reporting</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_telemetry.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_telemetry.xml</li><li><span class="ds-label">ID: </span>topic-ttn-5fg-4v</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="topic-ttn-5fg-4v.html#mon"><span class="number">13.1 </span><span class="name">Monitoring</span></a></span></dt><dt><span class="section"><a href="topic-ttn-5fg-4v.html#centralized-logging"><span class="number">13.2 </span><span class="name">Centralized Logging Service</span></a></span></dt><dt><span class="section"><a href="topic-ttn-5fg-4v.html#ceilo-metering-overview"><span class="number">13.3 </span><span class="name">Metering Service (ceilometer) Overview</span></a></span></dt></dl></div></div><p>
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="topic-ttn-5fg-4v.html">Managing Monitoring, Logging, and Usage Reporting</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 12. Managing Orchestration" href="ops-managing-orchestration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. Managing Container as a Service (Magnum)" href="using-container-as-a-service-overview.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Documentation"><span class="book-icon">Documentation</span></a><span> › </span><a class="crumb" href="book-operations.html">Operations Guide CLM</a><span> › </span><a class="crumb" href="topic-ttn-5fg-4v.html">Managing Monitoring, Logging, and Usage Reporting</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 12. Managing Orchestration" href="ops-managing-orchestration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 14. Managing Container as a Service (Magnum)" href="using-container-as-a-service-overview.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="topic-ttn-5fg-4v"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Monitoring, Logging, and Usage Reporting</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_telemetry.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_telemetry.xml</li><li><span class="ds-label">ID: </span>topic-ttn-5fg-4v</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="topic-ttn-5fg-4v.html#mon"><span class="number">13.1 </span><span class="name">Monitoring</span></a></span></dt><dt><span class="section"><a href="topic-ttn-5fg-4v.html#centralized-logging"><span class="number">13.2 </span><span class="name">Centralized Logging Service</span></a></span></dt><dt><span class="section"><a href="topic-ttn-5fg-4v.html#ceilo-metering-overview"><span class="number">13.3 </span><span class="name">Metering Service (ceilometer) Overview</span></a></span></dt></dl></div></div><p>
   Information about the monitoring, logging, and metering services included
   with your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
  </p><div class="sect1" id="mon"><div class="titlepage"><div><div><h2 class="title"><span class="number">13.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#mon">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring.xml</li><li><span class="ds-label">ID: </span>mon</li></ul></div></div></div></div><p>
@@ -54,7 +51,7 @@ hljs.configure({
      Events Engine
     </p></li><li class="listitem "><p>
      Anomaly and Prediction Engine
-    </p></li></ul></div><div id="id-1.5.15.3.3.4.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p></li></ul></div><div id="id-1.5.15.3.3.4.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     Icinga was supported in previous <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> versions but it has been
     deprecated in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9.
    </p></div></div><div class="sect4" id="idg-all-operations-monitoring-monitoring-overview-xml-4"><div class="titlepage"><div><div><h5 class="title"><span class="number">13.1.1.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Diagram of monasca Service</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#idg-all-operations-monitoring-monitoring-overview-xml-4">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-monitoring_overview.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-monitoring_overview.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-monitoring-monitoring-overview-xml-4</li></ul></div></div></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-monasca_diagram.png" target="_blank"><img src="images/media-monasca_diagram.png" width="" /></a></div></div></div><div class="sect4" id="idg-all-operations-monitoring-monitoring-overview-xml-5"><div class="titlepage"><div><div><h5 class="title"><span class="number">13.1.1.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#idg-all-operations-monitoring-monitoring-overview-xml-5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-monitoring_overview.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-monitoring_overview.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-monitoring-monitoring-overview-xml-5</li></ul></div></div></div></div><p>
@@ -241,7 +238,7 @@ hljs.configure({
      To configure the sending email addresses, edit the following file:
     </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/monasca-notification/defaults/main.yml</pre></div><p>
      Modify the following value to add your sending email address:
-    </p><div class="verbatim-wrap"><pre class="screen">email_from_addr</pre></div><div id="id-1.5.15.3.4.4.4.2.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen">email_from_addr</pre></div><div id="id-1.5.15.3.4.4.4.2.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       The default value in the file is <code class="literal">email_from_address:
       notification@exampleCloud.com</code> which you should edit.
      </p></div></li><li class="listitem "><p>
@@ -249,7 +246,7 @@ hljs.configure({
      file:
     </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/monasca-default-alarms/defaults/main.yml</pre></div><p>
      Modify the following value to configure a receiving email address:
-    </p><div class="verbatim-wrap"><pre class="screen">notification_address</pre></div><div id="id-1.5.15.3.4.4.4.2.4.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen">notification_address</pre></div><div id="id-1.5.15.3.4.4.4.2.4.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       You can also set the receiving email address via the Operations Console.
       Instructions for this are in the last section.
      </p></div></li><li class="listitem "><p>
@@ -298,7 +295,7 @@ hljs.configure({
      To configure the sending email addresses, edit the following file:
     </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/monasca-notification/defaults/main.yml</pre></div><p>
      Modify the following value to add your sending email address:
-    </p><div class="verbatim-wrap"><pre class="screen">email_from_addr</pre></div><div id="id-1.5.15.3.4.4.6.4.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen">email_from_addr</pre></div><div id="id-1.5.15.3.4.4.6.4.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       The default value in the file is <code class="literal">email_from_address:
       notification@exampleCloud.com</code> which you should edit.
      </p></div></li><li class="listitem "><p>
@@ -315,7 +312,7 @@ hljs.configure({
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
      Run the monasca reconfigure playbook to deploy the changes:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml --tags notification</pre></div><div id="id-1.5.15.3.4.4.6.4.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts monasca-reconfigure.yml --tags notification</pre></div><div id="id-1.5.15.3.4.4.6.4.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       You may need to use the <code class="literal">--ask-vault-pass</code> switch if you
       opted for encryption during the initial deployment.
      </p></div></li></ol></div><p>
@@ -353,7 +350,7 @@ hljs.configure({
      On the <span class="bold"><strong>Edit Notification Method: Default
      Email</strong></span> page, click <span class="bold"><strong>Update
      Notification</strong></span>.
-    </p></li></ol></div><div id="id-1.5.15.3.4.4.6.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p></li></ol></div><div id="id-1.5.15.3.4.4.6.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     Once the notification has been added, using the procedures using the
     Ansible playbooks will not change it.
    </p></div></div></div><div class="sect3" id="manage-note-methods"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Notification Methods for Alarms</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#manage-note-methods">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_notificationmethods.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_notificationmethods.xml</li><li><span class="ds-label">ID: </span>manage-note-methods</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -379,7 +376,7 @@ hljs.configure({
      Edit the
      <code class="literal">~/openstack/ardana/ansible/roles/monasca-notification/defaults/main.yml</code>
      file and edit the line below with your proxy address values:
-    </p><div class="verbatim-wrap"><pre class="screen">notification_environment: '"http_proxy=http://&lt;proxy_address&gt;:&lt;port&gt;" "https_proxy=&lt;http://proxy_address&gt;:&lt;port&gt;"'</pre></div><div id="id-1.5.15.3.4.5.3.4.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen">notification_environment: '"http_proxy=http://&lt;proxy_address&gt;:&lt;port&gt;" "https_proxy=&lt;http://proxy_address&gt;:&lt;port&gt;"'</pre></div><div id="id-1.5.15.3.4.5.3.4.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       There are single quotation marks around the entire value of this entry and
       then double quotation marks around the individual proxy entries. This
       formatting must exist when you enter these values into your configuration
@@ -1084,7 +1081,7 @@ Warning: Journal has been rotated since unit was started. Log output is incomple
     <code class="literal">-compute[0-9]+-</code>.
    </p><div class="verbatim-wrap"><pre class="screen">{"aggregation_params_map":{"aggregation_pipeline":{"source":"streaming", "usage":"fetch_quantity", "setters":["rollup_quantity", "set_aggregated_metric_name", "set_aggregated_period"], "insert":["prepare_data","insert_data_pre_hourly"]}, "aggregated_metric_name":"mem.total_mb_agg", "aggregation_period":"hourly", "aggregation_group_by_list": ["host", "metric_id", "tenant_id"], "usage_fetch_operation": "avg", "filter_by_list": [{"field_to_filter": "host", "filter_expression": "-comp[0-9]+", "filter_operation": "include"}], "setter_rollup_group_by_list":[], "setter_rollup_operation": "sum", "dimension_list":["aggregation_period", "host", "project_id"], "pre_hourly_operation":"avg", "pre_hourly_group_by_list":["default"]}, "metric_group":"mem_total_all", "metric_id":"mem_total_all"}</pre></div><p>
     to
-   </p><div class="verbatim-wrap"><pre class="screen">{"aggregation_params_map":{"aggregation_pipeline":{"source":"streaming", "usage":"fetch_quantity", "setters":["rollup_quantity", "set_aggregated_metric_name", "set_aggregated_period"], "insert":["prepare_data", "insert_data_pre_hourly"]}, "aggregated_metric_name":"mem.total_mb_agg", "aggregation_period":"hourly", "aggregation_group_by_list": ["host", "metric_id", "tenant_id"],"usage_fetch_operation": "avg","filter_by_list": [{"field_to_filter": "host","filter_expression": "-compute[0-9]+", "filter_operation": "include"}], "setter_rollup_group_by_list":[], "setter_rollup_operation": "sum", "dimension_list":["aggregation_period", "host", "project_id"], "pre_hourly_operation":"avg", "pre_hourly_group_by_list":["default"]}, "metric_group":"mem_total_all", "metric_id":"mem_total_all"}</pre></div><div id="id-1.5.15.3.4.7.16.4.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   </p><div class="verbatim-wrap"><pre class="screen">{"aggregation_params_map":{"aggregation_pipeline":{"source":"streaming", "usage":"fetch_quantity", "setters":["rollup_quantity", "set_aggregated_metric_name", "set_aggregated_period"], "insert":["prepare_data", "insert_data_pre_hourly"]}, "aggregated_metric_name":"mem.total_mb_agg", "aggregation_period":"hourly", "aggregation_group_by_list": ["host", "metric_id", "tenant_id"],"usage_fetch_operation": "avg","filter_by_list": [{"field_to_filter": "host","filter_expression": "-compute[0-9]+", "filter_operation": "include"}], "setter_rollup_group_by_list":[], "setter_rollup_operation": "sum", "dimension_list":["aggregation_period", "host", "project_id"], "pre_hourly_operation":"avg", "pre_hourly_group_by_list":["default"]}, "metric_group":"mem_total_all", "metric_id":"mem_total_all"}</pre></div><div id="id-1.5.15.3.4.7.16.4.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
      The filter_expression has been changed to the <span class="emphasis"><em>new</em></span>
      pattern.
     </p></div></li><li class="step "><p>
@@ -1121,7 +1118,7 @@ Warning: Journal has been rotated since unit was started. Log output is incomple
   for how to adjust these.
  </p><div class="sect4" id="libvirt-tuningknobs"><div class="titlepage"><div><div><h5 class="title"><span class="number">13.1.2.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Libvirt plugin metric tuning knobs</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#libvirt-tuningknobs">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-libvirt_tuningknobs.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-libvirt_tuningknobs.xml</li><li><span class="ds-label">ID: </span>libvirt-tuningknobs</li></ul></div></div></div></div><p>
   The following metrics are added as part of the libvirt plugin:
- </p><div id="id-1.5.15.3.4.8.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ </p><div id="id-1.5.15.3.4.8.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    For a description of each of these metrics, see
    <a class="xref" href="topic-ttn-5fg-4v.html#libvirt-metrics" title="13.1.4.11. Libvirt Metrics">Section 13.1.4.11, “Libvirt Metrics”</a>.
   </p></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="newCol2" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Tuning Knob</th><th>Default Setting</th><th>Admin Metric Name</th><th>Project Metric Name</th></tr></thead><tbody><tr><td rowspan="3">vm_cpu_check_enable</td><td rowspan="3">True</td><td>vm.cpu.time_ns</td><td>cpu.time_ns</td></tr><tr><td>vm.cpu.utilization_norm_perc</td><td>cpu.utilization_norm_perc</td></tr><tr><td>vm.cpu.utilization_perc</td><td>cpu.utilization_perc</td></tr><tr><td rowspan="10">vm_disks_check_enable</td><td rowspan="10">
@@ -1186,7 +1183,7 @@ vm_ping_check_enable: <span class="emphasis"><em>&lt;true or false&gt;</em></spa
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
      Run the nova reconfigure playbook to implement the changes:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div><div id="id-1.5.15.3.4.8.5.5.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div><div id="id-1.5.15.3.4.8.5.5.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    If you modify either of the following files, then the monasca tuning
    parameters should be adjusted to handle a higher load on the system.
   </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/nova/libvirt-monitoring.yml
@@ -1197,7 +1194,7 @@ vm_ping_check_enable: <span class="emphasis"><em>&lt;true or false&gt;</em></spa
    changed to the <code class="literal">extra-large</code> setting.
   </p></div></div></div><div class="sect4" id="ovs-tuningknobs"><div class="titlepage"><div><div><h5 class="title"><span class="number">13.1.2.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OVS plugin metric tuning knobs</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#ovs-tuningknobs">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-ovs_tuningknobs.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-ovs_tuningknobs.xml</li><li><span class="ds-label">ID: </span>ovs-tuningknobs</li></ul></div></div></div></div><p>
   The following metrics are added as part of the OVS plugin:
- </p><div id="id-1.5.15.3.4.8.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ </p><div id="id-1.5.15.3.4.8.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    For a description of each of these metrics, see
    <a class="xref" href="topic-ttn-5fg-4v.html#sec-metric-ovs" title="13.1.4.16. Open vSwitch (OVS) Metrics">Section 13.1.4.16, “Open vSwitch (OVS) Metrics”</a>.
   </p></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="newCol2" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Tuning Knob</th><th>Default Setting</th><th>Admin Metric Name</th><th>Project Metric Name</th></tr></thead><tbody><tr><td rowspan="4">use_rate_metrics</td><td rowspan="4">False</td><td>ovs.vrouter.in_bytes_sec</td><td>vrouter.in_bytes_sec</td></tr><tr><td>ovs.vrouter.in_packets_sec</td><td>vrouter.in_packets_sec</td></tr><tr><td>ovs.vrouter.out_bytes_sec</td><td>vrouter.out_bytes_sec</td></tr><tr><td>ovs.vrouter.out_packets_sec</td><td>vrouter.out_packets_sec</td></tr><tr><td rowspan="4">use_absolute_metrics</td><td rowspan="4">True</td><td>ovs.vrouter.in_bytes</td><td>vrouter.in_bytes</td></tr><tr><td>ovs.vrouter.in_packets</td><td>vrouter.in_packets</td></tr><tr><td>ovs.vrouter.out_bytes</td><td>vrouter.out_bytes</td></tr><tr><td>ovs.vrouter.out_packets</td><td>vrouter.out_packets</td></tr><tr><td rowspan="4">use_health_metrics with use_rate_metrics</td><td rowspan="4">False</td><td>ovs.vrouter.in_dropped_sec</td><td>vrouter.in_dropped_sec</td></tr><tr><td>ovs.vrouter.in_errors_sec</td><td>vrouter.in_errors_sec</td></tr><tr><td>ovs.vrouter.out_dropped_sec</td><td>vrouter.out_dropped_sec</td></tr><tr><td>ovs.vrouter.out_errors_sec</td><td>vrouter.out_errors_sec</td></tr><tr><td rowspan="4">use_health_metrics with use_absolute_metrics</td><td rowspan="4">False</td><td>ovs.vrouter.in_dropped</td><td>vrouter.in_dropped</td></tr><tr><td>ovs.vrouter.in_errors</td><td>vrouter.in_errors</td></tr><tr><td>ovs.vrouter.out_dropped</td><td>vrouter.out_dropped</td></tr><tr><td>ovs.vrouter.out_errors</td><td>vrouter.out_errors</td></tr></tbody></table></div><div class="sect5" id="id-1.5.15.3.4.8.6.5"><div class="titlepage"><div><div><h6 class="title"><span class="number">13.1.2.5.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the OVS metrics using the tuning knobs</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#id-1.5.15.3.4.8.6.5">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-ovs_tuningknobs.xml" title="Edit the source file for this section">Edit source</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-ovs_tuningknobs.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
@@ -1311,7 +1308,7 @@ vm_ping_check_enable: <span class="emphasis"><em>&lt;true or false&gt;</em></spa
       ADDRESS: https://hipchat.hpe.net/v2/room/13/notification
      </p></li><li class="listitem "><p>
       auth_token: 1234567890
-     </p></li></ul></div></li></ol></div><div id="id-1.5.15.3.5.4.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     </p></li></ul></div></li></ol></div><div id="id-1.5.15.3.5.4.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    The horizon dashboard can also be used to create a HipChat notification
    type.
   </p></div></div><div class="sect3" id="monasca-slack-plugin"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the Slack Plugin</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#monasca-slack-plugin">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-monasca_slack_plugin.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-monasca_slack_plugin.xml</li><li><span class="ds-label">ID: </span>monasca-slack-plugin</li></ul></div></div></div></div><p>
@@ -1381,7 +1378,7 @@ vm_ping_check_enable: <span class="emphasis"><em>&lt;true or false&gt;</em></spa
     <span class="bold"><strong>MySlackNotification</strong></span>, using token
     <span class="bold"><strong>1234567890</strong></span>, and posting to channel
     <span class="bold"><strong>#general</strong></span>.
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca notification-create  MySlackNotification SLACK https://slack.com/api/chat.postMessage?token=1234567890&amp;channel=#general</pre></div></li></ol></div><div id="id-1.5.15.3.5.5.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca notification-create  MySlackNotification SLACK https://slack.com/api/chat.postMessage?token=1234567890&amp;channel=#general</pre></div></li></ol></div><div id="id-1.5.15.3.5.5.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    Notification types can also be created in the horizon dashboard.
   </p></div></div><div class="sect3" id="monasca-jira-plugin"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the JIRA Plugin</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#monasca-jira-plugin">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-monasca_jira_plugin.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-monasca_jira_plugin.xml</li><li><span class="ds-label">ID: </span>monasca-jira-plugin</li></ul></div></div></div></div><p>
   Configuring the JIRA plugin requires three pieces of information from your
@@ -1470,11 +1467,11 @@ vm_ping_check_enable: <span class="emphasis"><em>&lt;true or false&gt;</em></spa
     <code class="literal">HISO</code>, and adds the optional
     <em class="replaceable ">component</em> field with a value of
     <code class="literal">keystone</code>.
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca notification-create MyJiraNotification JIRA https://jira.hpcloud.net/?project=HISO&amp;component=keystone</pre></div><div id="id-1.5.15.3.5.6.10.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca notification-create MyJiraNotification JIRA https://jira.hpcloud.net/?project=HISO&amp;component=keystone</pre></div><div id="id-1.5.15.3.5.6.10.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
      There is a slash (<code class="literal">/</code>) separating the URL path and the
      query string. The
      slash is required if you have a query parameter without a path parameter.
-    </p></div><div id="id-1.5.15.3.5.6.10.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p></div><div id="id-1.5.15.3.5.6.10.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
      Notification types may also be created in the horizon dashboard.
     </p></div></li></ol></div></div></div><div class="sect2" id="alarm-metrics"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Alarm Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#alarm-metrics">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-alarm_metrics.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-alarm_metrics.xml</li><li><span class="ds-label">ID: </span>alarm-metrics</li></ul></div></div></div></div><p>
   You can use the available metrics to create custom alarms to further monitor
@@ -1982,7 +1979,7 @@ source=openstack</pre></div>
        service=block-storage, hostname, cluster, cloud_name, control_plane,
        component, model
       </p>
-     </td><td>Checks firmware version</td></tr></tbody></table></div></div><div class="sect3" id="idg-all-operations-monitoring-compute-metrics-xml-1"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#idg-all-operations-monitoring-compute-metrics-xml-1">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-compute_metrics.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-compute_metrics.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-monitoring-compute-metrics-xml-1</li></ul></div></div></div></div><div id="id-1.5.15.3.6.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     </td><td>Checks firmware version</td></tr></tbody></table></div></div><div class="sect3" id="idg-all-operations-monitoring-compute-metrics-xml-1"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#idg-all-operations-monitoring-compute-metrics-xml-1">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-compute_metrics.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-compute_metrics.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-monitoring-compute-metrics-xml-1</li></ul></div></div></div></div><div id="id-1.5.15.3.6.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    Compute instance metrics are listed in <a class="xref" href="topic-ttn-5fg-4v.html#libvirt-metrics" title="13.1.4.11. Libvirt Metrics">Section 13.1.4.11, “Libvirt Metrics”</a>.
   </p></div><p>
   A list of metrics associated with the Compute service.
@@ -2222,7 +2219,7 @@ service
 component=kafka
 consumer_group
 hostname</pre></div>
-     </td><td>Hostname consumer offset lag from broker offset</td></tr></tbody></table></div></div><div class="sect3" id="libvirt-metrics"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Libvirt Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#libvirt-metrics">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-libvirt_metrics.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-libvirt_metrics.xml</li><li><span class="ds-label">ID: </span>libvirt-metrics</li></ul></div></div></div></div><div id="id-1.5.15.3.6.14.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+     </td><td>Hostname consumer offset lag from broker offset</td></tr></tbody></table></div></div><div class="sect3" id="libvirt-metrics"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Libvirt Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#libvirt-metrics">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-libvirt_metrics.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-libvirt_metrics.xml</li><li><span class="ds-label">ID: </span>libvirt-metrics</li></ul></div></div></div></div><div id="id-1.5.15.3.6.14.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    For information on how to turn these metrics on and off using the tuning
    knobs, see <a class="xref" href="topic-ttn-5fg-4v.html#libvirt-tuningknobs" title="13.1.2.5.1. Libvirt plugin metric tuning knobs">Section 13.1.2.5.1, “Libvirt plugin metric tuning knobs”</a>.
   </p></div><p>
@@ -3117,7 +3114,7 @@ ntp_server</pre></div>
 ntp_server</pre></div>
      </td><td>Time offset in seconds</td></tr></tbody></table></div></div><div class="sect3" id="sec-metric-ovs"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.1.4.16 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Open vSwitch (OVS) Metrics</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#sec-metric-ovs">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-monitoring-ovs_metrics.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring-ovs_metrics.xml</li><li><span class="ds-label">ID: </span>sec-metric-ovs</li></ul></div></div></div></div><p>
   A list of metrics associated with the OVS service.
- </p><div id="id-1.5.15.3.6.19.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+ </p><div id="id-1.5.15.3.6.19.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
    For information on how to turn these metrics on and off using the tuning
    knobs, see <a class="xref" href="topic-ttn-5fg-4v.html#ovs-tuningknobs" title="13.1.2.5.2. OVS plugin metric tuning knobs">Section 13.1.2.5.2, “OVS plugin metric tuning knobs”</a>.
   </p></div><div class="table" id="id-1.5.15.3.6.19.4"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 13.6: </span><span class="name">Per-router metrics </span><a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#id-1.5.15.3.6.19.4">#</a></h6></div><div class="table-contents"><table class="table" summary="Per-router metrics" border="1"><colgroup><col class="c2" /><col class="c3" /><col class="c4" /><col class="c5" /></colgroup><thead><tr><th>Admin Metric Name</th><th>Project Metric Name</th><th>Dimensions</th><th>Description</th></tr></thead><tbody><tr><td>ovs.vrouter.in_bytes_sec</td><td>vrouter.in_bytes_sec</td><td>
@@ -4656,7 +4653,7 @@ sub_component</pre></div>
        A LUN is considered failed if the LUN has failed or if the LUN cache is
        not enabled and working.
       </p>
-     </td></tr></tbody></table></div><div id="id-1.5.15.3.6.22.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     </td></tr></tbody></table></div><div id="id-1.5.15.3.6.22.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
      HPE Smart Storage Administrator (HPE SSA) CLI component will have to be
      installed on all control nodes that are swift nodes, in order to generate
      the following swift metrics:
@@ -4686,7 +4683,7 @@ service=system</pre></div>
       <p>
        Maximum MHz value for the cpu frequency.
       </p>
-      <div id="id-1.5.15.3.6.23.3.2.5.1.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      <div id="id-1.5.15.3.6.23.3.2.5.1.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
         This value is dynamic, and driven by CPU governor depending on current
         resource need.
        </p></div>
@@ -4756,7 +4753,7 @@ service=system</pre></div>
        Total number of logical cores available for an entire node (Includes
        hyper threading).
       </p>
-      <div id="id-1.5.15.3.6.23.3.2.5.9.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: </h6><p>
+      <div id="id-1.5.15.3.6.23.3.2.5.9.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: </h6><p>
         This is an optional metric that is only sent when send_rollup_stats is
         set to true.
        </p></div>
@@ -4824,7 +4821,7 @@ device</pre></div>
        The total amount of disk space in Mbytes aggregated across all the disks
        on a particular node.
       </p>
-      <div id="id-1.5.15.3.6.23.4.2.5.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      <div id="id-1.5.15.3.6.23.4.2.5.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
         This is an optional metric that is only sent when send_rollup_stats is
         set to true.
        </p></div>
@@ -4839,7 +4836,7 @@ device</pre></div>
        The total amount of used disk space in Mbytes aggregated across all the
        disks on a particular node.
       </p>
-      <div id="id-1.5.15.3.6.23.4.2.5.4.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      <div id="id-1.5.15.3.6.23.4.2.5.4.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
         This is an optional metric that is only sent when send_rollup_stats is
         set to true.
        </p></div>
@@ -5143,7 +5140,7 @@ service=zookeeper</pre></div>
   <span class="bold"><strong>Do I need to Configure monasca-log-api?</strong></span> If
   you are only using Cloud Lifecycle Manager , then the default
   configuration is ready to use.
- </p><div id="id-1.5.15.4.3.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+ </p><div id="id-1.5.15.4.3.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
    If you are using logging in any of the following deployments, then you will
    need to query keystone to get an end-point to use.
   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -5176,7 +5173,7 @@ service=zookeeper</pre></div>
   the start,stop, and restart of the Centralized Logging Service in a specific
   way. This change was made to ensure the proper stop, start, and restart of
   Elasticsearch.
- </p><div id="id-1.5.15.4.3.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+ </p><div id="id-1.5.15.4.3.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
    It is recommended that you only use the logging playbooks to perform the
    start, stop, and restart of the Centralized Logging Service. Manually mixing
    the start, stop, and restart operations with the logging playbooks will
@@ -5241,7 +5238,7 @@ service=zookeeper</pre></div>
       logging data across nodes. It is highly available, scalable and
       performant. Kafka stores logs in disk instead of memory and is
       therefore more tolerant to consumer down times.
-     </p><div id="id-1.5.15.4.4.3.3.10.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+     </p><div id="id-1.5.15.4.4.3.3.10.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       Make sure not to undersize your Kafka partition or the data retention
       period may be lower than expected. If the Kafka partition capacity is
       lower than 85%, the retention period will increase to 30 minutes. Over
@@ -5301,7 +5298,7 @@ service=zookeeper</pre></div>
    Logstash, and Kibana cluster. In this cluster they are indexed and organized
    for easier and visual searches. The following illustration describes the
    architecture used to collect operational logs.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-logservice_arch.png" target="_blank"><img src="images/media-logservice_arch.png" width="" /></a></div></div><div id="id-1.5.15.4.4.3.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-logservice_arch.png" target="_blank"><img src="images/media-logservice_arch.png" width="" /></a></div></div><div id="id-1.5.15.4.4.3.9" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     The arrows come from the active (requesting) side to the passive
     (listening) side. The active side is always the one providing
     credentials, so the arrows may also be seen as coming from the credential
@@ -5556,7 +5553,7 @@ service=zookeeper</pre></div>
     </p></li><li class="listitem "><p>
      On the <span class="bold"><strong>Home/Logging</strong></span> page, click
      <span class="bold"><strong>View Logging Dashboard</strong></span>.
-    </p></li></ol></div><div id="id-1.5.15.4.5.6.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p></li></ol></div><div id="id-1.5.15.4.5.6.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, Kibana usually runs on a different network than Operations Console.
     Due to this configuration, it is possible that using Operations Console
     to access Kibana will result in an “404 not found” error. This
@@ -5571,7 +5568,7 @@ service=zookeeper</pre></div>
    While creating Kibana dashboards is beyond the scope of this document, it is
    important to know that the dashboards you create are JSON files that you can
    modify or create new dashboards based on existing dashboards.
-  </p><div id="id-1.5.15.4.5.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  </p><div id="id-1.5.15.4.5.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     Kibana is client-server software. To operate properly, the browser must be
     able to access port 5601 on the control plane.
    </p></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Field</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td>user</td><td>kibana</td><td>
@@ -5608,7 +5605,7 @@ service=zookeeper</pre></div>
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>grep HZN-WEB /etc/hosts</pre></div><p>
       The output of the grep command should show you the virtual IP address for
       Kibana that you should use.
-     </p><div id="id-1.5.15.4.5.8.6.3.1.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+     </p><div id="id-1.5.15.4.5.8.6.3.1.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
        If nothing is returned by the grep command, you can open the following
        file to look for the IP address manually:
       </p><div class="verbatim-wrap"><pre class="screen">/etc/hosts</pre></div></div><p>
@@ -5633,7 +5630,7 @@ service=zookeeper</pre></div>
    the start,stop, and restart of the Centralized Logging Service in a specific
    way. This change was made to ensure the proper stop, start, and restart of
    Elasticsearch.
-  </p><div id="id-1.5.15.4.6.3.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.4.6.3.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     It is recommended that you only use the logging playbooks to perform the
     start, stop, and restart of the Centralized Logging Service. Manually
     mixing the start, stop, and restart operations with the logging playbooks
@@ -5642,7 +5639,7 @@ service=zookeeper</pre></div>
    The steps in this section only impact centralized logging. Logrotate is an
    essential feature that keeps the service log files from filling the disk and
    will not be affected.
-  </p><div id="id-1.5.15.4.6.3.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.4.6.3.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     These playbooks must be run from the Cloud Lifecycle Manager.
    </p></div><p>
    <span class="bold"><strong>To stop the Logging service:</strong></span>
@@ -5662,7 +5659,7 @@ service=zookeeper</pre></div>
    <span class="bold"><strong>enabled</strong></span> flag to
    <span class="bold"><strong>true</strong></span> or
    <span class="bold"><strong>false</strong></span>, and then reconfigure logging.
-  </p><div id="id-1.5.15.4.6.4.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.4.6.4.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     There are consequences if you enable too many logging files for a service.
     If there is not enough storage to support the increased logging, the
     retention period of logs in Elasticsearch is decreased. Alternatively, if
@@ -5728,7 +5725,7 @@ service=zookeeper</pre></div>
    <code class="literal">~/openstack/my_cloud/config/logging/main.yml</code> file, but you
    will need to run a reconfigure of the Centralized Logging service if changes
    are made.
-  </p><div id="id-1.5.15.4.7.5.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+  </p><div id="id-1.5.15.4.7.5.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
     The total process memory consumption for Elasticsearch will be the above
     allocated heap value (in
     <code class="literal">~/openstack/my_cloud/config/logging/main.yml</code>) plus any Java
@@ -5755,7 +5752,7 @@ service=zookeeper</pre></div>
 - name: elasticsearch
   size: 30%
   mount: /var/lib/elasticsearch
-  fstype: ext4</pre></div><div id="id-1.5.15.4.7.5.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  fstype: ext4</pre></div><div id="id-1.5.15.4.7.5.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     The disk size is set automatically based on the hardware configuration. If
     you need to adjust it, you can set it manually with the following steps.
    </p></div><p>
@@ -5791,7 +5788,7 @@ service=zookeeper</pre></div>
    logs are lost forever. If you want to backup old logs, for example to comply
    with certain regulations, you can configure automatic backup of
    Elasticsearch indices.
-  </p><div id="id-1.5.15.4.7.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.4.7.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     If you need to restore data that was archived prior to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 and
     used the older versions of Elasticsearch, then this data will need to be
     restored to a separate deployment of Elasticsearch.
@@ -5865,7 +5862,7 @@ $ ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li c
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls /var/lib/esbackup</pre></div></li></ol></div></div><div class="sect3" id="restore-elastic-logs"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.2.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restoring Logs From an Elasticsearch Backup</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#restore-elastic-logs">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-central_log_configure_CL.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-central_log_configure_CL.xml</li><li><span class="ds-label">ID: </span>restore-elastic-logs</li></ul></div></div></div></div><p>
    To restore logs from an Elasticsearch backup, see
    <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html</a>.
-  </p><div id="id-1.5.15.4.7.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  </p><div id="id-1.5.15.4.7.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     We do not recommend restoring to the original <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Centralized Logging
     cluster as it may cause storage/capacity issues. We rather recommend setting
     up a separate ELK cluster of the same version and restoring the logs there.
@@ -6454,7 +6451,7 @@ ironic_conductor_logstash_loglevel: "{{ ardana_loglevel | default('INFO') }}"</p
        <p>
         DEBUG
        </p>
-      </td></tr></tbody></table></div><div id="id-1.5.15.4.8.16.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+      </td></tr></tbody></table></div><div id="id-1.5.15.4.8.16.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     Currently it is not recommended to log at any level other than INFO.
    </p></div></div><div class="sect3" id="Loglvl-octavia"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.2.6.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Octavia</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#Loglvl-octavia">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-central_log_configure_services.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-central_log_configure_services.xml</li><li><span class="ds-label">ID: </span>Loglvl-octavia</li></ul></div></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Service</th><th>Sub-component</th><th>Supported Logging Levels</th></tr></thead><tbody><tr><td>octavia</td><td>
        <p>
@@ -6706,7 +6703,7 @@ manila_logstash_loglevel: INFO</pre></div></li><li class="step "><p>
      Verify logging is enabled by locating the following lines:
     </p><div class="verbatim-wrap"><pre class="screen">centralized_logging:
   enabled: true
-  format: rawjson</pre></div><div id="id-1.5.15.4.8.22.6.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  format: rawjson</pre></div><div id="id-1.5.15.4.8.22.6.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       When possible, centralized logging is most effective on log files
       generated using logstash-formatted JSON. These files should specify
       <span class="emphasis"><em>format: rawjson</em></span>. When only plaintext log files are
@@ -6725,7 +6722,7 @@ manila_logstash_loglevel: INFO</pre></div></li><li class="step "><p>
   - missingok
   - notifempty
   - copytruncate
-  - create 640 keystone adm</pre></div><div id="id-1.5.15.4.8.22.6.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  - create 640 keystone adm</pre></div><div id="id-1.5.15.4.8.22.6.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       With the introduction of dynamic log rotation, the frequency (that is,
       <span class="emphasis"><em>daily</em></span>) and file size threshold (that is,
       <span class="emphasis"><em>maxsize</em></span>) settings no longer have any effect. The
@@ -6791,7 +6788,7 @@ manila_logstash_loglevel: INFO</pre></div></li><li class="step "><p>
      Edit the service parameters to set the desired parameters. Example:
     </p><div class="verbatim-wrap"><pre class="screen">cinder:
   weight: 300
-  retention: 2</pre></div><div id="id-1.5.15.4.8.23.8.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  retention: 2</pre></div><div id="id-1.5.15.4.8.23.8.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
       The retention setting of <span class="emphasis"><em>default</em></span> will use recommend
       defaults for each services' log files.
      </p></div></li><li class="step "><p>
@@ -6932,7 +6929,7 @@ manila_logstash_loglevel: INFO</pre></div></li><li class="step "><p>
       the root partition under the folder <code class="filename">/var/audit</code>. This
       could be problematic if the root partition does not have adequate space to
       hold the audit logs.
-     </p><div id="id-1.5.15.4.9.9.4.2.2.2.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+     </p><div id="id-1.5.15.4.9.9.4.2.2.2.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
        We recommend that you do <span class="bold"><strong>not</strong></span> store
        audit logs in the <code class="filename">/var/log</code> volume. The
        <code class="filename">/var/log</code> volume is used for storing operational logs
@@ -6993,7 +6990,7 @@ manila_logstash_loglevel: INFO</pre></div></li><li class="step "><p>
      Log in to your Cloud Lifecycle Manager.
     </p></li><li class="listitem "><p>
      To copy the example templates folder, run the following command:
-    </p><div id="id-1.5.15.4.9.9.7.4.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p><div id="id-1.5.15.4.9.9.7.4.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       If you already have the required templates in the definition folder, you
       can skip this step.
      </p></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cp -r ~/openstack/examples/entry-scale-esx/* ~/openstack/my_cloud/definition/</pre></div></li><li class="listitem "><p>
@@ -7136,14 +7133,14 @@ disabled-services:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="listitem "><p>
      To remove the stub file that osconfig uses to decide if the disks are
      already configured, run:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible -i hosts/verb_hosts KEY-API -a 'sudo rm -f /etc/openstack/osconfig-ran'</pre></div><div id="id-1.5.15.4.9.10.9.2.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible -i hosts/verb_hosts KEY-API -a 'sudo rm -f /etc/openstack/osconfig-ran'</pre></div><div id="id-1.5.15.4.9.10.9.2.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       The osconfig playbook uses the stub file to mark already configured disks
       as "idempotent." To stop osconfig from identifying your new disk as
       already configured, you must remove the stub file /etc/hos/osconfig-ran
       before re-running the osconfig playbook.
      </p></div></li><li class="listitem "><p>
      To run the playbook that enables auditing for a service, run:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit KEY-API</pre></div><div id="id-1.5.15.4.9.10.9.2.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts osconfig-run.yml --limit KEY-API</pre></div><div id="id-1.5.15.4.9.10.9.2.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       The variable KEY-API is used as an example to cover the management
       controller cluster. To enable auditing for a service that is not run on
       the same cluster, add the service to the –limit flag in the above
@@ -7156,7 +7153,7 @@ disabled-services:
      For example, to reconfigure keystone for audit logging, run:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts keystone-reconfigure.yml</pre></div></li><li class="listitem "><p>
      Repeat steps 1 and 2 for each service you need to reconfigure.
-    </p><div id="id-1.5.15.4.9.10.10.2.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+    </p><div id="id-1.5.15.4.9.10.10.2.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       You must reconfigure each service that you changed to be enabled or
       disabled in the cloudConfig.yml file.
      </p></div></li></ol></div></div></div></div><div class="sect2" id="id-1.5.15.4.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">13.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#id-1.5.15.4.10">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-centralized_logging.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-centralized_logging.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
@@ -7277,7 +7274,7 @@ provider:segmentation_id</pre></div></li><li class="listitem "><p>
    A meter is defined for every measurable resource. A meter can exist beyond
    the actual existence of a particular resource, such as an active instance,
    to provision long-cycle use cases such as billing.
-  </p><div id="id-1.5.15.5.4.2.4.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.5.4.2.4.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     For a list of meter types and default meters installed with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, see
     <a class="xref" href="topic-ttn-5fg-4v.html#topic3051" title="13.3.3. Ceilometer Metering Available Meter Types">Section 13.3.3, “Ceilometer Metering Available Meter Types”</a>
    </p></div><p>
@@ -7528,7 +7525,7 @@ Jun 12 05:07:14 ardana-qe201-cp1-c1-m2-mgmt systemd[1]: Started ceilometer-agent
    in the notifications configuration file, you can set the
    <code class="literal">interval</code> to a higher amount, such as collecting data
    every 30 seconds.
-  </p><div id="id-1.5.15.5.7.3.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.5.7.3.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     swift account data will be collected using the polling mechanism in an
     hourly interval.
    </p></div><p>
@@ -7660,7 +7657,7 @@ sinks:
           - "network.update"</pre></div><p>
      In the sample code above, the notification agent will collect data every
      30 seconds.
-    </p></li></ol></div></div><div id="id-1.5.15.5.7.3.21" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+    </p></li></ol></div></div><div id="id-1.5.15.5.7.3.21" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     The <code class="literal">pipeline-agent-notification.yaml</code> file needs to be changed on all
     controller nodes to change the white-listing and polling strategy.
    </p></div></div><div class="sect3" id="idg-all-metering-metering-notifications-xml-7"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.3.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Edit the List of Meters</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#idg-all-metering-metering-notifications-xml-7">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/metering-metering_notifications.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>metering-metering_notifications.xml</li><li><span class="ds-label">ID: </span>idg-all-metering-metering-notifications-xml-7</li></ul></div></div></div></div><p>
@@ -7690,7 +7687,7 @@ sinks:
     - name: meter_sink
       transformers:
       publishers:
-          - notifier://</pre></div><div id="id-1.5.15.5.7.4.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+          - notifier://</pre></div><div id="id-1.5.15.5.7.4.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     If you enable meters at the container level in this file, every time the
     polling interval triggers a collection, at least 5 messages per existing
     container in swift are collected.
@@ -7701,7 +7698,7 @@ sinks:
    The data in the table shows that even a very small swift storage with 10
    containers and 100 files will store 120,000 samples in 24 hours, generating
    a total of 3.6 million samples.
-  </p><div id="id-1.5.15.5.7.4.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.5.7.4.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     The size of each file does not have any impact on the number of samples
     collected. As shown in the table above, the smallest number of samples
     results from polling when there are a small number of files and a small
@@ -7713,7 +7710,7 @@ sinks:
    consumer application, for example, it is easier to add a field to an
    existing meter rather than creating a new meter. If you create a new meter,
    you must also reconfigure ceilometer.
-  </p><div id="id-1.5.15.5.7.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+  </p><div id="id-1.5.15.5.7.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
     Consider the following information before you add or edit a meter:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
       You can add a maximum of 12 new fields.
@@ -7990,7 +7987,7 @@ workload_partitioning = true</pre></div><p>
   expirer process that acquires a lock when there are multiple contenders and
   the winning process runs. There is no failover support, as expirer is not a
   daemon and is scheduled to run at pre-determined intervals.
- </p><div id="id-1.5.15.5.9.11" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+ </p><div id="id-1.5.15.5.9.11" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
    You must ensure that a single expirer process runs when multiple processes
    are scheduled to run at the same time. This must be done using cron-based
    scheduling. on multiple controller nodes
@@ -8011,7 +8008,7 @@ check_watchers = 10.0</pre></div><p>
   To disable coordination and workload partitioning by OpenStack, set the
   following value in the configuration file:
  </p><div class="verbatim-wrap"><pre class="screen">        [notification]
-        workload_partitioning = False</pre></div><div id="id-1.5.15.5.9.17" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+        workload_partitioning = False</pre></div><div id="id-1.5.15.5.9.17" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
    When a configuration change is made to an API running under the HA Proxy,
    that change needs to be replicated in <span class="bold"><strong>all</strong></span>
    controllers.
@@ -8042,7 +8039,7 @@ sinks:
     - name: meter_sink
       transformers:
       publishers:
-          - notifier://</pre></div><div id="id-1.5.15.5.10.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+          - notifier://</pre></div><div id="id-1.5.15.5.10.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     This change will cause all non-default meters to stop receiving
     notifications.
    </p></div></div><div class="sect3" id="ceilometer-nova"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.3.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enable Nova Notifications</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#ceilometer-nova">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/metering-metering_bestpractice.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>metering-metering_bestpractice.xml</li><li><span class="ds-label">ID: </span>ceilometer-nova</li></ul></div></div></div></div><p>
@@ -8087,7 +8084,7 @@ sinks:
 notification_topics=notifications
 notify_on_state_change=vm_and_task_state
 instance_usage_audit=True
-instance_usage_audit_period=hour</pre></div><div id="id-1.5.15.5.10.4.8.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+instance_usage_audit_period=hour</pre></div><div id="id-1.5.15.5.10.4.8.2.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       The <code class="literal">instance_usage_audit_period</code> interval can be set to
       check the instance's status every hour, once a day, once a week or once a
       month. Every time the audit period elapses, nova sends a notification to
@@ -8098,7 +8095,7 @@ instance_usage_audit_period=hour</pre></div><div id="id-1.5.15.5.10.4.8.2.3" cla
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl restart nova-api.service
 <code class="prompt user">tux &gt; </code>sudo systemctl restart nova-conductor.service
 <code class="prompt user">tux &gt; </code>sudo systemctl restart nova-scheduler.service
-<code class="prompt user">tux &gt; </code>sudo systemctl restart nova-novncproxy.service</pre></div><div id="id-1.5.15.5.10.4.8.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>
+<code class="prompt user">tux &gt; </code>sudo systemctl restart nova-novncproxy.service</pre></div><div id="id-1.5.15.5.10.4.8.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
       Different platforms may use their own unique command to restart
       nova-compute services. If the above command does not work, please refer
       to the documentation for your specific platform.
@@ -8129,7 +8126,7 @@ instance_usage_audit_period=hour</pre></div><div id="id-1.5.15.5.10.4.8.2.3" cla
   </p><p>
    <span class="bold"><strong>To configure Apache2 to use increase the number of
    threads</strong></span>, use the steps in <a class="xref" href="topic-ttn-5fg-4v.html#reconfig-metering" title="13.3.4. Configure the Ceilometer Metering Service">Section 13.3.4, “Configure the Ceilometer Metering Service”</a>
-  </p><div id="id-1.5.15.5.10.5.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>
+  </p><div id="id-1.5.15.5.10.5.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
     The resource usage panel could take some time to load depending on the
     number of metrics selected.
    </p></div></div><div class="sect3" id="update-polling-strategy"><div class="titlepage"><div><div><h4 class="title"><span class="number">13.3.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update the Polling Strategy and Swift Considerations</span> <a title="Permalink" class="permalink" href="topic-ttn-5fg-4v.html#update-polling-strategy">#</a><a class="report-bug" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/metering-metering_bestpractice.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>metering-metering_bestpractice.xml</li><li><span class="ds-label">ID: </span>update-polling-strategy</li></ul></div></div></div></div><p>
@@ -8172,7 +8169,7 @@ sinks:
    Looking at the data we can see that even a very small swift storage with 10
    containers and 100 files will store 120K samples in 24 hours, bringing it to
    a total of 3.6 million samples.
-  </p><div id="id-1.5.15.5.10.6.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
+  </p><div id="id-1.5.15.5.10.6.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
     The file size of each file does not have any impact on the number of samples
     collected. In fact the smaller the number of containers or files, the
     smaller the sample size. In the scenario where there a large number of small

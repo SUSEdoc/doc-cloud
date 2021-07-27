@@ -3,11 +3,8 @@
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
-}
-else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
-}
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
 
 </script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
@@ -20,7 +17,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">16 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">17 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-troubleshooting.html"><span class="number">V </span><span class="name">Troubleshooting and Support</span></a><ol><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">18 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">A </span><span class="name">Using Cisco Nexus Switches with neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">B </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-depl-req"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations and Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div><div><div class="abstract"><p>
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Crowbar</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pre-cloud-deploy.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-depl-intro.html"><span class="number">I </span><span class="name">Architecture and Requirements</span></a><ol><li class="inactive"><a href="cha-depl-arch.html"><span class="number">1 </span><span class="name">The SUSE <span class="productname">OpenStack</span> Cloud Architecture</span></a></li><li class="inactive"><a href="cha-depl-req.html"><span class="number">2 </span><span class="name">Considerations and Requirements</span></a></li></ol></li><li class="inactive"><a href="part-depl-admserv.html"><span class="number">II </span><span class="name">Setting Up the Administration Server</span></a><ol><li class="inactive"><a href="cha-depl-adm-inst.html"><span class="number">3 </span><span class="name">Installing the Administration Server</span></a></li><li class="inactive"><a href="app-deploy-smt.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Administration Server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-network.html"><span class="number">6 </span><span class="name">Service Configuration:  Administration Server Network Configuration</span></a></li><li class="inactive"><a href="sec-depl-adm-inst-crowbar.html"><span class="number">7 </span><span class="name">Crowbar Setup</span></a></li><li class="inactive"><a href="sec-depl-adm-start-crowbar.html"><span class="number">8 </span><span class="name">Starting the SUSE <span class="productname">OpenStack</span> Cloud Crowbar installation</span></a></li><li class="inactive"><a href="sec-depl-adm-crowbar-extra-features.html"><span class="number">9 </span><span class="name">Customizing Crowbar</span></a></li></ol></li><li class="inactive"><a href="part-depl-ostack.html"><span class="number">III </span><span class="name">Setting Up <span class="productname">OpenStack</span> Nodes and Services</span></a><ol><li class="inactive"><a href="cha-depl-crowbar.html"><span class="number">10 </span><span class="name">The Crowbar Web Interface</span></a></li><li class="inactive"><a href="cha-depl-inst-nodes.html"><span class="number">11 </span><span class="name">Installing the <span class="productname">OpenStack</span> Nodes</span></a></li><li class="inactive"><a href="cha-depl-ostack.html"><span class="number">12 </span><span class="name">Deploying the <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="sec-deploy-policy-json.html"><span class="number">13 </span><span class="name">Limiting Users' Access Rights</span></a></li><li class="inactive"><a href="cha-depl-ostack-configs.html"><span class="number">14 </span><span class="name">Configuration Files for <span class="productname">OpenStack</span> Services</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">15 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">16 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li></ol></li><li class="inactive"><a href="part-depl-nostack.html"><span class="number">IV </span><span class="name">Setting Up Non-<span class="productname">OpenStack</span> Services</span></a><ol><li class="inactive"><a href="cha-depl-nostack.html"><span class="number">17 </span><span class="name">Deploying the Non-<span class="productname">OpenStack</span> Components</span></a></li></ol></li><li class="inactive"><a href="part-depl-troubleshooting.html"><span class="number">V </span><span class="name">Troubleshooting and Support</span></a><ol><li class="inactive"><a href="cha-depl-trouble.html"><span class="number">18 </span><span class="name">Troubleshooting and Support</span></a></li></ol></li><li class="inactive"><a href="app-deploy-cisco.html"><span class="number">A </span><span class="name">Using Cisco Nexus Switches with neutron</span></a></li><li class="inactive"><a href="app-deploy-docupdates.html"><span class="number">B </span><span class="name">Documentation Updates</span></a></li><li class="inactive"><a href="gl-cloud.html"><span class="number"> </span><span class="name">Glossary of Terminology and Product Names</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation"><span class="book-icon">SUSE OpenStack Cloud Crowbar 9 Documentation</span></a><span> › </span><a class="crumb" href="book-crowbar-deployment.html">Deployment Guide using Crowbar</a><span> › </span><a class="crumb" href="part-depl-intro.html">Architecture and Requirements</a><span> › </span><a class="crumb" href="cha-depl-req.html">Considerations and Requirements</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. The SUSE OpenStack Cloud Architecture" href="cha-depl-arch.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setting Up the Administration Server" href="part-depl-admserv.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-depl-req"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations and Requirements</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div><div><div class="abstract"><p>
     Before deploying <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>, there are some requirements to meet and
     architectural decisions to make. Read this chapter thoroughly first, as
     some decisions need to be made <span class="emphasis"><em>before</em></span> deploying
@@ -109,7 +106,7 @@ hljs.configure({
    amphorae over a dedicated management network.
    This network is not pre-defined when setting up <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. It needs
    to be explicitly configured as covered under <a class="xref" href="cha-depl-ostack.html#sec-depl-ostack-octavia-mgmtnet" title="12.20.1.1. Management network">Section 12.20.1.1, “Management network”</a>.
-  </p><div id="id-1.4.3.3.2.8" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Protect Networks from External Access</h6><p>
+  </p><div id="id-1.4.3.3.2.8" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning: Protect Networks from External Access</h6><p>
     For security reasons, protect the following networks from external
     access:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -127,7 +124,7 @@ hljs.configure({
      </p></li></ul></div><p>
     Especially traffic from the cloud instances must not be able to pass
     through these networks.
-   </p></div><div id="id-1.4.3.3.2.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: VLAN Settings</h6><p>
+   </p></div><div id="id-1.4.3.3.2.9" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: VLAN Settings</h6><p>
     As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, using a VLAN for the admin network is
     only supported on a native/untagged VLAN. If you need VLAN support for the
     admin network, it must be handled at switch level.
@@ -150,7 +147,7 @@ hljs.configure({
     the same. When not using a VLAN for <code class="literal">nova-floating</code>, it
     must have a different physical network interface than the
     <code class="literal">nova_fixed</code> network.
-   </p></div><div id="id-1.4.3.3.2.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: No IPv6 Support</h6><p>
+   </p></div><div id="id-1.4.3.3.2.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: No IPv6 Support</h6><p>
     As of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8, IPv6 is not supported. This applies to the cloud
     internal networks and to the instances. You must use static IPv4 addresses
     for all network interfaces on the Admin Node, and disable IPv6 before
@@ -205,7 +202,7 @@ hljs.configure({
        </td><td>
         <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>1 IP address per node (Control Nodes and
            Compute Nodes)</p></li></ul></div>
-       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Limitations of the Default Network Proposal</h6><p>
+       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Limitations of the Default Network Proposal</h6><p>
      The default network proposal as described below limits the maximum
      number of Compute Nodes to 80, the maximum number of floating IP
      addresses to 61 and the maximum number of addresses in the nova_fixed
@@ -461,7 +458,7 @@ hljs.configure({
          and <code class="literal">gre</code>, each network node and all
          Compute Nodes will get an IP address from this range.
         </p>
-       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Addresses for Additional Servers</h6><p>
+       </td></tr></tbody></table></div></div><div id="id-1.4.3.3.2.13.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Addresses for Additional Servers</h6><p>
      Addresses not used in the ranges mentioned above can be used to add
      additional servers with static addresses to SUSE <span class="productname">OpenStack</span> Cloud. Such servers
      can be used to provide additional services. A SUSE Manager server
@@ -481,7 +478,7 @@ hljs.configure({
     partner can assist you in creating a custom setup within the scope of a
     consulting services agreement (see <a class="link" href="http://www.suse.com/consulting/" target="_blank">http://www.suse.com/consulting/</a> for more information on
     SUSE consulting).
-   </p><div id="id-1.4.3.3.2.14.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Network Device Bonding is Required for HA</h6><p>Network device bonding is required for an HA setup of
+   </p><div id="id-1.4.3.3.2.14.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Network Device Bonding is Required for HA</h6><p>Network device bonding is required for an HA setup of
      <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>. If you are planning to move your cloud to an
      HA setup at a later point in time, make sure to use a network
      mode in the YaST Crowbar that supports network device bonding.</p><p>Otherwise a migration to an HA setup is not supported.</p></div><div class="sect3 " id="sec-depl-req-network-modes-single"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Single Network Mode</span> <a title="Permalink" class="permalink" href="cha-depl-req.html#sec-depl-req-network-modes-single">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>depl_require.xml</li><li><span class="ds-label">ID: </span>sec-depl-req-network-modes-single</li></ul></div></div></div></div><p>
@@ -541,7 +538,7 @@ hljs.configure({
    there are two completely different aspects to discuss: 1) the block and
    object storage services SUSE <span class="productname">OpenStack</span> Cloud offers, 2) the
    hardware related storage aspects on the different node types.
-  </p><div id="id-1.4.3.3.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Persistent vs. Ephemeral Storage</h6><p>
+  </p><div id="id-1.4.3.3.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Persistent vs. Ephemeral Storage</h6><p>
     Block and object storage are persistent storage models where files or
     images are stored until they are explicitly deleted. SUSE <span class="productname">OpenStack</span> Cloud also
     offers ephemeral storage for images attached to instances. These
@@ -590,7 +587,7 @@ hljs.configure({
     Each node in SUSE <span class="productname">OpenStack</span> Cloud needs sufficient disk space to store both the operating system and  additional data.
     Requirements and recommendations for the various node types are listed
     below.
-   </p><div id="id-1.4.3.3.3.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Choose a Hard Disk for the Operating System Installation</h6><p>
+   </p><div id="id-1.4.3.3.3.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Choose a Hard Disk for the Operating System Installation</h6><p>
      The operating system will always be installed on the
      <span class="emphasis"><em>first</em></span> hard disk. This is the disk that is listed
      <span class="emphasis"><em>first</em></span> in the BIOS, the one from which the machine
@@ -628,7 +625,7 @@ hljs.configure({
      <code class="filename">/var/lib/nova</code> on the Compute Node. Your
      Compute Nodes should be equipped with enough disk space to store the
      root images and ephemeral disks.
-    </p><div id="id-1.4.3.3.3.5.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Ephemeral Disks vs. Block Storage</h6><p>
+    </p><div id="id-1.4.3.3.3.5.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Ephemeral Disks vs. Block Storage</h6><p>
       Do not confuse ephemeral disks with persistent block storage. In
       addition to an ephemeral disk, which is automatically provided with
       most instance flavors, you can optionally add a persistent storage
@@ -657,7 +654,7 @@ hljs.configure({
      you have the minimum disk space required by ephemeral disks. Pad that
      value with sufficient space for the root disks plus a buffer to leave room for flavors with a higher disk-space-to-RAM ratio in
      the future.
-    </p><div id="id-1.4.3.3.3.5.6.9" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Overcommitting Disk Space</h6><p>
+    </p><div id="id-1.4.3.3.3.5.6.9" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning: Overcommitting Disk Space</h6><p>
       The scheduler that decides in which node an instance is started
       does not check for available disk space. If there is no disk space
       left on a compute node, this will not only cause data loss on the
@@ -718,7 +715,7 @@ hljs.configure({
    Certificates must be signed by a trusted authority. Refer to
    <a class="link" href="https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-apache2-ssl" target="_blank">https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-apache2-ssl</a>
    for instructions on how to create and sign them.
-  </p><div id="id-1.4.3.3.4.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Host Names</h6><p>
+  </p><div id="id-1.4.3.3.4.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Host Names</h6><p>
     Each SSL certificate is issued for a certain host name and, optionally,
     for alternative host names (via the <code class="literal">AlternativeName</code>
     option). Each publicly available node in SUSE <span class="productname">OpenStack</span> Cloud has two host
@@ -752,7 +749,7 @@ hljs.configure({
    one Administration Server, one Control Node, and one Compute Node. You also need a gateway providing access to the public network.
    Deploying storage requires additional nodes: at least two nodes for
    swift and a minimum of four nodes for Ceph.
-  </p><div id="id-1.4.3.3.5.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Virtual/Physical Machines and Architecture</h6><p>
+  </p><div id="id-1.4.3.3.5.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Virtual/Physical Machines and Architecture</h6><p>
     Deploying SUSE <span class="productname">OpenStack</span> Cloud functions to virtual machines is only supported for the
     Administration Server—all other nodes need to be physical hardware. Although the
     Control Node can be virtualized in test environments, this is not
@@ -882,7 +879,7 @@ hljs.configure({
    subscription. Refer to <a class="link" href="https://www.suse.com/products/suse-enterprise-storage/" target="_blank">https://www.suse.com/products/suse-enterprise-storage/</a> and
    <a class="link" href="https://www.suse.com/products/suse-openstack-cloud/frequently-asked-questions" target="_blank">https://www.suse.com/products/suse-openstack-cloud/frequently-asked-questions</a>
    for more information.
-  </p><div id="id-1.4.3.3.6.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: SUSE Account</h6><p>
+  </p><div id="id-1.4.3.3.6.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: SUSE Account</h6><p>
     A SUSE account is needed for product registration and access to
     update repositories. If you do not already have one, go to
     <a class="link" href="http://www.suse.com/" target="_blank">http://www.suse.com/</a> to create it.
@@ -1031,7 +1028,7 @@ hljs.configure({
      To avoid DNS and NTP as potential points of failure, deploy the roles
      <code class="systemitem">dns-server</code> and
      <code class="systemitem">ntp-server</code> to multiple nodes.
-    </p><div id="id-1.4.3.3.7.4.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Access to External Network</h6><p>
+    </p><div id="id-1.4.3.3.7.4.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Access to External Network</h6><p>
       If any configured DNS forwarder or NTP external server is not
       reachable through the admin network from these nodes, allocate an
       address in the public network for each node that has the
@@ -1106,7 +1103,7 @@ hljs.configure({
      Note that SUSE Linux Enterprise High Availability Extension includes Linux Virtual Server as the load-balancer, and
      <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> uses HAProxy for this purpose
      (<a class="link" href="http://haproxy.1wt.eu/" target="_blank">http://haproxy.1wt.eu/</a>).
-    </p><div id="id-1.4.3.3.7.5.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Recommended Setup</h6><p>
+    </p><div id="id-1.4.3.3.7.5.3.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Recommended Setup</h6><p>
       Though it is possible to use the same cluster for all of the roles
       above, the recommended setup is to use three clusters and to deploy
       the roles as follows:
@@ -1122,7 +1119,7 @@ hljs.configure({
        </p></li><li class="listitem "><p>
         <code class="systemitem">services</code> cluster: all other roles listed
         above (as they are related to API/schedulers)
-       </p></li></ul></div></div><div id="id-1.4.3.3.7.5.3.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Cluster Requirements and Recommendations</h6><p>
+       </p></li></ul></div></div><div id="id-1.4.3.3.7.5.3.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Cluster Requirements and Recommendations</h6><p>
       For setting up the clusters, some special requirements and
       recommendations apply. For details, refer to
       <a class="xref" href="cha-depl-req.html#sec-depl-reg-ha-general" title="2.6.5. Cluster Requirements and Recommendations">Section 2.6.5, “Cluster Requirements and Recommendations”</a>.
@@ -1202,7 +1199,7 @@ hljs.configure({
     Especially note the following requirements:
    </p><div class="variablelist "><dl class="variablelist"><dt id="vle-ha-req-nodes"><span class="term ">Number of Cluster Nodes</span></dt><dd><p>
        Each cluster needs to consist of at least three cluster nodes.
-      </p><div id="id-1.4.3.3.7.8.5.1.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Odd Number of Cluster Nodes</h6><p>
+      </p><div id="id-1.4.3.3.7.8.5.1.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Odd Number of Cluster Nodes</h6><p>
         The Galera cluster needs an <span class="emphasis"><em>odd</em></span> number of cluster
         nodes with a <span class="emphasis"><em>minimum</em></span> of three nodes.
        </p><p>
@@ -1216,7 +1213,7 @@ hljs.configure({
        in a cluster to prevent them from causing trouble. This mechanism is
        called <code class="literal">fencing</code> or
        <a class="xref" href="gl-cloud.html#gloss-stonith" title="STONITH">STONITH</a>.
-      </p><div id="id-1.4.3.3.7.8.5.2.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: No Support Without STONITH</h6><p>
+      </p><div id="id-1.4.3.3.7.8.5.2.2.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: No Support Without STONITH</h6><p>
         A cluster without STONITH is not supported.
        </p></div><p>
        For a supported HA setup, ensure the following:
@@ -1246,7 +1243,7 @@ hljs.configure({
        Especially read the following chapters: <em class="citetitle ">Configuration and
        Administration Basics</em>, and <em class="citetitle ">Fencing and
        STONITH</em>, <em class="citetitle "> Storage Protection</em>.
-      </p></dd><dt id="vle-ha-req-communication"><span class="term ">Network Configuration</span></dt><dd><div id="id-1.4.3.3.7.8.5.3.2.1" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Redundant Communication Paths</h6><p>
+      </p></dd><dt id="vle-ha-req-communication"><span class="term ">Network Configuration</span></dt><dd><div id="id-1.4.3.3.7.8.5.3.2.1" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Redundant Communication Paths</h6><p>
         For a supported HA setup, it is required to set up cluster
         communication via two or more redundant paths. For this purpose, use
         network device bonding and team network mode in your Crowbar network setup. For details, see
@@ -1264,7 +1261,7 @@ hljs.configure({
        alternative to network device bonding) is not supported yet in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span>.
        By default, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> uses the admin network (typically
        <code class="literal">eth0</code>) for the first Corosync ring.
-      </p><div id="id-1.4.3.3.7.8.5.3.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Dedicated Networks</h6><p>
+      </p><div id="id-1.4.3.3.7.8.5.3.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Dedicated Networks</h6><p>
          The <code class="literal">corosync</code> network communication layer is
          crucial to the health of the cluster. <code class="literal">corosync</code> traffic always
          goes over the admin network.
