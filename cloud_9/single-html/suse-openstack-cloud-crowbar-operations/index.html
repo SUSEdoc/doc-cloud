@@ -7,11 +7,11 @@ body { background-image: url('static/images/draft.png');
        /* I think that's just a bit too distracting for the reader... */
        /* background-attachment: fixed; */
        /* background-position: center center; */
-     }</style></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="book-crowbar-operations"></a><em class="citetitle">Operations Guide Crowbar</em></h1></div><div><div class="legalnotice"><a id="id12981"></a><p>
+     }</style></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="book-crowbar-operations"></a><em class="citetitle">Operations Guide Crowbar</em></h1></div><div><div class="legalnotice"><a id="id13000"></a><p>
   Copyright FUJITSU LIMITED 2015 - 2017
  </p><p>
   Copyright ©
-2021
+2022
 
   SUSE LLC and contributors. All rights reserved.
  </p><p>
@@ -38,7 +38,7 @@ body { background-image: url('static/images/draft.png');
   detail. However, this does not guarantee complete accuracy. Neither SUSE LLC,
   its affiliates, the authors nor the translators shall be held liable for
   possible errors or the consequences thereof.
- </p></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#sec-maintenance">1. Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-nodes-update">Keeping the Nodes Up-To-Date</a></span></dt><dt><span class="section"><a href="#sec-service-orders">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</a></span></dt><dt><span class="section"><a href="#sec-upgrade-8-9">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-upgrade-8-9-requirements">Requirements</a></span></dt><dt><span class="section"><a href="#sec-upgrade-unsupported-configs">Unsupported configurations</a></span></dt><dt><span class="section"><a href="#sec-upgrade-web-ui">Upgrading Using the Web Interface</a></span></dt><dt><span class="section"><a href="#sec-upgrade-command-line">Upgrading from the Command Line</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-upgrade-troubleshooting">Troubleshooting Upgrade Issues</a></span></dt></dl></dd><dt><span class="section"><a href="#sec-recover-comp-node-failure">Recovering from Compute Node Failure</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-compute-plane">Bootstrapping the Compute Plane</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-galera-cluster-with-missing-node">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</a></span></dt><dt><span class="section"><a href="#id13876">Updating MariaDB with Galera</a></span></dt><dt><span class="section"><a href="#OctaviaMaintenance">Load Balancer: Octavia Administration</a></span></dt><dd><dl><dt><span class="section"><a href="#octavia-admin-delete">Removing load balancers</a></span></dt></dl></dd><dt><span class="section"><a href="#database-maintenance">Periodic OpenStack Maintenance Tasks</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-fernet-tokens">Rotating Fernet Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#gpu-passthrough">2. GPU passthrough</a></span></dt><dd><dl><dt><span class="section"><a href="#crow-pci-passthrough">Leveraging PCI Passthrough</a></span></dt><dd><dl><dt><span class="section"><a href="#preparing-comp-passthrough">Preparing nova and glance for passthrough</a></span></dt><dt><span class="section"><a href="#flavor-creation">Flavor Creation</a></span></dt><dt><span class="section"><a href="#additional-examples">Additional examples</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#self-assign-certs">3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</a></span></dt><dd><dl><dt><span class="section"><a href="#create-root-pair">Create the CA Root Pair</a></span></dt><dt><span class="section"><a href="#sign-server-client-cert">Sign server and client certificates</a></span></dt><dt><span class="section"><a href="#deploy-cert">Deploying the certificate</a></span></dt><dt><span class="section"><a href="#lets-encrypt-cert">Generate Public Certificate using Let’s Encrypt</a></span></dt></dl></dd><dt><span class="chapter"><a href="#soc-monitoring">4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#about-operations-monitoring">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#accessing-soc-monitoring">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dt><span class="section"><a href="#monitoring-overview-data">Overview</a></span></dt></dl></dd><dt><span class="section"><a href="#monitoring-architecture">Architecture</a></span></dt><dd><dl><dt><span class="section"><a href="#id14766">Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#basic-usage-scenario">Basic Usage Scenario</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-monitoring">Metrics</a></span></dt><dt><span class="section"><a href="#data-visualization-analysis">Data Visualization and Analysis</a></span></dt><dt><span class="section"><a href="#alarms-notifications">Alarms and Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#key-features">Key Features</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring">Monitoring</a></span></dt><dt><span class="section"><a href="#metrics">Metrics</a></span></dt><dt><span class="section"><a href="#log-management">Log Management</a></span></dt><dt><span class="section"><a href="#openstack-integration">Integration with <span class="productname">OpenStack</span></a></span></dt></dl></dd><dt><span class="section"><a href="#components">Components</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring-service">Monitoring Service</a></span></dt><dt><span class="section"><a href="#horizon-plugin">Horizon Plugin</a></span></dt><dt><span class="section"><a href="#metrics-agent">Metrics Agent</a></span></dt><dt><span class="section"><a href="#log-agent">Log Agent</a></span></dt></dl></dd><dt><span class="section"><a href="#users-roles">Users and Roles</a></span></dt><dd><dl><dt><span class="section"><a href="#user-management">User Management</a></span></dt></dl></dd><dt><span class="section"><a href="#ops-maintenance">Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id15263">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id15342">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id15408">Log File Handling</a></span></dt><dt><span class="section"><a href="#backup-recovery">Backup and Recovery</a></span></dt></dl></dd><dt><span class="section"><a href="#data-virtualizations">Working with Data Visualizations</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-dashboard-openstack">Preconfigured Metrics Dashboard for <span class="productname">OpenStack</span></a></span></dt><dt><span class="section"><a href="#building-dashboards">Building Dashboards</a></span></dt><dt><span class="section"><a href="#creating-dashboards">Creating Dashboards</a></span></dt><dt><span class="section"><a href="#editing-rows">Editing Rows</a></span></dt><dt><span class="section"><a href="#editing-panels">Editing Panels</a></span></dt><dt><span class="section"><a href="#saving-sharing-dashboards">Saving and Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-alarms">Defining Alarms</a></span></dt><dd><dl><dt><span class="section"><a href="#alarm-details">Details</a></span></dt><dt><span class="section"><a href="#alarm-notifications">Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-notifcations">Defining Notifications</a></span></dt><dt><span class="section"><a href="#status-servers-log-data">Status of Services, Servers, and Log Data</a></span></dt><dt><span class="section"><a href="#supported-metrics">Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id15967">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id15986">Additional Metrics</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#monitoring-log-management">5. Log Management</a></span></dt><dd><dl><dt><span class="section"><a href="#configure-log-management-window">Working with the Log Management Window</a></span></dt><dd><dl><dt><span class="section"><a href="#query-log-data">Querying Log Data</a></span></dt><dt><span class="section"><a href="#visualize-query-results">Visualizing Query Results</a></span></dt><dt><span class="section"><a href="#combine-visualizations-dashboard">Combining Visualizations in Dashboards</a></span></dt><dt><span class="section"><a href="#filter-query-dashboard">Filtering Query Results in Dashboards</a></span></dt><dt><span class="section"><a href="#sharing-dashboards">Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#configure-index-patterns">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id16347">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#cha-deploy-logs">Log Files</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-deploy-logs-adminserv">On the Administration Server</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-crownodes">On All Other Crowbar Nodes</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-contrnode">On the Control Node(s)</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-compnode">On Compute Nodes</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#troubleshooting">6. Troubleshooting</a></span></dt><dd><dl><dt><span class="section"><a href="#shard-failures">Shard Failures</a></span></dt><dt><span class="section"><a href="#something-went-wrong">Oops! Looks like something went wrong</a></span></dt><dt><span class="section"><a href="#no-results">No results found</a></span></dt></dl></dd><dt><span class="appendix"><a href="#id16537">A. Glossary</a></span></dt></dl></div><div class="list-of-figures"><p><strong>List of Figures</strong></p><dl><dt>3.1. <a href="#id14414">Database Barclamp</a></dt><dt>3.2. <a href="#id14429">RabbitMQ Barclamp</a></dt><dt>3.3. <a href="#id14444">Keystone Barclamp</a></dt><dt>3.4. <a href="#id14460">Glance Barclamp</a></dt><dt>3.5. <a href="#id14476">Cinder Barclamp</a></dt><dt>3.6. <a href="#id14492">Neutron Barclamp</a></dt><dt>3.7. <a href="#id14508">Nova Barclamp</a></dt><dt>4.1. <a href="#fig-socm-monasca">SUSE <span class="productname">OpenStack</span> Cloud horizon Dashboard—Monitoring</a></dt><dt>4.2. <a href="#id15792">Creating an Alarm Definition</a></dt><dt>5.1. <a href="#id16162">The Kibana Dashboard—Discover Page</a></dt></dl></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="sec-maintenance"></a>Chapter 1. Maintenance</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#sec-nodes-update">Keeping the Nodes Up-To-Date</a></span></dt><dt><span class="section"><a href="#sec-service-orders">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</a></span></dt><dt><span class="section"><a href="#sec-upgrade-8-9">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-upgrade-8-9-requirements">Requirements</a></span></dt><dt><span class="section"><a href="#sec-upgrade-unsupported-configs">Unsupported configurations</a></span></dt><dt><span class="section"><a href="#sec-upgrade-web-ui">Upgrading Using the Web Interface</a></span></dt><dt><span class="section"><a href="#sec-upgrade-command-line">Upgrading from the Command Line</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-upgrade-troubleshooting">Troubleshooting Upgrade Issues</a></span></dt></dl></dd><dt><span class="section"><a href="#sec-recover-comp-node-failure">Recovering from Compute Node Failure</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-compute-plane">Bootstrapping the Compute Plane</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-galera-cluster-with-missing-node">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</a></span></dt><dt><span class="section"><a href="#id13876">Updating MariaDB with Galera</a></span></dt><dt><span class="section"><a href="#OctaviaMaintenance">Load Balancer: Octavia Administration</a></span></dt><dd><dl><dt><span class="section"><a href="#octavia-admin-delete">Removing load balancers</a></span></dt></dl></dd><dt><span class="section"><a href="#database-maintenance">Periodic OpenStack Maintenance Tasks</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-fernet-tokens">Rotating Fernet Tokens</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-nodes-update"></a>Keeping the Nodes Up-To-Date</h2></div></div></div><p>
+ </p></div></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="chapter"><a href="#sec-maintenance">1. Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-nodes-update">Keeping the Nodes Up-To-Date</a></span></dt><dt><span class="section"><a href="#sec-service-orders">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</a></span></dt><dt><span class="section"><a href="#sec-upgrade-8-9">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-upgrade-8-9-requirements">Requirements</a></span></dt><dt><span class="section"><a href="#sec-upgrade-unsupported-configs">Unsupported configurations</a></span></dt><dt><span class="section"><a href="#sec-upgrade-web-ui">Upgrading Using the Web Interface</a></span></dt><dt><span class="section"><a href="#sec-upgrade-command-line">Upgrading from the Command Line</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-upgrade-troubleshooting">Troubleshooting Upgrade Issues</a></span></dt></dl></dd><dt><span class="section"><a href="#sec-recover-comp-node-failure">Recovering from Compute Node Failure</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-compute-plane">Bootstrapping the Compute Plane</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-galera-cluster-with-missing-node">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</a></span></dt><dt><span class="section"><a href="#id13895">Updating MariaDB with Galera</a></span></dt><dt><span class="section"><a href="#OctaviaMaintenance">Load Balancer: Octavia Administration</a></span></dt><dd><dl><dt><span class="section"><a href="#octavia-admin-delete">Removing load balancers</a></span></dt></dl></dd><dt><span class="section"><a href="#database-maintenance">Periodic OpenStack Maintenance Tasks</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-fernet-tokens">Rotating Fernet Tokens</a></span></dt></dl></dd><dt><span class="chapter"><a href="#gpu-passthrough">2. GPU passthrough</a></span></dt><dd><dl><dt><span class="section"><a href="#crow-pci-passthrough">Leveraging PCI Passthrough</a></span></dt><dd><dl><dt><span class="section"><a href="#preparing-comp-passthrough">Preparing nova and glance for passthrough</a></span></dt><dt><span class="section"><a href="#flavor-creation">Flavor Creation</a></span></dt><dt><span class="section"><a href="#additional-examples">Additional examples</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#self-assign-certs">3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</a></span></dt><dd><dl><dt><span class="section"><a href="#create-root-pair">Create the CA Root Pair</a></span></dt><dt><span class="section"><a href="#sign-server-client-cert">Sign server and client certificates</a></span></dt><dt><span class="section"><a href="#deploy-cert">Deploying the certificate</a></span></dt><dt><span class="section"><a href="#lets-encrypt-cert">Generate Public Certificate using Let’s Encrypt</a></span></dt></dl></dd><dt><span class="chapter"><a href="#soc-monitoring">4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#about-operations-monitoring">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#accessing-soc-monitoring">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dt><span class="section"><a href="#monitoring-overview-data">Overview</a></span></dt></dl></dd><dt><span class="section"><a href="#monitoring-architecture">Architecture</a></span></dt><dd><dl><dt><span class="section"><a href="#id14785">Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#basic-usage-scenario">Basic Usage Scenario</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-monitoring">Metrics</a></span></dt><dt><span class="section"><a href="#data-visualization-analysis">Data Visualization and Analysis</a></span></dt><dt><span class="section"><a href="#alarms-notifications">Alarms and Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#key-features">Key Features</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring">Monitoring</a></span></dt><dt><span class="section"><a href="#metrics">Metrics</a></span></dt><dt><span class="section"><a href="#log-management">Log Management</a></span></dt><dt><span class="section"><a href="#openstack-integration">Integration with <span class="productname">OpenStack</span></a></span></dt></dl></dd><dt><span class="section"><a href="#components">Components</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring-service">Monitoring Service</a></span></dt><dt><span class="section"><a href="#horizon-plugin">Horizon Plugin</a></span></dt><dt><span class="section"><a href="#metrics-agent">Metrics Agent</a></span></dt><dt><span class="section"><a href="#log-agent">Log Agent</a></span></dt></dl></dd><dt><span class="section"><a href="#users-roles">Users and Roles</a></span></dt><dd><dl><dt><span class="section"><a href="#user-management">User Management</a></span></dt></dl></dd><dt><span class="section"><a href="#ops-maintenance">Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id15282">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id15361">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id15427">Log File Handling</a></span></dt><dt><span class="section"><a href="#backup-recovery">Backup and Recovery</a></span></dt></dl></dd><dt><span class="section"><a href="#data-virtualizations">Working with Data Visualizations</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-dashboard-openstack">Preconfigured Metrics Dashboard for <span class="productname">OpenStack</span></a></span></dt><dt><span class="section"><a href="#building-dashboards">Building Dashboards</a></span></dt><dt><span class="section"><a href="#creating-dashboards">Creating Dashboards</a></span></dt><dt><span class="section"><a href="#editing-rows">Editing Rows</a></span></dt><dt><span class="section"><a href="#editing-panels">Editing Panels</a></span></dt><dt><span class="section"><a href="#saving-sharing-dashboards">Saving and Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-alarms">Defining Alarms</a></span></dt><dd><dl><dt><span class="section"><a href="#alarm-details">Details</a></span></dt><dt><span class="section"><a href="#alarm-notifications">Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-notifcations">Defining Notifications</a></span></dt><dt><span class="section"><a href="#status-servers-log-data">Status of Services, Servers, and Log Data</a></span></dt><dt><span class="section"><a href="#supported-metrics">Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id15986">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id16005">Additional Metrics</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#monitoring-log-management">5. Log Management</a></span></dt><dd><dl><dt><span class="section"><a href="#configure-log-management-window">Working with the Log Management Window</a></span></dt><dd><dl><dt><span class="section"><a href="#query-log-data">Querying Log Data</a></span></dt><dt><span class="section"><a href="#visualize-query-results">Visualizing Query Results</a></span></dt><dt><span class="section"><a href="#combine-visualizations-dashboard">Combining Visualizations in Dashboards</a></span></dt><dt><span class="section"><a href="#filter-query-dashboard">Filtering Query Results in Dashboards</a></span></dt><dt><span class="section"><a href="#sharing-dashboards">Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#configure-index-patterns">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id16366">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#cha-deploy-logs">Log Files</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-deploy-logs-adminserv">On the Administration Server</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-crownodes">On All Other Crowbar Nodes</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-contrnode">On the Control Node(s)</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-compnode">On Compute Nodes</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#troubleshooting">6. Troubleshooting</a></span></dt><dd><dl><dt><span class="section"><a href="#shard-failures">Shard Failures</a></span></dt><dt><span class="section"><a href="#something-went-wrong">Oops! Looks like something went wrong</a></span></dt><dt><span class="section"><a href="#no-results">No results found</a></span></dt></dl></dd><dt><span class="appendix"><a href="#id16556">A. Glossary</a></span></dt></dl></div><div class="list-of-figures"><p><strong>List of Figures</strong></p><dl><dt>3.1. <a href="#id14433">Database Barclamp</a></dt><dt>3.2. <a href="#id14448">RabbitMQ Barclamp</a></dt><dt>3.3. <a href="#id14463">Keystone Barclamp</a></dt><dt>3.4. <a href="#id14479">Glance Barclamp</a></dt><dt>3.5. <a href="#id14495">Cinder Barclamp</a></dt><dt>3.6. <a href="#id14511">Neutron Barclamp</a></dt><dt>3.7. <a href="#id14527">Nova Barclamp</a></dt><dt>4.1. <a href="#fig-socm-monasca">SUSE <span class="productname">OpenStack</span> Cloud horizon Dashboard—Monitoring</a></dt><dt>4.2. <a href="#id15811">Creating an Alarm Definition</a></dt><dt>5.1. <a href="#id16181">The Kibana Dashboard—Discover Page</a></dt></dl></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="sec-maintenance"></a>Chapter 1. Maintenance</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#sec-nodes-update">Keeping the Nodes Up-To-Date</a></span></dt><dt><span class="section"><a href="#sec-service-orders">Service Order on SUSE <span class="productname">OpenStack</span> Cloud Start-up or Shutdown</a></span></dt><dt><span class="section"><a href="#sec-upgrade-8-9">Upgrading from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 8 to <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> 9</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-upgrade-8-9-requirements">Requirements</a></span></dt><dt><span class="section"><a href="#sec-upgrade-unsupported-configs">Unsupported configurations</a></span></dt><dt><span class="section"><a href="#sec-upgrade-web-ui">Upgrading Using the Web Interface</a></span></dt><dt><span class="section"><a href="#sec-upgrade-command-line">Upgrading from the Command Line</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-upgrade-troubleshooting">Troubleshooting Upgrade Issues</a></span></dt></dl></dd><dt><span class="section"><a href="#sec-recover-comp-node-failure">Recovering from Compute Node Failure</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-compute-plane">Bootstrapping the Compute Plane</a></span></dt><dt><span class="section"><a href="#sec-bootstrap-galera-cluster-with-missing-node">Bootstrapping the MariaDB Galera Cluster with Pacemaker when a node is missing</a></span></dt><dt><span class="section"><a href="#id13895">Updating MariaDB with Galera</a></span></dt><dt><span class="section"><a href="#OctaviaMaintenance">Load Balancer: Octavia Administration</a></span></dt><dd><dl><dt><span class="section"><a href="#octavia-admin-delete">Removing load balancers</a></span></dt></dl></dd><dt><span class="section"><a href="#database-maintenance">Periodic OpenStack Maintenance Tasks</a></span></dt><dt><span class="section"><a href="#sec-depl-maintenance-fernet-tokens">Rotating Fernet Tokens</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sec-nodes-update"></a>Keeping the Nodes Up-To-Date</h2></div></div></div><p>
       Keeping the nodes in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> up-to-date requires an appropriate
       setup of the update and pool repositories and the deployment of
       either the <span class="guimenu">Updater</span> barclamp or the SUSE Manager
@@ -734,37 +734,37 @@ body { background-image: url('static/images/draft.png');
             </p><pre class="screen"><code class="prompt">tux &gt; </code>nova host-evacuate-live <em class="replaceable"><code>"NODE_NAME"</code></em></pre></li></ol></div><p>
           After completing these steps, you can perform a simultaneous upgrade of
           the selected nodes.
-        </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-depl-maintenance-upgrade-troubleshooting"></a>Troubleshooting Upgrade Issues</h3></div></div></div><div class="qandaset"><a id="id13620"></a><dl><dt>1. <a href="#id13621">
+        </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-depl-maintenance-upgrade-troubleshooting"></a>Troubleshooting Upgrade Issues</h3></div></div></div><div class="qandaset"><a id="id13639"></a><dl><dt>1. <a href="#id13640">
               Upgrade of the admin server has failed.
-            </a></dt><dt>2. <a href="#id13629">
+            </a></dt><dt>2. <a href="#id13648">
               An upgrade step repeatedly fails due to timeout.
             </a></dt><dt>3. <a href="#live-migration-failed">
               Node upgrade has failed during live migration.
-            </a></dt><dt>4. <a href="#id13680">
+            </a></dt><dt>4. <a href="#id13699">
               Node has failed during OS upgrade.
-            </a></dt><dt>5. <a href="#id13689">
+            </a></dt><dt>5. <a href="#id13708">
               Node does not come up after reboot.
-            </a></dt><dt>6. <a href="#id13694">
+            </a></dt><dt>6. <a href="#id13713">
               N number of nodes were provided to compute upgrade using
               crowbarctl upgrade nodes node_1,node_2,...,node_N,
               but less then N were actually upgraded.
-            </a></dt><dt>7. <a href="#id13701">
+            </a></dt><dt>7. <a href="#id13720">
               Node has failed at the initial chef client run stage.
-            </a></dt><dt>8. <a href="#id13707">
+            </a></dt><dt>8. <a href="#id13726">
               I need to change OpenStack configuration during the upgrade but I cannot access Crowbar.
-            </a></dt><dt>9. <a href="#id13715">
+            </a></dt><dt>9. <a href="#id13734">
               Failure occurred when evacuating routers.
-            </a></dt><dt>10. <a href="#id13728">
+            </a></dt><dt>10. <a href="#id13747">
               Some non-controller nodes were upgraded after performing crowbarctl upgrade nodes
                 controllers.
-            </a></dt></dl><table border="0" style="width: 100%;"><colgroup><col align="left" width="1%" /><col /></colgroup><tbody><tr class="question"><td align="left" valign="top"><a id="id13621"></a><a id="id13622"></a><p><strong>1.</strong></p></td><td align="left" valign="top"><p>
+            </a></dt></dl><table border="0" style="width: 100%;"><colgroup><col align="left" width="1%" /><col /></colgroup><tbody><tr class="question"><td align="left" valign="top"><a id="id13640"></a><a id="id13641"></a><p><strong>1.</strong></p></td><td align="left" valign="top"><p>
               Upgrade of the admin server has failed.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Check for empty, broken, and not signed repositories in the Administration Server
               upgrade log file <code class="filename">/var/log/crowbar/admin-server-upgrade.log</code>. Fix the
               repository setup. Upgrade then remaining packages manually to SUSE Linux Enterprise Server 12 SP4
               and SUSE <span class="productname">OpenStack</span> Cloud 9 using the command <span class="command"><strong>zypper dup</strong></span>. Reboot the Administration Server.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13629"></a><a id="id13630"></a><p><strong>2.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13648"></a><a id="id13649"></a><p><strong>2.</strong></p></td><td align="left" valign="top"><p>
               An upgrade step repeatedly fails due to timeout.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Timeouts for most upgrade operations can be adjusted in the
@@ -799,7 +799,7 @@ body { background-image: url('static/images/draft.png');
                   run on a node that has been upgraded and rebooted.
                 </p></li><li class="listitem"><p>
                   <code class="literal">evacuate_host</code> Time allowed for live migrate all VMs from a host.
-                </p></li></ul></div></td></tr><tr class="question"><td align="left" valign="top"><a id="live-migration-failed"></a><a id="id13650"></a><p><strong>3.</strong></p></td><td align="left" valign="top"><p>
+                </p></li></ul></div></td></tr><tr class="question"><td align="left" valign="top"><a id="live-migration-failed"></a><a id="id13669"></a><p><strong>3.</strong></p></td><td align="left" valign="top"><p>
               Node upgrade has failed during live migration.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               The problem may occur when it is not possible to live migrate certain
@@ -854,7 +854,7 @@ body { background-image: url('static/images/draft.png');
                 <em class="replaceable"><code>MIGRATION-ID</code></em></strong></span> command. However,
               this might pause the instances for a prolonged period of time and have
               a negative impact on the workload running inside the instance.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13680"></a><a id="id13681"></a><p><strong>4.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13699"></a><a id="id13700"></a><p><strong>4.</strong></p></td><td align="left" valign="top"><p>
               Node has failed during OS upgrade.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Possible reasons include an incorrect repository setup or package
@@ -866,12 +866,12 @@ body { background-image: url('static/images/draft.png');
               upgrade script). Fix the repository setup and run the failed upgrade
               step again. If custom package versions or version locks are in place,
               make sure that they don't interfere with the <span class="command"><strong>zypper dup</strong></span> command.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13689"></a><a id="id13690"></a><p><strong>5.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13708"></a><a id="id13709"></a><p><strong>5.</strong></p></td><td align="left" valign="top"><p>
               Node does not come up after reboot.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               In some cases, a node can take too long to reboot causing a timeout. We
               recommend to check the node manually, make sure it is online, and repeat the step.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13694"></a><a id="id13695"></a><p><strong>6.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13713"></a><a id="id13714"></a><p><strong>6.</strong></p></td><td align="left" valign="top"><p>
               N number of nodes were provided to compute upgrade using
               <span class="command"><strong>crowbarctl upgrade nodes node_1,node_2,...,node_N</strong></span>,
               but less then N were actually upgraded.
@@ -881,7 +881,7 @@ body { background-image: url('static/images/draft.png');
               live-evacuate in the specified time. Because some nodes have been upgraded, it is possible that
               more resources will be available for live-migration when you try to run this
               step again. See also <a class="xref" href="#live-migration-failed" title="3.">Q: 3</a>.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13701"></a><a id="id13702"></a><p><strong>7.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13720"></a><a id="id13721"></a><p><strong>7.</strong></p></td><td align="left" valign="top"><p>
               Node has failed at the initial chef client run stage.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               An unsupported entry in the configuration file may prevent a service
@@ -889,7 +889,7 @@ body { background-image: url('static/images/draft.png');
               chef client run stage. Checking the
               <code class="filename">/var/log/crowbar/crowbar_join/chef.*</code> log files on
               the node is a good starting point.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13707"></a><a id="id13708"></a><p><strong>8.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13726"></a><a id="id13727"></a><p><strong>8.</strong></p></td><td align="left" valign="top"><p>
               I need to change <span class="productname">OpenStack</span> configuration during the upgrade but I cannot access Crowbar.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Crowbar Web interface is accessible only when an upgrade is completed or
@@ -899,7 +899,7 @@ body { background-image: url('static/images/draft.png');
               save your modifications. Before you can continue with the upgrade of
               rest of the nodes, resume the upgrade using the <span class="command"><strong>crowbarctl
                 upgrade nodes resume</strong></span> command.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13715"></a><a id="id13716"></a><p><strong>9.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13734"></a><a id="id13735"></a><p><strong>9.</strong></p></td><td align="left" valign="top"><p>
               Failure occurred when evacuating routers.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Check the <code class="filename">/var/log/crowbar/node-upgrade.log</code> file on
@@ -919,7 +919,7 @@ body { background-image: url('static/images/draft.png');
             </pre><p>
               Resume the upgrade by running the failed upgrade step
               again to continue with the router migration.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13728"></a><a id="id13729"></a><p><strong>10.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13747"></a><a id="id13748"></a><p><strong>10.</strong></p></td><td align="left" valign="top"><p>
               Some non-controller nodes were upgraded after performing <span class="command"><strong>crowbarctl upgrade nodes
                 controllers</strong></span>.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
@@ -1129,7 +1129,7 @@ body { background-image: url('static/images/draft.png');
           crm resource start galera
         </pre></li></ol></div><p>
       The MariaDB Galera Cluster is now running and Pacemaker is handling the cluster.
-    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id13876"></a>Updating MariaDB with Galera</h2></div></div></div><p>
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id13895"></a>Updating MariaDB with Galera</h2></div></div></div><p>
       Updating MariaDB with Galera must be done manually. Crowbar does not
       install updates automatically. Updates can be done with Pacemaker or with
       the CLI. In particular, manual updating applies to upgrades to MariaDB
@@ -1203,7 +1203,7 @@ body { background-image: url('static/images/draft.png');
       balancer that is in the <code class="literal">ERROR</code>,
       <code class="literal">PENDING_CREATE</code>, or
       <code class="literal">PENDING_DELETE</code> state.
-    </p><div class="procedure"><a id="id13952"></a><p class="title"><strong>Procedure 1.2. 
+    </p><div class="procedure"><a id="id13971"></a><p class="title"><strong>Procedure 1.2. 
         Manually deleting load balancers created with neutron lbaasv2
         (in an upgrade/migration scenario)
       </strong></p><ol class="procedure" type="1"><li class="step"><p>
@@ -1273,7 +1273,7 @@ mysql&gt; delete from lbaas_healthmonitors where id = '323a3c4b-8083-41e1-b1d9-0
         </p><pre class="screen">
 mysql&gt; delete from lbaas_loadbalancer_statistics where loadbalancer_id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
 mysql&gt; delete from lbaas_loadbalancers where id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
-        </pre></li></ol></div><div class="procedure"><a id="id13989"></a><p class="title"><strong>Procedure 1.3. Manually Deleting Load Balancers Created With Octavia</strong></p><ol class="procedure" type="1"><li class="step"><p>
+        </pre></li></ol></div><div class="procedure"><a id="id14008"></a><p class="title"><strong>Procedure 1.3. Manually Deleting Load Balancers Created With Octavia</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Query the Octavia service for the loadbalancer ID:
         </p><pre class="screen">
 <code class="prompt">tux &gt; </code>openstack loadbalancer list --column id --column name --column provisioning_status
@@ -1500,7 +1500,7 @@ drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:8
        Here's an <span class="bold"><strong>example</strong></span> of the
        configuration of a single PCI device being passthrough to the
        nova instance:
-     </p><div class="procedure"><a id="id14123"></a><p class="title"><strong>Procedure 2.2. Configure the Compute Host</strong></p><ol class="procedure" type="1"><li class="step"><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
+     </p><div class="procedure"><a id="id14142"></a><p class="title"><strong>Procedure 2.2. Configure the Compute Host</strong></p><ol class="procedure" type="1"><li class="step"><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
     list all the files:
     </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/
 ls -al
@@ -1525,7 +1525,7 @@ alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "na
     of <code class="literal">10de</code> and a
     <code class="literal">product_id</code> of <code class="literal">1db4</code>.
     </p></li><li class="step"><p>Once the file is updated, restart nova compute on the compute node:</p><pre class="screen"><code class="prompt">root # </code>systemctl restart openstack-nova-compute
-    </pre></li></ol></div><div class="procedure"><a id="id14147"></a><p class="title"><strong>Procedure 2.3. Configure the Controller nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
+    </pre></li></ol></div><div class="procedure"><a id="id14166"></a><p class="title"><strong>Procedure 2.3. Configure the Controller nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
     Follow the following steps for all the controller nodes. Login to the controller host and
     change directory to <code class="filename">/etc/nova/nova.conf.d</code> and list all the files under that folder:
     </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/
@@ -1599,7 +1599,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
          To avoid external access to your CA Root Pair, put it on an air-gapped system
          that is permanently isolated from the internet and unplug any cables from the
          ethernet port.
-       </p></div><div class="procedure"><a id="id14217"></a><p class="title"><strong>Procedure 3.1. Prepare the directory structure</strong></p><ol class="procedure" type="1"><li class="step"><p>
+       </p></div><div class="procedure"><a id="id14236"></a><p class="title"><strong>Procedure 3.1. Prepare the directory structure</strong></p><ol class="procedure" type="1"><li class="step"><p>
            Create a directory for your CA Root pair:
          </p><pre class="screen">
            # ssh root@crowbar
@@ -1613,7 +1613,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
            # chmod 700 private
            # touch index.txt
            # echo 1000 &gt; serial
-         </pre></li></ol></div><div class="procedure"><a id="id14226"></a><p class="title"><strong>Procedure 3.2. Prepare the configuration file</strong></p><p>
+         </pre></li></ol></div><div class="procedure"><a id="id14245"></a><p class="title"><strong>Procedure 3.2. Prepare the configuration file</strong></p><p>
          This procedure takes you through the full set up. Note that
          when you setup the crowbar server, there is a structure already setup
          under <code class="filename">/etc/ssl</code>. This is where SUSE Linux typically
@@ -1633,7 +1633,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
          </pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
              Make sure <code class="literal">dir</code> is the directory where we created
              <code class="filename">/root/ssl/root/ca</code>.
-           </p></div></li></ol></div><div class="procedure"><a id="id14241"></a><p class="title"><strong>Procedure 3.3. Create the root key</strong></p><ol class="procedure" type="1"><li class="step"><p>
+           </p></div></li></ol></div><div class="procedure"><a id="id14260"></a><p class="title"><strong>Procedure 3.3. Create the root key</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Create the root key encrypted with AES 256-bit encryption
           and a password, using 4096 bits for the creation.
         </p><pre class="screen">
@@ -1643,7 +1643,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
           You will be asked to enter a password here and then verify it.
         </p><pre class="screen">
           # chmod 400 private/cakey.pem
-        </pre></li></ol></div><div class="procedure"><a id="id14249"></a><p class="title"><strong>Procedure 3.4. Create the root certificates</strong></p><ul class="procedure"><li class="step"><p>
+        </pre></li></ol></div><div class="procedure"><a id="id14268"></a><p class="title"><strong>Procedure 3.4. Create the root certificates</strong></p><ul class="procedure"><li class="step"><p>
            Use the root key (<code class="filename">cakey.pem</code>) to create the
            root certificate (cacert.pem). Its important to give it a long
            expiration since all the certificates signed from it will
@@ -1664,7 +1664,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
            Email Address []:admin@susedojo.com
 
            # chmod 444 cacert.pem
-         </pre></li></ul></div><div class="procedure"><a id="id14255"></a><p class="title"><strong>Procedure 3.5. Verify the root certificates</strong></p><ul class="procedure"><li class="step"><p>
+         </pre></li></ul></div><div class="procedure"><a id="id14274"></a><p class="title"><strong>Procedure 3.5. Verify the root certificates</strong></p><ul class="procedure"><li class="step"><p>
           Verify the certificate has the correct dates of validity and the
           algorithm used, Issuer, Subject, and x509v3 extensions. The issuer
           and subject are the same since it is self signed.
@@ -1673,7 +1673,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
           # openssl x509 -noout -text -in cacert.pem
         </pre></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sign-server-client-cert"></a>Sign server and client certificates</h2></div></div></div><p>
       This section is if you are the perspective certificate authority (CA).
-    </p><div class="procedure"><a id="id14263"></a><p class="title"><strong>Procedure 3.6. Prepare config file</strong></p><ol class="procedure" type="1"><li class="step"><p>
+    </p><div class="procedure"><a id="id14282"></a><p class="title"><strong>Procedure 3.6. Prepare config file</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Modify the <code class="filename">penssl.cnf</code> config file and add a
           line to the <code class="literal">[ v3_req ]</code> section:
         </p><pre class="screen">
@@ -1699,7 +1699,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
           your control plane.
         </p></li><li class="step"><p>
           Save and close the file after you have those entered correctly.
-        </p></li></ol></div><div class="procedure"><a id="id14278"></a><p class="title"><strong>Procedure 3.7. Create a key</strong></p><ul class="procedure"><li class="step"><p>
+        </p></li></ol></div><div class="procedure"><a id="id14297"></a><p class="title"><strong>Procedure 3.7. Create a key</strong></p><ul class="procedure"><li class="step"><p>
            Create a key minus the <code class="literal">-aes256</code> option so that
            you are not presented with a password each time you restart a
            service. (i.e. Apache service) also in 2048 bit so it is quicker to decrypt.
@@ -1707,7 +1707,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
            # cd ~/ssl/root/ca
            # openssl genrsa -out private/susedojo-com.key.pem 2048
            # chmod 400 private/susedojo-com.key.pem
-         </pre></li></ul></div><div class="procedure"><a id="id14284"></a><p class="title"><strong>Procedure 3.8. Create a certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+         </pre></li></ul></div><div class="procedure"><a id="id14303"></a><p class="title"><strong>Procedure 3.8. Create a certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
             Use the private key we just created to create a certificate
             signing request (CSR). The common name must be a fully qualified
             domain name (i.e. www.susedojo.com) The Organization Name must be
@@ -1772,7 +1772,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
           </p><pre class="screen">
             V       190808042108Z           1000    unknown
             /C=US/ST=Idaho/O=SUSEDojo/OU=dojo/CN=susedojo.com/emailAddress=admin@susedojo.com
-          </pre></li></ol></div><div class="procedure"><a id="id14299"></a><p class="title"><strong>Procedure 3.9. Verifying the certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+          </pre></li></ol></div><div class="procedure"><a id="id14318"></a><p class="title"><strong>Procedure 3.9. Verifying the certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
              Enter the following in your terminal:
            </p><pre class="screen">
              # openssl x509 -noout -text -in certs/susedojo-com.cert.pem
@@ -1810,7 +1810,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
      which is written in bash and gives us greater flexibility and ease in our
      solution.</p><p>The next steps walk you through the installation of <code class="literal">acme.sh</code> and the issue
      of a certificate with <code class="literal">Let’s Encrypt</code> followed by the automated load
-     of the certificate in OpenStack for the various API endpoints available.</p><div class="procedure"><a id="id14329"></a><p class="title"><strong>Procedure 3.10. Installation of acme.sh letsencrypt client</strong></p><ol class="procedure" type="1"><li class="step"><p>
+     of the certificate in OpenStack for the various API endpoints available.</p><div class="procedure"><a id="id14348"></a><p class="title"><strong>Procedure 3.10. Installation of acme.sh letsencrypt client</strong></p><ol class="procedure" type="1"><li class="step"><p>
          Login to your crowbar/admin server change to the root directory.
        </p></li><li class="step"><p>
          Create a new directory for letsencrypt and clone the
@@ -1838,7 +1838,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
          account info, and certificates are stored.
          We recommend using this as a backup location if you are using a
          backup tool.
-       </p></li></ol></div><div class="procedure"><a id="id14353"></a><p class="title"><strong>Procedure 3.11. Issue a wildcard SSL Certificate</strong></p><p>
+       </p></li></ol></div><div class="procedure"><a id="id14372"></a><p class="title"><strong>Procedure 3.11. Issue a wildcard SSL Certificate</strong></p><p>
       OpenStack and wildcard SSL uses the DNS validation method by
       validating your domain using a TXT record that can either be added
       manually or using the many (over 3 dozen) available DNS API’s.
@@ -1866,8 +1866,8 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         Add the following TXT record:
         Domain: '_acme-challenge.yourdomain.com'
         TXT value: 'KZvgq3MpOCjUNW7Uzz5nE5kkFdplNk66WGfxE9-H63k'
-        Please be aware that you prepend <code class="literal">_acme-challenge.</code> before your domain
-        so the resulting subdomain will be: <code class="literal">_acme-challenge.yourdomain.com</code>
+        Please be aware that you prepend <span class="emphasis"><em>_acme-challenge.</em></span> before your domain
+        so the resulting subdomain will be: <span class="emphasis"><em>_acme-challenge.yourdomain.com</em></span>
       </pre></li><li class="step"><p>
         Using this information, you are ready to insert this TXT record into
         your DNS.
@@ -1929,7 +1929,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         v2 chain.
         The intermediate CA cert is in:  /root/.acme.sh/susedojo.com/ca.cer  
         And the full chain certs is in:  /root/.acme.sh/susedojo.com/fullchain.cer_on_issue_success
-      </pre></li></ol></div><div class="procedure"><a id="id14399"></a><p class="title"><strong>Procedure 3.12. Set Up Certificate Store on Control and Compute Nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
+      </pre></li></ol></div><div class="procedure"><a id="id14418"></a><p class="title"><strong>Procedure 3.12. Set Up Certificate Store on Control and Compute Nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
         Create a shared location for all Certificates on the control nodes.
         Execute these commands on all control nodes and compute nodes:
       </p><pre class="screen">
@@ -1943,12 +1943,12 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         # scp /root/.acme.sh/susedojo.com/ca.cer root@control:/etc/cloud/ssl/certs
         # scp /root/.acme.sh/susedojo.com/fullchain.cer root@control:/etc/cloud/ssl/certs
         # scp /root/.acme.sh/susedojo.com/susedojo.com.key \ root@control:/etc/cloud/ssl/private
-      </pre></li></ol></div><div class="procedure"><a id="id14407"></a><p class="title"><strong>Procedure 3.13. Set Up Issued Certificates in Crowbar Barclamps</strong></p><ol class="procedure" type="1"><li class="step"><p>
+      </pre></li></ol></div><div class="procedure"><a id="id14426"></a><p class="title"><strong>Procedure 3.13. Set Up Issued Certificates in Crowbar Barclamps</strong></p><ol class="procedure" type="1"><li class="step"><p>
         Set your Certificate File and Key File to the proper location, and
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14414"></a><p class="title"><strong>Figure 3.1. Database Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/database-barclamp.png" width="100%" alt="Database Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14433"></a><p class="title"><strong>Figure 3.1. Database Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/database-barclamp.png" width="100%" alt="Database Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -1956,7 +1956,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14429"></a><p class="title"><strong>Figure 3.2. RabbitMQ Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/rabbitmq-barclamp.png" width="100%" alt="RabbitMQ Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14448"></a><p class="title"><strong>Figure 3.2. RabbitMQ Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/rabbitmq-barclamp.png" width="100%" alt="RabbitMQ Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -1964,7 +1964,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14444"></a><p class="title"><strong>Figure 3.3. Keystone Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/keystone-barclamp.png" width="100%" alt="Keystone Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14463"></a><p class="title"><strong>Figure 3.3. Keystone Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/keystone-barclamp.png" width="100%" alt="Keystone Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -1973,7 +1973,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is true.
-      </p><div class="figure"><a id="id14460"></a><p class="title"><strong>Figure 3.4. Glance Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/glance-barclamp.png" width="100%" alt="Glance Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14479"></a><p class="title"><strong>Figure 3.4. Glance Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/glance-barclamp.png" width="100%" alt="Glance Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -1982,7 +1982,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14476"></a><p class="title"><strong>Figure 3.5. Cinder Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/cinder-barclamp.png" width="100%" alt="Cinder Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14495"></a><p class="title"><strong>Figure 3.5. Cinder Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/cinder-barclamp.png" width="100%" alt="Cinder Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -1991,7 +1991,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14492"></a><p class="title"><strong>Figure 3.6. Neutron Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/neutron-barclamp.png" width="100%" alt="Neutron Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14511"></a><p class="title"><strong>Figure 3.6. Neutron Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/neutron-barclamp.png" width="100%" alt="Neutron Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -2000,7 +2000,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14508"></a><p class="title"><strong>Figure 3.7. Nova Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/nova-barclamp.png" width="100%" alt="Nova Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14527"></a><p class="title"><strong>Figure 3.7. Nova Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/nova-barclamp.png" width="100%" alt="Nova Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li></ol></div><p>
@@ -2008,7 +2008,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
     the same settings and apply your certificate to the remaining barclamps.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
       Once this is completed, we recommend automating this process as the
       <code class="literal">Let's Encrypt</code> certificates expire after 90 days.
-    </p></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="soc-monitoring"></a>Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#about-operations-monitoring">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#accessing-soc-monitoring">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dt><span class="section"><a href="#monitoring-overview-data">Overview</a></span></dt></dl></dd><dt><span class="section"><a href="#monitoring-architecture">Architecture</a></span></dt><dd><dl><dt><span class="section"><a href="#id14766">Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#basic-usage-scenario">Basic Usage Scenario</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-monitoring">Metrics</a></span></dt><dt><span class="section"><a href="#data-visualization-analysis">Data Visualization and Analysis</a></span></dt><dt><span class="section"><a href="#alarms-notifications">Alarms and Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#key-features">Key Features</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring">Monitoring</a></span></dt><dt><span class="section"><a href="#metrics">Metrics</a></span></dt><dt><span class="section"><a href="#log-management">Log Management</a></span></dt><dt><span class="section"><a href="#openstack-integration">Integration with <span class="productname">OpenStack</span></a></span></dt></dl></dd><dt><span class="section"><a href="#components">Components</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring-service">Monitoring Service</a></span></dt><dt><span class="section"><a href="#horizon-plugin">Horizon Plugin</a></span></dt><dt><span class="section"><a href="#metrics-agent">Metrics Agent</a></span></dt><dt><span class="section"><a href="#log-agent">Log Agent</a></span></dt></dl></dd><dt><span class="section"><a href="#users-roles">Users and Roles</a></span></dt><dd><dl><dt><span class="section"><a href="#user-management">User Management</a></span></dt></dl></dd><dt><span class="section"><a href="#ops-maintenance">Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id15263">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id15342">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id15408">Log File Handling</a></span></dt><dt><span class="section"><a href="#backup-recovery">Backup and Recovery</a></span></dt></dl></dd><dt><span class="section"><a href="#data-virtualizations">Working with Data Visualizations</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-dashboard-openstack">Preconfigured Metrics Dashboard for <span class="productname">OpenStack</span></a></span></dt><dt><span class="section"><a href="#building-dashboards">Building Dashboards</a></span></dt><dt><span class="section"><a href="#creating-dashboards">Creating Dashboards</a></span></dt><dt><span class="section"><a href="#editing-rows">Editing Rows</a></span></dt><dt><span class="section"><a href="#editing-panels">Editing Panels</a></span></dt><dt><span class="section"><a href="#saving-sharing-dashboards">Saving and Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-alarms">Defining Alarms</a></span></dt><dd><dl><dt><span class="section"><a href="#alarm-details">Details</a></span></dt><dt><span class="section"><a href="#alarm-notifications">Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-notifcations">Defining Notifications</a></span></dt><dt><span class="section"><a href="#status-servers-log-data">Status of Services, Servers, and Log Data</a></span></dt><dt><span class="section"><a href="#supported-metrics">Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id15967">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id15986">Additional Metrics</a></span></dt></dl></dd></dl></div><p>
+    </p></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="soc-monitoring"></a>Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#about-operations-monitoring">About <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#accessing-soc-monitoring">Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring</a></span></dt><dt><span class="section"><a href="#monitoring-overview-data">Overview</a></span></dt></dl></dd><dt><span class="section"><a href="#monitoring-architecture">Architecture</a></span></dt><dd><dl><dt><span class="section"><a href="#id14785">Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#basic-usage-scenario">Basic Usage Scenario</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-monitoring">Metrics</a></span></dt><dt><span class="section"><a href="#data-visualization-analysis">Data Visualization and Analysis</a></span></dt><dt><span class="section"><a href="#alarms-notifications">Alarms and Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#key-features">Key Features</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring">Monitoring</a></span></dt><dt><span class="section"><a href="#metrics">Metrics</a></span></dt><dt><span class="section"><a href="#log-management">Log Management</a></span></dt><dt><span class="section"><a href="#openstack-integration">Integration with <span class="productname">OpenStack</span></a></span></dt></dl></dd><dt><span class="section"><a href="#components">Components</a></span></dt><dd><dl><dt><span class="section"><a href="#monitoring-service">Monitoring Service</a></span></dt><dt><span class="section"><a href="#horizon-plugin">Horizon Plugin</a></span></dt><dt><span class="section"><a href="#metrics-agent">Metrics Agent</a></span></dt><dt><span class="section"><a href="#log-agent">Log Agent</a></span></dt></dl></dd><dt><span class="section"><a href="#users-roles">Users and Roles</a></span></dt><dd><dl><dt><span class="section"><a href="#user-management">User Management</a></span></dt></dl></dd><dt><span class="section"><a href="#ops-maintenance">Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id15282">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id15361">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id15427">Log File Handling</a></span></dt><dt><span class="section"><a href="#backup-recovery">Backup and Recovery</a></span></dt></dl></dd><dt><span class="section"><a href="#data-virtualizations">Working with Data Visualizations</a></span></dt><dd><dl><dt><span class="section"><a href="#metrics-dashboard-openstack">Preconfigured Metrics Dashboard for <span class="productname">OpenStack</span></a></span></dt><dt><span class="section"><a href="#building-dashboards">Building Dashboards</a></span></dt><dt><span class="section"><a href="#creating-dashboards">Creating Dashboards</a></span></dt><dt><span class="section"><a href="#editing-rows">Editing Rows</a></span></dt><dt><span class="section"><a href="#editing-panels">Editing Panels</a></span></dt><dt><span class="section"><a href="#saving-sharing-dashboards">Saving and Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-alarms">Defining Alarms</a></span></dt><dd><dl><dt><span class="section"><a href="#alarm-details">Details</a></span></dt><dt><span class="section"><a href="#alarm-notifications">Notifications</a></span></dt></dl></dd><dt><span class="section"><a href="#defining-notifcations">Defining Notifications</a></span></dt><dt><span class="section"><a href="#status-servers-log-data">Status of Services, Servers, and Log Data</a></span></dt><dt><span class="section"><a href="#supported-metrics">Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id15986">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id16005">Additional Metrics</a></span></dt></dl></dd></dl></div><p>
   As more and more applications are deployed on cloud systems and cloud systems
   are growing in complexity, managing the cloud infrastructure is becoming
   increasingly difficult. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
@@ -2110,13 +2110,13 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
     </p></li></ul></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="monitoring-architecture"></a>Architecture</h2></div></div></div><p>
   The following illustration provides an overview of the main components of
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and their interaction:
- </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-cmm-architecture.png" alt="cmm-architecture.png" /></div></div><h5><a id="id14648"></a><span class="productname">OpenStack</span></h5><p>
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-cmm-architecture.png" alt="cmm-architecture.png" /></div></div><h5><a id="id14667"></a><span class="productname">OpenStack</span></h5><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring relies on <span class="productname">OpenStack</span> as
   technology for building cloud computing platforms for public and private
   clouds. <span class="productname">OpenStack</span> consists of a series of interrelated projects delivering
   various components for a cloud infrastructure solution and allowing for the
   deployment and management of Infrastructure as a Service (IaaS) platforms.
- </p><h5><a id="id14656"></a>Monitoring Service</h5><p>
+ </p><h5><a id="id14675"></a>Monitoring Service</h5><p>
   The Monitoring Service is the central <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
   component. It is responsible for receiving, persisting,
   and processing monitoring and log data, as well as providing the data to the
@@ -2198,7 +2198,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
      A Web browser-based analytics and search interface to the Log Database.
     </p></dd><dt><span class="term">Log Database</span></dt><dd><p>
      An Elasticsearch database for storing the log data.
-    </p></dd></dl></div><h5><a id="id14734"></a>horizon Plugin</h5><p>
+    </p></dd></dl></div><h5><a id="id14753"></a>horizon Plugin</h5><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring comes with a plugin for the
   <span class="productname">OpenStack</span> horizon dashboard. The plugin extends the main dashboard in
   <span class="productname">OpenStack</span> with a view for monitoring. This enables <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
@@ -2215,7 +2215,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
     </p></dd><dt><span class="term">Kibana (for log data)</span></dt><dd><p>
      An open source analytics and visualization platform
      designed to work with Elasticsearch.
-    </p></dd></dl></div><h5><a id="id14757"></a>Metrics Agent</h5><p>
+    </p></dd></dl></div><h5><a id="id14776"></a>Metrics Agent</h5><p>
   A Metrics Agent is required for retrieving metrics data from the host on
   which it runs and sending the metrics data to the Monitoring Service. The
   agent supports metrics from a variety of sources as well as a number of
@@ -2227,7 +2227,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
   The agent functionality is fully integrated into the source code base of the
   monasca project. For details, refer to the
   <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_top">monasca Wiki</a>.
- </p><h5><a id="id14762"></a>Log Agent</h5><p>
+ </p><h5><a id="id14781"></a>Log Agent</h5><p>
   A Log Agent is needed for collecting log data from the host on which it runs
   and forwarding the log data to the Monitoring Service for further processing.
   It can be installed on each virtual or physical server from which log data is
@@ -2236,7 +2236,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
   The agent functionality is fully integrated into the source code base of the
   monasca project. For details, refer to the
   <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_top">monasca Wiki</a>.
- </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id14766"></a>Agents and Services</h3></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
+ </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id14785"></a>Agents and Services</h3></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
       </td><td>Centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</td></tr><tr><td><code class="literal">storm-nimbus</code>
       </td><td>Storm is a distributed real-time computation system for processing large volumes of high-velocity data. The Storm Nimbus daemon is responsible for distributing code around a cluster, assigning tasks to machines, and monitoring for failures. </td></tr><tr><td><code class="literal">storm-supervisor</code>
       </td><td>The Storm supervisor listens for work assigned to its machine and starts and stops worker processes as necessary based on what Nimbus has assigned to it.</td></tr><tr><td><code class="literal">mariadb</code>
@@ -2660,7 +2660,7 @@ openstack flavor set gpuflavor2 --property "pci_passthrough:alias"="a1:1,a2:1"
     Handling log files of agents and services.
    </p></li><li class="listitem"><p>
     Backup and recovery of databases, configuration files, and dashboards.
-   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15263"></a>Removing Metrics Data</h3></div></div></div><p>
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15282"></a>Removing Metrics Data</h3></div></div></div><p>
   Metrics data is stored in the Metrics and Alarms InfluxDB Database. InfluxDB
   features an SQL-like query language for querying data and performing
   aggregations on that data.
@@ -2743,7 +2743,7 @@ Using database mon</pre></li><li class="listitem"><p>
       Example:
      </p><pre class="screen">DROP SERIES FROM "cpu.user_perc" WHERE _tenant_id = '27620d7e'</pre></li></ul></div></li><li class="listitem"><p>
     Restart the <code class="literal">influxdb</code> service, for example, as follows:
-   </p><pre class="screen">sudo systemctl restart influxdb</pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15342"></a>Removing Log Data</h3></div></div></div><p>
+   </p><pre class="screen">sudo systemctl restart influxdb</pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15361"></a>Removing Log Data</h3></div></div></div><p>
   Log data is stored in the Elasticsearch database. Elasticsearch stores the
   data in indices. One index per day is created for every <span class="productname">OpenStack</span> project.
  </p><p>
@@ -2809,7 +2809,7 @@ Using database mon</pre></li><li class="listitem"><p>
  </p><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-*'</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
    Take extreme care when using wildcards for the deletion of indices. You
    could delete all existing indices with one single command!
-  </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15408"></a>Log File Handling</h3></div></div></div><p>
+  </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15427"></a>Log File Handling</h3></div></div></div><p>
   In case of trouble with the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
   services, you can study their log files to find the reason. The log files are
   also useful if you need to contact your support organization. For storing the
@@ -2845,7 +2845,7 @@ Using database mon</pre></li><li class="listitem"><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring does not offer integrated
   backup and recovery mechanisms. Instead, use the mechanisms and
   procedures of the individual components.
- </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15448"></a>Databases</h4></div></div></div><p>
+ </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15467"></a>Databases</h4></div></div></div><p>
    You need to create regular backups of the following databases on the host
    where the Monitoring Service is installed:
   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
@@ -2857,7 +2857,7 @@ Using database mon</pre></li><li class="listitem"><p>
     </p></li></ul></div><p>
    It is recommended that backup and restore operations for databases are
    carried out by experienced operators only.
-  </p><h5><a id="id15459"></a>Preparations</h5><p>
+  </p><h5><a id="id15478"></a>Preparations</h5><p>
  Before backing up and restoring a database, we recommend stopping the Monitoring
  API and the Log API on the <code class="literal">monasca-server</code> node, and check that all data is processed.
  This ensures that no data is written to a database during a backup and restore operation.
@@ -2877,7 +2877,7 @@ Using database mon</pre></li><li class="listitem"><p>
   --group thresh-metric | column -t -s ','
   </pre><p>
  To restart the Monitoring API and the Log API, use the following command:
- </p><pre class="screen">systemctl start apache2</pre><h5><a id="id15468"></a>Elasticsearch Database</h5><p>
+ </p><pre class="screen">systemctl start apache2</pre><h5><a id="id15487"></a>Elasticsearch Database</h5><p>
    For backing up and restoring your Elasticsearch database, use the
    Snapshot and Restore module of Elasticsearch.
   </p><p>
@@ -2941,7 +2941,7 @@ Using database mon</pre></li><li class="listitem"><p>
    For additional information on backing up and restoring an Elasticsearch
    database, refer to the
    <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-snapshots.html" target="_top">Elasticsearch documentation</a>.
-  </p><h5><a id="id15522"></a>InfluxDB Database</h5><p>
+  </p><h5><a id="id15541"></a>InfluxDB Database</h5><p>
    For backing up and restoring your InfluxDB database, you can use the InfluxDB
    shell. The shell is part of your InfluxDB distribution. If you installed
    InfluxDB via a package manager, the shell is, by default, installed in the
@@ -2993,7 +2993,7 @@ Using database mon</pre></li><li class="listitem"><p>
    For additional information on backing up and restoring an InfluxDB database,
    refer to the
    <a class="link" href="https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/" target="_top">InfluxDB documentation</a>.
-  </p><h5><a id="id15571"></a>MariaDB Database</h5><p>
+  </p><h5><a id="id15590"></a>MariaDB Database</h5><p>
    For backing up and restoring your MariaDB database, you can use the
    <span class="command"><strong>mysqldump</strong></span> utility program. <span class="command"><strong>mysqldump</strong></span>
    performs a logical backup that produces a set of SQL statements. These
@@ -3026,7 +3026,7 @@ Using database mon</pre></li><li class="listitem"><p>
    with <code class="literal">mysqldump</code>, refer to the
    <a class="link" href="https://mariadb.com/kb/en/mariadb/mysqldump/" target="_top">MariaDB
    documentation</a>.
-  </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15602"></a>Configuration Files</h4></div></div></div><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15621"></a>Configuration Files</h4></div></div></div><p>
    Below you find a list of the configuration files of the agents and the
    individual services included in the Monitoring Service. Back up these files
    at least after you have installed and configured <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
@@ -3051,7 +3051,7 @@ Using database mon</pre></li><li class="listitem"><p>
  /etc/monasca-thresh/thresh.yaml
  /etc/elasticsearch/elasticsearch.yml
  /etc/elasticsearch/logging.yml
- /etc/kibana/kibana.yml</pre><h5><a id="id15609"></a>Recovery</h5><p>
+ /etc/kibana/kibana.yml</pre><h5><a id="id15628"></a>Recovery</h5><p>
    If you need to recover the configuration of one or more agents or services,
    the recommended procedure is as follows:
   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
@@ -3063,7 +3063,7 @@ Using database mon</pre></li><li class="listitem"><p>
      according to the table above.
     </p></li><li class="listitem"><p>
      Start the agents or services again.
-    </p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15620"></a>Dashboards</h4></div></div></div><p>
+    </p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15639"></a>Dashboards</h4></div></div></div><p>
    Kibana can persist customized log dashboard designs to the Elasticsearch
    database, and allows you to recall them. For details on saving, loading, and
    sharing log management dashboards, refer to the
@@ -3276,7 +3276,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    </p><p>
     The severity level is subjective. Choose a level that is appropriate for
     prioritizing the alarms in your environment.
-   </p></li></ul></div><div class="figure"><a id="id15792"></a><p class="title"><strong>Figure 4.2. Creating an Alarm Definition</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-alarmdef-create.png" width="100%" alt="Creating an Alarm Definition" /></td></tr></table></div></div></div><br class="figure-break" /><h5><a id="id15799"></a>Expression</h5><p>
+   </p></li></ul></div><div class="figure"><a id="id15811"></a><p class="title"><strong>Figure 4.2. Creating an Alarm Definition</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-alarmdef-create.png" width="100%" alt="Creating an Alarm Definition" /></td></tr></table></div></div></div><br class="figure-break" /><h5><a id="id15818"></a>Expression</h5><p>
   The expression defines how to evaluate a metrics. The expression syntax is
   based on a simple expressive grammar. For details, refer to the
   <a class="link" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md" target="_top">monasca API documentation</a>.
@@ -3465,26 +3465,26 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
     Standard metrics for general monitoring of servers and networks.
    </p></li><li class="listitem"><p>
     Additional metrics for monitoring specific servers and services.
-   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15967"></a>Standard Metrics</h3></div></div></div><p>
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15986"></a>Standard Metrics</h3></div></div></div><p>
    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports the following
    standard metrics for monitoring servers and networks. These metrics usually
    do not require specific settings. The metrics are grouped by metrics types.
    Each metrics type references a set of related metrics.
-  </p><h5><a id="id15973"></a>cpu.yaml</h5><p>
+  </p><h5><a id="id15992"></a>cpu.yaml</h5><p>
    Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
    requests are in progress, or the percentage of time the CPU is used at system
    level or user level.
-  </p><h5><a id="id15975"></a>disk.yaml</h5><p>
+  </p><h5><a id="id15994"></a>disk.yaml</h5><p>
    Metrics on disk space, e.g. the percentage of disk space that is used on a
    device, or the total amount of disk space aggregated across all the disks on
    a particular node.
-  </p><h5><a id="id15977"></a>load.yaml</h5><p>
+  </p><h5><a id="id15996"></a>load.yaml</h5><p>
    Metrics on the average system load over different periods (e.g. 1 minute, 5
    minutes, or 15 minutes).
-  </p><h5><a id="id15979"></a>memory.yaml</h5><p>
+  </p><h5><a id="id15998"></a>memory.yaml</h5><p>
    Metrics on memory usage, e.g. the number of megabytes of total memory or free
    memory, or the percentage of free swap memory.
-  </p><h5><a id="id15981"></a>network.yaml</h5><p>
+  </p><h5><a id="id16000"></a>network.yaml</h5><p>
    Metrics on the network, e.g. the number of network bytes received or sent per
    second, or the number of network errors on incoming or outgoing network
    traffic per second.
@@ -3492,12 +3492,12 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    These metrics are configured automatically on all machines and nodes that have
    the <code class="literal">monasca-agent</code> role assigned. This applies not only to
    <code class="filename">network.yaml</code> but also to all metrics covered in this chapter.
-  </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15986"></a>Additional Metrics</h3></div></div></div><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id16005"></a>Additional Metrics</h3></div></div></div><p>
    In addition to the standard metrics, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring automatically
    adds the following
    additional metrics to the monasca agent configuration on the <span class="productname">OpenStack</span>
    Controller.
-   </p><h5><a id="id15993"></a>http_check.yaml</h5><p>
+   </p><h5><a id="id16012"></a>http_check.yaml</h5><p>
    HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
    list of URLs, the agent sends an HTTP request and reports success or failure
    to the Monitoring Service.
@@ -3508,13 +3508,13 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    By default, the monitoring dashboard is configured to display the service status for the following services:
   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>swift</p></li></ul></div><p>
    The status visualization for additional services can be added manually.
-  </p><h5><a id="id16035"></a>postgres.yaml</h5><p>
+  </p><h5><a id="id16054"></a>postgres.yaml</h5><p>
    Postgres checks gather various CRUD and system statistics for a database
    hosted by a PostgreSQL DBMS.
   </p><p>
    The following barclamps will automatically create Postgres checks for their
    service database if the <code class="literal">monasca</code> barclamp is active:
-  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>barbican</p></li><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>heat</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>Magnum</p></li><li class="listitem"><p>manila</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>sahara</p></li></ul></div></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="monitoring-log-management"></a>Chapter 5. Log Management</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#configure-log-management-window">Working with the Log Management Window</a></span></dt><dd><dl><dt><span class="section"><a href="#query-log-data">Querying Log Data</a></span></dt><dt><span class="section"><a href="#visualize-query-results">Visualizing Query Results</a></span></dt><dt><span class="section"><a href="#combine-visualizations-dashboard">Combining Visualizations in Dashboards</a></span></dt><dt><span class="section"><a href="#filter-query-dashboard">Filtering Query Results in Dashboards</a></span></dt><dt><span class="section"><a href="#sharing-dashboards">Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#configure-index-patterns">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id16347">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#cha-deploy-logs">Log Files</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-deploy-logs-adminserv">On the Administration Server</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-crownodes">On All Other Crowbar Nodes</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-contrnode">On the Control Node(s)</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-compnode">On Compute Nodes</a></span></dt></dl></dd></dl></div><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>barbican</p></li><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>heat</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>Magnum</p></li><li class="listitem"><p>manila</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>sahara</p></li></ul></div></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="monitoring-log-management"></a>Chapter 5. Log Management</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#configure-log-management-window">Working with the Log Management Window</a></span></dt><dd><dl><dt><span class="section"><a href="#query-log-data">Querying Log Data</a></span></dt><dt><span class="section"><a href="#visualize-query-results">Visualizing Query Results</a></span></dt><dt><span class="section"><a href="#combine-visualizations-dashboard">Combining Visualizations in Dashboards</a></span></dt><dt><span class="section"><a href="#filter-query-dashboard">Filtering Query Results in Dashboards</a></span></dt><dt><span class="section"><a href="#sharing-dashboards">Sharing Dashboards</a></span></dt></dl></dd><dt><span class="section"><a href="#configure-index-patterns">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id16366">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#cha-deploy-logs">Log Files</a></span></dt><dd><dl><dt><span class="section"><a href="#sec-deploy-logs-adminserv">On the Administration Server</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-crownodes">On All Other Crowbar Nodes</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-contrnode">On the Control Node(s)</a></span></dt><dt><span class="section"><a href="#sec-deploy-logs-compnode">On Compute Nodes</a></span></dt></dl></dd></dl></div><p>
   Services and servers in a cloud infrastructure generate huge amounts of log
   data, from simply announcing that everything is healthy to detailed
   information on events or processes. The logs are distributed over many
@@ -3560,7 +3560,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   In the following sections, you will find information on the Log Management
   Window where you search, visualize, and analyze your log data, as well as
   details on how to use the alerting features.
- </p><h5><a id="id16106"></a>Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
+ </p><h5><a id="id16125"></a>Accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
  </h5><p>
   For accessing <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and performing
   log management tasks, the following prerequisites must be fulfilled:
@@ -3618,7 +3618,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   For querying log data, you use the <span class="guimenu">Discover</span> page in the
   log management window. It is instantly displayed when you access the window.
   It shows the most recently collected log data:
- </p><div class="figure"><a id="id16162"></a><p class="title"><strong>Figure 5.1. The Kibana Dashboard—Discover Page</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/socm-kibana-dashboard.png" width="100%" alt="The Kibana Dashboard—Discover Page" /></td></tr></table></div></div></div><br class="figure-break" /><p>
+ </p><div class="figure"><a id="id16181"></a><p class="title"><strong>Figure 5.1. The Kibana Dashboard—Discover Page</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/socm-kibana-dashboard.png" width="100%" alt="The Kibana Dashboard—Discover Page" /></td></tr></table></div></div></div><br class="figure-break" /><p>
   The <span class="guimenu">Discover</span> page allows you to access the log data in
   every index that matches the current index pattern. In addition to submitting
   queries, you can view, filter, and analyze the log data that is returned by
@@ -3854,7 +3854,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   the <span class="guimenu">Settings</span> page. Select the pattern you want to set as
   the default from the <span class="guimenu">Index Patterns</span> field. The
   content of the log management window is instantly updated.
- </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id16347"></a>Monitoring Log Data</h2></div></div></div><p>
+ </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id16366"></a>Monitoring Log Data</h2></div></div></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring provides alerting features
   for monitoring your log data. Specific log metrics support you in checking
   the severity of the entries in your log files. Log metrics are handled like
@@ -3990,11 +3990,11 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    the <code class="literal">openstack-monasca-log-agent</code> service is running and
    check <code class="filename">/var/log/monasca-log-agent/agent.log</code> for errors
    on the agent nodes.
-  </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_noresults.png" width="100%" alt="No results" /></td></tr></table></div></div></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="id16537"></a>Appendix A. Glossary</h1></div></div></div><h5><a id="id16540"></a>Application Operator</h5><p>
+  </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_noresults.png" width="100%" alt="No results" /></td></tr></table></div></div></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="id16556"></a>Appendix A. Glossary</h1></div></div></div><h5><a id="id16559"></a>Application Operator</h5><p>
   A person with limited access to cloud resources in <span class="productname">OpenStack</span>. An application
   operator provides services to end users or hosts services for his own
   development activities.
- </p><h5><a id="id16543"></a>Dimension</h5><p>
+ </p><h5><a id="id16562"></a>Dimension</h5><p>
   A key/value pair that allows for a flexible and concise description of the
   data to be monitored, for example, region, availability zone, service tier,
   or resource ID. Each dimension describes a specific characteristic of the
@@ -4003,51 +4003,51 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring, metrics are uniquely
   identified by a name and a set of dimensions. Dimensions can serve as a
   filter for the monitoring data.
- </p><h5><a id="id16549"></a>Elasticsearch</h5><p>
+ </p><h5><a id="id16568"></a>Elasticsearch</h5><p>
   An open source application that provides a highly scalable full-text search
   and analytics engine. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses
   Elasticsearch as the underlying technology for storing, searching, and
   analyzing large volumes of log data.
- </p><h5><a id="id16554"></a>Grafana</h5><p>
+ </p><h5><a id="id16573"></a>Grafana</h5><p>
   An open source application for visualizing large-scale measurement data.
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring integrates with Grafana for
   visualizing the monitoring data.
- </p><h5><a id="id16559"></a>Infrastructure as a Service (IaaS)</h5><p>
+ </p><h5><a id="id16578"></a>Infrastructure as a Service (IaaS)</h5><p>
   The delivery of computer infrastructure (typically a platform virtualization
   environment) as a service.
- </p><h5><a id="id16561"></a>InfluxDB</h5><p>
+ </p><h5><a id="id16580"></a>InfluxDB</h5><p>
   An open source time-series database that supports high write loads and large
   data set storage. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses
   InfluxDB as the underlying technology for storing metrics and the alarm
   history.
- </p><h5><a id="id16566"></a>Kibana</h5><p>
+ </p><h5><a id="id16585"></a>Kibana</h5><p>
   An open source analytics and visualization platform designed to work with
   Elasticsearch. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring integrates
   with Kibana for visualizing the log data.
- </p><h5><a id="id16571"></a>Logstash</h5><p>
+ </p><h5><a id="id16590"></a>Logstash</h5><p>
   An open source application that provides a data collection engine with
   pipelining capabilities. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
   integrates with Logstash for collecting, processing, and outputting logs.
- </p><h5><a id="id16576"></a>MariaDB</h5><p>
+ </p><h5><a id="id16595"></a>MariaDB</h5><p>
   An open source relational database that provides an SQL-compliant interface
   for accessing data. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring uses
   MariaDB as the underlying technology for storing configuration information,
   alarm definitions, and notification methods.
- </p><h5><a id="id16581"></a>Metrics</h5><p>
+ </p><h5><a id="id16600"></a>Metrics</h5><p>
   Self-describing data structures that allow for a flexible and concise
   description of the data to be monitored. Metrics values represent the actual
   monitoring data that is collected and presented in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
- </p><h5><a id="id16586"></a>Monasca</h5><p>
+ </p><h5><a id="id16605"></a>Monasca</h5><p>
   An open source Monitoring as a Service solution that integrates with
   <span class="productname">OpenStack</span>. It forms the core of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
- </p><h5><a id="id16592"></a>Monitoring Service Operator</h5><p>
+ </p><h5><a id="id16611"></a>Monitoring Service Operator</h5><p>
   A person responsible for maintaining and administrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
- </p><h5><a id="id16597"></a><span class="productname">OpenStack</span> Operator</h5><p>
+ </p><h5><a id="id16616"></a><span class="productname">OpenStack</span> Operator</h5><p>
   A person responsible for maintaining and administrating <span class="productname">OpenStack</span>, the
   underlying platform technology of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring.
- </p><h5><a id="id16604"></a>Platform as a Service (PaaS)</h5><p>
+ </p><h5><a id="id16623"></a>Platform as a Service (PaaS)</h5><p>
   The delivery of a computing platform and solution stack as a service.
- </p><h5><a id="id16606"></a>Software as a Service (SaaS)</h5><p>
+ </p><h5><a id="id16625"></a>Software as a Service (SaaS)</h5><p>
   A model of software deployment where a provider licenses an application to
   customers for use as a service on demand.
  </p></div></div></body></html>

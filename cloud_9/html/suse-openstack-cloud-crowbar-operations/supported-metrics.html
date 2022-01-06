@@ -13,26 +13,26 @@ body { background-image: url('static/images/draft.png');
     Standard metrics for general monitoring of servers and networks.
    </p></li><li class="listitem"><p>
     Additional metrics for monitoring specific servers and services.
-   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15967"></a>Standard Metrics</h3></div></div></div><p>
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15986"></a>Standard Metrics</h3></div></div></div><p>
    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring supports the following
    standard metrics for monitoring servers and networks. These metrics usually
    do not require specific settings. The metrics are grouped by metrics types.
    Each metrics type references a set of related metrics.
-  </p><h5><a id="id15973"></a>cpu.yaml</h5><p>
+  </p><h5><a id="id15992"></a>cpu.yaml</h5><p>
    Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
    requests are in progress, or the percentage of time the CPU is used at system
    level or user level.
-  </p><h5><a id="id15975"></a>disk.yaml</h5><p>
+  </p><h5><a id="id15994"></a>disk.yaml</h5><p>
    Metrics on disk space, e.g. the percentage of disk space that is used on a
    device, or the total amount of disk space aggregated across all the disks on
    a particular node.
-  </p><h5><a id="id15977"></a>load.yaml</h5><p>
+  </p><h5><a id="id15996"></a>load.yaml</h5><p>
    Metrics on the average system load over different periods (e.g. 1 minute, 5
    minutes, or 15 minutes).
-  </p><h5><a id="id15979"></a>memory.yaml</h5><p>
+  </p><h5><a id="id15998"></a>memory.yaml</h5><p>
    Metrics on memory usage, e.g. the number of megabytes of total memory or free
    memory, or the percentage of free swap memory.
-  </p><h5><a id="id15981"></a>network.yaml</h5><p>
+  </p><h5><a id="id16000"></a>network.yaml</h5><p>
    Metrics on the network, e.g. the number of network bytes received or sent per
    second, or the number of network errors on incoming or outgoing network
    traffic per second.
@@ -40,12 +40,12 @@ body { background-image: url('static/images/draft.png');
    These metrics are configured automatically on all machines and nodes that have
    the <code class="literal">monasca-agent</code> role assigned. This applies not only to
    <code class="filename">network.yaml</code> but also to all metrics covered in this chapter.
-  </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15986"></a>Additional Metrics</h3></div></div></div><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id16005"></a>Additional Metrics</h3></div></div></div><p>
    In addition to the standard metrics, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring automatically
    adds the following
    additional metrics to the monasca agent configuration on the <span class="productname">OpenStack</span>
    Controller.
-   </p><h5><a id="id15993"></a>http_check.yaml</h5><p>
+   </p><h5><a id="id16012"></a>http_check.yaml</h5><p>
    HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
    list of URLs, the agent sends an HTTP request and reports success or failure
    to the Monitoring Service.
@@ -56,7 +56,7 @@ body { background-image: url('static/images/draft.png');
    By default, the monitoring dashboard is configured to display the service status for the following services:
   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>cinder</p></li><li class="listitem"><p>glance</p></li><li class="listitem"><p>keystone</p></li><li class="listitem"><p>neutron</p></li><li class="listitem"><p>nova</p></li><li class="listitem"><p>swift</p></li></ul></div><p>
    The status visualization for additional services can be added manually.
-  </p><h5><a id="id16035"></a>postgres.yaml</h5><p>
+  </p><h5><a id="id16054"></a>postgres.yaml</h5><p>
    Postgres checks gather various CRUD and system statistics for a database
    hosted by a PostgreSQL DBMS.
   </p><p>

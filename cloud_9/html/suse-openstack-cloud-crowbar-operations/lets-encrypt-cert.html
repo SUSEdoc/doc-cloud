@@ -17,7 +17,7 @@ body { background-image: url('static/images/draft.png');
      which is written in bash and gives us greater flexibility and ease in our
      solution.</p><p>The next steps walk you through the installation of <code class="literal">acme.sh</code> and the issue
      of a certificate with <code class="literal">Let’s Encrypt</code> followed by the automated load
-     of the certificate in OpenStack for the various API endpoints available.</p><div class="procedure"><a id="id14329"></a><p class="title"><strong>Procedure 3.10. Installation of acme.sh letsencrypt client</strong></p><ol class="procedure" type="1"><li class="step"><p>
+     of the certificate in OpenStack for the various API endpoints available.</p><div class="procedure"><a id="id14348"></a><p class="title"><strong>Procedure 3.10. Installation of acme.sh letsencrypt client</strong></p><ol class="procedure" type="1"><li class="step"><p>
          Login to your crowbar/admin server change to the root directory.
        </p></li><li class="step"><p>
          Create a new directory for letsencrypt and clone the
@@ -45,7 +45,7 @@ body { background-image: url('static/images/draft.png');
          account info, and certificates are stored.
          We recommend using this as a backup location if you are using a
          backup tool.
-       </p></li></ol></div><div class="procedure"><a id="id14353"></a><p class="title"><strong>Procedure 3.11. Issue a wildcard SSL Certificate</strong></p><p>
+       </p></li></ol></div><div class="procedure"><a id="id14372"></a><p class="title"><strong>Procedure 3.11. Issue a wildcard SSL Certificate</strong></p><p>
       OpenStack and wildcard SSL uses the DNS validation method by
       validating your domain using a TXT record that can either be added
       manually or using the many (over 3 dozen) available DNS API’s.
@@ -73,8 +73,8 @@ body { background-image: url('static/images/draft.png');
         Add the following TXT record:
         Domain: '_acme-challenge.yourdomain.com'
         TXT value: 'KZvgq3MpOCjUNW7Uzz5nE5kkFdplNk66WGfxE9-H63k'
-        Please be aware that you prepend <code class="literal">_acme-challenge.</code> before your domain
-        so the resulting subdomain will be: <code class="literal">_acme-challenge.yourdomain.com</code>
+        Please be aware that you prepend <span class="emphasis"><em>_acme-challenge.</em></span> before your domain
+        so the resulting subdomain will be: <span class="emphasis"><em>_acme-challenge.yourdomain.com</em></span>
       </pre></li><li class="step"><p>
         Using this information, you are ready to insert this TXT record into
         your DNS.
@@ -136,7 +136,7 @@ body { background-image: url('static/images/draft.png');
         v2 chain.
         The intermediate CA cert is in:  /root/.acme.sh/susedojo.com/ca.cer  
         And the full chain certs is in:  /root/.acme.sh/susedojo.com/fullchain.cer_on_issue_success
-      </pre></li></ol></div><div class="procedure"><a id="id14399"></a><p class="title"><strong>Procedure 3.12. Set Up Certificate Store on Control and Compute Nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
+      </pre></li></ol></div><div class="procedure"><a id="id14418"></a><p class="title"><strong>Procedure 3.12. Set Up Certificate Store on Control and Compute Nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
         Create a shared location for all Certificates on the control nodes.
         Execute these commands on all control nodes and compute nodes:
       </p><pre class="screen">
@@ -150,12 +150,12 @@ body { background-image: url('static/images/draft.png');
         # scp /root/.acme.sh/susedojo.com/ca.cer root@control:/etc/cloud/ssl/certs
         # scp /root/.acme.sh/susedojo.com/fullchain.cer root@control:/etc/cloud/ssl/certs
         # scp /root/.acme.sh/susedojo.com/susedojo.com.key \ root@control:/etc/cloud/ssl/private
-      </pre></li></ol></div><div class="procedure"><a id="id14407"></a><p class="title"><strong>Procedure 3.13. Set Up Issued Certificates in Crowbar Barclamps</strong></p><ol class="procedure" type="1"><li class="step"><p>
+      </pre></li></ol></div><div class="procedure"><a id="id14426"></a><p class="title"><strong>Procedure 3.13. Set Up Issued Certificates in Crowbar Barclamps</strong></p><ol class="procedure" type="1"><li class="step"><p>
         Set your Certificate File and Key File to the proper location, and
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14414"></a><p class="title"><strong>Figure 3.1. Database Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/database-barclamp.png" width="100%" alt="Database Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14433"></a><p class="title"><strong>Figure 3.1. Database Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/database-barclamp.png" width="100%" alt="Database Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -163,7 +163,7 @@ body { background-image: url('static/images/draft.png');
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14429"></a><p class="title"><strong>Figure 3.2. RabbitMQ Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/rabbitmq-barclamp.png" width="100%" alt="RabbitMQ Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14448"></a><p class="title"><strong>Figure 3.2. RabbitMQ Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/rabbitmq-barclamp.png" width="100%" alt="RabbitMQ Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -171,7 +171,7 @@ body { background-image: url('static/images/draft.png');
         set the CA Certificates File to the <code class="filename">/etc/ssl/ca-bundle.pem</code>
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false.
-      </p><div class="figure"><a id="id14444"></a><p class="title"><strong>Figure 3.3. Keystone Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/keystone-barclamp.png" width="100%" alt="Keystone Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14463"></a><p class="title"><strong>Figure 3.3. Keystone Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/keystone-barclamp.png" width="100%" alt="Keystone Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -180,7 +180,7 @@ body { background-image: url('static/images/draft.png');
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is true.
-      </p><div class="figure"><a id="id14460"></a><p class="title"><strong>Figure 3.4. Glance Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/glance-barclamp.png" width="100%" alt="Glance Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14479"></a><p class="title"><strong>Figure 3.4. Glance Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/glance-barclamp.png" width="100%" alt="Glance Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -189,7 +189,7 @@ body { background-image: url('static/images/draft.png');
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14476"></a><p class="title"><strong>Figure 3.5. Cinder Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/cinder-barclamp.png" width="100%" alt="Cinder Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14495"></a><p class="title"><strong>Figure 3.5. Cinder Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/cinder-barclamp.png" width="100%" alt="Cinder Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -198,7 +198,7 @@ body { background-image: url('static/images/draft.png');
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14492"></a><p class="title"><strong>Figure 3.6. Neutron Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/neutron-barclamp.png" width="100%" alt="Neutron Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14511"></a><p class="title"><strong>Figure 3.6. Neutron Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/neutron-barclamp.png" width="100%" alt="Neutron Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li><li class="step"><p>
@@ -207,7 +207,7 @@ body { background-image: url('static/images/draft.png');
         in the distribution. Make sure <code class="literal">Generate (self-signed) certificates</code>
         is false, and <code class="literal">Certificate is insecure</code> is false, and
         <code class="literal">Require Client Certificates</code> is false.
-      </p><div class="figure"><a id="id14508"></a><p class="title"><strong>Figure 3.7. Nova Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/nova-barclamp.png" width="100%" alt="Nova Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
+      </p><div class="figure"><a id="id14527"></a><p class="title"><strong>Figure 3.7. Nova Barclamp</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="75%"><tr><td><img src="images/nova-barclamp.png" width="100%" alt="Nova Barclamp" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="step"><p>
         Click <span class="guimenu">Apply</span>. Your changes will apply in a
         few minutes.
       </p></li></ol></div><p>

@@ -585,37 +585,37 @@ body { background-image: url('static/images/draft.png');
             </p><pre class="screen"><code class="prompt">tux &gt; </code>nova host-evacuate-live <em class="replaceable"><code>"NODE_NAME"</code></em></pre></li></ol></div><p>
           After completing these steps, you can perform a simultaneous upgrade of
           the selected nodes.
-        </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-depl-maintenance-upgrade-troubleshooting"></a>Troubleshooting Upgrade Issues</h3></div></div></div><div class="qandaset"><a id="id13620"></a><dl><dt>1. <a href="sec-upgrade-8-9.html#id13621">
+        </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="sec-depl-maintenance-upgrade-troubleshooting"></a>Troubleshooting Upgrade Issues</h3></div></div></div><div class="qandaset"><a id="id13639"></a><dl><dt>1. <a href="sec-upgrade-8-9.html#id13640">
               Upgrade of the admin server has failed.
-            </a></dt><dt>2. <a href="sec-upgrade-8-9.html#id13629">
+            </a></dt><dt>2. <a href="sec-upgrade-8-9.html#id13648">
               An upgrade step repeatedly fails due to timeout.
             </a></dt><dt>3. <a href="sec-upgrade-8-9.html#live-migration-failed">
               Node upgrade has failed during live migration.
-            </a></dt><dt>4. <a href="sec-upgrade-8-9.html#id13680">
+            </a></dt><dt>4. <a href="sec-upgrade-8-9.html#id13699">
               Node has failed during OS upgrade.
-            </a></dt><dt>5. <a href="sec-upgrade-8-9.html#id13689">
+            </a></dt><dt>5. <a href="sec-upgrade-8-9.html#id13708">
               Node does not come up after reboot.
-            </a></dt><dt>6. <a href="sec-upgrade-8-9.html#id13694">
+            </a></dt><dt>6. <a href="sec-upgrade-8-9.html#id13713">
               N number of nodes were provided to compute upgrade using
               crowbarctl upgrade nodes node_1,node_2,...,node_N,
               but less then N were actually upgraded.
-            </a></dt><dt>7. <a href="sec-upgrade-8-9.html#id13701">
+            </a></dt><dt>7. <a href="sec-upgrade-8-9.html#id13720">
               Node has failed at the initial chef client run stage.
-            </a></dt><dt>8. <a href="sec-upgrade-8-9.html#id13707">
+            </a></dt><dt>8. <a href="sec-upgrade-8-9.html#id13726">
               I need to change OpenStack configuration during the upgrade but I cannot access Crowbar.
-            </a></dt><dt>9. <a href="sec-upgrade-8-9.html#id13715">
+            </a></dt><dt>9. <a href="sec-upgrade-8-9.html#id13734">
               Failure occurred when evacuating routers.
-            </a></dt><dt>10. <a href="sec-upgrade-8-9.html#id13728">
+            </a></dt><dt>10. <a href="sec-upgrade-8-9.html#id13747">
               Some non-controller nodes were upgraded after performing crowbarctl upgrade nodes
                 controllers.
-            </a></dt></dl><table border="0" style="width: 100%;"><colgroup><col align="left" width="1%" /><col /></colgroup><tbody><tr class="question"><td align="left" valign="top"><a id="id13621"></a><a id="id13622"></a><p><strong>1.</strong></p></td><td align="left" valign="top"><p>
+            </a></dt></dl><table border="0" style="width: 100%;"><colgroup><col align="left" width="1%" /><col /></colgroup><tbody><tr class="question"><td align="left" valign="top"><a id="id13640"></a><a id="id13641"></a><p><strong>1.</strong></p></td><td align="left" valign="top"><p>
               Upgrade of the admin server has failed.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Check for empty, broken, and not signed repositories in the Administration Server
               upgrade log file <code class="filename">/var/log/crowbar/admin-server-upgrade.log</code>. Fix the
               repository setup. Upgrade then remaining packages manually to SUSE Linux Enterprise Server 12 SP4
               and SUSE <span class="productname">OpenStack</span> Cloud 9 using the command <span class="command"><strong>zypper dup</strong></span>. Reboot the Administration Server.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13629"></a><a id="id13630"></a><p><strong>2.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13648"></a><a id="id13649"></a><p><strong>2.</strong></p></td><td align="left" valign="top"><p>
               An upgrade step repeatedly fails due to timeout.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Timeouts for most upgrade operations can be adjusted in the
@@ -650,7 +650,7 @@ body { background-image: url('static/images/draft.png');
                   run on a node that has been upgraded and rebooted.
                 </p></li><li class="listitem"><p>
                   <code class="literal">evacuate_host</code> Time allowed for live migrate all VMs from a host.
-                </p></li></ul></div></td></tr><tr class="question"><td align="left" valign="top"><a id="live-migration-failed"></a><a id="id13650"></a><p><strong>3.</strong></p></td><td align="left" valign="top"><p>
+                </p></li></ul></div></td></tr><tr class="question"><td align="left" valign="top"><a id="live-migration-failed"></a><a id="id13669"></a><p><strong>3.</strong></p></td><td align="left" valign="top"><p>
               Node upgrade has failed during live migration.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               The problem may occur when it is not possible to live migrate certain
@@ -705,7 +705,7 @@ body { background-image: url('static/images/draft.png');
                 <em class="replaceable"><code>MIGRATION-ID</code></em></strong></span> command. However,
               this might pause the instances for a prolonged period of time and have
               a negative impact on the workload running inside the instance.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13680"></a><a id="id13681"></a><p><strong>4.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13699"></a><a id="id13700"></a><p><strong>4.</strong></p></td><td align="left" valign="top"><p>
               Node has failed during OS upgrade.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Possible reasons include an incorrect repository setup or package
@@ -717,12 +717,12 @@ body { background-image: url('static/images/draft.png');
               upgrade script). Fix the repository setup and run the failed upgrade
               step again. If custom package versions or version locks are in place,
               make sure that they don't interfere with the <span class="command"><strong>zypper dup</strong></span> command.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13689"></a><a id="id13690"></a><p><strong>5.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13708"></a><a id="id13709"></a><p><strong>5.</strong></p></td><td align="left" valign="top"><p>
               Node does not come up after reboot.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               In some cases, a node can take too long to reboot causing a timeout. We
               recommend to check the node manually, make sure it is online, and repeat the step.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13694"></a><a id="id13695"></a><p><strong>6.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13713"></a><a id="id13714"></a><p><strong>6.</strong></p></td><td align="left" valign="top"><p>
               N number of nodes were provided to compute upgrade using
               <span class="command"><strong>crowbarctl upgrade nodes node_1,node_2,...,node_N</strong></span>,
               but less then N were actually upgraded.
@@ -732,7 +732,7 @@ body { background-image: url('static/images/draft.png');
               live-evacuate in the specified time. Because some nodes have been upgraded, it is possible that
               more resources will be available for live-migration when you try to run this
               step again. See also <a class="xref" href="sec-upgrade-8-9.html#live-migration-failed" title="3.">Q: 3</a>.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13701"></a><a id="id13702"></a><p><strong>7.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13720"></a><a id="id13721"></a><p><strong>7.</strong></p></td><td align="left" valign="top"><p>
               Node has failed at the initial chef client run stage.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               An unsupported entry in the configuration file may prevent a service
@@ -740,7 +740,7 @@ body { background-image: url('static/images/draft.png');
               chef client run stage. Checking the
               <code class="filename">/var/log/crowbar/crowbar_join/chef.*</code> log files on
               the node is a good starting point.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13707"></a><a id="id13708"></a><p><strong>8.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13726"></a><a id="id13727"></a><p><strong>8.</strong></p></td><td align="left" valign="top"><p>
               I need to change <span class="productname">OpenStack</span> configuration during the upgrade but I cannot access Crowbar.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Crowbar Web interface is accessible only when an upgrade is completed or
@@ -750,7 +750,7 @@ body { background-image: url('static/images/draft.png');
               save your modifications. Before you can continue with the upgrade of
               rest of the nodes, resume the upgrade using the <span class="command"><strong>crowbarctl
                 upgrade nodes resume</strong></span> command.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13715"></a><a id="id13716"></a><p><strong>9.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13734"></a><a id="id13735"></a><p><strong>9.</strong></p></td><td align="left" valign="top"><p>
               Failure occurred when evacuating routers.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>
               Check the <code class="filename">/var/log/crowbar/node-upgrade.log</code> file on
@@ -770,7 +770,7 @@ body { background-image: url('static/images/draft.png');
             </pre><p>
               Resume the upgrade by running the failed upgrade step
               again to continue with the router migration.
-            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13728"></a><a id="id13729"></a><p><strong>10.</strong></p></td><td align="left" valign="top"><p>
+            </p></td></tr><tr class="question"><td align="left" valign="top"><a id="id13747"></a><a id="id13748"></a><p><strong>10.</strong></p></td><td align="left" valign="top"><p>
               Some non-controller nodes were upgraded after performing <span class="command"><strong>crowbarctl upgrade nodes
                 controllers</strong></span>.
             </p></td></tr><tr class="answer"><td align="left" valign="top"></td><td align="left" valign="top"><p>

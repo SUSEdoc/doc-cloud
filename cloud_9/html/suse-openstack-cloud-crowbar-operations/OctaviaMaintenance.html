@@ -12,7 +12,7 @@ body { background-image: url('static/images/draft.png');
       balancer that is in the <code class="literal">ERROR</code>,
       <code class="literal">PENDING_CREATE</code>, or
       <code class="literal">PENDING_DELETE</code> state.
-    </p><div class="procedure"><a id="id13952"></a><p class="title"><strong>Procedure 1.2. 
+    </p><div class="procedure"><a id="id13971"></a><p class="title"><strong>Procedure 1.2. 
         Manually deleting load balancers created with neutron lbaasv2
         (in an upgrade/migration scenario)
       </strong></p><ol class="procedure" type="1"><li class="step"><p>
@@ -82,7 +82,7 @@ mysql&gt; delete from lbaas_healthmonitors where id = '323a3c4b-8083-41e1-b1d9-0
         </p><pre class="screen">
 mysql&gt; delete from lbaas_loadbalancer_statistics where loadbalancer_id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
 mysql&gt; delete from lbaas_loadbalancers where id = '7be4e4ab-e9c6-4a57-b767-da9af5ba7405';
-        </pre></li></ol></div><div class="procedure"><a id="id13989"></a><p class="title"><strong>Procedure 1.3. Manually Deleting Load Balancers Created With Octavia</strong></p><ol class="procedure" type="1"><li class="step"><p>
+        </pre></li></ol></div><div class="procedure"><a id="id14008"></a><p class="title"><strong>Procedure 1.3. Manually Deleting Load Balancers Created With Octavia</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Query the Octavia service for the loadbalancer ID:
         </p><pre class="screen">
 <code class="prompt">tux &gt; </code>openstack loadbalancer list --column id --column name --column provisioning_status

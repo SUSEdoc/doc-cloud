@@ -20,7 +20,7 @@ body { background-image: url('static/images/draft.png');
          To avoid external access to your CA Root Pair, put it on an air-gapped system
          that is permanently isolated from the internet and unplug any cables from the
          ethernet port.
-       </p></div><div class="procedure"><a id="id14217"></a><p class="title"><strong>Procedure 3.1. Prepare the directory structure</strong></p><ol class="procedure" type="1"><li class="step"><p>
+       </p></div><div class="procedure"><a id="id14236"></a><p class="title"><strong>Procedure 3.1. Prepare the directory structure</strong></p><ol class="procedure" type="1"><li class="step"><p>
            Create a directory for your CA Root pair:
          </p><pre class="screen">
            # ssh root@crowbar
@@ -34,7 +34,7 @@ body { background-image: url('static/images/draft.png');
            # chmod 700 private
            # touch index.txt
            # echo 1000 &gt; serial
-         </pre></li></ol></div><div class="procedure"><a id="id14226"></a><p class="title"><strong>Procedure 3.2. Prepare the configuration file</strong></p><p>
+         </pre></li></ol></div><div class="procedure"><a id="id14245"></a><p class="title"><strong>Procedure 3.2. Prepare the configuration file</strong></p><p>
          This procedure takes you through the full set up. Note that
          when you setup the crowbar server, there is a structure already setup
          under <code class="filename">/etc/ssl</code>. This is where SUSE Linux typically
@@ -54,7 +54,7 @@ body { background-image: url('static/images/draft.png');
          </pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
              Make sure <code class="literal">dir</code> is the directory where we created
              <code class="filename">/root/ssl/root/ca</code>.
-           </p></div></li></ol></div><div class="procedure"><a id="id14241"></a><p class="title"><strong>Procedure 3.3. Create the root key</strong></p><ol class="procedure" type="1"><li class="step"><p>
+           </p></div></li></ol></div><div class="procedure"><a id="id14260"></a><p class="title"><strong>Procedure 3.3. Create the root key</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Create the root key encrypted with AES 256-bit encryption
           and a password, using 4096 bits for the creation.
         </p><pre class="screen">
@@ -64,7 +64,7 @@ body { background-image: url('static/images/draft.png');
           You will be asked to enter a password here and then verify it.
         </p><pre class="screen">
           # chmod 400 private/cakey.pem
-        </pre></li></ol></div><div class="procedure"><a id="id14249"></a><p class="title"><strong>Procedure 3.4. Create the root certificates</strong></p><ul class="procedure"><li class="step"><p>
+        </pre></li></ol></div><div class="procedure"><a id="id14268"></a><p class="title"><strong>Procedure 3.4. Create the root certificates</strong></p><ul class="procedure"><li class="step"><p>
            Use the root key (<code class="filename">cakey.pem</code>) to create the
            root certificate (cacert.pem). Its important to give it a long
            expiration since all the certificates signed from it will
@@ -85,7 +85,7 @@ body { background-image: url('static/images/draft.png');
            Email Address []:admin@susedojo.com
 
            # chmod 444 cacert.pem
-         </pre></li></ul></div><div class="procedure"><a id="id14255"></a><p class="title"><strong>Procedure 3.5. Verify the root certificates</strong></p><ul class="procedure"><li class="step"><p>
+         </pre></li></ul></div><div class="procedure"><a id="id14274"></a><p class="title"><strong>Procedure 3.5. Verify the root certificates</strong></p><ul class="procedure"><li class="step"><p>
           Verify the certificate has the correct dates of validity and the
           algorithm used, Issuer, Subject, and x509v3 extensions. The issuer
           and subject are the same since it is self signed.

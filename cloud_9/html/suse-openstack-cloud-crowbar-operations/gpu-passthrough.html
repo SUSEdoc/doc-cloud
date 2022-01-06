@@ -99,7 +99,7 @@ drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:8
        Here's an <span class="bold"><strong>example</strong></span> of the
        configuration of a single PCI device being passthrough to the
        nova instance:
-     </p><div class="procedure"><a id="id14123"></a><p class="title"><strong>Procedure 2.2. Configure the Compute Host</strong></p><ol class="procedure" type="1"><li class="step"><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
+     </p><div class="procedure"><a id="id14142"></a><p class="title"><strong>Procedure 2.2. Configure the Compute Host</strong></p><ol class="procedure" type="1"><li class="step"><p>Login to the compute host and change directory to <code class="filename">/etc/nova/nova.conf.d</code> and
     list all the files:
     </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/
 ls -al
@@ -124,7 +124,7 @@ alias = { "vendor_id":"10de", "product_id":"1db4", "device_type":"type-PCI", "na
     of <code class="literal">10de</code> and a
     <code class="literal">product_id</code> of <code class="literal">1db4</code>.
     </p></li><li class="step"><p>Once the file is updated, restart nova compute on the compute node:</p><pre class="screen"><code class="prompt">root # </code>systemctl restart openstack-nova-compute
-    </pre></li></ol></div><div class="procedure"><a id="id14147"></a><p class="title"><strong>Procedure 2.3. Configure the Controller nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
+    </pre></li></ol></div><div class="procedure"><a id="id14166"></a><p class="title"><strong>Procedure 2.3. Configure the Controller nodes</strong></p><ol class="procedure" type="1"><li class="step"><p>
     Follow the following steps for all the controller nodes. Login to the controller host and
     change directory to <code class="filename">/etc/nova/nova.conf.d</code> and list all the files under that folder:
     </p><pre class="screen"><code class="prompt">root # </code>cd /etc/nova/nova.conf.d/

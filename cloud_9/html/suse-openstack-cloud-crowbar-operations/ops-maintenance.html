@@ -25,7 +25,7 @@ body { background-image: url('static/images/draft.png');
     Handling log files of agents and services.
    </p></li><li class="listitem"><p>
     Backup and recovery of databases, configuration files, and dashboards.
-   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15263"></a>Removing Metrics Data</h3></div></div></div><p>
+   </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15282"></a>Removing Metrics Data</h3></div></div></div><p>
   Metrics data is stored in the Metrics and Alarms InfluxDB Database. InfluxDB
   features an SQL-like query language for querying data and performing
   aggregations on that data.
@@ -108,7 +108,7 @@ Using database mon</pre></li><li class="listitem"><p>
       Example:
      </p><pre class="screen">DROP SERIES FROM "cpu.user_perc" WHERE _tenant_id = '27620d7e'</pre></li></ul></div></li><li class="listitem"><p>
     Restart the <code class="literal">influxdb</code> service, for example, as follows:
-   </p><pre class="screen">sudo systemctl restart influxdb</pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15342"></a>Removing Log Data</h3></div></div></div><p>
+   </p><pre class="screen">sudo systemctl restart influxdb</pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15361"></a>Removing Log Data</h3></div></div></div><p>
   Log data is stored in the Elasticsearch database. Elasticsearch stores the
   data in indices. One index per day is created for every <span class="productname">OpenStack</span> project.
  </p><p>
@@ -174,7 +174,7 @@ Using database mon</pre></li><li class="listitem"><p>
  </p><pre class="screen">curl -XDELETE -i 'http://localhost:9200/abc123-2015-07-*'</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
    Take extreme care when using wildcards for the deletion of indices. You
    could delete all existing indices with one single command!
-  </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15408"></a>Log File Handling</h3></div></div></div><p>
+  </p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id15427"></a>Log File Handling</h3></div></div></div><p>
   In case of trouble with the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
   services, you can study their log files to find the reason. The log files are
   also useful if you need to contact your support organization. For storing the
@@ -210,7 +210,7 @@ Using database mon</pre></li><li class="listitem"><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring does not offer integrated
   backup and recovery mechanisms. Instead, use the mechanisms and
   procedures of the individual components.
- </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15448"></a>Databases</h4></div></div></div><p>
+ </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15467"></a>Databases</h4></div></div></div><p>
    You need to create regular backups of the following databases on the host
    where the Monitoring Service is installed:
   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
@@ -222,7 +222,7 @@ Using database mon</pre></li><li class="listitem"><p>
     </p></li></ul></div><p>
    It is recommended that backup and restore operations for databases are
    carried out by experienced operators only.
-  </p><h5><a id="id15459"></a>Preparations</h5><p>
+  </p><h5><a id="id15478"></a>Preparations</h5><p>
  Before backing up and restoring a database, we recommend stopping the Monitoring
  API and the Log API on the <code class="literal">monasca-server</code> node, and check that all data is processed.
  This ensures that no data is written to a database during a backup and restore operation.
@@ -242,7 +242,7 @@ Using database mon</pre></li><li class="listitem"><p>
   --group thresh-metric | column -t -s ','
   </pre><p>
  To restart the Monitoring API and the Log API, use the following command:
- </p><pre class="screen">systemctl start apache2</pre><h5><a id="id15468"></a>Elasticsearch Database</h5><p>
+ </p><pre class="screen">systemctl start apache2</pre><h5><a id="id15487"></a>Elasticsearch Database</h5><p>
    For backing up and restoring your Elasticsearch database, use the
    Snapshot and Restore module of Elasticsearch.
   </p><p>
@@ -306,7 +306,7 @@ Using database mon</pre></li><li class="listitem"><p>
    For additional information on backing up and restoring an Elasticsearch
    database, refer to the
    <a class="link" href="https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-snapshots.html" target="_top">Elasticsearch documentation</a>.
-  </p><h5><a id="id15522"></a>InfluxDB Database</h5><p>
+  </p><h5><a id="id15541"></a>InfluxDB Database</h5><p>
    For backing up and restoring your InfluxDB database, you can use the InfluxDB
    shell. The shell is part of your InfluxDB distribution. If you installed
    InfluxDB via a package manager, the shell is, by default, installed in the
@@ -358,7 +358,7 @@ Using database mon</pre></li><li class="listitem"><p>
    For additional information on backing up and restoring an InfluxDB database,
    refer to the
    <a class="link" href="https://docs.influxdata.com/influxdb/v1.1/administration/backup_and_restore/" target="_top">InfluxDB documentation</a>.
-  </p><h5><a id="id15571"></a>MariaDB Database</h5><p>
+  </p><h5><a id="id15590"></a>MariaDB Database</h5><p>
    For backing up and restoring your MariaDB database, you can use the
    <span class="command"><strong>mysqldump</strong></span> utility program. <span class="command"><strong>mysqldump</strong></span>
    performs a logical backup that produces a set of SQL statements. These
@@ -391,7 +391,7 @@ Using database mon</pre></li><li class="listitem"><p>
    with <code class="literal">mysqldump</code>, refer to the
    <a class="link" href="https://mariadb.com/kb/en/mariadb/mysqldump/" target="_top">MariaDB
    documentation</a>.
-  </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15602"></a>Configuration Files</h4></div></div></div><p>
+  </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15621"></a>Configuration Files</h4></div></div></div><p>
    Below you find a list of the configuration files of the agents and the
    individual services included in the Monitoring Service. Back up these files
    at least after you have installed and configured <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
@@ -416,7 +416,7 @@ Using database mon</pre></li><li class="listitem"><p>
  /etc/monasca-thresh/thresh.yaml
  /etc/elasticsearch/elasticsearch.yml
  /etc/elasticsearch/logging.yml
- /etc/kibana/kibana.yml</pre><h5><a id="id15609"></a>Recovery</h5><p>
+ /etc/kibana/kibana.yml</pre><h5><a id="id15628"></a>Recovery</h5><p>
    If you need to recover the configuration of one or more agents or services,
    the recommended procedure is as follows:
   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
@@ -428,7 +428,7 @@ Using database mon</pre></li><li class="listitem"><p>
      according to the table above.
     </p></li><li class="listitem"><p>
      Start the agents or services again.
-    </p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15620"></a>Dashboards</h4></div></div></div><p>
+    </p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a id="id15639"></a>Dashboards</h4></div></div></div><p>
    Kibana can persist customized log dashboard designs to the Elasticsearch
    database, and allows you to recall them. For details on saving, loading, and
    sharing log management dashboards, refer to the

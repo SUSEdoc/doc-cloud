@@ -9,7 +9,7 @@ body { background-image: url('static/images/draft.png');
        /* background-position: center center; */
      }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><link rel="prev" href="self-assign-certs.html" title="Chapter 3. Generate SUSE OpenStack Cloud Self Signed Certificate" /><link rel="next" href="deploy-cert.html" title="Deploying the certificate" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Sign server and client certificates</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="self-assign-certs.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Generate SUSE <span class="productname">OpenStack</span> Cloud Self Signed Certificate</th><td width="20%" align="right"> <a accesskey="n" href="deploy-cert.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="sign-server-client-cert"></a>Sign server and client certificates</h2></div></div></div><p>
       This section is if you are the perspective certificate authority (CA).
-    </p><div class="procedure"><a id="id14263"></a><p class="title"><strong>Procedure 3.6. Prepare config file</strong></p><ol class="procedure" type="1"><li class="step"><p>
+    </p><div class="procedure"><a id="id14282"></a><p class="title"><strong>Procedure 3.6. Prepare config file</strong></p><ol class="procedure" type="1"><li class="step"><p>
           Modify the <code class="filename">penssl.cnf</code> config file and add a
           line to the <code class="literal">[ v3_req ]</code> section:
         </p><pre class="screen">
@@ -35,7 +35,7 @@ body { background-image: url('static/images/draft.png');
           your control plane.
         </p></li><li class="step"><p>
           Save and close the file after you have those entered correctly.
-        </p></li></ol></div><div class="procedure"><a id="id14278"></a><p class="title"><strong>Procedure 3.7. Create a key</strong></p><ul class="procedure"><li class="step"><p>
+        </p></li></ol></div><div class="procedure"><a id="id14297"></a><p class="title"><strong>Procedure 3.7. Create a key</strong></p><ul class="procedure"><li class="step"><p>
            Create a key minus the <code class="literal">-aes256</code> option so that
            you are not presented with a password each time you restart a
            service. (i.e. Apache service) also in 2048 bit so it is quicker to decrypt.
@@ -43,7 +43,7 @@ body { background-image: url('static/images/draft.png');
            # cd ~/ssl/root/ca
            # openssl genrsa -out private/susedojo-com.key.pem 2048
            # chmod 400 private/susedojo-com.key.pem
-         </pre></li></ul></div><div class="procedure"><a id="id14284"></a><p class="title"><strong>Procedure 3.8. Create a certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+         </pre></li></ul></div><div class="procedure"><a id="id14303"></a><p class="title"><strong>Procedure 3.8. Create a certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
             Use the private key we just created to create a certificate
             signing request (CSR). The common name must be a fully qualified
             domain name (i.e. www.susedojo.com) The Organization Name must be
@@ -108,7 +108,7 @@ body { background-image: url('static/images/draft.png');
           </p><pre class="screen">
             V       190808042108Z           1000    unknown
             /C=US/ST=Idaho/O=SUSEDojo/OU=dojo/CN=susedojo.com/emailAddress=admin@susedojo.com
-          </pre></li></ol></div><div class="procedure"><a id="id14299"></a><p class="title"><strong>Procedure 3.9. Verifying the certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
+          </pre></li></ol></div><div class="procedure"><a id="id14318"></a><p class="title"><strong>Procedure 3.9. Verifying the certificate</strong></p><ol class="procedure" type="1"><li class="step"><p>
              Enter the following in your terminal:
            </p><pre class="screen">
              # openssl x509 -noout -text -in certs/susedojo-com.cert.pem

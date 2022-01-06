@@ -10,13 +10,13 @@ body { background-image: url('static/images/draft.png');
      }</style><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 9 Documentation" /><link rel="up" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="prev" href="soc-monitoring.html" title="Chapter 4. SUSE OpenStack Cloud Monitoring" /><link rel="next" href="basic-usage-scenario.html" title="Basic Usage Scenario" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Architecture</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="soc-monitoring.html">Prev</a> </td><th width="60%" align="center">Chapter 4. SUSE <span class="productname">OpenStack</span> Cloud Monitoring</th><td width="20%" align="right"> <a accesskey="n" href="basic-usage-scenario.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="monitoring-architecture"></a>Architecture</h2></div></div></div><p>
   The following illustration provides an overview of the main components of
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring and their interaction:
- </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-cmm-architecture.png" alt="cmm-architecture.png" /></div></div><h5><a id="id14648"></a><span class="productname">OpenStack</span></h5><p>
+ </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-cmm-architecture.png" alt="cmm-architecture.png" /></div></div><h5><a id="id14667"></a><span class="productname">OpenStack</span></h5><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring relies on <span class="productname">OpenStack</span> as
   technology for building cloud computing platforms for public and private
   clouds. <span class="productname">OpenStack</span> consists of a series of interrelated projects delivering
   various components for a cloud infrastructure solution and allowing for the
   deployment and management of Infrastructure as a Service (IaaS) platforms.
- </p><h5><a id="id14656"></a>Monitoring Service</h5><p>
+ </p><h5><a id="id14675"></a>Monitoring Service</h5><p>
   The Monitoring Service is the central <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
   component. It is responsible for receiving, persisting,
   and processing monitoring and log data, as well as providing the data to the
@@ -98,7 +98,7 @@ body { background-image: url('static/images/draft.png');
      A Web browser-based analytics and search interface to the Log Database.
     </p></dd><dt><span class="term">Log Database</span></dt><dd><p>
      An Elasticsearch database for storing the log data.
-    </p></dd></dl></div><h5><a id="id14734"></a>horizon Plugin</h5><p>
+    </p></dd></dl></div><h5><a id="id14753"></a>horizon Plugin</h5><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring comes with a plugin for the
   <span class="productname">OpenStack</span> horizon dashboard. The plugin extends the main dashboard in
   <span class="productname">OpenStack</span> with a view for monitoring. This enables <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud Crowbar</span></span> Monitoring
@@ -115,7 +115,7 @@ body { background-image: url('static/images/draft.png');
     </p></dd><dt><span class="term">Kibana (for log data)</span></dt><dd><p>
      An open source analytics and visualization platform
      designed to work with Elasticsearch.
-    </p></dd></dl></div><h5><a id="id14757"></a>Metrics Agent</h5><p>
+    </p></dd></dl></div><h5><a id="id14776"></a>Metrics Agent</h5><p>
   A Metrics Agent is required for retrieving metrics data from the host on
   which it runs and sending the metrics data to the Monitoring Service. The
   agent supports metrics from a variety of sources as well as a number of
@@ -127,7 +127,7 @@ body { background-image: url('static/images/draft.png');
   The agent functionality is fully integrated into the source code base of the
   monasca project. For details, refer to the
   <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_top">monasca Wiki</a>.
- </p><h5><a id="id14762"></a>Log Agent</h5><p>
+ </p><h5><a id="id14781"></a>Log Agent</h5><p>
   A Log Agent is needed for collecting log data from the host on which it runs
   and forwarding the log data to the Monitoring Service for further processing.
   It can be installed on each virtual or physical server from which log data is
@@ -136,7 +136,7 @@ body { background-image: url('static/images/draft.png');
   The agent functionality is fully integrated into the source code base of the
   monasca project. For details, refer to the
   <a class="link" href="https://wiki.openstack.org/wiki/Monasca" target="_top">monasca Wiki</a>.
- </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id14766"></a>Agents and Services</h3></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
+ </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="id14785"></a>Agents and Services</h3></div></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Service Name</th><th>Description</th></tr></thead><tbody><tr><td><code class="literal">zookeeper</code>
       </td><td>Centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services.</td></tr><tr><td><code class="literal">storm-nimbus</code>
       </td><td>Storm is a distributed real-time computation system for processing large volumes of high-velocity data. The Storm Nimbus daemon is responsible for distributing code around a cluster, assigning tasks to machines, and monitoring for failures. </td></tr><tr><td><code class="literal">storm-supervisor</code>
       </td><td>The Storm supervisor listens for work assigned to its machine and starts and stops worker processes as necessary based on what Nimbus has assigned to it.</td></tr><tr><td><code class="literal">mariadb</code>
