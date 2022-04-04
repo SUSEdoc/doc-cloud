@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Limiting Users' Access Rights | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Deploying With Crowbar" /><meta name="chapter-title" content="Chapter 13. Limiting Users' Access Rights" /><meta name="description" content="To limit users' access rights (or to define more fine-grained access rights), you can use Role Based Access Control (RBAC, only available with Keystone v3). In the example below, we will create a new role (ProjectAdmin). It allows users with this role to add and remove other users to the Member role…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-ostack.html" title="Part III. Setting Up OpenStack Nodes and Services" /><link rel="prev" href="cha-depl-ostack.html" title="Chapter 12. Deploying the OpenStack Services" /><link rel="next" href="cha-depl-ostack-configs.html" title="Chapter 14. Configuration Files for OpenStack Services" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Limiting Users' Access Rights | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
+<meta name="title" content="Limiting Users' Access Rights | SUSE OpenStack Cloud C…" />
+<meta name="description" content="To limit users' access rights (or to define more fine-grained access rights), you can use Role Based Access Control (RBAC, only available with Keystone v3). In…" />
+<meta name="product-name" content="SUSE OpenStack Cloud Crowbar" />
+<meta name="product-number" content="8" />
+<meta name="book-title" content="Deploying With Crowbar" />
+<meta name="chapter-title" content="Chapter 13. Limiting Users' Access Rights" />
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
+<meta name="tracker-type" content="bsc" />
+<meta name="tracker-bsc-component" content="Documentation" />
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
+<meta property="og:title" content="Limiting Users' Access Rights | SUSE OpenStack Cloud C…" />
+<meta property="og:description" content="To limit users' access rights (or to define more fine-grained access rights), you can use Role Based Access Control (RBAC, only available with Keystone v3). In…" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Limiting Users' Access Rights | SUSE OpenStack Cloud C…" />
+<meta name="twitter:description" content="To limit users' access rights (or to define more fine-grained access rights), you can use Role Based Access Control (RBAC, only available with Keystone v3). In…" />
+<link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-ostack.html" title="Part III. Setting Up OpenStack Nodes and Services" /><link rel="prev" href="cha-depl-ostack.html" title="Chapter 12. Deploying the OpenStack Services" /><link rel="next" href="cha-depl-ostack-configs.html" title="Chapter 14. Configuration Files for OpenStack Services" />
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -187,5 +204,5 @@ hljs.configure({
       changed. If you do change them please refer to the OSSN-0075 <a class="link" href="https://wiki.openstack.org/wiki/OSSN/OSSN-0075" target="_blank">https://wiki.openstack.org/wiki/OSSN/OSSN-0075</a> for details
       on the exact scope of the security issue.
       </p></div></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha-depl-ostack-configs.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 14 </span>Configuration Files for <span class="productname">OpenStack</span> Services</span></a><a class="nav-link" href="cha-depl-ostack.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 12 </span>Deploying the <span class="productname">OpenStack</span> Services</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
+        2022 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

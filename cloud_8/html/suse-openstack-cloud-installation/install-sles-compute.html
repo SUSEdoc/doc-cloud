@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing SLES Compute | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="8" /><meta name="book-title" content="Installing with Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 19. Installing SLES Compute" /><meta name="description" content="SUSE OpenStack Cloud 8 supports SLES compute nodes, specifically SUSE Linux Enterprise Server 12 SP3. SUSE does not ship a SLES ISO with SUSE OpenStack Cloud so you will need to download a copy of the SLES ISO (SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso) and the SLES SDK ISO (SLE-12-SP3-SDK-DVD-x86_64…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="install-swift.html" title="Chapter 18. Installation for SUSE OpenStack Cloud Entry-scale Cloud with Swift Only" /><link rel="next" href="install-ardana-manila.html" title="Chapter 20. Installing Manila and Creating Manila Shares" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing SLES Compute | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
+<meta name="title" content="Installing SLES Compute | SUSE OpenStack Cloud 8" />
+<meta name="description" content="SUSE OpenStack Cloud 8 supports SLES compute nodes, specifically SUSE Linux Enterprise Server 12 SP3. SUSE does not ship a SLES ISO with SUSE OpenStack Cloud s…" />
+<meta name="product-name" content="SUSE OpenStack Cloud" />
+<meta name="product-number" content="8" />
+<meta name="book-title" content="Installing with Cloud Lifecycle Manager" />
+<meta name="chapter-title" content="Chapter 19. Installing SLES Compute" />
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
+<meta name="tracker-type" content="bsc" />
+<meta name="tracker-bsc-component" content="Documentation" />
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
+<meta property="og:title" content="Installing SLES Compute | SUSE OpenStack Cloud 8" />
+<meta property="og:description" content="SUSE OpenStack Cloud 8 supports SLES compute nodes, specifically SUSE Linux Enterprise Server 12 SP3. SUSE does not ship a SLES ISO with SUSE OpenStack Cloud s…" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Installing SLES Compute | SUSE OpenStack Cloud 8" />
+<meta name="twitter:description" content="SUSE OpenStack Cloud 8 supports SLES compute nodes, specifically SUSE Linux Enterprise Server 12 SP3. SUSE does not ship a SLES ISO with SUSE OpenStack Cloud s…" />
+<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="install-swift.html" title="Chapter 18. Installation for SUSE OpenStack Cloud Entry-scale Cloud with Swift Only" /><link rel="next" href="install-ardana-manila.html" title="Chapter 20. Installing Manila and Creating Manila Shares" />
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -348,5 +365,5 @@ passwd ardana</pre></div></div><div class="sect2" id="id-1.4.5.14.5.7"><div clas
    Now test passwordless SSH from the deployer and check your ability to
    remotely execute sudo commands:
   </p><div class="verbatim-wrap"><pre class="screen">ssh ardana@<em class="replaceable ">IP_OF_SLES_NODE</em> "sudo tail -5 /var/log/messages"</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-ardana-manila.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 20 </span>Installing Manila and Creating Manila Shares</span></a><a class="nav-link" href="install-swift.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 18 </span>Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
+        2022 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>

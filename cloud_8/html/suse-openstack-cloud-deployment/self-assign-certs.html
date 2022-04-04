@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Generate SUSE OpenStack Cloud Self Signed Certificate | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud Crowbar" /><meta name="product-number" content="8" /><meta name="book-title" content="Deploying With Crowbar" /><meta name="chapter-title" content="Chapter 18. Generate SUSE OpenStack Cloud Self Signed Certificate" /><meta name="description" content="The purpose of this document is to help set up SSL Support for several services in SUSE OpenStack Cloud. The scope of this document covers all public endpoints in your OpenStack cluster. In most cases you want to have a Secure CA or External CA where your certificates are signed. You will sign with …" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" /><link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-maintenance.html" title="Part V. Maintenance and Support" /><link rel="prev" href="cha-depl-maintenance.html" title="Chapter 17. SUSE OpenStack Cloud Maintenance" /><link rel="next" href="cha-deploy-logs.html" title="Chapter 19. Log Files" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Generate SUSE OpenStack Cloud Self Signed Certificate | Deploying With Crowbar | SUSE OpenStack Cloud Crowbar 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
+<meta name="title" content="Generate SUSE OpenStack Cloud Self Signed Certificate …" />
+<meta name="description" content="The purpose of this document is to help set up SSL Support for several services in SUSE OpenStack Cloud. The scope of this document covers all public endpoints…" />
+<meta name="product-name" content="SUSE OpenStack Cloud Crowbar" />
+<meta name="product-number" content="8" />
+<meta name="book-title" content="Deploying With Crowbar" />
+<meta name="chapter-title" content="Chapter 18. Generate SUSE OpenStack Cloud Self Signed Certificate" />
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
+<meta name="tracker-type" content="bsc" />
+<meta name="tracker-bsc-component" content="Documentation" />
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
+<meta property="og:title" content="Generate SUSE OpenStack Cloud Self Signed Certificate …" />
+<meta property="og:description" content="The purpose of this document is to help set up SSL Support for several services in SUSE OpenStack Cloud. The scope of this document covers all public endpoints…" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Generate SUSE OpenStack Cloud Self Signed Certificate …" />
+<meta name="twitter:description" content="The purpose of this document is to help set up SSL Support for several services in SUSE OpenStack Cloud. The scope of this document covers all public endpoints…" />
+<link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="part-depl-maintenance.html" title="Part V. Maintenance and Support" /><link rel="prev" href="cha-depl-maintenance.html" title="Chapter 17. SUSE OpenStack Cloud Maintenance" /><link rel="next" href="cha-deploy-logs.html" title="Chapter 19. Log Files" />
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -380,5 +397,5 @@ hljs.configure({
       Once this is completed, we recommend automating this process as the
       <code class="literal">Let's Encrypt</code> certificates expire after 90 days.
     </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha-deploy-logs.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 19 </span>Log Files</span></a><a class="nav-link" href="cha-depl-maintenance.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 17 </span>SUSE <span class="productname">OpenStack</span> Cloud Maintenance</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2021 
+        2022 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
