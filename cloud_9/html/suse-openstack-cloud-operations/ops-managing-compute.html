@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Managing Compute | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 6. Managing Compute" /><meta name="description" content="Information about managing and configuring the Compute service." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="ops-managing-identity.html" title="Chapter 5. Managing Identity" /><link rel="next" href="ops-managing-esx.html" title="Chapter 7. Managing ESX" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 9 | Operations Guide CLM | Managing Compute</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Managing Compute | SUSE OpenStack Cloud 9"/>
+<meta name="description" content="Information about managing and configuring the Compute service."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="9"/>
+<meta name="book-title" content="Operations Guide CLM"/>
+<meta name="chapter-title" content="Chapter 6. Managing Compute"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9"/>
+<meta property="og:title" content="Managing Compute | SUSE OpenStack Cloud 9"/>
+<meta property="og:description" content="Information about managing and configuring the Compute service."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing Compute | SUSE OpenStack Cloud 9"/>
+<meta name="twitter:description" content="Information about managing and configuring the Compute service."/>
+<link rel="prev" href="ops-managing-identity.html" title="Chapter 5. Managing Identity"/><link rel="next" href="ops-managing-esx.html" title="Chapter 7. Managing ESX"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -17,9 +34,9 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide CLM"><span class="book-icon">Operations Guide CLM</span></a><span> › </span><a class="crumb" href="ops-managing-compute.html">Managing Compute</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Managing Identity" href="ops-managing-identity.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 7. Managing ESX" href="ops-managing-esx.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide CLM"><span class="book-icon">Operations Guide CLM</span></a><span> › </span><a class="crumb" href="ops-managing-compute.html">Managing Compute</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Managing Identity" href="ops-managing-identity.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 7. Managing ESX" href="ops-managing-esx.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="ops-managing-compute"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Compute</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_compute.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_compute.xml</li><li><span class="ds-label">ID: </span>ops-managing-compute</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="ops-managing-compute.html#aggregates"><span class="number">6.1 </span><span class="name">Managing Compute Hosts using Aggregates and Scheduler Filters</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#topic-vhs-12v-vw"><span class="number">6.2 </span><span class="name">Using Flavor Metadata to Specify CPU Model</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#topic-pqr-lyx-yw"><span class="number">6.3 </span><span class="name">Forcing CPU and RAM Overcommit Settings</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#enabling-the-nova-resize"><span class="number">6.4 </span><span class="name">Enabling the Nova Resize and Migrate Features</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#resize"><span class="number">6.5 </span><span class="name">Enabling ESX Compute Instance(s) Resize Feature</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#gpu-passthrough"><span class="number">6.6 </span><span class="name">GPU passthrough</span></a></span></dt><dt><span class="section"><a href="ops-managing-compute.html#configure-glance"><span class="number">6.7 </span><span class="name">Configuring the Image Service</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_compute.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide CLM</a><span> / </span><a class="crumb" href="ops-managing-compute.html">Managing Compute</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide CLM</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="clm-admin-ui.html" class=" "><span class="title-number">3 </span><span class="title-name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li><a href="third-party-integrations.html" class=" "><span class="title-number">4 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" you-are-here"><span class="title-number">6 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">7 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" "><span class="title-number">8 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">13 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="using-container-as-a-service-overview.html" class=" "><span class="title-number">14 </span><span class="title-name">Managing Container as a Service (Magnum)</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">15 </span><span class="title-name">System Maintenance</span></a></li><li><a href="manage-ops-console.html" class=" "><span class="title-number">16 </span><span class="title-name">Operations Console</span></a></li><li><a href="bura-overview.html" class=" "><span class="title-number">17 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">18 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="ops-managing-compute" data-id-title="Managing Compute"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber">9</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Managing Compute</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-managing_compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Information about managing and configuring the Compute service.
- </p><div class="sect1" id="aggregates"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Compute Hosts using Aggregates and Scheduler Filters</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#aggregates">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-creating_aggregates.xml</li><li><span class="ds-label">ID: </span>aggregates</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="aggregates" data-id-title="Managing Compute Hosts using Aggregates and Scheduler Filters"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.1 </span><span class="title-name">Managing Compute Hosts using Aggregates and Scheduler Filters</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#aggregates">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   OpenStack nova has the concepts of availability zones and host aggregates
   that enable you to segregate your compute hosts. Availability zones are used
   to specify logical separation within your cloud based on the physical
@@ -45,23 +62,23 @@ hljs.configure({
  </p><p>
   This document is going to show you how to set up both a nova host aggregate
   and configure the filter scheduler to further segregate your compute hosts.
- </p><div class="sect2" id="create-agg"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a nova Aggregate</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#create-agg">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-creating_aggregates.xml</li><li><span class="ds-label">ID: </span>create-agg</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="create-agg" data-id-title="Creating a nova Aggregate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.1.1 </span><span class="title-name">Creating a nova Aggregate</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#create-agg">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps will show you how to create a nova aggregate and how to add a
    compute host to it. You can run these steps on any machine that contains the
    OpenStackClient that also has network access to your cloud environment. These
    requirements are met by the Cloud Lifecycle Manager.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Source the administrative creds:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="listitem"><p>
      List your current nova aggregates:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate list</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate list</pre></div></li><li class="listitem"><p>
      Create a new nova aggregate with this syntax:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate create <em class="replaceable ">AGGREGATE-NAME</em></pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate create <em class="replaceable">AGGREGATE-NAME</em></pre></div><p>
      If you wish to have the aggregate appear as an availability zone, then
      specify an availability zone with this syntax:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate create <em class="replaceable ">AGGREGATE-NAME</em> <em class="replaceable ">AVAILABILITY-ZONE-NAME</em></pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate create <em class="replaceable">AGGREGATE-NAME</em> <em class="replaceable">AVAILABILITY-ZONE-NAME</em></pre></div><p>
      So, for example, if you wish to create a new aggregate for your SUSE Linux Enterprise
      compute hosts and you wanted that to show up as the
      <code class="literal">SLE</code> availability zone, you could use this command:
@@ -71,42 +88,42 @@ hljs.configure({
 | Id | Name | Availability Zone | Hosts | Metadata
 +----+------+-------------------+-------+--------------------------+
 | 12 | SLE  | SLE               |       | 'availability_zone=SLE'
-+----+------+-------------------+-------+--------------------------+</pre></div></li><li class="listitem "><p>
++----+------+-------------------+-------+--------------------------+</pre></div></li><li class="listitem"><p>
      Next, you need to add compute hosts to this aggregate so you can start by
      listing your current hosts. You can view the current list of hosts running 
      running the <code class="literal">compute</code> service like this:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack hypervisor list</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack hypervisor list</pre></div></li><li class="listitem"><p>
      You can then add host(s) to your aggregate with this syntax:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate add host <em class="replaceable ">AGGREGATE-NAME</em> <em class="replaceable ">HOST</em></pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack aggregate add host <em class="replaceable">AGGREGATE-NAME</em> <em class="replaceable">HOST</em></pre></div></li><li class="listitem"><p>
      Then you can confirm that this has been completed by listing the details
      of your aggregate:
-    </p><div class="verbatim-wrap"><pre class="screen">openstack aggregate show <em class="replaceable ">AGGREGATE-NAME</em></pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen">openstack aggregate show <em class="replaceable">AGGREGATE-NAME</em></pre></div><p>
      You can also list out your availability zones using this command:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack availability zone list</pre></div></li></ol></div></div><div class="sect2" id="filters"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using nova Scheduler Filters</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#filters">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-creating_aggregates.xml</li><li><span class="ds-label">ID: </span>filters</li></ul></div></div></div></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack availability zone list</pre></div></li></ol></div></section><section class="sect2" id="filters" data-id-title="Using nova Scheduler Filters"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.1.2 </span><span class="title-name">Using nova Scheduler Filters</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#filters">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-creating_aggregates.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The nova scheduler has two filters that can help with differentiating
    between different compute hosts that we'll describe here.
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Filter</th><th>Description</th></tr></thead><tbody><tr><td>AggregateImagePropertiesIsolation</td><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Filter</th><th style="border-bottom: 1px solid ; ">Description</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">AggregateImagePropertiesIsolation</td><td style="border-bottom: 1px solid ; ">
        <p>
         Isolates compute hosts based on image properties and aggregate
         metadata. You can use commas to specify multiple values for the same
         property. The filter will then ensure at least one value matches.
        </p>
-      </td></tr><tr><td>AggregateInstanceExtraSpecsFilter</td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; ">AggregateInstanceExtraSpecsFilter</td><td>
        <p>
         Checks that the aggregate metadata satisfies any extra specifications
         associated with the instance type. This uses
         <code class="literal">aggregate_instance_extra_specs</code>
        </p>
-      </td></tr></tbody></table></div><div id="id-1.5.8.3.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+      </td></tr></tbody></table></div><div id="id-1.5.8.3.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     For details about other available filters, see
     <a class="link" href="http://docs.openstack.org/developer/nova/filter_scheduler.html" target="_blank">Filter
     Scheduler</a>.
    </p></div><p>
    <span class="bold"><strong>Using the AggregateImagePropertiesIsolation
    Filter</strong></span>
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the <code class="literal">~/openstack/my_cloud/config/nova/nova.conf.j2</code>
      file and add <code class="literal">AggregateImagePropertiesIsolation</code> to the
      scheduler_filters section. Example below, in bold:
@@ -132,27 +149,27 @@ scheduler_default_filters = AvailabilityZoneFilter,RetryFilter,ComputeFilter,
     </p><p>
      If these are not added all image properties will be matched against any
      similarly named aggregate metadata.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Add image properties to images that should be scheduled using the above
      filter
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Commit the changes to git:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -a -m "editing nova schedule filters"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -a -m "editing nova schedule filters"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Run the ready deployment playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the nova reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div><p>
    <span class="bold"><strong>Using the AggregateInstanceExtraSpecsFilter
    Filter</strong></span>
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the <code class="literal">~/openstack/my_cloud/config/nova/nova.conf.j2</code>
      file and add <code class="literal">AggregateInstanceExtraSpecsFilter</code> to the
      scheduler_filters section. Example below, in bold:
@@ -163,11 +180,11 @@ scheduler_available_filters = nova.scheduler.filters.all_filters
  DiskFilter,RamFilter,ImagePropertiesFilter,ServerGroupAffinityFilter,
  ServerGroupAntiAffinityFilter,ComputeCapabilitiesFilter,NUMATopologyFilter,
  <span class="bold"><strong>AggregateInstanceExtraSpecsFilter</strong></span>
-...</pre></div></li><li class="listitem "><p>
+...</pre></div></li><li class="listitem"><p>
      There is no additional configuration needed because the following is true:
-    </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+    </p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
        The filter assumes <code class="literal">:</code> is a separator
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        The filter will match all simple keys in extra_specs plus all keys with
        a separator if the prefix is
        <code class="literal">aggregate_instance_extra_specs</code> - for example,
@@ -175,22 +192,22 @@ scheduler_available_filters = nova.scheduler.filters.all_filters
        <code class="literal">aggregate_instance_extra_specs:image_type=SLE</code> will
        both be matched against aggregate metadata
        <code class="literal">image_type=SLE</code>
-      </p></li></ol></div></li><li class="listitem "><p>
+      </p></li></ol></div></li><li class="listitem"><p>
      Add <code class="literal">extra_specs</code> to flavors that should be scheduled
      according to the above.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Commit the changes to git:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -a -m "Editing nova scheduler filters"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -a -m "Editing nova scheduler filters"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Run the ready deployment playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the nova reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts novan-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect1" id="topic-vhs-12v-vw"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Flavor Metadata to Specify CPU Model</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#topic-vhs-12v-vw">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-using_flavor_metadata.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-using_flavor_metadata.xml</li><li><span class="ds-label">ID: </span>topic-vhs-12v-vw</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts novan-reconfigure.yml</pre></div></li></ol></div></section></section><section class="sect1" id="topic-vhs-12v-vw" data-id-title="Using Flavor Metadata to Specify CPU Model"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.2 </span><span class="title-name">Using Flavor Metadata to Specify CPU Model</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#topic-vhs-12v-vw">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-using_flavor_metadata.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <code class="literal">Libvirt</code> is a collection of software used in <span class="productname">OpenStack</span> to
   manage virtualization. It has the ability to emulate a host CPU model in a
   guest VM. In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> nova, the ComputeCapabilitiesFilter limits this
@@ -216,57 +233,57 @@ scheduler_available_filters = nova.scheduler.filters.all_filters
   booted on. This allows easier live migration of virtual machines. Because of
   this limitation, only some of the features of a CPU are exposed to the guest.
   Requesting particular CPU features is not supported.
- </p><div class="sect2" id="id-1.5.8.4.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Editing the flavor metadata in the horizon dashboard</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#id-1.5.8.4.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-using_flavor_metadata.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-using_flavor_metadata.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="id-1.5.8.4.5" data-id-title="Editing the flavor metadata in the horizon dashboard"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.2.1 </span><span class="title-name">Editing the flavor metadata in the horizon dashboard</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#id-1.5.8.4.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-using_flavor_metadata.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps can be used to edit a flavor's metadata in the horizon
    dashboard to add the <code class="literal">extra_specs</code> for a
    <code class="literal">cpu_model</code>:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Access the horizon dashboard and log in with admin credentials.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Access the Flavors menu by (A) clicking on the menu button, (B) navigating
      to the Admin section, and then (C) clicking on Flavors:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-hos.docs-operations-flavor_extraspecs_1.png" target="_blank"><img src="images/media-hos.docs-operations-flavor_extraspecs_1.png" width="" /></a></div></div></li><li class="listitem "><p>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-hos.docs-operations-flavor_extraspecs_1.png"><img src="images/media-hos.docs-operations-flavor_extraspecs_1.png" alt="Image" title="Image"/></a></div></div></li><li class="listitem"><p>
      In the list of flavors, choose the flavor you wish to edit and click on
      the entry under the Metadata column:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-hos.docs-operations-flavor_extraspecs_2.png" target="_blank"><img src="images/media-hos.docs-operations-flavor_extraspecs_2.png" width="" /></a></div></div><div id="id-1.5.8.4.5.3.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-hos.docs-operations-flavor_extraspecs_2.png"><img src="images/media-hos.docs-operations-flavor_extraspecs_2.png" alt="Image" title="Image"/></a></div></div><div id="id-1.5.8.4.5.3.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       You can also create a new flavor and then choose that one to edit.
-     </p></div></li><li class="listitem "><p>
+     </p></div></li><li class="listitem"><p>
      In the Custom field, enter <code class="literal">hw:cpu_model</code> and then click
      on the <code class="literal">+</code> (plus) sign to continue:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-hos.docs-operations-flavor_extraspecs_3.png" target="_blank"><img src="images/media-hos.docs-operations-flavor_extraspecs_3.png" width="" /></a></div></div></li><li class="listitem "><p>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-hos.docs-operations-flavor_extraspecs_3.png"><img src="images/media-hos.docs-operations-flavor_extraspecs_3.png" alt="Image" title="Image"/></a></div></div></li><li class="listitem"><p>
      Then you will want to enter the CPU model into the field that you wish to
      use and then click Save:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-hos.docs-operations-flavor_extraspecs_4.png" target="_blank"><img src="images/media-hos.docs-operations-flavor_extraspecs_4.png" width="" /></a></div></div></li></ol></div></div></div><div class="sect1" id="topic-pqr-lyx-yw"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Forcing CPU and RAM Overcommit Settings</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#topic-pqr-lyx-yw">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-forcing_overcommit.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-forcing_overcommit.xml</li><li><span class="ds-label">ID: </span>topic-pqr-lyx-yw</li></ul></div></div></div></div><p>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-hos.docs-operations-flavor_extraspecs_4.png"><img src="images/media-hos.docs-operations-flavor_extraspecs_4.png" alt="Image" title="Image"/></a></div></div></li></ol></div></section></section><section class="sect1" id="topic-pqr-lyx-yw" data-id-title="Forcing CPU and RAM Overcommit Settings"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.3 </span><span class="title-name">Forcing CPU and RAM Overcommit Settings</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#topic-pqr-lyx-yw">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-forcing_overcommit.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supports overcommitting of CPU and RAM resources on compute nodes.
   Overcommitting is a technique of allocating more virtualized CPUs and/or
   memory than there are physical resources.
  </p><p>
   The default settings for this are:
- </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Setting</th><th>Default Value</th><th>Description</th></tr></thead><tbody><tr><td>cpu_allocation_ratio</td><td>16</td><td>
+ </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Setting</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Default Value</th><th style="border-bottom: 1px solid ; ">Description</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">cpu_allocation_ratio</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">16</td><td style="border-bottom: 1px solid ; ">
       <p>
        Virtual CPU to physical CPU allocation ratio which affects all CPU
        filters. This configuration specifies a global ratio for CoreFilter.
        For AggregateCoreFilter, it will fall back to this configuration value
        if no per-aggregate setting found.
       </p>
-      <div id="id-1.5.8.5.4.1.5.1.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+      <div id="id-1.5.8.5.4.1.5.1.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
         This can be set per-compute, or if set to <code class="literal">0.0</code>, the
         value set on the scheduler node(s) will be used and defaulted to
         <code class="literal">16.0</code>.
        </p></div>
-     </td></tr><tr><td>ram_allocation_ratio</td><td>1.0</td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">ram_allocation_ratio</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">1.0</td><td style="border-bottom: 1px solid ; ">
       <p>
        Virtual RAM to physical RAM allocation ratio which affects all RAM
        filters. This configuration specifies a global ratio for RamFilter. For
        AggregateRamFilter, it will fall back to this configuration value if no
        per-aggregate setting found.
       </p>
-      <div id="id-1.5.8.5.4.1.5.2.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+      <div id="id-1.5.8.5.4.1.5.2.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
         This can be set per-compute, or if set to <code class="literal">0.0</code>, the
         value set on the scheduler node(s) will be used and defaulted to
         <code class="literal">1.5</code>.
        </p></div>
-     </td></tr><tr><td>disk_allocation_ratio</td><td>1.0</td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; ">disk_allocation_ratio</td><td style="border-right: 1px solid ; ">1.0</td><td>
       <p>
        This is the virtual disk to physical disk allocation ratio used by the
        disk_filter.py script to determine if a host has sufficient disk space
@@ -277,48 +294,48 @@ scheduler_available_filters = nova.scheduler.filters.all_filters
        be set to a value between 0.0 and 1.0 in order to preserve a percentage
        of the disk for uses other than instances.
       </p>
-      <div id="id-1.5.8.5.4.1.5.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+      <div id="id-1.5.8.5.4.1.5.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
         This can be set per-compute, or if set to <code class="literal">0.0</code>, the
         value set on the scheduler node(s) will be used and defaulted to
         <code class="literal">1.0</code>.
        </p></div>
-     </td></tr></tbody></table></div><div class="sect2" id="change"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing the overcommit ratios for your entire environment</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#change">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-forcing_overcommit.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-forcing_overcommit.xml</li><li><span class="ds-label">ID: </span>change</li></ul></div></div></div></div><p>
+     </td></tr></tbody></table></div><section class="sect2" id="change" data-id-title="Changing the overcommit ratios for your entire environment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.3.1 </span><span class="title-name">Changing the overcommit ratios for your entire environment</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#change">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-forcing_overcommit.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If you wish to change the CPU and/or RAM overcommit ratio settings for your
    entire environment then you can do so via your Cloud Lifecycle Manager with these
    steps.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the nova configuration settings located in this file:
-    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/nova/nova.conf.j2</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/nova/nova.conf.j2</pre></div></li><li class="listitem"><p>
      Add or edit the following lines to specify the ratios you wish to use:
     </p><div class="verbatim-wrap"><pre class="screen">cpu_allocation_ratio = 16
-ram_allocation_ratio = 1.0</pre></div></li><li class="listitem "><p>
+ram_allocation_ratio = 1.0</pre></div></li><li class="listitem"><p>
      Commit your configuration to the Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "setting nova overcommit settings"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "setting nova overcommit settings"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the nova reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect1" id="enabling-the-nova-resize"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling the Nova Resize and Migrate Features</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#enabling-the-nova-resize">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-enabling_resize.xml</li><li><span class="ds-label">ID: </span>enabling-the-nova-resize</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml</pre></div></li></ol></div></section></section><section class="sect1" id="enabling-the-nova-resize" data-id-title="Enabling the Nova Resize and Migrate Features"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.4 </span><span class="title-name">Enabling the Nova Resize and Migrate Features</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#enabling-the-nova-resize">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The nova resize and migrate features are disabled by default. If you wish
   to utilize these options, these steps will show you how to enable it in
   your cloud.
  </p><p>
   The two features below are disabled by default:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <span class="bold"><strong>Resize</strong></span> - this feature allows you to
     change the size of a Compute instance by changing its flavor. See the
     <a class="link" href="http://docs.openstack.org/user-guide/cli_change_the_size_of_your_server.html" target="_blank">OpenStack
     User Guide</a> for more details on its use.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="bold"><strong>Migrate</strong></span> - read about the differences
     between "live" migration (enabled by default) and regular migration
     (disabled by default) in <a class="xref" href="system-maintenance.html#liveInstMigration" title="15.1.3.3. Live Migration of Instances">Section 15.1.3.3, “Live Migration of Instances”</a>.
@@ -326,63 +343,63 @@ ram_allocation_ratio = 1.0</pre></div></li><li class="listitem "><p>
   These two features are disabled by default because they require passwordless
   SSH access between Compute hosts with the user having access to the file
   systems to perform the copy.
- </p><div class="sect2" id="enable"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling Nova Resize and Migrate</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#enable">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-enabling_resize.xml</li><li><span class="ds-label">ID: </span>enable</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="enable" data-id-title="Enabling Nova Resize and Migrate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.4.1 </span><span class="title-name">Enabling Nova Resize and Migrate</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#enable">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If you wish to enable these features, use these steps on your lifecycle
    manager. This will deploy a set of public and private SSH keys to the
    Compute hosts, allowing the <code class="literal">nova</code> user SSH access between
    each of your Compute hosts.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run the nova reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml --extra-vars nova_migrate_enabled=true</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml --extra-vars nova_migrate_enabled=true</pre></div></li><li class="listitem"><p>
      To ensure that the resize and migration options show up in the horizon
      dashboard, run the horizon reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></div><div class="sect2" id="disable"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disabling Nova Resize and Migrate</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#disable">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-enabling_resize.xml</li><li><span class="ds-label">ID: </span>disable</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></section><section class="sect2" id="disable" data-id-title="Disabling Nova Resize and Migrate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.4.2 </span><span class="title-name">Disabling Nova Resize and Migrate</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#disable">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This feature is disabled by default. However, if you have previously enabled
    it and wish to re-disable it, you can use these steps on your lifecycle
    manager. This will remove the set of public and private SSH keys that were
    previously added to the Compute hosts, removing the <code class="literal">nova</code>
    users SSH access between each of your Compute hosts.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run the nova reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml --extra-vars nova_migrate_enabled=false</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts nova-reconfigure.yml --extra-vars nova_migrate_enabled=false</pre></div></li><li class="listitem"><p>
      To ensure that the resize and migrate options are removed from the horizon
      dashboard, run the horizon reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect1" id="resize"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling ESX Compute Instance(s) Resize Feature</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#resize">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize_esx_compute.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-enabling_resize_esx_compute.xml</li><li><span class="ds-label">ID: </span>resize</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></section></section><section class="sect1" id="resize" data-id-title="Enabling ESX Compute Instance(s) Resize Feature"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.5 </span><span class="title-name">Enabling ESX Compute Instance(s) Resize Feature</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#resize">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize_esx_compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The resize of ESX compute instance is disabled by default. If you want to
   utilize this option, these steps will show you how to configure and enable
   it in your cloud.
  </p><p>
   The following feature is disabled by default:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <span class="bold"><strong>Resize</strong></span> - this feature allows you to
     change the size of a Compute instance by changing its flavor. See the
     <a class="link" href="http://docs.openstack.org/user-guide/cli_change_the_size_of_your_server.html" target="_blank">OpenStack
     User Guide</a> for more details on its use.
-   </p></li></ul></div><div class="sect2" id="id-1.5.8.7.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Procedure</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#id-1.5.8.7.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize_esx_compute.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-enabling_resize_esx_compute.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></li></ul></div><section class="sect2" id="id-1.5.8.7.5" data-id-title="Procedure"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.5.1 </span><span class="title-name">Procedure</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#id-1.5.8.7.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-enabling_resize_esx_compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If you want to configure and re-size ESX compute instance(s), perform the
    following steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the <code class="literal">~ /openstack/my_cloud/config/nova/nova.conf.j2</code> to
      add the following parameter under <span class="bold"><strong>Policy</strong></span>:
     </p><div class="verbatim-wrap"><pre class="screen"># Policy
-allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
+allow_resize_to_same_host=True</pre></div></li><li class="listitem"><p>
      Commit your configuration:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "&lt;commit message&gt;"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "&lt;commit message&gt;"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div><p>
@@ -392,13 +409,13 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
      By default an ESX console log is not set up. For more details about
      Hypervisor setup, refer to the <a class="link" href="https://docs.openstack.org/nova/rocky/admin/" target="_blank">OpenStack
      documentation</a>.
-   </p></li></ol></div></div></div><div class="sect1" id="gpu-passthrough"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GPU passthrough</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#gpu-passthrough">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-gpu_passthrough.xml</li><li><span class="ds-label">ID: </span>gpu-passthrough</li></ul></div></div></div></div><p>
+   </p></li></ol></div></section></section><section class="sect1" id="gpu-passthrough" data-id-title="GPU passthrough"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.6 </span><span class="title-name">GPU passthrough</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#gpu-passthrough">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     GPU passthrough for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> provides the nova instance
     direct access to the GPU device for increased performance.
   </p><p>
     This section demonstrates the steps to pass
     through a Nvidia GPU card supported by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>,
-  </p><div id="id-1.5.8.8.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.5.8.8.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       Resizing the VM to the same host with the same
       PCI card is not supported with PCI passthrough.
     </p></div><p>
@@ -406,13 +423,13 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
     9 Compute Node: preparing the Compute Node, preparing nova
     via the input model updates and glance. Ensure you follow the
     below procedures in sequence:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      <a class="xref" href="ops-managing-compute.html#clm-prepare-comp-node" title="Preparing the Compute Node">Procedure 6.1, “Preparing the Compute Node”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="ops-managing-compute.html#clm-prep-comp-input-model" title="6.6.1. Preparing nova via the input model updates">Section 6.6.1, “Preparing nova via the input model updates”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="ops-managing-compute.html#clm-create-flavor" title="6.6.2. Create a flavor">Section 6.6.2, “Create a flavor”</a>
-    </p></li></ol></div><div class="procedure " id="clm-prepare-comp-node"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 6.1: </span><span class="name">Preparing the Compute Node </span><a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-prepare-comp-node">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p></li></ol></div><div class="procedure" id="clm-prepare-comp-node" data-id-title="Preparing the Compute Node"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 6.1: </span><span class="title-name">Preparing the Compute Node </span></span><a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-prepare-comp-node">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
             There should be no kernel drivers or binaries with direct access to the
             PCI device. If there are kernel modules, ensure they are blacklisted.
           </p><p>
@@ -423,7 +440,7 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
             The file location and its contents are important, however the name of the file
             is your choice. Other drivers can be blacklisted in the same manner,
             including Nvidia drivers.
-          </p></li><li class="step "><p>
+          </p></li><li class="step"><p>
             On the host, <code class="literal">iommu_groups</code> is necessary and may
             already be enabled. To check if IOMMU is enabled, run the following
             commands:
@@ -438,13 +455,13 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
             <code class="literal">GRUB_CMDLINE_LINUX_DEFAULT</code> variable.
             Run:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code> update-bootloader</pre></div><p>
             Reboot to enable <code class="literal">iommu_groups</code>.
-          </p></li><li class="step "><p>
+          </p></li><li class="step"><p>
             After the reboot, check that IOMMU is enabled:
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>virt-host-validate
         .....
         QEMU: Checking if IOMMU is enabled by kernel
         : PASS
-        .....</pre></div></li><li class="step "><p>
+        .....</pre></div></li><li class="step"><p>
             Confirm IOMMU groups are available by finding the group associated with
             your PCI device (for example Nvidia GPU):
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>lspci -nn | grep -i nvidia
@@ -452,10 +469,10 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
         a1)</pre></div><p>
             In this example, <code class="literal">84:00.0</code> is the address of the PCI device. The vendorID
             is <code class="literal">10de</code>. The product ID is <code class="literal">1db4</code>.
-          </p></li><li class="step "><p>
+          </p></li><li class="step"><p>
             Confirm that the devices are available for passthrough:
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls -ld /sys/kernel/iommu_groups/*/devices/*84:00.?/
-        drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:84:00.0/</pre></div></li></ol></div></div><div class="sect2" id="clm-prep-comp-input-model"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparing nova via the input model updates</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-prep-comp-input-model">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-gpu_passthrough.xml</li><li><span class="ds-label">ID: </span>clm-prep-comp-input-model</li></ul></div></div></div></div><p>
+        drwxr-xr-x 3 root root 0 Nov 19 17:00 /sys/kernel/iommu_groups/56/devices/0000:84:00.0/</pre></div></li></ol></div></div><section class="sect2" id="clm-prep-comp-input-model" data-id-title="Preparing nova via the input model updates"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.6.1 </span><span class="title-name">Preparing nova via the input model updates</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-prep-comp-input-model">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit source document"> </a></div></div></div></div></div><p>
         To implement the required configuration, log into the Cloud Lifecycle Manager node and update
         the Cloud Lifecycle Manager model files to enable GPU passthrough for compute nodes.
       </p><p>
@@ -523,17 +540,17 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
                   - vendor_id: 10de
                     product_id: 1db4
                     pf_mode: type-PCI
-                    name: c1</pre></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+                    name: c1</pre></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
             Check out the site branch of the local git repository and
             change to the correct directory:
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack
         <code class="prompt user">ardana &gt; </code>git checkout site
-        <code class="prompt user">ardana &gt; </code>cd ~/openstack/my_cloud/definition/data/</pre></div></li><li class="step "><p>
+        <code class="prompt user">ardana &gt; </code>cd ~/openstack/my_cloud/definition/data/</pre></div></li><li class="step"><p>
             Open the file containing the servers list, for example <code class="filename">servers.yml</code>,
             with your chosen editor. Save the changes to the file and
             commit to the local git repository:
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A</pre></div><p> Confirm that the changes to the tree are relevant changes and commit:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git status
-        <code class="prompt user">ardana &gt; </code>git commit -m "your commit message goes here in quotes"</pre></div></li><li class="step "><p>
+        <code class="prompt user">ardana &gt; </code>git commit -m "your commit message goes here in quotes"</pre></div></li><li class="step"><p>
             Enable your changes by running the necessary playbooks:
           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
         <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
@@ -555,10 +572,10 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
         node using the above example post-playbook run:
       </p><div class="verbatim-wrap"><pre class="screen">        [pci]
         passthrough_whitelist = [{"vendor_id": "10de", "product_id": "1db4"}]
-        alias = {"vendor_id": "10de", "name": "c1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><div id="id-1.5.8.8.8.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+        alias = {"vendor_id": "10de", "name": "c1", "device_type": "type-PCI", "product_id": "1db4"}</pre></div><div id="id-1.5.8.8.8.12" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
           After running the <code class="filename">site.yml</code> playbook above,
           reboot the compute nodes that are configured with Intel PCI devices.
-        </p></div></div><div class="sect2" id="clm-create-flavor"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a flavor</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-create-flavor">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-compute-gpu_passthrough.xml</li><li><span class="ds-label">ID: </span>clm-create-flavor</li></ul></div></div></div></div><p>
+        </p></div></section><section class="sect2" id="clm-create-flavor" data-id-title="Create a flavor"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.6.2 </span><span class="title-name">Create a flavor</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#clm-create-flavor">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-compute-gpu_passthrough.xml" title="Edit source document"> </a></div></div></div></div></div><p>
         For GPU passthrough, set the <code class="literal">pci_passthrough:alias</code>
         property. You can do so for an existing flavor or create a new flavor
         as shown in the example below:
@@ -568,14 +585,14 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
       should be assigned.
       </p><p>
         Boot an instance using the flavor created above:
-      </p><div class="verbatim-wrap"><pre class="screen">         <code class="prompt user">ardana &gt; </code>openstack server create --flavor gpuflavor --image sles12sp4 --key-name key --nic net-id=$net_id gpu-instance-1</pre></div></div></div><div class="sect1" id="configure-glance"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the Image Service</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#configure-glance">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-image-configure_glance.xml</li><li><span class="ds-label">ID: </span>configure-glance</li></ul></div></div></div></div><p>
+      </p><div class="verbatim-wrap"><pre class="screen">         <code class="prompt user">ardana &gt; </code>openstack server create --flavor gpuflavor --image sles12sp4 --key-name key --nic net-id=$net_id gpu-instance-1</pre></div></section></section><section class="sect1" id="configure-glance" data-id-title="Configuring the Image Service"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.7 </span><span class="title-name">Configuring the Image Service</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#configure-glance">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Image service, based on <span class="productname">OpenStack</span> glance, works out of the box and does
   not need any special configuration. However, we show you how to enable
   glance image caching as well as how to configure your environment to allow
   the glance copy-from feature if you choose to do so. A few features
   detailed below will require some additional configuration if you choose to
   use them.
- </p><div id="image-warning" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+ </p><div id="image-warning" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
    glance images are assigned IDs upon creation, either automatically or
    specified by the user. The ID of an image should be unique, so if a user
    assigns an ID which already exists, a conflict (409) will occur.
@@ -591,7 +608,7 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
    replace an old image, which could be malicious.
   </p><p>
    If this is a problem for you, please contact Sales Engineering.
-  </p></div><div class="sect2" id="idg-all-operations-image-configure-glance-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to enable glance image caching</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#idg-all-operations-image-configure-glance-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-image-configure_glance.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-image-configure-glance-xml-6</li></ul></div></div></div></div><p>
+  </p></div><section class="sect2" id="idg-all-operations-image-configure-glance-xml-6" data-id-title="How to enable glance image caching"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.7.1 </span><span class="title-name">How to enable glance image caching</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#idg-all-operations-image-configure-glance-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9, by default, the glance image caching option is not
    enabled. You have the option to have image caching enabled and these steps
    will show you how to do that.
@@ -608,9 +625,9 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
    <code class="literal">~/openstack/my_cloud/definition/data/disks_controller.yml</code>
    file. You will specify the mount point for the logical volume you wish to
    use for this.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Edit your
      <code class="literal">~/openstack/my_cloud/definition/data/disks_controller.yml</code>
      file and specify the volume and mount point for your <code class="literal">glance-cache</code>. Here is
@@ -635,18 +652,18 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
      the installation steps. However, if you are making this change
      post-installation then you will need to commit your changes with the steps
      below.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Commit your configuration to the Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="step"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
      Run the glance reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li></ol></div></div><p>
@@ -658,49 +675,48 @@ allow_resize_to_same_host=True</pre></div></li><li class="listitem "><p>
    source image in any other volume operations. This includes creating bootable
    volumes or booting an instance with <code class="literal">create volume</code> enabled
    and the updated image as the source image.
-  </p></div><div class="sect2" id="copyfrom"><div class="titlepage"><div><div><h3 class="title"><span class="number">6.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Allowing the glance copy-from option in your environment</span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#copyfrom">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-image-configure_glance.xml</li><li><span class="ds-label">ID: </span>copyfrom</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="copyfrom" data-id-title="Allowing the glance copy-from option in your environment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.7.2 </span><span class="title-name">Allowing the glance copy-from option in your environment</span></span> <a title="Permalink" class="permalink" href="ops-managing-compute.html#copyfrom">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-image-configure_glance.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    When creating images, one of the options you have is to copy the image from
    a remote location to your local glance store. You do this by specifying the
    <code class="literal">--copy-from</code> option when creating the image. To use this
    feature though you need to ensure the following conditions are met:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The server hosting the glance service must have network access to the
      remote location that is hosting the image.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      There cannot be a proxy between glance and the remote location.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The glance v1 API must be enabled, as v2 does not currently support the
      <code class="literal">copy-from</code> function.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The http glance store must be enabled in the environment, following the
      steps below.
     </p></li></ul></div><p>
    <span class="bold"><strong>Enabling the HTTP glance Store</strong></span>
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the
      <code class="literal">~/openstack/my_cloud/config/glance/glance-api.conf.j2</code>
      file and add <code class="literal">http</code> to the list of glance stores in the
      <code class="literal">[glance_store]</code> section as seen below in bold:
     </p><div class="verbatim-wrap"><pre class="screen">[glance_store]
-stores = {{ glance_stores }}<span class="bold"><strong>, http</strong></span></pre></div></li><li class="listitem "><p>
+stores = {{ glance_stores }}<span class="bold"><strong>, http</strong></span></pre></div></li><li class="listitem"><p>
      Commit your configuration to the Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Deployment Guide using Cloud Lifecycle Manager</em>”, Chapter 22 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the glance reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts glance-reconfigure.yml</pre></div></li><li class="listitem"><p>
      Run the horizon reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-esx.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 7 </span>Managing ESX</span></a><a class="nav-link" href="ops-managing-identity.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 5 </span>Managing Identity</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts horizon-reconfigure.yml</pre></div></li></ol></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="ops-managing-identity.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Managing Identity</span></a> </div><div><a class="pagination-link next" href="ops-managing-esx.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>Managing ESX</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="ops-managing-compute.html#aggregates"><span class="title-number">6.1 </span><span class="title-name">Managing Compute Hosts using Aggregates and Scheduler Filters</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#topic-vhs-12v-vw"><span class="title-number">6.2 </span><span class="title-name">Using Flavor Metadata to Specify CPU Model</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#topic-pqr-lyx-yw"><span class="title-number">6.3 </span><span class="title-name">Forcing CPU and RAM Overcommit Settings</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#enabling-the-nova-resize"><span class="title-number">6.4 </span><span class="title-name">Enabling the Nova Resize and Migrate Features</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#resize"><span class="title-number">6.5 </span><span class="title-name">Enabling ESX Compute Instance(s) Resize Feature</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#gpu-passthrough"><span class="title-number">6.6 </span><span class="title-name">GPU passthrough</span></a></span></li><li><span class="section"><a href="ops-managing-compute.html#configure-glance"><span class="title-number">6.7 </span><span class="title-name">Configuring the Image Service</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

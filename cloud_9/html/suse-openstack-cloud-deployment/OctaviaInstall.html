@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Configuring Load Balancer as a Service | Deployment Guide using Cloud Lifecycle Manager | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 43. Configuring Load Balancer as a Service" /><meta name="description" content="The SUSE OpenStack Cloud neutron LBaaS service supports several load balancing providers. By default, both Octavia and the namespace HAProxy driver are configured to be used." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="post-install.html" title="Part V. Post-Installation" /><link rel="prev" href="config-availability-zones.html" title="Chapter 42. Configuring Availability Zones" /><link rel="next" href="postinstall-checklist.html" title="Chapter 44. Other Common Post-Installation Tasks" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 9 | Deployment Guide using Cloud Lifecycle Manager | Configuring Load Balancer as a Service</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Configuring Load Balancer as a Service | SUSE OpenStac…"/>
+<meta name="description" content="The SUSE OpenStack Cloud neutron LBaaS service supports several load balancing providers. By default, both Octavia and the namespace HAProxy driver a…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="9"/>
+<meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager"/>
+<meta name="chapter-title" content="Chapter 43. Configuring Load Balancer as a Service"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9"/>
+<meta property="og:title" content="Configuring Load Balancer as a Service | SUSE OpenStac…"/>
+<meta property="og:description" content="The SUSE OpenStack Cloud neutron LBaaS service supports several load balancing providers. By default, both Octavia and the namespace HAProxy driver a…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuring Load Balancer as a Service | SUSE OpenStac…"/>
+<meta name="twitter:description" content="The SUSE OpenStack Cloud neutron LBaaS service supports several load balancing providers. By default, both Octavia and the namespace HAProxy driver a…"/>
+<link rel="prev" href="config-availability-zones.html" title="Chapter 42. Configuring Availability Zones"/><link rel="next" href="postinstall-checklist.html" title="Chapter 44. Other Common Post-Installation Tasks"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -17,15 +34,15 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Deployment Guide using Cloud Lifecycle Manager"><span class="book-icon">Deployment Guide using Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="OctaviaInstall.html">Configuring Load Balancer as a Service</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li><li class="inactive"><a href="preinstall.html"><span class="number">III </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">13 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">14 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">15 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">16 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">17 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">18 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">IV </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">19 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">20 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">21 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">22 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">23 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">24 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">25 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">26 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">27 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">28 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">29 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">30 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">31 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">32 </span><span class="name">Installing manila and Creating manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">33 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">34 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">35 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">36 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">37 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">V </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="cloud-verification.html"><span class="number">38 </span><span class="name">Post Installation Tasks</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">39 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">40 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">41 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">42 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">43 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">44 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">VI </span><span class="name">Support</span></a><ol><li class="inactive"><a href="sec-depl-trouble-faq.html"><span class="number">45 </span><span class="name">FAQ</span></a></li><li class="inactive"><a href="sec-installation-trouble-support.html"><span class="number">46 </span><span class="name">Support</span></a></li><li class="inactive"><a href="inst-support-ptf.html"><span class="number">47 </span><span class="name">
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Deployment Guide using Cloud Lifecycle Manager</a><span> / </span><a class="crumb" href="post-install.html">Post-Installation</a><span> / </span><a class="crumb" href="OctaviaInstall.html">Configuring Load Balancer as a Service</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title"><em class="citetitle">Deployment Guide using Cloud Lifecycle Manager</em></div><ol><li><a href="planning-index.html" class="has-children "><span class="title-number">I </span><span class="title-name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li><a href="register-suse-overview.html" class=" "><span class="title-number">1 </span><span class="title-name">Registering SLES</span></a></li><li><a href="min-hardware.html" class=" "><span class="title-number">2 </span><span class="title-name">Hardware and Software Support Matrix</span></a></li><li><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html" class=" "><span class="title-number">3 </span><span class="title-name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li><a href="HP3-0HA.html" class=" "><span class="title-number">4 </span><span class="title-name">High Availability</span></a></li></ol></li><li><a href="architecture.html" class="has-children "><span class="title-number">II </span><span class="title-name">Cloud Lifecycle Manager Overview</span></a><ol><li><a href="cha-input-model-intro-concept.html" class=" "><span class="title-number">5 </span><span class="title-name">Input Model</span></a></li><li><a href="configurationobjects.html" class=" "><span class="title-number">6 </span><span class="title-name">Configuration Objects</span></a></li><li><a href="othertopics.html" class=" "><span class="title-number">7 </span><span class="title-name">Other Topics</span></a></li><li><a href="cpinfofiles.html" class=" "><span class="title-number">8 </span><span class="title-name">Configuration Processor Information Files</span></a></li><li><a href="example-configurations.html" class=" "><span class="title-number">9 </span><span class="title-name">Example Configurations</span></a></li><li><a href="modify-compute-input-model.html" class=" "><span class="title-number">10 </span><span class="title-name">Modifying Example Configurations for Compute Nodes</span></a></li><li><a href="modify-input-model.html" class=" "><span class="title-number">11 </span><span class="title-name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li><a href="alternative-configurations.html" class=" "><span class="title-number">12 </span><span class="title-name">Alternative Configurations</span></a></li></ol></li><li><a href="preinstall.html" class="has-children "><span class="title-number">III </span><span class="title-name">Pre-Installation</span></a><ol><li><a href="preinstall-overview.html" class=" "><span class="title-number">13 </span><span class="title-name">Overview</span></a></li><li><a href="preinstall-checklist.html" class=" "><span class="title-number">14 </span><span class="title-name">Pre-Installation Checklist</span></a></li><li><a href="cha-depl-dep-inst.html" class=" "><span class="title-number">15 </span><span class="title-name">Installing the Cloud Lifecycle Manager server</span></a></li><li><a href="app-deploy-smt-lcm.html" class=" "><span class="title-number">16 </span><span class="title-name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li><a href="cha-depl-repo-conf-lcm.html" class=" "><span class="title-number">17 </span><span class="title-name">Software Repository Setup</span></a></li><li><a href="multipath-boot-from-san.html" class=" "><span class="title-number">18 </span><span class="title-name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li><a href="cloudinstallation.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Cloud Installation</span></a><ol><li><a href="cloudinstallation-overview.html" class=" "><span class="title-number">19 </span><span class="title-name">Overview</span></a></li><li><a href="preparing-standalone.html" class=" "><span class="title-number">20 </span><span class="title-name">Preparing for Stand-Alone Deployment</span></a></li><li><a href="install-gui.html" class=" "><span class="title-number">21 </span><span class="title-name">Installing with the Install UI</span></a></li><li><a href="using-git.html" class=" "><span class="title-number">22 </span><span class="title-name">Using Git for Configuration Management</span></a></li><li><a href="install-standalone.html" class=" "><span class="title-number">23 </span><span class="title-name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li><a href="install-kvm.html" class=" "><span class="title-number">24 </span><span class="title-name">Installing Mid-scale and Entry-scale KVM</span></a></li><li><a href="DesignateInstallOverview.html" class=" "><span class="title-number">25 </span><span class="title-name">DNS Service Installation Overview</span></a></li><li><a href="MagnumOverview.html" class=" "><span class="title-number">26 </span><span class="title-name">Magnum Overview</span></a></li><li><a href="install-esx-ovsvapp.html" class=" "><span class="title-number">27 </span><span class="title-name">Installing ESX Computes and OVSvAPP</span></a></li><li><a href="integrate-nsx-vsphere.html" class=" "><span class="title-number">28 </span><span class="title-name">Integrating NSX for vSphere</span></a></li><li><a href="install-ironic-overview.html" class=" "><span class="title-number">29 </span><span class="title-name">Installing Baremetal (Ironic)</span></a></li><li><a href="install-swift.html" class=" "><span class="title-number">30 </span><span class="title-name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li><a href="install-sles-compute.html" class=" "><span class="title-number">31 </span><span class="title-name">Installing SLES Compute</span></a></li><li><a href="install-ardana-manila.html" class=" "><span class="title-number">32 </span><span class="title-name">Installing manila and Creating manila Shares</span></a></li><li><a href="install-heat-templates.html" class=" "><span class="title-number">33 </span><span class="title-name">Installing SUSE CaaS Platform heat Templates</span></a></li><li><a href="install-caasp-terraform.html" class=" "><span class="title-number">34 </span><span class="title-name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li><a href="integrations.html" class=" "><span class="title-number">35 </span><span class="title-name">Integrations</span></a></li><li><a href="troubleshooting-installation.html" class=" "><span class="title-number">36 </span><span class="title-name">Troubleshooting the Installation</span></a></li><li><a href="esx-troubleshooting-installation.html" class=" "><span class="title-number">37 </span><span class="title-name">Troubleshooting the ESX</span></a></li></ol></li><li class="active"><a href="post-install.html" class="has-children you-are-here"><span class="title-number">V </span><span class="title-name">Post-Installation</span></a><ol><li><a href="cloud-verification.html" class=" "><span class="title-number">38 </span><span class="title-name">Post Installation Tasks</span></a></li><li><a href="ui-verification.html" class=" "><span class="title-number">39 </span><span class="title-name">UI Verification</span></a></li><li><a href="install-openstack-clients.html" class=" "><span class="title-number">40 </span><span class="title-name">Installing OpenStack Clients</span></a></li><li><a href="tls30.html" class=" "><span class="title-number">41 </span><span class="title-name">Configuring Transport Layer Security (TLS)</span></a></li><li><a href="config-availability-zones.html" class=" "><span class="title-number">42 </span><span class="title-name">Configuring Availability Zones</span></a></li><li><a href="OctaviaInstall.html" class=" you-are-here"><span class="title-number">43 </span><span class="title-name">Configuring Load Balancer as a Service</span></a></li><li><a href="postinstall-checklist.html" class=" "><span class="title-number">44 </span><span class="title-name">Other Common Post-Installation Tasks</span></a></li></ol></li><li><a href="cha-inst-trouble.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Support</span></a><ol><li><a href="sec-depl-trouble-faq.html" class=" "><span class="title-number">45 </span><span class="title-name">FAQ</span></a></li><li><a href="sec-installation-trouble-support.html" class=" "><span class="title-number">46 </span><span class="title-name">Support</span></a></li><li><a href="inst-support-ptf.html" class=" "><span class="title-number">47 </span><span class="title-name">
     Applying PTFs (Program Temporary Fixes) Provided by SUSE L3 Support
-   </span></a></li><li class="inactive"><a href="inst-support-ptf-test.html"><span class="number">48 </span><span class="name">
+   </span></a></li><li><a href="inst-support-ptf-test.html" class=" "><span class="title-number">48 </span><span class="title-name">
     Testing PTFs (Program Temporary Fixes) on a Single Node
-   </span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 42. Configuring Availability Zones" href="config-availability-zones.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 44. Other Common Post-Installation Tasks" href="postinstall-checklist.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Deployment Guide using Cloud Lifecycle Manager"><span class="book-icon">Deployment Guide using Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="post-install.html">Post-Installation</a><span> › </span><a class="crumb" href="OctaviaInstall.html">Configuring Load Balancer as a Service</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 42. Configuring Availability Zones" href="config-availability-zones.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 44. Other Common Post-Installation Tasks" href="postinstall-checklist.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="OctaviaInstall"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">43 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Load Balancer as a Service</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span>OctaviaInstall</li></ul></div></div><div><div class="abstract"><p>
+   </span></a></li></ol></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="OctaviaInstall" data-id-title="Configuring Load Balancer as a Service"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber">9</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">43 </span><span class="title-name">Configuring Load Balancer as a Service</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
     The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> neutron LBaaS service supports several load balancing
     providers. By default, both Octavia and the namespace HAProxy driver are
     configured to be used.
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.6"><span class="number">43.1 </span><span class="name">Summary</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.7"><span class="number">43.2 </span><span class="name">Prerequisites</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.8"><span class="number">43.3 </span><span class="name">Octavia Load Balancing Provider</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.9"><span class="number">43.4 </span><span class="name">Prerequisite Setup</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.10"><span class="number">43.5 </span><span class="name">Create Load Balancers</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.11"><span class="number">43.6 </span><span class="name">Create Floating IPs for Load Balancer</span></a></span></dt><dt><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.12"><span class="number">43.7 </span><span class="name">Testing the Octavia Load Balancer</span></a></span></dt></dl></div></div><p>
+   </p></div></div></div></div><p>
   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> neutron LBaaS service supports several load balancing
   providers. By default, both Octavia and the namespace HAProxy driver are
   configured for use.
@@ -39,20 +56,20 @@ hljs.configure({
   refer to the vendor directly. The <code class="command">openstack network service provider
   list</code> command displays the currently installed load balancer
   drivers as well as other installed services such as VPN.
- </p><div class="sect1" id="id-1.3.7.7.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Summary</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="id-1.3.7.7.6" data-id-title="Summary"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.1 </span><span class="title-name">Summary</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
 The following procedure demonstrates how to setup a load balancer,
 and test that the round robin load balancing is successful between the two 
 servers. For demonstration purposes, the security group rules and floating
 IPs are applied to the web servers. Adjust these configuration parameters
 if needed.
- </p></div><div class="sect1" id="id-1.3.7.7.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p></section><section class="sect1" id="id-1.3.7.7.7" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.2 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.7">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You need have an external network and a registered image to test LBaaS
    functionality.
   </p><p>
    Creating an external network: <a class="xref" href="cloud-verification.html#create-extnet" title="38.4. Creating an External Network">Section 38.4, “Creating an External Network”</a>.
   </p><p>
    Creating and uploading a glance image: <a class="xref" href="cloud-verification.html#upload-image" title="38.3. Uploading an Image for Use">Section 38.3, “Uploading an Image for Use”</a>.
-  </p></div><div class="sect1" id="id-1.3.7.7.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Octavia Load Balancing Provider</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="id-1.3.7.7.8" data-id-title="Octavia Load Balancing Provider"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.3 </span><span class="title-name">Octavia Load Balancing Provider</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The Octavia Load balancing provider bundled with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 is an operator
    grade load balancer for <span class="productname">OpenStack</span>. It is based on the <span class="productname">OpenStack</span> Rocky
    version of Octavia. It differs from the namespace driver by starting a new
@@ -64,7 +81,7 @@ if needed.
    virtual machine fails for any reason, Octavia will replace it with a
    replacement VM from a pool of spare VMs, assuming that the feature is
    configured.
-  </p><div id="id-1.3.7.7.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.3.7.7.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     The Health Monitor will not create or replace failed amphoras. If the pool
     of spare VMs is exhausted there will be no additional virtual machines to
     handle load balancing requests.
@@ -82,14 +99,14 @@ if needed.
    For more details refer to the
    <a class="link" href="https://www.openssl.org/docs/manmaster/man1/openssl.html" target="_blank">openssl
    man page</a>.
-  </p><div id="id-1.3.7.7.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.3.7.7.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     If you change the certificate authority and have amphoras running with an
     old CA, you will not be able to control the amphoras. The amphoras will need
     to be failed over so they can utilize the new certificate. If you change
     the CA password for the server certificate, you need to change that in the
     Octavia configuration files as well. For more information, see
     <span class="intraxref">Book “Operations Guide CLM”, Chapter 10 “Managing Networking”, Section 10.4 “Networking Service Overview”, Section 10.4.9 “Load Balancer: Octavia Driver Administration”, Section 10.4.9.2 “Tuning Octavia Installation”</span>.
-   </p></div></div><div class="sect1" id="id-1.3.7.7.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisite Setup</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.9">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect1" id="id-1.3.7.7.9" data-id-title="Prerequisite Setup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.4 </span><span class="title-name">Prerequisite Setup</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.9">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     <span class="bold"><strong>Octavia Client Installation</strong></span>
   </p><p>
     The Octavia client must be installed in the control plane, see
@@ -102,15 +119,15 @@ if needed.
    each other. If you have a configured firewall between the Octavia management
    network and Management network, you must open up the following ports to
    allow network traffic between the networks.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      From Management network to Octavia network
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        TCP 9443 (amphora API)
-      </p></li></ul></div></li><li class="listitem "><p>
+      </p></li></ul></div></li><li class="listitem"><p>
      From Octavia network to Management network
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        TCP 9876 (Octavia API)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        UDP 5555 (Octavia Health Manager)
       </p></li></ul></div></li></ul></div><p>
    <span class="bold"><strong>Optimizing the Octavia memory footprint</strong></span>
@@ -131,13 +148,13 @@ stats_update_threads = 2</pre></div><p>
    Octavia uses nova VMs for its load balancing function; SUSE
    provides images used to boot those VMs called
    <code class="literal">octavia-amphora</code>.
-  </p><div id="id-1.3.7.7.9.13" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+  </p><div id="id-1.3.7.7.9.13" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     Without these images the Octavia load balancer will not work.
    </p></div><p>
    <span class="bold"><strong>Register the image.</strong></span> The <span class="productname">OpenStack</span> load
    balancing service (Octavia) does not automatically register the Amphora
    guest image.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      The Amphora image is in an RPM package managed by zypper, display the full path to that file with the following command:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>find /srv -type f -name "*amphora-image*"</pre></div><p>
      For example:
@@ -151,9 +168,9 @@ stats_update_threads = 2</pre></div><p>
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts service-guest-image.yml \
 -e service_package=\
-/srv/www/suse-12.4/x86_64/repos/Cloud/suse/noarch/openstack-octavia-amphora-image-x86_64-0.1.0-13.157.noarch.rpm</pre></div></li><li class="step "><p>
+/srv/www/suse-12.4/x86_64/repos/Cloud/suse/noarch/openstack-octavia-amphora-image-x86_64-0.1.0-13.157.noarch.rpm</pre></div></li><li class="step"><p>
      Source the service user (this can be done on a different computer)
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source service.osrc</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source service.osrc</pre></div></li><li class="step"><p>
      Verify that the image was registered (this can be done on a computer with
      access to the glance CLI client)
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list
@@ -162,7 +179,7 @@ stats_update_threads = 2</pre></div><p>
 +--------------------------------------+------------------------+--------+
 ...
 | 1d4dd309-8670-46b6-801d-3d6af849b6a9 | octavia-amphora-x86_64 | active |
-...</pre></div><div id="id-1.3.7.7.9.15.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+...</pre></div><div id="id-1.3.7.7.9.15.3.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
       In the example above, the status of the
       <code class="literal">octavia-amphora-x86_64</code> image is
       <span class="emphasis"><em>active</em></span> which means the image was successfully
@@ -190,7 +207,7 @@ stats_update_threads = 2</pre></div><p>
    use curl scripts to demonstrate load balancing between the two VMs.
    Along the way we will save important parameters to a bash variable and use 
    them later in the process.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Make a tenant network for  load balancer clients (the web servers):
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create lb_net2
 +---------------------------+--------------------------------------+
@@ -223,7 +240,7 @@ stats_update_threads = 2</pre></div><p>
 | subnets                   |                                      |
 | tags                      |                                      |
 | updated_at                | 2019-10-23T13:27:57Z                 |
-+---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Create a subnet for the load balancing clients on the tenant network:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet create --network lb_net2 --subnet-range 12.12.12.0/24
 +-------------------+--------------------------------------+
@@ -253,7 +270,7 @@ stats_update_threads = 2</pre></div><p>
 +-------------------+--------------------------------------+</pre></div><p>
      <span class="bold"><strong>Save the ID of the tenant subnet. 
 	     The load balancer will be attached to it later.</strong></span>
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>VIP_SUBNET="c141858a-a792-4c89-91f0-de4dc4694a7f"</pre></div></li><li class="step "><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>VIP_SUBNET="c141858a-a792-4c89-91f0-de4dc4694a7f"</pre></div></li><li class="step"><p>
      Create a router for client VMs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router create --centralized lb_router2
 +-------------------------+--------------------------------------+
@@ -276,9 +293,9 @@ stats_update_threads = 2</pre></div><p>
 | status                  | ACTIVE                               |
 | tags                    |                                      |
 | updated_at              | 2019-10-23T13:30:21Z                 |
-+-------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++-------------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Add the subnet to the router and connect it to the external gateway:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router add subnet lb_router2 lb_subnet2</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router add subnet lb_router2 lb_subnet2</pre></div></li><li class="step"><p>
       Set gateway for the router. The name of the external network is:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network list
 +--------------------------------------+------------------+--------------------------------------+
@@ -291,7 +308,7 @@ stats_update_threads = 2</pre></div><p>
 
 EXT_NET="ext-net"
 
-openstack router set --external-gateway $EXT_NET lb_router2</pre></div></li><li class="step "><p>
+openstack router set --external-gateway $EXT_NET lb_router2</pre></div></li><li class="step"><p>
      Check the router:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack router show lb_router2 --fit-width
 +-------------------------+-------------------------------------------------------------------------------------------------------+
@@ -317,7 +334,7 @@ openstack router set --external-gateway $EXT_NET lb_router2</pre></div></li><li 
 | status                  | ACTIVE                                                                                                |
 | tags                    |                                                                                                       |
 | updated_at              | 2019-10-23T13:33:22Z                                                                                  |
-+-------------------------+-------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
++-------------------------+-------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
      Create a security group for testing with unrestricted inbound 
      and outbound traffic (you will have to restrict the traffic later):
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack security group create letmein
@@ -333,12 +350,12 @@ openstack router set --external-gateway $EXT_NET lb_router2</pre></div></li><li 
 | rules           | created_at='2019-05-13T18:50:28Z', direction='egress', ethertype='IPv6', id='1f73b026-5f7e-4b2c-9a72-07c88d8ea82d', updated_at='2019-05-13T18:50:28Z' |
 |                 | created_at='2019-05-13T18:50:28Z', direction='egress', ethertype='IPv4', id='880a04ee-14b4-4d05-b038-6dd42005d3c0', updated_at='2019-05-13T18:50:28Z' |
 | updated_at      | 2019-05-13T18:50:28Z                                                                                                                                  |
-+-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
      Create security rules for the VMs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --ingress --protocol tcp --dst-port 1:1024
 <code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --ingress --protocol icmp
 <code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --egress --protocol tcp --dst-port 1:1024
-<code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --egress --protocol icmp</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>openstack security group rule create letmein --egress --protocol icmp</pre></div></li><li class="step"><p>
       If you have not already created a keypair for the web servers,
       create one now with the <code class="command">openstack keypair create</code>.
       You will use the keypair to boot images.
@@ -354,7 +371,7 @@ ls -la lb*
 +---------------+-------------------------------------------------+
 | id_rsa2       | d3:82:4c:fc:80:79:db:94:b6:31:f1:15:8e:ba:35:0b |
 | lb_kp1        | 78:a8:0b:5b:2d:59:f4:68:4c:cb:49:c3:f8:81:3e:d8 |
-+---------------+-------------------------------------------------+</pre></div></li><li class="step "><p>
++---------------+-------------------------------------------------+</pre></div></li><li class="step"><p>
      List the image names available to boot and boot two VMs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list | grep cirros
 | faa65f54-e38b-43dd-b0db-ae5f5e3d9b83 | cirros-0.4.0-x86_64             | active |</pre></div><p>
@@ -437,7 +454,7 @@ ls -la lb*
 | volumes_attached                    |                                                            |
 +-------------------------------------+------------------------------------------------------------+</pre></div><p>
      Save the private IP of the second web server:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>IP_LBVM2="12.12.12.5"</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>IP_LBVM2="12.12.12.5"</pre></div></li><li class="step"><p>
      Verify that all the servers are running:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server list
 +--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
@@ -445,7 +462,7 @@ ls -la lb*
 +--------------------------------------+---------+--------+----------------------------------+---------------------+---------+
 | a60dfb93-255b-476d-bf28-2b4f0da285e0 | lb2_vm2 | ACTIVE | lb_net2=12.12.12.5               | cirros-0.4.0-x86_64 | m1.tiny |
 | 874e675b-727b-44a2-99a9-0ff178590f86 | lb2_vm1 | ACTIVE | lb_net2=12.12.12.13              | cirros-0.4.0-x86_64 | m1.tiny |
-+--------------------------------------+---------+--------+----------------------------------+---------------------+---------+</pre></div></li><li class="step "><p>
++--------------------------------------+---------+--------+----------------------------------+---------------------+---------+</pre></div></li><li class="step"><p>
      Check ports for the VMs first (.13 and .5):
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack port list | grep -e $IP_LBVM2 -e $IP_LBVM1
 | 42c356f1-8c49-469a-99c8-12c541378741 || fa:16:3e:2d:6b:be | ip_address='12.12.12.13', subnet_id='c141858a-a792-4c89-91f0-de4dc4694a7f'    | ACTIVE |
@@ -463,7 +480,7 @@ openstack floating ip create $EXT_NET --port 42c356f1-8c49-469a-99c8-12c54137874
 +--------------------------------------+---------+--------+----------------------------------+---------------------+---------+</pre></div><p>
      Save the floating IPs of the web server VMs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>LB_VM2_FIP="10.84.57.35"
-<code class="prompt user">ardana &gt; </code>LB_VM1_FIP="10.84.57.39"</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>LB_VM1_FIP="10.84.57.39"</pre></div></li><li class="step"><p>
      Use the <code class="literal">ping</code> command on the VMs to verify that 
      they respond on their floating IPs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ping $LB_VM2_FIP
@@ -476,11 +493,11 @@ ping $LB_VM1_FIP
 PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 64 bytes from 10.84.57.39: icmp_seq=1 ttl=62 time=1.55 ms
 64 bytes from 10.84.57.39: icmp_seq=2 ttl=62 time=0.552 ms
-^C</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create Load Balancers</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.10">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+^C</pre></div></li></ol></div></div></section><section class="sect1" id="id-1.3.7.7.10" data-id-title="Create Load Balancers"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.5 </span><span class="title-name">Create Load Balancers</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.10">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following steps will set up new Octavia Load Balancers.
-  </p><div id="id-1.3.7.7.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.3.7.7.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     The following examples assume names and values from the previous section.
-   </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Create the load balancer on the tenant network. Use the
      bash variable <code class="literal">VIP_SUBNET</code> that holds the ID
      of the subnet that was saved earlier, or the actual subnet ID:
@@ -509,7 +526,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 +---------------------+--------------------------------------+</pre></div><p>
        Save the load balancer <code class="literal">vip_port_id</code>.
        This is used when attaching a floating IP to the load balancer.
-     </p><div class="verbatim-wrap"><pre class="screen">LB_PORT="5122c1d0-2996-43d5-ad9b-7b3b2c5903d5"</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen">LB_PORT="5122c1d0-2996-43d5-ad9b-7b3b2c5903d5"</pre></div></li><li class="step"><p>
      List load balancers. You will need to wait until the load balancer
      <code class="literal">provisioning_status</code>is <code class="literal">ACTIVE</code> before
      proceeding to the next step.
@@ -525,7 +542,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | id                                   | name | project_id                       | vip_address | provisioning_status | provider |
 +--------------------------------------+------+----------------------------------+-------------+---------------------+----------+
 | 2b0660e1-2901-41ea-93d8-d1fa590b9cfd | lb2  | de095070f242416cb3dc4cd00e3c79f7 | 12.12.12.6  | ACTIVE              | amphora  |
-+--------------------------------------+------+----------------------------------+-------------+---------------------+----------+</pre></div></li><li class="step "><p>
++--------------------------------------+------+----------------------------------+-------------+---------------------+----------+</pre></div></li><li class="step"><p>
      Once the load balancer is created, create the listener. This may take some
      time.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer listener create --protocol HTTP \
@@ -555,7 +572,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | timeout_member_data       | 50000                                |
 | timeout_tcp_inspect       | 0                                    |
 | updated_at                | None                                 |
-+---------------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Create the load balancing pool. During the creation of the load balancing
      pool, the status for the load balancer goes to
      <code class="literal">PENDING_UPDATE</code>. Use <code class="literal">openstack
@@ -605,7 +622,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | provisioning_status | ACTIVE                               |
 | session_persistence | None                                 |
 | updated_at          | 2019-10-29T16:35:10                  |
-+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Add the private IPs of the tenant network for the first web server in the pool:
     </p><p>
      In the previous section the addresses for the VMs were saved in the
@@ -631,7 +648,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | monitor_port        | None                                 |
 | monitor_address     | None                                 |
 | backup              | False                                |
-+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
       Put the addresses the VMs have on the tenant network into the load balancer pool:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer member create --subnet $VIP_SUBNET \
 --address $IP_LBVM2 --protocol-port 80  lb2_pool
@@ -653,7 +670,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | monitor_port        | None                                 |
 | monitor_address     | None                                 |
 | backup              | False                                |
-+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Verify the configuration:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack loadbalancer list --fit-width
 +---------------------------+------+---------------------------+-------------+---------------------+----------+
@@ -722,14 +739,14 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | timeout_member_data       | 50000                                |
 | timeout_tcp_inspect       | 0                                    |
 | updated_at                | 2019-10-29T16:40:01                  |
-+---------------------------+--------------------------------------+</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.11"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create Floating IPs for Load Balancer</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.11">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
++---------------------------+--------------------------------------+</pre></div></li></ol></div></div></section><section class="sect1" id="id-1.3.7.7.11" data-id-title="Create Floating IPs for Load Balancer"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.6 </span><span class="title-name">Create Floating IPs for Load Balancer</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.11">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To create the floating IP's for the load balancer, you will need to list
    the ports for the load balancer. Once you have the port ID, you can then
    create the floating IP. Notice that the name has changed between the neutron
    lbass-loadbalancer and openstack loadbalancer CLI. In this case, be sure
    to pick the port associated with the name <code class="literal">octavia-lb-</code>
    or use the port ID that was saved when the load balancer was created.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Search for the load balancers port, it will be used when the floating
      IP is created. Alternately, use the bash variable that contains the load
      balancer port from the previous section.
@@ -741,7 +758,7 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 +----------------------------+----------------------------+-------------------+-----------------------------+--------+
 | 5122c1d0-2996-43d5-ad9b-   | octavia-lb-2b0660e1-2901   | fa:16:3e:6a:59:f3 | ip_address='12.12.12.6', su | DOWN   |
 | 7b3b2c5903d5               | -41ea-93d8-d1fa590b9cfd    |                   | bnet_id='c141858a-a792-4c89 |        |
-|                            |                            |                   | -91f0-de4dc4694a7f'         |        |</pre></div></li><li class="step "><p>
+|                            |                            |                   | -91f0-de4dc4694a7f'         |        |</pre></div></li><li class="step"><p>
      Create the floating IP for the load balancers port:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack floating ip create --port $LB_PORT $EXT_NET --fit-width
 +---------------------+-------------------------------------------------------------------------------------------------+
@@ -769,9 +786,9 @@ PING 10.84.57.39 (10.84.57.39) 56(84) bytes of data.
 | subnet_id           | None                                                                                            |
 | tags                | []                                                                                              |
 | updated_at          | 2019-10-29T16:59:43Z                                                                            |
-+---------------------+-------------------------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+-------------------------------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
       Save the floating IP for the load balancer for future use.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>LB_FIP="10.84.57.29"</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.3.7.7.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">43.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing the Octavia Load Balancer</span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.12">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-configure_lbaas.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>LB_FIP="10.84.57.29"</pre></div></li></ol></div></div></section><section class="sect1" id="id-1.3.7.7.12" data-id-title="Testing the Octavia Load Balancer"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">43.7 </span><span class="title-name">Testing the Octavia Load Balancer</span></span> <a title="Permalink" class="permalink" href="OctaviaInstall.html#id-1.3.7.7.12">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/installation-installation-configure_lbaas.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This is the web server code that runs on the VMs created earlier. 
    In this example, the web server is on port 80.
   </p><div class="verbatim-wrap"><pre class="screen">echo &lt;&lt;EOF &gt;webserver.sh 
@@ -783,10 +800,10 @@ while true; do
  
 Welcome to $MYIP" | sudo nc -l -p 80
 done
-EOF</pre></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+EOF</pre></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Remove any old floating IPs from <code class="literal">known_hosts</code>:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ssh-keygen -R  $LB_VM1_FIP
-<code class="prompt user">ardana &gt; </code>ssh-keygen -R  $LB_VM2_FIP</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ssh-keygen -R  $LB_VM2_FIP</pre></div></li><li class="step"><p>
      Deploy the web server application:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>
 scp -o StrictHostKeyChecking=no -i lb_kp1.pem webserver.sh cirros@$LB_VM1_FIP:webserver.sh 
@@ -795,12 +812,12 @@ ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM1_FIP '(./webserver.s
  
 scp -o StrictHostKeyChecking=no -i lb_kp1.pem webserver.sh cirros@$LB_VM2_FIP:webserver.sh 
 ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM2_FIP 'chmod +x ./webserver.sh'
-ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM2_FIP '(./webserver.sh&amp;)'</pre></div></li><li class="step "><p>
+ssh -o StrictHostKeyChecking=no -i lb_kp1.pem cirros@$LB_VM2_FIP '(./webserver.sh&amp;)'</pre></div></li><li class="step"><p>
      Make sure the web servers respond with the correct IPs:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl $LB_VM1_FIP
 Welcome to 12.12.12.5
 curl $LB_VM2_FIP
-Welcome to 12.12.12.5</pre></div></li><li class="step "><p>
+Welcome to 12.12.12.5</pre></div></li><li class="step"><p>
      Access the web servers through the Octavia load balancer using the floating IP:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl $LB_FIP
 Welcome to 12.12.12.5
@@ -808,6 +825,5 @@ Welcome to 12.12.12.5
 Welcome to 12.12.12.13
 <code class="prompt user">ardana &gt; </code> curl $LB_FIP
 Welcome to 12.12.12.5
-<code class="prompt user">ardana &gt; </code> curl $LB_FIP</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="postinstall-checklist.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 44 </span>Other Common Post-Installation Tasks</span></a><a class="nav-link" href="config-availability-zones.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 42 </span>Configuring Availability Zones</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+<code class="prompt user">ardana &gt; </code> curl $LB_FIP</pre></div></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="config-availability-zones.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 42 </span>Configuring Availability Zones</span></a> </div><div><a class="pagination-link next" href="postinstall-checklist.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 44 </span>Other Common Post-Installation Tasks</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.6"><span class="title-number">43.1 </span><span class="title-name">Summary</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.7"><span class="title-number">43.2 </span><span class="title-name">Prerequisites</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.8"><span class="title-number">43.3 </span><span class="title-name">Octavia Load Balancing Provider</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.9"><span class="title-number">43.4 </span><span class="title-name">Prerequisite Setup</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.10"><span class="title-number">43.5 </span><span class="title-name">Create Load Balancers</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.11"><span class="title-number">43.6 </span><span class="title-name">Create Floating IPs for Load Balancer</span></a></span></li><li><span class="section"><a href="OctaviaInstall.html#id-1.3.7.7.12"><span class="title-number">43.7 </span><span class="title-name">Testing the Octavia Load Balancer</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

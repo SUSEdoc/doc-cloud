@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Backup and Restore | Operations Guide CLM | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Operations Guide CLM" /><meta name="chapter-title" content="Chapter 17. Backup and Restore" /><meta name="description" content="The following sections cover backup and restore operations. Before installing your cloud, there are several things you must do so that you achieve the backup and recovery results you need. SUSE OpenStack Cloud comes with playbooks and procedures to recover the control plane from various disaster sce…" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide CLM" /><link rel="prev" href="manage-ops-console.html" title="Chapter 16. Operations Console" /><link rel="next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" title="Chapter 18. Troubleshooting Issues" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 9 | Operations Guide CLM | Backup and Restore</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Backup and Restore | SUSE OpenStack Cloud 9"/>
+<meta name="description" content="The following sections cover backup and restore operations. Before installing your cloud, there are several things you must do so that you achieve th…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="9"/>
+<meta name="book-title" content="Operations Guide CLM"/>
+<meta name="chapter-title" content="Chapter 17. Backup and Restore"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9"/>
+<meta property="og:title" content="Backup and Restore | SUSE OpenStack Cloud 9"/>
+<meta property="og:description" content="The following sections cover backup and restore operations. Before installing your cloud, there are several things you must do so that you achieve th…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backup and Restore | SUSE OpenStack Cloud 9"/>
+<meta name="twitter:description" content="The following sections cover backup and restore operations. Before installing your cloud, there are several things you must do so that you achieve th…"/>
+<link rel="prev" href="manage-ops-console.html" title="Chapter 16. Operations Console"/><link rel="next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" title="Chapter 18. Troubleshooting Issues"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -17,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide CLM"><span class="book-icon">Operations Guide CLM</span></a><span> › </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide CLM</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="clm-admin-ui.html"><span class="number">3 </span><span class="name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">4 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">5 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">6 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">7 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">8 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">9 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">10 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">11 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">12 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">13 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">14 </span><span class="name">Managing Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">15 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="manage-ops-console.html"><span class="number">16 </span><span class="name">Operations Console</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">17 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">18 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 16. Operations Console" href="manage-ops-console.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 18. Troubleshooting Issues" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide CLM"><span class="book-icon">Operations Guide CLM</span></a><span> › </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 16. Operations Console" href="manage-ops-console.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 18. Troubleshooting Issues" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="bura-overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h1 class="title"><span class="number">17 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-bura_overview.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-bura_overview.xml</li><li><span class="ds-label">ID: </span>bura-overview</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="bura-overview.html#topic-bxm-gxr-st"><span class="number">17.1 </span><span class="name">Manual Backup Overview</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-jsc-qps-qt"><span class="number">17.2 </span><span class="name">Enabling Backups to a Remote Server</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#bura-manual-backup"><span class="number">17.3 </span><span class="name">Manual Backup and Restore Procedures</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#full-recovery-test"><span class="number">17.4 </span><span class="name">Full Disaster Recovery Test</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-bura_overview.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide CLM</a><span> / </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide CLM</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="clm-admin-ui.html" class=" "><span class="title-number">3 </span><span class="title-name">Cloud Lifecycle Manager Admin UI User Guide</span></a></li><li><a href="third-party-integrations.html" class=" "><span class="title-number">4 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" "><span class="title-number">6 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">7 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" "><span class="title-number">8 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">13 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="using-container-as-a-service-overview.html" class=" "><span class="title-number">14 </span><span class="title-name">Managing Container as a Service (Magnum)</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">15 </span><span class="title-name">System Maintenance</span></a></li><li><a href="manage-ops-console.html" class=" "><span class="title-number">16 </span><span class="title-name">Operations Console</span></a></li><li><a href="bura-overview.html" class=" you-are-here"><span class="title-number">17 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">18 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="bura-overview" data-id-title="Backup and Restore"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber">9</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">17 </span><span class="title-name">Backup and Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-bura_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The following sections cover backup and restore operations. Before installing
   your cloud, there are several things you must do so that you achieve the
   backup and recovery results you need. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> comes with playbooks and
@@ -30,138 +47,138 @@ hljs.configure({
   that back up and restore services.
  </p><p>
   The following features are supported:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     File system backup using a point-in-time snapshot.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Strong encryption: AES-256-CFB.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     MariaDB database backup with LVM snapshot.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Restoring your data from a previous backup.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Low storage requirement: backups are stored as compressed files.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Flexible backup (both incremental and differential).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Data is archived in GNU Tar format for file-based incremental backup and
     restore.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     When a key is provided, Open SSL is used to encrypt data (AES-256-CFB).
-   </p></li></ul></div><div class="sect1" id="topic-bxm-gxr-st"><div class="titlepage"><div><div><h2 class="title"><span class="number">17.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manual Backup Overview</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-bxm-gxr-st">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_services.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_services.xml</li><li><span class="ds-label">ID: </span>topic-bxm-gxr-st</li></ul></div></div></div></div><p>
+   </p></li></ul></div><section class="sect1" id="topic-bxm-gxr-st" data-id-title="Manual Backup Overview"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">17.1 </span><span class="title-name">Manual Backup Overview</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-bxm-gxr-st">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This section covers manual backup and some restore processes. Full
   documentation for restore operations is in <a class="xref" href="system-maintenance.html#unplanned-maintenance" title="15.2. Unplanned System Maintenance">Section 15.2, “Unplanned System Maintenance”</a>.To back up outside the cluster,
   refer to <a class="xref" href="bura-overview.html#topic-jsc-qps-qt" title="17.2. Enabling Backups to a Remote Server">Section 17.2, “Enabling Backups to a Remote Server”</a>. Backups of the following types
   of resources are covered:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Cloud Lifecycle Manager Data. </span>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Cloud Lifecycle Manager Data. </span>
      All important information on the Cloud Lifecycle Manager
-    </p></li><li class="listitem "><p><span class="formalpara-title">MariaDB database that is part of the Control Plane. </span>
+    </p></li><li class="listitem"><p><span class="formalpara-title">MariaDB database that is part of the Control Plane. </span>
      The MariaDB database contains most of the data needed to restore
      services. MariaDB supports full back up and recovery for all services.
      Logging data in Elasticsearch is not backed up. swift objects are
      not backed up because of the redundant nature of swift.
-    </p></li><li class="listitem "><p><span class="formalpara-title">swift Rings used in the swift storage deployment. </span>
+    </p></li><li class="listitem"><p><span class="formalpara-title">swift Rings used in the swift storage deployment. </span>
      swift rings are backed up so that you can recover more quickly than
      rebuilding with swift. swift can rebuild the rings without this backup
      data, but automatically rebuilding the rings is slower than restoring
      from a backup.
-    </p></li><li class="listitem "><p><span class="formalpara-title">Audit Logs. </span>
+    </p></li><li class="listitem"><p><span class="formalpara-title">Audit Logs. </span>
      Audit Logs are backed up to provide retrospective information and
      statistical data for performance and security purposes.
     </p></li></ul></div><p>
   The following services will be backed up. Specifically, the data needed to
   restore the services is backed up. This includes databases and
   configuration-related files.
- </p><div id="id-1.5.19.7.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+ </p><div id="id-1.5.19.7.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
    Data content for some services is not backed up, as indicated below.
-  </p></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     ceilometer. There is no backup of metrics data.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     cinder. There is no backup of the volumes.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     glance. There is no backup of the images.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     heat
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     horizon
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     keystone
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     neutron
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     nova. There is no backup of the images.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     swift. There is no backup of the objects. swift has its own high
     availability and redundancy. swift rings are backed up. Although swift
     can rebuild the rings itself, restoring from backup is faster.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Operations Console
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     monasca. There is no backup of the metrics.
-   </p></li></ul></div></div><div class="sect1" id="topic-jsc-qps-qt"><div class="titlepage"><div><div><h2 class="title"><span class="number">17.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling Backups to a Remote Server</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-jsc-qps-qt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span>topic-jsc-qps-qt</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect1" id="topic-jsc-qps-qt" data-id-title="Enabling Backups to a Remote Server"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">17.2 </span><span class="title-name">Enabling Backups to a Remote Server</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-jsc-qps-qt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    We recommend that you set up a remote server to store your backups, so that
    you can restore the control plane nodes. This may be necessary if you lose
    all of your control plane nodes at the same time.
-  </p><div id="id-1.5.19.8.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+  </p><div id="id-1.5.19.8.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     A remote backup server must be set up before proceeding.
    </p></div><p>
    You do not have to restore from the remote server if only one or two control
    plane nodes are lost. In that case, the control planes can be recovered from
    the data on a remaining control plane node following the restore procedures
    in <a class="xref" href="system-maintenance.html#recovering-controller-nodes" title="15.2.3.2. Recovering the Control Plane">Section 15.2.3.2, “Recovering the Control Plane”</a>.
-  </p><div class="sect2" id="secure-ssh-bu"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Securing your SSH backup server</span> <a title="Permalink" class="permalink" href="bura-overview.html#secure-ssh-bu">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span>secure-ssh-bu</li></ul></div></div></div></div><p>
+  </p><section class="sect2" id="secure-ssh-bu" data-id-title="Securing your SSH backup server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.2.1 </span><span class="title-name">Securing your SSH backup server</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#secure-ssh-bu">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can do the following to harden an SSH server:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Disable root login
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Move SSH to a non-default port (the default SSH port is 22)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Disable password login (only allow RSA keys)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Disable SSH v1
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Authorize Secure File Transfer Protocol (SFTP) only for the designated
      backup user (disable SSH shell)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Firewall SSH traffic to ensure it comes from the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> address range
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Install a <a class="link" href="https://www.fail2ban.org" target="_blank">Fail2Ban</a> solution
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Restrict users who are allowed to SSH
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Additional suggestions are available online
     </p></li></ul></div><p>
    Remove the key pair generated earlier on the backup server; the only thing
    needed is <code class="filename">.ssh/authorized_keys</code>. You can remove the
    <code class="filename">.ssh/id_rsa</code> and <code class="filename">.ssh/id_rsa.pub</code>
    files. Be sure to save a backup of them.
-  </p></div><div class="sect2" id="id-1.5.19.8.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General tips</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.8.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p></section><section class="sect2" id="id-1.5.19.8.6" data-id-title="General tips"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.2.2 </span><span class="title-name">General tips</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.8.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Provide adequate space in the directory that is used for backup.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Monitor the space left on that directory.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Keep the system up to date on that server.
-    </p></li></ul></div></div></div><div class="sect1" id="bura-manual-backup"><div class="titlepage"><div><div><h2 class="title"><span class="number">17.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manual Backup and Restore Procedures</span> <a title="Permalink" class="permalink" href="bura-overview.html#bura-manual-backup">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>bura-manual-backup</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section></section><section class="sect1" id="bura-manual-backup" data-id-title="Manual Backup and Restore Procedures"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">17.3 </span><span class="title-name">Manual Backup and Restore Procedures</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#bura-manual-backup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Each backup requires the following steps:
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Create a snapshot.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Mount the snapshot.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Generate a TAR archive and save it.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Unmount and delete the snapshot.
-   </p></li></ol></div></div><div class="sect2" id="clm-data-backup"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Lifecycle Manager Data Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#clm-data-backup">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>clm-data-backup</li></ul></div></div></div></div><p>
+   </p></li></ol></div></div><section class="sect2" id="clm-data-backup" data-id-title="Cloud Lifecycle Manager Data Backup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.3.1 </span><span class="title-name">Cloud Lifecycle Manager Data Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#clm-data-backup">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following procedure is used for each of the seven
-   <em class="replaceable ">BACKUP_TARGETS</em> (list below). Incremental backup
+   <em class="replaceable">BACKUP_TARGETS</em> (list below). Incremental backup
    instructions follow the full backup procedure. For both full and incremental
    backups, the last step of the procedure is to unmount and delete the
    snapshot after the TAR archive has been created and saved. A new snapshot
    must be created every time a backup is created.
-  </p><div class="procedure " id="manual-backup-setup"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 17.1: </span><span class="name">Manual Backup Setup </span><a title="Permalink" class="permalink" href="bura-overview.html#manual-backup-setup">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure" id="manual-backup-setup" data-id-title="Manual Backup Setup"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 17.1: </span><span class="title-name">Manual Backup Setup </span></span><a title="Permalink" class="permalink" href="bura-overview.html#manual-backup-setup">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Create a snapshot on the Cloud Lifecycle Manager in (<code class="literal">ardana-vg</code>), the
      location where all Cloud Lifecycle Manager data is stored.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo lvcreate --size 2G --snapshot --permission r \
---name lvm_clm_snapshot /dev/ardana-vg/root</pre></div><div id="id-1.5.19.9.4.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+--name lvm_clm_snapshot /dev/ardana-vg/root</pre></div><div id="id-1.5.19.9.4.3.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       If you have stored additional data or files in your
       <code class="literal">ardana-vg</code> directory, you may need more space than the
       2G indicated for the <code class="literal">size</code> parameter. In this
@@ -169,111 +186,111 @@ hljs.configure({
       <code class="command">tar</code> command on the directory before creating a
       snapshot. Set the <code class="literal">size</code> snapshot parameter larger than
       the size of the archive.
-     </p></div></li><li class="step "><p>
+     </p></div></li><li class="step"><p>
      Mount the snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo mkdir /var/tmp/clm_snapshot
-<code class="prompt user">ardana &gt; </code>sudo mount -o ro /dev/ardana-vg/lvm_clm_snapshot /var/tmp/clm_snapshot</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>sudo mount -o ro /dev/ardana-vg/lvm_clm_snapshot /var/tmp/clm_snapshot</pre></div></li><li class="step"><p>
      Generate a TAR archive (does not apply to incremental backups) with an
      appropriate
-     <code class="filename"><em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz</code>
-     backup file for each of the following <em class="replaceable ">BACKUP_TARGETS</em>.
+     <code class="filename"><em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz</code>
+     backup file for each of the following <em class="replaceable">BACKUP_TARGETS</em>.
     </p><p>
      <span class="bold"><strong>Backup Targets</strong></span>
-    </p><div class="itemizedlist " id="clm-backup-targets"><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist" id="clm-backup-targets"><ul class="itemizedlist"><li class="listitem"><p>
        home
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        ssh
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        shadow
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        passwd
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        group
       </p></li></ul></div><p>
      The backup TAR archive should contain only the necessary data; nothing
      extra. Some of the archives will be stored as directories, others as
      files. The backup commands are slightly different for each type.
     </p><p>
-     If the <em class="replaceable ">BACKUP_TARGET</em>
+     If the <em class="replaceable">BACKUP_TARGET</em>
      is a directory, then that directory must be appended to
-     <code class="filename">/var/tmp/clm_snapshot/</code><em class="replaceable ">TARGET_DIR</em>. If the <em class="replaceable ">BACKUP_TARGET</em>
+     <code class="filename">/var/tmp/clm_snapshot/</code><em class="replaceable">TARGET_DIR</em>. If the <em class="replaceable">BACKUP_TARGET</em>
      is a file, then its parent directory must be appended to <code class="filename">/var/tmp/clm_snapshot/</code>.
     </p><p>
      In the commands that follow, replace
-     <em class="replaceable ">BACKUP_TARGET</em> with the appropriate
-     <em class="replaceable ">BACKUP_PATH</em> (replacement table is below).
+     <em class="replaceable">BACKUP_TARGET</em> with the appropriate
+     <em class="replaceable">BACKUP_PATH</em> (replacement table is below).
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
---ignore-failed-read --file <em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -C \
-/var/tmp/clm_snapshot<em class="replaceable ">TARGET_DIR</em>|<em class="replaceable ">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-       If <em class="replaceable ">BACKUP_TARGET</em> is a directory, replace
-       <em class="replaceable ">TARGET_DIR</em> with
-       <em class="replaceable ">BACKUP_PATH</em>.
+--ignore-failed-read --file <em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -C \
+/var/tmp/clm_snapshot<em class="replaceable">TARGET_DIR</em>|<em class="replaceable">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       If <em class="replaceable">BACKUP_TARGET</em> is a directory, replace
+       <em class="replaceable">TARGET_DIR</em> with
+       <em class="replaceable">BACKUP_PATH</em>.
       </p><p>
        For example, where
-       <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code> (a
+       <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code> (a
        directory):
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
---ignore-failed-read --file ssh.tar.gz -C /var/tmp/clm_snapshot/etc/ssh .</pre></div></li><li class="listitem "><p>
-       If <em class="replaceable ">BACKUP_TARGET</em> is a file (not a directory),
-       replace <em class="replaceable ">TARGET_DIR</em> with the parent directory
-       of <em class="replaceable ">BACKUP_PATH</em>.
+--ignore-failed-read --file ssh.tar.gz -C /var/tmp/clm_snapshot/etc/ssh .</pre></div></li><li class="listitem"><p>
+       If <em class="replaceable">BACKUP_TARGET</em> is a file (not a directory),
+       replace <em class="replaceable">TARGET_DIR</em> with the parent directory
+       of <em class="replaceable">BACKUP_PATH</em>.
       </p><p>
        For example, where
-       <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/etc/passwd</code>
+       <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/etc/passwd</code>
        (a file):
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
---ignore-failed-read --file passwd.tar.gz -C /var/tmp/clm_snapshot/etc/passwd</pre></div></li></ul></div></li><li class="step "><p>
+--ignore-failed-read --file passwd.tar.gz -C /var/tmp/clm_snapshot/etc/passwd</pre></div></li></ul></div></li><li class="step"><p>
      Save the TAR archive to the remote server.
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>scp <em class="replaceable ">TAR_ARCHIVE</em> <em class="replaceable ">USER@REMOTE_SERVER</em></pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>scp <em class="replaceable">TAR_ARCHIVE</em> <em class="replaceable">USER@REMOTE_SERVER</em></pre></div></li><li class="step"><p>
      Use the following commands to unmount and delete a snapshot.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo umount -l -f /var/tmp/clm_snapshot; rm -rf /var/tmp/clm_snapshot
 <code class="prompt user">ardana &gt; </code>sudo lvremove -f /dev/ardana-vg/lvm_clm_snapshot</pre></div></li></ol></div></div><p>
    The table below shows Cloud Lifecycle Manager <code class="literal">backup_targets</code> and their
    respective <code class="literal">backup_paths</code>.
-  </p><div class="table" id="id-1.5.19.9.4.5"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 17.1: </span><span class="name">Cloud Lifecycle Manager Backup Paths </span><a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.4.5">#</a></h6></div><div class="table-contents"><table class="table" summary="Cloud Lifecycle Manager Backup Paths" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><thead><tr><th>
+  </p><div class="table" id="id-1.5.19.9.4.5" data-id-title="Cloud Lifecycle Manager Backup Paths"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 17.1: </span><span class="title-name">Cloud Lifecycle Manager Backup Paths </span></span><a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.4.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="1"/><col class="2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         backup_name
        </p>
-      </th><th>
+      </th><th style="border-bottom: 1px solid ; ">
        <p>
         backup_path
        </p>
-      </th></tr></thead><tbody><tr><td>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         home_backup
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         /var/lib/ardana (file)
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         etc_ssh_backup
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         /etc/ssh/ (directory)
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         shadow_backup
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         /etc/shadow (file)
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         passwd_backup
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         /etc/passwd (file)
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
        <p>
         group_backup
        </p>
@@ -281,7 +298,7 @@ hljs.configure({
        <p>
         /etc/group (file)
        </p>
-      </td></tr></tbody></table></div></div><div class="sect3" id="id-1.5.19.9.4.6"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Lifecycle Manager Incremental Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.4.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      </td></tr></tbody></table></div></div><section class="sect3" id="id-1.5.19.9.4.6" data-id-title="Cloud Lifecycle Manager Incremental Backup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.1.1 </span><span class="title-name">Cloud Lifecycle Manager Incremental Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.4.6">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Incremental backups require a <code class="literal">meta</code> file. If you use the
     incremental backup option, a meta file must be included in the
     <code class="command">tar</code> command in the initial backup and whenever you do an
@@ -300,27 +317,27 @@ hljs.configure({
    </p><p>
     To prepare for incremental backup, follow the steps in <a class="xref" href="bura-overview.html#manual-backup-setup" title="Manual Backup Setup">Procedure 17.1, “Manual Backup Setup”</a> with the following differences in the
     commands for generating a <code class="literal">tar</code> archive.
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       First time full backup
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
 --ignore-failed-read <span class="bold"><strong>--listed-incremental=PATH_TO_YOUR_META</strong></span> \
---file <em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -C \
-/var/tmp/clm_snapshot<em class="replaceable ">TARGET_DIR</em>|<em class="replaceable ">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><p>
+--file <em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -C \
+/var/tmp/clm_snapshot<em class="replaceable">TARGET_DIR</em>|<em class="replaceable">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><p>
       For example, where
-      <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code>
+      <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code>
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
 <span class="bold"><strong>--listed-incremental=mysshMeta</strong></span> --file ssh.tar.gz -C \
-/var/tmp/clm_snapshot/etc/ssh .</pre></div></li><li class="listitem "><p>
+/var/tmp/clm_snapshot/etc/ssh .</pre></div></li><li class="listitem"><p>
       Incremental backup
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
 --ignore-failed-read <span class="bold"><strong>--listed-incremental=PATH_TO_YOUR_META</strong></span>\
---file <em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em><span class="bold"><strong>_VERSION</strong></span>.tar.gz -C \
-/var/tmp/clm_snapshot<em class="replaceable ">TARGET_DIR</em>|<em class="replaceable ">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><p>
+--file <em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em><span class="bold"><strong>_VERSION</strong></span>.tar.gz -C \
+/var/tmp/clm_snapshot<em class="replaceable">TARGET_DIR</em>|<em class="replaceable">BACKUP_TARGET_WITHOUT_LEADING_DIR</em></pre></div><p>
       For example, where
-      <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code>:
+      <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/etc/ssh/</code>:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
 <span class="bold"><strong>--listed-incremental=mysshMeta</strong></span> --file \
@@ -329,13 +346,13 @@ hljs.configure({
     After creating an incremental backup, use the following commands to unmount
     and delete a snapshot.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo umount -l -f /var/tmp/clm_snapshot; rm -rf /var/tmp/clm_snapshot
-<code class="prompt user">ardana &gt; </code>sudo lvremove -f /dev/ardana-vg/lvm_clm_snapshot</pre></div></div><div class="sect3" id="manual-backup-encryption"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Encryption</span> <a title="Permalink" class="permalink" href="bura-overview.html#manual-backup-encryption">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>manual-backup-encryption</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>sudo lvremove -f /dev/ardana-vg/lvm_clm_snapshot</pre></div></section><section class="sect3" id="manual-backup-encryption" data-id-title="Encryption"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.1.2 </span><span class="title-name">Encryption</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#manual-backup-encryption">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     When a key is provided, Open SSL is used to encrypt data
     (AES-256-CFB). Backup files can be encrypted with the following command:
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo openssl enc -aes-256-cfb -pass file:<em class="replaceable ">ENCRYPT_PASS_FILE_PATH</em> -in \
-<em class="replaceable ">YOUR_BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -out <em class="replaceable ">YOUR_BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz.enc</pre></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo openssl enc -aes-256-cfb -pass file:<em class="replaceable">ENCRYPT_PASS_FILE_PATH</em> -in \
+<em class="replaceable">YOUR_BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz -out <em class="replaceable">YOUR_BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz.enc</pre></div><p>
     For example, using the <code class="filename">ssh.tar.gz</code> generated above:
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo openssl enc  -aes-256-cfb -pass file:myEncFile -in ssh.tar.gz  -out ssh.tar.gz.enc</pre></div></div></div><div class="sect2" id="mariadb-database-backup"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">MariaDB Database Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#mariadb-database-backup">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>mariadb-database-backup</li></ul></div></div></div></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo openssl enc  -aes-256-cfb -pass file:myEncFile -in ssh.tar.gz  -out ssh.tar.gz.enc</pre></div></section></section><section class="sect2" id="mariadb-database-backup" data-id-title="MariaDB Database Backup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.3.2 </span><span class="title-name">MariaDB Database Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#mariadb-database-backup">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    When backing up MariaDB, the following process must be performed on
    <span class="bold"><strong>all nodes</strong></span> in the cluster. It is similar to
    the backup procedure above for the Cloud Lifecycle Manager (see <a class="xref" href="bura-overview.html#manual-backup-setup" title="Manual Backup Setup">Procedure 17.1, “Manual Backup Setup”</a>). The difference is the addition of SQL
@@ -366,46 +383,46 @@ vars:
 
  - fail:
      msg: "Fail to create snapshot on  {{ lvm_target }}"
-   when: snapshot_st.rc != 0</pre></div><div id="id-1.5.19.9.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   when: snapshot_st.rc != 0</pre></div><div id="id-1.5.19.9.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      Verify the validity of the <code class="literal">lvm_target</code> variable
      (which refers to the actual database LVM volume) before proceeding with
      the backup.
     </p></div><p>
     <span class="bold"><strong>Doing the MariaDB backup</strong></span>
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      We recommend storing the MariaDB version with your backup. The following
      command saves the MariaDB version as
-     <em class="replaceable ">MARIADB_VER</em>.
-    </p><div class="verbatim-wrap"><pre class="screen">mysql -V | grep -Eo '(\S+?)-MariaDB' &gt; <em class="replaceable ">MARIADB_VER</em></pre></div></li><li class="step "><p>
+     <em class="replaceable">MARIADB_VER</em>.
+    </p><div class="verbatim-wrap"><pre class="screen">mysql -V | grep -Eo '(\S+?)-MariaDB' &gt; <em class="replaceable">MARIADB_VER</em></pre></div></li><li class="step"><p>
      Open a MariaDB client session on all controllers.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Run the command to spread <code class="literal">read lock</code> on all controllers
      and keep the MariaDB session open.
-    </p><div class="verbatim-wrap"><pre class="screen">&gt;&gt; FLUSH TABLES WITH READ LOCK;</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">&gt;&gt; FLUSH TABLES WITH READ LOCK;</pre></div></li><li class="step"><p>
      Open a new terminal and run the
      <code class="filename">create_db_snapshot.yml</code> playbook created above.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts create_db_snapshot.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts create_db_snapshot.yml</pre></div></li><li class="step"><p>
      Go back to the open MariaDB session and run the command to flush the lock on
      all controllers.
-    </p><div class="verbatim-wrap"><pre class="screen">&gt;&gt; UNLOCK TABLES;</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">&gt;&gt; UNLOCK TABLES;</pre></div></li><li class="step"><p>
      Mount the snapshot
     </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; mkdir /var/tmp/mysql_snapshot
-dbnode&gt;&gt; sudo mount -o ro /dev/ardana-vg/lvm_mysql_snapshot  /var/tmp/mysql_snapshot</pre></div></li><li class="step "><p>
+dbnode&gt;&gt; sudo mount -o ro /dev/ardana-vg/lvm_mysql_snapshot  /var/tmp/mysql_snapshot</pre></div></li><li class="step"><p>
      On each database node, generate a TAR archive with an appropriate
-     <code class="filename"><em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz</code>
-     backup file for the <em class="replaceable ">BACKUP_TARGET</em>.
+     <code class="filename"><em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em>.tar.gz</code>
+     backup file for the <em class="replaceable">BACKUP_TARGET</em>.
     </p><p>
      The <code class="literal">backup_name</code> is <code class="literal">mysql_backup</code> and
      the <code class="literal">backup_path</code>
-     (<em class="replaceable ">BACKUP_TARGET</em>) is
+     (<em class="replaceable">BACKUP_TARGET</em>) is
      <code class="filename">/var/lib/mysql/</code>.
     </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
---file mydb.tar.gz /var/tmp/mysql_snapshot/var/lib/mysql .</pre></div></li><li class="step "><p>
+--file mydb.tar.gz /var/tmp/mysql_snapshot/var/lib/mysql .</pre></div></li><li class="step"><p>
      Unmount and delete the MariaDB snapshot on each database node.
     </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo  umount -l -f /var/tmp/mysql_snapshot; \
-sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_snapshot</pre></div></li></ol></div></div><div class="sect3" id="id-1.5.19.9.5.8"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Incremental MariaDB Database Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.5.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_snapshot</pre></div></li></ol></div></div><section class="sect3" id="id-1.5.19.9.5.8" data-id-title="Incremental MariaDB Database Backup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.2.1 </span><span class="title-name">Incremental MariaDB Database Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.5.8">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Incremental backups require a <code class="literal">meta</code> file. If you use the
     incremental backup option, a meta file must be included in the
     <code class="command">tar</code> command in the initial backup and whenever you do an
@@ -421,63 +438,63 @@ sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_s
     To prepare for incremental backup, follow the steps in the previous section
     except for the <code class="command">tar</code> commands. Incremental backup
     <code class="command">tar</code> commands must have additional information.
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       First time MariaDB database full backup
      </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
 --ignore-failed-read <span class="bold"><strong>--listed-incremental=PATH_TO_YOUR_DB_META</strong></span> \
 --file mydb.tar.gz -C /var/tmp/mysql_snapshot/var/lib/mysql .</pre></div><p>
       For example, where
-      <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/var/lib/mysql/</code>:
+      <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/var/lib/mysql/</code>:
      </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
 <span class="bold"><strong>--listed-incremental=mydbMeta</strong></span> --file mydb.tar.gz -C \
-/var/tmp/mysql_snapshot/var/lib/mysql .</pre></div></li><li class="listitem "><p>
+/var/tmp/mysql_snapshot/var/lib/mysql .</pre></div></li><li class="listitem"><p>
       Incremental MariaDB database backup
      </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek \
 --ignore-failed-read <span class="bold"><strong>--listed-incremental=PATH_TO_YOUR_META</strong></span>\
---file <em class="replaceable ">BACKUP_TAR_ARCHIVE_NAME</em><span class="bold"><strong>_VERSION</strong></span>.tar.gz -C \
-/var/tmp/clm_snapshot<em class="replaceable ">TARGET_DIR</em></pre></div><p>
+--file <em class="replaceable">BACKUP_TAR_ARCHIVE_NAME</em><span class="bold"><strong>_VERSION</strong></span>.tar.gz -C \
+/var/tmp/clm_snapshot<em class="replaceable">TARGET_DIR</em></pre></div><p>
       For example, where
-      <em class="replaceable ">BACKUP_PATH</em>=<code class="filename">/var/lib/mysql/</code>:
+      <em class="replaceable">BACKUP_PATH</em>=<code class="filename">/var/lib/mysql/</code>:
      </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
 <span class="bold"><strong>--listed-incremental=mydbMeta</strong></span> --file \
 <span class="bold"><strong>mydb_v1.tar.gz</strong></span> -C /var/tmp/mysql_snapshot/var/lib/mysql .</pre></div></li></ul></div><p>
     After creating and saving the TAR archive, unmount and delete the snapshot.
    </p><div class="verbatim-wrap"><pre class="screen">dbnode&gt;&gt; sudo  umount -l -f /var/tmp/mysql_snapshot; \
-sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_snapshot</pre></div></div><div class="sect3" id="id-1.5.19.9.5.9"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">MariaDB Database Encryption</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.5.9">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p> Encrypt your MariaDB database backup following the instructions
+sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_snapshot</pre></div></section><section class="sect3" id="id-1.5.19.9.5.9" data-id-title="MariaDB Database Encryption"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.2.2 </span><span class="title-name">MariaDB Database Encryption</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.5.9">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p> Encrypt your MariaDB database backup following the instructions
      in <a class="xref" href="bura-overview.html#manual-backup-encryption" title="17.3.1.2. Encryption">Section 17.3.1.2, “Encryption”</a>
-     </p></li><li class="step "><p>
-      Upload your <em class="replaceable ">BACKUP_TARGET</em>.tar.gz to your
+     </p></li><li class="step"><p>
+      Upload your <em class="replaceable">BACKUP_TARGET</em>.tar.gz to your
       preferred remote server.
-     </p></li></ol></div></div></div></div><div class="sect2" id="swift-ring-backup"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">swift Ring Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#swift-ring-backup">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>swift-ring-backup</li></ul></div></div></div></div><p>
+     </p></li></ol></div></div></section></section><section class="sect2" id="swift-ring-backup" data-id-title="swift Ring Backup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.3.3 </span><span class="title-name">swift Ring Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#swift-ring-backup">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following procedure is used to back up swift rings. It is similar to
    the Cloud Lifecycle Manager backup (see <a class="xref" href="bura-overview.html#manual-backup-setup" title="Manual Backup Setup">Procedure 17.1, “Manual Backup Setup”</a>).
-  </p><div id="id-1.5.19.9.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+  </p><div id="id-1.5.19.9.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     The steps must be performed only on the building server (For more
     information, see <a class="xref" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html#topic-rtc-s3t-mt" title="18.6.2.4. Identifying the Swift Ring Building Server">Section 18.6.2.4, “Identifying the Swift Ring Building Server”</a>.).
    </p></div><p>
    The <code class="literal">backup_name</code> is
    <code class="literal">swift_builder_dir_backup</code> and the
    <code class="literal">backup_path</code> is <code class="filename">/etc/swiftlm/</code>.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Create a snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo lvcreate --size 2G --snapshot --permission r \
---name lvm_root_snapshot /dev/ardana-vg/root</pre></div></li><li class="step "><p>
+--name lvm_root_snapshot /dev/ardana-vg/root</pre></div></li><li class="step"><p>
      Mount the snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>mkdir /var/tmp/root_snapshot; sudo mount -o ro \
-/dev/ardana-vg/lvm_root_snapshot /var/tmp/root_snapshot</pre></div></li><li class="step "><p>
+/dev/ardana-vg/lvm_root_snapshot /var/tmp/root_snapshot</pre></div></li><li class="step"><p>
      Create the TAR archive
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
---file swring.tar.gz -C /var/tmp/root_snapshot/etc/swiftlm .</pre></div></li><li class="step "><p>
+--file swring.tar.gz -C /var/tmp/root_snapshot/etc/swiftlm .</pre></div></li><li class="step"><p>
      Upload your <code class="filename">swring.tar.gz</code> TAR archive to your preferred remote server.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Unmount and delete the snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo umount -l -f /var/tmp/root_snapshot; sudo rm -rf \
-/var/tmp/root_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_root_snapshot</pre></div></li></ol></div></div></div><div class="sect2" id="manual-audit-log-bur"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Audit Log Backup and Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#manual-audit-log-bur">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span>manual-audit-log-bur</li></ul></div></div></div></div><div class="sect3" id="id-1.5.19.9.7.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Audit Log Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.7.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+/var/tmp/root_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_root_snapshot</pre></div></li></ol></div></div></section><section class="sect2" id="manual-audit-log-bur" data-id-title="Audit Log Backup and Restore"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.3.4 </span><span class="title-name">Audit Log Backup and Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#manual-audit-log-bur">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect3" id="id-1.5.19.9.7.2" data-id-title="Audit Log Backup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.4.1 </span><span class="title-name">Audit Log Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.7.2">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following procedure is used to back up Audit Logs. It is similar to the
    Cloud Lifecycle Manager backup (see <a class="xref" href="bura-overview.html#manual-backup-setup" title="Manual Backup Setup">Procedure 17.1, “Manual Backup Setup”</a>). The steps must be
    performed on all nodes; there will be a backup TAR archive for each
@@ -486,55 +503,55 @@ sudo rm -rf /var/tmp/mysql_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_mysql_s
    The <code class="literal">backup_name</code> is
    <code class="literal">audit_log_backup</code> and the
    <code class="literal">backup_path</code> is <code class="filename">/var/audit</code>.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Create a snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo lvcreate --size 2G --snapshot --permission r --name \
-lvm_root_snapshot /dev/ardana-vg/root</pre></div></li><li class="step "><p>
+lvm_root_snapshot /dev/ardana-vg/root</pre></div></li><li class="step"><p>
      Mount the snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>mkdir /var/tmp/root_snapshot; sudo mount -o ro \
-/dev/ardana-vg/lvm_root_snapshot /var/tmp/root_snapshot</pre></div></li><li class="step "><p>
+/dev/ardana-vg/lvm_root_snapshot /var/tmp/root_snapshot</pre></div></li><li class="step"><p>
      Create the TAR archive
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar --create -z --warning=none --no-check-device \
 --one-file-system --preserve-permissions --same-owner --seek --ignore-failed-read \
---file audit.tar.gz -C /var/tmp/root_snapshot/var/audit .</pre></div></li><li class="step "><p>
+--file audit.tar.gz -C /var/tmp/root_snapshot/var/audit .</pre></div></li><li class="step"><p>
      Upload your <code class="filename">audit.tar.gz</code> TAR archive to your
      preferred remote server.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Unmount and delete a snapshot
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo umount -l -f /var/tmp/root_snapshot; sudo rm -rf \
-/var/tmp/root_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_root_snapshot</pre></div></li></ol></div></div></div><div class="sect3" id="id-1.5.19.9.7.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.3.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Audit Logs Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.7.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-manual_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+/var/tmp/root_snapshot; sudo lvremove -f /dev/ardana-vg/lvm_root_snapshot</pre></div></li></ol></div></div></section><section class="sect3" id="id-1.5.19.9.7.3" data-id-title="Audit Logs Restore"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.3.4.2 </span><span class="title-name">Audit Logs Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.9.7.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/bura-manual_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Restore the Audit Logs backup with the following commands
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Retrieve the Audit Logs TAR archive
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Extract the TAR archive to the proper backup location
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar -z --incremental --extract --ignore-zeros \
---warning=none --overwrite --directory /var/audit/  -f audit.tar.gz</pre></div></li></ol></div></div></div></div></div><div class="sect1" id="full-recovery-test"><div class="titlepage"><div><div><h2 class="title"><span class="number">17.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Full Disaster Recovery Test</span> <a title="Permalink" class="permalink" href="bura-overview.html#full-recovery-test">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span>full-recovery-test</li></ul></div></div></div></div><p>
+--warning=none --overwrite --directory /var/audit/  -f audit.tar.gz</pre></div></li></ol></div></div></section></section></section><section class="sect1" id="full-recovery-test" data-id-title="Full Disaster Recovery Test"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">17.4 </span><span class="title-name">Full Disaster Recovery Test</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#full-recovery-test">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Full Disaster Recovery Test
- </p><div class="sect2" id="id-1.5.19.10.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">High Level View of the Recovery Process</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><section class="sect2" id="id-1.5.19.10.3" data-id-title="High Level View of the Recovery Process"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.4.1 </span><span class="title-name">High Level View of the Recovery Process</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Back up the control plane using the manual backup procedure
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Backup the Cassandra Database
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Re-install Controller 1 with the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> ISO
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Use manual restore steps to recover deployment data (and model)
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Re-install <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> on Controllers 1, 2, 3
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Recover the backup of the MariaDB database
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Recover the Cassandra Database
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Verify testing
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.19.10.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Description of the testing environment</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.5.19.10.4" data-id-title="Description of the testing environment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.4.2 </span><span class="title-name">Description of the testing environment</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The testing environment is similar to the Entry Scale model.
   </p><p>
    It uses five servers: three Control Nodes and two Compute Nodes.
   </p><p>
    The controller node has three disks. The first is reserved for the system;
    the others are used for swift.
-  </p><div id="id-1.5.19.10.4.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.5.19.10.4.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     For this Disaster Recovery test, data has been saved on disks 2 and 3
     of the swift controllers, which allows for swift objects to be restored
     the recovery. If these disks were also wiped, swift data would be lost,
@@ -543,27 +560,27 @@ lvm_root_snapshot /dev/ardana-vg/root</pre></div></li><li class="step "><p>
    </p><p>
     Unless specified otherwise, all commands should be executed on controller
     1, which is also the deployer node.
-   </p></div></div><div class="sect2" id="id-1.5.19.10.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Pre-Disaster testing</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect2" id="id-1.5.19.10.5" data-id-title="Pre-Disaster testing"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.4.3 </span><span class="title-name">Pre-Disaster testing</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In order to validate the procedure after recovery, we need to create some
    workloads.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Source the service credential file
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="step"><p>
      Copy an image to the platform and create a glance image with it. In this
      example, Cirros is used
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image create --disk-format raw --container-format \
-bare --public --file ~/cirros-0.3.5-x86_64-disk.img cirros</pre></div></li><li class="step "><p>
+bare --public --file ~/cirros-0.3.5-x86_64-disk.img cirros</pre></div></li><li class="step"><p>
      Create a network
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create test_net</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network create test_net</pre></div></li><li class="step"><p>
      Create a subnet
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet create 07c35d11-13f9-41d4-8289-fa92147b1d44 192.168.42.0/24 --name test_subnet</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack subnet create 07c35d11-13f9-41d4-8289-fa92147b1d44 192.168.42.0/24 --name test_subnet</pre></div></li><li class="step"><p>
      Create some instances
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server create server_1 --image 411a0363-7f4b-4bbc-889c-b9614e2da52e --flavor m1.small --nic net-id=07c35d11-13f9-41d4-8289-fa92147b1d44
 <code class="prompt user">ardana &gt; </code>openstack server create server_2 --image 411a03...e2da52e --flavor m1.small --nic net-id=07c35d...147b1d44
 <code class="prompt user">ardana &gt; </code>openstack server create server_3 --image 411a03...e2da52e --flavor m1.small --nic net-id=07c35d...147b1d44
 <code class="prompt user">ardana &gt; </code>openstack server create server_4 --image 411a03...e2da52e --flavor m1.small --nic net-id=07c35d...147b1d44
 <code class="prompt user">ardana &gt; </code>openstack server create server_5 --image 411a03...e2da52e --flavor m1.small --nic net-id=07c35d...147b1d44
-<code class="prompt user">ardana &gt; </code>openstack server list</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>openstack server list</pre></div></li><li class="step"><p>
      Create containers and objects
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack object create container_1 ~/service.osrc
 var/lib/ardana/service.osrc
@@ -573,16 +590,16 @@ swift upload container_1 ~/backup.osrc
 
 <code class="prompt user">ardana &gt; </code>openstack object list container_1
 var/lib/ardana/backup.osrc
-var/lib/ardana/service.osrc</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.5.19.10.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparation of the test backup server</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3" id="id-1.5.19.10.6.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparation to store backups</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+var/lib/ardana/service.osrc</pre></div></li></ol></div></div></section><section class="sect2" id="id-1.5.19.10.6" data-id-title="Preparation of the test backup server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.4.4 </span><span class="title-name">Preparation of the test backup server</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect3" id="id-1.5.19.10.6.2" data-id-title="Preparation to store backups"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.4.4.1 </span><span class="title-name">Preparation to store backups</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6.2">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     In this example, backups are stored on the server
     <code class="literal">192.168.69.132</code>
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Connect to the backup server
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Create the user
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>useradd <em class="replaceable ">BACKUPUSER</em> --create-home --home-dir /mnt/backups/</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>useradd <em class="replaceable">BACKUPUSER</em> --create-home --home-dir /mnt/backups/</pre></div></li><li class="step"><p>
       Switch to that user
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>su <em class="replaceable ">BACKUPUSER</em></pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>su <em class="replaceable">BACKUPUSER</em></pre></div></li><li class="step"><p>
       Create the SSH keypair
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>ssh-keygen -t rsa
 &gt; # Leave the default for the first question and do not set any passphrase
@@ -606,10 +623,10 @@ var/lib/ardana/service.osrc</pre></div></li></ol></div></div></div><div class="s
 &gt; |  o + .          |
 &gt; |.o .             |
 &gt; |++o              |
-&gt; +-----------------+</pre></div></li><li class="step "><p>
+&gt; +-----------------+</pre></div></li><li class="step"><p>
       Add the public key to the list of the keys authorized to connect to that
       user on this server
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa.pub &gt;&gt; /mnt/backups/.ssh/authorized_keys</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa.pub &gt;&gt; /mnt/backups/.ssh/authorized_keys</pre></div></li><li class="step"><p>
       Print the private key. This will be used for the backup configuration
       (ssh_credentials.yml file)
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa
@@ -622,24 +639,24 @@ var/lib/ardana/service.osrc</pre></div></li></ol></div></div></div><div class="s
 &gt; ...
 &gt; iBKVKGPhOnn4ve3dDqy3q7fS5sivTqCrpaYtByJmPrcJNjb2K7VMLNvgLamK/AbL
 &gt; qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
-&gt; -----END RSA PRIVATE KEY-----</pre></div></li></ol></div></div></div><div class="sect3" id="id-1.5.19.10.6.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparation to store Cassandra backups</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+&gt; -----END RSA PRIVATE KEY-----</pre></div></li></ol></div></div></section><section class="sect3" id="id-1.5.19.10.6.3" data-id-title="Preparation to store Cassandra backups"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.4.4.2 </span><span class="title-name">Preparation to store Cassandra backups</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.6.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     In this example, backups will be stored on the server
     <code class="literal">192.168.69.132</code>, in the
     <code class="filename">/mnt/backups/cassandra_backups/</code> directory.
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Create a directory on the backup server to store Cassandra backups.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>mkdir /mnt/backups/cassandra_backups</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>mkdir /mnt/backups/cassandra_backups</pre></div></li><li class="step"><p>
       Copy the private SSH key from the backup server to all controller nodes.
      </p><p>
-      Replace <em class="replaceable ">CONTROLLER</em> with each control node e.g.
+      Replace <em class="replaceable">CONTROLLER</em> with each control node e.g.
       doc-cp1-c1-m1-mgmt, doc-cp1-c1-m2-mgmt etc
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Log in to each controller node and copy the private SSH key to
       <code class="filename">.ssh</code> directory of the root user.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> sudo cp /var/lib/ardana/.ssh/id_rsa_backup /root/.ssh/</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code> sudo cp /var/lib/ardana/.ssh/id_rsa_backup /root/.ssh/</pre></div></li><li class="step"><p>
       Verify that you can SSH to the backup server as backupuser using the
       private key.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>ssh -i ~/.ssh/id_rsa_backup backupuser@192.168.69.132</pre></div></li></ol></div></div></div></div><div class="sect2" id="id-1.5.19.10.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">17.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Perform Backups for disaster recovery test</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3" id="id-1.5.19.10.7.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Execute backup of Cassandra</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>ssh -i ~/.ssh/id_rsa_backup backupuser@192.168.69.132</pre></div></li></ol></div></div></section></section><section class="sect2" id="id-1.5.19.10.7" data-id-title="Perform Backups for disaster recovery test"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">17.4.5 </span><span class="title-name">Perform Backups for disaster recovery test</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect3" id="id-1.5.19.10.7.2" data-id-title="Execute backup of Cassandra"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.4.5.1 </span><span class="title-name">Execute backup of Cassandra</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.2">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Create the following <code class="filename">cassandra-backup-extserver.sh</code>
     script on all controller nodes.
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cat &gt; ~/cassandra-backup-extserver.sh &lt;&lt; EOF
@@ -674,22 +691,22 @@ for d in \$SNAPSHOT_DIR_LIST
 \$NODETOOL clearsnapshot monasca
 EOF</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>chmod +x ~/cassandra-backup-extserver.sh</pre></div><p>
     Execute following steps on all the controller nodes
-   </p><div id="id-1.5.19.10.7.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div id="id-1.5.19.10.7.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      The <code class="filename">/usr/local/sbin/cassandra-backup-extserver.sh</code>
      script should be executed on all three controller nodes at the same time
      (within seconds of each other) for a successful backup.
-    </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Edit the
       <code class="filename">/usr/local/sbin/cassandra-backup-extserver.sh</code> script
      </p><p>
-      Set <em class="replaceable ">BACKUP_USER</em> and
-      <em class="replaceable ">BACKUP_SERVER</em> to the desired backup user (for
+      Set <em class="replaceable">BACKUP_USER</em> and
+      <em class="replaceable">BACKUP_SERVER</em> to the desired backup user (for
       example, <code class="systemitem">backupuser</code>) and
       desired backup server (for example, <code class="literal">192.168.68.132</code>),
       respectively.
      </p><div class="verbatim-wrap"><pre class="screen">BACKUP_USER=backupuser
 BACKUP_SERVER=192.168.69.132
-BACKUP_DIR=/mnt/backups/cassandra_backups/</pre></div></li><li class="step "><p>
+BACKUP_DIR=/mnt/backups/cassandra_backups/</pre></div></li><li class="step"><p>
       Execute <code class="filename">~/cassandra-backup-extserver.sh</code> on on all
       controller nodes which are also Cassandra nodes.
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>~/cassandra-backup-extserver.sh
@@ -713,7 +730,7 @@ created directory /mnt/backups/cassandra_backups//doc-cp1-c1-m1-mgmt_cassandra-s
 /var/cassandra/data/data/monasca/measurements-e29033d0488d11e8bdabc32666406af1/snapshots/cassandra-snp-2018-06-28-0306/schema.cql
 sent 173,691 bytes  received 531 bytes  116,148.00 bytes/sec
 total size is 171,378  speedup is 0.98
-Requested clearing snapshot(s) for [monasca]</pre></div></li><li class="step "><p>
+Requested clearing snapshot(s) for [monasca]</pre></div></li><li class="step"><p>
       Verify the Cassandra backup directory on the backup server.
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>ls -alt /mnt/backups/cassandra_backups
 total 16
@@ -724,43 +741,43 @@ drwxr-xr-x 8 backupuser users 4096 Jun 27 20:56 ..
 
 $backupuser@backupserver&gt; du -shx /mnt/backups/cassandra_backups/*
 6.2G    /mnt/backups/cassandra_backups/doc-cp1-c1-m1-mgmt_cassandra-snp-2018-06-28-0251
-6.3G    /mnt/backups/cassandra_backups/doc-cp1-c1-m2-mgmt_cassandra-snp-2018-06-28-0306</pre></div></li></ol></div></div></div><div class="sect3" id="id-1.5.19.10.7.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">17.4.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Execute backup of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+6.3G    /mnt/backups/cassandra_backups/doc-cp1-c1-m2-mgmt_cassandra-snp-2018-06-28-0306</pre></div></li></ol></div></div></section><section class="sect3" id="id-1.5.19.10.7.3" data-id-title="Execute backup of SUSE OpenStack Cloud"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2 </span><span class="title-name">Execute backup of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Back up the Cloud Lifecycle Manager using the procedure at
       <a class="xref" href="bura-overview.html#clm-data-backup" title="17.3.1. Cloud Lifecycle Manager Data Backup">Section 17.3.1, “Cloud Lifecycle Manager Data Backup”</a>
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Back up the MariaDB database using the procedure at
       <a class="xref" href="bura-overview.html#mariadb-database-backup" title="17.3.2. MariaDB Database Backup">Section 17.3.2, “MariaDB Database Backup”</a>
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Back up swift rings using the procedure at
       <a class="xref" href="bura-overview.html#swift-ring-backup" title="17.3.3. swift Ring Backup">Section 17.3.3, “swift Ring Backup”</a>
-     </p></li></ol></div></div><div class="sect4" id="id-1.5.19.10.7.3.3"><div class="titlepage"><div><div><h5 class="title"><span class="number">17.4.5.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore the first controller</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     </p></li></ol></div></div><section class="sect4" id="id-1.5.19.10.7.3.3" data-id-title="Restore the first controller"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.1 </span><span class="title-name">Restore the first controller</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.3">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
        Log in to the Cloud Lifecycle Manager.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Retrieve the Cloud Lifecycle Manager backups that were created with <a class="xref" href="bura-overview.html#clm-data-backup" title="17.3.1. Cloud Lifecycle Manager Data Backup">Section 17.3.1, “Cloud Lifecycle Manager Data Backup”</a>. There are multiple backups; directories are
        handled differently than files.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Extract the TAR archives for each of the seven locations.
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar -z --incremental --extract --ignore-zeros \
---warning=none --overwrite --directory <em class="replaceable ">RESTORE_TARGET</em> \
--f <em class="replaceable ">BACKUP_TARGET</em>.tar.gz</pre></div><p>
+--warning=none --overwrite --directory <em class="replaceable">RESTORE_TARGET</em> \
+-f <em class="replaceable">BACKUP_TARGET</em>.tar.gz</pre></div><p>
        For example, with a directory such as
-       <em class="replaceable ">BACKUP_TARGET</em>=<code class="filename">/etc/ssh/</code>
+       <em class="replaceable">BACKUP_TARGET</em>=<code class="filename">/etc/ssh/</code>
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar -z --incremental --extract --ignore-zeros \
 --warning=none --overwrite --directory /etc/ssh/ -f ssh.tar.gz</pre></div><p>
-       With a file such as <em class="replaceable ">BACKUP_TARGET</em>=/etc/passwd
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar -z --incremental --extract --ignore-zeros --warning=none --overwrite --directory /etc/ -f passwd.tar.gz</pre></div></li></ol></div></div></div><div class="sect4" id="id-1.5.19.10.7.3.4"><div class="titlepage"><div><div><h5 class="title"><span class="number">17.4.5.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Re-deployment of controllers 1, 2 and 3</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       With a file such as <em class="replaceable">BACKUP_TARGET</em>=/etc/passwd
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo tar -z --incremental --extract --ignore-zeros --warning=none --overwrite --directory /etc/ -f passwd.tar.gz</pre></div></li></ol></div></div></section><section class="sect4" id="id-1.5.19.10.7.3.4" data-id-title="Re-deployment of controllers 1, 2 and 3"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.2 </span><span class="title-name">Re-deployment of controllers 1, 2 and 3</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.4">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
        Change back to the default ardana user.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Run the <code class="filename">cobbler-deploy.yml</code> playbook.
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost cobbler-deploy.xml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost cobbler-deploy.xml</pre></div></li><li class="step"><p>
        Run the <code class="filename">bm-reimage.yml</code> playbook limited to the
        second and third controllers.
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost bm-reimage.yml -e nodelist=controller2,controller3</pre></div><p>
        The names of controller2 and controller3. Use the
        <code class="filename">bm-power-status.yml</code> playbook to check the cobbler
        names of these nodes.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Run the <code class="filename">site.yml</code> playbook limited to the three
        controllers and localhost—in this example,
        <code class="literal">doc-cp1-c1-m1-mgmt</code>,
@@ -768,16 +785,16 @@ $backupuser@backupserver&gt; du -shx /mnt/backups/cassandra_backups/*
        <code class="literal">doc-cp1-c1-m3-mgmt</code>, and <code class="literal">localhost</code>
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts site.yml --limit \
-doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li></ol></div></div></div><div class="sect4" id="id-1.5.19.10.7.3.5"><div class="titlepage"><div><div><h5 class="title"><span class="number">17.4.5.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore Databases</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect5" id="id-1.5.19.10.7.3.5.2"><div class="titlepage"><div><div><h6 class="title"><span class="number">17.4.5.2.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore MariaDB database</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li></ol></div></div></section><section class="sect4" id="id-1.5.19.10.7.3.5" data-id-title="Restore Databases"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.3 </span><span class="title-name">Restore Databases</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect5" id="id-1.5.19.10.7.3.5.2" data-id-title="Restore MariaDB database"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.3.1 </span><span class="title-name">Restore MariaDB database</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.2">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
         Log in to the <span class="bold"><strong>first controller node</strong></span>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Retrieve the MariaDB backup that was created with <a class="xref" href="bura-overview.html#mariadb-database-backup" title="17.3.2. MariaDB Database Backup">Section 17.3.2, “MariaDB Database Backup”</a>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Create a temporary directory and extract the TAR archive (for example,
         <code class="filename">mydb.tar.gz</code>).
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>mkdir /tmp/mysql_restore; sudo tar -z --incremental \
 --extract --ignore-zeros --warning=none --overwrite --directory /tmp/mysql_restore/ \
--f mydb.tar.gz</pre></div></li><li class="step "><p>
+-f mydb.tar.gz</pre></div></li><li class="step"><p>
         Verify that the files have been restored on the controller.
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo du -shx /tmp/mysql_restore/*
 16K     /tmp/mysql_restore/aria_log.00000001
@@ -815,19 +832,19 @@ doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></
 24K     /tmp/mysql_restore/tc.log
 4.0K    /tmp/mysql_restore/test
 8.0K    /tmp/mysql_restore/winchester
-4.0K    /tmp/mysql_restore/xtrabackup_galera_info</pre></div></li><li class="step "><p>
+4.0K    /tmp/mysql_restore/xtrabackup_galera_info</pre></div></li><li class="step"><p>
         Stop <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services on the three controllers (using the
         hostnames of the controllers in your configuration).
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-stop.yml --limit \
-doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li><li class="step "><p>
+doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li><li class="step"><p>
         Delete the files in the <code class="filename">mysql</code> directory and copy
         the restored backup to that directory.
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cd /var/lib/mysql/
 <code class="prompt user">root # </code>rm -rf ./*
-<code class="prompt user">root # </code>cp -pr /tmp/mysql_restore/* ./</pre></div></li><li class="step "><p>
+<code class="prompt user">root # </code>cp -pr /tmp/mysql_restore/* ./</pre></div></li><li class="step"><p>
         Switch back to the <code class="literal">ardana</code> user when the copy is finished.
-       </p></li></ol></div></div></div><div class="sect5" id="id-1.5.19.10.7.3.5.3"><div class="titlepage"><div><div><h6 class="title"><span class="number">17.4.5.2.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore Cassandra database</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+       </p></li></ol></div></div></section><section class="sect5" id="id-1.5.19.10.7.3.5.3" data-id-title="Restore Cassandra database"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.3.2 </span><span class="title-name">Restore Cassandra database</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.3">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><p>
       Create a script called
       <code class="filename">cassandra-restore-extserver.sh</code> on all controller
       nodes
@@ -878,24 +895,24 @@ cd
 \$NODETOOL clearsnapshot \$KEYSPACE
 EOF</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>chmod +x ~/cassandra-restore-extserver.sh</pre></div><p>
       Execute following steps on all the controller nodes.
-     </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+     </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
         Edit the <code class="filename">~/cassandra-restore-extserver.sh</code> script.
        </p><p>
         Set
-        <em class="replaceable ">BACKUP_USER</em>,<em class="replaceable ">BACKUP_SERVER</em>
+        <em class="replaceable">BACKUP_USER</em>,<em class="replaceable">BACKUP_SERVER</em>
         to the desired backup user (for example,
         <code class="systemitem">backupuser</code>) and the
         desired backup server (for example, <code class="literal">192.168.68.132</code>),
         respectively.
        </p><div class="verbatim-wrap"><pre class="screen">BACKUP_USER=backupuser
 BACKUP_SERVER=192.168.69.132
-BACKUP_DIR=/mnt/backups/cassandra_backups/</pre></div></li><li class="step "><p>
+BACKUP_DIR=/mnt/backups/cassandra_backups/</pre></div></li><li class="step"><p>
         Execute <code class="filename">~/cassandra-restore-extserver.sh</code>
-        <em class="replaceable ">SNAPSHOT_NAME</em>
+        <em class="replaceable">SNAPSHOT_NAME</em>
        </p><p>
-        Find <em class="replaceable ">SNAPSHOT_NAME</em> from listing of
+        Find <em class="replaceable">SNAPSHOT_NAME</em> from listing of
         /mnt/backups/cassandra_backups. All the directories have the format
-        <em class="replaceable ">HOST</em>_<em class="replaceable ">SNAPSHOT_NAME</em>.
+        <em class="replaceable">HOST</em>_<em class="replaceable">SNAPSHOT_NAME</em>.
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ls -alt /mnt/backups/cassandra_backups
 total 16
 drwxr-xr-x 4 backupuser users 4096 Jun 28 03:06 .
@@ -917,7 +934,7 @@ var/cassandra/data/data/monasca/alarm_state_history-e6bbdc20488d11e8bdabc3266640
 ...
 ...
 ...
-/usr/bin/nodetool clearsnapshot monasca</pre></div></li></ol></div></div></div><div class="sect5" id="id-1.5.19.10.7.3.5.4"><div class="titlepage"><div><div><h6 class="title"><span class="number">17.4.5.2.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restart <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h6><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+/usr/bin/nodetool clearsnapshot monasca</pre></div></li></ol></div></div></section><section class="sect5" id="id-1.5.19.10.7.3.5.4" data-id-title="Restart SUSE OpenStack Cloud services"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.3.3 </span><span class="title-name">Restart <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.5.4">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
         Restart the MariaDB database
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts galera-bootstrap.yml</pre></div><p>
@@ -928,15 +945,15 @@ var/cassandra/data/data/monasca/alarm_state_history-e6bbdc20488d11e8bdabc3266640
        </p><p>
         If this process fails to recover the database cluster, refer to
         <a class="xref" href="system-maintenance.html#mysql" title="15.2.3.1.2. Recovering the MariaDB Database">Section 15.2.3.1.2, “Recovering the MariaDB Database”</a>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Restart <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services on the three controllers as in
         the following example.
        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-start.yml \
---limit doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li><li class="step "><p>
+--limit doc-cp1-c1-m1-mgmt,doc-cp1-c1-m2-mgmt,doc-cp1-c1-m3-mgmt,localhost</pre></div></li><li class="step"><p>
         Reconfigure <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
-       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div></div><div class="sect4" id="id-1.5.19.10.7.3.6"><div class="titlepage"><div><div><h5 class="title"><span class="number">17.4.5.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Post restore testing</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-maintenance-controller-full_recovery_test.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></section></section><section class="sect4" id="id-1.5.19.10.7.3.6" data-id-title="Post restore testing"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">17.4.5.2.4 </span><span class="title-name">Post restore testing</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.5.19.10.7.3.6">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/operations-maintenance-controller-full_recovery_test.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
        Source the service credential file
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc</pre></div></li><li class="step"><p>
        swift
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack container list
 container_1
@@ -946,14 +963,14 @@ volumebackups
 var/lib/ardana/backup.osrc
 var/lib/ardana/service.osrc
 
-<code class="prompt user">ardana &gt; </code>openstack object save container_1 /tmp/backup.osrc</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>openstack object save container_1 /tmp/backup.osrc</pre></div></li><li class="step"><p>
        neutron
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack network list
 +--------------------------------------+---------------------+--------------------------------------+
 | ID                                   | Name                | Subnets                              |
 +--------------------------------------+---------------------+--------------------------------------+
 | 07c35d11-13f9-41d4-8289-fa92147b1d44 | test-net             | 02d5ca3b-1133-4a74-a9ab-1f1dc2853ec8|
-+--------------------------------------+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++--------------------------------------+---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
        glance
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list
 +--------------------------------------+----------------------+--------+
@@ -963,7 +980,7 @@ var/lib/ardana/service.osrc
 +--------------------------------------+----------------------+--------+
 <code class="prompt user">ardana &gt; </code>openstack image save --file /tmp/cirros f751c39b-f1e3-4f02-8332-3886826889ba
 <code class="prompt user">ardana &gt; </code>ls -lah /tmp/cirros
--rw-r--r-- 1 ardana ardana 12716032 Jul  2 20:52 /tmp/cirros</pre></div></li><li class="step "><p>
+-rw-r--r-- 1 ardana ardana 12716032 Jul  2 20:52 /tmp/cirros</pre></div></li><li class="step"><p>
        nova
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack server list
 
@@ -1009,6 +1026,5 @@ var/lib/ardana/service.osrc
 +--------------------------------------+----------+--------+---------------------------------+---------------------+-----------+
 | ce7689ff-23bf-4fe9-b2a9-922d4aa9412c | server_6 | ACTIVE | n1=1.1.1.8                      | cirros-0.4.0-x86_64 | m1.small  |
 
-<code class="prompt user">ardana &gt; </code>openstack server delete ce7689ff-23bf-4fe9-b2a9-922d4aa9412c</pre></div></li></ol></div></div></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 18 </span>Troubleshooting Issues</span></a><a class="nav-link" href="manage-ops-console.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 16 </span>Operations Console</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+<code class="prompt user">ardana &gt; </code>openstack server delete ce7689ff-23bf-4fe9-b2a9-922d4aa9412c</pre></div></li></ol></div></div></section></section></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="manage-ops-console.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 16 </span>Operations Console</span></a> </div><div><a class="pagination-link next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 18 </span>Troubleshooting Issues</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="bura-overview.html#topic-bxm-gxr-st"><span class="title-number">17.1 </span><span class="title-name">Manual Backup Overview</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-jsc-qps-qt"><span class="title-number">17.2 </span><span class="title-name">Enabling Backups to a Remote Server</span></a></span></li><li><span class="section"><a href="bura-overview.html#bura-manual-backup"><span class="title-number">17.3 </span><span class="title-name">Manual Backup and Restore Procedures</span></a></span></li><li><span class="section"><a href="bura-overview.html#full-recovery-test"><span class="title-number">17.4 </span><span class="title-name">Full Disaster Recovery Test</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

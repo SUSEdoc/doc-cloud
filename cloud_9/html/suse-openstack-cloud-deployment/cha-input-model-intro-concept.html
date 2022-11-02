@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Input Model | Deployment Guide using Cloud Lifecycle Manager | SUSE OpenStack Cloud 9</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE OpenStack Cloud" /><meta name="product-number" content="9" /><meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager" /><meta name="chapter-title" content="Chapter 5. Input Model" /><meta name="description" content="This document describes how SUSE OpenStack Cloud input models can be used to define and configure the cloud." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-component" content="Documentation" /><meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9" /><link rel="home" href="index.html" title="Documentation" /><link rel="up" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="prev" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="next" href="configurationobjects.html" title="Chapter 6. Configuration Objects" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 9 | Deployment Guide using Cloud Lifecycle Manager | Input Model</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Input Model | SUSE OpenStack Cloud 9"/>
+<meta name="description" content="This document describes how SUSE OpenStack Cloud input models can be used to define and configure the cloud."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="9"/>
+<meta name="book-title" content="Deployment Guide using Cloud Lifecycle Manager"/>
+<meta name="chapter-title" content="Chapter 5. Input Model"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 9"/>
+<meta property="og:title" content="Input Model | SUSE OpenStack Cloud 9"/>
+<meta property="og:description" content="This document describes how SUSE OpenStack Cloud input models can be used to define and configure the cloud."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Input Model | SUSE OpenStack Cloud 9"/>
+<meta name="twitter:description" content="This document describes how SUSE OpenStack Cloud input models can be used to define and configure the cloud."/>
+<link rel="prev" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview"/><link rel="next" href="configurationobjects.html" title="Chapter 6. Configuration Objects"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -17,26 +34,26 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Deployment Guide using Cloud Lifecycle Manager"><span class="book-icon">Deployment Guide using Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="cha-input-model-intro-concept.html">Input Model</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Deployment Guide using Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li><li class="inactive"><a href="preinstall.html"><span class="number">III </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">13 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">14 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">15 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">16 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">17 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">18 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">IV </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">19 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">20 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">21 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">22 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">23 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">24 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">25 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">26 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">27 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">28 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">29 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">30 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">31 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">32 </span><span class="name">Installing manila and Creating manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">33 </span><span class="name">Installing SUSE CaaS Platform heat Templates</span></a></li><li class="inactive"><a href="install-caasp-terraform.html"><span class="number">34 </span><span class="name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">35 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">36 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">37 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">V </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="cloud-verification.html"><span class="number">38 </span><span class="name">Post Installation Tasks</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">39 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">40 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">41 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">42 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">43 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">44 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">VI </span><span class="name">Support</span></a><ol><li class="inactive"><a href="sec-depl-trouble-faq.html"><span class="number">45 </span><span class="name">FAQ</span></a></li><li class="inactive"><a href="sec-installation-trouble-support.html"><span class="number">46 </span><span class="name">Support</span></a></li><li class="inactive"><a href="inst-support-ptf.html"><span class="number">47 </span><span class="name">
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-input_model.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Deployment Guide using Cloud Lifecycle Manager</a><span> / </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> / </span><a class="crumb" href="cha-input-model-intro-concept.html">Input Model</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title"><em class="citetitle">Deployment Guide using Cloud Lifecycle Manager</em></div><ol><li><a href="planning-index.html" class="has-children "><span class="title-number">I </span><span class="title-name">Planning an Installation using Cloud Lifecycle Manager</span></a><ol><li><a href="register-suse-overview.html" class=" "><span class="title-number">1 </span><span class="title-name">Registering SLES</span></a></li><li><a href="min-hardware.html" class=" "><span class="title-number">2 </span><span class="title-name">Hardware and Software Support Matrix</span></a></li><li><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html" class=" "><span class="title-number">3 </span><span class="title-name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li><a href="HP3-0HA.html" class=" "><span class="title-number">4 </span><span class="title-name">High Availability</span></a></li></ol></li><li class="active"><a href="architecture.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Cloud Lifecycle Manager Overview</span></a><ol><li><a href="cha-input-model-intro-concept.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Input Model</span></a></li><li><a href="configurationobjects.html" class=" "><span class="title-number">6 </span><span class="title-name">Configuration Objects</span></a></li><li><a href="othertopics.html" class=" "><span class="title-number">7 </span><span class="title-name">Other Topics</span></a></li><li><a href="cpinfofiles.html" class=" "><span class="title-number">8 </span><span class="title-name">Configuration Processor Information Files</span></a></li><li><a href="example-configurations.html" class=" "><span class="title-number">9 </span><span class="title-name">Example Configurations</span></a></li><li><a href="modify-compute-input-model.html" class=" "><span class="title-number">10 </span><span class="title-name">Modifying Example Configurations for Compute Nodes</span></a></li><li><a href="modify-input-model.html" class=" "><span class="title-number">11 </span><span class="title-name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li><a href="alternative-configurations.html" class=" "><span class="title-number">12 </span><span class="title-name">Alternative Configurations</span></a></li></ol></li><li><a href="preinstall.html" class="has-children "><span class="title-number">III </span><span class="title-name">Pre-Installation</span></a><ol><li><a href="preinstall-overview.html" class=" "><span class="title-number">13 </span><span class="title-name">Overview</span></a></li><li><a href="preinstall-checklist.html" class=" "><span class="title-number">14 </span><span class="title-name">Pre-Installation Checklist</span></a></li><li><a href="cha-depl-dep-inst.html" class=" "><span class="title-number">15 </span><span class="title-name">Installing the Cloud Lifecycle Manager server</span></a></li><li><a href="app-deploy-smt-lcm.html" class=" "><span class="title-number">16 </span><span class="title-name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li><a href="cha-depl-repo-conf-lcm.html" class=" "><span class="title-number">17 </span><span class="title-name">Software Repository Setup</span></a></li><li><a href="multipath-boot-from-san.html" class=" "><span class="title-number">18 </span><span class="title-name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li><a href="cloudinstallation.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Cloud Installation</span></a><ol><li><a href="cloudinstallation-overview.html" class=" "><span class="title-number">19 </span><span class="title-name">Overview</span></a></li><li><a href="preparing-standalone.html" class=" "><span class="title-number">20 </span><span class="title-name">Preparing for Stand-Alone Deployment</span></a></li><li><a href="install-gui.html" class=" "><span class="title-number">21 </span><span class="title-name">Installing with the Install UI</span></a></li><li><a href="using-git.html" class=" "><span class="title-number">22 </span><span class="title-name">Using Git for Configuration Management</span></a></li><li><a href="install-standalone.html" class=" "><span class="title-number">23 </span><span class="title-name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li><a href="install-kvm.html" class=" "><span class="title-number">24 </span><span class="title-name">Installing Mid-scale and Entry-scale KVM</span></a></li><li><a href="DesignateInstallOverview.html" class=" "><span class="title-number">25 </span><span class="title-name">DNS Service Installation Overview</span></a></li><li><a href="MagnumOverview.html" class=" "><span class="title-number">26 </span><span class="title-name">Magnum Overview</span></a></li><li><a href="install-esx-ovsvapp.html" class=" "><span class="title-number">27 </span><span class="title-name">Installing ESX Computes and OVSvAPP</span></a></li><li><a href="integrate-nsx-vsphere.html" class=" "><span class="title-number">28 </span><span class="title-name">Integrating NSX for vSphere</span></a></li><li><a href="install-ironic-overview.html" class=" "><span class="title-number">29 </span><span class="title-name">Installing Baremetal (Ironic)</span></a></li><li><a href="install-swift.html" class=" "><span class="title-number">30 </span><span class="title-name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li><a href="install-sles-compute.html" class=" "><span class="title-number">31 </span><span class="title-name">Installing SLES Compute</span></a></li><li><a href="install-ardana-manila.html" class=" "><span class="title-number">32 </span><span class="title-name">Installing manila and Creating manila Shares</span></a></li><li><a href="install-heat-templates.html" class=" "><span class="title-number">33 </span><span class="title-name">Installing SUSE CaaS Platform heat Templates</span></a></li><li><a href="install-caasp-terraform.html" class=" "><span class="title-number">34 </span><span class="title-name">Installing SUSE CaaS Platform v4 using terraform</span></a></li><li><a href="integrations.html" class=" "><span class="title-number">35 </span><span class="title-name">Integrations</span></a></li><li><a href="troubleshooting-installation.html" class=" "><span class="title-number">36 </span><span class="title-name">Troubleshooting the Installation</span></a></li><li><a href="esx-troubleshooting-installation.html" class=" "><span class="title-number">37 </span><span class="title-name">Troubleshooting the ESX</span></a></li></ol></li><li><a href="post-install.html" class="has-children "><span class="title-number">V </span><span class="title-name">Post-Installation</span></a><ol><li><a href="cloud-verification.html" class=" "><span class="title-number">38 </span><span class="title-name">Post Installation Tasks</span></a></li><li><a href="ui-verification.html" class=" "><span class="title-number">39 </span><span class="title-name">UI Verification</span></a></li><li><a href="install-openstack-clients.html" class=" "><span class="title-number">40 </span><span class="title-name">Installing OpenStack Clients</span></a></li><li><a href="tls30.html" class=" "><span class="title-number">41 </span><span class="title-name">Configuring Transport Layer Security (TLS)</span></a></li><li><a href="config-availability-zones.html" class=" "><span class="title-number">42 </span><span class="title-name">Configuring Availability Zones</span></a></li><li><a href="OctaviaInstall.html" class=" "><span class="title-number">43 </span><span class="title-name">Configuring Load Balancer as a Service</span></a></li><li><a href="postinstall-checklist.html" class=" "><span class="title-number">44 </span><span class="title-name">Other Common Post-Installation Tasks</span></a></li></ol></li><li><a href="cha-inst-trouble.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Support</span></a><ol><li><a href="sec-depl-trouble-faq.html" class=" "><span class="title-number">45 </span><span class="title-name">FAQ</span></a></li><li><a href="sec-installation-trouble-support.html" class=" "><span class="title-number">46 </span><span class="title-name">Support</span></a></li><li><a href="inst-support-ptf.html" class=" "><span class="title-number">47 </span><span class="title-name">
     Applying PTFs (Program Temporary Fixes) Provided by SUSE L3 Support
-   </span></a></li><li class="inactive"><a href="inst-support-ptf-test.html"><span class="number">48 </span><span class="name">
+   </span></a></li><li><a href="inst-support-ptf-test.html" class=" "><span class="title-number">48 </span><span class="title-name">
     Testing PTFs (Program Temporary Fixes) on a Single Node
-   </span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part II. Cloud Lifecycle Manager Overview" href="architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Configuration Objects" href="configurationobjects.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Deployment Guide using Cloud Lifecycle Manager"><span class="book-icon">Deployment Guide using Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="cha-input-model-intro-concept.html">Input Model</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part II. Cloud Lifecycle Manager Overview" href="architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Configuration Objects" href="configurationobjects.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="cha-input-model-intro-concept"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber ">9</span></div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Input Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-input_model.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-input_model.xml</li><li><span class="ds-label">ID: </span>cha-input-model-intro-concept</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha-input-model-intro-concept.html#input-model-introduction"><span class="number">5.1 </span><span class="name">Introduction to the Input Model</span></a></span></dt><dt><span class="section"><a href="cha-input-model-intro-concept.html#concepts"><span class="number">5.2 </span><span class="name">Concepts</span></a></span></dt></dl></div></div><div class="sect1" id="input-model-introduction"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction to the Input Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#input-model-introduction">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-input_model_introduction.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-input_model_introduction.xml</li><li><span class="ds-label">ID: </span>input-model-introduction</li></ul></div></div></div></div><p>
+   </span></a></li></ol></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-input-model-intro-concept" data-id-title="Input Model"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber">9</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Input Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-input_model.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect1" id="input-model-introduction" data-id-title="Introduction to the Input Model"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Introduction to the Input Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#input-model-introduction">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-input_model_introduction.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This document describes how <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> input models can be used to define and
   configure the cloud.
  </p><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> ships with a set of example input models that can be used as
   starting points for defining a custom cloud. An input model allows you, the
   cloud administrator, to describe the cloud configuration in terms of:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Which OpenStack services run on which server nodes
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     How individual servers are configured in terms of disk and network adapters
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     The overall network configuration of the cloud
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Network traffic separation
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     CIDR and VLAN assignments
    </p></li></ul></div><p>
   The input model is consumed by the configuration processor which parses and
@@ -44,17 +61,17 @@ hljs.configure({
   be deployed to each server that makes up your cloud.
  </p><p>
   The document is structured as follows:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-    <span class="guimenu ">Concepts</span> - This explains the ideas behind the
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+    <span class="guimenu">Concepts</span> - This explains the ideas behind the
     declarative model approach used in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 and the core concepts
     used in describing that model
-   </p></li><li class="listitem "><p>
-    <span class="guimenu ">Input Model</span> - This section provides a description of
+   </p></li><li class="listitem"><p>
+    <span class="guimenu">Input Model</span> - This section provides a description of
     each of the configuration entities in the input model
-   </p></li><li class="listitem "><p>
-    <span class="guimenu ">Core Examples</span> - In this section we provide samples and
+   </p></li><li class="listitem"><p>
+    <span class="guimenu">Core Examples</span> - In this section we provide samples and
     definitions of some of the more important configuration entities
-   </p></li></ul></div></div><div class="sect1" id="concepts"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Concepts</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concepts">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-concepts.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-concepts.xml</li><li><span class="ds-label">ID: </span>concepts</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect1" id="concepts" data-id-title="Concepts"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Concepts</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concepts">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-concepts.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   An <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> 9 cloud is defined by a declarative model that is described
   in a series of configuration objects. These configuration objects are
   represented in YAML files which together constitute the various example
@@ -69,7 +86,7 @@ hljs.configure({
   capital letters as a convention. These names have no significance to
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, rather it is the relationships between them that define the
   configuration.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-HPE_InputModel_Flow_40.png" target="_blank"><img src="images/media-inputmodel-HPE_InputModel_Flow_40.png" width="" /></a></div></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-inputmodel-HPE_InputModel_Flow_40.png"><img src="images/media-inputmodel-HPE_InputModel_Flow_40.png" alt="Image" title="Image"/></a></div></div><p>
   The configuration processor reads and validates the input model described in
   the YAML files discussed above, combines it with the service definitions
   provided by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> and any persisted state information about the current
@@ -82,7 +99,7 @@ hljs.configure({
   line are the directories that you, the cloud administrator, edit to declare
   the cloud configuration. Above the line are the directories that are
   internal to the Cloud Lifecycle Manager such as Ansible playbooks and variables.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-hphelionopenstack_directories.png" target="_blank"><img src="images/media-inputmodel-hphelionopenstack_directories.png" width="" /></a></div></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-inputmodel-hphelionopenstack_directories.png"><img src="images/media-inputmodel-hphelionopenstack_directories.png" alt="Image" title="Image"/></a></div></div><p>
   The input model is read from the
   <code class="filename">~/openstack/my_cloud/definition</code> directory. Although the
   supplied examples use separate files for each type of object in the model,
@@ -95,7 +112,7 @@ hljs.configure({
   As mentioned, the examples use the conventional upper casing for object
   names, but these strings are used only to define the relationship between
   objects. They have no specific significance to the configuration processor.
- </p><div class="sect2" id="concept-cloud"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-cloud">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-cloud.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-cloud.xml</li><li><span class="ds-label">ID: </span>concept-cloud</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="concept-cloud" data-id-title="Cloud"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.1 </span><span class="title-name">Cloud</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-cloud">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-cloud.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Cloud definition includes a few top-level configuration values such as
   the name of the cloud, the host prefix, details of external services (NTP,
   DNS, SMTP) and the firewall settings.
@@ -103,49 +120,49 @@ hljs.configure({
   The location of the cloud configuration file also tells the configuration
   processor where to look for the files that define all of the other objects in
   the input model.
- </p></div><div class="sect2" id="concept-controlplanes"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Planes</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-controlplanes">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-controlplanes.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-controlplanes.xml</li><li><span class="ds-label">ID: </span>concept-controlplanes</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>A control-plane runs one or more <span class="guimenu ">services</span>
-  distributed across <span class="guimenu ">clusters</span> and <span class="guimenu ">resource
+ </p></section><section class="sect2" id="concept-controlplanes" data-id-title="Control Planes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.2 </span><span class="title-name">Control Planes</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-controlplanes">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-controlplanes.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>A control-plane runs one or more <span class="guimenu">services</span>
+  distributed across <span class="guimenu">clusters</span> and <span class="guimenu">resource
   groups</span></em></span>.
  </p><p>
   <span class="emphasis"><em>A control-plane uses servers with a particular
-  <span class="guimenu ">server-role</span></em></span>.
+  <span class="guimenu">server-role</span></em></span>.
  </p><p>
-  A <span class="guimenu ">control-plane</span> provides the operating environment for a
-  set of <span class="guimenu ">services</span>; normally consisting of a set of shared
+  A <span class="guimenu">control-plane</span> provides the operating environment for a
+  set of <span class="guimenu">services</span>; normally consisting of a set of shared
   services (MariaDB, RabbitMQ, HA Proxy, Apache, etc.), OpenStack control
-  services (API, schedulers, etc.) and the <span class="guimenu ">resources</span> they
+  services (API, schedulers, etc.) and the <span class="guimenu">resources</span> they
   are managing (compute, storage, etc.).
  </p><p>
-  A simple cloud may have a single <span class="guimenu ">control-plane</span> which runs
-  all of the <span class="guimenu ">services</span>. A more complex cloud may have
-  multiple <span class="guimenu ">control-planes</span> to allow for more than one
+  A simple cloud may have a single <span class="guimenu">control-plane</span> which runs
+  all of the <span class="guimenu">services</span>. A more complex cloud may have
+  multiple <span class="guimenu">control-planes</span> to allow for more than one
   instance of some services.
   
    Services that need to consume (use) another service
   (such as neutron consuming MariaDB, nova consuming neutron) always use the
-  service within the same <span class="guimenu ">control-plane</span>.
+  service within the same <span class="guimenu">control-plane</span>.
   In addition a control-plane can describe which services can be consumed
   from other control-planes. It is one of the functions of the configuration
   processor to resolve these relationships and make sure that each
   consumer/service is provided with the configuration details to connect to the
   appropriate provider/service.
  </p><p>
-  Each <span class="guimenu ">control-plane</span> is structured as
-  <span class="guimenu ">clusters</span> and <span class="guimenu ">resources</span>. The
-  <span class="guimenu ">clusters</span> are typically used to host the OpenStack services
+  Each <span class="guimenu">control-plane</span> is structured as
+  <span class="guimenu">clusters</span> and <span class="guimenu">resources</span>. The
+  <span class="guimenu">clusters</span> are typically used to host the OpenStack services
   that manage the cloud such as API servers, database servers, neutron agents,
-  and swift proxies, while the <span class="guimenu ">resources</span> are used to host
+  and swift proxies, while the <span class="guimenu">resources</span> are used to host
   the scale-out OpenStack services such as nova-Compute or swift-Object
   services. This is a representation convenience rather than a strict rule, for
   example it is possible to run the swift-Object service in the management
   cluster in a smaller-scale cloud that is not designed for scale-out object
   serving.
  </p><p>
-  A cluster can contain one or more <span class="guimenu ">servers</span> and you can have
-  one or more <span class="guimenu ">clusters</span> depending on the capacity and
+  A cluster can contain one or more <span class="guimenu">servers</span> and you can have
+  one or more <span class="guimenu">clusters</span> depending on the capacity and
   scalability needs of the cloud that you are building. Spreading services
-  across multiple <span class="guimenu ">clusters</span> provides greater scalability, but
+  across multiple <span class="guimenu">clusters</span> provides greater scalability, but
   it requires a greater number of physical servers. A common pattern for a
   large cloud is to run high data volume services such as monitoring and
   logging in a separate cluster. A cloud with a high object storage requirement
@@ -153,18 +170,18 @@ hljs.configure({
  </p><p>
   Clusters in this context are a mechanism for grouping service components in
   physical servers, but all instances of a component in a
-  <span class="guimenu ">control-plane</span> work collectively. For example, if HA Proxy
+  <span class="guimenu">control-plane</span> work collectively. For example, if HA Proxy
   is configured to run on multiple clusters within the same
-  <span class="guimenu ">control-plane</span> then all of those instances will work as a
+  <span class="guimenu">control-plane</span> then all of those instances will work as a
   single instance of the ha-proxy service.
  </p><p>
-  Both <span class="guimenu ">clusters</span> and <span class="guimenu ">resources</span> define the
-  type (via a list of <span class="guimenu ">server-roles</span>) and number of servers
+  Both <span class="guimenu">clusters</span> and <span class="guimenu">resources</span> define the
+  type (via a list of <span class="guimenu">server-roles</span>) and number of servers
   (min and max or count) they require.
  </p><p>
-  The <span class="guimenu ">control-plane</span> can also define a list of failure-zones
-  (<span class="guimenu ">server-groups</span>) from which to allocate servers.
- </p><div class="sect3" id="concept-controlplanes-regions"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control Planes and Regions</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-controlplanes-regions">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-controlplanes_regions.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-controlplanes_regions.xml</li><li><span class="ds-label">ID: </span>concept-controlplanes-regions</li></ul></div></div></div></div><p>
+  The <span class="guimenu">control-plane</span> can also define a list of failure-zones
+  (<span class="guimenu">server-groups</span>) from which to allocate servers.
+ </p><section class="sect3" id="concept-controlplanes-regions" data-id-title="Control Planes and Regions"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.2.1 </span><span class="title-name">Control Planes and Regions</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-controlplanes-regions">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-controlplanes_regions.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   A region in OpenStack terms is a collection of URLs that together provide a
   consistent set of services (nova, neutron, swift, etc). Regions are
   represented in the keystone identity service catalog. In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>,
@@ -172,11 +189,11 @@ hljs.configure({
  </p><p>
   In a simple single control-plane cloud, there is no need for a separate
   region definition and the control-plane itself can define the region name.
- </p></div></div><div class="sect2" id="concept-services"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Services</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-services">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-services.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-services.xml</li><li><span class="ds-label">ID: </span>concept-services</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>A <span class="guimenu ">control-plane</span> runs one or more
-  <span class="guimenu ">services</span>.</em></span>
+ </p></section></section><section class="sect2" id="concept-services" data-id-title="Services"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.3 </span><span class="title-name">Services</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-services">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>A <span class="guimenu">control-plane</span> runs one or more
+  <span class="guimenu">services</span>.</em></span>
  </p><p>
-  A service is the collection of <span class="guimenu ">service-components</span> that
+  A service is the collection of <span class="guimenu">service-components</span> that
   provide a particular feature; for example, nova provides the compute service
   and consists of the following service-components: nova-api, nova-scheduler,
   nova-conductor, nova-novncproxy, and nova-compute. Some services, like the
@@ -184,28 +201,28 @@ hljs.configure({
   service-component.
  </p><p>
   To define your cloud, all you need to know about a service are the names of
-  the <span class="guimenu ">service-components</span>. The details of the services
+  the <span class="guimenu">service-components</span>. The details of the services
   themselves and how they interact with each other is captured in service
   definition files provided by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>.
  </p><p>
   When specifying your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cloud you have to decide where components will
   run and how they connect to the networks. For example, should they all run in
-  one <span class="guimenu ">control-plane</span> sharing common services or be
-  distributed across multiple <span class="guimenu ">control-planes</span> to provide
+  one <span class="guimenu">control-plane</span> sharing common services or be
+  distributed across multiple <span class="guimenu">control-planes</span> to provide
   separate instances of some services? The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supplied examples provide
   solutions for some typical configurations.
  </p><p>
-  Where services run is defined in the <span class="guimenu ">control-plane</span>. How
-  they connect to networks is defined in the <span class="guimenu ">network-groups</span>.
- </p></div><div class="sect2" id="concept-serverroles"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Roles</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-serverroles">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-serverroles.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-serverroles.xml</li><li><span class="ds-label">ID: </span>concept-serverroles</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em><span class="guimenu ">Clusters</span> and <span class="guimenu ">resources</span> use
-  <span class="guimenu ">servers</span> with a particular set of
-  <span class="guimenu ">server-role</span>s.</em></span>
+  Where services run is defined in the <span class="guimenu">control-plane</span>. How
+  they connect to networks is defined in the <span class="guimenu">network-groups</span>.
+ </p></section><section class="sect2" id="concept-serverroles" data-id-title="Server Roles"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.4 </span><span class="title-name">Server Roles</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-serverroles">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-serverroles.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em><span class="guimenu">Clusters</span> and <span class="guimenu">resources</span> use
+  <span class="guimenu">servers</span> with a particular set of
+  <span class="guimenu">server-role</span>s.</em></span>
  </p><p>
   You are going to be running the services on physical
-  <span class="guimenu ">servers</span>, and you are going to need a way to specify
+  <span class="guimenu">servers</span>, and you are going to need a way to specify
   which type of servers you want to use where. This is defined via the
-  <span class="guimenu ">server-role</span>. Each <span class="guimenu ">server-role</span> describes
+  <span class="guimenu">server-role</span>. Each <span class="guimenu">server-role</span> describes
   how to configure the physical aspects of a server to fulfill the needs of a
   particular role. You will generally use a different role whenever the servers
   are physically different (have different disks or network interfaces) or if
@@ -213,51 +230,51 @@ hljs.configure({
   choose which of a set of identical servers are to be used in the control
   plane).
  </p><p>
-  Each <span class="guimenu ">server-role</span> has a relationship to four other
+  Each <span class="guimenu">server-role</span> has a relationship to four other
   entities:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-    The <span class="guimenu ">disk-model</span> specifies how to configure and use a
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+    The <span class="guimenu">disk-model</span> specifies how to configure and use a
     server's local storage and it specifies disk sizing information for
     virtual machine servers. The disk model is described in the next section.
-   </p></li><li class="listitem "><p>
-    The <span class="guimenu ">interface-model</span> describes how a server's network
+   </p></li><li class="listitem"><p>
+    The <span class="guimenu">interface-model</span> describes how a server's network
     interfaces are to be configured and used. This is covered in more details
     in the networking section.
-   </p></li><li class="listitem "><p>
-    An optional <span class="guimenu ">memory-model</span> specifies how to configure
+   </p></li><li class="listitem"><p>
+    An optional <span class="guimenu">memory-model</span> specifies how to configure
     and use huge pages. The memory-model specifies memory sizing information
     for virtual machine servers.
-   </p></li><li class="listitem "><p>
-    An optional <span class="bold"><strong> <span class="guimenu ">cpu-model</span> </strong></span>
+   </p></li><li class="listitem"><p>
+    An optional <span class="bold"><strong> <span class="guimenu">cpu-model</span> </strong></span>
     specifies how the CPUs will be used by nova and by DPDK.
     The cpu-model specifies CPU sizing information for virtual machine
     servers.
-   </p></li></ul></div></div><div class="sect2" id="concept-diskmodel"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disk Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-diskmodel">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-diskmodel.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-diskmodel.xml</li><li><span class="ds-label">ID: </span>concept-diskmodel</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect2" id="concept-diskmodel" data-id-title="Disk Model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.5 </span><span class="title-name">Disk Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-diskmodel">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-diskmodel.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="emphasis"><em>Each physical disk device is associated with a
-  <span class="guimenu ">device-group</span> or a
-  <span class="guimenu ">volume-group</span>.</em></span>
+  <span class="guimenu">device-group</span> or a
+  <span class="guimenu">volume-group</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em><span class="guimenu ">Device-groups</span> are consumed by
-  <span class="guimenu ">services</span>.</em></span>
+  <span class="emphasis"><em><span class="guimenu">Device-groups</span> are consumed by
+  <span class="guimenu">services</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em><span class="guimenu ">Volume-groups</span> are divided into
-  <span class="guimenu ">logical-volumes</span>.</em></span>
+  <span class="emphasis"><em><span class="guimenu">Volume-groups</span> are divided into
+  <span class="guimenu">logical-volumes</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em><span class="guimenu ">Logical-volumes</span> are mounted as file systems or
+  <span class="emphasis"><em><span class="guimenu">Logical-volumes</span> are mounted as file systems or
   consumed by services.</em></span>
  </p><p>
   Disk-models define how local storage is to be configured and presented to
-  <span class="guimenu ">services</span>. Disk-models are identified by a name, which you
+  <span class="guimenu">services</span>. Disk-models are identified by a name, which you
   will specify. The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> examples provide some typical configurations. As
   this is an area that varies with respect to the services that are hosted on a
   server and the number of disks available, it is impossible to cover all
   possible permutations you may need to express via modifications to the
   examples.
  </p><p>
-  Within a <span class="guimenu ">disk-model</span>, disk devices are assigned to either a
-  <span class="guimenu ">device-group</span> or a <span class="guimenu ">volume-group</span>.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-hphelionopenstack_diskmodels.png" target="_blank"><img src="images/media-inputmodel-hphelionopenstack_diskmodels.png" width="" /></a></div></div><p>
-  A <span class="guimenu ">device-group</span> is a set of one or more disks that are to
+  Within a <span class="guimenu">disk-model</span>, disk devices are assigned to either a
+  <span class="guimenu">device-group</span> or a <span class="guimenu">volume-group</span>.
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-inputmodel-hphelionopenstack_diskmodels.png"><img src="images/media-inputmodel-hphelionopenstack_diskmodels.png" alt="Image" title="Image"/></a></div></div><p>
+  A <span class="guimenu">device-group</span> is a set of one or more disks that are to
   be consumed directly by a service. For example, a set of disks to be used by
   swift. The device-group identifies the list of disk devices, the service, and
   a few service-specific attributes that tell the service about the intended
@@ -267,16 +284,16 @@ hljs.configure({
   of file systems. (swift can provide additional data integrity when it has
   full control over the file systems and mount points.)
  </p><p>
-  A <span class="guimenu ">volume-group</span> is used to present disk devices in a LVM
+  A <span class="guimenu">volume-group</span> is used to present disk devices in a LVM
   volume group. It also contains details of the logical volumes to be created
   including the file system type and mount point. Logical volume sizes are
   expressed as a percentage of the total capacity of the volume group. A
-  <span class="guimenu ">logical-volume</span> can also be consumed by a service in the
-  same way as a <span class="guimenu ">device-group</span>. This allows services to manage
+  <span class="guimenu">logical-volume</span> can also be consumed by a service in the
+  same way as a <span class="guimenu">device-group</span>. This allows services to manage
   their own devices on configurations that have limited numbers of disk drives.
  </p><p>
   Disk models also provide disk sizing information for virtual machine servers.
- </p></div><div class="sect2" id="concept-memorymodel"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Memory Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-memorymodel">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-memorymodel.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-memorymodel.xml</li><li><span class="ds-label">ID: </span>concept-memorymodel</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="concept-memorymodel" data-id-title="Memory Model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.6 </span><span class="title-name">Memory Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-memorymodel">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-memorymodel.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Memory models define how the memory of a server should be configured to meet
   the needs of a particular role. It allows a number of HugePages to be defined
   at both the server and numa-node level.
@@ -286,7 +303,7 @@ hljs.configure({
  </p><p>
   Memory models are optional - it is valid to have a server role without a
   memory model.
- </p></div><div class="sect2" id="concept-cpumodel"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">CPU Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-cpumodel">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-cpumodel.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-cpumodel.xml</li><li><span class="ds-label">ID: </span>concept-cpumodel</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="concept-cpumodel" data-id-title="CPU Model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.7 </span><span class="title-name">CPU Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-cpumodel">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-cpumodel.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   CPU models define how CPUs of a server will be used. The model allows CPUs to
   be assigned for use by components such as nova (for VMs) and Open vSwitch
   (for DPDK). It also allows those CPUs to be isolated from the general kernel
@@ -296,11 +313,11 @@ hljs.configure({
  </p><p>
   CPU models are optional - it is valid to have a server role without a cpu
   model.
- </p></div><div class="sect2" id="concept-servers"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Servers</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servers">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servers.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-servers.xml</li><li><span class="ds-label">ID: </span>concept-servers</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em><span class="guimenu ">Servers</span> have a <span class="guimenu ">server-role</span>
+ </p></section><section class="sect2" id="concept-servers" data-id-title="Servers"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.8 </span><span class="title-name">Servers</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servers">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servers.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em><span class="guimenu">Servers</span> have a <span class="guimenu">server-role</span>
   which determines how they will be used in the cloud.</em></span>
  </p><p>
-  <span class="guimenu ">Servers</span> (in the input model) enumerate the resources
+  <span class="guimenu">Servers</span> (in the input model) enumerate the resources
   available for your cloud. In addition, in this definition file you can either
   provide <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with all of the details it needs to PXE boot and install an
   operating system onto the server, or, if you prefer to use your own operating
@@ -314,84 +331,84 @@ hljs.configure({
   the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> ISO and this server must be included in the input model as well.
  </p><p>
   In addition to the network details used to install or connect to the server,
-  each server defines what its <span class="guimenu ">server-role</span> is and to which
-  <span class="guimenu ">server-group</span> it belongs.
- </p></div><div class="sect2" id="concept-servergroups"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Groups</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-servergroups.xml</li><li><span class="ds-label">ID: </span>concept-servergroups</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>A <span class="guimenu ">server</span> is associated with a
-  <span class="guimenu ">server-group</span>.</em></span>
+  each server defines what its <span class="guimenu">server-role</span> is and to which
+  <span class="guimenu">server-group</span> it belongs.
+ </p></section><section class="sect2" id="concept-servergroups" data-id-title="Server Groups"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.9 </span><span class="title-name">Server Groups</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>A <span class="guimenu">server</span> is associated with a
+  <span class="guimenu">server-group</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em>A <span class="guimenu ">control-plane</span> can use
-  <span class="guimenu ">server-groups</span> as failure zones for server
+  <span class="emphasis"><em>A <span class="guimenu">control-plane</span> can use
+  <span class="guimenu">server-groups</span> as failure zones for server
   allocation.</em></span>
  </p><p>
-  <span class="emphasis"><em>A <span class="guimenu ">server-group</span> may be associated with a list of
-  <span class="guimenu ">networks</span>.</em></span>
+  <span class="emphasis"><em>A <span class="guimenu">server-group</span> may be associated with a list of
+  <span class="guimenu">networks</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em>A <span class="guimenu ">server-group</span> can contain other
-  <span class="guimenu ">server-groups</span>.</em></span>
+  <span class="emphasis"><em>A <span class="guimenu">server-group</span> can contain other
+  <span class="guimenu">server-groups</span>.</em></span>
  </p><p>
   The practice of locating physical servers in a number of racks or enclosures
   in a data center is common. Such racks generally provide a degree of physical
   isolation that allows for separate power and/or network connectivity.
  </p><p>
   In the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> model we support this configuration by allowing you to define
-  a hierarchy of <span class="guimenu ">server-groups</span>. Each
-  <span class="guimenu ">server</span> is associated with one
-  <span class="guimenu ">server-group</span>, normally at the bottom of the hierarchy.
+  a hierarchy of <span class="guimenu">server-groups</span>. Each
+  <span class="guimenu">server</span> is associated with one
+  <span class="guimenu">server-group</span>, normally at the bottom of the hierarchy.
  </p><p>
-  <span class="guimenu ">Server-groups</span> are an optional part of the input model - if
-  you do not define any, then all <span class="guimenu ">servers</span> and
-  <span class="guimenu ">networks</span> will be allocated as if they are part of the same
-  <span class="guimenu ">server-group</span>.
- </p><div class="sect3" id="concept-servergroups-failurezones"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Groups and Failure Zones</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups-failurezones">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups_failurezones.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-servergroups_failurezones.xml</li><li><span class="ds-label">ID: </span>concept-servergroups-failurezones</li></ul></div></div></div></div><p>
-  A <span class="guimenu ">control-plane</span> defines a list of
-  <span class="guimenu ">server-groups</span> as the failure zones from which it wants to
-  use servers. All servers in a <span class="guimenu ">server-group</span> listed as a
-  failure zone in the <span class="guimenu ">control-plane</span> and any
-  <span class="guimenu ">server-groups</span> they contain are considered part of that
+  <span class="guimenu">Server-groups</span> are an optional part of the input model - if
+  you do not define any, then all <span class="guimenu">servers</span> and
+  <span class="guimenu">networks</span> will be allocated as if they are part of the same
+  <span class="guimenu">server-group</span>.
+ </p><section class="sect3" id="concept-servergroups-failurezones" data-id-title="Server Groups and Failure Zones"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.9.1 </span><span class="title-name">Server Groups and Failure Zones</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups-failurezones">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups_failurezones.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  A <span class="guimenu">control-plane</span> defines a list of
+  <span class="guimenu">server-groups</span> as the failure zones from which it wants to
+  use servers. All servers in a <span class="guimenu">server-group</span> listed as a
+  failure zone in the <span class="guimenu">control-plane</span> and any
+  <span class="guimenu">server-groups</span> they contain are considered part of that
   failure zone for allocation purposes. The following example shows how three
-  levels of <span class="guimenu ">server-groups</span> can be used to model a failure
+  levels of <span class="guimenu">server-groups</span> can be used to model a failure
   zone consisting of multiple racks, each of which in turn contains a number of
-  <span class="guimenu ">servers</span>.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-hphelionopenstack_servergroups.png" target="_blank"><img src="images/media-inputmodel-hphelionopenstack_servergroups.png" width="" /></a></div></div><p>
-  When allocating <span class="guimenu ">servers</span>, the configuration processor will
-  traverse down the hierarchy of <span class="guimenu ">server-groups</span> listed as
+  <span class="guimenu">servers</span>.
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-inputmodel-hphelionopenstack_servergroups.png"><img src="images/media-inputmodel-hphelionopenstack_servergroups.png" alt="Image" title="Image"/></a></div></div><p>
+  When allocating <span class="guimenu">servers</span>, the configuration processor will
+  traverse down the hierarchy of <span class="guimenu">server-groups</span> listed as
   failure zones until it can find an available server with the required
-  <span class="guimenu ">server-role</span>. If the allocation policy is defined to be
-  strict, it will allocate <span class="guimenu ">servers</span> equally across each of
-  the failure zones. A <span class="guimenu ">cluster</span> or
-  <span class="guimenu ">resource-group</span> can also independently specify the failure
+  <span class="guimenu">server-role</span>. If the allocation policy is defined to be
+  strict, it will allocate <span class="guimenu">servers</span> equally across each of
+  the failure zones. A <span class="guimenu">cluster</span> or
+  <span class="guimenu">resource-group</span> can also independently specify the failure
   zones it wants to use if needed.
- </p></div><div class="sect3" id="concept-servergroups-networks"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Groups and Networks</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups-networks">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups_networks.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-servergroups_networks.xml</li><li><span class="ds-label">ID: </span>concept-servergroups-networks</li></ul></div></div></div></div><p>
-  Each L3 <span class="guimenu ">network</span> in a cloud must be associated with all or
-  some of the <span class="guimenu ">servers</span>, typically following a physical
+ </p></section><section class="sect3" id="concept-servergroups-networks" data-id-title="Server Groups and Networks"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.9.2 </span><span class="title-name">Server Groups and Networks</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-servergroups-networks">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-servergroups_networks.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  Each L3 <span class="guimenu">network</span> in a cloud must be associated with all or
+  some of the <span class="guimenu">servers</span>, typically following a physical
   pattern (such as having separate networks for each rack or set of racks).
   This is also represented in the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> model via
-  <span class="guimenu ">server-groups</span>, each group lists zero or more networks to
-  which <span class="guimenu ">servers</span> associated with
-  <span class="guimenu ">server-groups</span> at or below this point in the hierarchy are
+  <span class="guimenu">server-groups</span>, each group lists zero or more networks to
+  which <span class="guimenu">servers</span> associated with
+  <span class="guimenu">server-groups</span> at or below this point in the hierarchy are
   connected.
  </p><p>
   When the configuration processor needs to resolve the specific
-  <span class="guimenu ">network</span> a <span class="guimenu ">server</span> should be configured
-  to use, it traverses up the hierarchy of <span class="guimenu ">server-groups</span>,
+  <span class="guimenu">network</span> a <span class="guimenu">server</span> should be configured
+  to use, it traverses up the hierarchy of <span class="guimenu">server-groups</span>,
   starting with the group the server is directly associated with, until it
   finds a server-group that lists a network in the required network group.
  </p><p>
-  The level in the <span class="guimenu ">server-group</span> hierarchy at which a
-  <span class="guimenu ">network</span> is associated will depend on the span of
+  The level in the <span class="guimenu">server-group</span> hierarchy at which a
+  <span class="guimenu">network</span> is associated will depend on the span of
   connectivity it must provide. In the above example there might be networks in
-  some <span class="guimenu ">network-groups</span> which are per rack (that is Rack 1 and
+  some <span class="guimenu">network-groups</span> which are per rack (that is Rack 1 and
   Rack 2 list different networks from the same
-  <span class="guimenu ">network-group</span>) and <span class="guimenu ">networks</span> in a
-  different <span class="guimenu ">network-group</span> that span failure zones (the
+  <span class="guimenu">network-group</span>) and <span class="guimenu">networks</span> in a
+  different <span class="guimenu">network-group</span> that span failure zones (the
   network used to provide floating IP addresses to virtual machines for
   example).
- </p></div></div><div class="sect2" id="concept-networking"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Networking</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networking">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networking.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-networking.xml</li><li><span class="ds-label">ID: </span>concept-networking</li></ul></div></div></div></div><p>
-  In addition to the mapping of <span class="guimenu ">services</span> to specific
-  <span class="guimenu ">clusters</span> and <span class="guimenu ">resources</span> we must also be
-  able to define how the <span class="guimenu ">services</span> connect to one or more
-  <span class="guimenu ">networks</span>.
+ </p></section></section><section class="sect2" id="concept-networking" data-id-title="Networking"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.10 </span><span class="title-name">Networking</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networking">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networking.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  In addition to the mapping of <span class="guimenu">services</span> to specific
+  <span class="guimenu">clusters</span> and <span class="guimenu">resources</span> we must also be
+  able to define how the <span class="guimenu">services</span> connect to one or more
+  <span class="guimenu">networks</span>.
  </p><p>
   In a simple cloud there may be a single L3 network but more typically there
   are functional and physical layers of network separation that need to be
@@ -404,40 +421,40 @@ hljs.configure({
   In more complex clouds it is common to also separate out virtual networking
   between virtual machines, block storage traffic, and volume traffic onto
   their own sets of networks. In the input model, this level of separation is
-  represented by <span class="guimenu ">network-groups</span>.
+  represented by <span class="guimenu">network-groups</span>.
  </p><p>
   Physical separation is required when there are separate L3 network segments
   providing the same type of traffic; for example, where each rack uses a
   different subnet. This level of separation is represented in the input model
-  by the <span class="guimenu ">networks</span> within each
-  <span class="guimenu ">network-group</span>.
- </p><div class="sect3" id="concept-networkgroups"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Groups</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networkgroups">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networkgroups.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-networkgroups.xml</li><li><span class="ds-label">ID: </span>concept-networkgroups</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>Service endpoints attach to <span class="guimenu ">networks</span> in a
-  specific <span class="guimenu ">network-group</span>.</em></span>
+  by the <span class="guimenu">networks</span> within each
+  <span class="guimenu">network-group</span>.
+ </p><section class="sect3" id="concept-networkgroups" data-id-title="Network Groups"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.10.1 </span><span class="title-name">Network Groups</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networkgroups">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networkgroups.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>Service endpoints attach to <span class="guimenu">networks</span> in a
+  specific <span class="guimenu">network-group</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em><span class="guimenu ">Network-groups</span> can define routes to other
-  <span class="guimenu ">networks</span>.</em></span>
+  <span class="emphasis"><em><span class="guimenu">Network-groups</span> can define routes to other
+  <span class="guimenu">networks</span>.</em></span>
  </p><p>
-  <span class="emphasis"><em><span class="guimenu ">Network-groups</span> encapsulate the configuration for
-  <span class="guimenu ">services</span> via <span class="guimenu ">network-tags</span></em></span>
+  <span class="emphasis"><em><span class="guimenu">Network-groups</span> encapsulate the configuration for
+  <span class="guimenu">services</span> via <span class="guimenu">network-tags</span></em></span>
  </p><p>
-  A <span class="guimenu ">network-group</span> defines the traffic separation model and
+  A <span class="guimenu">network-group</span> defines the traffic separation model and
   all of the properties that are common to the set of L3 networks that carry
   each type of traffic. They define where services are attached to the network
   model and the routing within that model.
  </p><p>
-  In terms of <span class="guimenu ">service</span> connectivity, all that has to be
-  captured in the <span class="guimenu ">network-groups</span> definition are the same
+  In terms of <span class="guimenu">service</span> connectivity, all that has to be
+  captured in the <span class="guimenu">network-groups</span> definition are the same
   service-component names that are used when defining
-  <span class="guimenu ">control-planes</span>. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> also allows a default attachment
+  <span class="guimenu">control-planes</span>. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> also allows a default attachment
   to be used to specify "all service-components" that are not explicitly
-  connected to another <span class="guimenu ">network-group</span>. So, for example, to
+  connected to another <span class="guimenu">network-group</span>. So, for example, to
   isolate swift traffic, the swift-account, swift-container, and swift-object
   service components are attached to an "Object"
-  <span class="guimenu ">network-group</span> and all other services are connected to
-  "MANAGEMENT" <span class="guimenu ">network-group</span> via the default relationship.
- </p><div id="id-1.3.4.3.3.19.6.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
-   The name of the "MANAGEMENT" <span class="guimenu ">network-group</span> cannot be
+  <span class="guimenu">network-group</span> and all other services are connected to
+  "MANAGEMENT" <span class="guimenu">network-group</span> via the default relationship.
+ </p><div id="id-1.3.4.3.3.19.6.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+   The name of the "MANAGEMENT" <span class="guimenu">network-group</span> cannot be
    changed. It must be upper case. Every SUSE <span class="productname">OpenStack</span> Cloud requires this network group in
    order to be valid.
   </p></div><p>
@@ -448,16 +465,16 @@ hljs.configure({
  </p><p>
   In any configuration with multiple networks, controlling the routing is a
   major consideration. In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, routing is controlled at the
-  <span class="guimenu ">network-group</span> level. First, all
-  <span class="guimenu ">networks</span> are configured to provide the route to any other
-  <span class="guimenu ">networks</span> in the same <span class="guimenu ">network-group</span>. In
-  addition, a <span class="guimenu ">network-group</span> may be configured to provide the
-  route any other <span class="guimenu ">networks</span> in the same
-  <span class="guimenu ">network-group</span>; for example, if the internal APIs are in a
-  dedicated <span class="guimenu ">network-group</span> (a common configuration in a
+  <span class="guimenu">network-group</span> level. First, all
+  <span class="guimenu">networks</span> are configured to provide the route to any other
+  <span class="guimenu">networks</span> in the same <span class="guimenu">network-group</span>. In
+  addition, a <span class="guimenu">network-group</span> may be configured to provide the
+  route any other <span class="guimenu">networks</span> in the same
+  <span class="guimenu">network-group</span>; for example, if the internal APIs are in a
+  dedicated <span class="guimenu">network-group</span> (a common configuration in a
   complex network because a network group with load balancers cannot be
-  segmented) then other <span class="guimenu ">network-groups</span> may need to include a
-  route to the internal API <span class="guimenu ">network-group</span> so that services
+  segmented) then other <span class="guimenu">network-groups</span> may need to include a
+  route to the internal API <span class="guimenu">network-group</span> so that services
   can access the internal API endpoints. Routes may also be required to define
   how to access an external storage network or to define a general default
   route.
@@ -474,29 +491,29 @@ hljs.configure({
  </p><p>
   For a detailed description of how the configuration processor validates
   routes, refer to <a class="xref" href="othertopics.html#networkroutevalidation" title="7.6. Network Route Validation">Section 7.6, “Network Route Validation”</a>.
- </p><div class="sect4" id="concept-loadbalancers"><div class="titlepage"><div><div><h5 class="title"><span class="number">5.2.10.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Load Balancers</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-loadbalancers">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-loadbalancers.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-loadbalancers.xml</li><li><span class="ds-label">ID: </span>concept-loadbalancers</li></ul></div></div></div></div><p>
-  <span class="guimenu ">Load-balancers</span> provide a specific type of routing and are
+ </p><section class="sect4" id="concept-loadbalancers" data-id-title="Load Balancers"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">5.2.10.1.1 </span><span class="title-name">Load Balancers</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-loadbalancers">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-loadbalancers.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="guimenu">Load-balancers</span> provide a specific type of routing and are
   defined
 
   as a relationship between the virtual IP address (VIP) on a network in one
-  <span class="guimenu ">network group</span> and a set of service endpoints (which may be
-  on <span class="guimenu ">networks</span> in the same or a different
-  <span class="guimenu ">network-group</span>).
+  <span class="guimenu">network group</span> and a set of service endpoints (which may be
+  on <span class="guimenu">networks</span> in the same or a different
+  <span class="guimenu">network-group</span>).
  </p><p>
-  As each <span class="guimenu ">load-balancer</span> is defined providing a virtual IP on
-  a <span class="guimenu ">network-group</span>, it follows that those
-  <span class="guimenu ">network-group</span>s
+  As each <span class="guimenu">load-balancer</span> is defined providing a virtual IP on
+  a <span class="guimenu">network-group</span>, it follows that those
+  <span class="guimenu">network-group</span>s
   
-  can each only have one <span class="guimenu ">network</span> associated to them.
+  can each only have one <span class="guimenu">network</span> associated to them.
  </p><p>
-  The <span class="guimenu ">load-balancer</span> definition includes a list of
-  <span class="guimenu ">service-components</span> and endpoint roles it will provide a
+  The <span class="guimenu">load-balancer</span> definition includes a list of
+  <span class="guimenu">service-components</span> and endpoint roles it will provide a
   virtual IP for. This model allows service-specific
-  <span class="guimenu ">load-balancers</span> to be defined on different
-  <span class="guimenu ">network-groups</span>. A "default" value is used to express "all
+  <span class="guimenu">load-balancers</span> to be defined on different
+  <span class="guimenu">network-groups</span>. A "default" value is used to express "all
   service-components" which require a virtual IP address and are not explicitly
-  configured in another <span class="guimenu ">load-balancer</span> configuration. The
-  details of how the <span class="guimenu ">load-balancer</span> should be configured for
+  configured in another <span class="guimenu">load-balancer</span> configuration. The
+  details of how the <span class="guimenu">load-balancer</span> should be configured for
   each service, such as which ports to use, how to check for service liveness,
   etc., are provided in the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supplied service definition files.
  </p><p>
@@ -509,9 +526,9 @@ hljs.configure({
  </p><p>
   Load balancers are always implemented by an ha-proxy service in the same
   control-plane as the services.
- </p></div><div class="sect4" id="concept-endpoints"><div class="titlepage"><div><div><h5 class="title"><span class="number">5.2.10.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Separation of Public, Admin, and Internal Endpoints</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-endpoints">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-endpoints.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-endpoints.xml</li><li><span class="ds-label">ID: </span>concept-endpoints</li></ul></div></div></div></div><p>
-  The list of endpoint roles for a <span class="guimenu ">load-balancer</span> make it
-  possible to configure separate <span class="guimenu ">load-balancers</span> for public
+ </p></section><section class="sect4" id="concept-endpoints" data-id-title="Separation of Public, Admin, and Internal Endpoints"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">5.2.10.1.2 </span><span class="title-name">Separation of Public, Admin, and Internal Endpoints</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-endpoints">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-endpoints.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  The list of endpoint roles for a <span class="guimenu">load-balancer</span> make it
+  possible to configure separate <span class="guimenu">load-balancers</span> for public
   and internal access to services, and the configuration processor uses this
   information to both ensure the correct registrations in keystone and to make
   sure the internal traffic is routed to the correct endpoint. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
@@ -521,12 +538,12 @@ hljs.configure({
   values that may not be resolvable/accessible from the servers making up the
   cloud.
  </p><p>
-  Note that each <span class="guimenu ">load-balancer</span> defined in the input model
+  Note that each <span class="guimenu">load-balancer</span> defined in the input model
   will be allocated a separate virtual IP address even when the load-balancers
-  are part of the same <span class="guimenu ">network-group</span>. Because of the need to
+  are part of the same <span class="guimenu">network-group</span>. Because of the need to
   be able to separate both public and internal access, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> will not allow
-  a single <span class="guimenu ">load-balancer</span> to provide both public and internal
-  access. <span class="guimenu ">Load-balancers</span> in this context are logical
+  a single <span class="guimenu">load-balancer</span> to provide both public and internal
+  access. <span class="guimenu">Load-balancers</span> in this context are logical
   entities (sets of rules to transfer traffic from a virtual IP address to one
   or more endpoints).
   
@@ -536,9 +553,9 @@ hljs.configure({
   controlling external access to the cloud. Within the cloud, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services
   are configured to use the internal URL to access a separate virtual IP
   address.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-inputmodel-hphelionopenstack_loadbalancers.png" target="_blank"><img src="images/media-inputmodel-hphelionopenstack_loadbalancers.png" width="" /></a></div></div></div><div class="sect4" id="concept-networktags"><div class="titlepage"><div><div><h5 class="title"><span class="number">5.2.10.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Network Tags</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networktags">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networktags.xml" title="Edit the source file for this section">Edit source</a></h5><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-networktags.xml</li><li><span class="ds-label">ID: </span>concept-networktags</li></ul></div></div></div></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-inputmodel-hphelionopenstack_loadbalancers.png"><img src="images/media-inputmodel-hphelionopenstack_loadbalancers.png" alt="Image" title="Image"/></a></div></div></section><section class="sect4" id="concept-networktags" data-id-title="Network Tags"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">5.2.10.1.3 </span><span class="title-name">Network Tags</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networktags">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networktags.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Network tags are defined by some <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
-  <span class="guimenu ">service-components</span> and are used to convey information
+  <span class="guimenu">service-components</span> and are used to convey information
   between the network model and the service, allowing the dependent aspects of
   the service to be automatically configured.
   
@@ -550,47 +567,47 @@ hljs.configure({
  </p><p>
   See <a class="xref" href="configurationobjects.html#configobj-networktags" title="6.13.2. Network Tags">Section 6.13.2, “Network Tags”</a> for more information on specific
   tags and their usage.
- </p></div></div><div class="sect3" id="concept-networks"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Networks</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networks">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networks.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-networks.xml</li><li><span class="ds-label">ID: </span>concept-networks</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>A <span class="guimenu ">network</span> is part of a
-  <span class="guimenu ">network-group</span>.</em></span>
+ </p></section></section><section class="sect3" id="concept-networks" data-id-title="Networks"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.10.2 </span><span class="title-name">Networks</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-networks">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-networks.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>A <span class="guimenu">network</span> is part of a
+  <span class="guimenu">network-group</span>.</em></span>
  </p><p>
-  <span class="guimenu ">Networks</span> are fairly simple definitions. Each
-  <span class="guimenu ">network</span> defines the details of its VLAN, optional address
+  <span class="guimenu">Networks</span> are fairly simple definitions. Each
+  <span class="guimenu">network</span> defines the details of its VLAN, optional address
   details (CIDR, start and end address, gateway address), and which
-  <span class="guimenu ">network-group</span> it is a member of.
- </p></div><div class="sect3" id="concept-interfacemodel"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.10.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interface Model</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-interfacemodel">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-interfacemodel.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-interfacemodel.xml</li><li><span class="ds-label">ID: </span>concept-interfacemodel</li></ul></div></div></div></div><p>
-  <span class="emphasis"><em>A <span class="guimenu ">server-role</span> identifies an
-  <span class="guimenu ">interface-model</span> that describes how its network interfaces
+  <span class="guimenu">network-group</span> it is a member of.
+ </p></section><section class="sect3" id="concept-interfacemodel" data-id-title="Interface Model"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.10.3 </span><span class="title-name">Interface Model</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-interfacemodel">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-interfacemodel.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  <span class="emphasis"><em>A <span class="guimenu">server-role</span> identifies an
+  <span class="guimenu">interface-model</span> that describes how its network interfaces
   are to be configured and used.</em></span>
  </p><p>
   Network groups are mapped onto specific network interfaces via an
-  <span class="guimenu ">interface-model</span>, which describes the network devices that
+  <span class="guimenu">interface-model</span>, which describes the network devices that
   need to be created (bonds, ovs-bridges, etc.) and their properties.
  </p><p>
-  An <span class="guimenu ">interface-model</span> acts like a template; it can define how
-  some or all of the <span class="guimenu ">network-groups</span> are to be mapped for a
+  An <span class="guimenu">interface-model</span> acts like a template; it can define how
+  some or all of the <span class="guimenu">network-groups</span> are to be mapped for a
   particular combination of physical NICs. However, it is the
-  <span class="guimenu ">service-components</span> on each server that determine which
-  <span class="guimenu ">network-groups</span> are required and hence which interfaces and
-  <span class="guimenu ">networks</span> will be configured. This means that
-  <span class="guimenu ">interface-models</span> can be shared between different
-  <span class="guimenu ">server-roles</span>. For example, an API role and a database role
+  <span class="guimenu">service-components</span> on each server that determine which
+  <span class="guimenu">network-groups</span> are required and hence which interfaces and
+  <span class="guimenu">networks</span> will be configured. This means that
+  <span class="guimenu">interface-models</span> can be shared between different
+  <span class="guimenu">server-roles</span>. For example, an API role and a database role
   may share an interface model even though they may have different disk models
   and they will require a different subset of the
-  <span class="guimenu ">network-groups</span>.
+  <span class="guimenu">network-groups</span>.
  </p><p>
-  Within an <span class="guimenu ">interface-model</span>, physical ports are identified
+  Within an <span class="guimenu">interface-model</span>, physical ports are identified
   by a device name, which in turn is resolved to a physical port on a server
-  basis via a <span class="guimenu ">nic-mapping</span>. To allow different physical
-  servers to share an <span class="guimenu ">interface-model</span>, the
-  <span class="guimenu ">nic-mapping</span> is defined as a property of each
-  <span class="guimenu ">server</span>.
+  basis via a <span class="guimenu">nic-mapping</span>. To allow different physical
+  servers to share an <span class="guimenu">interface-model</span>, the
+  <span class="guimenu">nic-mapping</span> is defined as a property of each
+  <span class="guimenu">server</span>.
  </p><p>
   The <code class="literal">interface-model</code> can also used to describe how network
   devices are to be configured for use with DPDK, SR-IOV, and PCI Passthrough.
- </p></div><div class="sect3" id="concept-nicmapping"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.10.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NIC Mapping</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-nicmapping">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-nicmapping.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-nicmapping.xml</li><li><span class="ds-label">ID: </span>concept-nicmapping</li></ul></div></div></div></div><p>
-  When a <span class="guimenu ">server</span> has more than a single physical network
-  port, a <span class="guimenu ">nic-mapping</span> is required to unambiguously identify
+ </p></section><section class="sect3" id="concept-nicmapping" data-id-title="NIC Mapping"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.10.4 </span><span class="title-name">NIC Mapping</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-nicmapping">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-nicmapping.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  When a <span class="guimenu">server</span> has more than a single physical network
+  port, a <span class="guimenu">nic-mapping</span> is required to unambiguously identify
   each port. Standard Linux mapping of ports to interface names at the time of
   initial discovery (for example, <code class="literal">eth0</code>,
   <code class="literal">eth1</code>, <code class="literal">eth2</code>, ...) is not uniformly
@@ -601,12 +618,12 @@ hljs.configure({
   NIC mappings are also used to specify the device type for interfaces that are
   to be used for SR-IOV or PCI Passthrough. Each <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> release includes the
   data for the supported device types.
- </p></div><div class="sect3" id="concept-firewallconfiguration"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.2.10.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Firewall Configuration</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-firewallconfiguration">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-firewallconfiguration.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-firewallconfiguration.xml</li><li><span class="ds-label">ID: </span>concept-firewallconfiguration</li></ul></div></div></div></div><p>
+ </p></section><section class="sect3" id="concept-firewallconfiguration" data-id-title="Firewall Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.2.10.5 </span><span class="title-name">Firewall Configuration</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-firewallconfiguration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-firewallconfiguration.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The configuration processor uses the details it has about which networks and
-  ports <span class="guimenu ">service-components</span> use to create a set of firewall
+  ports <span class="guimenu">service-components</span> use to create a set of firewall
   rules for each server. The model allows additional user-defined rules on a
-  per <span class="guimenu ">network-group</span> basis.
- </p></div></div><div class="sect2" id="concept-configuration-data"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration Data</span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-configuration-data">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-configuration_data.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-input_model-concepts-configuration_data.xml</li><li><span class="ds-label">ID: </span>concept-configuration-data</li></ul></div></div></div></div><p>
+  per <span class="guimenu">network-group</span> basis.
+ </p></section></section><section class="sect2" id="concept-configuration-data" data-id-title="Configuration Data"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.11 </span><span class="title-name">Configuration Data</span></span> <a title="Permalink" class="permalink" href="cha-input-model-intro-concept.html#concept-configuration-data">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_9/xml/planning-architecture-input_model-concepts-configuration_data.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Configuration Data is used to provide settings which have to be applied in a
   specific context, or where the data needs to be verified against or merged
   with other values in the input model.
@@ -614,6 +631,5 @@ hljs.configure({
   For example, when defining a neutron provider network to be used by Octavia,
   the network needs to be included in the routing configuration generated by
   the Configuration Processor.
- </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="configurationobjects.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 6 </span>Configuration Objects</span></a><a class="nav-link" href="architecture.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part II </span>Cloud Lifecycle Manager Overview</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+ </p></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="architecture.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part II </span>Cloud Lifecycle Manager Overview</span></a> </div><div><a class="pagination-link next" href="configurationobjects.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Configuration Objects</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="cha-input-model-intro-concept.html#input-model-introduction"><span class="title-number">5.1 </span><span class="title-name">Introduction to the Input Model</span></a></span></li><li><span class="section"><a href="cha-input-model-intro-concept.html#concepts"><span class="title-number">5.2 </span><span class="title-name">Concepts</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>
