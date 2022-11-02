@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Example Configurations | Planning an Installation with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Example Configurations | SUSE OpenStack Cloud 8" />
-<meta name="description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and running quickly…" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Planning an Installation with Cloud Lifecycle Manager" />
-<meta name="chapter-title" content="Chapter 9. Example Configurations" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Example Configurations | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and running quickly…" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Example Configurations | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and running quickly…" />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="architecture.html" title="Part II. Cloud Lifecycle Manager Overview" /><link rel="prev" href="cpinfofiles.html" title="Chapter 8. Configuration Processor Information Files" /><link rel="next" href="modify-compute-input-model.html" title="Chapter 10. Modifying Example Configurations for Compute Nodes" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Planning an Installation with Cloud Lifecycle Manager | Example Configurations</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Example Configurations | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and runni…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Planning an Installation with Cloud Lifecycle Manager"/>
+<meta name="chapter-title" content="Chapter 9. Example Configurations"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Example Configurations | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and runni…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Example Configurations | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="The SUSE OpenStack Cloud 8 system ships with a collection of pre-qualified example configurations. These are designed to help you to get up and runni…"/>
+<link rel="prev" href="cpinfofiles.html" title="Chapter 8. Configuration Processor Information Files"/><link rel="next" href="modify-compute-input-model.html" title="Chapter 10. Modifying Example Configurations for Compute Nodes"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Planning an Installation with Cloud Lifecycle Manager"><span class="book-icon">Planning an Installation with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="example-configurations.html">Example Configurations</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Planning an Installation with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="planning-index.html"><span class="number">I </span><span class="name">Planning</span></a><ol><li class="inactive"><a href="register-suse-overview.html"><span class="number">1 </span><span class="name">Registering SLES</span></a></li><li class="inactive"><a href="min-hardware.html"><span class="number">2 </span><span class="name">Hardware and Software Support Matrix</span></a></li><li class="inactive"><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html"><span class="number">3 </span><span class="name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li class="inactive"><a href="HP3-0HA.html"><span class="number">4 </span><span class="name">High Availability</span></a></li></ol></li><li class="inactive"><a href="architecture.html"><span class="number">II </span><span class="name">Cloud Lifecycle Manager Overview</span></a><ol><li class="inactive"><a href="cha-input-model-intro-concept.html"><span class="number">5 </span><span class="name">Input Model</span></a></li><li class="inactive"><a href="configurationobjects.html"><span class="number">6 </span><span class="name">Configuration Objects</span></a></li><li class="inactive"><a href="othertopics.html"><span class="number">7 </span><span class="name">Other Topics</span></a></li><li class="inactive"><a href="cpinfofiles.html"><span class="number">8 </span><span class="name">Configuration Processor Information Files</span></a></li><li class="inactive"><a href="example-configurations.html"><span class="number">9 </span><span class="name">Example Configurations</span></a></li><li class="inactive"><a href="modify-compute-input-model.html"><span class="number">10 </span><span class="name">Modifying Example Configurations for Compute Nodes</span></a></li><li class="inactive"><a href="modify-input-model.html"><span class="number">11 </span><span class="name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li class="inactive"><a href="alternative-configurations.html"><span class="number">12 </span><span class="name">Alternative Configurations</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 8. Configuration Processor Information Files" href="cpinfofiles.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 10. Modifying Example Configurations for Compute Nodes" href="modify-compute-input-model.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Planning an Installation with Cloud Lifecycle Manager"><span class="book-icon">Planning an Installation with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> › </span><a class="crumb" href="example-configurations.html">Example Configurations</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 8. Configuration Processor Information Files" href="cpinfofiles.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 10. Modifying Example Configurations for Compute Nodes" href="modify-compute-input-model.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="example-configurations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Configurations</span> <a title="Permalink" class="permalink" href="example-configurations.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-example_configurations.xml</li><li><span class="ds-label">ID: </span>example-configurations</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="example-configurations.html#example-configs"><span class="number">9.1 </span><span class="name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Example Configurations</span></a></span></dt><dt><span class="section"><a href="example-configurations.html#alternative"><span class="number">9.2 </span><span class="name">Alternative Configurations</span></a></span></dt><dt><span class="section"><a href="example-configurations.html#kvm-examples"><span class="number">9.3 </span><span class="name">KVM Examples</span></a></span></dt><dt><span class="section"><a href="example-configurations.html#esx-examples"><span class="number">9.4 </span><span class="name">ESX Examples</span></a></span></dt><dt><span class="section"><a href="example-configurations.html#swift-examples"><span class="number">9.5 </span><span class="name">Swift Examples</span></a></span></dt><dt><span class="section"><a href="example-configurations.html#ironic-examples"><span class="number">9.6 </span><span class="name">Ironic Examples</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Planning an Installation with Cloud Lifecycle Manager</a><span> / </span><a class="crumb" href="architecture.html">Cloud Lifecycle Manager Overview</a><span> / </span><a class="crumb" href="example-configurations.html">Example Configurations</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title"><em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em></div><ol><li><a href="planning-index.html" class="has-children "><span class="title-number">I </span><span class="title-name">Planning</span></a><ol><li><a href="register-suse-overview.html" class=" "><span class="title-number">1 </span><span class="title-name">Registering SLES</span></a></li><li><a href="min-hardware.html" class=" "><span class="title-number">2 </span><span class="title-name">Hardware and Software Support Matrix</span></a></li><li><a href="idg-planning-planning-recommended-hardware-minimums-xml-1.html" class=" "><span class="title-number">3 </span><span class="title-name">Recommended Hardware Minimums for the Example Configurations</span></a></li><li><a href="HP3-0HA.html" class=" "><span class="title-number">4 </span><span class="title-name">High Availability</span></a></li></ol></li><li class="active"><a href="architecture.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Cloud Lifecycle Manager Overview</span></a><ol><li><a href="cha-input-model-intro-concept.html" class=" "><span class="title-number">5 </span><span class="title-name">Input Model</span></a></li><li><a href="configurationobjects.html" class=" "><span class="title-number">6 </span><span class="title-name">Configuration Objects</span></a></li><li><a href="othertopics.html" class=" "><span class="title-number">7 </span><span class="title-name">Other Topics</span></a></li><li><a href="cpinfofiles.html" class=" "><span class="title-number">8 </span><span class="title-name">Configuration Processor Information Files</span></a></li><li><a href="example-configurations.html" class=" you-are-here"><span class="title-number">9 </span><span class="title-name">Example Configurations</span></a></li><li><a href="modify-compute-input-model.html" class=" "><span class="title-number">10 </span><span class="title-name">Modifying Example Configurations for Compute Nodes</span></a></li><li><a href="modify-input-model.html" class=" "><span class="title-number">11 </span><span class="title-name">Modifying Example Configurations for Object Storage using Swift</span></a></li><li><a href="alternative-configurations.html" class=" "><span class="title-number">12 </span><span class="title-name">Alternative Configurations</span></a></li></ol></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="example-configurations" data-id-title="Example Configurations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">9 </span><span class="title-name">Example Configurations</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> system ships with a collection of pre-qualified example
   configurations. These are designed to help you to get up and running quickly
   with a minimum number of configuration changes.
@@ -43,39 +43,39 @@ hljs.configure({
   that can, at first glance, appear daunting. The example configurations are
   designed to simplify this process by providing pre-built and pre-qualified
   examples that need only a minimum number of modifications to get started.
- </p><div class="sect1" id="example-configs"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Example Configurations</span> <a title="Permalink" class="permalink" href="example-configurations.html#example-configs">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-example_configurations.xml</li><li><span class="ds-label">ID: </span>example-configs</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="example-configs" data-id-title="SUSE OpenStack Cloud Example Configurations"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.1 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Example Configurations</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#example-configs">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This section briefly describes the various example configurations and their
    capabilities. It also describes in detail, for the entry-scale-kvm
    example, how you can adapt the input model to work in your environment.
   </p><p>
    The following pre-qualified examples are shipped with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Name</th><th>Location</th></tr></thead><tbody><tr><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Name</th><th style="border-bottom: 1px solid ; ">Location</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entry-scale-kvm" title="9.3.1. Entry-Scale Cloud">Section 9.3.1, “Entry-Scale Cloud”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-kvm</code>
-     </td></tr><tr><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entry-scale-kvm-mml" title="9.3.2. Entry Scale Cloud with Metering and Monitoring Services">Section 9.3.2, “Entry Scale Cloud with Metering and Monitoring Services”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-kvm-mml</code>
-     </td></tr><tr><td><a class="xref" href="example-configurations.html#entry-scale-kvm-esx" title="9.4.1. Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors">Section 9.4.1, “Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors”</a>
-     </td><td><code class="filename">~/openstack/examples/entry-scale-esx-kvm</code>
-     </td></tr><tr><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><a class="xref" href="example-configurations.html#entry-scale-kvm-esx" title="9.4.1. Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors">Section 9.4.1, “Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors”</a>
+     </td><td style="border-bottom: 1px solid ; "><code class="filename">~/openstack/examples/entry-scale-esx-kvm</code>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entry-scale-kvm-esx-mml" title="9.4.2. Single-Region Entry-Scale Cloud with Metering and Monitoring Services, and a Mix of KVM and ESX Hypervisors">Section 9.4.2, “Single-Region Entry-Scale Cloud with Metering and Monitoring Services, and a Mix of KVM and ESX Hypervisors”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-esx-kvm-mml</code>
-     </td></tr><tr><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entryscale-swift" title="9.5.1. Entry-scale Swift Model">Section 9.5.1, “Entry-scale Swift Model”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-swift</code>
-     </td></tr><tr><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entryscale-ironic" title="9.6.1. Entry-Scale Cloud with Ironic Flat Network">Section 9.6.1, “Entry-Scale Cloud with Ironic Flat Network”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-ironic-flat-network</code>
-     </td></tr><tr><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <a class="xref" href="example-configurations.html#entryscale-ironic-multi-tenancy" title="9.6.2. Entry-Scale Cloud with Ironic Multi-Tenancy">Section 9.6.2, “Entry-Scale Cloud with Ironic Multi-Tenancy”</a>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <code class="filename">~/openstack/examples/entry-scale-ironic-multi-tenancy</code>
-     </td></tr><tr><td><a class="xref" href="example-configurations.html#mid-scale-kvm" title="9.3.3. Single-Region Mid-Size Model">Section 9.3.3, “Single-Region Mid-Size Model”</a>
+     </td></tr><tr><td style="border-right: 1px solid ; "><a class="xref" href="example-configurations.html#mid-scale-kvm" title="9.3.3. Single-Region Mid-Size Model">Section 9.3.3, “Single-Region Mid-Size Model”</a>
      </td><td>
       <code class="filename">~/openstack/examples/mid-scale-kvm</code>
      </td></tr></tbody></table></div><p>
@@ -88,16 +88,16 @@ hljs.configure({
    individual control plane elements. This enables a greater number of
    resources to be supported (compute nodes, Swift object servers). This model
    also shows how a segmented network can be expressed in the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> model.
-  </p></div><div class="sect1" id="alternative"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Alternative Configurations</span> <a title="Permalink" class="permalink" href="example-configurations.html#alternative">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-example_configurations.xml</li><li><span class="ds-label">ID: </span>alternative</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="alternative" data-id-title="Alternative Configurations"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.2 </span><span class="title-name">Alternative Configurations</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#alternative">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-example_configurations.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> there are alternative configurations that we recommend
    for specific purposes and this section we will outline them.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <a class="xref" href="alternative-configurations.html#standalone-deployer" title="12.1. Using a Dedicated Cloud Lifecycle Manager Node">Section 12.1, “Using a Dedicated Cloud Lifecycle Manager Node”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="alternative-configurations.html#without-dvr" title="12.2. Configuring SUSE OpenStack Cloud without DVR">Section 12.2, “Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> without DVR”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="alternative-configurations.html#without-l3agent" title="12.3. Configuring SUSE OpenStack Cloud with Provider VLANs and Physical Routers Only">Section 12.3, “Configuring <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> with Provider VLANs and Physical Routers Only”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="alternative-configurations.html#twosystems" title="12.4. Considerations When Installing Two Systems on One Subnet">Section 12.4, “Considerations When Installing Two Systems on One Subnet”</a>
     </p></li></ul></div><p>
    The Ironic multi-tenancy feature uses Neutron to manage the tenant
@@ -114,47 +114,47 @@ hljs.configure({
    specify the relevant information in the
    <code class="literal">multi_tenancy_switch_config:</code> section of the
    <code class="filename">data/ironic/ironic_config.yml</code> file.
-  </p></div><div class="sect1" id="kvm-examples"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">KVM Examples</span> <a title="Permalink" class="permalink" href="example-configurations.html#kvm-examples">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-kvm_examples.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-kvm_examples.xml</li><li><span class="ds-label">ID: </span>kvm-examples</li></ul></div></div></div></div><div class="sect2" id="entry-scale-kvm"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Entry-Scale Cloud</span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entry-scale-kvm.xml</li><li><span class="ds-label">ID: </span>entry-scale-kvm</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="kvm-examples" data-id-title="KVM Examples"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.3 </span><span class="title-name">KVM Examples</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#kvm-examples">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-kvm_examples.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="entry-scale-kvm" data-id-title="Entry-Scale Cloud"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.3.1 </span><span class="title-name">Entry-Scale Cloud</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys an entry-scale cloud.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.6.2.3.1"><span class="term ">Control Plane</span></dt><dd><p>
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.6.2.3.1"><span class="term">Control Plane</span></dt><dd><p>
      <span class="bold"><strong>Cluster1</strong></span> 3 nodes of type
      <code class="literal">CONTROLLER-ROLE</code> run the core <span class="productname">OpenStack</span> services, such as
      Keystone, Nova API, Glance API, Neutron API, Horizon, and Heat
      API.
-    </p></dd><dt id="id-1.3.4.7.6.2.3.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.2.3.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code> file.
-    </p></dd><dt id="id-1.3.4.7.6.2.3.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.6.2.3.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Compute</strong></span> One node of type
        <code class="literal">COMPUTE-ROLE</code> runs Nova Compute and associated
        services.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Object Storage</strong></span> Minimal Swift
        resources are provided by the control plane.
       </p></li></ul></div><p>
      Additional resource nodes can be added to the configuration.
-    </p></dd><dt id="id-1.3.4.7.6.2.3.4"><span class="term ">Networking</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.2.3.4"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span> network connected to the
        lifecycle-manager and the IPMI ports of all servers.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> The network for making
        requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External VM</strong></span> This network provides
        access to VMs via floating IP addresses.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This network is used
        for all internal traffic between the cloud services. It is also used to
        install and configure the nodes. The network needs to be on an untagged
        VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> The network that carries traffic
        between VMs on private networks within the cloud.
       </p></li></ul></div><p>
@@ -171,74 +171,74 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      edited to match your system.
-    </p></dd><dt id="id-1.3.4.7.6.2.3.5"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.2.3.5"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB in capacity. In
      addition the example configures one additional disk depending on the role
      of the server:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code> are
        configured to be used by Swift.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Compute Servers</strong></span>
        <code class="filename">/dev/sdb</code> is configured as an additional Volume
        Group to be used for VM storage
       </p></li></ul></div><p>
      Additional disks can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file
-    </p></dd></dl></div></div><div class="sect2" id="entry-scale-kvm-mml"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Entry Scale Cloud with Metering and Monitoring Services</span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-mml">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-mml.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entry-scale-kvm-mml.xml</li><li><span class="ds-label">ID: </span>entry-scale-kvm-mml</li></ul></div></div></div></div><p>
+    </p></dd></dl></div></section><section class="sect2" id="entry-scale-kvm-mml" data-id-title="Entry Scale Cloud with Metering and Monitoring Services"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.3.2 </span><span class="title-name">Entry Scale Cloud with Metering and Monitoring Services</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-mml">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-mml.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys an entry-scale cloud that provides metering and
   monitoring services and runs the database and messaging services in their own
   cluster.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.6.3.3.1"><span class="term ">Control Plane</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.6.3.3.1"><span class="term">Control Plane</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Cluster1</strong></span> 2 nodes of type
        <code class="literal">CONTROLLER-ROLE</code> run the core OpenStack services, such
        as Keystone, Nova API, Glance API, Neutron API, Horizon, and
        Heat API.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cluster2</strong></span> 3 nodes of type
        <code class="literal">MTRMON-ROLE</code>, run the OpenStack services for metering
        and monitoring (for example, Ceilometer, Monasca and Logging).
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cluster3</strong></span> 3 nodes of type
        <code class="literal">DBMQ-ROLE</code> that run clustered database and RabbitMQ
        services to support the cloud infrastructure. 3 nodes are required for
        high availability.
-      </p></li></ul></div></dd><dt id="id-1.3.4.7.6.3.3.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+      </p></li></ul></div></dd><dt id="id-1.3.4.7.6.3.3.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code>file.
-    </p></dd><dt id="id-1.3.4.7.6.3.3.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.6.3.3.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Compute</strong></span> 1 node of type
        <code class="literal">COMPUTE-ROLE</code> runs Nova Compute and associated
        services.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Object Storage</strong></span> Minimal Swift
        resources are provided by the control plane.
       </p></li></ul></div><p>
      Additional resource nodes can be added to the configuration.
-    </p></dd><dt id="id-1.3.4.7.6.3.3.4"><span class="term ">Networking</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.3.3.4"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span> network connected to the
        lifecycle-manager and the IPMI ports of all servers.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> The network for making
        requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External VM</strong></span> The network that provides
        access to VMs via floating IP addresses.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This is the network
        that is used for all internal traffic between the cloud services. It is
        also used to install and configure the nodes. The network needs to be on
        an untagged VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> The network that carries traffic
        between VMs on private networks within the cloud.
       </p></li></ul></div><p>
@@ -255,66 +255,66 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      edited to match your system.
-    </p></dd><dt id="id-1.3.4.7.6.3.3.5"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.3.3.5"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB of capacity. In addition,
      the example configures one additional disk depending on the role of
      the server:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Core Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code> is
        configured to be used by Swift.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>DBMQ Controllers</strong></span>
        <code class="filename">/dev/sdb</code> is configured as an additional Volume
        Group to be used by the database and RabbitMQ.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Compute Servers</strong></span>
        <code class="filename">/dev/sdb</code> is configured as an additional Volume
        Group to be used for VM storage.
       </p></li></ul></div><p>
      Additional disks can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file.
-    </p></dd></dl></div></div><div class="sect2" id="mid-scale-kvm"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Single-Region Mid-Size Model</span> <a title="Permalink" class="permalink" href="example-configurations.html#mid-scale-kvm">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-mid-scale-kvm.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-mid-scale-kvm.xml</li><li><span class="ds-label">ID: </span>mid-scale-kvm</li></ul></div></div></div></div><p>
+    </p></dd></dl></div></section><section class="sect2" id="mid-scale-kvm" data-id-title="Single-Region Mid-Size Model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.3.3 </span><span class="title-name">Single-Region Mid-Size Model</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#mid-scale-kvm">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-mid-scale-kvm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The mid-size model is intended as a template for a moderate sized cloud. The
   Control plane is made up of multiple server clusters to provide sufficient
   computational, network and IOPS capacity for a mid-size production style
   cloud.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.6.4.3.1"><span class="term ">Control Plane</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.6.4.3.1"><span class="term">Control Plane</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Core Cluster</strong></span> runs core OpenStack
        Services, such as Keystone, Nova API, Glance API, Neutron API,
        Horizon, and Heat API. Default configuration is two nodes of role
        type <code class="literal">CORE-ROLE</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Metering and Monitoring Cluster</strong></span> runs
        the OpenStack Services for metering and monitoring (for example,
        Ceilometer, Monasca and logging). Default configuration is three
        nodes of role type <code class="literal">MTRMON-ROLE</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Database and Message Queue Cluster</strong></span> runs
        clustered MariaDB and RabbitMQ services to support the Ardana cloud
        infrastructure. Default configuration is three nodes of role type
        <code class="literal">DBMQ-ROLE</code>. Three nodes are required for high
        availability.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Swift PAC Cluster</strong></span> runs the Swift
        Proxy, Account and Container services. Default configuration is three
        nodes of role type <code class="literal">SWPAC-ROLE</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Neutron Agent Cluster</strong></span> Runs Neutron
        VPN (L3), DHCP, Metadata and OpenVswitch agents. Default configuration
        is two nodes of role type <code class="literal">NEUTRON-ROLE</code>.
-      </p></li></ul></div></dd><dt id="id-1.3.4.7.6.4.3.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+      </p></li></ul></div></dd><dt id="id-1.3.4.7.6.4.3.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code> file.
-    </p></dd><dt id="id-1.3.4.7.6.4.3.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.6.4.3.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Compute</strong></span> runs Nova Compute and
        associated services. Runs on nodes of role type
        <code class="literal">COMPUTE-ROLE</code>. This model lists 3 nodes. 1 node is the
        minimum requirement.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Object Storage</strong></span> 3 nodes of type
        <code class="literal">SOWBJ-ROLE</code> run the Swift Object service. The
        minimum node count should match your Swift replica count.
@@ -322,32 +322,32 @@ hljs.configure({
      The minimum node count required to run this model unmodified is 19 nodes.
      This can be reduced by consolidating services on the control plane
      clusters.
-    </p></dd><dt id="id-1.3.4.7.6.4.3.4"><span class="term ">Networking</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.6.4.3.4"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span> network connected to the
        lifecycle-manager and the IPMI ports of all servers.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> The network for making
        requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Internal API</strong></span> This network is used
        within the cloud for API access between services.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External VM</strong></span> This network provides
        access to VMs via floating IP addresses.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This network is used
        for all internal traffic between the cloud services. It is also used to
        install and configure the nodes. The network needs to be on an untagged
        VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> The network that carries traffic
        between VMs on private networks within the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>SWIFT</strong></span> This network is used for internal
        Swift communications between the Swift nodes.
       </p></li></ul></div><p>
@@ -364,19 +364,19 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      edited to match your system.
-    </p></dd></dl></div><div class="sect3" id="id-1.3.4.7.6.4.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">9.3.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adapting the Mid-Size Model to Fit Your Environment</span> <a title="Permalink" class="permalink" href="example-configurations.html#id-1.3.4.7.6.4.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-mid-scale-kvm.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-mid-scale-kvm.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></dd></dl></div><section class="sect3" id="id-1.3.4.7.6.4.4" data-id-title="Adapting the Mid-Size Model to Fit Your Environment"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">9.3.3.1 </span><span class="title-name">Adapting the Mid-Size Model to Fit Your Environment</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#id-1.3.4.7.6.4.4">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-mid-scale-kvm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The minimum set of changes you need to make to adapt the model for your
    environment are:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Update <code class="filename">servers.yml</code> to list the details of your
      baremetal servers.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Update the <code class="filename">networks.yml</code> file to replace network CIDRs
      and VLANs with site specific values.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Update the <code class="filename">nic_mappings.yml</code> file to ensure that
      network devices are mapped to the correct physical port(s).
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Review the disk models (<code class="filename">disks_*.yml</code>) and confirm that
      the associated servers have the number of disks required by the disk
      model. The device names in the disk models might need to be adjusted to
@@ -387,102 +387,102 @@ hljs.configure({
      allocate more Swift disks then you should review the ring power in the
      Swift ring configuration. This is documented in the Swift section.
      Disk models are provided as follows:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        DISK SET CONTROLLER: Minimum 1 disk
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        DISK SET DBMQ: Minimum 3 disks
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        DISK SET COMPUTE: Minimum 2 disks
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        DISK SET SWPAC: Minimum 3 disks
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        DISK SET SWOBJ: Minimum 3 disks
-      </p></li></ul></div></li><li class="listitem "><p>
+      </p></li></ul></div></li><li class="listitem"><p>
      Update the <code class="filename">netinterfaces.yml</code> file to match the server
      NICs used in your configuration. This file has a separate interface model
      definition for each of the following:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        INTERFACE SET CONTROLLER
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        INTERFACE SET DBMQ
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        INTERFACE SET SWPAC
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        INTERFACE SET SWOBJ
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        INTERFACE SET COMPUTE
-      </p></li></ul></div></li></ul></div></div></div></div><div class="sect1" id="esx-examples"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ESX Examples</span> <a title="Permalink" class="permalink" href="example-configurations.html#esx-examples">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-esx_examples.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-esx_examples.xml</li><li><span class="ds-label">ID: </span>esx-examples</li></ul></div></div></div></div><div class="sect2" id="entry-scale-kvm-esx"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors</span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-esx">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-esx.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entry-scale-kvm-esx.xml</li><li><span class="ds-label">ID: </span>entry-scale-kvm-esx</li></ul></div></div></div></div><p>
+      </p></li></ul></div></li></ul></div></section></section></section><section class="sect1" id="esx-examples" data-id-title="ESX Examples"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.4 </span><span class="title-name">ESX Examples</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#esx-examples">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-esx_examples.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="entry-scale-kvm-esx" data-id-title="Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.4.1 </span><span class="title-name">Single-Region Entry-Scale Cloud with a Mix of KVM and ESX Hypervisors</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-esx">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-esx.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys a cloud which mixes KVM and ESX hypervisors.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.7.2.3.1"><span class="term ">Control Plane</span></dt><dd><p>
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.7.2.3.1"><span class="term">Control Plane</span></dt><dd><p>
      <span class="bold"><strong>Cluster1</strong></span> 3 nodes of type
      <code class="literal">CONTROLLER-ROLE</code> run the core <span class="productname">OpenStack</span> services, such as
      Keystone, Nova API, Glance API, Neutron API, Horizon, and Heat
      API.
-    </p></dd><dt id="id-1.3.4.7.7.2.3.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.7.2.3.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code> file.
-    </p></dd><dt id="id-1.3.4.7.7.2.3.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.7.2.3.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Compute:
-      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          <span class="bold"><strong>KVM</strong></span> runs Nova Computes and
          associated services. It runs on nodes of role type
          <code class="literal">COMPUTE-ROLE</code>.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>ESX</strong></span> provides ESX Compute services. OS
          and software on this node is installed by user.
-        </p></li></ul></div></li></ul></div></dd><dt id="id-1.3.4.7.7.2.3.4"><span class="term ">ESX Resource Requirements</span></dt><dd><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+        </p></li></ul></div></li></ul></div></dd><dt id="id-1.3.4.7.7.2.3.4"><span class="term">ESX Resource Requirements</span></dt><dd><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
        User needs to supply vSphere server
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        User needs to deploy the ovsvapp network resources using the
-       vSphere GUI (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.2 “Creating ESXi MGMT DVS and Required Portgroup”</span>) by running the
+       vSphere GUI (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.2 “Creating ESXi MGMT DVS and Required Portgroup”</span>) by running the
        <code class="literal">neutron-create-ovsvapp-resources.yml</code> playbook
-       (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.3 “Configuring OVSvApp Network Resources Using Ansible-Playbook”</span>) or via Python-Networking-vSphere
-       (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.4 “Configuring OVSVAPP Using Python-Networking-vSphere”</span>)
+       (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.3 “Configuring OVSvApp Network Resources Using Ansible-Playbook”</span>) or via Python-Networking-vSphere
+       (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 15 “Installing ESX Computes and OVSvAPP”, Section 15.8 “Configuring the Required Distributed vSwitches and Port Groups”, Section 15.8.4 “Configuring OVSVAPP Using Python-Networking-vSphere”</span>)
       </p><p>
        The following DVS and DVPGs need to be created and configured for each
        cluster in each ESX hypervisor that will host an OvsVapp appliance. The
        settings for each DVS and DVPG are specific to your system and network
        policies. A JSON file example is provided in the documentation, but it
        needs to be edited to match your requirements.
-      </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col1" /><col class="col2" /></colgroup><tbody><tr><td><span class="bold"><strong>DVS</strong></span></td><td><span class="bold"><strong>Port Groups assigned to DVS</strong></span></td></tr><tr><td>MGMT</td><td>MGMT-PG, ESX-CONF-PG, GUEST-PG</td></tr><tr><td>TRUNK</td><td>TRUNK-PG</td></tr></tbody></table></div></li><li class="listitem "><p>
+      </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col1"/><col class="col2"/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><span class="bold"><strong>DVS</strong></span></td><td style="border-bottom: 1px solid ; "><span class="bold"><strong>Port Groups assigned to DVS</strong></span></td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">MGMT</td><td style="border-bottom: 1px solid ; ">MGMT-PG, ESX-CONF-PG, GUEST-PG</td></tr><tr><td style="border-right: 1px solid ; ">TRUNK</td><td>TRUNK-PG</td></tr></tbody></table></div></li><li class="listitem"><p>
        User needs to deploy ovsvapp appliance (<code class="literal">OVSVAPP-ROLE</code>)
        and nova-proxy appliance (<code class="literal">ESX-COMPUTE-ROLE</code>)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        User needs to add required information related to compute proxy and
        OVSvApp Nodes
-      </p></li></ol></div></dd><dt id="id-1.3.4.7.7.2.3.5"><span class="term ">Networking</span></dt><dd><p>
+      </p></li></ol></div></dd><dt id="id-1.3.4.7.7.2.3.5"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span>network connected to the
        lifecycle-manager and the IPMI ports of all nodes, except the ESX
        hypervisors.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> The network for
        making requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External VM</strong></span> The network that
        provides access to VMs via floating IP addresses.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> The network
        used for all internal traffic between the cloud services. It is also
        used to install and configure the nodes. The network needs to be on an
        untagged VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> This network carries
        traffic between VMs on private networks within the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>SES</strong></span> This is the network that
        control-plane and compute-node clients use to talk to the external SUSE Enterprise Storage.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>TRUNK</strong></span> is the network that is used
        to apply security group rules on tenant traffic. It is managed by the
        cloud admin and is restricted to the vCenter environment.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>ESX-CONF-NET</strong></span> network is used
        only to configure the ESX compute nodes in the cloud. This network
        should be different from the network used with PXE to stand up the cloud
@@ -497,56 +497,56 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      edited to match your system.
-    </p></dd><dt id="id-1.3.4.7.7.2.3.6"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.7.2.3.6"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB in capacity. In addition,
      the example configures additional disk depending on the node's role:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code> are
        configured to be used by Swift
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Compute Servers</strong></span>
        <code class="filename">/dev/sdb</code> is configured as an additional Volume
        Group to be used for VM storage
       </p></li></ul></div><p>
      Additional disks can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file.
-    </p></dd></dl></div></div><div class="sect2" id="entry-scale-kvm-esx-mml"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Single-Region Entry-Scale Cloud with Metering and Monitoring Services, and a Mix of KVM and ESX Hypervisors</span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-esx-mml">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-esx-mml.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entry-scale-kvm-esx-mml.xml</li><li><span class="ds-label">ID: </span>entry-scale-kvm-esx-mml</li></ul></div></div></div></div><p>
+    </p></dd></dl></div></section><section class="sect2" id="entry-scale-kvm-esx-mml" data-id-title="Single-Region Entry-Scale Cloud with Metering and Monitoring Services, and a Mix of KVM and ESX Hypervisors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.4.2 </span><span class="title-name">Single-Region Entry-Scale Cloud with Metering and Monitoring Services, and a Mix of KVM and ESX Hypervisors</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entry-scale-kvm-esx-mml">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entry-scale-kvm-esx-mml.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys a cloud which mixes KVM and ESX hypervisors, provides
   metering and monitoring services, and runs the database and messaging
   services in their own cluster.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.7.3.3.1"><span class="term ">Control Plane</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.7.3.3.1"><span class="term">Control Plane</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Cluster1</strong></span> 2 nodes of type
        <code class="literal">CONTROLLER-ROLE</code> run the core <span class="productname">OpenStack</span> services, such
        as Keystone, Nova API, Glance API, Neutron API, Horizon, and
        Heat API.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cluster2</strong></span> 3 nodes of type
        <code class="literal">MTRMON-ROLE</code>, run the <span class="productname">OpenStack</span> services for metering
        and monitoring (for example, Ceilometer, Monasca and Logging).
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cluster3</strong></span> 3 nodes of type
        <code class="literal">DBMQ-ROLE</code>, run clustered database and RabbitMQ
        services to support the cloud infrastructure. 3 nodes are required for
        high availability.
-      </p></li></ul></div></dd><dt id="id-1.3.4.7.7.3.3.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+      </p></li></ul></div></dd><dt id="id-1.3.4.7.7.3.3.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code> file.
-    </p></dd><dt id="id-1.3.4.7.7.3.3.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.7.3.3.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Compute:
-      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          <span class="bold"><strong>KVM</strong></span> runs Nova Computes and
          associated services. It runs on nodes of role type
          <code class="literal">COMPUTE-ROLE</code>.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>ESX</strong></span> provides ESX Compute services. OS
          and software on this node is installed by user.
-        </p></li></ul></div></li></ul></div></dd><dt id="id-1.3.4.7.7.3.3.4"><span class="term "> ESX Resource Requirements </span></dt><dd><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+        </p></li></ul></div></li></ul></div></dd><dt id="id-1.3.4.7.7.3.3.4"><span class="term"> ESX Resource Requirements </span></dt><dd><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
        User needs to supply vSphere server
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        User needs to deploy the ovsvapp network resources using the
        vSphere GUI or by running the
        <code class="literal">neutron-create-ovsvapp-resources.yml</code> playbook
@@ -556,46 +556,46 @@ hljs.configure({
        settings for each DVS and DVPG are specific to your system and network
        policies. A JSON file example is provided in the documentation, but it
        needs to be edited to match your requirements.
-      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          ESX-CONF (DVS and DVPG) connected to ovsvapp eth0 and compute-proxy
          eth0
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          MANAGEMENT (DVS and DVPG) connected to ovsvapp eth1, eth2, eth3 and compute-proxy
          eth1
-        </p></li></ul></div></li><li class="listitem "><p>
+        </p></li></ul></div></li><li class="listitem"><p>
        User needs to deploy ovsvapp appliance (<code class="literal">OVSVAPP-ROLE</code>)
        and nova-proxy appliance (<code class="literal">ESX-COMPUTE-ROLE</code>)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        User needs to add required information related to compute proxy and
        OVSvApp Nodes
-      </p></li></ol></div></dd><dt id="id-1.3.4.7.7.3.3.5"><span class="term ">Networking</span></dt><dd><p>
+      </p></li></ol></div></dd><dt id="id-1.3.4.7.7.3.3.5"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span>network connected to the
        lifecycle-manager and the IPMI ports of all nodes, except the ESX
        hypervisors.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> The network for
        making requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External VM</strong></span> The network that
        provides access to VMs (via floating IP addresses).
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This
        network is used for all internal traffic between the cloud services. It
        is also used to install and configure the nodes. The network needs to be
        on an untagged VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> This is the network that will
        carry traffic between VMs on private networks within the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>TRUNK</strong></span> is the network that will be used
        to apply security group rules on tenant traffic. It is managed by the
        cloud admin and is restricted to the vCenter environment.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>ESX-CONF-NET</strong></span> network is used
        only to configure the ESX compute nodes in the cloud. This network
        should be different from the network used with PXE to stand up the cloud
@@ -610,35 +610,35 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      edited to match your system.
-    </p></dd><dt id="id-1.3.4.7.7.3.3.6"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.7.3.3.6"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB in capacity. In
      addition, the example configures additional disk depending on the node's
      role:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code> are
        configured to be used by Swift.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Compute Servers</strong></span>
        <code class="filename">/dev/sdb</code> is configured as an additional Volume
        Group to be used for VM storage
       </p></li></ul></div><p>
      Additional disks can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file
-    </p></dd></dl></div></div></div><div class="sect1" id="swift-examples"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Swift Examples</span> <a title="Permalink" class="permalink" href="example-configurations.html#swift-examples">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-swift_examples.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-swift_examples.xml</li><li><span class="ds-label">ID: </span>swift-examples</li></ul></div></div></div></div><div class="sect2" id="entryscale-swift"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Entry-scale Swift Model</span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-swift">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_swift.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entryscale_swift.xml</li><li><span class="ds-label">ID: </span>entryscale-swift</li></ul></div></div></div></div><p>
+    </p></dd></dl></div></section></section><section class="sect1" id="swift-examples" data-id-title="Swift Examples"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.5 </span><span class="title-name">Swift Examples</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#swift-examples">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-swift_examples.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="entryscale-swift" data-id-title="Entry-scale Swift Model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.5.1 </span><span class="title-name">Entry-scale Swift Model</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-swift">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_swift.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example shows how <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> can be configured to provide a Swift-only
   configuration, consisting of three controllers and one or more Swift object
   servers.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-examples-entry_scale_swift.png" target="_blank"><img src="images/media-examples-entry_scale_swift.png" width="" /></a></div></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-examples-entry_scale_swift.png"><img src="images/media-examples-entry_scale_swift.png" alt="Image" title="Image"/></a></div></div><p>
   The example requires the following networks:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <span class="bold"><strong>External API</strong></span> - The network for making
     requests to the cloud.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="bold"><strong>Swift</strong></span> - The network for all data traffic
     between the Swift services.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="bold"><strong>Management</strong></span> - This network that is used for
     all internal traffic between the cloud services, including node
     provisioning. This network must be on an untagged VLAN.
@@ -673,18 +673,18 @@ hljs.configure({
   container services on dedicated servers (typically referred to as the Swift
   proxy servers). If you are using this model, we have included the recommended
   Swift proxy servers specs in the table below.
- </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /><col class="c5" /><col class="c6" /><col class="c7" /></colgroup><thead><tr><th rowspan="2">Node Type</th><th rowspan="2">Role Name</th><th rowspan="2">Required Number</th><th colspan="4" align="center">Server Hardware - Minimum Requirements and
-            Recommendations</th></tr><tr><th>Disk </th><th>Memory</th><th>Network</th><th>CPU </th></tr></thead><tbody><tr><td>Dedicated Cloud Lifecycle Manager (optional)</td><td>Lifecycle-manager</td><td>1</td><td>300 GB</td><td>8 GB</td><td>1 x 10 Gbit/s with PXE Support</td><td>8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td>Control Plane</td><td>Controller</td><td>3</td><td>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/><col class="c4"/><col class="c5"/><col class="c6"/><col class="c7"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">Node Type</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">Role Name</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">Required Number</th><th style="text-align: center; border-bottom: 1px solid ; " colspan="4">Server Hardware - Minimum Requirements and
+            Recommendations</th></tr><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Disk </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Memory</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Network</th><th style="border-bottom: 1px solid ; ">CPU </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Dedicated Cloud Lifecycle Manager (optional)</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Lifecycle-manager</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">1</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">300 GB</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">8 GB</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">1 x 10 Gbit/s with PXE Support</td><td style="border-bottom: 1px solid ; ">8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Control Plane</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Controller</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">3</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          1 x 600 GB (minimum) - operating system drive
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          2 x 600 GB (minimum) - Swift account/container data drive
         </p></li></ul></div>
-     </td><td>64 GB</td><td>2 x 10 Gbit/s with one PXE enabled port</td><td>8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td>Swift Object</td><td>swobj</td><td>3</td><td>
+     </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">64 GB</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">2 x 10 Gbit/s with one PXE enabled port</td><td style="border-bottom: 1px solid ; ">8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Swift Object</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">swobj</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">3</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <p>
        If using x3 replication only:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          1 x 600 GB (minimum, see considerations at bottom of page for more
          details)
         </p></li></ul></div>
@@ -692,11 +692,11 @@ hljs.configure({
        If using Erasure Codes only or a mix of x3 replication and Erasure
        Codes:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          6 x 600 GB (minimum, see considerations at bottom of page for more
          details)
         </p></li></ul></div>
-     </td><td>32 GB (see considerations at bottom of page for more details)</td><td>2 x 10 Gbit/s with one PXE enabled port</td><td>8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td>Swift Proxy, Account, and Container</td><td>swpac</td><td>3</td><td>2 x 600 GB (minimum, see considerations at bottom of page for more details)</td><td>64 GB (see considerations at bottom of page for more details)</td><td>2 x 10 Gbit/s with one PXE enabled port</td><td>8 CPU (64-bit) cores total (Intel x86_64)</td></tr></tbody></table></div><div id="id-1.3.4.7.8.2.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+     </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">32 GB (see considerations at bottom of page for more details)</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">2 x 10 Gbit/s with one PXE enabled port</td><td style="border-bottom: 1px solid ; ">8 CPU (64-bit) cores total (Intel x86_64)</td></tr><tr><td style="border-right: 1px solid ; ">Swift Proxy, Account, and Container</td><td style="border-right: 1px solid ; ">swpac</td><td style="border-right: 1px solid ; ">3</td><td style="border-right: 1px solid ; ">2 x 600 GB (minimum, see considerations at bottom of page for more details)</td><td style="border-right: 1px solid ; ">64 GB (see considerations at bottom of page for more details)</td><td style="border-right: 1px solid ; ">2 x 10 Gbit/s with one PXE enabled port</td><td>8 CPU (64-bit) cores total (Intel x86_64)</td></tr></tbody></table></div><div id="id-1.3.4.7.8.2.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    The disk speeds (RPM) chosen should be consistent within the same ring or
    storage policy. It is best to not use disks with mixed disk speeds within the
    same Swift ring.
@@ -730,43 +730,43 @@ hljs.configure({
   Another general rule of thumb is that if you are expecting to have more than
   a million objects in a container then you should consider using SSDs on the
   Swift PAC servers rather than HDDs.
- </p></div></div><div class="sect1" id="ironic-examples"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ironic Examples</span> <a title="Permalink" class="permalink" href="example-configurations.html#ironic-examples">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-ironic_examples.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-ironic_examples.xml</li><li><span class="ds-label">ID: </span>ironic-examples</li></ul></div></div></div></div><div class="sect2" id="entryscale-ironic"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Entry-Scale Cloud with Ironic Flat Network</span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-ironic">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_ironic.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entryscale_ironic.xml</li><li><span class="ds-label">ID: </span>entryscale-ironic</li></ul></div></div></div></div><p>
+ </p></section></section><section class="sect1" id="ironic-examples" data-id-title="Ironic Examples"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.6 </span><span class="title-name">Ironic Examples</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#ironic-examples">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-ironic_examples.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="entryscale-ironic" data-id-title="Entry-Scale Cloud with Ironic Flat Network"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.6.1 </span><span class="title-name">Entry-Scale Cloud with Ironic Flat Network</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-ironic">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_ironic.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys an entry scale cloud that uses the Ironic service to
   provision physical machines through the Compute services API.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-hos.docs-exampleconfigs-entry_scale_ironic.png" target="_blank"><img src="images/media-hos.docs-exampleconfigs-entry_scale_ironic.png" width="" /></a></div></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.9.2.4.1"><span class="term ">Control Plane</span></dt><dd><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-hos.docs-exampleconfigs-entry_scale_ironic.png"><img src="images/media-hos.docs-exampleconfigs-entry_scale_ironic.png" alt="Image" title="Image"/></a></div></div><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.9.2.4.1"><span class="term">Control Plane</span></dt><dd><p>
      <span class="bold"><strong>Cluster1</strong></span> 3 nodes of type
      <code class="literal">CONTROLLER-ROLE</code> run the core OpenStack services, such
      as Keystone, Nova API, Glance API, Neutron API, Horizon, and
      Heat API.
-    </p></dd><dt id="id-1.3.4.7.9.2.4.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.9.2.4.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code> file.
-    </p></dd><dt id="id-1.3.4.7.9.2.4.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.9.2.4.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Ironic Compute</strong></span> One node of type
        <code class="literal">IRONIC-COMPUTE-ROLE</code> runs nova-compute,
        nova-compute-ironic, and other supporting services.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Object Storage</strong></span> Minimal Swift
        resources are provided by the control plane.
-      </p></li></ul></div></dd><dt id="id-1.3.4.7.9.2.4.4"><span class="term ">Networking</span></dt><dd><p>
+      </p></li></ul></div></dd><dt id="id-1.3.4.7.9.2.4.4"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span> network connected to the
        lifecycle-manager and the IPMI ports of all servers.
       </p></li></ul></div><p>
      Nodes require a pair of bonded NICs which are used by the following
      networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> This is the network that
        users will use to make requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This is the network
        that will be used for all internal traffic between the cloud services.
        This network is also used to install and configure the nodes. The
        network needs to be on an untagged VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Guest</strong></span> This is the flat network that
        will carry traffic between bare metal instances within the cloud. It is
        also used to PXE boot said bare metal instances and install the
@@ -785,72 +785,72 @@ hljs.configure({
      The name given to a network interface by the system is configured in the
      file <code class="filename">data/net_interfaces.yml</code>. That file needs to be
      modified to match your system.
-    </p></dd><dt id="id-1.3.4.7.9.2.4.5"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.9.2.4.5"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB in capacity. In
      addition the example configures one additional disk depending on the role
      of the server:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code>
        configured to be used by Swift.
       </p></li></ul></div><p>
      Additional discs can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file.
-    </p></dd></dl></div></div><div class="sect2" id="entryscale-ironic-multi-tenancy"><div class="titlepage"><div><div><h3 class="title"><span class="number">9.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Entry-Scale Cloud with Ironic Multi-Tenancy</span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-ironic-multi-tenancy">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_ironic_multi_tenancy.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>planning-architecture-examples-entryscale_ironic_multi_tenancy.xml</li><li><span class="ds-label">ID: </span>entryscale-ironic-multi-tenancy</li></ul></div></div></div></div><p>
+    </p></dd></dl></div></section><section class="sect2" id="entryscale-ironic-multi-tenancy" data-id-title="Entry-Scale Cloud with Ironic Multi-Tenancy"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">9.6.2 </span><span class="title-name">Entry-Scale Cloud with Ironic Multi-Tenancy</span></span> <a title="Permalink" class="permalink" href="example-configurations.html#entryscale-ironic-multi-tenancy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_ironic_multi_tenancy.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This example deploys an entry scale cloud that uses the Ironic service to
   provision physical machines through the Compute services API and supports
   multi tenancy.
- </p><div class="figure" id="multi-tenancy"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/media-ironic-Entry-ScaleIronicMultiTenancy.png" target="_blank"><img src="images/media-ironic-Entry-ScaleIronicMultiTenancy.png" width="" alt="Entry-scale Cloud with Ironic Muti-Tenancy" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 9.1: </span><span class="name">Entry-scale Cloud with Ironic Muti-Tenancy </span><a title="Permalink" class="permalink" href="example-configurations.html#multi-tenancy">#</a></h6></div></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.3.4.7.9.3.4.1"><span class="term ">Control Plane</span></dt><dd><p>
+ </p><div class="figure" id="multi-tenancy"><div class="figure-contents"><div class="mediaobject"><a href="images/media-ironic-Entry-ScaleIronicMultiTenancy.png"><img src="images/media-ironic-Entry-ScaleIronicMultiTenancy.png" alt="Entry-scale Cloud with Ironic Muti-Tenancy" title="Entry-scale Cloud with Ironic Muti-Tenancy"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 9.1: </span><span class="title-name">Entry-scale Cloud with Ironic Muti-Tenancy </span></span><a title="Permalink" class="permalink" href="example-configurations.html#multi-tenancy">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/planning-architecture-examples-entryscale_ironic_multi_tenancy.xml" title="Edit source document"> </a></div></div></div><div class="variablelist"><dl class="variablelist"><dt id="id-1.3.4.7.9.3.4.1"><span class="term">Control Plane</span></dt><dd><p>
      <span class="bold"><strong>Cluster1</strong></span> 3 nodes of type
      <code class="literal">CONTROLLER-ROLE</code> run the core <span class="productname">OpenStack</span> services, such as
      Keystone, Nova API, Glance API, Neutron API, Horizon, and Heat
      API.
-    </p></dd><dt id="id-1.3.4.7.9.3.4.2"><span class="term ">Cloud Lifecycle Manager</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.9.3.4.2"><span class="term">Cloud Lifecycle Manager</span></dt><dd><p>
      The Cloud Lifecycle Manager runs on one of the control-plane nodes of type
      <code class="literal">CONTROLLER-ROLE</code>. The IP address of the node that will
      run the Cloud Lifecycle Manager needs to be included in the
      <code class="filename">data/servers.yml</code>file.
-    </p></dd><dt id="id-1.3.4.7.9.3.4.3"><span class="term ">Resource Nodes</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p></dd><dt id="id-1.3.4.7.9.3.4.3"><span class="term">Resource Nodes</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Ironic Compute</strong></span> One node of type
        <code class="literal">IRONIC-COMPUTE-ROLE</code> runs nova-compute,
        nova-compute-ironic, and other supporting services.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Object Storage</strong></span> Minimal Swift
        Resources are provided by the control plane.
-      </p></li></ul></div></dd><dt id="id-1.3.4.7.9.3.4.4"><span class="term ">Networking</span></dt><dd><p>
+      </p></li></ul></div></dd><dt id="id-1.3.4.7.9.3.4.4"><span class="term">Networking</span></dt><dd><p>
      This example requires the following networks:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>IPMI</strong></span> network connected to the
        deployer and the IPMI ports of all nodes.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>External API</strong></span> network is used to make
        requests to the cloud.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Cloud Management</strong></span> This is the network
        that will be used for all internal traffic between the cloud services.
        This network is also used to install and configure the controller nodes.
        The network needs to be on an untagged VLAN.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Provisioning</strong></span> is the network used to PXE
        boot the Ironic nodes and install the operating system selected by
        tenants. This network needs to be tagged on the switch for control
        plane/Ironic compute nodes. For Ironic bare metal nodes, VLAN
        configuration on the switch will be set by Neutron driver.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <span class="bold"><strong>Tenant VLANs</strong></span> The range of VLAN IDs
        should be reserved for use by Ironic and set in the cloud configuration.
        It is configured as untagged on control plane nodes, therefore it cannot
        be combined with management network on the same network interface.
       </p></li></ul></div><p>
      The following access should be allowed by routing/firewall:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Access from Management network to IPMI. Used during cloud
        installation and during Ironic bare metal node provisioning.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Access from Management network to switch management network. Used by
        neutron driver.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        The <code class="literal">EXTERNAL API</code> network must be reachable from the
        tenant networks if you want bare metal nodes to be able to make API
        calls to the cloud.
@@ -863,18 +863,17 @@ hljs.configure({
      traffic, and <code class="filename">hed4</code> for provisioning and tenant network
      traffic. If you need to modify these assignments for your environment,
      they are defined in <code class="filename">data/net_interfaces.yml</code>.
-    </p></dd><dt id="id-1.3.4.7.9.3.4.5"><span class="term ">Local Storage</span></dt><dd><p>
+    </p></dd><dt id="id-1.3.4.7.9.3.4.5"><span class="term">Local Storage</span></dt><dd><p>
      All servers should present a single OS disk, protected by a RAID
      controller. This disk needs to be at least 512 GB in capacity. In
      addition the example configures one additional disk depending on the role
      of the server:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <span class="bold"><strong>Controllers</strong></span>
        <code class="filename">/dev/sdb</code> and <code class="filename">/dev/sdc</code>
        configured to be used by Swift.
       </p></li></ul></div><p>
      Additional disks can be configured for any of these roles by editing the
      corresponding <code class="filename">data/disks_*.yml</code> file.
-    </p></dd></dl></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="modify-compute-input-model.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 10 </span>Modifying Example Configurations for Compute Nodes</span></a><a class="nav-link" href="cpinfofiles.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 8 </span>Configuration Processor Information Files</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></dd></dl></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cpinfofiles.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 8 </span>Configuration Processor Information Files</span></a> </div><div><a class="pagination-link next" href="modify-compute-input-model.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 10 </span>Modifying Example Configurations for Compute Nodes</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="example-configurations.html#example-configs"><span class="title-number">9.1 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Example Configurations</span></a></span></li><li><span class="section"><a href="example-configurations.html#alternative"><span class="title-number">9.2 </span><span class="title-name">Alternative Configurations</span></a></span></li><li><span class="section"><a href="example-configurations.html#kvm-examples"><span class="title-number">9.3 </span><span class="title-name">KVM Examples</span></a></span></li><li><span class="section"><a href="example-configurations.html#esx-examples"><span class="title-number">9.4 </span><span class="title-name">ESX Examples</span></a></span></li><li><span class="section"><a href="example-configurations.html#swift-examples"><span class="title-number">9.5 </span><span class="title-name">Swift Examples</span></a></span></li><li><span class="section"><a href="example-configurations.html#ironic-examples"><span class="title-number">9.6 </span><span class="title-name">Ironic Examples</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

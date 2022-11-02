@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Database | OpenStack Administrator Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Database | SUSE OpenStack Cloud 8" />
-<meta name="description" content="The Database service provides database management features." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="OpenStack Administrator Guide" />
-<meta name="chapter-title" content="Chapter 11. Database" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Database | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="The Database service provides database management features." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Database | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="The Database service provides database management features." />
-<link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-upstream-admin.html" title="OpenStack Administrator Guide" /><link rel="prev" href="bk02ch10.html" title="Chapter 10. Telemetry" /><link rel="next" href="bk02ch12.html" title="Chapter 12. Bare Metal" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | OpenStack Administrator Guide | Database</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Database | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="The Database service provides database management features."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="OpenStack Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 11. Database"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Database | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="The Database service provides database management features."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Database | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="The Database service provides database management features."/>
+<link rel="prev" href="bk02ch10.html" title="Chapter 10. Telemetry"/><link rel="next" href="bk02ch12.html" title="Chapter 12. Bare Metal"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch11.html">Database</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02ch01.html"><span class="number">1 </span><span class="name">Documentation Conventions</span></a></li><li class="inactive"><a href="bk02ch02.html"><span class="number">2 </span><span class="name">Get started with OpenStack</span></a></li><li class="inactive"><a href="cha-identity.html"><span class="number">3 </span><span class="name">Identity management</span></a></li><li class="inactive"><a href="bk02ch04.html"><span class="number">4 </span><span class="name">Dashboard</span></a></li><li class="inactive"><a href="bk02ch05.html"><span class="number">5 </span><span class="name">Compute</span></a></li><li class="inactive"><a href="bk02ch06.html"><span class="number">6 </span><span class="name">Object Storage</span></a></li><li class="inactive"><a href="bk02ch07.html"><span class="number">7 </span><span class="name">Block Storage</span></a></li><li class="inactive"><a href="bk02ch08.html"><span class="number">8 </span><span class="name">Shared File Systems</span></a></li><li class="inactive"><a href="networking.html"><span class="number">9 </span><span class="name">Networking</span></a></li><li class="inactive"><a href="bk02ch10.html"><span class="number">10 </span><span class="name">Telemetry</span></a></li><li class="inactive"><a href="bk02ch11.html"><span class="number">11 </span><span class="name">Database</span></a></li><li class="inactive"><a href="bk02ch12.html"><span class="number">12 </span><span class="name">Bare Metal</span></a></li><li class="inactive"><a href="bk02ch13.html"><span class="number">13 </span><span class="name">Orchestration</span></a></li><li class="inactive"><a href="osadm-os-cli.html"><span class="number">14 </span><span class="name">OpenStack command-line clients</span></a></li><li class="inactive"><a href="bk02ch15.html"><span class="number">15 </span><span class="name">Cross-project features</span></a></li><li class="inactive"><a href="bk02ch16.html"><span class="number">16 </span><span class="name">Appendix</span></a></li><li class="inactive"><a href="bk02go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 10. Telemetry" href="bk02ch10.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Bare Metal" href="bk02ch12.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch11.html">Database</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 10. Telemetry" href="bk02ch10.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Bare Metal" href="bk02ch12.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="id-1.4.13"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud</span> <span class="productnumber ">8</span></div><div><h1 class="title"><span class="number">11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Database</span> <a title="Permalink" class="permalink" href="bk02ch11.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="bk02ch11.html#id-1.4.13.4"><span class="number">11.1 </span><span class="name">Introduction</span></a></span></dt><dt><span class="sect1"><a href="bk02ch11.html#id-1.4.13.5"><span class="number">11.2 </span><span class="name">Create a data store</span></a></span></dt><dt><span class="sect1"><a href="bk02ch11.html#id-1.4.13.6"><span class="number">11.3 </span><span class="name">Configure a cluster</span></a></span></dt></dl></div></div><p>The Database service provides database management features.</p><div class="sect1 " id="id-1.4.13.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Database service provides scalable and reliable cloud
+</script></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">OpenStack Administrator Guide</a><span> / </span><a class="crumb" href="bk02ch11.html">Database</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">OpenStack Administrator Guide</div><ol><li><a href="bk02ch01.html" class=" "><span class="title-number">1 </span><span class="title-name">Documentation Conventions</span></a></li><li><a href="bk02ch02.html" class=" "><span class="title-number">2 </span><span class="title-name">Get started with OpenStack</span></a></li><li><a href="cha-identity.html" class=" "><span class="title-number">3 </span><span class="title-name">Identity management</span></a></li><li><a href="bk02ch04.html" class=" "><span class="title-number">4 </span><span class="title-name">Dashboard</span></a></li><li><a href="bk02ch05.html" class=" "><span class="title-number">5 </span><span class="title-name">Compute</span></a></li><li><a href="bk02ch06.html" class=" "><span class="title-number">6 </span><span class="title-name">Object Storage</span></a></li><li><a href="bk02ch07.html" class=" "><span class="title-number">7 </span><span class="title-name">Block Storage</span></a></li><li><a href="bk02ch08.html" class=" "><span class="title-number">8 </span><span class="title-name">Shared File Systems</span></a></li><li><a href="networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Networking</span></a></li><li><a href="bk02ch10.html" class=" "><span class="title-number">10 </span><span class="title-name">Telemetry</span></a></li><li><a href="bk02ch11.html" class=" you-are-here"><span class="title-number">11 </span><span class="title-name">Database</span></a></li><li><a href="bk02ch12.html" class=" "><span class="title-number">12 </span><span class="title-name">Bare Metal</span></a></li><li><a href="bk02ch13.html" class=" "><span class="title-number">13 </span><span class="title-name">Orchestration</span></a></li><li><a href="osadm-os-cli.html" class=" "><span class="title-number">14 </span><span class="title-name">OpenStack command-line clients</span></a></li><li><a href="bk02ch15.html" class=" "><span class="title-number">15 </span><span class="title-name">Cross-project features</span></a></li><li><a href="bk02ch16.html" class=" "><span class="title-number">16 </span><span class="title-name">Appendix</span></a></li><li><a href="bk02go01.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="id-1.4.13" data-id-title="Database"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE OpenStack Cloud</span> <span class="productnumber">8</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">11 </span><span class="title-name">Database</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Database service provides database management features.</p><section class="sect1" id="id-1.4.13.4" data-id-title="Introduction"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">11.1 </span><span class="title-name">Introduction</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Database service provides scalable and reliable cloud
 provisioning functionality for both relational and non-relational
 database engines. Users can quickly and easily use database features
 without the burden of handling complex administrative tasks. Cloud
@@ -44,12 +44,12 @@ levels, and automates complex administrative tasks such as deployment,
 configuration, patching, backups, restores, and monitoring.</p><p>You can modify various cluster characteristics by editing the
 <code class="literal">/etc/trove/trove.conf</code> file. A comprehensive list of the Database
 service configuration options is described in the <a class="link" href="http://docs.openstack.org/newton/config-reference/database.html" target="_blank">Database service</a>
-chapter in the <span class="emphasis"><em>Configuration Reference</em></span>.</p></div><div class="sect1 " id="id-1.4.13.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a data store</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>An administrative user can create data stores for a variety of
+chapter in the <span class="emphasis"><em>Configuration Reference</em></span>.</p></section><section class="sect1" id="id-1.4.13.5" data-id-title="Create a data store"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">11.2 </span><span class="title-name">Create a data store</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>An administrative user can create data stores for a variety of
 databases.</p><p>This section assumes you do not yet have a MySQL data store, and shows
 you how to create a MySQL data store and populate it with a MySQL 5.5
 data store version.</p><p>
         <span class="bold"><strong>To create a data store</strong></span>
-      </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
             <span class="bold"><strong>Create a trove image</strong></span>
           </p><p>Create an image for the type of database you want to use, for
 example, MySQL, MongoDB, Cassandra.</p><p>This image must have the trove guest agent installed, and it must
@@ -62,11 +62,11 @@ nova_proxy_admin_user = admin
 nova_proxy_admin_pass = ADMIN_PASS
 nova_proxy_admin_tenant_name = service
 trove_auth_url = http://controller:35357/v2.0</pre></div><p>This example assumes you have created a MySQL 5.5 image called
-<code class="literal">mysql-5.5.qcow2</code>.</p><div id="id-1.4.13.5.5.1.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>If you have a guest image that was created with an OpenStack version
+<code class="literal">mysql-5.5.qcow2</code>.</p><div id="id-1.4.13.5.5.1.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>If you have a guest image that was created with an OpenStack version
 before Kilo, modify the guest agent init script for the guest image to
 read the configuration files from the directory <code class="literal">/etc/trove/conf.d</code>.</p><p>For a backwards compatibility with pre-Kilo guest instances, set the
 database service configuration options <code class="literal">injected_config_location</code> to
-<code class="literal">/etc/trove</code> and <code class="literal">guest_info</code> to <code class="literal">/etc/guest_info</code>.</p></div></li><li class="step "><p>
+<code class="literal">/etc/trove</code> and <code class="literal">guest_info</code> to <code class="literal">/etc/guest_info</code>.</p></div></li><li class="step"><p>
             <span class="bold"><strong>Register image with Image service</strong></span>
           </p><p>You need to register your guest image with the Image service.</p><p>In this example, you use the <code class="command">openstack image create</code>
 command to register a <code class="literal">mysql-5.5.qcow2</code> image.</p><div class="verbatim-wrap"><pre class="screen">$ openstack image create mysql-5.5 --disk-format qcow2 --container-format bare --public &lt; mysql-5.5.qcow2
@@ -91,34 +91,34 @@ command to register a <code class="literal">mysql-5.5.qcow2</code> image.</p><di
 | updated_at       | 2016-12-21T12:10:03Z                                 |
 | virtual_size     | None                                                 |
 | visibility       | public                                               |
-+------------------+------------------------------------------------------+</pre></div></li><li class="step "><p>
++------------------+------------------------------------------------------+</pre></div></li><li class="step"><p>
             <span class="bold"><strong>Create the data store</strong></span>
           </p><p>Create the data store that will house the new image. To do this, use
-the <code class="command">trove-manage</code><code class="command">datastore_update</code> command.</p><p>This example uses the following arguments:</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+the <code class="command">trove-manage</code><code class="command">datastore_update</code> command.</p><p>This example uses the following arguments:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Argument</p>
-                  </th><th>
+                  </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Description</p>
-                  </th><th>
+                  </th><th style="border-bottom: 1px solid ; ">
                     <p>In this example:</p>
-                  </th></tr></thead><tbody><tr><td>
+                  </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>config file</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>The configuration file to use.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">--config-file=/etc/trove/trove.conf</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>name</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Name you want to use for this data store.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">mysql</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; ">
                     <p>default version</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; ">
                     <p>You can attach multiple versions/images to a data store. For
 example, you might have a MySQL 5.5 version and a MySQL 5.6
 version. You can designate one version as the default, which
@@ -130,110 +130,110 @@ specific version.</p>
                     </p>
                     <p>At this point, you do not yet have a default version, so pass
 in an empty string.</p>
-                  </td></tr></tbody></table></div><p>Example:</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage --config-file=/etc/trove/trove.conf datastore_update mysql ""</pre></div></li><li class="step "><p>
+                  </td></tr></tbody></table></div><p>Example:</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage --config-file=/etc/trove/trove.conf datastore_update mysql ""</pre></div></li><li class="step"><p>
             <span class="bold"><strong>Add a version to the new data store</strong></span>
           </p><p>Now that you have a MySQL data store, you can add a version to it,
 using the <code class="command">trove-manage</code><code class="command">datastore_version_update</code>
-command. The version indicates which guest image to use.</p><p>This example uses the following arguments:</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+command. The version indicates which guest image to use.</p><p>This example uses the following arguments:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Argument</p>
-                  </th><th>
+                  </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Description</p>
-                  </th><th>
+                  </th><th style="border-bottom: 1px solid ; ">
                     <p>In this example:</p>
-                  </th></tr></thead><tbody><tr><td>
+                  </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>config file</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>The configuration file to use.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">--config-file=/etc/trove/trove.conf</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>data store</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>The name of the data store you just created via
 <code class="literal">trove-manage</code><code class="command">datastore_update</code>.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">mysql</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>version name</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>The name of the version you are adding to the data store.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">mysql-5.5</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>data store manager</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Which data store manager to use for this version. Typically,
 the data store manager is identified by one of the following
 strings, depending on the database:</p>
-                    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>cassandra</p></li><li class="listitem "><p>couchbase</p></li><li class="listitem "><p>couchdb</p></li><li class="listitem "><p>db2</p></li><li class="listitem "><p>mariadb</p></li><li class="listitem "><p>mongodb</p></li><li class="listitem "><p>mysql</p></li><li class="listitem "><p>percona</p></li><li class="listitem "><p>postgresql</p></li><li class="listitem "><p>pxc</p></li><li class="listitem "><p>redis</p></li><li class="listitem "><p>vertica</p></li></ul></div>
-                  </td><td>
+                    <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>cassandra</p></li><li class="listitem"><p>couchbase</p></li><li class="listitem"><p>couchdb</p></li><li class="listitem"><p>db2</p></li><li class="listitem"><p>mariadb</p></li><li class="listitem"><p>mongodb</p></li><li class="listitem"><p>mysql</p></li><li class="listitem"><p>percona</p></li><li class="listitem"><p>postgresql</p></li><li class="listitem"><p>pxc</p></li><li class="listitem"><p>redis</p></li><li class="listitem"><p>vertica</p></li></ul></div>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">mysql</code>
                     </p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>glance ID</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>The ID of the guest image you just added to the Image
 service. You can get this ID by using the glance
 <code class="command">image-show</code> IMAGE_NAME command.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>bb75f870-0c33-4907-8467-1367f8cb15b6</p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>packages</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>If you want to put additional packages on each guest that
 you create with this data store version, you can list the
 package names here.</p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">""</code>
                     </p>
                     <p>In this example, the guest image already contains all the
 required packages, so leave this argument empty.</p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; ">
                     <p>active</p>
-                  </td><td>
-                    <div class="variablelist "><dl class="variablelist"><dt id="id-1.4.13.5.5.4.4.1.5.7.2.1.1"><span class="term ">Set this to either 1 or 0:</span></dt><dd><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">1</code> = active</p></li><li class="listitem "><p><code class="literal">0</code> = disabled</p></li></ul></div></dd></dl></div>
+                  </td><td style="border-right: 1px solid ; ">
+                    <div class="variablelist"><dl class="variablelist"><dt id="id-1.4.13.5.5.4.4.1.5.7.2.1.1"><span class="term">Set this to either 1 or 0:</span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="literal">1</code> = active</p></li><li class="listitem"><p><code class="literal">0</code> = disabled</p></li></ul></div></dd></dl></div>
                   </td><td>
                     <p>1</p>
                   </td></tr></tbody></table></div><p>Example:</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage --config-file=/etc/trove/trove.conf datastore_version_update mysql mysql-5.5 mysql GLANCE_ID "" 1</pre></div><p><span class="bold"><strong>Optional.</strong></span> Set your new version as the default version. To do
 this, use the <code class="command">trove-manage</code><code class="command">datastore_update</code>
-command again, this time specifying the version you just created.</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage --config-file=/etc/trove/trove.conf datastore_update mysql mysql-5.5</pre></div></li><li class="step "><p>
+command again, this time specifying the version you just created.</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage --config-file=/etc/trove/trove.conf datastore_update mysql mysql-5.5</pre></div></li><li class="step"><p>
             <span class="bold"><strong>Load validation rules for configuration groups</strong></span>
-          </p><div id="id-1.4.13.5.5.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+          </p><div id="id-1.4.13.5.5.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
               <span class="bold"><strong>Applies only to MySQL and Percona data stores</strong></span>
-            </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>If you just created a MySQL or Percona data store, then you need
+            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>If you just created a MySQL or Percona data store, then you need
 to load the appropriate validation rules, as described in this
-step.</p></li><li class="listitem "><p>If you just created a different data store, skip this step.</p></li></ul></div></div><p><span class="bold"><strong>Background.</strong></span> You can manage database configuration tasks by using
+step.</p></li><li class="listitem"><p>If you just created a different data store, skip this step.</p></li></ul></div></div><p><span class="bold"><strong>Background.</strong></span> You can manage database configuration tasks by using
 configuration groups. Configuration groups let you set configuration
 parameters, in bulk, on one or more databases.</p><p>When you set up a configuration group using the trove
 <code class="command">configuration-create</code> command, this command compares the configuration
 values you are setting against a list of valid configuration values
-that are stored in the <code class="literal">validation-rules.json</code> file.</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+that are stored in the <code class="literal">validation-rules.json</code> file.</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Operating System</p>
-                  </th><th>
+                  </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Location of <code class="literal">validation-rules.json</code></p>
-                  </th><th>
+                  </th><th style="border-bottom: 1px solid ; ">
                     <p>Notes</p>
-                  </th></tr></thead><tbody><tr><td>
+                  </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>Ubuntu 14.04</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                     <p>
                       <code class="literal">/usr/lib/python2.7/dist-packages/trove/templates/DATASTORE_NAME</code>
                     </p>
-                  </td><td>
+                  </td><td style="border-bottom: 1px solid ; ">
                     <p>DATASTORE_NAME is the name of either the MySQL data store or
 the Percona data store. This is typically either <code class="literal">mysql</code>
 or <code class="literal">percona</code>.</p>
-                  </td></tr><tr><td>
+                  </td></tr><tr><td style="border-right: 1px solid ; ">
                     <p>RHEL 7, CentOS 7, Fedora 20, and Fedora 21</p>
-                  </td><td>
+                  </td><td style="border-right: 1px solid ; ">
                     <p>
                       <code class="literal">/usr/lib/python2.7/site-packages/trove/templates/DATASTORE_NAME</code>
                     </p>
@@ -242,8 +242,8 @@ or <code class="literal">percona</code>.</p>
 the Percona data store. This is typically either <code class="literal">mysql</code> or <code class="literal">percona</code>.</p>
                   </td></tr></tbody></table></div><p>Therefore, as part of creating a data store, you need to load the
 <code class="literal">validation-rules.json</code> file, using the <code class="command">trove-manage</code><code class="command">db_load_datastore_config_parameters</code> command. This command
-takes the following arguments:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Data store name</p></li><li class="listitem "><p>Data store version</p></li><li class="listitem "><p>Full path to the <code class="literal">validation-rules.json</code> file</p></li></ul></div><p>This example loads the <code class="literal">validation-rules.json</code> file for a MySQL
-database on Ubuntu 14.04:</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage db_load_datastore_config_parameters mysql mysql-5.5 /usr/lib/python2.7/dist-packages/trove/templates/mysql/validation-rules.json</pre></div></li><li class="step "><p>
+takes the following arguments:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Data store name</p></li><li class="listitem"><p>Data store version</p></li><li class="listitem"><p>Full path to the <code class="literal">validation-rules.json</code> file</p></li></ul></div><p>This example loads the <code class="literal">validation-rules.json</code> file for a MySQL
+database on Ubuntu 14.04:</p><div class="verbatim-wrap"><pre class="screen">$ trove-manage db_load_datastore_config_parameters mysql mysql-5.5 /usr/lib/python2.7/dist-packages/trove/templates/mysql/validation-rules.json</pre></div></li><li class="step"><p>
             <span class="bold"><strong>Validate data store</strong></span>
           </p><p>To validate your new data store and version, start by listing the
 data stores on your system:</p><div class="verbatim-wrap"><pre class="screen">$ trove datastore-list
@@ -258,61 +258,61 @@ data stores on your system:</p><div class="verbatim-wrap"><pre class="screen">$ 
 |                  id                  |    name   |
 +--------------------------------------+-----------+
 | 36a6306b-efd8-4d83-9b75-8b30dd756381 | mysql-5.5 |
-+--------------------------------------+-----------+</pre></div></li></ol></div></div><div class="sect2 " id="id-1.4.13.5.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Data store classifications</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Database service supports a variety of both relational and
++--------------------------------------+-----------+</pre></div></li></ol></div></div><section class="sect2" id="id-1.4.13.5.6" data-id-title="Data store classifications"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.2.1 </span><span class="title-name">Data store classifications</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Database service supports a variety of both relational and
 non-relational database engines, but to a varying degree of support for
 each <a class="xref" href="bk02go01.html#term-data-store" title="data store">data store</a>. The Database service project has defined
 several classifications that indicate the quality of support for each
 data store. Data stores also implement different extensions.
 An extension is called a <a class="xref" href="bk02go01.html#term-strategy" title="strategy">strategy</a> and is classified similar to
-data stores.</p><p>Valid classifications for a data store and a strategy are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Experimental</p></li><li class="listitem "><p>Technical preview</p></li><li class="listitem "><p>Stable</p></li></ul></div><p>Each classification builds on the previous one. This means that a data store
+data stores.</p><p>Valid classifications for a data store and a strategy are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Experimental</p></li><li class="listitem"><p>Technical preview</p></li><li class="listitem"><p>Stable</p></li></ul></div><p>Each classification builds on the previous one. This means that a data store
 that meets the <code class="literal">technical preview</code> requirements must also meet all the
 requirements for <code class="literal">experimental</code>, and a data store that meets the <code class="literal">stable</code>
 requirements must also meet all the requirements for <code class="literal">technical preview</code>.</p><p>
           <span class="bold"><strong>Requirements</strong></span>
-        </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Experimental</p><p>A data store is considered to be <code class="literal">experimental</code> if it meets these criteria:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>It implements a basic subset of the Database service API including
-<code class="literal">create</code> and <code class="literal">delete</code>.</p></li><li class="listitem "><p>It has guest agent elements that allow guest agent creation.</p></li><li class="listitem "><p>It has a definition of supported operating systems.</p></li><li class="listitem "><p>It meets the other
-<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div><p>A strategy is considered <code class="literal">experimental</code> if:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>It meets the
-<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div></li><li class="listitem "><p>Technical preview</p><p>A data store is considered to be a <code class="literal">technical preview</code> if it meets the
-requirements of <code class="literal">experimental</code> and further:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>It implements APIs required to plant and start the capabilities of the
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Experimental</p><p>A data store is considered to be <code class="literal">experimental</code> if it meets these criteria:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>It implements a basic subset of the Database service API including
+<code class="literal">create</code> and <code class="literal">delete</code>.</p></li><li class="listitem"><p>It has guest agent elements that allow guest agent creation.</p></li><li class="listitem"><p>It has a definition of supported operating systems.</p></li><li class="listitem"><p>It meets the other
+<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div><p>A strategy is considered <code class="literal">experimental</code> if:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>It meets the
+<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div></li><li class="listitem"><p>Technical preview</p><p>A data store is considered to be a <code class="literal">technical preview</code> if it meets the
+requirements of <code class="literal">experimental</code> and further:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>It implements APIs required to plant and start the capabilities of the
 data store as defined in the
-<a class="link" href="https://wiki.openstack.org/wiki/Trove/DatastoreCompatibilityMatrix" target="_blank">Datastore Compatibility Matrix</a>.</p><div id="id-1.4.13.5.6.7.2.3.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>It is not required that the data store implements all features like
-resize, backup, replication, or clustering to meet this classification.</p></div></li><li class="listitem "><p>It provides a mechanism for building a guest image that allows you to
-exercise its capabilities.</p></li><li class="listitem "><p>It meets the other
-<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div><div id="id-1.4.13.5.6.7.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>A strategy is not normally considered to be <code class="literal">technical
-preview</code>.</p></div></li><li class="listitem "><p>Stable</p><p>A data store or a strategy is considered <code class="literal">stable</code> if:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>It meets the requirements of <code class="literal">technical preview</code>.</p></li><li class="listitem "><p>It meets the other
+<a class="link" href="https://wiki.openstack.org/wiki/Trove/DatastoreCompatibilityMatrix" target="_blank">Datastore Compatibility Matrix</a>.</p><div id="id-1.4.13.5.6.7.2.3.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>It is not required that the data store implements all features like
+resize, backup, replication, or clustering to meet this classification.</p></div></li><li class="listitem"><p>It provides a mechanism for building a guest image that allows you to
+exercise its capabilities.</p></li><li class="listitem"><p>It meets the other
+<a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div><div id="id-1.4.13.5.6.7.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>A strategy is not normally considered to be <code class="literal">technical
+preview</code>.</p></div></li><li class="listitem"><p>Stable</p><p>A data store or a strategy is considered <code class="literal">stable</code> if:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>It meets the requirements of <code class="literal">technical preview</code>.</p></li><li class="listitem"><p>It meets the other
 <a class="link" href="https://specs.openstack.org/openstack/trove-specs/specs/kilo/experimental-datastores.html#requirements" target="_blank">Documented Technical Requirements</a>.</p></li></ul></div></li></ul></div><p>
           <span class="bold"><strong>Initial Classifications</strong></span>
         </p><p>The following table shows the current classification assignments for the
-different data stores.</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>
+different data stores.</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Classification</p>
-                </th><th>
+                </th><th style="border-bottom: 1px solid ; ">
                   <p>Data store</p>
-                </th></tr></thead><tbody><tr><td>
+                </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Stable</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>MySQL</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Technical Preview</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Cassandra, MongoDB</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; ">
                   <p>Experimental</p>
                 </td><td>
                   <p>All others</p>
-                </td></tr></tbody></table></div></div><div class="sect2 " id="id-1.4.13.5.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Redis data store replication</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Replication strategies are available for Redis with
+                </td></tr></tbody></table></div></section><section class="sect2" id="id-1.4.13.5.7" data-id-title="Redis data store replication"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.2.2 </span><span class="title-name">Redis data store replication</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Replication strategies are available for Redis with
 several commands located in the Redis data store
-manager:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+manager:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
               <code class="command">create</code>
-            </p></li><li class="listitem "><p>
+            </p></li><li class="listitem"><p>
               <code class="command">detach-replica</code>
-            </p></li><li class="listitem "><p>
+            </p></li><li class="listitem"><p>
               <code class="command">eject-replica-source</code>
-            </p></li><li class="listitem "><p>
+            </p></li><li class="listitem"><p>
               <code class="command">promote-to-replica-source</code>
             </p></li></ul></div><p>Additional arguments for the <code class="command">create</code> command
 include <code class="command">--replica_of</code> and
-<code class="command">--replica_count</code>.</p></div><div class="sect2 " id="id-1.4.13.5.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">11.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Redis integration and unit tests</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Unit tests and integration tests are also available for
-Redis.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Install redstack:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack install
+<code class="command">--replica_count</code>.</p></section><section class="sect2" id="id-1.4.13.5.8" data-id-title="Redis integration and unit tests"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">11.2.3 </span><span class="title-name">Redis integration and unit tests</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.5.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Unit tests and integration tests are also available for
+Redis.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Install redstack:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack install
 
 .. note::
 
@@ -320,8 +320,8 @@ Redis.</p><div class="procedure "><div class="procedure-contents"><ol class="pro
    testing and Database service development installations.
    Do not use Redstack in a production environment. For
    more information, see `the Database service
-   developer docs &lt;http://docs.openstack.org/developer/trove/dev/install.html#running-redstack-to-install-trove&gt;`_</pre></div></li><li class="step "><p>Start Redis:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack kick-start redis</pre></div></li><li class="step "><p>Run integration tests:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack int-tests --group=replication</pre></div><p>You can run <code class="command">--group=redis_supported</code>
-instead of <code class="command">--group=replication</code> if needed.</p></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.13.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">11.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configure a cluster</span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>An administrative user can configure various characteristics of a
+   developer docs &lt;http://docs.openstack.org/developer/trove/dev/install.html#running-redstack-to-install-trove&gt;`_</pre></div></li><li class="step"><p>Start Redis:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack kick-start redis</pre></div></li><li class="step"><p>Run integration tests:</p><div class="verbatim-wrap"><pre class="screen">$ ./redstack int-tests --group=replication</pre></div><p>You can run <code class="command">--group=redis_supported</code>
+instead of <code class="command">--group=replication</code> if needed.</p></li></ol></div></div></section></section><section class="sect1" id="id-1.4.13.6" data-id-title="Configure a cluster"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">11.3 </span><span class="title-name">Configure a cluster</span></span> <a title="Permalink" class="permalink" href="bk02ch11.html#id-1.4.13.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>An administrative user can configure various characteristics of a
 MongoDB cluster.</p><p>
         <span class="bold"><strong>Query routers and config servers</strong></span>
       </p><p><span class="bold"><strong>Background.</strong></span> Each cluster includes at least one query router and
@@ -330,18 +330,17 @@ quota. When you delete a cluster, the system deletes the associated
 query router(s) and config server(s).</p><p><span class="bold"><strong>Configuration.</strong></span> By default, the system creates one query router and
 one config server per cluster. You can change this by editing
 the <code class="literal">/etc/trove/trove.conf</code> file. These settings are in the
-<code class="literal">mongodb</code> section of the file:</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>
+<code class="literal">mongodb</code> section of the file:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Setting</p>
-              </th><th>
+              </th><th style="border-bottom: 1px solid ; ">
                 <p>Valid values are:</p>
-              </th></tr></thead><tbody><tr><td>
+              </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>num_config_servers_per_cluster</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>1 or 3</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; ">
                 <p>num_query_routers_per_cluster</p>
               </td><td>
                 <p>1 or 3</p>
-              </td></tr></tbody></table></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02ch12.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 12 </span>Bare Metal</span></a><a class="nav-link" href="bk02ch10.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 10 </span>Telemetry</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+              </td></tr></tbody></table></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="bk02ch10.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 10 </span>Telemetry</span></a> </div><div><a class="pagination-link next" href="bk02ch12.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 12 </span>Bare Metal</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="bk02ch11.html#id-1.4.13.4"><span class="title-number">11.1 </span><span class="title-name">Introduction</span></a></span></li><li><span class="sect1"><a href="bk02ch11.html#id-1.4.13.5"><span class="title-number">11.2 </span><span class="title-name">Create a data store</span></a></span></li><li><span class="sect1"><a href="bk02ch11.html#id-1.4.13.6"><span class="title-number">11.3 </span><span class="title-name">Configure a cluster</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

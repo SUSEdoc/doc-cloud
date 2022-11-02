@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Managing Block Storage | Operations Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Managing Block Storage | SUSE OpenStack Cloud 8" />
-<meta name="description" content="Information about managing and configuring the Block Storage service." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Operations Guide" />
-<meta name="chapter-title" content="Chapter 7. Managing Block Storage" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Managing Block Storage | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="Information about managing and configuring the Block Storage service." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Managing Block Storage | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="Information about managing and configuring the Block Storage service." />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide" /><link rel="prev" href="ops-managing-esx.html" title="Chapter 6. Managing ESX" /><link rel="next" href="ops-managing-objectstorage.html" title="Chapter 8. Managing Object Storage" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Operations Guide | Managing Block Storage</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Managing Block Storage | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="Information about managing and configuring the Block Storage service."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Operations Guide"/>
+<meta name="chapter-title" content="Chapter 7. Managing Block Storage"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Managing Block Storage | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="Information about managing and configuring the Block Storage service."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing Block Storage | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="Information about managing and configuring the Block Storage service."/>
+<link rel="prev" href="ops-managing-esx.html" title="Chapter 6. Managing ESX"/><link rel="next" href="ops-managing-objectstorage.html" title="Chapter 8. Managing Object Storage"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,9 +34,9 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="ops-managing-blockstorage.html">Managing Block Storage</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">3 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">4 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">5 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">6 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">7 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">8 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">9 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">10 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">11 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">12 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">13 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">14 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">15 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 6. Managing ESX" href="ops-managing-esx.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Managing Object Storage" href="ops-managing-objectstorage.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="ops-managing-blockstorage.html">Managing Block Storage</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 6. Managing ESX" href="ops-managing-esx.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Managing Object Storage" href="ops-managing-objectstorage.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="ops-managing-blockstorage"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Block Storage</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_blockstorage.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_blockstorage.xml</li><li><span class="ds-label">ID: </span>ops-managing-blockstorage</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="ops-managing-blockstorage.html#topic-e5g-z3h-gt"><span class="number">7.1 </span><span class="name">Managing Block Storage using Cinder</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_blockstorage.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide</a><span> / </span><a class="crumb" href="ops-managing-blockstorage.html">Managing Block Storage</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="third-party-integrations.html" class=" "><span class="title-number">3 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">4 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">6 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" you-are-here"><span class="title-number">7 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" "><span class="title-number">8 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">13 </span><span class="title-name">System Maintenance</span></a></li><li><a href="bura-overview.html" class=" "><span class="title-number">14 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">15 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="ops-managing-blockstorage" data-id-title="Managing Block Storage"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Managing Block Storage</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_blockstorage.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Information about managing and configuring the Block Storage service.
- </p><div class="sect1" id="topic-e5g-z3h-gt"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Block Storage using Cinder</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#topic-e5g-z3h-gt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage_overview.xml</li><li><span class="ds-label">ID: </span>topic-e5g-z3h-gt</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="topic-e5g-z3h-gt" data-id-title="Managing Block Storage using Cinder"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Managing Block Storage using Cinder</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#topic-e5g-z3h-gt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Block Storage volume operations use the OpenStack Cinder service to
   manage storage volumes, which includes creating volumes, attaching/detaching
   volumes to Nova instances, creating volume snapshots, and configuring
@@ -44,19 +44,19 @@ hljs.configure({
  </p><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supports the following storage back ends for block storage
   volumes and backup datastore configuration:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Volumes
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       SUSE Enterprise Storage; for more information, see
-      <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.3 “SUSE Enterprise Storage Integration”</span>.
-     </p></li><li class="listitem "><p>
+      <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.3 “SUSE Enterprise Storage Integration”</span>.
+     </p></li><li class="listitem"><p>
       3PAR FC or iSCSI; for more information, see
-      <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.1 “Configuring for 3PAR Block Storage Backend”</span>.
-     </p></li></ul></div></li><li class="listitem "><p>
+      <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.1 “Configuring for 3PAR Block Storage Backend”</span>.
+     </p></li></ul></div></li><li class="listitem"><p>
     Backup
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       Swift
-     </p></li></ul></div></li></ul></div><div class="sect2" id="multiple"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Up Multiple Block Storage Back-ends</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#multiple">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage_overview.xml</li><li><span class="ds-label">ID: </span>multiple</li></ul></div></div></div></div><p>
+     </p></li></ul></div></li></ul></div><section class="sect2" id="multiple" data-id-title="Setting Up Multiple Block Storage Back-ends"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.1 </span><span class="title-name">Setting Up Multiple Block Storage Back-ends</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#multiple">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> supports setting up multiple block storage backends and multiple
    volume types.
   </p><p>
@@ -65,11 +65,11 @@ hljs.configure({
    volume types using the specific attributes associated with the back-end. You
    can find details on how to do that for each of the supported back-end types
    here:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.3 “SUSE Enterprise Storage Integration”</span>
-    </p></li><li class="listitem "><p>
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.1 “Configuring for 3PAR Block Storage Backend”</span>
-    </p></li></ul></div></div><div class="sect2" id="creating-voltype"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Volume Type for your Volumes</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#creating-voltype">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-creating_voltype.xml</li><li><span class="ds-label">ID: </span>creating-voltype</li></ul></div></div></div></div><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.3 “SUSE Enterprise Storage Integration”</span>
+    </p></li><li class="listitem"><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 22 “Integrations”, Section 22.1 “Configuring for 3PAR Block Storage Backend”</span>
+    </p></li></ul></div></section><section class="sect2" id="creating-voltype" data-id-title="Creating a Volume Type for your Volumes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.2 </span><span class="title-name">Creating a Volume Type for your Volumes</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#creating-voltype">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Creating volume types allows you to create standard specifications for your
   volumes.
  </p><p>
@@ -79,69 +79,69 @@ hljs.configure({
   process of creating volumes.
  </p><p>
   The tasks involved in this process are:
- </p><div class="sect3" id="create-volumetype"><div class="titlepage"><div><div><h4 class="title"><span class="number">7.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a Volume Type for your Volumes</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#create-volumetype">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-creating_voltype.xml</li><li><span class="ds-label">ID: </span>create-volumetype</li></ul></div></div></div></div><p>
+ </p><section class="sect3" id="create-volumetype" data-id-title="Create a Volume Type for your Volumes"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">7.1.2.1 </span><span class="title-name">Create a Volume Type for your Volumes</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#create-volumetype">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The default volume type will be thin provisioned and will have no fault
    tolerance (RAID 0). You should configure Cinder to fully provision volumes,
    and you may want to configure fault tolerance. Follow the instructions below
    to create a new volume type that is fully provisioned and fault tolerant:
   </p><p>
    Perform the following steps to create a volume type using the Horizon GUI:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log in to the Horizon dashboard. See <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span> for
      details on how to do this.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Ensure that you are scoped to your <code class="literal">admin</code> Project. Then
-     under the <span class="guimenu ">Admin</span> menu in the navigation pane, click on
-     <span class="guimenu ">Volumes</span> under the <span class="guimenu ">System</span> subheading.
-    </p></li><li class="step "><p>
-     Select the <span class="guimenu ">Volume Types</span> tab and then click the
-     <span class="guimenu ">Create Volume Type</span> button to display a dialog box.
-    </p></li><li class="step "><p>
+     under the <span class="guimenu">Admin</span> menu in the navigation pane, click on
+     <span class="guimenu">Volumes</span> under the <span class="guimenu">System</span> subheading.
+    </p></li><li class="step"><p>
+     Select the <span class="guimenu">Volume Types</span> tab and then click the
+     <span class="guimenu">Create Volume Type</span> button to display a dialog box.
+    </p></li><li class="step"><p>
      Enter a unique name for the volume type and then click the
-     <span class="guimenu ">Create Volume Type</span> button to complete the
+     <span class="guimenu">Create Volume Type</span> button to complete the
      action.
     </p></li></ol></div></div><p>
    The newly created volume type will be displayed in the <code class="literal">Volume
    Types</code> list confirming its creation.
-  </p><div id="id-1.6.9.3.6.5.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+  </p><div id="id-1.6.9.3.6.5.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     If you do not specify a default type then your volumes will default
     unpredictably. We recommend that you create a volume type that meets the
     needs of your environment and specify it here.
-   </p></div></div><div class="sect3" id="associate-volumetype"><div class="titlepage"><div><div><h4 class="title"><span class="number">7.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Associate the Volume Type to the Back-end</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#associate-volumetype">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-creating_voltype.xml</li><li><span class="ds-label">ID: </span>associate-volumetype</li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect3" id="associate-volumetype" data-id-title="Associate the Volume Type to the Back-end"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">7.1.2.2 </span><span class="title-name">Associate the Volume Type to the Back-end</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#associate-volumetype">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    After the volume type(s) have been created, you can assign extra
    specification attributes to the volume types. Each Block Storage back-end
    option has unique attributes that can be used.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <a class="xref" href="ops-managing-blockstorage.html#extraspecs-3par" title="7.1.2.3. Extra Specification Options for 3PAR">Section 7.1.2.3, “Extra Specification Options for 3PAR”</a>
     </p></li></ul></div><p>
    To map a volume type to a back-end, do the following:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log into the Horizon dashboard. See <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span> for
      details on how to do this.
-    </p></li><li class="step "><p>
-     Ensure that you are scoped to your <span class="guimenu ">admin</span> Project (for
+    </p></li><li class="step"><p>
+     Ensure that you are scoped to your <span class="guimenu">admin</span> Project (for
      more information, see <a class="xref" href="ops-managing-identity.html#scopeToDomain" title="4.10.7. Scope Federated User to Domain">Section 4.10.7, “Scope Federated User to Domain”</a>. Then under the
-     <span class="guimenu ">Admin</span> menu in the navigation pane, click on
-     <span class="guimenu ">Volumes</span> under the <span class="guimenu ">System</span> subheading.
-    </p></li><li class="step "><p>
-     Click the <span class="guimenu ">Volume Type</span> tab to list the volume types.
-    </p></li><li class="step "><p>
-     In the <span class="guimenu ">Actions</span> column of the Volume Type you created
-     earlier, click the drop-down option and select <span class="guimenu ">View Extra
-     Specs</span> which will bring up the <span class="guimenu ">Volume Type Extra
+     <span class="guimenu">Admin</span> menu in the navigation pane, click on
+     <span class="guimenu">Volumes</span> under the <span class="guimenu">System</span> subheading.
+    </p></li><li class="step"><p>
+     Click the <span class="guimenu">Volume Type</span> tab to list the volume types.
+    </p></li><li class="step"><p>
+     In the <span class="guimenu">Actions</span> column of the Volume Type you created
+     earlier, click the drop-down option and select <span class="guimenu">View Extra
+     Specs</span> which will bring up the <span class="guimenu">Volume Type Extra
      Specs</span> options.
-    </p></li><li class="step "><p>
-     Click the <span class="guimenu ">Create</span> button on the <code class="literal">Volume Type
+    </p></li><li class="step"><p>
+     Click the <span class="guimenu">Create</span> button on the <code class="literal">Volume Type
      Extra Specs</code> screen.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      In the <code class="literal">Key</code> field, enter one of the key values in the
      table in the next section. In the <code class="literal">Value</code> box, enter its
      corresponding value. Once you have completed that, click the
-     <span class="guimenu ">Create</span> button to create the extra volume type specs.
+     <span class="guimenu">Create</span> button to create the extra volume type specs.
     </p></li></ol></div></div><p>
    Once the volume type is mapped to a back-end, you can create volumes with
    this volume type.
-  </p></div><div class="sect3" id="extraspecs-3par"><div class="titlepage"><div><div><h4 class="title"><span class="number">7.1.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Extra Specification Options for 3PAR</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#extraspecs-3par">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-creating_voltype.xml</li><li><span class="ds-label">ID: </span>extraspecs-3par</li></ul></div></div></div></div><p>
+  </p></section><section class="sect3" id="extraspecs-3par" data-id-title="Extra Specification Options for 3PAR"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">7.1.2.3 </span><span class="title-name">Extra Specification Options for 3PAR</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#extraspecs-3par">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-creating_voltype.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    3PAR supports volumes creation with additional attributes. These attributes
    can be specified using the extra specs options for your volume type. The
    administrator is expected to define appropriate extra spec for 3PAR volume
@@ -150,19 +150,19 @@ hljs.configure({
   </p><p>
    The following Cinder Volume Type extra-specs options enable control over the
    3PAR storage provisioning type:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Key</th><th>Value</th><th>Description</th></tr></thead><tbody><tr><td>volume_backend_name</td><td><span class="emphasis"><em>volume backend name</em></span>
-      </td><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Key</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Value</th><th style="border-bottom: 1px solid ; ">Description</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">volume_backend_name</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><span class="emphasis"><em>volume backend name</em></span>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The name of the back-end to which you want to associate the volume type,
         which you also specified earlier in the
         <code class="literal">cinder.conf.j2</code> file.
        </p>
-      </td></tr><tr><td>hp3par:provisioning (optional)</td><td>thin, full, or dedup</td><td> </td></tr></tbody></table></div><p>
+      </td></tr><tr><td style="border-right: 1px solid ; ">hp3par:provisioning (optional)</td><td style="border-right: 1px solid ; ">thin, full, or dedup</td><td> </td></tr></tbody></table></div><p>
    See
    <a class="link" href="https://h20195.www2.hpe.com/v2/GetPDF.aspx/4AA5-1930ENW.pdf" target="_blank">OpenStack
    HPE 3PAR StoreServ Block Storage Driver Configuration Best Practices</a>
    for more details.
-  </p></div></div><div class="sect2" id="sec-operation-manage-block-storage"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Cinder Volume and Backup Services</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#sec-operation-manage-block-storage">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-managing_cinder_volumebackup_services.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-managing_cinder_volumebackup_services.xml</li><li><span class="ds-label">ID: </span>sec-operation-manage-block-storage</li></ul></div></div></div></div><div id="id-1.6.9.3.7.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important: Use Only When Needed</h6><p>
+  </p></section></section><section class="sect2" id="sec-operation-manage-block-storage" data-id-title="Managing Cinder Volume and Backup Services"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.3 </span><span class="title-name">Managing Cinder Volume and Backup Services</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#sec-operation-manage-block-storage">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-managing_cinder_volumebackup_services.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.6.9.3.7.2" data-id-title="Use Only When Needed" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: Use Only When Needed</div><p>
    If the host running the <code class="literal">cinder-volume</code> service fails for
    any reason, it should be restarted as quickly as possible. Often, the host
    running Cinder services also runs high availability (HA) services
@@ -177,11 +177,11 @@ hljs.configure({
    The <code class="literal">cinder-volume</code> service and its backup service migrate
    as a pair. If you migrate the <code class="literal">cinder-volume</code> service, its
    backup service will also be migrated.
-  </p></div><div class="sect3" id="idg-all-operations-blockstorage-managing-cinder-volumebackup-services-xml-5"><div class="titlepage"><div><div><h4 class="title"><span class="number">7.1.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Migrating the cinder-volume service</span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#idg-all-operations-blockstorage-managing-cinder-volumebackup-services-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-managing_cinder_volumebackup_services.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-blockstorage-managing_cinder_volumebackup_services.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-blockstorage-managing-cinder-volumebackup-services-xml-5</li></ul></div></div></div></div><p>
+  </p></div><section class="sect3" id="idg-all-operations-blockstorage-managing-cinder-volumebackup-services-xml-5" data-id-title="Migrating the cinder-volume service"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">7.1.3.1 </span><span class="title-name">Migrating the cinder-volume service</span></span> <a title="Permalink" class="permalink" href="ops-managing-blockstorage.html#idg-all-operations-blockstorage-managing-cinder-volumebackup-services-xml-5">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-blockstorage-managing_cinder_volumebackup_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following steps will migrate the cinder-volume service and its backup service.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager node.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Determine the host index numbers for each of your control plane nodes.
      This host index number will be used in a later step. They can be obtained
      by running this playbook:
@@ -210,39 +210,38 @@ ok: [ardana-cp1-c1-m1] =&gt; (item=(2, 'ardana-cp1-c1-m3')) =&gt; {
         "ardana-cp1-c1-m3"
     ],
     "msg": "Index 2 Hostname ardana-cp1-c1-m3"
-}</pre></div></li><li class="listitem "><p>
+}</pre></div></li><li class="listitem"><p>
      Locate the control plane fact file for the control plane you need to
      migrate the service from. It will be located in the following directory:
     </p><div class="verbatim-wrap"><pre class="screen">/etc/ansible/facts.d/</pre></div><p>
      These fact files use the following naming convention:
-    </p><div class="verbatim-wrap"><pre class="screen">cinder_volume_run_location_<span class="emphasis"><em>&lt;control_plane_name&gt;</em></span>.fact</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">cinder_volume_run_location_<span class="emphasis"><em>&lt;control_plane_name&gt;</em></span>.fact</pre></div></li><li class="listitem"><p>
      Edit the fact file to include the host index number of the control plane
      node you wish to migrate the <code class="literal">cinder-volume</code> services to.
      For example, if they currently reside on your first controller node, host
      index 0, and you wish to migrate them to your second controller, you would
      change the value in the fact file to <code class="literal">1</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If you are using data encryption on your Cloud Lifecycle Manager, ensure you
      have included the encryption key in your environment variables. For more
      information see <span class="intraxref">Book “Security Guide”, Chapter 9 “Encryption of Passwords and Sensitive Data”</span>.
-    </p><div class="verbatim-wrap"><pre class="screen">export HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key&gt;</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">export HOS_USER_PASSWORD_ENCRYPT_KEY=&lt;encryption key&gt;</pre></div></li><li class="listitem"><p>
      After you have edited the control plane fact file, run the Cinder volume
      migration playbook for the control plane nodes involved in the migration.
      At minimum this includes the one to start cinder-volume manager on and the
      one on which to stop it:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
-ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --limit=&lt;limit_pattern1,limit_pattern2&gt;</pre></div><div id="id-1.6.9.3.7.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+ansible-playbook -i hosts/verb_hosts cinder-migrate-volume.yml --limit=&lt;limit_pattern1,limit_pattern2&gt;</pre></div><div id="id-1.6.9.3.7.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       <span class="emphasis"><em>&lt;limit_pattern&gt;</em></span> is the pattern used to limit
       the hosts that are selected to those within a specific control plane. For
       example, with the nodes in the snippet shown above,
       <code class="literal">--limit=&gt;ardana-cp1-c1-m1,ardana-cp1-c1-m2&lt;</code>
-     </p></div></li><li class="listitem "><p>
+     </p></div></li><li class="listitem"><p>
      Even though the playbook summary reports no errors, you may disregard
      informational messages such as:
-    </p><div class="verbatim-wrap"><pre class="screen">msg: Marking ardana_notify_cinder_restart_required to be cleared from the fact cache</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">msg: Marking ardana_notify_cinder_restart_required to be cleared from the fact cache</pre></div></li><li class="listitem"><p>
      Ensure that once your maintenance or other tasks are completed that you
      migrate the <code class="literal">cinder-volume</code> services back to their
      original node using these same steps.
-    </p></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-objectstorage.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span>Managing Object Storage</span></a><a class="nav-link" href="ops-managing-esx.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 6 </span>Managing ESX</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></li></ol></div></section></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="ops-managing-esx.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Managing ESX</span></a> </div><div><a class="pagination-link next" href="ops-managing-objectstorage.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 8 </span>Managing Object Storage</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="ops-managing-blockstorage.html#topic-e5g-z3h-gt"><span class="title-number">7.1 </span><span class="title-name">Managing Block Storage using Cinder</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

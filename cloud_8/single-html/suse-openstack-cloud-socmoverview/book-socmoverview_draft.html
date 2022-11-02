@@ -56,6 +56,7 @@ body { background-image: url('static/images/draft.png');
   Copyright FUJITSU LIMITED 2015 - 2017
  </p><p>
   Copyright © 2022
+
   SUSE LLC and contributors. All rights reserved.
  </p><p>
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -387,7 +388,7 @@ body { background-image: url('static/images/draft.png');
    </p></li><li class="listitem"><p>
     Log metrics. The agent can check and monitor the number of critical log
     entries in the log data retrieved from the cloud resources.
-   </p></li></ul></div><h5><a id="id1662"></a>Data Visualization and Analysis</h5><p>
+   </p></li></ul></div><h5><a id="id1661"></a>Data Visualization and Analysis</h5><p>
   All <span class="phrase">SUSE OpenStack Cloud Monitoring</span> user groups work with a
   graphical user interface that is seamlessly integrated into their cloud
   infrastructure. <span class="phrase">Based on OpenStack Horizon, the user interface
@@ -399,7 +400,7 @@ body { background-image: url('static/images/draft.png');
   to experiment with many ways of analyzing the performance of their cloud
   resources in real-time. They cannot only view but also share and explore
   visualizations of their monitoring data.
- </p><h5><a id="id1668"></a>Alarms and Notifications</h5><p>
+ </p><h5><a id="id1667"></a>Alarms and Notifications</h5><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports GUI-based alarm and
   notification management. <span class="phrase">Template-based alarm definitions allow for
   monitoring a dynamically changing set of resources without the need for
@@ -433,7 +434,7 @@ body { background-image: url('static/images/draft.png');
     Scalable architecture capable of mastering the data load from a large
     number of nodes in OpenStack environments. The log management solution can
     be horizontally and vertically adapted to constantly changing data loads.
-   </p></li></ul></div><h5><a id="id1689"></a>Basic Usage Scenario</h5><p>
+   </p></li></ul></div><h5><a id="id1688"></a>Basic Usage Scenario</h5><p>
   The basic usage scenario of setting up and using the log management features
   of <span class="phrase">SUSE OpenStack Cloud Monitoring</span> looks as follows:
  </p><div class="informalfigure"><div class="mediaobject"><img src="images/images-overview-logmgmt.png" alt="logmanagement.png" /></div></div><p>
@@ -445,7 +446,7 @@ body { background-image: url('static/images/draft.png');
   The <span class="bold"><strong>OpenStack operator</strong></span> uses the log
   management features for retrieving log data on the OpenStack services and the
   middleware components that make up the underlying OpenStack platform.
- </p><h5><a id="id1705"></a>Data Collection</h5><p>
+ </p><h5><a id="id1704"></a>Data Collection</h5><p>
   A Log Agent can be installed and configured on each physical and virtual
   server where log data is to be retrieved. The agent is responsible for
   collecting the log data from the cloud resources and sending it to the
@@ -454,7 +455,7 @@ body { background-image: url('static/images/draft.png');
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> stores the log data in a
   central database. The central database forms the basis for visualizing the
   log data for the <span class="phrase">SUSE OpenStack Cloud Monitoring</span> users.
- </p><h5><a id="id1710"></a>Data Visualization and Analysis</h5><p>
+ </p><h5><a id="id1709"></a>Data Visualization and Analysis</h5><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports advanced data
   visualization and analysis of the log data in a variety of charts, tables, or
   maps. Visualizations can easily be combined in dynamic dashboards that
@@ -463,7 +464,7 @@ body { background-image: url('static/images/draft.png');
   Based on OpenStack Horizon, the customizable dashboards are seamlessly
   integrated into the cloud infrastructure. They enable user access to all log
   management functionality.
- </p><h5><a id="id1714"></a>Alarms and Notifications</h5><p>
+ </p><h5><a id="id1713"></a>Alarms and Notifications</h5><p>
   GUI-based alarm and notification management is also supported for log data.
   <span class="phrase"><span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports a template
   mechanism for alarms on log data that is not limited to a single cloud
@@ -475,11 +476,11 @@ body { background-image: url('static/images/draft.png');
   automation of log handling guarantees that system operators identify problems
   in their infrastructure early and find the root cause of these problems
   quickly.
- </p></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="reference-7A5FB297419F4787832C9125D7CAC80F"></a>Appendix A. Glossary</h1></div></div></div><h5><a id="id1722"></a>Application Operator</h5><p>
+ </p></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="reference-7A5FB297419F4787832C9125D7CAC80F"></a>Appendix A. Glossary</h1></div></div></div><h5><a id="id1721"></a>Application Operator</h5><p>
   A person with limited access to cloud resources in OpenStack. An application
   operator provides services to end users or hosts services for his own
   development activities.
- </p><h5><a id="id1724"></a>Dimension</h5><p>
+ </p><h5><a id="id1723"></a>Dimension</h5><p>
   A key/value pair that allows for a flexible and concise description of the
   data to be monitored, for example, region, availability zone, service tier,
   or resource ID. Each dimension describes a specific characteristic of the
@@ -488,55 +489,55 @@ body { background-image: url('static/images/draft.png');
   In <span class="phrase">SUSE OpenStack Cloud Monitoring</span>, metrics are uniquely
   identified by a name and a set of dimensions. Dimensions can serve as a
   filter for the monitoring data.
- </p><h5><a id="id1728"></a>Elasticsearch</h5><p>
+ </p><h5><a id="id1727"></a>Elasticsearch</h5><p>
   An open source application that provides a highly scalable full-text search
   and analytics engine. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   Elasticsearch as the underlying technology for storing, searching, and
   analyzing large volumes of log data.
- </p><h5><a id="id1731"></a>Grafana</h5><p>
+ </p><h5><a id="id1730"></a>Grafana</h5><p>
   An open source application for visualizing large-scale measurement data.
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates with Grafana for
   visualizing the monitoring data.
- </p><h5><a id="id1734"></a>Infrastructure as a Service (IaaS)</h5><p>
+ </p><h5><a id="id1733"></a>Infrastructure as a Service (IaaS)</h5><p>
   The delivery of computer infrastructure (typically a platform virtualization
   environment) as a service.
- </p><h5><a id="id1736"></a>InfluxDB</h5><p>
+ </p><h5><a id="id1735"></a>InfluxDB</h5><p>
   An open source time-series database that supports high write loads and large
   data set storage. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   InfluxDB as the underlying technology for storing metrics and the alarm
   history.
- </p><h5><a id="id1739"></a>Kibana</h5><p>
+ </p><h5><a id="id1738"></a>Kibana</h5><p>
   An open source analytics and visualization platform designed to work with
   Elasticsearch. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates
   with Kibana for visualizing the log data.
- </p><h5><a id="id1742"></a>Logstash</h5><p>
+ </p><h5><a id="id1741"></a>Logstash</h5><p>
   An open source application that provides a data collection engine with
   pipelining capabilities. <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
   integrates with Logstash for collecting, processing, and outputting logs.
- </p><h5><a id="id1745"></a>MariaDB</h5><p>
+ </p><h5><a id="id1744"></a>MariaDB</h5><p>
   An open source relational database that provides an SQL-compliant interface
   for accessing data. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   MariaDB as the underlying technology for storing configuration information,
   alarm definitions, and notification methods.
- </p><h5><a id="id1748"></a>Metrics</h5><p>
+ </p><h5><a id="id1747"></a>Metrics</h5><p>
   Self-describing data structures that allow for a flexible and concise
   description of the data to be monitored. Metrics values represent the actual
   monitoring data that is collected and presented in <span class="phrase">SUSE OpenStack
   Cloud Monitoring</span>.
- </p><h5><a id="id1751"></a>Monasca</h5><p>
+ </p><h5><a id="id1750"></a>Monasca</h5><p>
   An open source Monitoring as a Service solution that integrates with
   OpenStack. It forms the core of <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span>.
- </p><h5><a id="id1754"></a>Monitoring Service Operator</h5><p>
+ </p><h5><a id="id1753"></a>Monitoring Service Operator</h5><p>
   A person responsible for maintaining and administrating <span class="phrase">SUSE
   OpenStack Cloud Monitoring</span>.
- </p><h5><a id="id1757"></a>OpenStack Operator</h5><p>
+ </p><h5><a id="id1756"></a>OpenStack Operator</h5><p>
   A person responsible for maintaining and administrating OpenStack, the
   underlying platform technology of <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span>.
- </p><h5><a id="id1760"></a>Platform as a Service (PaaS)</h5><p>
+ </p><h5><a id="id1759"></a>Platform as a Service (PaaS)</h5><p>
   The delivery of a computing platform and solution stack as a service.
- </p><h5><a id="id1762"></a>Software as a Service (SaaS)</h5><p>
+ </p><h5><a id="id1761"></a>Software as a Service (SaaS)</h5><p>
   A model of software deployment where a provider licenses an application to
   customers for use as a service on demand.
  </p></div></div></body></html>

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Dashboard | OpenStack Administrator Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Dashboard | SUSE OpenStack Cloud 8" />
-<meta name="description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact with the Open…" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="OpenStack Administrator Guide" />
-<meta name="chapter-title" content="Chapter 4. Dashboard" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Dashboard | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact with the Open…" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Dashboard | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact with the Open…" />
-<link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-upstream-admin.html" title="OpenStack Administrator Guide" /><link rel="prev" href="cha-identity.html" title="Chapter 3. Identity management" /><link rel="next" href="bk02ch05.html" title="Chapter 5. Compute" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | OpenStack Administrator Guide | Dashboard</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Dashboard | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact wit…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="OpenStack Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 4. Dashboard"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Dashboard | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact wit…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dashboard | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="The OpenStack Dashboard is a web-based interface that allows you to manage OpenStack resources and services. The Dashboard allows you to interact wit…"/>
+<link rel="prev" href="cha-identity.html" title="Chapter 3. Identity management"/><link rel="next" href="bk02ch05.html" title="Chapter 5. Compute"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,18 +34,18 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch04.html">Dashboard</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02ch01.html"><span class="number">1 </span><span class="name">Documentation Conventions</span></a></li><li class="inactive"><a href="bk02ch02.html"><span class="number">2 </span><span class="name">Get started with OpenStack</span></a></li><li class="inactive"><a href="cha-identity.html"><span class="number">3 </span><span class="name">Identity management</span></a></li><li class="inactive"><a href="bk02ch04.html"><span class="number">4 </span><span class="name">Dashboard</span></a></li><li class="inactive"><a href="bk02ch05.html"><span class="number">5 </span><span class="name">Compute</span></a></li><li class="inactive"><a href="bk02ch06.html"><span class="number">6 </span><span class="name">Object Storage</span></a></li><li class="inactive"><a href="bk02ch07.html"><span class="number">7 </span><span class="name">Block Storage</span></a></li><li class="inactive"><a href="bk02ch08.html"><span class="number">8 </span><span class="name">Shared File Systems</span></a></li><li class="inactive"><a href="networking.html"><span class="number">9 </span><span class="name">Networking</span></a></li><li class="inactive"><a href="bk02ch10.html"><span class="number">10 </span><span class="name">Telemetry</span></a></li><li class="inactive"><a href="bk02ch11.html"><span class="number">11 </span><span class="name">Database</span></a></li><li class="inactive"><a href="bk02ch12.html"><span class="number">12 </span><span class="name">Bare Metal</span></a></li><li class="inactive"><a href="bk02ch13.html"><span class="number">13 </span><span class="name">Orchestration</span></a></li><li class="inactive"><a href="osadm-os-cli.html"><span class="number">14 </span><span class="name">OpenStack command-line clients</span></a></li><li class="inactive"><a href="bk02ch15.html"><span class="number">15 </span><span class="name">Cross-project features</span></a></li><li class="inactive"><a href="bk02ch16.html"><span class="number">16 </span><span class="name">Appendix</span></a></li><li class="inactive"><a href="bk02go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Identity management" href="cha-identity.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Compute" href="bk02ch05.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch04.html">Dashboard</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Identity management" href="cha-identity.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Compute" href="bk02ch05.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="id-1.4.6"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud</span> <span class="productnumber ">8</span></div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dashboard</span> <a title="Permalink" class="permalink" href="bk02ch04.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.5"><span class="number">4.1 </span><span class="name">Customize and configure the Dashboard</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.6"><span class="number">4.2 </span><span class="name">Set up session storage for the Dashboard</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.7"><span class="number">4.3 </span><span class="name">Create and manage images</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.8"><span class="number">4.4 </span><span class="name">Create and manage roles</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.9"><span class="number">4.5 </span><span class="name">Manage instances</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#osadm-manage-flavor"><span class="number">4.6 </span><span class="name">Manage flavors</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.11"><span class="number">4.7 </span><span class="name">Manage volumes and volume types</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.12"><span class="number">4.8 </span><span class="name">Manage shares and share types</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.13"><span class="number">4.9 </span><span class="name">View and manage quotas</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.14"><span class="number">4.10 </span><span class="name">View cloud resources</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.15"><span class="number">4.11 </span><span class="name">Create and manage host aggregates</span></a></span></dt><dt><span class="sect1"><a href="bk02ch04.html#id-1.4.6.16"><span class="number">4.12 </span><span class="name">Launch and manage stacks using the Dashboard</span></a></span></dt></dl></div></div><p>The OpenStack Dashboard is a web-based interface that allows you to
+</script></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">OpenStack Administrator Guide</a><span> / </span><a class="crumb" href="bk02ch04.html">Dashboard</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">OpenStack Administrator Guide</div><ol><li><a href="bk02ch01.html" class=" "><span class="title-number">1 </span><span class="title-name">Documentation Conventions</span></a></li><li><a href="bk02ch02.html" class=" "><span class="title-number">2 </span><span class="title-name">Get started with OpenStack</span></a></li><li><a href="cha-identity.html" class=" "><span class="title-number">3 </span><span class="title-name">Identity management</span></a></li><li><a href="bk02ch04.html" class=" you-are-here"><span class="title-number">4 </span><span class="title-name">Dashboard</span></a></li><li><a href="bk02ch05.html" class=" "><span class="title-number">5 </span><span class="title-name">Compute</span></a></li><li><a href="bk02ch06.html" class=" "><span class="title-number">6 </span><span class="title-name">Object Storage</span></a></li><li><a href="bk02ch07.html" class=" "><span class="title-number">7 </span><span class="title-name">Block Storage</span></a></li><li><a href="bk02ch08.html" class=" "><span class="title-number">8 </span><span class="title-name">Shared File Systems</span></a></li><li><a href="networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Networking</span></a></li><li><a href="bk02ch10.html" class=" "><span class="title-number">10 </span><span class="title-name">Telemetry</span></a></li><li><a href="bk02ch11.html" class=" "><span class="title-number">11 </span><span class="title-name">Database</span></a></li><li><a href="bk02ch12.html" class=" "><span class="title-number">12 </span><span class="title-name">Bare Metal</span></a></li><li><a href="bk02ch13.html" class=" "><span class="title-number">13 </span><span class="title-name">Orchestration</span></a></li><li><a href="osadm-os-cli.html" class=" "><span class="title-number">14 </span><span class="title-name">OpenStack command-line clients</span></a></li><li><a href="bk02ch15.html" class=" "><span class="title-number">15 </span><span class="title-name">Cross-project features</span></a></li><li><a href="bk02ch16.html" class=" "><span class="title-number">16 </span><span class="title-name">Appendix</span></a></li><li><a href="bk02go01.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="id-1.4.6" data-id-title="Dashboard"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE OpenStack Cloud</span> <span class="productnumber">8</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Dashboard</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Dashboard is a web-based interface that allows you to
 manage OpenStack resources and services. The Dashboard allows you to
 interact with the OpenStack Compute cloud controller using the OpenStack
 APIs. For more information about installing and configuring the
 Dashboard, see the <a class="link" href="http://docs.openstack.org/project-install-guide/newton/" target="_blank">Installation Tutorials and Guides</a>
-for your operating system.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>To deploy the dashboard, see the <a class="link" href="http://docs.openstack.org/developer/horizon/topics/deployment.html" target="_blank">OpenStack dashboard documentation</a>.</p></li><li class="listitem "><p>To launch instances with the dashboard as an end user, see the
+for your operating system.</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>To deploy the dashboard, see the <a class="link" href="http://docs.openstack.org/developer/horizon/topics/deployment.html" target="_blank">OpenStack dashboard documentation</a>.</p></li><li class="listitem"><p>To launch instances with the dashboard as an end user, see the
           <a class="link" href="http://docs.openstack.org/user-guide/dashboard-launch-instances.html" target="_blank">Launch and manage instances</a>.
-          in the OpenStack End User Guide.</p></li><li class="listitem "><p>To create and manage ports, see the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-create-networks.html#create-a-port" target="_blank">Create and manage networks</a>
-          section of the OpenStack End User Guide.</p></li></ul></div><div class="sect1 " id="id-1.4.6.5"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Customize and configure the Dashboard</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+          in the OpenStack End User Guide.</p></li><li class="listitem"><p>To create and manage ports, see the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-create-networks.html#create-a-port" target="_blank">Create and manage networks</a>
+          section of the OpenStack End User Guide.</p></li></ul></div><section class="sect1" id="id-1.4.6.5" data-id-title="Customize and configure the Dashboard"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name">Customize and configure the Dashboard</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
          For information on this topic, see the SUSE OpenStack Supplement Guide,
          available at <a class="link" href="https://documentation.suse.com/soc/8/single-html/suse-openstack-cloud-supplement" target="_blank">https://documentation.suse.com/soc/8/single-html/suse-openstack-cloud-supplement</a>.
-       </p></div><div class="sect1 " id="id-1.4.6.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Set up session storage for the Dashboard</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Dashboard uses <a class="link" href="https://docs.djangoproject.com/en/dev/topics/http/sessions/" target="_blank">Django sessions
+       </p></section><section class="sect1" id="id-1.4.6.6" data-id-title="Set up session storage for the Dashboard"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name">Set up session storage for the Dashboard</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Dashboard uses <a class="link" href="https://docs.djangoproject.com/en/dev/topics/http/sessions/" target="_blank">Django sessions
 framework</a>
 to handle user session data. However, you can use any available session
 back end. You customize the session back end through the
@@ -55,9 +55,9 @@ service steps below, users and administrators can use
 the OpenStack dashboard. Refer to the <a class="link" href="http://docs.openstack.org/user-guide/dashboard.html" target="_blank">OpenStack Dashboard</a>
 chapter of the OpenStack End User Guide for
 further instructions on logging in to the Dashboard.</p><p>The following sections describe the pros and cons of each option as it
-pertains to deploying the Dashboard.</p><div class="sect2 " id="id-1.4.6.6.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Local memory cache</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Local memory storage is the quickest and easiest session back end to set
+pertains to deploying the Dashboard.</p><section class="sect2" id="id-1.4.6.6.5" data-id-title="Local memory cache"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.2.1 </span><span class="title-name">Local memory cache</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Local memory storage is the quickest and easiest session back end to set
 up, as it has no external dependencies whatsoever. It has the following
-significant drawbacks:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>No shared storage across processes or workers.</p></li><li class="listitem "><p>No persistence after a process terminates.</p></li></ul></div><p>The local memory back end is enabled as the default for Horizon solely
+significant drawbacks:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>No shared storage across processes or workers.</p></li><li class="listitem"><p>No persistence after a process terminates.</p></li></ul></div><p>The local memory back end is enabled as the default for Horizon solely
 because it has no dependencies. It is not recommended for production
 use, or even for serious development work.</p><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 CACHES = {
@@ -66,16 +66,16 @@ CACHES = {
   }
 }</pre></div><p>You can use applications such as <code class="literal">Memcached</code> or <code class="literal">Redis</code> for external
 caching. These applications offer persistence and shared storage and are
-useful for small-scale deployments and development.</p><div class="sect3 " id="id-1.4.6.6.5.7"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Memcached</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.7">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Memcached is a high-performance and distributed memory object caching
+useful for small-scale deployments and development.</p><section class="sect3" id="id-1.4.6.6.5.7" data-id-title="Memcached"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.2.1.1 </span><span class="title-name">Memcached</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.7">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Memcached is a high-performance and distributed memory object caching
 system providing in-memory key-value store for small chunks of arbitrary
-data.</p><p>Requirements:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Memcached service running and accessible.</p></li><li class="listitem "><p>Python module <code class="literal">python-memcached</code> installed.</p></li></ul></div><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+data.</p><p>Requirements:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Memcached service running and accessible.</p></li><li class="listitem"><p>Python module <code class="literal">python-memcached</code> installed.</p></li></ul></div><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 CACHES = {
   'default': {
     'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
     'LOCATION': 'my_memcached_host:11211',
   }
-}</pre></div></div><div class="sect3 " id="id-1.4.6.6.5.8"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Redis</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.8">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Redis is an open source, BSD licensed, advanced key-value store. It is
-often referred to as a data structure server.</p><p>Requirements:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Redis service running and accessible.</p></li><li class="listitem "><p>Python modules <code class="literal">redis</code> and <code class="literal">django-redis</code> installed.</p></li></ul></div><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+}</pre></div></section><section class="sect3" id="id-1.4.6.6.5.8" data-id-title="Redis"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.2.1.2 </span><span class="title-name">Redis</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.8">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Redis is an open source, BSD licensed, advanced key-value store. It is
+often referred to as a data structure server.</p><p>Requirements:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Redis service running and accessible.</p></li><li class="listitem"><p>Python modules <code class="literal">redis</code> and <code class="literal">django-redis</code> installed.</p></li></ul></div><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 CACHES = {
     "default": {
         "BACKEND": "redis_cache.cache.RedisCache",
@@ -84,14 +84,14 @@ CACHES = {
             "CLIENT_CLASS": "redis_cache.client.DefaultClient",
         }
     }
-}</pre></div></div><div class="sect3 " id="id-1.4.6.6.5.9"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.2.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Initialize and configure the database</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.9">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Database-backed sessions are scalable, persistent, and can be made
+}</pre></div></section><section class="sect3" id="id-1.4.6.6.5.9" data-id-title="Initialize and configure the database"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.2.1.3 </span><span class="title-name">Initialize and configure the database</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.5.9">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Database-backed sessions are scalable, persistent, and can be made
 high-concurrency and highly available.</p><p>However, database-backed sessions are one of the slower session storages
 and incur a high overhead under heavy usage. Proper configuration of
 your database deployment can also be a substantial undertaking and is
-far beyond the scope of this documentation.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Start the MySQL command-line client.</p><div class="verbatim-wrap"><pre class="screen">$ mysql -u root -p</pre></div></li><li class="step "><p>Enter the MySQL root user's password when prompted.</p></li><li class="step "><p>To configure the MySQL database, create the dash database.</p><div class="verbatim-wrap"><pre class="screen">mysql&gt; CREATE DATABASE dash;</pre></div></li><li class="step "><p>Create a MySQL user for the newly created dash database that has full
+far beyond the scope of this documentation.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Start the MySQL command-line client.</p><div class="verbatim-wrap"><pre class="screen">$ mysql -u root -p</pre></div></li><li class="step"><p>Enter the MySQL root user's password when prompted.</p></li><li class="step"><p>To configure the MySQL database, create the dash database.</p><div class="verbatim-wrap"><pre class="screen">mysql&gt; CREATE DATABASE dash;</pre></div></li><li class="step"><p>Create a MySQL user for the newly created dash database that has full
 control of the database. Replace DASH_DBPASS with a password for the
 new user.</p><div class="verbatim-wrap"><pre class="screen">mysql&gt; GRANT ALL PRIVILEGES ON dash.* TO 'dash'@'%' IDENTIFIED BY 'DASH_DBPASS';
-mysql&gt; GRANT ALL PRIVILEGES ON dash.* TO 'dash'@'localhost' IDENTIFIED BY 'DASH_DBPASS';</pre></div></li><li class="step "><p>Enter <code class="literal">quit</code> at the <code class="literal">mysql&gt;</code> prompt to exit MySQL.</p></li><li class="step "><p>In the <code class="literal">local_settings.py</code> file, change these options:</p><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+mysql&gt; GRANT ALL PRIVILEGES ON dash.* TO 'dash'@'localhost' IDENTIFIED BY 'DASH_DBPASS';</pre></div></li><li class="step"><p>Enter <code class="literal">quit</code> at the <code class="literal">mysql&gt;</code> prompt to exit MySQL.</p></li><li class="step"><p>In the <code class="literal">local_settings.py</code> file, change these options:</p><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 DATABASES = {
     'default': {
         # Database configuration here
@@ -102,18 +102,18 @@ DATABASES = {
         'HOST': 'localhost',
         'default-character-set': 'utf8'
     }
-}</pre></div></li><li class="step "><p>After configuring the <code class="literal">local_settings.py</code> file as shown, you can run the
+}</pre></div></li><li class="step"><p>After configuring the <code class="literal">local_settings.py</code> file as shown, you can run the
 <code class="command">manage.py syncdb</code> command to populate this newly created
-database.</p><div class="verbatim-wrap"><pre class="screen"># /usr/share/openstack-dashboard/manage.py syncdb</pre></div></li><li class="step "><p>The following output is returned:</p><div class="verbatim-wrap"><pre class="screen">Installing custom SQL ...
+database.</p><div class="verbatim-wrap"><pre class="screen"># /usr/share/openstack-dashboard/manage.py syncdb</pre></div></li><li class="step"><p>The following output is returned:</p><div class="verbatim-wrap"><pre class="screen">Installing custom SQL ...
 Installing indexes ...
 DEBUG:django.db.backends:(0.008) CREATE INDEX `django_session_c25c2c28` ON `django_session` (`expire_date`);; args=()
-No fixtures found.</pre></div></li><li class="step "><p>To avoid a warning when you restart Apache on Ubuntu, create a
-<code class="literal">blackhole</code> directory in the Dashboard directory, as follows.</p><div class="verbatim-wrap"><pre class="screen"># mkdir -p /var/lib/dash/.blackhole</pre></div></li><li class="step "><p>Restart the Apache service.</p></li><li class="step "><p>On Ubuntu, restart the <code class="literal">nova-api</code> service to ensure that the API server
-can connect to the Dashboard without error.</p><div class="verbatim-wrap"><pre class="screen"># service nova-api restart</pre></div></li></ol></div></div></div></div><div class="sect2 " id="id-1.4.6.6.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cached database</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To mitigate the performance issues of database queries, you can use the
+No fixtures found.</pre></div></li><li class="step"><p>To avoid a warning when you restart Apache on Ubuntu, create a
+<code class="literal">blackhole</code> directory in the Dashboard directory, as follows.</p><div class="verbatim-wrap"><pre class="screen"># mkdir -p /var/lib/dash/.blackhole</pre></div></li><li class="step"><p>Restart the Apache service.</p></li><li class="step"><p>On Ubuntu, restart the <code class="literal">nova-api</code> service to ensure that the API server
+can connect to the Dashboard without error.</p><div class="verbatim-wrap"><pre class="screen"># service nova-api restart</pre></div></li></ol></div></div></section></section><section class="sect2" id="id-1.4.6.6.6" data-id-title="Cached database"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.2.2 </span><span class="title-name">Cached database</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To mitigate the performance issues of database queries, you can use the
 Django <code class="literal">cached_db</code> session back end, which utilizes both your database
 and caching infrastructure to perform write-through caching and
 efficient retrieval.</p><p>Enable this hybrid setting by configuring both your database and cache,
-as discussed previously. Then, set the following value:</p><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"</pre></div></div><div class="sect2 " id="id-1.4.6.6.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cookies</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>If you use Django 1.4 or later, the <code class="literal">signed_cookies</code> back end avoids
+as discussed previously. Then, set the following value:</p><div class="verbatim-wrap highlight python"><pre class="screen">SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"</pre></div></section><section class="sect2" id="id-1.4.6.6.7" data-id-title="Cookies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.2.3 </span><span class="title-name">Cookies</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.6.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you use Django 1.4 or later, the <code class="literal">signed_cookies</code> back end avoids
 server load and scaling problems.</p><p>This back end stores session data in a cookie, which is stored by the
 user's browser. The back end uses a cryptographic signing technique to
 ensure session data is not tampered with during transport. This is not
@@ -123,113 +123,113 @@ quantity of session data being stored fits into a normal cookie.</p><p>The bigge
 user's machine and transports it over the wire. It also limits the
 quantity of session data that can be stored.</p><p>See the Django <a class="link" href="https://docs.djangoproject.com/en/dev/topics/http/sessions/#using-cookie-based-sessions" target="_blank">cookie-based
 sessions</a>
-documentation.</p></div></div><div class="sect1 " id="id-1.4.6.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create and manage images</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>As an administrative user, you can create and manage images
+documentation.</p></section></section><section class="sect1" id="id-1.4.6.7" data-id-title="Create and manage images"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.3 </span><span class="title-name">Create and manage images</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>As an administrative user, you can create and manage images
 for the projects to which you belong. You can also create
 and manage images for users in all projects to which you have
 access.</p><p>To create and manage images in specified projects as an end
 user, see the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-manage-images.html" target="_blank">upload and manage images with Dashboard in
 OpenStack End User Guide</a>
 and <a class="link" href="http://docs.openstack.org/user-guide/common/cli-manage-images.html" target="_blank">manage images with CLI in OpenStack End User Guide</a>.</p><p>To create and manage images as an administrator for other
-users, use the following procedures.</p><div class="sect2 " id="id-1.4.6.7.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create images</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>For details about image creation, see the <a class="link" href="http://docs.openstack.org/image-guide/" target="_blank">Virtual Machine Image
-Guide</a>.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Images</span> category. The images that you
-can administer for cloud users appear on this page.</p></li><li class="step "><p>Click <span class="guimenu ">Create Image</span>, which opens the
-<span class="guimenu ">Create An Image</span> window.</p><div class="figure" id="id-1.4.6.7.5.3.3.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/create_image.png" target="_blank"><img src="images/create_image.png" width="" alt="Figure Dashboard — Create Image" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.1: </span><span class="name">Figure Dashboard — Create Image </span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.5.3.3.2">#</a></h6></div></div></li><li class="step "><p>In the <span class="guimenu ">Create An Image</span> window, enter or select the
-following values:</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><tbody><tr><td>
+users, use the following procedures.</p><section class="sect2" id="id-1.4.6.7.5" data-id-title="Create images"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.3.1 </span><span class="title-name">Create images</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>For details about image creation, see the <a class="link" href="http://docs.openstack.org/image-guide/" target="_blank">Virtual Machine Image
+Guide</a>.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Images</span> category. The images that you
+can administer for cloud users appear on this page.</p></li><li class="step"><p>Click <span class="guimenu">Create Image</span>, which opens the
+<span class="guimenu">Create An Image</span> window.</p><div class="figure" id="id-1.4.6.7.5.3.3.2"><div class="figure-contents"><div class="mediaobject"><a href="images/create_image.png"><img src="images/create_image.png" width="99%" alt="Figure Dashboard — Create Image" title="Figure Dashboard — Create Image"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 4.1: </span><span class="title-name">Figure Dashboard — Create Image </span></span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.5.3.3.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></li><li class="step"><p>In the <span class="guimenu">Create An Image</span> window, enter or select the
+following values:</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Name</span>
+                        <span class="guimenu">Name</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter a name for the image.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Description</span>
+                        <span class="guimenu">Description</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter a brief description of
 the image.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Image Source</span>
+                        <span class="guimenu">Image Source</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Choose the image source from
 the dropdown list. Your choices
-are <span class="guimenu ">Image Location</span>
-and <span class="guimenu ">Image File</span>.</p>
-                    </td></tr><tr><td>
-                      <p><span class="guimenu ">Image File</span> or
-<span class="guimenu ">Image Location</span></p>
-                    </td><td>
+are <span class="guimenu">Image Location</span>
+and <span class="guimenu">Image File</span>.</p>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
+                      <p><span class="guimenu">Image File</span> or
+<span class="guimenu">Image Location</span></p>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Based on your selection, there
-is an <span class="guimenu ">Image File</span> or
-<span class="guimenu ">Image Location</span>
+is an <span class="guimenu">Image File</span> or
+<span class="guimenu">Image Location</span>
 field. You can include the
 location URL or browse for the
 image file on your file system
 and add it.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Format</span>
+                        <span class="guimenu">Format</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Select the image format.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Architecture</span>
+                        <span class="guimenu">Architecture</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Specify the architecture. For
 example, <code class="literal">i386</code> for a 32-bit
 architecture or <code class="literal">x86_64</code> for
 a 64-bit architecture.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Minimum Disk (GB)</span>
+                        <span class="guimenu">Minimum Disk (GB)</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Leave this field empty.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Minimum RAM (MB)</span>
+                        <span class="guimenu">Minimum RAM (MB)</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Leave this field empty.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Copy Data</span>
+                        <span class="guimenu">Copy Data</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Specify this option to copy
 image data to the Image service.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Public</span>
+                        <span class="guimenu">Public</span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Select this option to make the
 image public to all users.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; ">
                       <p>
-                        <span class="guimenu ">Protected</span>
+                        <span class="guimenu">Protected</span>
                       </p>
                     </td><td>
                       <p>Select this option to ensure
 that only users with
 permissions can delete it.</p>
-                    </td></tr></tbody></table></div></li><li class="step "><p>Click <span class="guimenu ">Create Image</span>.</p><p>The image is queued to be uploaded. It might take several minutes
-before the status changes from <code class="literal">Queued</code> to <code class="literal">Active</code>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.7.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update images</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Images</span> category.</p></li><li class="step "><p>Select the images that you want to edit. Click <span class="guimenu ">Edit Image</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Edit Image</span> window, you can change the image name.</p><p>Select the <span class="guimenu ">Public</span> check box to make the image public.
+                    </td></tr></tbody></table></div></li><li class="step"><p>Click <span class="guimenu">Create Image</span>.</p><p>The image is queued to be uploaded. It might take several minutes
+before the status changes from <code class="literal">Queued</code> to <code class="literal">Active</code>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.7.6" data-id-title="Update images"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.3.2 </span><span class="title-name">Update images</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Images</span> category.</p></li><li class="step"><p>Select the images that you want to edit. Click <span class="guimenu">Edit Image</span>.</p></li><li class="step"><p>In the <span class="guimenu">Edit Image</span> window, you can change the image name.</p><p>Select the <span class="guimenu">Public</span> check box to make the image public.
 Clear this check box to make the image private. You cannot change
-the <span class="guimenu ">Kernel ID</span>, <span class="guimenu ">Ramdisk ID</span>, or
-<span class="guimenu ">Architecture</span> attributes for an image.</p></li><li class="step "><p>Click <span class="guimenu ">Edit Image</span>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.7.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete images</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin tab</span>, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Images</span> category.</p></li><li class="step "><p>Select the images that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Images</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Images</span> window, click <span class="guimenu ">Delete
-Images</span> to confirm the deletion.</p><p>You cannot undo this action.</p></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.6.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create and manage roles</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>A role is a personality that a user assumes to perform a specific set
+the <span class="guimenu">Kernel ID</span>, <span class="guimenu">Ramdisk ID</span>, or
+<span class="guimenu">Architecture</span> attributes for an image.</p></li><li class="step"><p>Click <span class="guimenu">Edit Image</span>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.7.7" data-id-title="Delete images"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.3.3 </span><span class="title-name">Delete images</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.7.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin tab</span>, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Images</span> category.</p></li><li class="step"><p>Select the images that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Images</span>.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Images</span> window, click <span class="guimenu">Delete
+Images</span> to confirm the deletion.</p><p>You cannot undo this action.</p></li></ol></div></div></section></section><section class="sect1" id="id-1.4.6.8" data-id-title="Create and manage roles"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.4 </span><span class="title-name">Create and manage roles</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>A role is a personality that a user assumes to perform a specific set
 of operations. A role includes a set of rights and privileges. A user
-assumes that role inherits those rights and privileges.</p><div id="id-1.4.6.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>OpenStack Identity service defines a user's role on a
+assumes that role inherits those rights and privileges.</p><div id="id-1.4.6.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>OpenStack Identity service defines a user's role on a
 project, but it is completely up to the individual service
 to define what that role means. This is referred to as the
 service's policy. To get details about what the privileges
@@ -237,129 +237,129 @@ for each role are, refer to the <code class="literal">policy.json</code> file
 available for each service in the
 <code class="literal">/etc/SERVICE/policy.json</code> file. For example, the
 policy defined for OpenStack Identity service is defined
-in the <code class="literal">/etc/keystone/policy.json</code> file.</p></div><div class="sect2 " id="id-1.4.6.8.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a role</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Identity</span> tab, click the <span class="guimenu ">Roles</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Create Role</span> button.</p><p>In the <span class="guimenu ">Create Role</span> window, enter a name for the role.</p></li><li class="step "><p>Click the <span class="guimenu ">Create Role</span> button to confirm your changes.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.8.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Edit a role</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">Identity</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Identity</span> tab, click the <span class="guimenu ">Roles</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Edit</span> button.</p><p>In the <span class="guimenu ">Update Role</span> window, enter a new name for the role.</p></li><li class="step "><p>Click the <span class="guimenu ">Update Role</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.8.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>Using the dashboard, you can edit only the name assigned to
-a role.</p></div></div><div class="sect2 " id="id-1.4.6.8.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete a role</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">Identity</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Identity</span> tab, click the <span class="guimenu ">Roles</span> category.</p></li><li class="step "><p>Select the role you want to delete and click the <span class="guimenu ">Delete
-Roles</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Roles</span> window, click <span class="guimenu ">Delete
-Roles</span> to confirm the deletion.</p><p>You cannot undo this action.</p></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.6.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manage instances</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>As an administrative user, you can manage instances for users in various
+in the <code class="literal">/etc/keystone/policy.json</code> file.</p></div><section class="sect2" id="id-1.4.6.8.4" data-id-title="Create a role"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.1 </span><span class="title-name">Create a role</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Identity</span> tab, click the <span class="guimenu">Roles</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Create Role</span> button.</p><p>In the <span class="guimenu">Create Role</span> window, enter a name for the role.</p></li><li class="step"><p>Click the <span class="guimenu">Create Role</span> button to confirm your changes.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.8.5" data-id-title="Edit a role"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.2 </span><span class="title-name">Edit a role</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">Identity</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Identity</span> tab, click the <span class="guimenu">Roles</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Edit</span> button.</p><p>In the <span class="guimenu">Update Role</span> window, enter a new name for the role.</p></li><li class="step"><p>Click the <span class="guimenu">Update Role</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.8.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Using the dashboard, you can edit only the name assigned to
+a role.</p></div></section><section class="sect2" id="id-1.4.6.8.6" data-id-title="Delete a role"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.3 </span><span class="title-name">Delete a role</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.8.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">Identity</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Identity</span> tab, click the <span class="guimenu">Roles</span> category.</p></li><li class="step"><p>Select the role you want to delete and click the <span class="guimenu">Delete
+Roles</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Roles</span> window, click <span class="guimenu">Delete
+Roles</span> to confirm the deletion.</p><p>You cannot undo this action.</p></li></ol></div></div></section></section><section class="sect1" id="id-1.4.6.9" data-id-title="Manage instances"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.5 </span><span class="title-name">Manage instances</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>As an administrative user, you can manage instances for users in various
 projects. You can view, terminate, edit, perform a soft or hard reboot,
 create a snapshot from, and migrate instances. You can also view the
 logs for instances or launch a VNC console for an instance.</p><p>For information about using the Dashboard to launch instances as an end
-user, see the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-launch-instances.html" target="_blank">OpenStack End User Guide</a>.</p><div class="sect2 " id="id-1.4.6.9.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create instance snapshots</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Instances</span> category.</p></li><li class="step "><p>Select an instance to create a snapshot from it. From the
-Actions drop-down list, select <span class="guimenu ">Create Snapshot</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Create Snapshot</span> window, enter a name for the snapshot.</p></li><li class="step "><p>Click <span class="guimenu ">Create Snapshot</span>. The Dashboard shows the instance snapshot
-in the <span class="guimenu ">Images</span> category.</p></li><li class="step "><p>To launch an instance from the snapshot, select the snapshot and
-click <span class="guimenu ">Launch</span>. For information about launching
+user, see the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-launch-instances.html" target="_blank">OpenStack End User Guide</a>.</p><section class="sect2" id="id-1.4.6.9.4" data-id-title="Create instance snapshots"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.5.1 </span><span class="title-name">Create instance snapshots</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Instances</span> category.</p></li><li class="step"><p>Select an instance to create a snapshot from it. From the
+Actions drop-down list, select <span class="guimenu">Create Snapshot</span>.</p></li><li class="step"><p>In the <span class="guimenu">Create Snapshot</span> window, enter a name for the snapshot.</p></li><li class="step"><p>Click <span class="guimenu">Create Snapshot</span>. The Dashboard shows the instance snapshot
+in the <span class="guimenu">Images</span> category.</p></li><li class="step"><p>To launch an instance from the snapshot, select the snapshot and
+click <span class="guimenu">Launch</span>. For information about launching
 instances, see the
-<a class="link" href="http://docs.openstack.org/user-guide/dashboard-launch-instances.html" target="_blank">OpenStack End User Guide</a>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.9.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Control the state of an instance</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Instances</span> category.</p></li><li class="step "><p>Select the instance for which you want to change the state.</p></li><li class="step "><p>From the drop-down list in the Actions column,
+<a class="link" href="http://docs.openstack.org/user-guide/dashboard-launch-instances.html" target="_blank">OpenStack End User Guide</a>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.9.5" data-id-title="Control the state of an instance"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.5.2 </span><span class="title-name">Control the state of an instance</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Instances</span> category.</p></li><li class="step"><p>Select the instance for which you want to change the state.</p></li><li class="step"><p>From the drop-down list in the Actions column,
 select the state.</p><p>Depending on the current state of the instance, you can perform various
 actions on the instance. For example, pause, un-pause, suspend, resume,
-soft or hard reboot, or terminate (actions in red are dangerous).</p></li></ol></div></div><div class="figure" id="id-1.4.6.9.5.3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/change_instance_state.jpg" target="_blank"><img src="images/change_instance_state.jpg" width="" alt="Figure Dashboard — Instance Actions" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.2: </span><span class="name">Figure Dashboard — Instance Actions </span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.5.3">#</a></h6></div></div></div><div class="sect2 " id="id-1.4.6.9.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Track usage</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Use the <span class="guimenu ">Overview</span> category to track usage of instances
+soft or hard reboot, or terminate (actions in red are dangerous).</p></li></ol></div></div><div class="figure" id="id-1.4.6.9.5.3"><div class="figure-contents"><div class="mediaobject"><a href="images/change_instance_state.jpg"><img src="images/change_instance_state.jpg" width="99%" alt="Figure Dashboard — Instance Actions" title="Figure Dashboard — Instance Actions"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 4.2: </span><span class="title-name">Figure Dashboard — Instance Actions </span></span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.5.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></section><section class="sect2" id="id-1.4.6.9.6" data-id-title="Track usage"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.5.3 </span><span class="title-name">Track usage</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.9.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Use the <span class="guimenu">Overview</span> category to track usage of instances
 for each project.</p><p>You can track costs per month by showing meters like number of VCPUs,
-disks, RAM, and uptime of all your instances.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project from the
-drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Overview</span> category.</p></li><li class="step "><p>Select a month and click <span class="guimenu ">Submit</span> to query the instance usage for
-that month.</p></li><li class="step "><p>Click <span class="guimenu ">Download CSV Summary</span> to download a CSV summary.</p></li></ol></div></div></div></div><div class="sect1 " id="osadm-manage-flavor"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manage flavors</span> <a title="Permalink" class="permalink" href="bk02ch04.html#osadm-manage-flavor">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>osadm-manage-flavor</li></ul></div></div></div></div><p>In OpenStack, a flavor defines the compute, memory, and storage
+disks, RAM, and uptime of all your instances.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project from the
+drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Overview</span> category.</p></li><li class="step"><p>Select a month and click <span class="guimenu">Submit</span> to query the instance usage for
+that month.</p></li><li class="step"><p>Click <span class="guimenu">Download CSV Summary</span> to download a CSV summary.</p></li></ol></div></div></section></section><section class="sect1" id="osadm-manage-flavor" data-id-title="Manage flavors"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.6 </span><span class="title-name">Manage flavors</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#osadm-manage-flavor">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In OpenStack, a flavor defines the compute, memory, and storage
 capacity of a virtual server, also known as an instance. As an
 administrative user, you can create, edit, and delete flavors.</p><p>As of Newton, there are no default flavors.  The following table
-lists the default flavors for Mitaka and earlier.</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>
+lists the default flavors for Mitaka and earlier.</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/><col class="c4"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Flavor</p>
-              </th><th>
+              </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>VCPUs</p>
-              </th><th>
+              </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Disk (in GB)</p>
-              </th><th>
+              </th><th style="border-bottom: 1px solid ; ">
                 <p>RAM (in MB)</p>
-              </th></tr></thead><tbody><tr><td>
+              </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>m1.tiny</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>1</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>1</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>512</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>m1.small</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>1</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>20</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>2048</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>m1.medium</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>2</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>40</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>4096</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>m1.large</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>4</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>80</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>8192</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; ">
                 <p>m1.xlarge</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; ">
                 <p>8</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; ">
                 <p>160</p>
               </td><td>
                 <p>16384</p>
-              </td></tr></tbody></table></div><div class="sect2 " id="id-1.4.6.10.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create flavors</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>In the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span>
-tab and click the <span class="guimenu ">Flavors</span> category.</p></li><li class="step "><p>Click <span class="guimenu ">Create Flavor</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Create Flavor</span> window, enter or select the
-parameters for the flavor in the <span class="guimenu ">Flavor Information</span>
-            tab.</p><div class="figure" id="id-1.4.6.10.5.2.4.2"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/create_flavor.png" target="_blank"><img src="images/create_flavor.png" width="" alt="Dashboard — Create Flavor" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.3: </span><span class="name">Dashboard — Create Flavor </span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.5.2.4.2">#</a></h6></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><tbody><tr><td>
+              </td></tr></tbody></table></div><section class="sect2" id="id-1.4.6.10.5" data-id-title="Create flavors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.6.1 </span><span class="title-name">Create flavors</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>In the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span>
+tab and click the <span class="guimenu">Flavors</span> category.</p></li><li class="step"><p>Click <span class="guimenu">Create Flavor</span>.</p></li><li class="step"><p>In the <span class="guimenu">Create Flavor</span> window, enter or select the
+parameters for the flavor in the <span class="guimenu">Flavor Information</span>
+            tab.</p><div class="figure" id="id-1.4.6.10.5.2.4.2"><div class="figure-contents"><div class="mediaobject"><a href="images/create_flavor.png"><img src="images/create_flavor.png" width="99%" alt="Dashboard — Create Flavor" title="Dashboard — Create Flavor"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 4.3: </span><span class="title-name">Dashboard — Create Flavor </span></span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.5.2.4.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>Name</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the flavor name.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>ID</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Unique ID (integer or UUID) for the
 new flavor. If specifying 'auto', a
 UUID will be automatically generated.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>VCPUs</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the number of virtual CPUs to
 use.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>RAM (MB)</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the amount of RAM to use, in
 megabytes.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>Root Disk (GB)</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the amount of disk space in
 gigabytes to use for the root (/)
 partition.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>Ephemeral Disk (GB)</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the amount of disk space in
 gigabytes to use for the ephemeral
 partition. If unspecified, the value
@@ -370,15 +370,15 @@ of a VM instance. When a VM is
 terminated, all data on the ephemeral
 disk is lost. Ephemeral disks are not
 included in any snapshots.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>Swap Disk (MB)</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>Enter the amount of swap space (in
 megabytes) to use. If unspecified,
 the default is 0.</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>RX/TX Factor</strong></span>
                       </p>
@@ -389,144 +389,144 @@ with the RX/TX Factor. The default
 value is 1. That is, the new bandwidth
 is the same as that of the attached
 network.</p>
-                    </td></tr></tbody></table></div></li><li class="step "><p>In the <span class="guimenu ">Flavor Access</span> tab, you can control access to
-the flavor by moving projects from the <span class="guimenu ">All Projects</span>
-column to the <span class="guimenu ">Selected Projects</span> column.</p><p>Only projects in the <span class="guimenu ">Selected Projects</span> column can
+                    </td></tr></tbody></table></div></li><li class="step"><p>In the <span class="guimenu">Flavor Access</span> tab, you can control access to
+the flavor by moving projects from the <span class="guimenu">All Projects</span>
+column to the <span class="guimenu">Selected Projects</span> column.</p><p>Only projects in the <span class="guimenu">Selected Projects</span> column can
 use the flavor. If there are no projects in the right column,
-all projects can use the flavor.</p></li><li class="step "><p>Click <span class="guimenu ">Create Flavor</span>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.10.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update flavors</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>In the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Flavors</span> category.</p></li><li class="step "><p>Select the flavor that you want to edit. Click <span class="guimenu ">Edit
-Flavor</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Edit Flavor</span> window, you can change the flavor
-name, VCPUs, RAM, root disk, ephemeral disk, and swap disk values.</p></li><li class="step "><p>Click <span class="guimenu ">Save</span>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.10.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update Metadata</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>In the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Flavors</span> category.</p></li><li class="step "><p>Select the flavor that you want to update. In the drop-down
-list, click <span class="guimenu ">Update Metadata</span> or click <span class="guimenu ">No</span> or
-<span class="guimenu ">Yes</span> in the <span class="guimenu ">Metadata</span> column.</p></li><li class="step "><p>In the <span class="guimenu ">Update Flavor Metadata</span> window, you can customize
-some metadata keys, then add it to this flavor and set them values.</p></li><li class="step "><p>Click <span class="guimenu ">Save</span>.</p><p>
+all projects can use the flavor.</p></li><li class="step"><p>Click <span class="guimenu">Create Flavor</span>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.10.6" data-id-title="Update flavors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.6.2 </span><span class="title-name">Update flavors</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>In the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Flavors</span> category.</p></li><li class="step"><p>Select the flavor that you want to edit. Click <span class="guimenu">Edit
+Flavor</span>.</p></li><li class="step"><p>In the <span class="guimenu">Edit Flavor</span> window, you can change the flavor
+name, VCPUs, RAM, root disk, ephemeral disk, and swap disk values.</p></li><li class="step"><p>Click <span class="guimenu">Save</span>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.10.7" data-id-title="Update Metadata"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.6.3 </span><span class="title-name">Update Metadata</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>In the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Flavors</span> category.</p></li><li class="step"><p>Select the flavor that you want to update. In the drop-down
+list, click <span class="guimenu">Update Metadata</span> or click <span class="guimenu">No</span> or
+<span class="guimenu">Yes</span> in the <span class="guimenu">Metadata</span> column.</p></li><li class="step"><p>In the <span class="guimenu">Update Flavor Metadata</span> window, you can customize
+some metadata keys, then add it to this flavor and set them values.</p></li><li class="step"><p>Click <span class="guimenu">Save</span>.</p><p>
               <span class="bold"><strong>Optional metadata keys</strong></span>
-            </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><tbody><tr><td rowspan="5">
+            </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="5">
                       <p>
                         <span class="bold"><strong>CPU limits</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>quota:cpu_shares</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:cpu_period</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:cpu_limit</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:cpu_reservation</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:cpu_quota</p>
-                    </td></tr><tr><td rowspan="6">
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="6">
                       <p>
                         <span class="bold"><strong>Disk tuning</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_read_bytes_sec</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_read_iops_sec</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_write_bytes_sec</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_write_iops_sec</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_total_bytes_sec</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:disk_total_iops_sec</p>
-                    </td></tr><tr><td rowspan="6">
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="6">
                       <p>
                         <span class="bold"><strong>Bandwidth I/O</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_inbound_average</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_inbound_burst</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_inbound_peak</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_outbound_average</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_outbound_burst</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>quota:vif_outbound_peak</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                       <p>
                         <span class="bold"><strong>Watchdog behavior</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>hw:watchdog_action</p>
-                    </td></tr><tr><td rowspan="3">
+                    </td></tr><tr><td style="border-right: 1px solid ; " rowspan="3">
                       <p>
                         <span class="bold"><strong>Random-number generator</strong></span>
                       </p>
-                    </td><td>
+                    </td><td style="border-bottom: 1px solid ; ">
                       <p>hw_rng:allowed</p>
-                    </td></tr><tr><td>
+                    </td></tr><tr><td style="border-bottom: 1px solid ; ">
                       <p>hw_rng:rate_bytes</p>
                     </td></tr><tr><td>
                       <p>hw_rng:rate_period</p>
                     </td></tr></tbody></table></div><p>For information about supporting metadata keys, see the
-<a class="xref" href="bk02ch05.html#compute-flavors" title="5.4.3. Flavors">Section 5.4.3, “Flavors”</a>.</p></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.10.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete flavors</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>In the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Flavors</span> category.</p></li><li class="step "><p>Select the flavors that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Flavors</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Flavors</span> window, click
-<span class="guimenu ">Delete Flavors</span> to confirm the deletion. You cannot
-undo this action.</p></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.6.11"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manage volumes and volume types</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Volumes are the Block Storage devices that you attach to instances to enable
+<a class="xref" href="bk02ch05.html#compute-flavors" title="5.4.3. Flavors">Section 5.4.3, “Flavors”</a>.</p></li></ol></div></div></section><section class="sect2" id="id-1.4.6.10.8" data-id-title="Delete flavors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.6.4 </span><span class="title-name">Delete flavors</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.10.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>In the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Flavors</span> category.</p></li><li class="step"><p>Select the flavors that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Flavors</span>.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Flavors</span> window, click
+<span class="guimenu">Delete Flavors</span> to confirm the deletion. You cannot
+undo this action.</p></li></ol></div></div></section></section><section class="sect1" id="id-1.4.6.11" data-id-title="Manage volumes and volume types"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.7 </span><span class="title-name">Manage volumes and volume types</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Volumes are the Block Storage devices that you attach to instances to enable
 persistent storage. Users can attach a volume to a running instance or detach
 a volume and attach it to another instance at any time. For information about
 using the dashboard to create and manage volumes as an end user, see the
 <a class="link" href="http://docs.openstack.org/user-guide/dashboard-manage-volumes.html" target="_blank">OpenStack End User Guide</a>.</p><p>As an administrative user, you can manage volumes and volume types for users
 in various projects. You can create and delete volume types, and you can view
 and delete volumes. Note that a volume can be encrypted by using the steps
-outlined below.</p><div class="sect2 " id="create-a-volume-type"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a volume type</span> <a title="Permalink" class="permalink" href="bk02ch04.html#create-a-volume-type">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>create-a-volume-type</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span>
-project from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Volumes</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Volume Types</span> tab, and click
-<span class="guimenu ">Create Volume Type</span> button. In the
-<span class="guimenu ">Create Volume Type</span> window, enter a name for the volume type.</p></li><li class="step "><p>Click <span class="guimenu ">Create Volume Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.11.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.11.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create an encrypted volume type</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Create a volume type using the steps above for <a class="xref" href="bk02ch04.html#create-a-volume-type" title="4.7.1. Create a volume type">Section 4.7.1, “Create a volume type”</a>.</p></li><li class="step "><p>Click <span class="guimenu ">Create Encryption</span> in the Actions column of the newly
-created volume type.</p></li><li class="step "><p>Configure the encrypted volume by setting the parameters below from
-available options (see table):</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.6.11.5.2.3.2.1"><span class="term ">Provider</span></dt><dd><p>Specifies the class responsible for configuring the encryption.</p></dd><dt id="id-1.4.6.11.5.2.3.2.2"><span class="term ">Control Location</span></dt><dd><p>Specifies whether the encryption is from the front end (nova) or the
-back end (cinder).</p></dd><dt id="id-1.4.6.11.5.2.3.2.3"><span class="term ">Cipher</span></dt><dd><p>Specifies the encryption algorithm.</p></dd><dt id="id-1.4.6.11.5.2.3.2.4"><span class="term ">Key Size (bits)</span></dt><dd><p>Specifies the encryption key size.</p></dd></dl></div></li><li class="step "><p>Click <span class="guimenu ">Create Volume Type Encryption</span>.</p></li></ol></div></div><div class="figure" id="id-1.4.6.11.5.3"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/create_volume_type_encryption.png" target="_blank"><img src="images/create_volume_type_encryption.png" width="" alt="Encryption Options" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 4.4: </span><span class="name">Encryption Options </span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.5.3">#</a></h6></div></div><p>The table below provides a few alternatives available for creating encrypted
-volumes.</p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+outlined below.</p><section class="sect2" id="create-a-volume-type" data-id-title="Create a volume type"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.7.1 </span><span class="title-name">Create a volume type</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#create-a-volume-type">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span>
+project from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Volumes</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Volume Types</span> tab, and click
+<span class="guimenu">Create Volume Type</span> button. In the
+<span class="guimenu">Create Volume Type</span> window, enter a name for the volume type.</p></li><li class="step"><p>Click <span class="guimenu">Create Volume Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.11.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.11.5" data-id-title="Create an encrypted volume type"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.7.2 </span><span class="title-name">Create an encrypted volume type</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Create a volume type using the steps above for <a class="xref" href="bk02ch04.html#create-a-volume-type" title="4.7.1. Create a volume type">Section 4.7.1, “Create a volume type”</a>.</p></li><li class="step"><p>Click <span class="guimenu">Create Encryption</span> in the Actions column of the newly
+created volume type.</p></li><li class="step"><p>Configure the encrypted volume by setting the parameters below from
+available options (see table):</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.6.11.5.2.3.2.1"><span class="term">Provider</span></dt><dd><p>Specifies the class responsible for configuring the encryption.</p></dd><dt id="id-1.4.6.11.5.2.3.2.2"><span class="term">Control Location</span></dt><dd><p>Specifies whether the encryption is from the front end (nova) or the
+back end (cinder).</p></dd><dt id="id-1.4.6.11.5.2.3.2.3"><span class="term">Cipher</span></dt><dd><p>Specifies the encryption algorithm.</p></dd><dt id="id-1.4.6.11.5.2.3.2.4"><span class="term">Key Size (bits)</span></dt><dd><p>Specifies the encryption key size.</p></dd></dl></div></li><li class="step"><p>Click <span class="guimenu">Create Volume Type Encryption</span>.</p></li></ol></div></div><div class="figure" id="id-1.4.6.11.5.3"><div class="figure-contents"><div class="mediaobject"><a href="images/create_volume_type_encryption.png"><img src="images/create_volume_type_encryption.png" width="99%" alt="Encryption Options" title="Encryption Options"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 4.4: </span><span class="title-name">Encryption Options </span></span><a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.5.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>The table below provides a few alternatives available for creating encrypted
+volumes.</p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Encryption
 parameters</p>
-                </th><th>
+                </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Parameter
 options</p>
-                </th><th>
+                </th><th style="border-bottom: 1px solid ; ">
                   <p>Comments</p>
-                </th></tr></thead><tbody><tr><td rowspan="2">
+                </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">
                   <p>Provider</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>nova.volume.encryptors.
 luks.LuksEncryptor
 (Recommended)</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Allows easier import and
 migration of imported
 encrypted volumes, and
 allows access key to be
 changed without
 re-encrypting the volume</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>nova.volume.encryptors.
 cryptsetup.
 CryptsetupEncryptor</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Less disk overhead than
 LUKS</p>
-                </td></tr><tr><td rowspan="2">
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">
                   <p>Control Location</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>front-end
 (Recommended)</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>The encryption occurs within
 nova so that the data
 transmitted over the network
 is encrypted</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>back-end</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>This could be selected if a
 cinder plug-in supporting
 an encrypted back-end block
@@ -536,242 +536,242 @@ TLS or other network
 encryption would also be
 needed to protect data as it
 traverses the network</p>
-                </td></tr><tr><td rowspan="2">
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="2">
                   <p>Cipher</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>aes-xts-plain64
 (Recommended)</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>See NIST reference below
 to see advantages*</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>aes-cbc-essiv</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Note: On the command line,
 type 'cryptsetup benchmark'
 for additional options</p>
-                </td></tr><tr><td rowspan="2">
+                </td></tr><tr><td style="border-right: 1px solid ; " rowspan="2">
                   <p>Key Size (bits)</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>512 (Recommended for
 aes-xts-plain64. 256
 should be used for
 aes-cbc-essiv)</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Using this selection for
 aes-xts, the underlying key
 size would only be 256-bits*</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; ">
                   <p>256</p>
                 </td><td>
                   <p>Using this selection for
 aes-xts, the underlying key
 size would only be 128-bits*</p>
-                </td></tr></tbody></table></div><p><code class="literal">*</code> Source <a class="link" href="http://csrc.nist.gov/publications/nistpubs/800-38E/nist-sp-800-38E.pdf" target="_blank">NIST SP 800-38E</a></p></div><div class="sect2 " id="id-1.4.6.11.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete volume types</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>When you delete a volume type, volumes of that type are not deleted.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project from
-the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Volumes</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Volume Types</span> tab, select the volume type
-or types that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Volume Types</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Volume Types</span> window, click the
-<span class="guimenu ">Delete Volume Types</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.11.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.11.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete volumes</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>When you delete an instance, the data of its attached volumes is not
-destroyed.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Volumes</span> category.</p></li><li class="step "><p>Select the volume or volumes that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Volumes</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Volumes</span> window, click the
-<span class="guimenu ">Delete Volumes</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.11.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div></div><div class="sect1 " id="id-1.4.6.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manage shares and share types</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Shares are file storage that instances can access. Users can
+                </td></tr></tbody></table></div><p><code class="literal">*</code> Source <a class="link" href="http://csrc.nist.gov/publications/nistpubs/800-38E/nist-sp-800-38E.pdf" target="_blank">NIST SP 800-38E</a></p></section><section class="sect2" id="id-1.4.6.11.6" data-id-title="Delete volume types"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.7.3 </span><span class="title-name">Delete volume types</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>When you delete a volume type, volumes of that type are not deleted.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project from
+the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Volumes</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Volume Types</span> tab, select the volume type
+or types that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Volume Types</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Volume Types</span> window, click the
+<span class="guimenu">Delete Volume Types</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.11.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.11.7" data-id-title="Delete volumes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.7.4 </span><span class="title-name">Delete volumes</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.11.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>When you delete an instance, the data of its attached volumes is not
+destroyed.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Volumes</span> category.</p></li><li class="step"><p>Select the volume or volumes that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Volumes</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Volumes</span> window, click the
+<span class="guimenu">Delete Volumes</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.11.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section></section><section class="sect1" id="id-1.4.6.12" data-id-title="Manage shares and share types"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.8 </span><span class="title-name">Manage shares and share types</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Shares are file storage that instances can access. Users can
 allow or deny a running instance to have access to a share at any time.
 For information about using the Dashboard to create and manage shares as
 an end user, see the
 <a class="link" href="http://docs.openstack.org/user-guide/dashboard-manage-shares.html" target="_blank">OpenStack End User Guide</a>.</p><p>As an administrative user, you can manage shares and share types for users
 in various projects. You can create and delete share types, and view
-or delete shares.</p><div class="sect2 " id="id-1.4.6.12.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a share type</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span>
-project from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Shares</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Share Types</span> tab, and click
-<span class="guimenu ">Create Share Type</span> button. In the
-<span class="guimenu ">Create Share Type</span> window, enter or select the
-following values.</p><p><span class="guimenu ">Name</span>: Enter a name for the share type.</p><p><span class="guimenu ">Driver handles share servers</span>: Choose True or False</p><p><span class="guimenu ">Extra specs</span>: To add extra specs, use key=value.</p></li><li class="step "><p>Click <span class="guimenu ">Create Share Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.12.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.12.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update share type</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span> project from
-the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Shares</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Share Types</span> tab, select the share type
-that you want to update.</p></li><li class="step "><p>Select <span class="guimenu ">Update Share Type</span> from Actions.</p></li><li class="step "><p>In the <span class="guimenu ">Update Share Type</span> window, update extra specs.</p><p><span class="guimenu ">Extra specs</span>: To add extra specs, use key=value.
-To unset extra specs, use key.</p></li><li class="step "><p>Click <span class="guimenu ">Update Share Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.12.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.12.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete share types</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>When you delete a share type, shares of that type are not deleted.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span> project from
-the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Shares</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Share Types</span> tab, select the share type
-or types that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Share Types</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Share Types</span> window, click the
-<span class="guimenu ">Delete Share Types</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.12.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete shares</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Shares</span> category.</p></li><li class="step "><p>Select the share or shares that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Shares</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Shares</span> window, click the
-<span class="guimenu ">Delete Shares</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.12.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete share server</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Share Servers</span> category.</p></li><li class="step "><p>Select the share that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Share Server</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Share Server</span> window, click the
-<span class="guimenu ">Delete Share Server</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div><div class="sect2 " id="id-1.4.6.12.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delete share networks</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.9">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and choose the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Share Networks</span> category.</p></li><li class="step "><p>Select the share network or share networks that you want to delete.</p></li><li class="step "><p>Click <span class="guimenu ">Delete Share Networks</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Confirm Delete Share Networks</span> window, click the
-<span class="guimenu ">Delete Share Networks</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>A message indicates whether the action succeeded.</p></div></div></div><div class="sect1 " id="id-1.4.6.13"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View and manage quotas</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To prevent system capacities from being exhausted without notification,
+or delete shares.</p><section class="sect2" id="id-1.4.6.12.4" data-id-title="Create a share type"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.1 </span><span class="title-name">Create a share type</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span>
+project from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Shares</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Share Types</span> tab, and click
+<span class="guimenu">Create Share Type</span> button. In the
+<span class="guimenu">Create Share Type</span> window, enter or select the
+following values.</p><p><span class="guimenu">Name</span>: Enter a name for the share type.</p><p><span class="guimenu">Driver handles share servers</span>: Choose True or False</p><p><span class="guimenu">Extra specs</span>: To add extra specs, use key=value.</p></li><li class="step"><p>Click <span class="guimenu">Create Share Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.12.4.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.12.5" data-id-title="Update share type"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.2 </span><span class="title-name">Update share type</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span> project from
+the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Shares</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Share Types</span> tab, select the share type
+that you want to update.</p></li><li class="step"><p>Select <span class="guimenu">Update Share Type</span> from Actions.</p></li><li class="step"><p>In the <span class="guimenu">Update Share Type</span> window, update extra specs.</p><p><span class="guimenu">Extra specs</span>: To add extra specs, use key=value.
+To unset extra specs, use key.</p></li><li class="step"><p>Click <span class="guimenu">Update Share Type</span> button to confirm your changes.</p></li></ol></div></div><div id="id-1.4.6.12.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.12.6" data-id-title="Delete share types"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.3 </span><span class="title-name">Delete share types</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>When you delete a share type, shares of that type are not deleted.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span> project from
+the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Shares</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Share Types</span> tab, select the share type
+or types that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Share Types</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Share Types</span> window, click the
+<span class="guimenu">Delete Share Types</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.12.7" data-id-title="Delete shares"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.4 </span><span class="title-name">Delete shares</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Shares</span> category.</p></li><li class="step"><p>Select the share or shares that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Shares</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Shares</span> window, click the
+<span class="guimenu">Delete Shares</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.12.8" data-id-title="Delete share server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.5 </span><span class="title-name">Delete share server</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Share Servers</span> category.</p></li><li class="step"><p>Select the share that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Share Server</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Share Server</span> window, click the
+<span class="guimenu">Delete Share Server</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section><section class="sect2" id="id-1.4.6.12.9" data-id-title="Delete share networks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.8.6 </span><span class="title-name">Delete share networks</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.12.9">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and choose the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Share Networks</span> category.</p></li><li class="step"><p>Select the share network or share networks that you want to delete.</p></li><li class="step"><p>Click <span class="guimenu">Delete Share Networks</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Confirm Delete Share Networks</span> window, click the
+<span class="guimenu">Delete Share Networks</span> button to confirm the action.</p></li></ol></div></div><div id="id-1.4.6.12.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>A message indicates whether the action succeeded.</p></div></section></section><section class="sect1" id="id-1.4.6.13" data-id-title="View and manage quotas"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.9 </span><span class="title-name">View and manage quotas</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To prevent system capacities from being exhausted without notification,
 you can set up quotas. Quotas are operational limits. For example, the
 number of gigabytes allowed for each project can be controlled so that
 cloud resources are optimized. Quotas can be enforced at both the project
 and the project-user level.</p><p>Typically, you change quotas when a project needs more than ten
 volumes or 1 TB on a compute node.</p><p>Using the Dashboard, you can view default Compute and Block Storage
-quotas for new projects, as well as update quotas for existing projects.</p><div id="id-1.4.6.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>Using the command-line interface, you can manage quotas for the
+quotas for new projects, as well as update quotas for existing projects.</p><div id="id-1.4.6.13.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Using the command-line interface, you can manage quotas for the
 OpenStack Compute service, the OpenStack Block Storage service, and
 the OpenStack Networking service (see <a class="link" href="http://docs.openstack.org/admin-guide/cli-set-quotas.html" target="_blank">OpenStack Administrator Guide</a>).
 Additionally, you can update Compute service quotas for
 project users.</p></div><p>The following table describes the Compute and Block Storage service quotas:</p><p>
         <span class="bold"><strong>Quota Descriptions</strong></span>
-      </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+      </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Quota Name</p>
-              </th><th>
+              </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Defines the number of</p>
-              </th><th>
+              </th><th style="border-bottom: 1px solid ; ">
                 <p>Service</p>
-              </th></tr></thead><tbody><tr><td>
+              </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Gigabytes</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Volume gigabytes allowed for
 each project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Block Storage</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Instances</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Instances allowed for each
 project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Injected Files</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Injected files allowed for each
 project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Injected File
 Content Bytes</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Content bytes allowed for each
 injected file.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Keypairs</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Number of keypairs.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Metadata Items</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Metadata items allowed for each
 instance.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>RAM (MB)</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>RAM megabytes allowed for
 each instance.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Security Groups</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Security groups allowed for each
 project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Security Group
 Rules</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Rules allowed for each security
 group.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Snapshots</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Volume snapshots allowed for
 each project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Block Storage</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>VCPUs</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                 <p>Instance cores allowed for each
 project.</p>
-              </td><td>
+              </td><td style="border-bottom: 1px solid ; ">
                 <p>Compute</p>
-              </td></tr><tr><td>
+              </td></tr><tr><td style="border-right: 1px solid ; ">
                 <p>Volumes</p>
-              </td><td>
+              </td><td style="border-right: 1px solid ; ">
                 <p>Volumes allowed for each
 project.</p>
               </td><td>
                 <p>Block Storage</p>
-              </td></tr></tbody></table></div><div class="sect2 " id="id-1.4.6.13.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View default project quotas</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13.9">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Defaults</span> category.</p></li><li class="step "><p>The default quota values are displayed.</p></li></ol></div></div><div id="id-1.4.6.13.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>You can sort the table by clicking on either the
-<span class="guimenu ">Quota Name</span> or <span class="guimenu ">Limit</span> column headers.</p></div></div><div class="sect2 " id="id-1.4.6.13.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Update project quotas</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13.10">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">Defaults</span> category.</p></li><li class="step "><p>Click the <span class="guimenu ">Update Defaults</span> button.</p></li><li class="step "><p>In the <span class="guimenu ">Update Default Quotas</span> window,
-you can edit the default quota values.</p></li><li class="step "><p>Click the <span class="guimenu ">Update Defaults</span> button.</p></li></ol></div></div><div id="id-1.4.6.13.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>The dashboard does not show all possible project quotas.
+              </td></tr></tbody></table></div><section class="sect2" id="id-1.4.6.13.9" data-id-title="View default project quotas"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.9.1 </span><span class="title-name">View default project quotas</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13.9">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Defaults</span> category.</p></li><li class="step"><p>The default quota values are displayed.</p></li></ol></div></div><div id="id-1.4.6.13.9.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>You can sort the table by clicking on either the
+<span class="guimenu">Quota Name</span> or <span class="guimenu">Limit</span> column headers.</p></div></section><section class="sect2" id="id-1.4.6.13.10" data-id-title="Update project quotas"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.9.2 </span><span class="title-name">Update project quotas</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.13.10">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">Defaults</span> category.</p></li><li class="step"><p>Click the <span class="guimenu">Update Defaults</span> button.</p></li><li class="step"><p>In the <span class="guimenu">Update Default Quotas</span> window,
+you can edit the default quota values.</p></li><li class="step"><p>Click the <span class="guimenu">Update Defaults</span> button.</p></li></ol></div></div><div id="id-1.4.6.13.10.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>The dashboard does not show all possible project quotas.
 To view and update the quotas for a service, use its
-command-line client. See <a class="link" href="http://docs.openstack.org/admin-guide/cli-set-quotas.html" target="_blank">OpenStack Administrator Guide</a>.</p></div></div></div><div class="sect1 " id="id-1.4.6.14"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View cloud resources</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect2 " id="id-1.4.6.14.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View services information</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.2">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>As an administrative user, you can view information for OpenStack services.</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the
-<span class="guimenu ">admin</span> project from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab
-and click the <span class="guimenu ">System Information</span> category.</p><p>View the following information on these tabs:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="guimenu ">Services</span>:
+command-line client. See <a class="link" href="http://docs.openstack.org/admin-guide/cli-set-quotas.html" target="_blank">OpenStack Administrator Guide</a>.</p></div></section></section><section class="sect1" id="id-1.4.6.14" data-id-title="View cloud resources"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.10 </span><span class="title-name">View cloud resources</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="id-1.4.6.14.2" data-id-title="View services information"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.10.1 </span><span class="title-name">View services information</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.2">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>As an administrative user, you can view information for OpenStack services.</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the
+<span class="guimenu">admin</span> project from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab
+and click the <span class="guimenu">System Information</span> category.</p><p>View the following information on these tabs:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="guimenu">Services</span>:
 Displays the internal name and the public OpenStack name
 for each service, the host on which the service runs,
-and whether or not the service is enabled.</p></li><li class="listitem "><p><span class="guimenu ">Compute Services</span>:
+and whether or not the service is enabled.</p></li><li class="listitem"><p><span class="guimenu">Compute Services</span>:
 Displays information specific to the Compute service. Both host
 and zone are listed for each service, as well as its
-activation status.</p></li><li class="listitem "><p><span class="guimenu ">Block Storage Services</span>:
+activation status.</p></li><li class="listitem"><p><span class="guimenu">Block Storage Services</span>:
 Displays information specific to the Block Storage service. Both host
 and zone are listed for each service, as well as its
-activation status.</p></li><li class="listitem "><p><span class="guimenu ">Network Agents</span>:
+activation status.</p></li><li class="listitem"><p><span class="guimenu">Network Agents</span>:
 Displays the network agents active within the cluster, such as L3 and
-DHCP agents, and the status of each agent.</p></li><li class="listitem "><p><span class="guimenu ">Orchestration Services</span>:
+DHCP agents, and the status of each agent.</p></li><li class="listitem"><p><span class="guimenu">Orchestration Services</span>:
 Displays information specific to the Orchestration service. Name,
 engine id, host and topic are listed for each service, as well as its
-activation status.</p></li></ul></div></li></ol></div></div></div><div class="sect2 " id="id-1.4.6.14.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View cloud usage statistics</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Telemetry service provides user-level usage data for
+activation status.</p></li></ul></div></li></ol></div></div></section><section class="sect2" id="id-1.4.6.14.3" data-id-title="View cloud usage statistics"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.10.2 </span><span class="title-name">View cloud usage statistics</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Telemetry service provides user-level usage data for
 OpenStack-based clouds, which can be used for customer billing, system
 monitoring, or alerts. Data can be collected by notifications sent by
 existing OpenStack components (for example, usage events emitted from
-Compute) or by polling the infrastructure (for example, libvirt).</p><div id="id-1.4.6.14.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>You can only view metering statistics on the dashboard (available
+Compute) or by polling the infrastructure (for example, libvirt).</p><div id="id-1.4.6.14.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>You can only view metering statistics on the dashboard (available
 only to administrators).
 The Telemetry service must be set up and administered through the
 <code class="command">ceilometer</code> command-line interface (CLI).</p><p>For basic administration information, refer to the <a class="link" href="http://docs.openstack.org/user-guide/cli-ceilometer.html" target="_blank">Measure Cloud
 Resources</a>
-chapter in the OpenStack End User Guide.</p></div><div class="sect3 " id="id-1.4.6.14.3.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">View resource statistics</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.3.4">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, click the <span class="guimenu ">Resource Usage</span> category.</p></li><li class="step "><p>Click the:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="guimenu ">Usage Report</span> tab to view a usage report per project
+chapter in the OpenStack End User Guide.</p></div><section class="sect3" id="id-1.4.6.14.3.4" data-id-title="View resource statistics"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.2.1 </span><span class="title-name">View resource statistics</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.14.3.4">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, click the <span class="guimenu">Resource Usage</span> category.</p></li><li class="step"><p>Click the:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="guimenu">Usage Report</span> tab to view a usage report per project
 by specifying the time period (or even use a calendar to define
-a date range).</p></li><li class="listitem "><p><span class="guimenu ">Stats</span> tab to view a multi-series line chart with
+a date range).</p></li><li class="listitem"><p><span class="guimenu">Stats</span> tab to view a multi-series line chart with
 user-defined meters. You group by project, define the value type
 (min, max, avg, or sum), and specify the time period (or even use
-a calendar to define a date range).</p></li></ul></div></li></ol></div></div></div></div></div><div class="sect1 " id="id-1.4.6.15"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create and manage host aggregates</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Host aggregates enable administrative users to assign key-value pairs to
+a calendar to define a date range).</p></li></ul></div></li></ol></div></div></section></section></section><section class="sect1" id="id-1.4.6.15" data-id-title="Create and manage host aggregates"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.11 </span><span class="title-name">Create and manage host aggregates</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Host aggregates enable administrative users to assign key-value pairs to
 groups of machines.</p><p>Each node can have multiple aggregates and each aggregate can have
 multiple key-value pairs. You can assign the same key-value pair to
 multiple aggregates.</p><p>The scheduler uses this information to make scheduling decisions.
 For information, see
-<a class="link" href="http://docs.openstack.org/newton/config-reference/compute/scheduler.html" target="_blank">Scheduling</a>.</p><div class="sect2 " id="id-1.4.6.15.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To create a host aggregate</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Log in to the Dashboard and select the <span class="guimenu ">admin</span> project
-from the drop-down list.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab and click
-the <span class="guimenu ">Host Aggregates</span> category.</p></li><li class="step "><p>Click <span class="guimenu ">Create Host Aggregate</span>.</p></li><li class="step "><p>In the <span class="guimenu ">Create Host Aggregate</span> dialog box, enter or select the
-following values on the <span class="guimenu ">Host Aggregate Information</span> tab:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="guimenu ">Name</span>: The host aggregate name.</p></li><li class="listitem "><p><span class="guimenu ">Availability Zone</span>: The cloud provider defines the default
+<a class="link" href="http://docs.openstack.org/newton/config-reference/compute/scheduler.html" target="_blank">Scheduling</a>.</p><section class="sect2" id="id-1.4.6.15.5" data-id-title="To create a host aggregate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.11.1 </span><span class="title-name">To create a host aggregate</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Log in to the Dashboard and select the <span class="guimenu">admin</span> project
+from the drop-down list.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab and click
+the <span class="guimenu">Host Aggregates</span> category.</p></li><li class="step"><p>Click <span class="guimenu">Create Host Aggregate</span>.</p></li><li class="step"><p>In the <span class="guimenu">Create Host Aggregate</span> dialog box, enter or select the
+following values on the <span class="guimenu">Host Aggregate Information</span> tab:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="guimenu">Name</span>: The host aggregate name.</p></li><li class="listitem"><p><span class="guimenu">Availability Zone</span>: The cloud provider defines the default
 availability zone, such as <code class="literal">us-west</code>, <code class="literal">apac-south</code>, or
-<code class="literal">nova</code>. You can target the host aggregate, as follows:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>When the host aggregate is exposed as an availability zone,
-select the availability zone when you launch an instance.</p></li><li class="listitem "><p>When the host aggregate is not exposed as an availability zone,
+<code class="literal">nova</code>. You can target the host aggregate, as follows:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>When the host aggregate is exposed as an availability zone,
+select the availability zone when you launch an instance.</p></li><li class="listitem"><p>When the host aggregate is not exposed as an availability zone,
 select a flavor and its extra specs to target the host
-aggregate.</p></li></ul></div></li></ul></div></li><li class="step "><p>Assign hosts to the aggregate using the <span class="guimenu ">Manage Hosts within
+aggregate.</p></li></ul></div></li></ul></div></li><li class="step"><p>Assign hosts to the aggregate using the <span class="guimenu">Manage Hosts within
 Aggregate</span> tab in the same dialog box.</p><p>To assign a host to the aggregate, click <span class="bold"><strong>+</strong></span> for the host. The host
-moves from the <span class="guimenu ">All available hosts</span> list to the
-<span class="guimenu ">Selected hosts</span> list.</p></li></ol></div></div><p>You can add one host to one or more aggregates. To add a host to an
-existing aggregate, edit the aggregate.</p></div><div class="sect2 " id="id-1.4.6.15.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">To manage host aggregates</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Select the <span class="guimenu ">admin</span> project from the drop-down list at the top
-of the page.</p></li><li class="step "><p>On the <span class="guimenu ">Admin</span> tab, open the <span class="guimenu ">System</span> tab and click
-the <span class="guimenu ">Host Aggregates</span> category.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>To edit host aggregates, select the host aggregate that you want
-to edit. Click <span class="guimenu ">Edit Host Aggregate</span>.</p><p>In the <span class="guimenu ">Edit Host Aggregate</span> dialog box, you can change the
-name and availability zone for the aggregate.</p></li><li class="listitem "><p>To manage hosts, locate the host aggregate that you want to edit
-in the table. Click <span class="guimenu ">More</span> and select <span class="guimenu ">Manage Hosts</span>.</p><p>In the <span class="guimenu ">Add/Remove Hosts to Aggregate</span> dialog box,
+moves from the <span class="guimenu">All available hosts</span> list to the
+<span class="guimenu">Selected hosts</span> list.</p></li></ol></div></div><p>You can add one host to one or more aggregates. To add a host to an
+existing aggregate, edit the aggregate.</p></section><section class="sect2" id="id-1.4.6.15.6" data-id-title="To manage host aggregates"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.11.2 </span><span class="title-name">To manage host aggregates</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.15.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Select the <span class="guimenu">admin</span> project from the drop-down list at the top
+of the page.</p></li><li class="step"><p>On the <span class="guimenu">Admin</span> tab, open the <span class="guimenu">System</span> tab and click
+the <span class="guimenu">Host Aggregates</span> category.</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>To edit host aggregates, select the host aggregate that you want
+to edit. Click <span class="guimenu">Edit Host Aggregate</span>.</p><p>In the <span class="guimenu">Edit Host Aggregate</span> dialog box, you can change the
+name and availability zone for the aggregate.</p></li><li class="listitem"><p>To manage hosts, locate the host aggregate that you want to edit
+in the table. Click <span class="guimenu">More</span> and select <span class="guimenu">Manage Hosts</span>.</p><p>In the <span class="guimenu">Add/Remove Hosts to Aggregate</span> dialog box,
 click <span class="bold"><strong>+</strong></span> to assign a host to an aggregate. Click <span class="bold"><strong>-</strong></span> to
-remove a host that is assigned to an aggregate.</p></li><li class="listitem "><p>To delete host aggregates, locate the host aggregate that you want
-to edit in the table. Click <span class="guimenu ">More</span> and select
-<span class="guimenu ">Delete Host Aggregate</span>.</p></li></ul></div></li></ol></div></div></div></div><div class="sect1 " id="id-1.4.6.16"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Launch and manage stacks using the Dashboard</span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.16">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Orchestration service provides a template-based
+remove a host that is assigned to an aggregate.</p></li><li class="listitem"><p>To delete host aggregates, locate the host aggregate that you want
+to edit in the table. Click <span class="guimenu">More</span> and select
+<span class="guimenu">Delete Host Aggregate</span>.</p></li></ul></div></li></ol></div></div></section></section><section class="sect1" id="id-1.4.6.16" data-id-title="Launch and manage stacks using the Dashboard"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.12 </span><span class="title-name">Launch and manage stacks using the Dashboard</span></span> <a title="Permalink" class="permalink" href="bk02ch04.html#id-1.4.6.16">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Orchestration service provides a template-based
 orchestration engine for the OpenStack cloud. Orchestration
 services create and manage cloud infrastructure
 resources such as storage, networking, instances, and
@@ -782,9 +782,8 @@ security groups, or users. The Orchestration service
 offers access to all OpenStack
 core services via a single modular template, with additional
 orchestration capabilities such as auto-scaling and basic
-high availability.</p><p>For information about:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>administrative tasks on the command-line, see
-the <a class="link" href="http://docs.openstack.org/admin-guide/cli-admin-manage-stacks.html" target="_blank">OpenStack Administrator Guide</a>.</p><div id="id-1.4.6.16.5.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>There are no administration-specific tasks that can be done through
-the Dashboard.</p></div></li><li class="listitem "><p>the basic creation and deletion of Orchestration stacks, refer to
-the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-stacks.html" target="_blank">OpenStack End User Guide</a>.</p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02ch05.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Compute</span></a><a class="nav-link" href="cha-identity.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Identity management</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+high availability.</p><p>For information about:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>administrative tasks on the command-line, see
+the <a class="link" href="http://docs.openstack.org/admin-guide/cli-admin-manage-stacks.html" target="_blank">OpenStack Administrator Guide</a>.</p><div id="id-1.4.6.16.5.1.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>There are no administration-specific tasks that can be done through
+the Dashboard.</p></div></li><li class="listitem"><p>the basic creation and deletion of Orchestration stacks, refer to
+the <a class="link" href="http://docs.openstack.org/user-guide/dashboard-stacks.html" target="_blank">OpenStack End User Guide</a>.</p></li></ul></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-identity.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Identity management</span></a> </div><div><a class="pagination-link next" href="bk02ch05.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Compute</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.5"><span class="title-number">4.1 </span><span class="title-name">Customize and configure the Dashboard</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.6"><span class="title-number">4.2 </span><span class="title-name">Set up session storage for the Dashboard</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.7"><span class="title-number">4.3 </span><span class="title-name">Create and manage images</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.8"><span class="title-number">4.4 </span><span class="title-name">Create and manage roles</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.9"><span class="title-number">4.5 </span><span class="title-name">Manage instances</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#osadm-manage-flavor"><span class="title-number">4.6 </span><span class="title-name">Manage flavors</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.11"><span class="title-number">4.7 </span><span class="title-name">Manage volumes and volume types</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.12"><span class="title-number">4.8 </span><span class="title-name">Manage shares and share types</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.13"><span class="title-number">4.9 </span><span class="title-name">View and manage quotas</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.14"><span class="title-number">4.10 </span><span class="title-name">View cloud resources</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.15"><span class="title-number">4.11 </span><span class="title-name">Create and manage host aggregates</span></a></span></li><li><span class="sect1"><a href="bk02ch04.html#id-1.4.6.16"><span class="title-number">4.12 </span><span class="title-name">Launch and manage stacks using the Dashboard</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

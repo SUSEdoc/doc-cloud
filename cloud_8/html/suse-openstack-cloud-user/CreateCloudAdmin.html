@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Cloud Admin Actions with the Command Line | User Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…" />
-<meta name="description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="User Guide" />
-<meta name="chapter-title" content="Chapter 4. Cloud Admin Actions with the Command Line" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…" />
-<meta property="og:description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…" />
-<meta name="twitter:description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration." />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="user-cloudadmin.html" title="Part I. Cloud Admin User Guide" /><link rel="prev" href="cloudadmin-gui.html" title="Chapter 3. Cloud Admin Actions with the Dashboard" /><link rel="next" href="install-cli.html" title="Chapter 5. Installing the Command-Line Clients" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | User Guide | Cloud Admin Actions with the Command Line</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…"/>
+<meta name="description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 4. Cloud Admin Actions with the Command Line"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…"/>
+<meta property="og:description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cloud Admin Actions with the Command Line | SUSE OpenS…"/>
+<meta name="twitter:description" content="Cloud admins can use the command line tools to perform domain admin tasks such as user and project administration."/>
+<link rel="prev" href="cloudadmin-gui.html" title="Chapter 3. Cloud Admin Actions with the Dashboard"/><link rel="next" href="install-cli.html" title="Chapter 5. Installing the Command-Line Clients"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,17 +34,17 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="CreateCloudAdmin.html">Cloud Admin Actions with the Command Line</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="user-cloudadmin.html"><span class="number">I </span><span class="name">Cloud Admin User Guide</span></a><ol><li class="inactive"><a href="using-opsconsole.html"><span class="number">1 </span><span class="name">Using the Operations Console</span></a></li><li class="inactive"><a href="user-dashboard-overview.html"><span class="number">2 </span><span class="name">Using the Dashboard</span></a></li><li class="inactive"><a href="cloudadmin-gui.html"><span class="number">3 </span><span class="name">Cloud Admin Actions with the Dashboard</span></a></li><li class="inactive"><a href="CreateCloudAdmin.html"><span class="number">4 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></li><li class="inactive"><a href="install-cli.html"><span class="number">5 </span><span class="name">Installing the Command-Line Clients</span></a></li><li class="inactive"><a href="CreateHARouter.html"><span class="number">6 </span><span class="name">Creating a Highly Available Router</span></a></li></ol></li><li class="inactive"><a href="user-nonadmin.html"><span class="number">II </span><span class="name">Project User Guide</span></a><ol><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">7 </span><span class="name">Using Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="idg-all-userguide-create-network-xml-1.html"><span class="number">8 </span><span class="name">Creating a Private Network</span></a></li><li class="inactive"><a href="create-keypair.html"><span class="number">9 </span><span class="name">Creating a Key Pair</span></a></li><li class="inactive"><a href="user-image-upload.html"><span class="number">10 </span><span class="name">Creating and Uploading a Glance Image</span></a></li><li class="inactive"><a href="lbaas-dashboard.html"><span class="number">11 </span><span class="name">Creating a Load Balancer with the Dashboard</span></a></li><li class="inactive"><a href="HP2-0LBaaS.html"><span class="number">12 </span><span class="name">Using Load Balancing as a Service (LBaaS)</span></a></li><li class="inactive"><a href="LBaaSHeat.html"><span class="number">13 </span><span class="name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li class="inactive"><a href="HP2-0FWaaS.html"><span class="number">14 </span><span class="name">Using Firewall as a Service (FWaaS)</span></a></li><li class="inactive"><a href="UsingVPNaaS.html"><span class="number">15 </span><span class="name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Cloud Admin Actions with the Dashboard" href="cloudadmin-gui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Installing the Command-Line Clients" href="install-cli.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> › </span><a class="crumb" href="CreateCloudAdmin.html">Cloud Admin Actions with the Command Line</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Cloud Admin Actions with the Dashboard" href="cloudadmin-gui.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Installing the Command-Line Clients" href="install-cli.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="CreateCloudAdmin"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Cloud Admin Actions with the Command Line</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>CreateCloudAdmin</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-4"><span class="number">4.1 </span><span class="name">Creating Additional Cloud Admins</span></a></span></dt><dt><span class="section"><a href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-5"><span class="number">4.2 </span><span class="name">Command Line Examples</span></a></span></dt><dt><span class="section"><a href="CreateCloudAdmin.html#default-service-admin-roles"><span class="number">4.3 </span><span class="name">Assigning the default service admin roles</span></a></span></dt><dt><span class="section"><a href="CreateCloudAdmin.html#customize-policy"><span class="number">4.4 </span><span class="name">Customize policy.json on the Cloud Lifecycle Manager</span></a></span></dt><dt><span class="section"><a href="CreateCloudAdmin.html#service-roles"><span class="number">4.5 </span><span class="name">Roles</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="user-cloudadmin.html">Cloud Admin User Guide</a><span> / </span><a class="crumb" href="CreateCloudAdmin.html">Cloud Admin Actions with the Command Line</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li class="active"><a href="user-cloudadmin.html" class="has-children you-are-here"><span class="title-number">I </span><span class="title-name">Cloud Admin User Guide</span></a><ol><li><a href="using-opsconsole.html" class=" "><span class="title-number">1 </span><span class="title-name">Using the Operations Console</span></a></li><li><a href="user-dashboard-overview.html" class=" "><span class="title-number">2 </span><span class="title-name">Using the Dashboard</span></a></li><li><a href="cloudadmin-gui.html" class=" "><span class="title-number">3 </span><span class="title-name">Cloud Admin Actions with the Dashboard</span></a></li><li><a href="CreateCloudAdmin.html" class=" you-are-here"><span class="title-number">4 </span><span class="title-name">Cloud Admin Actions with the Command Line</span></a></li><li><a href="install-cli.html" class=" "><span class="title-number">5 </span><span class="title-name">Installing the Command-Line Clients</span></a></li><li><a href="CreateHARouter.html" class=" "><span class="title-number">6 </span><span class="title-name">Creating a Highly Available Router</span></a></li></ol></li><li><a href="user-nonadmin.html" class="has-children "><span class="title-number">II </span><span class="title-name">Project User Guide</span></a><ol><li><a href="using-container-as-a-service-overview.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Container as a Service (Magnum)</span></a></li><li><a href="idg-all-userguide-create-network-xml-1.html" class=" "><span class="title-number">8 </span><span class="title-name">Creating a Private Network</span></a></li><li><a href="create-keypair.html" class=" "><span class="title-number">9 </span><span class="title-name">Creating a Key Pair</span></a></li><li><a href="user-image-upload.html" class=" "><span class="title-number">10 </span><span class="title-name">Creating and Uploading a Glance Image</span></a></li><li><a href="lbaas-dashboard.html" class=" "><span class="title-number">11 </span><span class="title-name">Creating a Load Balancer with the Dashboard</span></a></li><li><a href="HP2-0LBaaS.html" class=" "><span class="title-number">12 </span><span class="title-name">Using Load Balancing as a Service (LBaaS)</span></a></li><li><a href="LBaaSHeat.html" class=" "><span class="title-number">13 </span><span class="title-name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li><a href="HP2-0FWaaS.html" class=" "><span class="title-number">14 </span><span class="title-name">Using Firewall as a Service (FWaaS)</span></a></li><li><a href="UsingVPNaaS.html" class=" "><span class="title-number">15 </span><span class="title-name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="CreateCloudAdmin" data-id-title="Cloud Admin Actions with the Command Line"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Cloud Admin Actions with the Command Line</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Cloud admins can use the command line tools to perform domain admin tasks
   such as user and project administration.
- </p><div class="sect1" id="idg-all-operations-cloudadmin-cli-xml-4"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Additional Cloud Admins</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-cloudadmin-cli-xml-4</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="idg-all-operations-cloudadmin-cli-xml-4" data-id-title="Creating Additional Cloud Admins"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name">Creating Additional Cloud Admins</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can create additional Cloud Admins to help with the administration of
    your cloud.
   </p><p>
    Keystone identity service query and administration tasks can be performed
    using the <span class="productname">OpenStack</span> command line utility. The utility is installed by the
    Cloud Lifecycle Manager onto the Cloud Lifecycle Manager.
-  </p><div id="id-1.7.3.5.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.7.3.5.3.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Keystone administration tasks should be performed by an
     <span class="emphasis"><em>admin</em></span> user with a token scoped to the
     <span class="emphasis"><em>default</em></span> domain via the Keystone v3 identity API.
@@ -53,7 +53,7 @@ hljs.configure({
     <code class="filename">keystone.osrc</code> is configured with the admin endpoint of
     Keystone. If the admin endpoint is not accessible from your network, change
     <code class="literal">OS_AUTH_URL</code> to point to the public endpoint.
-   </p></div></div><div class="sect1" id="idg-all-operations-cloudadmin-cli-xml-5"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Command Line Examples</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-cloudadmin-cli-xml-5</li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect1" id="idg-all-operations-cloudadmin-cli-xml-5" data-id-title="Command Line Examples"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name">Command Line Examples</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For a full list of OpenStackClient commands, see
    <a class="link" href="http://docs.openstack.org/developer/python-openstackclient/command-list.html" target="_blank">OpenStackClient
    Command List</a>.
@@ -182,7 +182,7 @@ openstack role assignment list --user &lt;username&gt; --domain default</pre></d
 | Role                             | User                             | Group | Project | Domain  |
 +----------------------------------+----------------------------------+-------+---------+---------+
 | b398322103504546a070d607d02618ad | 8aad69acacf0457e9690abf8c557754b |       |         | default |
-+----------------------------------+----------------------------------+-------+---------+---------+</pre></div></div><div class="sect1" id="default-service-admin-roles"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Assigning the default service admin roles</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#default-service-admin-roles">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>default-service-admin-roles</li></ul></div></div></div></div><p>
++----------------------------------+----------------------------------+-------+---------+---------+</pre></div></section><section class="sect1" id="default-service-admin-roles" data-id-title="Assigning the default service admin roles"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.3 </span><span class="title-name">Assigning the default service admin roles</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#default-service-admin-roles">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following examples illustrate how you can assign each of the new service
    admin roles to a user.
   </p><p>
@@ -191,16 +191,16 @@ openstack role assignment list --user &lt;username&gt; --domain default</pre></d
    A user must have the role of admin in order to assign the glance_admin role.
    To assign the role, you will set the environment variables needed for the
    identity service administrator.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      First, source the identity service credentials:
-    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem"><p>
      You can add the glance_admin role to a user on a project with this
      command:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user &lt;username&gt; --project &lt;project_name&gt; glance_admin</pre></div><p>
      Example, showing a user named <code class="literal">testuser</code> being granted
      the <code class="literal">glance_admin</code> role in the
      <code class="literal">test_project</code> project:
-    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project glance_admin</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project glance_admin</pre></div></li><li class="listitem"><p>
      You can confirm the role assignment by listing out the roles:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role assignment list --user &lt;username&gt;</pre></div><p>
      Example output:
@@ -209,7 +209,7 @@ openstack role assignment list --user &lt;username&gt; --domain default</pre></d
 | Role                             | User                             | Group | Project                          | Domain | Inherited |
 +----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
 | 46ba80078bc64853b051c964db918816 | 8bcfe10101964e0c8ebc4de391f3e345 |       | 0ebbf7640d7948d2a17ac08bbbf0ca5b |        | False     |
-+----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem "><p>
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem"><p>
      Note that only the role ID is displayed. To get the role name, execute the
      following:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role show &lt;role_id&gt;</pre></div><p>
@@ -220,20 +220,20 @@ openstack role assignment list --user &lt;username&gt; --domain default</pre></d
 +-------+----------------------------------+
 | id    | 46ba80078bc64853b051c964db918816 |
 | name  | glance_admin                     |
-+-------+----------------------------------+</pre></div></li><li class="listitem "><p>
++-------+----------------------------------+</pre></div></li><li class="listitem"><p>
      To demonstrate that the user has Glance admin privileges, authenticate
      with those user creds and then upload and publish an image. Only a user
      with an admin role or glance_admin can publish an image.
-    </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+    </p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
        The easiest way to do this will be to make a copy of the
        <code class="literal">service.osrc</code> file and edit it with your user
        credentials. You can do that with this command:
-      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem "><p>
+      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem"><p>
        Using your preferred editor, edit the <code class="literal">user.osrc</code> file
        and replace the values for the following entries to match your user
        credentials:
       </p><div class="verbatim-wrap"><pre class="screen">export OS_USERNAME=&lt;username&gt;
-export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem "><p>
+export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem"><p>
        You will also need to edit the following lines for your environment:
       </p><div class="verbatim-wrap"><pre class="screen">## Change these values from 'unset' to 'export'
 export OS_PROJECT_NAME=&lt;project_name&gt;
@@ -251,9 +251,9 @@ export OS_AUTH_URL=http://192.168.245.9:35357/v3
 export OS_ENDPOINT_TYPE=internalURL
 # OpenstackClient uses OS_INTERFACE instead of OS_ENDPOINT
 export OS_INTERFACE=internal
-export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem "><p>
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem"><p>
      Source the environment variables for your user:
-    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem"><p>
      Upload an image and publicize it:
     </p><div class="verbatim-wrap"><pre class="screen">glance image-create --name "upload me" --visibility public --container-format bare --disk-format qcow2 --file uploadme.txt</pre></div><p>
      Example output:
@@ -276,7 +276,7 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
 | updated_at       | 2016-01-06T23:31:31Z                 |
 | virtual_size     | None                                 |
 | visibility       | public                               |
-+------------------+--------------------------------------+</pre></div><div id="id-1.7.3.5.5.5.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
++------------------+--------------------------------------+</pre></div><div id="id-1.7.3.5.5.5.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       You can use the command <code class="command">glance help image-create</code> to
       get the full syntax for this command.
      </p></div></li></ol></div><p>
@@ -285,16 +285,16 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
    A user must have the role of admin in order to assign the nova_admin role.
    To assign the role, you will set the environment variables needed for the
    identity service administrator.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      First, source the identity service credentials:
-    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/keystone.osrc</pre></div></li><li class="listitem"><p>
      You can add the glance_admin role to a user on a project with this
      command:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user &lt;username&gt; --project &lt;project_name&gt; nova_admin</pre></div><p>
      Example, showing a user named <code class="literal">testuser</code> being granted
      the <code class="literal">glance_admin</code> role in the
      <code class="literal">test_project</code> project:
-    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project nova_admin</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">openstack role add --user testuser --project test_project nova_admin</pre></div></li><li class="listitem"><p>
      You can confirm the role assignment by listing out the roles:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role assignment list --user &lt;username&gt;</pre></div><p>
      Example output:
@@ -303,7 +303,7 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
 | Role                             | User                             | Group | Project                          | Domain | Inherited |
 +----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+
 | 8cdb02bab38347f3b65753099f3ab73c | 8bcfe10101964e0c8ebc4de391f3e345 |       | 0ebbf7640d7948d2a17ac08bbbf0ca5b |        | False     |
-+----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem "><p>
++----------------------------------+----------------------------------+-------+----------------------------------+--------+-----------+</pre></div></li><li class="listitem"><p>
      Note that only the role ID is displayed. To get the role name, execute the
      following:
     </p><div class="verbatim-wrap"><pre class="screen">openstack role show &lt;role_id&gt;</pre></div><p>
@@ -314,20 +314,20 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
 +-------+----------------------------------+
 | id    | 8cdb02bab38347f3b65753099f3ab73c |
 | name  | nova_admin                       |
-+-------+----------------------------------+</pre></div></li><li class="listitem "><p>
++-------+----------------------------------+</pre></div></li><li class="listitem"><p>
      To demonstrate that the user has Nova admin privileges, authenticate with
      those user creds and then upload and publish an image. Only a user with an
      admin role or glance_admin can publish an image.
-    </p><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+    </p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
        The easiest way to do this will be to make a copy of the
        <code class="literal">service.osrc</code> file and edit it with your user
        credentials. You can do that with this command:
-      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem "><p>
+      </p><div class="verbatim-wrap"><pre class="screen">cp ~/service.osrc ~/user.osrc</pre></div></li><li class="listitem"><p>
        Using your preferred editor, edit the <code class="literal">user.osrc</code> file
        and replace the values for the following entries to match your user
        credentials:
       </p><div class="verbatim-wrap"><pre class="screen">export OS_USERNAME=&lt;username&gt;
-export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem "><p>
+export OS_PASSWORD=&lt;password&gt;</pre></div></li><li class="listitem"><p>
        You will also need to edit the following lines for your environment:
       </p><div class="verbatim-wrap"><pre class="screen">## Change these values from 'unset' to 'export'
 export OS_PROJECT_NAME=&lt;project_name&gt;
@@ -345,9 +345,9 @@ export OS_AUTH_URL=http://192.168.245.9:35357/v3
 export OS_ENDPOINT_TYPE=internalURL
 # OpenstackClient uses OS_INTERFACE instead of OS_ENDPOINT
 export OS_INTERFACE=internal
-export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem "><p>
+export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div></li><li class="listitem"><p>
      Source the environment variables for your user:
-    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">source ~/user.osrc</pre></div></li><li class="listitem"><p>
      List all of the virtual machines in the project specified in user.osrc:
     </p><div class="verbatim-wrap"><pre class="screen">openstack server list</pre></div><p>
      Example output showing no virtual machines, because there are no virtual
@@ -355,7 +355,7 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
     </p><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
 | ID                                   | Name                                                  | Status | Networks                                                        |
 +--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
-+--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      For this demonstration, we do have a virtual machine associated with a
      different project and because your user has nova_admin permissions, you
      can view those virtual machines using a slightly different command:
@@ -366,18 +366,18 @@ export OS_CACERT=/etc/ssl/certs/ca-certificates.crt</pre></div></li></ol></div><
 | ID                                   | Name                                                  | Status | Networks                                                        |
 +--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+
 | da4f46e2-4432-411b-82f7-71ab546f91f3 | testvml                                               | ACTIVE |                                                                 |
-+--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++--------------------------------------+-------------------------------------------------------+--------+-----------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      You can also now delete virtual machines in other projects by using the
      <code class="literal">--all-tenants</code> switch:
     </p><div class="verbatim-wrap"><pre class="screen">openstack server delete --all-projects &lt;instance_id&gt;</pre></div><p>
      Example, showing us deleting the instance in the previous step:
-    </p><div class="verbatim-wrap"><pre class="screen">openstack server delete --all-projects da4f46e2-4432-411b-82f7-71ab546f91f3</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">openstack server delete --all-projects da4f46e2-4432-411b-82f7-71ab546f91f3</pre></div></li><li class="listitem"><p>
      You can get a full list of available commands by using this:
     </p><div class="verbatim-wrap"><pre class="screen">openstack -h</pre></div></li></ol></div><p>
    You can perform the same steps as above for the Neutron and Cinder service
    admin roles:
   </p><div class="verbatim-wrap"><pre class="screen">neutron_admin
-cinder_admin</pre></div></div><div class="sect1" id="customize-policy"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Customize policy.json on the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#customize-policy">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>customize-policy</li></ul></div></div></div></div><p>
+cinder_admin</pre></div></section><section class="sect1" id="customize-policy" data-id-title="Customize policy.json on the Cloud Lifecycle Manager"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.4 </span><span class="title-name">Customize policy.json on the Cloud Lifecycle Manager</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#customize-policy">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    One way to deploy <code class="filename">policy.json</code> for a service is by going to each of the
    target nodes and making changes there. This is not necessary anymore. This
    process has been streamlined and policy.json files can be edited on the
@@ -388,7 +388,7 @@ cinder_admin</pre></div></div><div class="sect1" id="customize-policy"><div clas
    the desired policy behavior. Updated policy.json files can be deployed using
    the appropriate <code class="literal">&lt;service_name&gt;-reconfigure.yml</code>
    playbook.
-  </p></div><div class="sect1" id="service-roles"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Roles</span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#service-roles">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-cloudadmin_cli.xml</li><li><span class="ds-label">ID: </span>service-roles</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="service-roles" data-id-title="Roles"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.5 </span><span class="title-name">Roles</span></span> <a title="Permalink" class="permalink" href="CreateCloudAdmin.html#service-roles">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-cloudadmin_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Service roles represent the functionality used to implement the <span class="productname">OpenStack</span>
    role based access control (RBAC) model. This is used to manage access to
    each <span class="productname">OpenStack</span> service. Roles are named and assigned per user or group for
@@ -425,10 +425,9 @@ cinder_admin</pre></div></div><div class="sect1" id="customize-policy"><div clas
    complete list of reconfiguration playbooks, change directories to
    <code class="literal">~/scratch/ansible/next/ardana/ansible</code> and run this
    command:
-  </p><div class="verbatim-wrap"><pre class="screen">ls –l | grep reconfigure</pre></div><div id="note-j2-comments" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div class="verbatim-wrap"><pre class="screen">ls –l | grep reconfigure</pre></div><div id="note-j2-comments" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Comments added to any <code class="filename">*.j2</code> files (including templates)
     must follow proper comment syntax. Otherwise you may see errors when
     running the config-processor or any of the service playbooks.
-   </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="install-cli.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Installing the Command-Line Clients</span></a><a class="nav-link" href="cloudadmin-gui.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Cloud Admin Actions with the Dashboard</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+   </p></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cloudadmin-gui.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Cloud Admin Actions with the Dashboard</span></a> </div><div><a class="pagination-link next" href="install-cli.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Installing the Command-Line Clients</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-4"><span class="title-number">4.1 </span><span class="title-name">Creating Additional Cloud Admins</span></a></span></li><li><span class="section"><a href="CreateCloudAdmin.html#idg-all-operations-cloudadmin-cli-xml-5"><span class="title-number">4.2 </span><span class="title-name">Command Line Examples</span></a></span></li><li><span class="section"><a href="CreateCloudAdmin.html#default-service-admin-roles"><span class="title-number">4.3 </span><span class="title-name">Assigning the default service admin roles</span></a></span></li><li><span class="section"><a href="CreateCloudAdmin.html#customize-policy"><span class="title-number">4.4 </span><span class="title-name">Customize policy.json on the Cloud Lifecycle Manager</span></a></span></li><li><span class="section"><a href="CreateCloudAdmin.html#service-roles"><span class="title-number">4.5 </span><span class="title-name">Roles</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using Container as a Service (Magnum) | User Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Using Container as a Service (Magnum) | SUSE OpenStack…" />
-<meta name="description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as first class re…" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="User Guide" />
-<meta name="chapter-title" content="Chapter 7. Using Container as a Service (Magnum)" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Using Container as a Service (Magnum) | SUSE OpenStack…" />
-<meta property="og:description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as first class re…" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Using Container as a Service (Magnum) | SUSE OpenStack…" />
-<meta name="twitter:description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as first class re…" />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="user-nonadmin.html" title="Part II. Project User Guide" /><link rel="prev" href="user-nonadmin.html" title="Part II. Project User Guide" /><link rel="next" href="idg-all-userguide-create-network-xml-1.html" title="Chapter 8. Creating a Private Network" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | User Guide | Using Container as a Service (Magnum)</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Using Container as a Service (Magnum) | SUSE OpenStack…"/>
+<meta name="description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as firs…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 7. Using Container as a Service (Magnum)"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Using Container as a Service (Magnum) | SUSE OpenStack…"/>
+<meta property="og:description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as firs…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Container as a Service (Magnum) | SUSE OpenStack…"/>
+<meta name="twitter:description" content="The SUSE OpenStack Cloud Magnum Service provides container orchestration engines such as Docker Swarm, Kubernetes, and Apache Mesos available as firs…"/>
+<link rel="prev" href="user-nonadmin.html" title="Part II. Project User Guide"/><link rel="next" href="idg-all-userguide-create-network-xml-1.html" title="Chapter 8. Creating a Private Network"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,36 +34,36 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="user-nonadmin.html">Project User Guide</a><span> › </span><a class="crumb" href="using-container-as-a-service-overview.html">Using Container as a Service (Magnum)</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="user-cloudadmin.html"><span class="number">I </span><span class="name">Cloud Admin User Guide</span></a><ol><li class="inactive"><a href="using-opsconsole.html"><span class="number">1 </span><span class="name">Using the Operations Console</span></a></li><li class="inactive"><a href="user-dashboard-overview.html"><span class="number">2 </span><span class="name">Using the Dashboard</span></a></li><li class="inactive"><a href="cloudadmin-gui.html"><span class="number">3 </span><span class="name">Cloud Admin Actions with the Dashboard</span></a></li><li class="inactive"><a href="CreateCloudAdmin.html"><span class="number">4 </span><span class="name">Cloud Admin Actions with the Command Line</span></a></li><li class="inactive"><a href="install-cli.html"><span class="number">5 </span><span class="name">Installing the Command-Line Clients</span></a></li><li class="inactive"><a href="CreateHARouter.html"><span class="number">6 </span><span class="name">Creating a Highly Available Router</span></a></li></ol></li><li class="inactive"><a href="user-nonadmin.html"><span class="number">II </span><span class="name">Project User Guide</span></a><ol><li class="inactive"><a href="using-container-as-a-service-overview.html"><span class="number">7 </span><span class="name">Using Container as a Service (Magnum)</span></a></li><li class="inactive"><a href="idg-all-userguide-create-network-xml-1.html"><span class="number">8 </span><span class="name">Creating a Private Network</span></a></li><li class="inactive"><a href="create-keypair.html"><span class="number">9 </span><span class="name">Creating a Key Pair</span></a></li><li class="inactive"><a href="user-image-upload.html"><span class="number">10 </span><span class="name">Creating and Uploading a Glance Image</span></a></li><li class="inactive"><a href="lbaas-dashboard.html"><span class="number">11 </span><span class="name">Creating a Load Balancer with the Dashboard</span></a></li><li class="inactive"><a href="HP2-0LBaaS.html"><span class="number">12 </span><span class="name">Using Load Balancing as a Service (LBaaS)</span></a></li><li class="inactive"><a href="LBaaSHeat.html"><span class="number">13 </span><span class="name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li class="inactive"><a href="HP2-0FWaaS.html"><span class="number">14 </span><span class="name">Using Firewall as a Service (FWaaS)</span></a></li><li class="inactive"><a href="UsingVPNaaS.html"><span class="number">15 </span><span class="name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part II. Project User Guide" href="user-nonadmin.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Creating a Private Network" href="idg-all-userguide-create-network-xml-1.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="user-nonadmin.html">Project User Guide</a><span> › </span><a class="crumb" href="using-container-as-a-service-overview.html">Using Container as a Service (Magnum)</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part II. Project User Guide" href="user-nonadmin.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. Creating a Private Network" href="idg-all-userguide-create-network-xml-1.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="using-container-as-a-service-overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Container as a Service (Magnum)</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-using_container_as_a_service.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-using_container_as_a_service.xml</li><li><span class="ds-label">ID: </span>using-container-as-a-service-overview</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="using-container-as-a-service-overview.html#deploying-kubernetes-fedora-atomic"><span class="number">7.1 </span><span class="name">Deploying a Kubernetes Cluster on Fedora Atomic</span></a></span></dt><dt><span class="section"><a href="using-container-as-a-service-overview.html#deploying-kubernetes-coreos"><span class="number">7.2 </span><span class="name">Deploying a Kubernetes Cluster on CoreOS</span></a></span></dt><dt><span class="section"><a href="using-container-as-a-service-overview.html#deploying-docker-fedora-atomic"><span class="number">7.3 </span><span class="name">Deploying a Docker Swarm Cluster on Fedora Atomic</span></a></span></dt><dt><span class="section"><a href="using-container-as-a-service-overview.html#deploying-apache-mesos-ubuntu"><span class="number">7.4 </span><span class="name">Deploying an Apache Mesos Cluster on Ubuntu</span></a></span></dt><dt><span class="section"><a href="using-container-as-a-service-overview.html#create-magnum-cluster"><span class="number">7.5 </span><span class="name">Creating a Magnum Cluster with the Dashboard</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-using_container_as_a_service.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="user-nonadmin.html">Project User Guide</a><span> / </span><a class="crumb" href="using-container-as-a-service-overview.html">Using Container as a Service (Magnum)</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="user-cloudadmin.html" class="has-children "><span class="title-number">I </span><span class="title-name">Cloud Admin User Guide</span></a><ol><li><a href="using-opsconsole.html" class=" "><span class="title-number">1 </span><span class="title-name">Using the Operations Console</span></a></li><li><a href="user-dashboard-overview.html" class=" "><span class="title-number">2 </span><span class="title-name">Using the Dashboard</span></a></li><li><a href="cloudadmin-gui.html" class=" "><span class="title-number">3 </span><span class="title-name">Cloud Admin Actions with the Dashboard</span></a></li><li><a href="CreateCloudAdmin.html" class=" "><span class="title-number">4 </span><span class="title-name">Cloud Admin Actions with the Command Line</span></a></li><li><a href="install-cli.html" class=" "><span class="title-number">5 </span><span class="title-name">Installing the Command-Line Clients</span></a></li><li><a href="CreateHARouter.html" class=" "><span class="title-number">6 </span><span class="title-name">Creating a Highly Available Router</span></a></li></ol></li><li class="active"><a href="user-nonadmin.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Project User Guide</span></a><ol><li><a href="using-container-as-a-service-overview.html" class=" you-are-here"><span class="title-number">7 </span><span class="title-name">Using Container as a Service (Magnum)</span></a></li><li><a href="idg-all-userguide-create-network-xml-1.html" class=" "><span class="title-number">8 </span><span class="title-name">Creating a Private Network</span></a></li><li><a href="create-keypair.html" class=" "><span class="title-number">9 </span><span class="title-name">Creating a Key Pair</span></a></li><li><a href="user-image-upload.html" class=" "><span class="title-number">10 </span><span class="title-name">Creating and Uploading a Glance Image</span></a></li><li><a href="lbaas-dashboard.html" class=" "><span class="title-number">11 </span><span class="title-name">Creating a Load Balancer with the Dashboard</span></a></li><li><a href="HP2-0LBaaS.html" class=" "><span class="title-number">12 </span><span class="title-name">Using Load Balancing as a Service (LBaaS)</span></a></li><li><a href="LBaaSHeat.html" class=" "><span class="title-number">13 </span><span class="title-name">Using Load Balancing as a Service with Orchestration Service</span></a></li><li><a href="HP2-0FWaaS.html" class=" "><span class="title-number">14 </span><span class="title-name">Using Firewall as a Service (FWaaS)</span></a></li><li><a href="UsingVPNaaS.html" class=" "><span class="title-number">15 </span><span class="title-name">Using VPN as a Service (VPNaaS)</span></a></li></ol></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="using-container-as-a-service-overview" data-id-title="Using Container as a Service (Magnum)"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Using Container as a Service (Magnum)</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-using_container_as_a_service.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Magnum Service provides container orchestration engines such as
   Docker Swarm, Kubernetes, and Apache Mesos available as first class
   resources. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Magnum uses Heat to orchestrate an OS image which
   contains Docker and Kubernetes and runs that image in either virtual machines
   or bare metal in a cluster configuration.
- </p><div class="sect1" id="deploying-kubernetes-fedora-atomic"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying a Kubernetes Cluster on Fedora Atomic</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-kubernetes-fedora-atomic">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>deploying-kubernetes-fedora-atomic</li></ul></div></div></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-6</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="deploying-kubernetes-fedora-atomic" data-id-title="Deploying a Kubernetes Cluster on Fedora Atomic"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Deploying a Kubernetes Cluster on Fedora Atomic</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-kubernetes-fedora-atomic">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-6" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.1 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps assume the following have been completed:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The Magnum service has been installed. For more information, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
-    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
+    </p></li><li class="listitem"><p>
      Deploying a Kubernetes Cluster on Fedora Atomic requires the Fedora Atomic
      image <span class="bold"><strong>fedora-atomic-26-20170723.0.x86_64.qcow2</strong></span> prepared
      specifically for the OpenStack release. You can download the
      <span class="bold"><strong>fedora-atomic-26-20170723.0.x86_64.qcow2</strong></span>
      image from
      <a class="link" href="https://fedorapeople.org/groups/magnum/" target="_blank">https://fedorapeople.org/groups/magnum/</a>
-    </p></li></ul></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-7</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-7" data-id-title="Creating the Cluster"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.2 </span><span class="title-name">Creating the Cluster</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-fedora-atomic-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following example is created using Kubernetes Container Orchestration
    Engine (COE) running on Fedora Atomic guest OS on <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> VMs.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      As <span class="bold"><strong>stack</strong></span> user, login to the lifecycle
      manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Source openstack admin credentials.
-    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem"><p>
      If you haven't already, download Fedora Atomic image, prepared for the
      Openstack Pike release.
-    </p><div class="verbatim-wrap"><pre class="screen">$ wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/images/Fedora-Atomic-26-20170723.0.x86_64.qcow2</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/images/Fedora-Atomic-26-20170723.0.x86_64.qcow2</pre></div></li><li class="listitem"><p>
      Create a Glance image.
     </p><div class="verbatim-wrap"><pre class="screen">$ glance image-create --name fedora-atomic-26-20170723.0.x86_64 --visibility public \
   --disk-format qcow2 --os-distro fedora-atomic --container-format bare \
@@ -89,10 +89,10 @@ hljs.configure({
 | updated_at       | 2017-04-10T21:13:56Z                 |
 | virtual_size     | None                                 |
 | visibility       | public                               |
-+------------------+--------------------------------------+</pre></div></li><li class="listitem "><p>
++------------------+--------------------------------------+</pre></div></li><li class="listitem"><p>
      Create a Nova keypair.
     </p><div class="verbatim-wrap"><pre class="screen">$ test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem "><p>
+$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem"><p>
      Create a Magnum cluster template.
     </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-template-create --name my-template \
   --image-id 4277115a-f254-46c0-9fb0-fffc45d2fd38 \
@@ -104,22 +104,22 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
   --network-driver flannel \
   --coe kubernetes \
   --http-proxy http://proxy.yourcompany.net:8080/ \
-  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.3.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.3.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
         Use the <span class="emphasis"><em>image_id</em></span> from <code class="literal">glance
         image-create</code> command output in the previous step.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         Use your organization's DNS server. If the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> public endpoint is
         configured with the hostname, this server should provide resolution for
         this hostname.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         The proxy is only needed if public internet (for example,
         <code class="literal">https://discovery.etcd.io/</code> or
         <code class="literal">https://gcr.io/</code>) is not accessible without proxy.
-       </p></li></ol></div></div></li><li class="listitem "><p>
+       </p></li></ol></div></div></li><li class="listitem"><p>
      Create cluster. The command below will create a minimalistic cluster
      consisting of a single Kubernetes Master (kubemaster) and single
      Kubernetes Node (worker, kubeminion).
-    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-cluster --cluster-template my-template --node-count 1 --master-count 1</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-cluster --cluster-template my-template --node-count 1 --master-count 1</pre></div></li><li class="listitem"><p>
      Immediately after issuing <code class="literal">cluster-create</code> command,
      cluster status should turn to
      <span class="bold"><strong>CREATE_IN_PROGRESS</strong></span> and stack_id assigned.
@@ -144,7 +144,7 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
 | master_count        | 1                                                          |
 | container_version   | -                                                          |
 | node_count          | 1                                                          |
-+---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      You can monitor cluster creation progress by listing the resources of the
      Heat stack. Use the <code class="literal">stack_id</code> value from the
      <code class="literal">magnum cluster-status</code> output above in the following
@@ -156,15 +156,15 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
 +-------------------------------+--------------------------------------+-----------------------------------+--------------------+----------------------+-------------------------+
 | api_address_floating_switch   | 06b2cc0d-77f9-4633-8d96-f51e2db1faf3 | Magnum::FloatingIPAddressSwitcher | CREATE_COMPLETE    | 2017-04-10T21:25:10Z | my-cluster-z4aquda2mgpv |
 | api_address_lb_switch         | 965124ca-5f62-4545-bbae-8d9cda7aff2e | Magnum::ApiGatewaySwitcher        | CREATE_COMPLETE    | 2017-04-10T21:25:10Z | my-cluster-z4aquda2mgpv |
-. . .</pre></div></li><li class="listitem "><p>
+. . .</pre></div></li><li class="listitem"><p>
      The cluster is complete when all resources show
      <span class="bold"><strong>CREATE_COMPLETE</strong></span>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Install kubectl onto your Cloud Lifecycle Manager.
     </p><div class="verbatim-wrap"><pre class="screen">$ export https_proxy=http://proxy.yourcompany.net:8080
 $ wget https://storage.googleapis.com/kubernetes-release/release/v1.2.0/bin/linux/amd64/kubectl
 $ chmod +x ./kubectl
-$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="listitem "><p>
+$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="listitem"><p>
      Generate the cluster configuration using
      <code class="command">magnum cluster-config</code>. If the CLI option 
      <code class="option">--tls-disabled</code> was not
@@ -185,7 +185,7 @@ ca.pem cert.pem config key.pem
 /my_cluster $ export KUBECONFIG=./config
 /my_cluster $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"5cb86ee022267586db386f62781338b0483733b3", GitTreeState:"clean"}
-Server Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"cffae0523cfa80ddf917aba69f08508b91f603d5", GitTreeState:"clean"}</pre></div></li><li class="listitem "><p>
+Server Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"cffae0523cfa80ddf917aba69f08508b91f603d5", GitTreeState:"clean"}</pre></div></li><li class="listitem"><p>
      Create a simple Nginx replication controller, exposed as a service of type
      NodePort.
     </p><div class="verbatim-wrap"><pre class="screen">$ cat &gt;nginx.yml &lt;&lt;-EOF
@@ -221,50 +221,50 @@ spec:
     app: nginx
 EOF
 
-$ kubectl create -f nginx.yml</pre></div></li><li class="listitem "><p>
+$ kubectl create -f nginx.yml</pre></div></li><li class="listitem"><p>
      Check pod status until it turns from
      <span class="bold"><strong>Pending</strong></span> to
      <span class="bold"><strong>Running</strong></span>.
     </p><div class="verbatim-wrap"><pre class="screen">$ kubectl get pods
 NAME                      READY    STATUS     RESTARTS    AGE
-nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li class="listitem "><p>
+nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li class="listitem"><p>
      Ensure that the Nginx welcome page is displayed at port 30080 using the
      kubemaster floating IP.
     </p><div class="verbatim-wrap"><pre class="screen">$ http_proxy= curl http://172.31.0.6:30080
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Welcome to nginx!&lt;/title&gt;</pre></div></li><li class="listitem "><p>
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;</pre></div></li><li class="listitem"><p>
      If LBaaS v2 is enabled in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> environment, and your cluster was
      created with more than one kubemaster, a new load balancer can be created
      to perform request rotation between several masters. For more
-     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
-    </p></li></ol></div></div></div><div class="sect1" id="deploying-kubernetes-coreos"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying a Kubernetes Cluster on CoreOS</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-kubernetes-coreos">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_coreos.xml</li><li><span class="ds-label">ID: </span>deploying-kubernetes-coreos</li></ul></div></div></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_coreos.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-6</li></ul></div></div></div></div><p>
+     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
+    </p></li></ol></div></section></section><section class="sect1" id="deploying-kubernetes-coreos" data-id-title="Deploying a Kubernetes Cluster on CoreOS"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.2 </span><span class="title-name">Deploying a Kubernetes Cluster on CoreOS</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-kubernetes-coreos">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-6" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.1 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps assume the following have been completed:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The Magnum service has been installed. For more information, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
-    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
+    </p></li><li class="listitem"><p>
      Creating the Magnum cluster requires the CoreOS image for OpenStack. You
      can download compressed image file
      <span class="bold"><strong>coreos_production_openstack_image.img.bz2</strong></span>
      from
      <a class="link" href="http://stable.release.core-os.net/amd64-usr/current/" target="_blank">http://stable.release.core-os.net/amd64-usr/current/</a>.
-    </p></li></ul></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_kubernetes_coreos.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-7</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-7" data-id-title="Creating the Cluster"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.2 </span><span class="title-name">Creating the Cluster</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-kubernetes-coreos-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_kubernetes_coreos.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following example is created using Kubernetes Container Orchestration
    Engine (COE) running on CoreOS guest OS on <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> VMs.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Login to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Source openstack admin credentials.
-    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem"><p>
      If you haven't already, download CoreOS image that is compatible for the OpenStack
      release.
-    </p><div id="id-1.7.4.2.4.3.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.7.4.2.4.3.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       The https_proxy is only needed if your environment requires a proxy.
      </p></div><div class="verbatim-wrap"><pre class="screen">$ export https_proxy=http://proxy.yourcompany.net:8080
 $ wget https://stable.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2
-$ bunzip2 coreos_production_openstack_image.img.bz2</pre></div></li><li class="listitem "><p>
+$ bunzip2 coreos_production_openstack_image.img.bz2</pre></div></li><li class="listitem"><p>
      Create a Glance image.
     </p><div class="verbatim-wrap"><pre class="screen">$ glance image-create --name coreos-magnum --visibility public \
   --disk-format raw --os-distro coreos --container-format bare \
@@ -290,10 +290,10 @@ $ bunzip2 coreos_production_openstack_image.img.bz2</pre></div></li><li class="l
 | updated_at       | 2017-04-25T18:11:07Z                 |
 | virtual_size     | None                                 |
 | visibility       | public                               |
-+------------------+--------------------------------------+</pre></div></li><li class="listitem "><p>
++------------------+--------------------------------------+</pre></div></li><li class="listitem"><p>
      Create a Nova keypair.
     </p><div class="verbatim-wrap"><pre class="screen">$ test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem "><p>
+$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem"><p>
      Create a Magnum cluster template.
     </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-template-create --name my-coreos-template \
   --image-id c25fc719-2171-437f-9542-fcb8a534fbd1 \
@@ -305,23 +305,23 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
   --network-driver flannel \
   --coe kubernetes \
   --http-proxy http://proxy.yourcompany.net:8080/ \
-  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.4.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.4.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
          Use the <span class="emphasis"><em>image_id</em></span> from
          <code class="literal">glance image-create</code> command output in the
          previous step.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          Use your organization's DNS server. If the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> public endpoint
          is configured with the hostname, this server should provide
          resolution for this hostname.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          The proxy is only needed if public internet (for example,
          <code class="literal">https://discovery.etcd.io/</code> or
          <code class="literal">https://gcr.io/</code>) is not accessible without proxy.
-        </p></li></ol></div></div></li><li class="listitem "><p>
+        </p></li></ol></div></div></li><li class="listitem"><p>
      Create cluster. The command below will create a minimalistic cluster
      consisting of a single Kubernetes Master (kubemaster) and single
      Kubernetes Node (worker, kubeminion).
-    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-coreos-cluster --cluster-template my-coreos-template --node-count 1 --master-count 1</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-coreos-cluster --cluster-template my-coreos-template --node-count 1 --master-count 1</pre></div></li><li class="listitem"><p>
      Almost immediately after issuing <code class="literal">cluster-create</code>
      command, cluster status should turn to
      <span class="bold"><strong>CREATE_IN_PROGRESS</strong></span> and stack_id assigned.
@@ -346,7 +346,7 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
 | master_count        | 1                                                          |
 | container_version   | -                                                          |
 | node_count          | 1                                                          |
-+---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      You can monitor cluster creation progress by listing the resources of the
      Heat stack. Use the <code class="literal">stack_id</code> value from the
      <code class="literal">magnum cluster-status</code> output above in the following
@@ -365,15 +365,15 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
                                                                 | CREATE_COMPLETE    | 2017-04-25T22:38:42Z | my-coreos-cluster-mscybll54eoj                                          |
 | api_loadbalancer               | bf1d8c64-a75f-4eec-8f2f-373d49aee581                                                | Magnum::Optional::Neutron::LBaaS::LoadBalancer
                                                                 | CREATE_COMPLETE    | 2017-04-25T22:38:42Z | my-coreos-cluster-mscybll54eoj                                          |
-. . .</pre></div></li><li class="listitem "><p>
+. . .</pre></div></li><li class="listitem"><p>
      The cluster is complete when all resources show
      <span class="bold"><strong>CREATE_COMPLETE</strong></span>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Install kubectl onto your Cloud Lifecycle Manager.
     </p><div class="verbatim-wrap"><pre class="screen">$ export https_proxy=http://proxy.yourcompany.net:8080
 $ wget https://storage.googleapis.com/kubernetes-release/release/v1.2.0/bin/linux/amd64/kubectl
 $ chmod +x ./kubectl
-$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="listitem "><p>
+$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="listitem"><p>
      Generate the cluster configuration using
      <code class="command">magnum cluster-config</code>. If the CLI option 
      <code class="option">--tls-disabled</code> was not
@@ -394,7 +394,7 @@ ca.pem cert.pem config key.pem
 /my_cluster $ export KUBECONFIG=./config
 /my_cluster $ kubectl version
 Client Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"5cb86ee022267586db386f62781338b0483733b3", GitTreeState:"clean"}
-Server Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"cffae0523cfa80ddf917aba69f08508b91f603d5", GitTreeState:"clean"}</pre></div></li><li class="listitem "><p>
+Server Version: version.Info{Major:"1", Minor:"2", GitVersion:"v1.2.0", GitCommit:"cffae0523cfa80ddf917aba69f08508b91f603d5", GitTreeState:"clean"}</pre></div></li><li class="listitem"><p>
      Create a simple Nginx replication controller, exposed as a service of type
      NodePort.
     </p><div class="verbatim-wrap"><pre class="screen">$ cat &gt;nginx.yml &lt;&lt;-EOF
@@ -430,30 +430,30 @@ spec:
     app: nginx
 EOF
 
-$ kubectl create -f nginx.yml</pre></div></li><li class="listitem "><p>
+$ kubectl create -f nginx.yml</pre></div></li><li class="listitem"><p>
      Check pod status until it turns from
      <span class="bold"><strong>Pending</strong></span> to
      <span class="bold"><strong>Running</strong></span>.
     </p><div class="verbatim-wrap"><pre class="screen">$ kubectl get pods
 NAME                      READY    STATUS     RESTARTS    AGE
-nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li class="listitem "><p>
+nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li class="listitem"><p>
      Ensure that the Nginx welcome page is displayed at port 30080 using the
      kubemaster floating IP.
     </p><div class="verbatim-wrap"><pre class="screen">$ http_proxy= curl http://172.31.0.6:30080
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;title&gt;Welcome to nginx!&lt;/title&gt;</pre></div></li><li class="listitem "><p>
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;</pre></div></li><li class="listitem"><p>
      If LBaaS v2 is enabled in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> environment, and your cluster was
      created with more than one kubemaster, a new load balancer can be created
      to perform request rotation between several masters. For more
-     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
-    </p></li></ol></div></div></div><div class="sect1" id="deploying-docker-fedora-atomic"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying a Docker Swarm Cluster on Fedora Atomic</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-docker-fedora-atomic">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_docker_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>deploying-docker-fedora-atomic</li></ul></div></div></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_docker_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-6</li></ul></div></div></div></div><p>
+     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
+    </p></li></ol></div></section></section><section class="sect1" id="deploying-docker-fedora-atomic" data-id-title="Deploying a Docker Swarm Cluster on Fedora Atomic"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.3 </span><span class="title-name">Deploying a Docker Swarm Cluster on Fedora Atomic</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-docker-fedora-atomic">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-6" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.1 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps assume the following have been completed:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The Magnum service has been installed. For more information, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
-    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
+    </p></li><li class="listitem"><p>
      Deploying a Docker Swarm Cluster on Fedora Atomic requires the Fedora
      Atomic image
      <span class="bold"><strong>fedora-atomic-26-20170723.0.x86_64.qcow2</strong></span>
@@ -461,18 +461,18 @@ nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li
      the <span class="bold"><strong>fedora-atomic-26-20170723.0.x86_64.qcow2</strong></span>
      image from
      <a class="link" href="https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/" target="_blank">https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/</a>
-    </p></li></ul></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_docker_fedora_atomic.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-7</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-7" data-id-title="Creating the Cluster"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.2 </span><span class="title-name">Creating the Cluster</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-docker-fedora-atomic-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_docker_fedora_atomic.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following example is created using Kubernetes Container Orchestration
    Engine (COE) running on Fedora Atomic guest OS on <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> VMs.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      As <span class="bold"><strong>stack</strong></span> user, login to the lifecycle
      manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Source openstack admin credentials.
-    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="listitem"><p>
      If you haven't already, download Fedora Atomic image, prepared for
      Openstack Pike release.
-    </p><div class="verbatim-wrap"><pre class="screen">$ wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/images/Fedora-Atomic-26-20170723.0.x86_64.qcow2</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-Atomic-26-20170723.0/CloudImages/x86_64/images/Fedora-Atomic-26-20170723.0.x86_64.qcow2</pre></div></li><li class="listitem"><p>
      Create a Glance image.
     </p><div class="verbatim-wrap"><pre class="screen">$ glance image-create --name fedora-atomic-26-20170723.0.x86_64 --visibility public \
   --disk-format qcow2 --os-distro fedora-atomic --container-format bare \
@@ -498,12 +498,12 @@ nginx-controller-5cmev    1/1      Running    0           2m</pre></div></li><li
 | updated_at       | 2017-04-10T21:13:56Z                 |
 | virtual_size     | None                                 |
 | visibility       | public                               |
-+------------------+--------------------------------------+</pre></div></li><li class="listitem "><p>
++------------------+--------------------------------------+</pre></div></li><li class="listitem"><p>
      Create a Nova keypair.
     </p><div class="verbatim-wrap"><pre class="screen">$ test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem "><p>
+$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="listitem"><p>
      Create a Magnum cluster template.
-    </p><div id="id-1.7.4.2.5.3.3.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.7.4.2.5.3.3.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       The <code class="literal">--tls-disabled</code> flag is not specified in the
       included template. Authentication via client certificate will be turned
       on in clusters created from this template.
@@ -517,24 +517,24 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
   --network-driver docker \
   --coe swarm \
   --http-proxy http://proxy.yourcompany.net:8080/ \
-  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.5.3.3.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.5.3.3.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
         Use the <code class="literal">image_id</code> from
         <code class="literal">glance image-create</code> command output in the previous
         step.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         Use your organization's DNS server. If the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> public endpoint
         is configured with the hostname, this server should provide
         resolution for this hostname.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         The proxy is only needed if public internet (for example,
         <code class="literal">https://discovery.etcd.io/</code> or
         <code class="literal">https://gcr.io/</code>) is not accessible without proxy.
-       </p></li></ol></div></div></li><li class="listitem "><p>
+       </p></li></ol></div></div></li><li class="listitem"><p>
      Create cluster. The command below will create a minimalistic cluster
      consisting of a single Kubernetes Master (kubemaster) and single
      Kubernetes Node (worker, kubeminion).
     </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-swarm-cluster --cluster-template my-swarm-template \
-  --node-count 1 --master-count 1</pre></div></li><li class="listitem "><p>
+  --node-count 1 --master-count 1</pre></div></li><li class="listitem"><p>
      Immediately after issuing <code class="literal">cluster-create</code> command,
      cluster status should turn to
      <span class="bold"><strong>CREATE_IN_PROGRESS</strong></span>
@@ -560,7 +560,7 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
 | master_count        | 1                                                          |
 | container_version   | -                                                          |
 | node_count          | 1                                                          |
-+---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      You can monitor cluster creation progress by listing the resources of the
      Heat stack. Use the <code class="literal">stack_id</code> value from the
      <code class="literal">magnum cluster-status</code> output above in the following
@@ -572,7 +572,7 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
 |--------------------+--------------------------------------+--------------------------------------------+-----------------+----------------------+-------------------------------+
 | api_address_switch | 430f82f2-03e3-4085-8c07-b4a6b6d7e261 | Magnum::ApiGatewaySwitcher                 | CREATE_COMPLETE | 2017-04-21T17:13:07Z | my-swarm-cluster-j7gbjcxaremy |
 | api_listener       | a306fd54-e569-4673-8fd3-7ae5ebdf53c3 | Magnum::Optional::Neutron::LBaaS::Listener | CREATE_COMPLETE | 2017-04-21T17:13:07Z | my-swarm-cluster-j7gbjcxaremy |
-. . .</pre></div></li><li class="listitem "><p>
+. . .</pre></div></li><li class="listitem"><p>
      The cluster is complete when all resources show
      <span class="bold"><strong>CREATE_COMPLETE</strong></span>. You can also obtain the
      floating IP address once the cluster has been created.
@@ -597,7 +597,7 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
 | master_count        | 1                                                          |
 | container_version   | 1.9.1                                                      |
 | node_count          | 1                                                          |
-+---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem "><p>
++---------------------+------------------------------------------------------------+</pre></div></li><li class="listitem"><p>
      Generate and sign client certificate using <code class="literal">magnum
      cluster-config</code> command.
     </p><div class="verbatim-wrap"><pre class="screen">$ mkdir my_swarm_cluster
@@ -605,22 +605,22 @@ $ cd my_swarm_cluster/
 ~/my_swarm_cluster $ magnum cluster-config my-swarm-cluster
 {'tls': True, 'cfg_dir': '.', 'docker_host': u'tcp://172.31.0.7:2376'}
 ~/my_swarm_cluster $ ls
-ca.pem  cert.pem  key.pem</pre></div></li><li class="listitem "><p>
+ca.pem  cert.pem  key.pem</pre></div></li><li class="listitem"><p>
      Copy generated certificates and key to ~/.docker folder on first cluster
      master node.
     </p><div class="verbatim-wrap"><pre class="screen">$ scp -r ~/my_swarm_cluster fedora@172.31.0.7:.docker
 ca.pem                                             100% 1066     1.0KB/s   00:00
 key.pem                                            100% 1679     1.6KB/s   00:00
-cert.pem                                           100% 1005     1.0KB/s   00:00</pre></div></li><li class="listitem "><p>
+cert.pem                                           100% 1005     1.0KB/s   00:00</pre></div></li><li class="listitem"><p>
      Login to first master node and set up cluster access environment
      variables.
     </p><div class="verbatim-wrap"><pre class="screen">$ ssh fedora@172.31.0.7
 [fedora@my-6zxz5ukdu-0-bvqbsn2z2uwo-swarm-master-n6wfplu7jcwo ~]$ export DOCKER_TLS_VERIFY=1
-[fedora@my-6zxz5ukdu-0-bvqbsn2z2uwo-swarm-master-n6wfplu7jcwo ~]$ export DOCKER_HOST=tcp://172.31.0.7:2376</pre></div></li><li class="listitem "><p>
+[fedora@my-6zxz5ukdu-0-bvqbsn2z2uwo-swarm-master-n6wfplu7jcwo ~]$ export DOCKER_HOST=tcp://172.31.0.7:2376</pre></div></li><li class="listitem"><p>
      Verfy that the swarm container is up and running.
     </p><div class="verbatim-wrap"><pre class="screen">[fedora@my-6zxz5ukdu-0-bvqbsn2z2uwo-swarm-master-n6wfplu7jcwo ~]$ docker ps -a
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-fcbfab53148c        swarm:1.0.0         "/swarm join --addr 1"   24 minutes ago      Up 24 minutes       2375/tcp            my-xggjts5zbgr-0-d4qhxhdujh4q-swarm-node-vieanhwdonon.novalocal/swarm-agent</pre></div></li><li class="listitem "><p>
+fcbfab53148c        swarm:1.0.0         "/swarm join --addr 1"   24 minutes ago      Up 24 minutes       2375/tcp            my-xggjts5zbgr-0-d4qhxhdujh4q-swarm-node-vieanhwdonon.novalocal/swarm-agent</pre></div></li><li class="listitem"><p>
      Deploy a sample docker application (nginx) and verify that Nginx is
      serving requests at port 8080 on worker node(s), on both floating and
      private IPs:
@@ -643,37 +643,37 @@ fcbfab53148c        swarm:1.0.0         "/swarm join --addr 1"   24 minutes ago 
 &lt;head&gt;
 &lt;title&gt;Welcome to nginx!&lt;/title&gt;
 &lt;style&gt;
-...</pre></div></li><li class="listitem "><p>
+...</pre></div></li><li class="listitem"><p>
      If LBaaS v2 is enabled in your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> environment, a new load balancer
      can be created to perform request rotation between several masters. For
      more information about LBaaS v2 support, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
-    </p></li></ol></div></div></div><div class="sect1" id="deploying-apache-mesos-ubuntu"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploying an Apache Mesos Cluster on Ubuntu</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-apache-mesos-ubuntu">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_apache_mesos_ubuntu.xml</li><li><span class="ds-label">ID: </span>deploying-apache-mesos-ubuntu</li></ul></div></div></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_apache_mesos_ubuntu.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-6</li></ul></div></div></div></div><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
+    </p></li></ol></div></section></section><section class="sect1" id="deploying-apache-mesos-ubuntu" data-id-title="Deploying an Apache Mesos Cluster on Ubuntu"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.4 </span><span class="title-name">Deploying an Apache Mesos Cluster on Ubuntu</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#deploying-apache-mesos-ubuntu">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-6" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.4.1 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These steps assume the following have been completed:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The Magnum service has been installed. For more information, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
-    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
+    </p></li><li class="listitem"><p>
      Deploying an Apache Mesos Cluster requires the Fedora Atomic image
      that is compatible for the OpenStack release. You can download
      the <span class="bold"><strong>ubuntu-mesos-latest.qcow2</strong></span>
      image from
      <a class="link" href="https://fedorapeople.org/groups/magnum/" target="_blank">https://fedorapeople.org/groups/magnum/</a>
-    </p></li></ul></div></div><div class="sect2" id="idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-deploying_apache_mesos_ubuntu.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-7</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-7" data-id-title="Creating the Cluster"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.4.2 </span><span class="title-name">Creating the Cluster</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-deploying-apache-mesos-ubuntu-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-deploying_apache_mesos_ubuntu.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following example is created using Kubernetes Container Orchestration
    Engine (COE) running on Fedora Atomic guest OS on <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> VMs.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      As <span class="bold"><strong>stack</strong></span> user, login to the lifecycle
      manager.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Source openstack admin credentials.
-    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ source service.osrc</pre></div></li><li class="step"><p>
      If you haven't already, download Fedora Atomic image that is compatible for the
      OpenStack release.
-    </p><div id="id-1.7.4.2.6.3.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.7.4.2.6.3.3.3.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       The <code class="literal">https_proxy</code> is only needed if your environment
       requires a proxy.
-     </p></div><div class="verbatim-wrap"><pre class="screen">$ https_proxy=http://proxy.yourcompany.net:8080 wget https://fedorapeople.org/groups/magnum/ubuntu-mesos-latest.qcow2</pre></div></li><li class="step "><p>
+     </p></div><div class="verbatim-wrap"><pre class="screen">$ https_proxy=http://proxy.yourcompany.net:8080 wget https://fedorapeople.org/groups/magnum/ubuntu-mesos-latest.qcow2</pre></div></li><li class="step"><p>
      Create a Glance image.
     </p><div class="verbatim-wrap"><pre class="screen">$ glance image-create --name ubuntu-mesos-latest --visibility public --disk-format qcow2 --os-distro ubuntu --container-format bare --file ubuntu-mesos-latest.qcow2 --progress
 [=============================&gt;] 100%
@@ -697,10 +697,10 @@ fcbfab53148c        swarm:1.0.0         "/swarm join --addr 1"   24 minutes ago 
 | updated_at       | 2017-04-21T19:40:32Z                 |
 | virtual_size     | None                                 |
 | visibility       | public                               |
-+------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Create a Nova keypair.
     </p><div class="verbatim-wrap"><pre class="screen">$ test -f ~/.ssh/id_rsa.pub || ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="step "><p>
+$ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class="step"><p>
      Create a Magnum cluster template.
     </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-template-create --name my-mesos-template \
   --image-id d6a4e6f9-9e34-4816-99fe-227e0131244f \
@@ -712,23 +712,23 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
   --network-driver docker \
   --coe mesos \
   --http-proxy http://proxy.yourcompany.net:8080/ \
-  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.6.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  --https-proxy http://proxy.yourcompany.net:8080/</pre></div><div id="id-1.7.4.2.6.3.3.6.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
         Use the <span class="emphasis"><em>image_id</em></span> from <code class="literal">glance
         image-create</code> command output in the previous step.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         Use your organization's DNS server. If the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> public endpoint is
         configured with the hostname, this server should provide resolution for
         this hostname.
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         The proxy is only needed if public internet (for example,
         <code class="literal">https://discovery.etcd.io/</code> or
         <code class="literal">https://gcr.io/</code>) is not accessible
         without proxy.
-       </p></li></ol></div></div></li><li class="step "><p>
+       </p></li></ol></div></div></li><li class="step"><p>
      Create cluster. The command below will create a minimalistic cluster
      consisting of a single Kubernetes Master (kubemaster) and single
      Kubernetes Node (worker, kubeminion).
-    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-mesos-cluster --cluster-template my-mesos-template --node-count 1 --master-count 1</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-create --name my-mesos-cluster --cluster-template my-mesos-template --node-count 1 --master-count 1</pre></div></li><li class="step"><p>
      Immediately after issuing <code class="literal">cluster-create</code> command,
      cluster status should turn to
      <span class="bold"><strong>CREATE_IN_PROGRESS</strong></span> and stack_id assigned.
@@ -753,7 +753,7 @@ $ nova keypair-add --pub-key ~/.ssh/id_rsa.pub testkey</pre></div></li><li class
 | master_count        | 1                                    |
 | container_version   | -                                    |
 | node_count          | 1                                    |
-+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      You can monitor cluster creation progress by listing the resources of the
      Heat stack. Use the <code class="literal">stack_id</code> value from the
      <code class="literal">magnum cluster-status</code> output above in the following
@@ -765,7 +765,7 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
 +------------------------------+--------------------------------------+-----------------------------------+-----------------+----------------------+-------------------------------+
 | add_proxy_master             | 10394a74-1503-44b4-969a-44258c9a7be1 | OS::Heat::SoftwareConfig          | CREATE_COMPLETE | 2017-04-21T19:50:33Z | my-mesos-cluster-w2trq7m46qus |
 | add_proxy_master_deployment  |                                      | OS::Heat::SoftwareDeploymentGroup | INIT_COMPLETE   | 2017-04-21T19:50:33Z | my-mesos-cluster-w2trq7m46qus |
-...</pre></div></li><li class="step "><p>
+...</pre></div></li><li class="step"><p>
      The cluster is complete when all resources show
      <span class="bold"><strong>CREATE_COMPLETE</strong></span>.
     </p><div class="verbatim-wrap"><pre class="screen">$ magnum cluster-show my-mesos-cluster
@@ -789,7 +789,7 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
 | master_count        | 1                                    |
 | container_version   | 1.9.1                                |
 | node_count          | 1                                    |
-+---------------------+--------------------------------------+</pre></div></li><li class="step "><p>
++---------------------+--------------------------------------+</pre></div></li><li class="step"><p>
      Verify that
      <a class="link" href="https://mesosphere.github.io/marathon/" target="_blank">Marathon</a>
      web console is available at http://${MASTER_IP}:8080/, and
@@ -798,7 +798,7 @@ WARNING (shell) "heat resource-list" is deprecated, please use "openstack stack 
     </p><div class="verbatim-wrap"><pre class="screen">$ https_proxy=http://proxy.yourcompany.net:8080 curl -LO \
   https://storage.googleapis.com/kubernetes-release/release/v1.2.0/bin/linux/amd64/kubectl
 $ chmod +x ./kubectl
-$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="step "><p>
+$ sudo mv ./kubectl /usr/local/bin/kubectl</pre></div></li><li class="step"><p>
      Create an example Mesos application.
     </p><div class="verbatim-wrap"><pre class="screen">$ mkdir my_mesos_cluster
 $ cd my_mesos_cluster/
@@ -880,7 +880,7 @@ EOF</pre></div><div class="verbatim-wrap"><pre class="screen">$ curl -s -X POST 
       }
    ],
    "backoffSeconds" : 1
-}</pre></div></li><li class="step "><p>
+}</pre></div></li><li class="step"><p>
      Wait for sample application to start. Use REST API or Marathon web console
      to monitor status:
     </p><div class="verbatim-wrap"><pre class="screen">$ curl -s http://172.31.0.10:8080/v2/apps/sample | json_pp
@@ -958,7 +958,7 @@ EOF</pre></div><div class="verbatim-wrap"><pre class="screen">$ curl -s -X POST 
       "uris" : [],
       "tasksUnhealthy" : 0
    }
-}</pre></div></li><li class="step "><p>
+}</pre></div></li><li class="step"><p>
      Verify that deployed application is responding on automatically assigned
      port on floating IP address of worker node.
     </p><div class="verbatim-wrap"><pre class="screen">$ curl http://172.31.0.5:31827
@@ -967,11 +967,11 @@ EOF</pre></div><div class="verbatim-wrap"><pre class="screen">$ curl -s -X POST 
 &lt;head&gt;
 &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
 &lt;title&gt;Directory listing for /&lt;/title&gt;
-...</pre></div></li><li class="step "><p>
+...</pre></div></li><li class="step"><p>
      If LBaaS v2 is enabled in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> environment, a new load balancer can be
      created to perform request rotation between several masters. For more
-     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
-    </p></li></ol></div></div></div></div><div class="sect1" id="create-magnum-cluster"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Magnum Cluster with the Dashboard</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#create-magnum-cluster">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-create_magnum_cluster_dashboard.xml</li><li><span class="ds-label">ID: </span>create-magnum-cluster</li></ul></div></div></div></div><p>
+     information about LBaaS v2 support, see <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 31 “Configuring Load Balancer as a Service”</span>.
+    </p></li></ol></div></div></section></section><section class="sect1" id="create-magnum-cluster" data-id-title="Creating a Magnum Cluster with the Dashboard"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.5 </span><span class="title-name">Creating a Magnum Cluster with the Dashboard</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#create-magnum-cluster">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   You can alternatively create a cluster template and cluster with the Magnum
   UI in Horizon. The example instructions below demonstrate how to deploy a
   Kubernetes Cluster using the Fedora Atomic image. Other deployments such as
@@ -981,88 +981,87 @@ EOF</pre></div><div class="verbatim-wrap"><pre class="screen">$ curl -s -X POST 
   set of CLI instructions in the
   <code class="command">magnum cluster-template-create</code> and
   <code class="command">magnum cluster-create</code> commands.
- </p><div class="sect2" id="idg-all-userguide-container-service-create-magnum-cluster-dashboard-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-create-magnum-cluster-dashboard-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-create_magnum_cluster_dashboard.xml</li><li><span class="ds-label">ID: </span>idg-all-userguide-container-service-create-magnum-cluster-dashboard-xml-7</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><section class="sect2" id="idg-all-userguide-container-service-create-magnum-cluster-dashboard-xml-7" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.1 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#idg-all-userguide-container-service-create-magnum-cluster-dashboard-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Magnum must be installed before proceeding. For more information, see
-     <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
-    </p><div id="id-1.7.4.2.7.3.2.1.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+     <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 14 “Magnum Overview”, Section 14.2 “Install the Magnum Service”</span>.
+    </p><div id="id-1.7.4.2.7.3.2.1.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
       Pay particular attention to <code class="literal">external-name:</code> in
       <code class="literal">data/network_groups.yml</code>. This cannot be set to the
       default <code class="literal">myardana.test</code> and must be a valid
       DNS-resolvable FQDN. If you do not have a DNS-resolvable FQDN, remove or
       comment out the <code class="literal">external-name</code> entry and the public
       endpoint will use an IP address instead of a name.
-     </p></div></li><li class="listitem "><p>
+     </p></div></li><li class="listitem"><p>
      The image for which you want to base your cluster on must already have
      been uploaded into glance. See the previous CLI instructions regarding
      deploying a cluster on how this is done.
-    </p></li></ul></div></div><div class="sect2" id="cluster-template"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster Template</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#cluster-template">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-create_magnum_cluster_dashboard.xml</li><li><span class="ds-label">ID: </span>cluster-template</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="cluster-template" data-id-title="Creating the Cluster Template"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.2 </span><span class="title-name">Creating the Cluster Template</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#cluster-template">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You will need access to the Dashboard to create the cluster
    template. If you have not accessed the Horizon Dashboard before or you are
    unfamiliar with it, see <a class="xref" href="user-dashboard-overview.html" title="Chapter 2. Using the Dashboard">Chapter 2, <em>Using the Dashboard</em></a>
    and <a class="xref" href="cloudadmin-gui.html" title="Chapter 3. Cloud Admin Actions with the Dashboard">Chapter 3, <em>Cloud Admin Actions with the Dashboard</em></a> for more
    information.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Open a web browser that has both JavaScript and cookies enabled. In the
      address bar, enter the host name or IP address for the dashboard.
-    </p></li><li class="step "><p>
-     On the <span class="guimenu ">Log In</span> page, enter your user name
-     and password and then click <span class="guimenu ">Connect</span>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
+     On the <span class="guimenu">Log In</span> page, enter your user name
+     and password and then click <span class="guimenu">Connect</span>.
+    </p></li><li class="step"><p>
      Make sure you are in the appropriate domain and project in the left pane.
      Below is an example image of the drop-down box:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-domain_selector.png" target="_blank"><img src="images/media-horizon-domain_selector.png" width="" /></a></div></div></li><li class="step "><p>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-domain_selector.png"><img src="images/media-horizon-domain_selector.png" alt="Image" title="Image"/></a></div></div></li><li class="step"><p>
      A key pair is required for cluster template creation. It is applied to VMs
      created during the cluster creation process. This allows SSH access to your
      cluster's VMs. If you would like to create a new key pair, do so by going
-     to <span class="guimenu ">Project</span> › <span class="guimenu ">Compute</span> › <span class="guimenu ">Access &amp; Security</span> › <span class="guimenu ">Key Pairs</span>.
-    </p></li><li class="step "><p>
-     Go to <span class="guimenu ">Project</span> › <span class="guimenu ">Container Infra</span> › <span class="guimenu ">Cluster Templates</span>.
+     to <span class="guimenu">Project</span> › <span class="guimenu">Compute</span> › <span class="guimenu">Access &amp; Security</span> › <span class="guimenu">Key Pairs</span>.
+    </p></li><li class="step"><p>
+     Go to <span class="guimenu">Project</span> › <span class="guimenu">Container Infra</span> › <span class="guimenu">Cluster Templates</span>.
      Insert
-     <em class="replaceable ">CLUSTER_NAME</em> and click on
-     <span class="guimenu ">+ Create Cluster Template</span> with the following options:
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-create_cluster_template.png" target="_blank"><img src="images/media-horizon-create_cluster_template.png" width="" /></a></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-       <span class="guimenu ">Public</span> - makes the template available
+     <em class="replaceable">CLUSTER_NAME</em> and click on
+     <span class="guimenu">+ Create Cluster Template</span> with the following options:
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-create_cluster_template.png"><img src="images/media-horizon-create_cluster_template.png" alt="Image" title="Image"/></a></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       <span class="guimenu">Public</span> - makes the template available
        for others to use.
-      </p></li><li class="listitem "><p>
-       <span class="guimenu ">Enable Registry</span> - creates and uses a
+      </p></li><li class="listitem"><p>
+       <span class="guimenu">Enable Registry</span> - creates and uses a
        private docker registry backed by OpenStack Swift in addition to using
        the public docker registry.
-      </p></li><li class="listitem "><p>
-       <span class="guimenu ">Disable TLS</span> - turns off TLS encryption.
+      </p></li><li class="listitem"><p>
+       <span class="guimenu">Disable TLS</span> - turns off TLS encryption.
        For Kubernetes clusters which use client certificate authentication,
        disabling TLS also involves disabling authentication.
-      </p></li></ul></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-create_cluster_template2.png" target="_blank"><img src="images/media-horizon-create_cluster_template2.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-create_cluster_template3.png" target="_blank"><img src="images/media-horizon-create_cluster_template3.png" width="" /></a></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      </p></li></ul></div><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-create_cluster_template2.png"><img src="images/media-horizon-create_cluster_template2.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-create_cluster_template3.png"><img src="images/media-horizon-create_cluster_template3.png" alt="Image" title="Image"/></a></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Proxies are only needed if the created VMs require a proxy to connect
        externally.
-      </p></li><li class="listitem "><p>
-       <span class="guimenu ">Master LB</span> – This should be turned on
+      </p></li><li class="listitem"><p>
+       <span class="guimenu">Master LB</span> – This should be turned on
        if LbaaS v2 (Octavia) is configured in your environment. This option
        will create load balancers in front of the cluster's master nodes and
        distribute the requests to the Kubernetes API and etcd across the master
        nodes.
-      </p></li><li class="listitem "><p>
-       <span class="guimenu ">Floating IP</span> – This assigns floating
+      </p></li><li class="listitem"><p>
+       <span class="guimenu">Floating IP</span> – This assigns floating
        IPs to the cluster nodes when the cluster is being created. This should
        be selected if you wish to ssh into the cluster nodes, perform
        diagnostics and additional tuning to Kubernetes.
-      </p></li></ul></div></li><li class="step "><p>
-     Click the <span class="guimenu ">Submit</span> button to create the cluster template
+      </p></li></ul></div></li><li class="step"><p>
+     Click the <span class="guimenu">Submit</span> button to create the cluster template
      and you should see <span class="emphasis"><em>my-template</em></span> in the list of
      templates.
-    </p></li></ol></div></div></div><div class="sect2" id="creating-the-cluster"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating the Cluster</span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#creating-the-cluster">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>userguide-container_service-create_magnum_cluster_dashboard.xml</li><li><span class="ds-label">ID: </span>creating-the-cluster</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
-     Click <span class="guimenu ">Create Cluster</span> for
+    </p></li></ol></div></div></section><section class="sect2" id="creating-the-cluster" data-id-title="Creating the Cluster"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.3 </span><span class="title-name">Creating the Cluster</span></span> <a title="Permalink" class="permalink" href="using-container-as-a-service-overview.html#creating-the-cluster">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/userguide-container_service-create_magnum_cluster_dashboard.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     Click <span class="guimenu">Create Cluster</span> for
      <span class="emphasis"><em>my-template</em></span> or go to
-     <span class="guimenu ">Project</span> › <span class="guimenu ">Container Infra</span> › <span class="guimenu ">Clusters</span> and click <span class="guimenu ">+ Create
+     <span class="guimenu">Project</span> › <span class="guimenu">Container Infra</span> › <span class="guimenu">Clusters</span> and click <span class="guimenu">+ Create
      Cluster</span> with the following options.
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-create_cluster_img1.png" target="_blank"><img src="images/media-horizon-create_cluster_img1.png" width="" /></a></div></div></li><li class="step "><p>
-     Click <span class="guimenu ">Create</span> to start the cluster
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-create_cluster_img1.png"><img src="images/media-horizon-create_cluster_img1.png" alt="Image" title="Image"/></a></div></div></li><li class="step"><p>
+     Click <span class="guimenu">Create</span> to start the cluster
      creation process.
-    </p></li><li class="step "><p>
-     Click <span class="guimenu ">Clusters</span> in the left pane to see
+    </p></li><li class="step"><p>
+     Click <span class="guimenu">Clusters</span> in the left pane to see
      the list of clusters. You will see
      <span class="emphasis"><em>my-cluster</em></span> in this list. If you select
      <span class="emphasis"><em>my-cluster</em></span>, you will see additional
      information regarding your cluster.
-    </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-horizon-create_cluster_img3.png" target="_blank"><img src="images/media-horizon-create_cluster_img3.png" width="" /></a></div></div></li></ol></div></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="idg-all-userguide-create-network-xml-1.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span>Creating a Private Network</span></a><a class="nav-link" href="user-nonadmin.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part II </span>Project User Guide</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p><div class="informalfigure"><div class="mediaobject"><a href="images/media-horizon-create_cluster_img3.png"><img src="images/media-horizon-create_cluster_img3.png" alt="Image" title="Image"/></a></div></div></li></ol></div></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="user-nonadmin.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part II </span>Project User Guide</span></a> </div><div><a class="pagination-link next" href="idg-all-userguide-create-network-xml-1.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 8 </span>Creating a Private Network</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="using-container-as-a-service-overview.html#deploying-kubernetes-fedora-atomic"><span class="title-number">7.1 </span><span class="title-name">Deploying a Kubernetes Cluster on Fedora Atomic</span></a></span></li><li><span class="section"><a href="using-container-as-a-service-overview.html#deploying-kubernetes-coreos"><span class="title-number">7.2 </span><span class="title-name">Deploying a Kubernetes Cluster on CoreOS</span></a></span></li><li><span class="section"><a href="using-container-as-a-service-overview.html#deploying-docker-fedora-atomic"><span class="title-number">7.3 </span><span class="title-name">Deploying a Docker Swarm Cluster on Fedora Atomic</span></a></span></li><li><span class="section"><a href="using-container-as-a-service-overview.html#deploying-apache-mesos-ubuntu"><span class="title-number">7.4 </span><span class="title-name">Deploying an Apache Mesos Cluster on Ubuntu</span></a></span></li><li><span class="section"><a href="using-container-as-a-service-overview.html#create-magnum-cluster"><span class="title-number">7.5 </span><span class="title-name">Creating a Magnum Cluster with the Dashboard</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

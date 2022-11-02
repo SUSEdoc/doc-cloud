@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing with the Install UI | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Installing with the Install UI | SUSE OpenStack Cloud 8" />
-<meta name="description" content="" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Installing with Cloud Lifecycle Manager" />
-<meta name="chapter-title" content="Chapter 9. Installing with the Install UI" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Installing with the Install UI | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Installing with the Install UI | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="" />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="preparing-standalone.html" title="Chapter 8. Preparing for Stand-Alone Deployment" /><link rel="next" href="using-git.html" title="Chapter 10. Using Git for Configuration Management" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Installing with Cloud Lifecycle Manager | Installing with the Install UI</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Installing with the Install UI | SUSE OpenStack Cloud 8"/>
+<meta name="description" content=""/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Installing with Cloud Lifecycle Manager"/>
+<meta name="chapter-title" content="Chapter 9. Installing with the Install UI"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Installing with the Install UI | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content=""/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installing with the Install UI | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content=""/>
+<link rel="prev" href="preparing-standalone.html" title="Chapter 8. Preparing for Stand-Alone Deployment"/><link rel="next" href="using-git.html" title="Chapter 10. Using Git for Configuration Management"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Installing with Cloud Lifecycle Manager"><span class="book-icon">Installing with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-gui.html">Installing with the Install UI</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 8. Preparing for Stand-Alone Deployment" href="preparing-standalone.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 10. Using Git for Configuration Management" href="using-git.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Installing with Cloud Lifecycle Manager"><span class="book-icon">Installing with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-gui.html">Installing with the Install UI</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 8. Preparing for Stand-Alone Deployment" href="preparing-standalone.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 10. Using Git for Configuration Management" href="using-git.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="install-gui"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing with the Install UI</span> <a title="Permalink" class="permalink" href="install-gui.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span>install-gui</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="install-gui.html#id-1.4.5.4.8"><span class="number">9.1 </span><span class="name">Before You Start</span></a></span></dt><dt><span class="section"><a href="install-gui.html#id-1.4.5.4.9"><span class="number">9.2 </span><span class="name">Preparing to Run the Install UI</span></a></span></dt><dt><span class="section"><a href="install-gui.html#create-csv-file"><span class="number">9.3 </span><span class="name">Optional: Creating a CSV File to Import Server Data</span></a></span></dt><dt><span class="section"><a href="install-gui.html#discover-servers"><span class="number">9.4 </span><span class="name">Optional: Importing Certificates for SUSE Manager and HPE OneView</span></a></span></dt><dt><span class="section"><a href="install-gui.html#id-1.4.5.4.12"><span class="number">9.5 </span><span class="name">Running the Install UI</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Installing with Cloud Lifecycle Manager</a><span> / </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> / </span><a class="crumb" href="install-gui.html">Installing with the Install UI</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title"><em class="citetitle">Installing with Cloud Lifecycle Manager</em></div><ol><li><a href="install-overview.html" class=" "><span class="title-number"> </span><span class="title-name">Installation Overview</span></a></li><li><a href="preinstall.html" class="has-children "><span class="title-number">I </span><span class="title-name">Pre-Installation</span></a><ol><li><a href="preinstall-overview.html" class=" "><span class="title-number">1 </span><span class="title-name">Overview</span></a></li><li><a href="preinstall-checklist.html" class=" "><span class="title-number">2 </span><span class="title-name">Pre-Installation Checklist</span></a></li><li><a href="cha-depl-dep-inst.html" class=" "><span class="title-number">3 </span><span class="title-name">Installing the Cloud Lifecycle Manager server</span></a></li><li><a href="app-deploy-smt-lcm.html" class=" "><span class="title-number">4 </span><span class="title-name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li><a href="cha-depl-repo-conf-lcm.html" class=" "><span class="title-number">5 </span><span class="title-name">Software Repository Setup</span></a></li><li><a href="multipath-boot-from-san.html" class=" "><span class="title-number">6 </span><span class="title-name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="active"><a href="cloudinstallation.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Cloud Installation</span></a><ol><li><a href="cloudinstallation-overview.html" class=" "><span class="title-number">7 </span><span class="title-name">Overview</span></a></li><li><a href="preparing-standalone.html" class=" "><span class="title-number">8 </span><span class="title-name">Preparing for Stand-Alone Deployment</span></a></li><li><a href="install-gui.html" class=" you-are-here"><span class="title-number">9 </span><span class="title-name">Installing with the Install UI</span></a></li><li><a href="using-git.html" class=" "><span class="title-number">10 </span><span class="title-name">Using Git for Configuration Management</span></a></li><li><a href="install-standalone.html" class=" "><span class="title-number">11 </span><span class="title-name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li><a href="install-kvm.html" class=" "><span class="title-number">12 </span><span class="title-name">Installing Mid-scale and Entry-scale KVM</span></a></li><li><a href="DesignateInstallOverview.html" class=" "><span class="title-number">13 </span><span class="title-name">DNS Service Installation Overview</span></a></li><li><a href="MagnumOverview.html" class=" "><span class="title-number">14 </span><span class="title-name">Magnum Overview</span></a></li><li><a href="install-esx-ovsvapp.html" class=" "><span class="title-number">15 </span><span class="title-name">Installing ESX Computes and OVSvAPP</span></a></li><li><a href="integrate-nsx-vsphere.html" class=" "><span class="title-number">16 </span><span class="title-name">Integrating NSX for vSphere</span></a></li><li><a href="install-ironic-overview.html" class=" "><span class="title-number">17 </span><span class="title-name">Installing Baremetal (Ironic)</span></a></li><li><a href="install-swift.html" class=" "><span class="title-number">18 </span><span class="title-name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li><a href="install-sles-compute.html" class=" "><span class="title-number">19 </span><span class="title-name">Installing SLES Compute</span></a></li><li><a href="install-ardana-manila.html" class=" "><span class="title-number">20 </span><span class="title-name">Installing Manila and Creating Manila Shares</span></a></li><li><a href="install-heat-templates.html" class=" "><span class="title-number">21 </span><span class="title-name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li><a href="integrations.html" class=" "><span class="title-number">22 </span><span class="title-name">Integrations</span></a></li><li><a href="troubleshooting-installation.html" class=" "><span class="title-number">23 </span><span class="title-name">Troubleshooting the Installation</span></a></li><li><a href="esx-troubleshooting-installation.html" class=" "><span class="title-number">24 </span><span class="title-name">Troubleshooting the ESX</span></a></li></ol></li><li><a href="post-install.html" class="has-children "><span class="title-number">III </span><span class="title-name">Post-Installation</span></a><ol><li><a href="post-install-overview.html" class=" "><span class="title-number">25 </span><span class="title-name">Overview</span></a></li><li><a href="cloud-verification.html" class=" "><span class="title-number">26 </span><span class="title-name">Cloud Verification</span></a></li><li><a href="ui-verification.html" class=" "><span class="title-number">27 </span><span class="title-name">UI Verification</span></a></li><li><a href="install-openstack-clients.html" class=" "><span class="title-number">28 </span><span class="title-name">Installing OpenStack Clients</span></a></li><li><a href="tls30.html" class=" "><span class="title-number">29 </span><span class="title-name">Configuring Transport Layer Security (TLS)</span></a></li><li><a href="config-availability-zones.html" class=" "><span class="title-number">30 </span><span class="title-name">Configuring Availability Zones</span></a></li><li><a href="OctaviaInstall.html" class=" "><span class="title-number">31 </span><span class="title-name">Configuring Load Balancer as a Service</span></a></li><li><a href="postinstall-checklist.html" class=" "><span class="title-number">32 </span><span class="title-name">Other Common Post-Installation Tasks</span></a></li></ol></li><li><a href="cha-inst-trouble.html" class=" "><span class="title-number">33 </span><span class="title-name">Support</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="install-gui" data-id-title="Installing with the Install UI"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">9 </span><span class="title-name">Installing with the Install UI</span></span> <a title="Permalink" class="permalink" href="install-gui.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> comes with a GUI-based installation wizard for first-time cloud
   installations. It will guide you through the configuration process and deploy
   your cloud based on the custom configuration you provide.  The Install UI
@@ -42,7 +42,7 @@ hljs.configure({
   from. Based on your cloud choice, you can refine your configuration to match
   your needs using Install UI widgets. You can also directly edit your model
   configuration files.
- </p><div id="id-1.4.5.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+ </p><div id="id-1.4.5.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    The Install UI is only for initial deployments. It will not function
    properly after your cloud has been deployed successfully, whether it was
    from the CLI or with the Install UI.
@@ -59,81 +59,81 @@ hljs.configure({
  </p><p>
   The Install UI is designed to make the initial installation process
   simpler, more accurate, and faster than manual installation.
- </p><div class="sect1" id="id-1.4.5.4.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before You Start</span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><section class="sect1" id="id-1.4.5.4.8" data-id-title="Before You Start"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.1 </span><span class="title-name">Before You Start</span></span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Review the <a class="xref" href="preinstall-checklist.html" title="Chapter 2. Pre-Installation Checklist">Chapter 2, <em>Pre-Installation Checklist</em></a> about recommended
      pre-installation tasks.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Prepare the Cloud Lifecycle Manager node. The Cloud Lifecycle Manager must be accessible either directly or via
      <code class="literal">ssh</code>, and have SUSE Linux Enterprise Server 12 SP3 installed. All nodes must
      be accessible to the Cloud Lifecycle Manager. If the nodes do not have direct access to
      online Cloud subscription channels, the Cloud Lifecycle Manager node will need to host the
      Cloud repositories.
-    </p><ol type="a" class="substeps "><li class="step "><p>
+    </p><ol type="a" class="substeps"><li class="step"><p>
        If you followed the installation instructions for Cloud Lifecycle Manager server (see <a class="xref" href="cha-depl-dep-inst.html" title="Chapter 3. Installing the Cloud Lifecycle Manager server">Chapter 3, <em>Installing the Cloud Lifecycle Manager server</em></a>), <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> software should already be
        installed. Double-check whether SUSE Linux Enterprise and <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> are properly
-       registered at the SUSE Customer Center by starting YaST and running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
+       registered at the SUSE Customer Center by starting YaST and running <span class="guimenu">Software</span> › <span class="guimenu">Product
        Registration</span>.
       </p><p>
        If you have not yet installed <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, do so by starting YaST and
-       running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
-       Registration</span> › <span class="guimenu ">Select
-       Extensions</span>. Choose <span class="guimenu "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span>
+       running <span class="guimenu">Software</span> › <span class="guimenu">Product
+       Registration</span> › <span class="guimenu">Select
+       Extensions</span>. Choose <span class="guimenu"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span>
        and follow the on-screen instructions. Make sure to register
        <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> during the installation process and to install the software
        pattern <code class="literal">patterns-cloud-ardana</code>.
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo zypper -n in patterns-cloud-ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo zypper -n in patterns-cloud-ardana</pre></div></li><li class="step"><p>
        Ensure the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> media repositories and updates repositories are
        made available to all nodes in your deployment. This can be accomplished
        either by configuring the Cloud Lifecycle Manager server as an SMT mirror as described in
        <a class="xref" href="app-deploy-smt-lcm.html" title="Chapter 4. Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)">Chapter 4, <em>Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</em></a> or by syncing or mounting the
        Cloud and updates repositories to the Cloud Lifecycle Manager server as described in <a class="xref" href="cha-depl-repo-conf-lcm.html" title="Chapter 5. Software Repository Setup">Chapter 5, <em>Software Repository Setup</em></a>.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Configure passwordless <code class="command">sudo</code> for the user created when
        setting up the node (as described in <a class="xref" href="cha-depl-dep-inst.html#sec-depl-adm-inst-user" title="3.4. Creating a User">Section 3.4, “Creating a User”</a>). Note that this is
        <span class="emphasis"><em>not</em></span> the user <code class="systemitem">ardana</code> that will be used later in this
        procedure. In the following we assume you named the user <code class="systemitem">cloud</code>. Run the command
        <code class="command">visudo</code> as user <code class="systemitem">root</code> and add the following line
        to the end of the file:
-      </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable ">CLOUD</em> ALL = (root) NOPASSWD:ALL</pre></div><p>
-       Make sure to replace <em class="replaceable ">CLOUD</em> with your user name
+      </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable">CLOUD</em> ALL = (root) NOPASSWD:ALL</pre></div><p>
+       Make sure to replace <em class="replaceable">CLOUD</em> with your user name
        choice.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Set the password for the user
        <code class="systemitem">ardana</code>:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step"><p>
        Become the user <code class="systemitem">ardana</code>:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>su - ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>su - ardana</pre></div></li><li class="step"><p>
        Place a copy of the SUSE Linux Enterprise Server 12 SP3 <code class="filename">.iso</code> in the
        <code class="systemitem">ardana</code> home directory,
        <code class="filename">var/lib/ardana</code>, and rename it to
        <code class="filename">sles12sp3.iso</code>.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Install the templates, examples, and working model directories:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>/usr/bin/ardana-init</pre></div></li></ol></li></ol></div></div></div><div class="sect1" id="id-1.4.5.4.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparing to Run the Install UI</span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.9">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>/usr/bin/ardana-init</pre></div></li></ol></li></ol></div></div></section><section class="sect1" id="id-1.4.5.4.9" data-id-title="Preparing to Run the Install UI"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.2 </span><span class="title-name">Preparing to Run the Install UI</span></span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.9">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Before you launch the Install UI to install your cloud, do the following:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Gather the following details from the servers that will make up your
      cloud:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Server names
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        IP addresses
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Server roles
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        PXE MAC addresses
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        PXE IP addresses
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        PXE interfaces
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        IPMI IP address, username, password
-      </p></li></ul></div></li><li class="step "><p>
-     Choose an input model from <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 9 “Example Configurations”</span>. No
+      </p></li></ul></div></li><li class="step"><p>
+     Choose an input model from <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 9 “Example Configurations”</span>. No
      action other than an understanding of your needs is necessary at this
      point. In the Install UI you will indicate which input model you wish to
      deploy.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Before you use the Install UI to install your cloud, you may install the
      operating system, SLES, on your nodes (servers) if you choose.
      Otherwise, the Install UI will install it for you.
@@ -146,7 +146,7 @@ hljs.configure({
   workflow means that your configuration history is maintained, making
   rollbacks easier and keeping a record of previous configuration settings. The
   git repository also provides a way for you to merge changes that you pull down as
-  <span class="quote">“<span class="quote ">upstream</span>”</span> updates (that is, updates from <span class="phrase"><span class="phrase">SUSE</span></span>). It also
+  <span class="quote">“<span class="quote">upstream</span>”</span> updates (that is, updates from <span class="phrase"><span class="phrase">SUSE</span></span>). It also
   allows you to manage your own configuration changes.
  </p><p>
   The git repository is installed by the Cloud Lifecycle Manager on the Cloud Lifecycle Manager node.
@@ -154,17 +154,17 @@ hljs.configure({
   Using the Install UI does not require the use of the git repository. After
   the installation, it may be useful to know more about
   <a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>.
- </p></div><div class="sect1" id="create-csv-file"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optional: Creating a CSV File to Import Server Data</span> <a title="Permalink" class="permalink" href="install-gui.html#create-csv-file">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span>create-csv-file</li></ul></div></div></div></div><p>
+ </p></section><section class="sect1" id="create-csv-file" data-id-title="Optional: Creating a CSV File to Import Server Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.3 </span><span class="title-name">Optional: Creating a CSV File to Import Server Data</span></span> <a title="Permalink" class="permalink" href="install-gui.html#create-csv-file">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Before beginning the installation, you can create a CSV file with your
    server information to import directly into the Install UI to avoid
-   entering it manually on the <span class="guimenu ">Assign Servers</span> page.
+   entering it manually on the <span class="guimenu">Assign Servers</span> page.
   </p><p>
    The following table shows the fields needed for your CSV file.
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="col1" /><col align="center" class="col2" /><col align="center" class="col3" /><col class="col4" /></colgroup><tbody><tr><td><span class="bold"><strong>Field</strong></span>
-      </td><td align="center"><span class="bold"><strong>Required</strong></span>
-      </td><td align="center"><span class="bold"><strong>Required for OS Provisioning</strong></span>
-      </td><td><span class="bold"><strong>Aliases</strong></span>
-      </td></tr><tr><td>Server ID</td><td align="center">Yes</td><td align="center">Yes</td><td>server_id, id</td></tr><tr><td>IP Address</td><td align="center">Yes</td><td align="center">Yes</td><td>ip, ip_address, ip_addr</td></tr><tr><td>MAC Address</td><td align="center">Yes</td><td align="center">Yes</td><td>mac, mac_address, mac_addr</td></tr><tr><td>IPMI IP Address</td><td align="center">No</td><td align="center">Yes</td><td>ipmi_ip, ipmi_ip_address</td></tr><tr><td>IPMI User</td><td align="center">No</td><td align="center">Yes</td><td>ipmi_user, user</td></tr><tr><td>IPMI Password</td><td align="center">No</td><td align="center">Yes</td><td>ipmi_password, password</td></tr><tr><td>Server Role</td><td align="center">No</td><td align="center">No</td><td>server_role, role</td></tr><tr><td>Server Group</td><td align="center">No</td><td align="center">No</td><td>server_group, group</td></tr><tr><td>NIC Mapping</td><td align="center">No</td><td align="center">No</td><td>server_nic_map, nic_map, nic_mapping</td></tr></tbody></table></div><p>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col1"/><col style="text-align: center; " class="col2"/><col style="text-align: center; " class="col3"/><col class="col4"/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><span class="bold"><strong>Field</strong></span>
+      </td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; "><span class="bold"><strong>Required</strong></span>
+      </td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; "><span class="bold"><strong>Required for OS Provisioning</strong></span>
+      </td><td style="border-bottom: 1px solid ; "><span class="bold"><strong>Aliases</strong></span>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Server ID</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">server_id, id</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">IP Address</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">ip, ip_address, ip_addr</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">MAC Address</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">mac, mac_address, mac_addr</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">IPMI IP Address</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">ipmi_ip, ipmi_ip_address</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">IPMI User</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">ipmi_user, user</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">IPMI Password</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">Yes</td><td style="border-bottom: 1px solid ; ">ipmi_password, password</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Server Role</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="border-bottom: 1px solid ; ">server_role, role</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Server Group</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; border-bottom: 1px solid ; ">No</td><td style="border-bottom: 1px solid ; ">server_group, group</td></tr><tr><td style="border-right: 1px solid ; ">NIC Mapping</td><td style="text-align: center; border-right: 1px solid ; ">No</td><td style="text-align: center; border-right: 1px solid ; ">No</td><td>server_nic_map, nic_map, nic_mapping</td></tr></tbody></table></div><p>
    The aliases are all the valid names that can be used in the CSV file for the
    column header for a given field. Field names are not case sensitive. You can
    use either <code class="literal"> </code> (space) or <code class="literal">-</code> (hyphen) in
@@ -173,59 +173,59 @@ hljs.configure({
    An example CSV file could be:
   </p><div class="verbatim-wrap"><pre class="screen">id,ip-addr,mac-address,server-group,nic-mapping,server-role,ipmi-ip,ipmi-user
 controller1,192.168.110.3,b2:72:8d:ac:7c:6f,RACK1,HP-DL360-4PORT,CONTROLLER-ROLE,192.168.109.3,admin
-myserver4,10.2.10.24,00:14:22:01:23:44,AZ1,,,,</pre></div></div><div class="sect1" id="discover-servers"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optional: Importing Certificates for SUSE Manager and HPE OneView</span> <a title="Permalink" class="permalink" href="install-gui.html#discover-servers">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span>discover-servers</li></ul></div></div></div></div><p>
+myserver4,10.2.10.24,00:14:22:01:23:44,AZ1,,,,</pre></div></section><section class="sect1" id="discover-servers" data-id-title="Optional: Importing Certificates for SUSE Manager and HPE OneView"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.4 </span><span class="title-name">Optional: Importing Certificates for SUSE Manager and HPE OneView</span></span> <a title="Permalink" class="permalink" href="install-gui.html#discover-servers">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If you intend to use SUSE Manager or HPE OneView to add servers, certificates for
    those services must be accessible to the Install UI.
   </p><p>
    Use the following steps to import a SUSE Manager certificate.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Retrieve the <code class="filename">.pem</code> file from the SUSE Manager.
-    </p><div class="verbatim-wrap"><pre class="screen">curl -k https://<em class="replaceable ">SUSE_MANAGER_IP</em>:<em class="replaceable ">PORT</em>/pub/RHN-ORG-TRUSTED-SSL-CERT &gt; <em class="replaceable ">PEM_NAME</em>.pem</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">curl -k https://<em class="replaceable">SUSE_MANAGER_IP</em>:<em class="replaceable">PORT</em>/pub/RHN-ORG-TRUSTED-SSL-CERT &gt; <em class="replaceable">PEM_NAME</em>.pem</pre></div></li><li class="step"><p>
      Copy the <code class="filename">.pem</code> file to the proper location on the
      Cloud Lifecycle Manager.
     </p><div class="verbatim-wrap"><pre class="screen">cd /etc/pki/trust/anchors
-sudo cp ~/<em class="replaceable ">PEM_NAME</em>.pem .</pre></div></li><li class="step "><p>
+sudo cp ~/<em class="replaceable">PEM_NAME</em>.pem .</pre></div></li><li class="step"><p>
      Install the certificate.
-    </p><div class="verbatim-wrap"><pre class="screen">sudo update-ca-certificates</pre></div></li><li class="step "><p>
-     Add <em class="replaceable ">SUSE Manager host IP address</em> if
-     <em class="replaceable ">SUSE Manager.test.domain</em> is not reachable by DNS.
+    </p><div class="verbatim-wrap"><pre class="screen">sudo update-ca-certificates</pre></div></li><li class="step"><p>
+     Add <em class="replaceable">SUSE Manager host IP address</em> if
+     <em class="replaceable">SUSE Manager.test.domain</em> is not reachable by DNS.
     </p><div class="verbatim-wrap"><pre class="screen">sudo vi /etc/hosts</pre></div><p>
-     Add <em class="replaceable ">SUSE Manager host IP address</em>
-     <em class="replaceable ">SUSE Manager.test.domain</em>. For example:
+     Add <em class="replaceable">SUSE Manager host IP address</em>
+     <em class="replaceable">SUSE Manager.test.domain</em>. For example:
     </p><div class="verbatim-wrap"><pre class="screen">10.10.10.10 SUSE Manager.test.domain</pre></div></li></ol></div></div><p>
    Use the following steps to import an HPE OneView certificate.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st-oneview-retrieve-id"><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step" id="st-oneview-retrieve-id"><p>
      Retrieve the <code class="literal">sessionID</code>.
     </p><div class="verbatim-wrap"><pre class="screen">curl -k -H "X-Api-Version:500" -H "Content-Type: application/json" \
--d '{"userName":<em class="replaceable ">ONEVIEW_USER</em>, "password":<em class="replaceable ">ONEVIEW_PASSWORD</em>, \
-"loginMsgAck":"true"}' https://<em class="replaceable ">ONEVIEW_MANAGER_URL</em>:<em class="replaceable ">PORT</em>/rest/login-sessions</pre></div><p>
+-d '{"userName":<em class="replaceable">ONEVIEW_USER</em>, "password":<em class="replaceable">ONEVIEW_PASSWORD</em>, \
+"loginMsgAck":"true"}' https://<em class="replaceable">ONEVIEW_MANAGER_URL</em>:<em class="replaceable">PORT</em>/rest/login-sessions</pre></div><p>
      The response will be similar to:
-    </p><div class="verbatim-wrap"><pre class="screen">{"partnerData":{},"sessionID":"LTYxNjA1O1NjkxMHcI1b2ypaGPscErUOHrl7At3-odHPmR"}</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">{"partnerData":{},"sessionID":"LTYxNjA1O1NjkxMHcI1b2ypaGPscErUOHrl7At3-odHPmR"}</pre></div></li><li class="step"><p>
      Retrieve a Certificate Signing Request (CSR) using the
-     <em class="replaceable ">sessionID</em> from
+     <em class="replaceable">sessionID</em> from
      <a class="xref" href="install-gui.html#st-oneview-retrieve-id" title="Step 1">Step 1</a>.
-    </p><div class="verbatim-wrap"><pre class="screen">curl -k -i -H "X-Api-Version:500" -H <em class="replaceable ">sessionID</em> \
-<em class="replaceable ">ONEVIEW_MANAGER_URL</em>/rest/certificates/ca \
-&gt; <em class="replaceable ">CA_NAME</em>.csr</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">curl -k -i -H "X-Api-Version:500" -H <em class="replaceable">sessionID</em> \
+<em class="replaceable">ONEVIEW_MANAGER_URL</em>/rest/certificates/ca \
+&gt; <em class="replaceable">CA_NAME</em>.csr</pre></div></li><li class="step"><p>
      Follow instructions in the HPE OneView User Guide to validate the CSR and
      obtain a signed certificate
-     (<em class="replaceable ">CA_NAME</em><code class="filename">.crt</code>).
-    </p></li><li class="step "><p>
+     (<em class="replaceable">CA_NAME</em><code class="filename">.crt</code>).
+    </p></li><li class="step"><p>
      Copy the <code class="filename">.crt</code> file to the proper location on the
      Cloud Lifecycle Manager.
     </p><div class="verbatim-wrap"><pre class="screen">cd /etc/pki/trust/anchors
-sudo cp ~/data/<em class="replaceable ">CA_NAME</em>.crt .</pre></div></li><li class="step "><p>
+sudo cp ~/data/<em class="replaceable">CA_NAME</em>.crt .</pre></div></li><li class="step"><p>
      Install the certificate.
-    </p><div class="verbatim-wrap"><pre class="screen">sudo update-ca-certificates</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">sudo update-ca-certificates</pre></div></li><li class="step"><p>
      Follow instructions in your HPE OneView User Guide to import the
-     <em class="replaceable ">CA_NAME</em>.crt certificate into HPE OneView.
-    </p></li><li class="step "><p>
-     Add <em class="replaceable ">HPE OneView host IP address</em> if
-     <em class="replaceable ">HPE OneView.test.domain</em> is not reachable by DNS.
+     <em class="replaceable">CA_NAME</em>.crt certificate into HPE OneView.
+    </p></li><li class="step"><p>
+     Add <em class="replaceable">HPE OneView host IP address</em> if
+     <em class="replaceable">HPE OneView.test.domain</em> is not reachable by DNS.
     </p><div class="verbatim-wrap"><pre class="screen">sudo vi /etc/hosts</pre></div><p>
-     Add <em class="replaceable ">HPE OneView host IP address</em>
-     <em class="replaceable ">HPE OneView.test.domain</em> For example:
-    </p><div class="verbatim-wrap"><pre class="screen">10.84.84.84  HPE OneView.test.domain</pre></div></li></ol></div></div></div><div class="sect1" id="id-1.4.5.4.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">9.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Running the Install UI</span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation-installation-gui_installer.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.4.5.4.12.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+     Add <em class="replaceable">HPE OneView host IP address</em>
+     <em class="replaceable">HPE OneView.test.domain</em> For example:
+    </p><div class="verbatim-wrap"><pre class="screen">10.84.84.84  HPE OneView.test.domain</pre></div></li></ol></div></div></section><section class="sect1" id="id-1.4.5.4.12" data-id-title="Running the Install UI"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">9.5 </span><span class="title-name">Running the Install UI</span></span> <a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.4.5.4.12.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     The Install UI must run continuously without stopping for authentication
     at any step. When using the Install UI it is required to launch the Cloud Lifecycle Manager
     with the following command:
@@ -246,32 +246,32 @@ sudo cp ~/data/<em class="replaceable ">CA_NAME</em>.crt .</pre></div></li><li c
   </p><p>
    To open an SSH tunnel from your Linux-based computer in your
    <span class="bold"><strong>MANAGEMENT</strong></span> network to the Cloud Lifecycle Manager:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Open a new terminal and enter the following command:
-    </p><div class="verbatim-wrap"><pre class="screen">ssh -N -L 8080:localhost:3000 ardana@<em class="replaceable ">MANAGEMENT IP address of Cloud Lifecycle Manager</em></pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen">ssh -N -L 8080:localhost:3000 ardana@<em class="replaceable">MANAGEMENT IP address of Cloud Lifecycle Manager</em></pre></div><p>
      The user name and password should be what was set in
      <a class="xref" href="cha-depl-dep-inst.html#sec-depl-adm-inst-add-on" title="3.5.2. Installing the SUSE OpenStack Cloud Extension">Section 3.5.2, “Installing the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Extension”</a>. There will be no prompt after
      you have logged in.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Leave this terminal session open to keep the SSH tunnel open and running.
      This SSH tunnel will forward connections from your Linux-based computer
      directly to the Cloud Lifecycle Manager, bypassing firewall restrictions.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      On your local computer (the one you are tunneling from), point your
      browser to <code class="uri">http://localhost:8080</code>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      If the connection is interrupted, refresh your browser.
-    </p></li></ol></div></div><div id="id-1.4.5.4.12.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+    </p></li></ol></div></div><div id="id-1.4.5.4.12.7" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     If you use an SSH tunnel to connect to the Install UI, there is an
     important note in the "Review Configuration Files" step about modifying
     <code class="filename">firewall_rules.yml</code> to allow SSH connections on the
     <span class="bold"><strong>MANAGEMENT</strong></span> network.
-   </p></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.8"><span class="name">Overview</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+   </p></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.8"><span class="name">Overview</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.8">#</a></h5></div><p>
    The first page of the Install UI shows the general installation process
    and a reminder to gather some information before beginning. Clicking the
-   <span class="guimenu ">Next</span> button brings up the <span class="guimenu ">Model
+   <span class="guimenu">Next</span> button brings up the <span class="guimenu">Model
    Selection</span> page.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_intro.png" target="_blank"><img src="images/installer_ui_intro.png" width="" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.11"><span class="name">Choose an <span class="productname">OpenStack</span> Cloud Model</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.11">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_intro.png"><img src="images/installer_ui_intro.png" alt="Image" title="Image"/></a></div></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.11"><span class="name">Choose an <span class="productname">OpenStack</span> Cloud Model</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.11">#</a></h5></div><p>
    The input model choices are displayed on this page. Details of each model
    can be seen on the right by clicking the model name on the left. If you have
    already decided some aspects of your cloud environment, models can be
@@ -283,13 +283,13 @@ sudo cp ~/data/<em class="replaceable ">CA_NAME</em>.crt .</pre></div></li><li c
    be deployed. Models can be adjusted later in the process, though selecting
    the closest match to your requirements reduces the effort required to deploy
    your cloud.
-  </p><div id="id-1.4.5.4.12.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+  </p><div id="id-1.4.5.4.12.14" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     If you select any ESX model, extra manual steps are required to avoid
     configuration failures. While installing an ESX model with the
     Install UI, you will be asked for interfaces related to ESX and
     OVSvApp. Those interfaces must be defined before being entered in the
     Install UI.  Instructions are available at <a class="xref" href="install-esx-ovsvapp.html#esxi-overview" title="15.3. Overview of ESXi and OVSvApp">Section 15.3, “Overview of ESXi and OVSvApp”</a>.
-   </p></div><div id="id-1.4.5.4.12.15" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p></div><div id="id-1.4.5.4.12.15" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     <span class="bold"><strong>Installing a Stand-alone Deployer</strong></span>
    </p><p>
     If you are using the Install UI to install a stand-alone deployer, select
@@ -297,136 +297,136 @@ sudo cp ~/data/<em class="replaceable ">CA_NAME</em>.crt .</pre></div></li><li c
    </p><p>
     Continue with the remaining Install UI steps to finish installing the
     stand-alone deployer.
-   </p></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_select_model.png" target="_blank"><img src="images/installer_ui_select_model.png" width="" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.17"><span class="name">Cloud Model to Deploy</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.17">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+   </p></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_select_model.png"><img src="images/installer_ui_select_model.png" alt="Image" title="Image"/></a></div></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.17"><span class="name">Cloud Model to Deploy</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.17">#</a></h5></div><p>
    Based on the cloud example selected on the previous page, more detail is
    shown about that cloud configuration and the components that will be
    deployed. If you go back and select a different model, the deployment
    process restarts from the beginning. Any configuration changes you have made
    will be deleted.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <span class="emphasis"><em>Mandatory components</em></span> have assigned quantities. We
      strongly suggest not changing those quantities to avoid potential problems
      later in the installation process.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <span class="emphasis"><em>Additional components</em></span> can be adjusted within the
      parameters shown.
     </p></li></ul></div><p>
    The number of nodes (servers) dedicated to each server role can be adjusted.
    Most input models are designed to support High Availability and to
    distribute <span class="productname">OpenStack</span> services appropriately.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_model_details.png" target="_blank"><img src="images/installer_ui_model_details.png" width="" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.22"><span class="name">Adding Servers and Assigning Server Roles</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.22">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_model_details.png"><img src="images/installer_ui_model_details.png" alt="Image" title="Image"/></a></div></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.22"><span class="name">Adding Servers and Assigning Server Roles</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.22">#</a></h5></div><p>
    This page provides more detail about the number and assignment of each type
    of node based on the information from the previous page (any changes must be
    made there).
   </p><p>
    Components that do not meet the required parameters will be shown in red in
    the accordion bar. Missing required fields and duplicate server names will
-   also be red, as will the accordion bar. The <span class="guimenu ">Next</span> button
+   also be red, as will the accordion bar. The <span class="guimenu">Next</span> button
    will be disabled.
   </p><p>
    Servers may be discovered using SUSE Manager, HPE OneView, or both. Ensure that
    the certificates are accessible, as described in
-   <a class="xref" href="install-gui.html#discover-servers" title="9.4. Optional: Importing Certificates for SUSE Manager and HPE OneView">Section 9.4, “Optional: Importing Certificates for SUSE Manager and HPE OneView”</a>. Clicking the <span class="guimenu ">Discover</span>
+   <a class="xref" href="install-gui.html#discover-servers" title="9.4. Optional: Importing Certificates for SUSE Manager and HPE OneView">Section 9.4, “Optional: Importing Certificates for SUSE Manager and HPE OneView”</a>. Clicking the <span class="guimenu">Discover</span>
    button will prompt for access credentials to the system management software
    to be used for discovery. Certificates can be verified by checking
-   <span class="guimenu ">Verify SSL certificate</span>. After validating credentials,
+   <span class="guimenu">Verify SSL certificate</span>. After validating credentials,
    Discovery will retrieve a list of known servers from SUSE Manager and/or
    HPE OneView and allow access to server details on those management platforms.
   </p><p>
    You can drag and drop to move servers from the left to the right in order to
    assign server roles, from right to left, or up and down in the accordion
    bar.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_assign_servers.png" target="_blank"><img src="images/installer_ui_assign_servers.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_discovery.png" target="_blank"><img src="images/installer_ui_discovery.png" width="" /></a></div></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_assign_servers.png"><img src="images/installer_ui_assign_servers.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_discovery.png"><img src="images/installer_ui_discovery.png" alt="Image" title="Image"/></a></div></div><p>
    Server information may also be entered manually or imported via CSV in the
-   <span class="guimenu ">Manual Entry</span> tab. The format for CSV entry is described
+   <span class="guimenu">Manual Entry</span> tab. The format for CSV entry is described
    in <a class="xref" href="install-gui.html#create-csv-file" title="9.3. Optional: Creating a CSV File to Import Server Data">Section 9.3, “Optional: Creating a CSV File to Import Server Data”</a>. The server assignment list includes
    placeholder server details that can be edited to reflect real hardware, or
    can be removed and replaced with discovered or manually added systems.
   </p><p>
    For more information about server roles, see
-   <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”, Section 5.2 “Concepts”, Section 5.2.4 “Server Roles”</span>.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_add_servers_manually.png" target="_blank"><img src="images/installer_ui_add_servers_manually.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_add_server_manually.png" target="_blank"><img src="images/installer_ui_add_server_manually.png" width="" /></a></div></div><p>
+   <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”, Section 5.2 “Concepts”, Section 5.2.4 “Server Roles”</span>.
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_add_servers_manually.png"><img src="images/installer_ui_add_servers_manually.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_add_server_manually.png"><img src="images/installer_ui_add_server_manually.png" alt="Image" title="Image"/></a></div></div><p>
    Subnet and netmask values should be set on this page as they may impact the
    IP addresses being assigned to various servers.
-  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.34"><span class="name">Choose servers on which SLES will be installed</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.34">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+  </p><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.34"><span class="name">Choose servers on which SLES will be installed</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.34">#</a></h5></div><p>
    If an OS has not previously been installed on the servers that make up the
    cloud configuration, the OS installation page allows for Cobbler to deploy
    SLES on servers in the cloud configuration. Enter password, select
-   servers and click <span class="guimenu ">Install</span> to deploy SLES to these
+   servers and click <span class="guimenu">Install</span> to deploy SLES to these
    servers. An installation log and progress indicators will be displayed.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_install_os.png" target="_blank"><img src="images/installer_ui_install_os.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_install_os_inprogress.png" target="_blank"><img src="images/installer_ui_install_os_inprogress.png" width="" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.38"><span class="name">Server and Role Summary</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.38">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_install_os.png"><img src="images/installer_ui_install_os.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_install_os_inprogress.png"><img src="images/installer_ui_install_os_inprogress.png" alt="Image" title="Image"/></a></div></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.38"><span class="name">Server and Role Summary</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.38">#</a></h5></div><p>
    When the OS installation is complete, a Server and Server Role Summary page
    is displayed. It shows which servers have been assigned to each role, and
    provides an opportunity to edit the server configurations. Various cloud
-   components can be configured by clicking on the <span class="guimenu ">Manage Cloud
+   components can be configured by clicking on the <span class="guimenu">Manage Cloud
    Settings</span> button. Incorrect information will be shown in red.
   </p><p>
    Below is the list of what can be changed within the Install UI, followed
    by a list of customizations that can only be changed by directly editing the
-   files on the <span class="guimenu ">Review Configuration Files</span> page. Anything
+   files on the <span class="guimenu">Review Configuration Files</span> page. Anything
    changed directly in the files themselves during the Install UI process
    will be overwritten by values you have entered with the Install UI.
   </p><p>
    Changes to the following items can be made:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      servers (including SLES installation configuration)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      networks
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      disk models
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      interface models
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      NIC mappings
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      NTP servers
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      name servers
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      tags in network groups
     </p></li></ul></div><p>
    Changes to the following items can only be made by manually editing the
-   associated <code class="filename">.yml</code> files on the <span class="guimenu ">Review
+   associated <code class="filename">.yml</code> files on the <span class="guimenu">Review
    Configuration</span> page of the Install UI:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      server groups
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      server roles
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      network groups
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      firewall rules
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      DNS, SMTP, firewall settings (<code class="filename">cloudConfig.yml</code>)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      control planes
-    </p></li></ul></div><div id="id-1.4.5.4.12.45" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+    </p></li></ul></div><div id="id-1.4.5.4.12.45" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     Directly changing files may cause the configuration to fail validation.
     During the process of installing with the Install UI, any changes should
     be made with the tools provided within the Install UI.
-   </p></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_server_summary.png" target="_blank"><img src="images/installer_ui_server_summary.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_edit_server.png" target="_blank"><img src="images/installer_ui_edit_server.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_manage_cloud_settings.png" target="_blank"><img src="images/installer_ui_manage_cloud_settings.png" width="" /></a></div></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.49"><span class="name">Review Configuration Files</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.49">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+   </p></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_server_summary.png"><img src="images/installer_ui_server_summary.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_edit_server.png"><img src="images/installer_ui_edit_server.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_manage_cloud_settings.png"><img src="images/installer_ui_manage_cloud_settings.png" alt="Image" title="Image"/></a></div></div><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.49"><span class="name">Review Configuration Files</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.49">#</a></h5></div><p>
    Advanced editing of the cloud configuration can be done on the
    <code class="literal">Review Configuration Files</code> page. Individual
    <code class="filename">.yml</code> and <code class="filename">.j2</code> files can be edited
-   directly with the embedded editor in the <span class="guimenu ">Model</span> and
-   <span class="guimenu ">Templates and Services</span> tabs. The
-   <span class="guimenu ">Deployment</span> tab contains the items <span class="guimenu ">Wipe Data
-   Disks</span>, <span class="guimenu ">Encryption Key</span> and <span class="guimenu ">Verbosity
+   directly with the embedded editor in the <span class="guimenu">Model</span> and
+   <span class="guimenu">Templates and Services</span> tabs. The
+   <span class="guimenu">Deployment</span> tab contains the items <span class="guimenu">Wipe Data
+   Disks</span>, <span class="guimenu">Encryption Key</span> and <span class="guimenu">Verbosity
    Level</span>.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_review_configuration.png" target="_blank"><img src="images/installer_ui_review_configuration.png" width="" /></a></div></div><div id="id-1.4.5.4.12.52" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_review_configuration.png"><img src="images/installer_ui_review_configuration.png" alt="Image" title="Image"/></a></div></div><div id="id-1.4.5.4.12.52" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     If you are using an SSH tunnel to connect to the Install UI, you will
     need to make an extra modification here to allow SSH connections through
     the firewall:
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       While on the Review Configuration Files page, click on the
-      <span class="guimenu ">Model</span> tab.
-     </p></li><li class="step "><p>
-      Click <span class="guimenu ">Firewall Rules</span>.
-     </p></li><li class="step "><p>
+      <span class="guimenu">Model</span> tab.
+     </p></li><li class="step"><p>
+      Click <span class="guimenu">Firewall Rules</span>.
+     </p></li><li class="step"><p>
       Uncomment the <code class="literal">SSH</code> section (remove the
       <code class="literal">#</code> at the beginning of the line for the <code class="literal">-
       name: SSH</code> section).
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       If you do not have such a <code class="literal">- name: SSH</code> section,
       manually add the following under the <code class="literal">firewall-rules:</code>
       section:
@@ -438,25 +438,25 @@ rules:
   remote-ip-prefix: 0.0.0.0/0
   port-range-min: 22
   port-range-max: 22
-  protocol: tcp</pre></div></li></ol></div></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_review_configuration_edit_yml.png" target="_blank"><img src="images/installer_ui_review_configuration_edit_yml.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_review_configuration_edit_services.png" target="_blank"><img src="images/installer_ui_review_configuration_edit_services.png" width="" /></a></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_review_configuration_deployment.png" target="_blank"><img src="images/installer_ui_review_configuration_deployment.png" width="" /></a></div></div><div id="id-1.4.5.4.12.56" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+  protocol: tcp</pre></div></li></ol></div></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_review_configuration_edit_yml.png"><img src="images/installer_ui_review_configuration_edit_yml.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_review_configuration_edit_services.png"><img src="images/installer_ui_review_configuration_edit_services.png" alt="Image" title="Image"/></a></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_review_configuration_deployment.png"><img src="images/installer_ui_review_configuration_deployment.png" alt="Image" title="Image"/></a></div></div><div id="id-1.4.5.4.12.56" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
    Manual edits to your configuration files outside of the Install UI may not
    be reflected in the Install UI. If you make changes to any files directly,
    refresh the browser to make sure changes are seen by the Install UI.
   </p></div><p>
    Before performing the deployment, the configuration must be validated by
-   clicking the <span class="guimenu ">Validate</span> button below the list of
-   configuration files on the <span class="guimenu ">Model</span> tab. This ensures the
+   clicking the <span class="guimenu">Validate</span> button below the list of
+   configuration files on the <span class="guimenu">Model</span> tab. This ensures the
    configuration will be successful <span class="bold"><strong>before</strong></span> the
    actual configuration process runs and possibly fails. The
-   <span class="guimenu ">Validate</span> button also commits any changes. If there are
+   <span class="guimenu">Validate</span> button also commits any changes. If there are
    issues with the validation, the configuration processor will provide
    detailed information about the causes. When validation completes
    successfully, a message will be displayed that the model is valid. If either
-   validation or commit fail, the <span class="guimenu ">Next</span> button is disabled.
+   validation or commit fail, the <span class="guimenu">Next</span> button is disabled.
   </p><p>
-   Clicking the <span class="guimenu ">Deploy</span> button starts the actual deployment
+   Clicking the <span class="guimenu">Deploy</span> button starts the actual deployment
    process.
-  </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.59"><span class="name">Cloud Deployment in Progress</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.59">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/installation-installation-gui_installer.xml" title="Edit the source file for this section">Edit source</a></h5></div><p>
+  </p><div class="sect4 bridgehead"><h5 class="title" id="id-1.4.5.4.12.59"><span class="name">Cloud Deployment in Progress</span><a title="Permalink" class="permalink" href="install-gui.html#id-1.4.5.4.12.59">#</a></h5></div><p>
    General progress steps are shown on the left. Detailed activity is shown on
    the right.
   </p><p>
@@ -466,38 +466,38 @@ rules:
   </p><p>
    The log stream on the right shows finished states. If there are any
    failures, the log stream will show the errors and the
-   <span class="guimenu ">Next</span> button will be disabled. The <span class="guimenu ">Back</span>
-   and <span class="guimenu ">Next</span> buttons are disabled during the deployment
+   <span class="guimenu">Next</span> button will be disabled. The <span class="guimenu">Back</span>
+   and <span class="guimenu">Next</span> buttons are disabled during the deployment
    process.
   </p><p>
    The log files in <code class="filename">~/ardana/.ansible/ansible.log</code> and
    <code class="filename">/var/cache/ardana_installer/</code> have debugging
    information.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <code class="filename">/var/cache/ardana_installer/log/ardana-service/ardana-service.log</code>
      is created and used during the deployment step.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Each of the time-stamped files in
      <code class="filename">/var/cache/ardana_installer/log/ardana-service/logs/*.log</code>
      shows the output of a single Ansible playbook run invoked during the UI
      installation process and the log output for each of those runs.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <code class="filename">~/ardana/.ansible/ansible.log</code> file is the output
      of all Ansible playbook runs. This includes the logs from
      <code class="filename">/var/cache/ardana_installer/log/ardana-service/logs/*.log</code>.
-    </p></li></ul></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_deploy_inprogress.png" target="_blank"><img src="images/installer_ui_deploy_inprogress.png" width="" /></a></div></div><p>
+    </p></li></ul></div><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_deploy_inprogress.png"><img src="images/installer_ui_deploy_inprogress.png" alt="Image" title="Image"/></a></div></div><p>
    When the deployment process is complete, all items on the left will be
    green. Some deployments will not include all steps shown if they do not apply
    to the selected input model. In such a situation, those unneeded steps will
    remain gray.
   </p><p>
-   The <span class="guimenu ">Next</span> button will be enabled when deployment is
+   The <span class="guimenu">Next</span> button will be enabled when deployment is
    successful.
   </p><p>
-   Clicking <span class="guimenu ">Next</span> will display the <code class="literal">Cloud Deployment
+   Clicking <span class="guimenu">Next</span> will display the <code class="literal">Cloud Deployment
    Successful</code> page with information about the deployment, including
    the chosen input model and links to cloud management tools.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/installer_ui_deploy_successful.png" target="_blank"><img src="images/installer_ui_deploy_successful.png" width="" /></a></div></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/installer_ui_deploy_successful.png"><img src="images/installer_ui_deploy_successful.png" alt="Image" title="Image"/></a></div></div><p>
    After installation is complete, shutdown the Install UI by logging into
    the Cloud Lifecycle Manager and running the following commands:
   </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
@@ -507,10 +507,9 @@ ansible-playbook -i hosts/localhost installui-stop.yml</pre></div><p>
   </p><p>
    To understand cloud configuration more thoroughly and to learn how to make
    changes later, see:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-     <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”</span>
-    </p></li><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”</span>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="using-git.html" title="Chapter 10. Using Git for Configuration Management">Chapter 10, <em>Using Git for Configuration Management</em></a>
-    </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="using-git.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 10 </span>Using Git for Configuration Management</span></a><a class="nav-link" href="preparing-standalone.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 8 </span>Preparing for Stand-Alone Deployment</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></li></ul></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="preparing-standalone.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 8 </span>Preparing for Stand-Alone Deployment</span></a> </div><div><a class="pagination-link next" href="using-git.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 10 </span>Using Git for Configuration Management</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="install-gui.html#id-1.4.5.4.8"><span class="title-number">9.1 </span><span class="title-name">Before You Start</span></a></span></li><li><span class="section"><a href="install-gui.html#id-1.4.5.4.9"><span class="title-number">9.2 </span><span class="title-name">Preparing to Run the Install UI</span></a></span></li><li><span class="section"><a href="install-gui.html#create-csv-file"><span class="title-number">9.3 </span><span class="title-name">Optional: Creating a CSV File to Import Server Data</span></a></span></li><li><span class="section"><a href="install-gui.html#discover-servers"><span class="title-number">9.4 </span><span class="title-name">Optional: Importing Certificates for SUSE Manager and HPE OneView</span></a></span></li><li><span class="section"><a href="install-gui.html#id-1.4.5.4.12"><span class="title-number">9.5 </span><span class="title-name">Running the Install UI</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

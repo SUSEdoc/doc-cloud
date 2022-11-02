@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Third-Party Integrations | Operations Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Third-Party Integrations | SUSE OpenStack Cloud 8" />
-<meta name="description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the steps to set …" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Operations Guide" />
-<meta name="chapter-title" content="Chapter 3. Third-Party Integrations" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Third-Party Integrations | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the steps to set …" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Third-Party Integrations | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the steps to set …" />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide" /><link rel="prev" href="tutorials.html" title="Chapter 2. Tutorials" /><link rel="next" href="ops-managing-identity.html" title="Chapter 4. Managing Identity" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Operations Guide | Third-Party Integrations</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Third-Party Integrations | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the ste…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Operations Guide"/>
+<meta name="chapter-title" content="Chapter 3. Third-Party Integrations"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Third-Party Integrations | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the ste…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Third-Party Integrations | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="This documentation demonstrates the possible integration between the SUSE OpenStack Cloud 8 centralized logging solution and Splunk including the ste…"/>
+<link rel="prev" href="tutorials.html" title="Chapter 2. Tutorials"/><link rel="next" href="ops-managing-identity.html" title="Chapter 4. Managing Identity"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="third-party-integrations.html">Third-Party Integrations</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">3 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">4 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">5 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">6 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">7 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">8 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">9 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">10 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">11 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">12 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">13 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">14 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">15 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Managing Identity" href="ops-managing-identity.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="third-party-integrations.html">Third-Party Integrations</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Tutorials" href="tutorials.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Managing Identity" href="ops-managing-identity.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="third-party-integrations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Third-Party Integrations</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-thirdparty_integrations.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-thirdparty_integrations.xml</li><li><span class="ds-label">ID: </span>third-party-integrations</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="third-party-integrations.html#splunk-integration"><span class="number">3.1 </span><span class="name">Splunk Integration</span></a></span></dt><dt><span class="section"><a href="third-party-integrations.html#nagios-integration"><span class="number">3.2 </span><span class="name">Nagios Integration</span></a></span></dt><dt><span class="section"><a href="third-party-integrations.html#topic-kyf-brv-vw"><span class="number">3.3 </span><span class="name">Operations Bridge Integration</span></a></span></dt><dt><span class="section"><a href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca"><span class="number">3.4 </span><span class="name">Monitoring Third-Party Components With Monasca</span></a></span></dt></dl></div></div><div class="sect1" id="splunk-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Splunk Integration</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#splunk-integration">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>splunk-integration</li></ul></div></div></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-thirdparty_integrations.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide</a><span> / </span><a class="crumb" href="third-party-integrations.html">Third-Party Integrations</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="third-party-integrations.html" class=" you-are-here"><span class="title-number">3 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">4 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">6 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" "><span class="title-number">7 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" "><span class="title-number">8 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">13 </span><span class="title-name">System Maintenance</span></a></li><li><a href="bura-overview.html" class=" "><span class="title-number">14 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">15 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="third-party-integrations" data-id-title="Third-Party Integrations"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Third-Party Integrations</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-thirdparty_integrations.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect1" id="splunk-integration" data-id-title="Splunk Integration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">Splunk Integration</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#splunk-integration">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This documentation demonstrates the possible integration between the
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> centralized logging solution and Splunk including the steps
   to set up and forward logs.
@@ -52,7 +52,7 @@ hljs.configure({
   This documentation demonstrates the possible integration between the
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> centralized logging solution and Splunk including the steps
   to set up and forward logs.
- </p><div class="sect2" id="idg-all-operations-integrating-splunk-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">What is Splunk?</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-splunk-xml-5</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="idg-all-operations-integrating-splunk-xml-5" data-id-title="What is Splunk?"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.1 </span><span class="title-name">What is Splunk?</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Splunk is software for searching, monitoring, and analyzing
    <a class="link" href="https://en.wikipedia.org/wiki/Machine-generated_data" target="_blank">machine-generated
    big data</a>, via a web-style interface. Splunk captures, indexes and
@@ -60,7 +60,7 @@ hljs.configure({
    generate graphs, reports, alerts, dashboards and visualizations. It is
    commercial software (unlike Elasticsearch) and more details about Splunk
    can be found at <a class="link" href="https://www.splunk.com" target="_blank">https://www.splunk.com</a>.
-  </p></div><div class="sect2" id="idg-all-operations-integrating-splunk-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Splunk to receive log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-splunk-xml-6</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="idg-all-operations-integrating-splunk-xml-6" data-id-title="Configuring Splunk to receive log messages from SUSE OpenStack Cloud 8"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.2 </span><span class="title-name">Configuring Splunk to receive log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span></span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-splunk-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This documentation assumes that you already have Splunk set up and running.
    For help with installing and setting up Splunk, refer to
    <a class="link" href="http://docs.splunk.com/Documentation/Splunk/latest/SearchTutorial/Systemrequirements" target="_blank">Splunk
@@ -69,43 +69,43 @@ hljs.configure({
    There are different ways in which a log message (or "event" in Splunk's
    terminology) can be sent to Splunk. These steps will set up a TCP port where
    Splunk will listen for messages.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      On the Splunk web UI, click on the Settings menu in the upper right-hand
      corner.
-    </p></li><li class="listitem "><p>
-     In the <span class="guimenu ">Data</span> section of the Settings menu, click <span class="guimenu ">Data Inputs</span>.
-    </p></li><li class="listitem "><p>
-     Choose the <span class="guimenu ">TCP</span> option.
-    </p></li><li class="listitem "><p>
-     Click the <span class="guimenu ">New</span> button to add an input.
-    </p></li><li class="listitem "><p>
-     In the <span class="guimenu ">Port</span> field, enter the port number you want to use.
-    </p><div id="id-1.6.5.2.6.4.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p></li><li class="listitem"><p>
+     In the <span class="guimenu">Data</span> section of the Settings menu, click <span class="guimenu">Data Inputs</span>.
+    </p></li><li class="listitem"><p>
+     Choose the <span class="guimenu">TCP</span> option.
+    </p></li><li class="listitem"><p>
+     Click the <span class="guimenu">New</span> button to add an input.
+    </p></li><li class="listitem"><p>
+     In the <span class="guimenu">Port</span> field, enter the port number you want to use.
+    </p><div id="id-1.6.5.2.6.4.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       If you are on a less secure network and want to restrict connections to
-      this port, use the <span class="guimenu ">Only accept connection from</span> field
+      this port, use the <span class="guimenu">Only accept connection from</span> field
       to restrict the traffic to a specific IP address.
-     </p></div></li><li class="listitem "><p>
-     Click the <span class="guimenu ">Next</span> button.
-    </p></li><li class="listitem "><p>
-     Specify the Source Type by clicking on the <span class="guimenu ">Select</span> button and choosing
+     </p></div></li><li class="listitem"><p>
+     Click the <span class="guimenu">Next</span> button.
+    </p></li><li class="listitem"><p>
+     Specify the Source Type by clicking on the <span class="guimenu">Select</span> button and choosing
      <code class="literal">linux_messages_syslog</code> from the list.
-    </p></li><li class="listitem "><p>
-     Click the <span class="guimenu ">Review</span> button.
-    </p></li><li class="listitem "><p>
-     Review the configuration and click the <span class="guimenu ">Submit</span> button.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
+     Click the <span class="guimenu">Review</span> button.
+    </p></li><li class="listitem"><p>
+     Review the configuration and click the <span class="guimenu">Submit</span> button.
+    </p></li><li class="listitem"><p>
      A success message will be displayed.
-    </p></li></ol></div></div><div class="sect2" id="id-1.6.5.2.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Forwarding log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> Centralized Logging to Splunk</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.6.5.2.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect2" id="id-1.6.5.2.7" data-id-title="Forwarding log messages from SUSE OpenStack Cloud 8 Centralized Logging to Splunk"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.3 </span><span class="title-name">Forwarding log messages from <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> Centralized Logging to Splunk</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.6.5.2.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    When you have Splunk set up and configured to receive log messages, you can
    configure <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> to forward the logs to Splunk.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Check the status of the logging service:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts logging-status.yml</pre></div><p>
      If everything is up and running, continue to the next step.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Edit the logstash config file at the location below:
     </p><div class="verbatim-wrap"><pre class="screen">~/openstack/ardana/ansible/roles/logging-server/templates/logstash.conf.j2</pre></div><p>
      At the bottom of the file will be a section for the Logstash outputs. Add
@@ -128,38 +128,38 @@ output {
  tcp {
    mode =&gt; "client"
    host =&gt; "&lt;Enter Splunk listener IP address&gt;"
-   port =&gt; <em class="replaceable ">TCP_PORT_NUMBER</em>
+   port =&gt; <em class="replaceable">TCP_PORT_NUMBER</em>
  }</strong></span>
-}</pre></div><div id="id-1.6.5.2.7.3.3.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+}</pre></div><div id="id-1.6.5.2.7.3.3.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       If you are not planning on using the Splunk UI to parse your centralized
       logs, there is no need to forward your logs to Elasticsearch. In this
       situation, comment out the lines in the Logstash outputs pertaining to
       Elasticsearch.
       However, you can continue to forward your centralized logs to multiple
       locations.
-     </p></div></li><li class="step "><p>
+     </p></div></li><li class="step"><p>
      Commit your changes to git:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "Logstash configuration change for Splunk integration"</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "Logstash configuration change for Splunk integration"</pre></div></li><li class="step"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
      Complete this change with a reconfigure of the logging environment:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts logging-configure.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts logging-configure.yml</pre></div></li><li class="step"><p>
      In your Splunk UI, confirm that the logs have begun to forward.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.6.5.2.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Searching for log messages from the Spunk dashboard</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.6.5.2.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_splunk.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.6.5.2.8" data-id-title="Searching for log messages from the Spunk dashboard"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.1.4 </span><span class="title-name">Searching for log messages from the Spunk dashboard</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#id-1.6.5.2.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_splunk.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To both verify that your integration worked and to search your log messages
    that have been forwarded you can navigate back to your Splunk dashboard. In
    the search field, use this string:
-  </p><div class="verbatim-wrap"><pre class="screen">source="tcp:<em class="replaceable ">TCP_PORT_NUMBER</em>"</pre></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen">source="tcp:<em class="replaceable">TCP_PORT_NUMBER</em>"</pre></div><p>
    Find information on using the Splunk search tool at
    <a class="link" href="http://docs.splunk.com/Documentation/Splunk/6.4.3/SearchTutorial/WelcometotheSearchTutorial" target="_blank">http://docs.splunk.com/Documentation/Splunk/6.4.3/SearchTutorial/WelcometotheSearchTutorial</a>.
-  </p></div></div><div class="sect1" id="nagios-integration"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Nagios Integration</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#nagios-integration">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>nagios-integration</li></ul></div></div></div></div><p>
+  </p></section></section><section class="sect1" id="nagios-integration" data-id-title="Nagios Integration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Nagios Integration</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#nagios-integration">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> cloud operators that are using Nagios or Icinga-based monitoring
   systems may wish to integrate them with the built-in monitoring
   infrastructure of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. Integrating with the existing
@@ -167,10 +167,10 @@ output {
   duplication. This document describes the different approaches that can be
   taken to create a well-integrated monitoring dashboard using both
   technologies.
- </p><div id="id-1.6.5.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+ </p><div id="id-1.6.5.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    This document refers to Nagios but the proposals will work equally well with
    Icinga, Icinga2, or other Nagios clone monitoring systems.
-  </p></div><div class="sect2" id="idg-all-operations-integrating-nagios-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> monitoring and reporting</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-nagios-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-nagios-xml-5</li></ul></div></div></div></div><p>
+  </p></div><section class="sect2" id="idg-all-operations-integrating-nagios-xml-5" data-id-title="SUSE OpenStack Cloud monitoring and reporting"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.1 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> monitoring and reporting</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-nagios-xml-5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> comes with a monitoring engine (Monasca) and a separate management
    dashboard (Operations Console). Monasca is extremely scalable, designed to
    cope with the constant change in monitoring sources and services found in a
@@ -190,7 +190,7 @@ output {
    web interfaces to view alarm status, management alarm workflow, and
    configure alarms and thresholds. For more details about the Ops Console, see
    <span class="intraxref">Book “User Guide”, Chapter 1 “Using the Operations Console”, Section 1.1 “Operations Console Overview”</span>.
-  </p></div><div class="sect2" id="nagios"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Nagios monitoring and reporting</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#nagios">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>nagios</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="nagios" data-id-title="Nagios monitoring and reporting"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.2 </span><span class="title-name">Nagios monitoring and reporting</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#nagios">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Nagios is an industry leading open source monitoring service with extensive
    plugins and agents. Nagios checks are either run directly from the
    monitoring server or run on a remote host via an agent and with results
@@ -207,12 +207,12 @@ output {
    checks can be created to monitor availability of all the API endpoints from
    external locations or even to create and destroy instances to ensure the
    entire system is working as expected.
-  </p></div><div class="sect2" id="idg-all-operations-integrating-nagios-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Monasca</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-nagios-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-integrating-nagios-xml-7</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="idg-all-operations-integrating-nagios-xml-7" data-id-title="Adding Monasca"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.3 </span><span class="title-name">Adding Monasca</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#idg-all-operations-integrating-nagios-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Many private cloud operators already have existing monitoring solutions such
    as Nagios and Icinga. We recommend that you extend your existing solutions
    into Monasca or forward Monasca alerts to your existing solution to maximize
    coverage and reduce risk.
-  </p></div><div class="sect2" id="integration-approaches"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Integration Approaches</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#integration-approaches">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>integration-approaches</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="integration-approaches" data-id-title="Integration Approaches"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.4 </span><span class="title-name">Integration Approaches</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#integration-approaches">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Integration between Nagios and Monasca can occur at two levels, at the
    individual check level or at the management interfaces. Both options are
    discussed in the following sections.
@@ -234,13 +234,13 @@ output {
    <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#nagios-wrapper" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md#nagios-wrapper</a>.
   </p><p>
    Use Case:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Local host checking. As an operator I want to run a local monitoring check
      on my host to check physical hardware. Check status and alert management
      will be based around the Operations Console, not Nagios.
     </p></li></ul></div><p>
    Limitation
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      As mentioned earlier, care should be taken to ensure checks do not
      introduce load or delays in the Monasca agent check cycle. Additionally,
      depending on the operating system the node is running, plugins or
@@ -269,7 +269,7 @@ output {
    (Please see example plugin at:
    <a class="link" href="https://github.com/openstack/python-monascaclient/tree/stable/pike/examples" target="_blank">https://github.com/openstack/python-monascaclient/tree/stable/pike/examples</a>)
    was created with the following options:
-  </p><div class="verbatim-wrap"><pre class="screen">check_monasca –c <em class="replaceable ">CREDENTIALS</em> -d <em class="replaceable ">DIMENSION</em> -v <em class="replaceable ">VALUE</em></pre></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen">check_monasca –c <em class="replaceable">CREDENTIALS</em> -d <em class="replaceable">DIMENSION</em> -v <em class="replaceable">VALUE</em></pre></div><p>
    Examples:
   </p><p>
    To check alarms on <code class="literal">test-ccp-comp001-mgmt</code> you would use:
@@ -277,22 +277,22 @@ output {
    To check all Network related alarms, you would use:
   </p><div class="verbatim-wrap"><pre class="screen">check_monasca –c service.osrc –d service –v networking</pre></div><p>
    Use Cases:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Multiple clouds, integrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> monitoring with existing monitoring
      capabilities or viewing Monasca alerts in Nagios, fully integrating
      Monasca alarms with Nagios alarms and workflow.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      In a predominantly Nagios or Icinga-based monitoring environment,
      Monasca alarm status can be integrated into existing processes and
      workflows. This approach works best for checks associated with physical
      servers running the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      With multiple <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> clusters, all of their alarms can be consolidated
      into a single view, the current version of Operations Console is for a single
      cluster only.
     </p></li></ul></div><p>
    Limitations
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Nagios has a more traditional configuration model that requires checks to
      belong to predefined services and hosts, this is not well suited in highly
      dynamic cloud environments where the lifespan of virtual instances can be
@@ -320,11 +320,11 @@ output {
    the Operations Console.
   </p><p>
    Use Cases
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Using Operations Console the central monitoring tool.
     </p></li></ul></div><p>
    Limitations
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The alarm could not be acknowledged from the Operations Console so Nagios could
      send repetitive notifications unless configured to take this into account.
     </p></li></ul></div><p>
@@ -337,13 +337,13 @@ output {
    in order to work at all. For example, if Keystone were unavailable,
    Monasca could not authenticate client or console requests. An external
    service check could highlight this.
-  </p></div><div class="sect2" id="issues"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Common integration issues</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#issues">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_nagios.xml</li><li><span class="ds-label">ID: </span>issues</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="issues" data-id-title="Common integration issues"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.2.5 </span><span class="title-name">Common integration issues</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#issues">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_nagios.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    <span class="bold"><strong>Alarm status differences</strong></span>
   </p><p>
    Monasca and Nagios treat alarms and status in different ways and for the two
    systems to talk there needs to be a mapping between them. The following
    table details the alarm parameters available for each:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>System</th><th>Status</th><th>Severity</th><th>Details</th></tr></thead><tbody><tr><td rowspan="4">Nagios</td><td>OK</td><td> </td><td>Plugin returned OK with given thresholds</td></tr><tr><td>WARNING</td><td> </td><td>Plugin returned WARNING based on thresholds</td></tr><tr><td>CRITICAL</td><td> </td><td>Plugin returned CRITICAL alarm</td></tr><tr><td>UNKNOWN</td><td> </td><td>Plugin failed</td></tr><tr><td rowspan="5">Monasca</td><td>OK</td><td> </td><td>No alarm triggered</td></tr><tr><td>ALARM</td><td>LOW</td><td>Alarm state, LOW impact</td></tr><tr><td>ALARM</td><td>MEDIUM</td><td>Alarm state, MEDIUM impact</td></tr><tr><td>ALARM</td><td>HIGH</td><td>Alarm state, HIGH impact</td></tr><tr><td>UNDETERMINED</td><td> </td><td>No metrics received</td></tr></tbody></table></div><p>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/><col class="c4"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">System</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Status</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Severity</th><th style="border-bottom: 1px solid ; ">Details</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; " rowspan="4">Nagios</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">OK</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "> </td><td style="border-bottom: 1px solid ; ">Plugin returned OK with given thresholds</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">WARNING</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "> </td><td style="border-bottom: 1px solid ; ">Plugin returned WARNING based on thresholds</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">CRITICAL</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "> </td><td style="border-bottom: 1px solid ; ">Plugin returned CRITICAL alarm</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">UNKNOWN</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "> </td><td style="border-bottom: 1px solid ; ">Plugin failed</td></tr><tr><td style="border-right: 1px solid ; " rowspan="5">Monasca</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">OK</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; "> </td><td style="border-bottom: 1px solid ; ">No alarm triggered</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">ALARM</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">LOW</td><td style="border-bottom: 1px solid ; ">Alarm state, LOW impact</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">ALARM</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">MEDIUM</td><td style="border-bottom: 1px solid ; ">Alarm state, MEDIUM impact</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">ALARM</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">HIGH</td><td style="border-bottom: 1px solid ; ">Alarm state, HIGH impact</td></tr><tr><td style="border-right: 1px solid ; ">UNDETERMINED</td><td style="border-right: 1px solid ; "> </td><td>No metrics received</td></tr></tbody></table></div><p>
    In the plugin described here, the mapping was created with this flow:
   </p><div class="verbatim-wrap"><pre class="screen">Monasca OK -&gt; Nagios OK
 Monasca ALARM ( LOW or MEDIUM ) -&gt; Nagios Warning
@@ -353,22 +353,22 @@ Monasca ALARM ( HIGH ) -&gt; Nagios Critical</pre></div><p>
    In both, system alarms can be acknowledged in the dashboards to indicate
    they are being worked on (or ignored). Not all the scenarios above will
    provide the same level of workflow integration.
-  </p></div></div><div class="sect1" id="topic-kyf-brv-vw"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Operations Bridge Integration</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#topic-kyf-brv-vw">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_opsbridge.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integrating_opsbridge.xml</li><li><span class="ds-label">ID: </span>topic-kyf-brv-vw</li></ul></div></div></div></div><p>
+  </p></section></section><section class="sect1" id="topic-kyf-brv-vw" data-id-title="Operations Bridge Integration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Operations Bridge Integration</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#topic-kyf-brv-vw">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integrating_opsbridge.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> monitoring solution (Monasca) can easily be
   integrated with your existing monitoring tools. Integrating <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>
   Monasca with Operations Bridge using the Operations Bridge Connector
   simplifies monitoring and managing events and topology information.
  </p><p>
   The integration provides the following functionality:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Forwarding of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Monasca alerts and topology to Operations
     Bridge for event correlation
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Customization of forwarded events and topology
    </p></li></ul></div><p>
   For more information about this connector please see
   <a class="link" href="https://software.microfocus.com/en-us/products/operations-bridge-suite/overview" target="_blank">https://software.microfocus.com/en-us/products/operations-bridge-suite/overview</a>.
- </p></div><div class="sect1" id="monitoring-3rd-party-components-with-monasca"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring Third-Party Components With Monasca</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monitoring_third_party_components.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monitoring_third_party_components.xml</li><li><span class="ds-label">ID: </span>monitoring-3rd-party-components-with-monasca</li></ul></div></div></div></div><div class="sect2" id="monasca-integration-overview"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monasca Monitoring Integration Overview</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-integration-overview">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monasca_integration_overview.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monasca_integration_overview.xml</li><li><span class="ds-label">ID: </span>monasca-integration-overview</li></ul></div></div></div></div><p>
+ </p></section><section class="sect1" id="monitoring-3rd-party-components-with-monasca" data-id-title="Monitoring Third-Party Components With Monasca"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.4 </span><span class="title-name">Monitoring Third-Party Components With Monasca</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monitoring_third_party_components.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="monasca-integration-overview" data-id-title="Monasca Monitoring Integration Overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.1 </span><span class="title-name">Monasca Monitoring Integration Overview</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-integration-overview">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monasca_integration_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Monasca, the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> monitoring service, collects information about
   your cloud's systems, and allows you to create alarm definitions based on
   these measurements. Monasca-agent is the component that collects metrics such
@@ -392,7 +392,7 @@ Monasca ALARM ( HIGH ) -&gt; Nagios Critical</pre></div><p>
  </p><p>
   You can use the Operations Console and Monasca CLI to list all of the alarms,
   alarm-definitions, and metrics that exist on your cloud.
- </p></div><div class="sect2" id="monasca-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monasca Agent</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-agent">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monasca_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-monasca_agent.xml</li><li><span class="ds-label">ID: </span>monasca-agent</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="monasca-agent" data-id-title="Monasca Agent"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.2 </span><span class="title-name">Monasca Agent</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#monasca-agent">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-monasca_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Monasca agent (monasca-agent) collects information about your cloud using
   the installed plugins. The plugins are written in Python, and determine the
   monitoring metrics for your system, as well as the interval for collection.
@@ -400,23 +400,23 @@ Monasca ALARM ( HIGH ) -&gt; Nagios Critical</pre></div><p>
   not changing this default value.
  </p><p>
   The following two types of custom plugins can be added to your cloud.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <span class="bold"><strong>Detection Plugin</strong></span>. Determines whether the
     monasca-agent has the ability to monitor the specified component or service
     on a host. If successful, this type of plugin configures an associated
     <span class="bold"><strong>check plugin</strong></span> by creating a YAML
     configuration file.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="bold"><strong>Check Plugin</strong></span>. Specifies the metrics to be
     monitored, using the configuration file created by the detection plugin.
    </p></li></ul></div><p>
   Monasca-agent is installed on every server in your cloud, and provides
   plugins that monitor the following.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     System metrics relating to CPU, memory, disks, host availability, etc.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Process health metrics (process, http_check)
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>-specific component metrics, such as apache
     rabbitmq, kafka, cassandra, etc.
    </p></li></ul></div><p>
@@ -434,16 +434,16 @@ Monasca ALARM ( HIGH ) -&gt; Nagios Critical</pre></div><p>
  </p><p>
   More information about the Monasca agent can be found in the following
   locations
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Monasca agent overview:
     <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Agent.md</a>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Information on existing plugins:
     <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Plugins.md</a>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Information on plugin customizations:
     <a class="link" href="https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md" target="_blank">https://github.com/openstack/monasca-agent/blob/master/docs/Customizations.md</a>
-   </p></li></ul></div></div><div class="sect2" id="writing-custom-plugins"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Writing Custom Plugins</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#writing-custom-plugins">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-writing_custom_plugins.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-writing_custom_plugins.xml</li><li><span class="ds-label">ID: </span>writing-custom-plugins</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect2" id="writing-custom-plugins" data-id-title="Writing Custom Plugins"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.3 </span><span class="title-name">Writing Custom Plugins</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#writing-custom-plugins">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-writing_custom_plugins.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   When the pre-built Monasca plugins do not meet your monitoring needs, you can
   write custom plugins to monitor your cloud. After you have written a plugin,
   you must install and configure it.
@@ -568,13 +568,13 @@ class MonascaTransformDetect(monasca_setup.detection.ServicePlugin):
  </p><p>
   When deriving from these classes, the following methods should be
   implemented.
- </p><div class="itemizedlist " id="ul-dfd-kvs-px"><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist" id="ul-dfd-kvs-px"><ul class="itemizedlist"><li class="listitem"><p>
     _<span class="emphasis"><em>detect - set self.available=True when conditions are met that
     the thing to monitor exists on a host.</em></span>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <span class="emphasis"><em>build</em></span>_config - writes the instance information to the
     configuration and return the configuration.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     dependencies_installed (default implementation is in ArgsPlugin, but not
     Plugin) - return true when python dependent libraries are installed.
    </p></li></ul></div><p>
@@ -687,21 +687,21 @@ class HttpCheck(monasca_setup.detection.ArgsPlugin):
   dimension.
  </p><p>
   A custom check will do the following.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Read the configuration instance passed into the check method.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Set dimensions that will be included in the metric.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Create the metric with gauge, rate, or counter types.
    </p></li></ul></div><p>
   Metric Types:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     gauge: Instantaneous reading of a particular value (for example,
     mem.free_mb).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     rate: Measurement over a time period. The following equation can be used to
     define rate.
-   </p><div class="verbatim-wrap"><pre class="screen">rate=delta_v/float(delta_t)</pre></div></li><li class="listitem "><p>
+   </p><div class="verbatim-wrap"><pre class="screen">rate=delta_v/float(delta_t)</pre></div></li><li class="listitem"><p>
     counter: The number of events, increment and decrement methods, for
     example, zookeeper.timeouts
    </p></li></ul></div><p>
@@ -762,7 +762,7 @@ class SimpleCassandraExample(checks.AgentCheck):
   <code class="literal">monasca_agent_check_plugin_dir</code> Ansible variable. This
   variable is defined in the
   <code class="literal">roles/monasca-agent/vars/main.yml</code> file.
- </p><div class="verbatim-wrap"><pre class="screen">monasca_agent_check_plugin_dir: /usr/lib/monasca/agent/custom_checks.d/</pre></div></div><div class="sect2" id="configuring-check-plugins"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Check Plugins</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-check-plugins">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-configuring_check_plugins.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-configuring_check_plugins.xml</li><li><span class="ds-label">ID: </span>configuring-check-plugins</li></ul></div></div></div></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen">monasca_agent_check_plugin_dir: /usr/lib/monasca/agent/custom_checks.d/</pre></div></section><section class="sect2" id="configuring-check-plugins" data-id-title="Configuring Check Plugins"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.4 </span><span class="title-name">Configuring Check Plugins</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-check-plugins">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-configuring_check_plugins.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   <span class="bold"><strong>Manually configure a plugin when unit-testing using the
   monasca-setup script installed with the monasca-agent</strong></span>
  </p><p>
@@ -854,7 +854,7 @@ class SimpleCassandraExample(checks.AgentCheck):
   You can debug a check plugin by running <code class="literal">monasca-collector</code>
   with the check option. The following is an example of the
   <code class="literal">monasca-collector</code> command.
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo /usr/bin/monasca-collector check <em class="replaceable ">CHECK_NAME</em></pre></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo /usr/bin/monasca-collector check <em class="replaceable">CHECK_NAME</em></pre></div><p>
   <span class="bold"><strong>Verify that metrics exist</strong></span>
  </p><p>
   Begin by logging in to your deployer or controller node.
@@ -863,7 +863,7 @@ class SimpleCassandraExample(checks.AgentCheck):
   metric-list</code> command. If the metric exists, it will be displayed in
   the output.
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
-<code class="prompt user">ardana &gt; </code>monasca metric-list --name <em class="replaceable ">METRIC_NAME</em></pre></div></div><div class="sect2" id="metric-performance-considerations"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metric Performance Considerations</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#metric-performance-considerations">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-metric_performance_considerations.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-metric_performance_considerations.xml</li><li><span class="ds-label">ID: </span>metric-performance-considerations</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>monasca metric-list --name <em class="replaceable">METRIC_NAME</em></pre></div></section><section class="sect2" id="metric-performance-considerations" data-id-title="Metric Performance Considerations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.5 </span><span class="title-name">Metric Performance Considerations</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#metric-performance-considerations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-metric_performance_considerations.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Collecting metrics on your virtual machines can greatly affect performance.
   <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> supports 200 compute nodes, with up to 40 VMs each. If your
   environment is managing maximum number of VMs, adding a single metric for all
@@ -872,7 +872,7 @@ class SimpleCassandraExample(checks.AgentCheck):
   Because of the potential impact that new metrics have on system performance,
   consider adding only new metrics that are useful for alarm-definition,
   capacity planning, or debugging process failure.
- </p></div><div class="sect2" id="configuring-alarm-definitions"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Alarm Definitions</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-alarm-definitions">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-configuring_alarm_definitions.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-configuring_alarm_definitions.xml</li><li><span class="ds-label">ID: </span>configuring-alarm-definitions</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="configuring-alarm-definitions" data-id-title="Configuring Alarm Definitions"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.6 </span><span class="title-name">Configuring Alarm Definitions</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#configuring-alarm-definitions">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-configuring_alarm_definitions.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The monasca-api-spec, found here
   <a class="link" href="https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md" target="_blank">https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md</a>
   provides an explanation of Alarm Definitions and Alarms. You can find more
@@ -898,9 +898,9 @@ class SimpleCassandraExample(checks.AgentCheck):
   The following Ansible modules used for alarm definitions are installed as
   part of the monasca-alarm-definition role. This process takes place during
   the Monasca set up phase of your cloud's deployment.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     monasca_alarm_definition
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     monasca_notification_method
    </p></li></ul></div><p>
   The following examples, found in the
@@ -914,11 +914,11 @@ class SimpleCassandraExample(checks.AgentCheck):
   <a class="link" href="https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#create-notification-method" target="_blank">https://github.com/openstack/monasca-api/blob/master/docs/monasca-api-spec.md#create-notification-method</a>
  </p><p>
   The following are supported notification types.
- </p><div class="itemizedlist " id="ul-t4b-pt4-qx"><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist" id="ul-t4b-pt4-qx"><ul class="itemizedlist"><li class="listitem"><p>
     EMAIL
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     WEBHOOK
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     PAGERDUTY
    </p></li></ul></div><p>
   The <code class="literal">keystone_admin_tenant</code> project is used so that the
@@ -1011,9 +1011,9 @@ monasca_client_retry_delay: 2</pre></div><p>
   <span class="bold"><strong>Process Check</strong></span> sets the
   <span class="bold"><strong>match_by</strong></span> variable with the following
   parameters.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     process_name
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     hostname
    </p></li></ul></div><div class="verbatim-wrap"><pre class="screen">monasca_alarm_definitions_system:
   - name: "Host Status"
@@ -1085,12 +1085,12 @@ monasca_client_retry_delay: 2</pre></div><p>
   Begin by using the following commands, including <code class="literal">monasca
   alarm-definition-list</code>, to check that the alarm definition exists.
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
-<code class="prompt user">ardana &gt; </code>monasca alarm-definition-list --name <em class="replaceable ">ALARM_DEFINITION_NAME</em></pre></div><p>
+<code class="prompt user">ardana &gt; </code>monasca alarm-definition-list --name <em class="replaceable">ALARM_DEFINITION_NAME</em></pre></div><p>
   Then use either of the following commands to check that the alarm has been
   generated. A status of "OK" indicates a healthy alarm.
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-name <em class="replaceable ">metric name</em></pre></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --metric-name <em class="replaceable">metric name</em></pre></div><p>
   Or
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --alarm-definition-id <em class="replaceable ">ID_FROM_ALARM-DEFINITION-LIST</em></pre></div><div id="id-1.6.5.5.7.36" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>monasca alarm-list --alarm-definition-id <em class="replaceable">ID_FROM_ALARM-DEFINITION-LIST</em></pre></div><div id="id-1.6.5.5.7.36" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    To see CLI options use the <code class="literal">monasca help</code> command.
   </p></div><p>
   <span class="bold"><strong>Alarm state upgrade considerations</strong></span>
@@ -1128,7 +1128,7 @@ monasca_client_retry_delay: 2</pre></div><p>
   An alarm exists in the OK state when the monasca threshold engine has seen at
   least one metric associated with the alarm definition and has not exceeded
   the alarm definition threshold.
- </p></div><div class="sect2" id="integration-of-plugins-with-monasca-agent"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Openstack Integration of Custom Plugins into Monasca-Agent (if applicable)</span> <a title="Permalink" class="permalink" href="third-party-integrations.html#integration-of-plugins-with-monasca-agent">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integration_of_plugins_with_monasca-agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-integration_of_plugins_with_monasca-agent.xml</li><li><span class="ds-label">ID: </span>integration-of-plugins-with-monasca-agent</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="integration-of-plugins-with-monasca-agent" data-id-title="Openstack Integration of Custom Plugins into Monasca-Agent (if applicable)"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.4.7 </span><span class="title-name">Openstack Integration of Custom Plugins into Monasca-Agent (if applicable)</span></span> <a title="Permalink" class="permalink" href="third-party-integrations.html#integration-of-plugins-with-monasca-agent">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-integration_of_plugins_with_monasca-agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Monasca-agent is an OpenStack open-source project. Monasca can also monitor
   non-openstack services. Third parties should install custom plugins into
   their <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> system using the steps outlined in the
@@ -1146,6 +1146,5 @@ monasca_client_retry_delay: 2</pre></div><p>
  </p><p>
   Find the open source repository for the monaca-agent here:
   <a class="link" href="https://github.com/openstack/monasca-agent" target="_blank">https://github.com/openstack/monasca-agent</a>
- </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-identity.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Managing Identity</span></a><a class="nav-link" href="tutorials.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Tutorials</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+ </p></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="tutorials.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 2 </span>Tutorials</span></a> </div><div><a class="pagination-link next" href="ops-managing-identity.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Managing Identity</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="third-party-integrations.html#splunk-integration"><span class="title-number">3.1 </span><span class="title-name">Splunk Integration</span></a></span></li><li><span class="section"><a href="third-party-integrations.html#nagios-integration"><span class="title-number">3.2 </span><span class="title-name">Nagios Integration</span></a></span></li><li><span class="section"><a href="third-party-integrations.html#topic-kyf-brv-vw"><span class="title-number">3.3 </span><span class="title-name">Operations Bridge Integration</span></a></span></li><li><span class="section"><a href="third-party-integrations.html#monitoring-3rd-party-components-with-monasca"><span class="title-number">3.4 </span><span class="title-name">Monitoring Third-Party Components With Monasca</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

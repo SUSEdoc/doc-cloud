@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Backup and Restore | Operations Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Backup and Restore | SUSE OpenStack Cloud 8" />
-<meta name="description" content="Information about how to back up and restore your cloud." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Operations Guide" />
-<meta name="chapter-title" content="Chapter 14. Backup and Restore" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Backup and Restore | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="Information about how to back up and restore your cloud." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Backup and Restore | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="Information about how to back up and restore your cloud." />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide" /><link rel="prev" href="system-maintenance.html" title="Chapter 13. System Maintenance" /><link rel="next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" title="Chapter 15. Troubleshooting Issues" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Operations Guide | Backup and Restore</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Backup and Restore | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="Information about how to back up and restore your cloud."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Operations Guide"/>
+<meta name="chapter-title" content="Chapter 14. Backup and Restore"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Backup and Restore | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="Information about how to back up and restore your cloud."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Backup and Restore | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="Information about how to back up and restore your cloud."/>
+<link rel="prev" href="system-maintenance.html" title="Chapter 13. System Maintenance"/><link rel="next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" title="Chapter 15. Troubleshooting Issues"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">3 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">4 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">5 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">6 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">7 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">8 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">9 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">10 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">11 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">12 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">13 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">14 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">15 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 13. System Maintenance" href="system-maintenance.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 15. Troubleshooting Issues" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 13. System Maintenance" href="system-maintenance.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 15. Troubleshooting Issues" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="bura-overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-bura_overview.xml</li><li><span class="ds-label">ID: </span>bura-overview</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="bura-overview.html#id-1.6.16.10"><span class="number">14.1 </span><span class="name">Architecture</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#idg-all-bura-bura-overview-xml-9"><span class="number">14.2 </span><span class="name">Architecture of the Backup/Restore Service</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-bxm-gxr-st"><span class="number">14.3 </span><span class="name">Default Automatic Backup Jobs</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-jsc-qps-qt"><span class="number">14.4 </span><span class="name">Enabling Default Backups of the Control Plane to an SSH Target</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-pth-st3-mw"><span class="number">14.5 </span><span class="name">Changing Default Jobs</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#freezerUI"><span class="number">14.6 </span><span class="name">Backup/Restore Via the Horizon UI</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#previous-backups"><span class="number">14.7 </span><span class="name">Restore from a Specific Backup</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-mlh-wtn-rt"><span class="number">14.8 </span><span class="name">Backup/Restore Scheduler</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-pgq-mnw-dt"><span class="number">14.9 </span><span class="name">Backup/Restore Agent</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#bu-limitations"><span class="number">14.10 </span><span class="name">Backup and Restore Limitations</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-i4l-xhn-tt"><span class="number">14.11 </span><span class="name">Disabling Backup/Restore before Deployment</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#topic-dsm-fbs-st"><span class="number">14.12 </span><span class="name">Enabling, Disabling and Restoring Backup/Restore Services</span></a></span></dt><dt><span class="section"><a href="bura-overview.html#backup-audit-logs"><span class="number">14.13 </span><span class="name">Backing up and Restoring Audit Logs</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide</a><span> / </span><a class="crumb" href="bura-overview.html">Backup and Restore</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="third-party-integrations.html" class=" "><span class="title-number">3 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">4 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">6 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" "><span class="title-number">7 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" "><span class="title-number">8 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">13 </span><span class="title-name">System Maintenance</span></a></li><li><a href="bura-overview.html" class=" you-are-here"><span class="title-number">14 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">15 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="bura-overview" data-id-title="Backup and Restore"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">14 </span><span class="title-name">Backup and Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Information about how to back up and restore your cloud.
  </p><p>
   Freezer is a Backup and Restore as a Service platform that helps you automate
@@ -59,39 +59,39 @@ hljs.configure({
   disaster scenarios.
  </p><p>
   The following features are supported:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Backup of your file system using a point-in-time snapshot.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Strong encryption: AES-256-CFB.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Backup of your MySQL database with LVM snapshot.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Restoring your data from a specific date automatically to your file system.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Low storage consumption: the backups are uploaded as a stream.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Flexible backup policy (both incremental and differential).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Data archived in GNU Tar format for file-based incremental.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Multiple compression algorithm support (zlib, bzip2, xz).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Removal old backup automatically according the provided parameters.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Multiple storage media support (Swift, local file system, SSH).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Management of multiple jobs (multiple backups on the same node).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Synchronization of backup and restore on multiple nodes.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Execution of scripts/commands before or after a job execution.
-   </p></li></ul></div><div class="sect1" id="id-1.6.16.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Architecture</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.10">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-bura_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></li></ul></div><section class="sect1" id="id-1.6.16.10" data-id-title="Architecture"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.1 </span><span class="title-name">Architecture</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.10">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The backup and restore service/Freezer uses GNU Tar under the hood to
    execute incremental backup and restore. When a key is provided, it uses Open
    SSL to encrypt data (AES-256-CFB).
   </p><p>
    The architecture consists of the following components:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col width="123pt" align="left" class="c1" /><col width="372.75pt" align="left" class="c2" /></colgroup><thead><tr><th align="left">Component</th><th align="left">Description</th></tr></thead><tbody><tr><td align="left">Freezer Scheduler</td><td align="left">
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col style="width: 123pt; text-align: left; " class="c1"/><col style="width: 372.75pt; text-align: left; " class="c2"/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Component</th><th style="text-align: left; border-bottom: 1px solid ; ">Description</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Freezer Scheduler</td><td style="text-align: left; border-bottom: 1px solid ; ">
        <p>
         A client-side component running on the node from where the data backup
         is executed. It consists of a daemon that retrieves the data from the
@@ -111,7 +111,7 @@ hljs.configure({
         file where job sessions or other settings such as the Freezer API
         polling interval can be configured.
        </p>
-      </td></tr><tr><td align="left">Freezer Agent </td><td align="left">
+      </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Freezer Agent </td><td style="text-align: left; border-bottom: 1px solid ; ">
        <p>
         Multiprocessing Python software that runs on the client side where the
         data backup is executed. It can be executed as a standalone or by the
@@ -124,50 +124,50 @@ hljs.configure({
         options to execute optimized backup according the available resources,
         such as:
        </p>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           Segments size (the amount of memory used)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Queues size (optimize backups where I/O, bandwidth, memory, or CPU is
           a constraint)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           I/O affinity and process priority (can be used with real time I/O and
           maximum user-level process priority)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Bandwidth limitation
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Client-side Encryption (AES-256-CFB)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Compression (multiple algorithms supported as zlib, bzip2, xz/lzma)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Parallel upload to pluggable storage media (that is, upload backup to
           Swift and to a remote node by SSH, or upload to two or more
           independent Swift instances with different credentials, and so on)
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Execute file-based incremental (such as tar), block-based incremental
           (such as rsync algorithm), and differential-based backup and restore
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Multi platform: you can run it on SUSE Linux, Windows, *BSD, and OSX
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Automatic removal of old backups
          </p></li></ul></div>
-      </td></tr><tr><td align="left">Freezer API </td><td align="left">Stores and provides metadata to the  Freezer Scheduler. Also stores session
+      </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Freezer API </td><td style="text-align: left; border-bottom: 1px solid ; ">Stores and provides metadata to the  Freezer Scheduler. Also stores session
        information for multi node backup synchronization. Workload data is not stored in the API .
-      </td></tr><tr><td align="left">DB Elasticsearch</td><td align="left">API uses the backend to store and retrieve metrics metadata sessions information job
-       status, and so on.</td></tr></tbody></table></div></div><div class="sect1" id="idg-all-bura-bura-overview-xml-9"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Architecture of the Backup/Restore Service</span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-bura-overview-xml-9">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-bura_overview.xml</li><li><span class="ds-label">ID: </span>idg-all-bura-bura-overview-xml-9</li></ul></div></div></div></div><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/media-bura-bura_architecture.png" target="_blank"><img src="images/media-bura-bura_architecture.png" width="" /></a></div></div><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Component</th><th>Description</th><th>Runs on</th></tr></thead><tbody><tr><td>API</td><td>API service to add / fetch Freezer jobs</td><td>Controller nodes with Elasticsearch</td></tr><tr><td>Scheduler</td><td>Daemon that stores and retrieves backup/restore jobs and executes them</td><td>Nodes needing backup/restore (controllers, Cloud Lifecycle Manager)</td></tr><tr><td>Agent</td><td>The agent that backs up and restores to and from targets. Invoked from scheduler or
-       manually.</td><td>Nodes needing backup/restore (controllers, Cloud Lifecycle Manager)</td></tr></tbody></table></div></div><div class="sect1" id="topic-bxm-gxr-st"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Default Automatic Backup Jobs</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-bxm-gxr-st">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-supported_services.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-supported_services.xml</li><li><span class="ds-label">ID: </span>topic-bxm-gxr-st</li></ul></div></div></div></div><p>
+      </td></tr><tr><td style="text-align: left; border-right: 1px solid ; ">DB Elasticsearch</td><td style="text-align: left; ">API uses the backend to store and retrieve metrics metadata sessions information job
+       status, and so on.</td></tr></tbody></table></div></section><section class="sect1" id="idg-all-bura-bura-overview-xml-9" data-id-title="Architecture of the Backup/Restore Service"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.2 </span><span class="title-name">Architecture of the Backup/Restore Service</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-bura-overview-xml-9">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-bura_overview.xml" title="Edit source document"> </a></div></div></div></div></div><div class="informalfigure"><div class="mediaobject"><a href="images/media-bura-bura_architecture.png"><img src="images/media-bura-bura_architecture.png" alt="Image" title="Image"/></a></div></div><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Component</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Description</th><th style="border-bottom: 1px solid ; ">Runs on</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">API</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">API service to add / fetch Freezer jobs</td><td style="border-bottom: 1px solid ; ">Controller nodes with Elasticsearch</td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Scheduler</td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Daemon that stores and retrieves backup/restore jobs and executes them</td><td style="border-bottom: 1px solid ; ">Nodes needing backup/restore (controllers, Cloud Lifecycle Manager)</td></tr><tr><td style="border-right: 1px solid ; ">Agent</td><td style="border-right: 1px solid ; ">The agent that backs up and restores to and from targets. Invoked from scheduler or
+       manually.</td><td>Nodes needing backup/restore (controllers, Cloud Lifecycle Manager)</td></tr></tbody></table></div></section><section class="sect1" id="topic-bxm-gxr-st" data-id-title="Default Automatic Backup Jobs"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.3 </span><span class="title-name">Default Automatic Backup Jobs</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-bxm-gxr-st">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-supported_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   By default, the following are <span class="bold"><strong>automatically</strong></span>
   backed up. You do not have to do anything for these backup jobs to run.
   However if you want to back up to somewhere outside the cluster, you do need
   to <a class="xref" href="bura-overview.html#topic-jsc-qps-qt" title="14.4. Enabling Default Backups of the Control Plane to an SSH Target">Section 14.4, “Enabling Default Backups of the Control Plane to an SSH Target”</a>.
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Cloud Lifecycle Manager Data. </span>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Cloud Lifecycle Manager Data. </span>
      All important information on the Cloud Lifecycle Manager
-    </p></li><li class="listitem "><p><span class="formalpara-title">MariaDB Database. </span>
+    </p></li><li class="listitem"><p><span class="formalpara-title">MariaDB Database. </span>
      The MariaDB database contains most of the data needed to restore
      services. While the MariaDB database only allows for an incomplete
      recovery of ESX data, for other services it allows full recovery.
      Logging data in Elasticsearch is not backed up. Swift objects are
      not backed up because of the redundant nature of Swift.
-    </p></li><li class="listitem "><p><span class="formalpara-title">Swift Rings. </span>
+    </p></li><li class="listitem"><p><span class="formalpara-title">Swift Rings. </span>
      Swift rings are backed up so that you can recover more quickly even
      though Swift can rebuild the rings without this data. However
      automatically rebuilding the rings is slower than restoring via a backup.
@@ -176,49 +176,49 @@ hljs.configure({
   data needed to restore the services is backed up. The critical data that will
   be backed up are the databases and the configuration-related files. Note the
   data that is not backed up per service:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Ceilometer. However, there is no backup of metrics data
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Cinder. However, there is no backup of the volumes
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Glance. However, there is no backup of the images
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Heat
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Horizon
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Keystone
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Neutron
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Nova. However, there is no backup of the images
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Swift. However, there is no backup of the objects. Swift has its own high
     availability/redundancy. Swift rings are backed up. Although Swift will
     rebuild the rings itself, restoring from backup is faster.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Operations Console
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Monasca. However, there is no backup of the metrics
-   </p></li></ul></div><div class="sect2" id="freezer-backup-limitations"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Limitations</span> <a title="Permalink" class="permalink" href="bura-overview.html#freezer-backup-limitations">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-supported_services.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-supported_services.xml</li><li><span class="ds-label">ID: </span>freezer-backup-limitations</li></ul></div></div></div></div><p>
+   </p></li></ul></div><section class="sect2" id="freezer-backup-limitations" data-id-title="Limitations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.3.1 </span><span class="title-name">Limitations</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#freezer-backup-limitations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-supported_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following limitations apply to backups created by the Freezer backup and
    restore service in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Recovery of the following services (or cloud topologies) will be partially
      backed up. They will need additional data (other than the data stored in
      MariaDB) to return to fully functional.
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        ESX Cloud
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Network services - LBaaS and VPNaaS
-      </p></li></ul></div></li><li class="listitem "><p>
+      </p></li></ul></div></li><li class="listitem"><p>
      Logging data (that is, log files).
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      VMs and volumes are not currently backed up.
-    </p></li></ul></div></div></div><div class="sect1" id="topic-jsc-qps-qt"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling Default Backups of the Control Plane to an SSH Target</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-jsc-qps-qt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span>topic-jsc-qps-qt</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section></section><section class="sect1" id="topic-jsc-qps-qt" data-id-title="Enabling Default Backups of the Control Plane to an SSH Target"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.4 </span><span class="title-name">Enabling Default Backups of the Control Plane to an SSH Target</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-jsc-qps-qt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This topic describes how you can set up an external server as a backup server
   in case you lose access to your cloud servers that store the default backups.
- </p><div class="sect2" id="id-1.6.16.13.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Default Backup and Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="id-1.6.16.13.3" data-id-title="Default Backup and Restore"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.1 </span><span class="title-name">Default Backup and Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    As part of the installation procedure in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, automatic
    backup/restore jobs are set up to back up to Swift via the Freezer scheduler
    component of the backup and restore service. The backup jobs perform
@@ -237,50 +237,50 @@ hljs.configure({
   </p><p>
    While control plane backups to Swift are set up automatically, you must use
    the following procedure to set up SSH backups.
-  </p></div><div class="sect2" id="id-1.6.16.13.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting up SSH backups</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.13.4" data-id-title="Setting up SSH backups"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.2 </span><span class="title-name">Setting up SSH backups</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    By default, during <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> deployment, backup jobs are automatically
    deployed to Swift, the MySQL database, the Cloud Lifecycle Manager, and Swift
    rings. Restore jobs are also deployed for convenience. It is more secure to
    store those backups also outside of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> infrastructure. If you
    provide all the values required in the following file, jobs will also be
    deployed to backup and restore to/from an SSH server of your choice:
-  </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/freezer/ssh_credentials.yml</pre></div></div><div class="sect2" id="id-1.6.16.13.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backing up your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> control plane to an SSH server</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/freezer/ssh_credentials.yml</pre></div></section><section class="sect2" id="id-1.6.16.13.5" data-id-title="Backing up your SUSE OpenStack Cloud control plane to an SSH server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.3 </span><span class="title-name">Backing up your <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> control plane to an SSH server</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You must provide the following connection information to this server:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The SSH server's IP address
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The SSH server's port to connect to (usually port 22). You may want to
      confirm how to open the port on the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> firewall.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The user to connect to the SSH server as
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The SSH private key authorized to connect to that user (see below for
      details of how to set up one if it is not already done)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The directory where you wish to store the backup on that server
-    </p></li></ul></div></div><div class="sect2" id="id-1.6.16.13.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting up SSH for backups before deployment</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="id-1.6.16.13.6" data-id-title="Setting up SSH for backups before deployment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.4 </span><span class="title-name">Setting up SSH for backups before deployment</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Before running the configuration processor, edit the following file:
   </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/freezer/ssh_credentials.yml</pre></div><p>
    All parameters are mandatory. Take care in providing the SSH private key.
-  </p></div><div class="sect2" id="id-1.6.16.13.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Preparing the server that will store the backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.13.7" data-id-title="Preparing the server that will store the backup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.5 </span><span class="title-name">Preparing the server that will store the backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In this example, the information is as follows:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      IP: 192.168.100.42
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Port: 22
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      User: backupuser
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Target directory for backups: /mnt/backups/
     </p></li></ul></div><p>
    Please replace these values to meet your own requirements, as appropriate.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Connect to the server:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ssh -p 22 root@192.168.100.42</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ssh -p 22 root@192.168.100.42</pre></div></li><li class="listitem"><p>
      Create the user:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo useradd backupuser --create-home --home-dir /mnt/backups/</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo useradd backupuser --create-home --home-dir /mnt/backups/</pre></div></li><li class="listitem"><p>
      Switch to that user:
-    </p><div class="verbatim-wrap"><pre class="screen">su backupuser</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">su backupuser</pre></div></li><li class="listitem"><p>
      Create the SSH keypair:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>ssh-keygen -t rsa
 # Just leave the default for the first question and do not set any passphrase
@@ -304,10 +304,10 @@ hljs.configure({
 &gt; |  o + .          |
 &gt; |.o .             |
 &gt; |++o              |
-&gt; +-----------------+</pre></div></li><li class="listitem "><p>
+&gt; +-----------------+</pre></div></li><li class="listitem"><p>
      Add the public key to the list of the keys authorized to connect to that
      user on this server:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa.pub &gt;&gt; /mnt/backups/.ssh/authorized_keys</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa.pub &gt;&gt; /mnt/backups/.ssh/authorized_keys</pre></div></li><li class="listitem"><p>
      View the private key. This is what you will use for the backup
      configuration:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">backupuser &gt; </code>cat /mnt/backups/.ssh/id_rsa
@@ -320,16 +320,16 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 -----END RSA PRIVATE KEY-----</pre></div></li></ol></div><p>
    Your server is now ready to receive backups. If you wish, you can check our advice on how
    to secure it in <a class="xref" href="bura-overview.html#secure-ssh-bu" title="14.4.8. Securing your SSH backup server">Section 14.4.8, “Securing your SSH backup server”</a>.
-  </p></div><div class="sect2" id="id-1.6.16.13.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting up SSH for backups after deployment</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.13.8" data-id-title="Setting up SSH for backups after deployment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.6 </span><span class="title-name">Setting up SSH for backups after deployment</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If you already deployed your cloud and forgot to configure SSH backups, or
    if you wish to modify the settings for where the backups are stored, follow
    the following instructions:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Edit the following file:
     </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/freezer/ssh_credentials.yml</pre></div><p>
      Please be advised that all parameters are mandatory, and take care in
      providing the SSH private key.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run the following commands:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack
 <code class="prompt user">ardana &gt; </code>git add -A
@@ -339,13 +339,13 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div><p>
      This will deploy the SSH key and configure SSH backup and restore jobs for
      you. It may take some time before the backups occur.
-    </p></li></ol></div></div><div class="sect2" id="id-1.6.16.13.9"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Opening ports in the cloud firewall</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.9">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect2" id="id-1.6.16.13.9" data-id-title="Opening ports in the cloud firewall"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.7 </span><span class="title-name">Opening ports in the cloud firewall</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.9">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    There is a strict policy of firewalling deployed with <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. If you use a
    non-standard SSH port, you may need to specifically open it by using the
    following process:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      When creating your model, edit the following file:
-    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/definition/data/firewall_rules.yml</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/definition/data/firewall_rules.yml</pre></div></li><li class="listitem"><p>
      You must add a new element in the firewall-rules list, such as:
     </p><div class="verbatim-wrap"><pre class="screen">- name: BACKUP
   # network-groups is a list of all the network group names
@@ -360,110 +360,110 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
     port-range-min:
     port-range-max:
     # protocol must be one of: null, tcp, udp or icmp
-    protocol: tcp</pre></div></li></ol></div></div><div class="sect2" id="secure-ssh-bu"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Securing your SSH backup server</span> <a title="Permalink" class="permalink" href="bura-overview.html#secure-ssh-bu">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span>secure-ssh-bu</li></ul></div></div></div></div><p>
+    protocol: tcp</pre></div></li></ol></div></section><section class="sect2" id="secure-ssh-bu" data-id-title="Securing your SSH backup server"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.8 </span><span class="title-name">Securing your SSH backup server</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#secure-ssh-bu">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can do the following to harden an SSH server (these techniques are well
    documented on the internet):
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Disable root login
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Move SSH to a non-default port (that is, something other than 22)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Disable password login (only allow RSA keys)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Disable SSH v1
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Authorize Secure File Transfer Protocol (SFTP) only for that user (disable
      SSH shell)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Firewall SSH traffic to ensure it comes from the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> address range
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Install a Fail2Ban solution
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Restrict users that are allowed to SSH
     </p></li></ul></div><p>
    Remove the key pair generated earlier on the backup server: the only thing
    needed is the .ssh/authorized_keys. You can remove the .ssh/id_rsa and
    .ssh/id_rsa.pub files. Be sure to save a backup of them somewhere.
-  </p></div><div class="sect2" id="id-1.6.16.13.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Finish Firewall Configuration</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.11">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.13.11" data-id-title="Finish Firewall Configuration"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.9 </span><span class="title-name">Finish Firewall Configuration</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.11">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Run the following commands to finish configuring the firewall.
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></div><div class="sect2" id="id-1.6.16.13.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General tips</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.12">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-cloud_control_plane_backup.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></section><section class="sect2" id="id-1.6.16.13.12" data-id-title="General tips"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.4.10 </span><span class="title-name">General tips</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.13.12">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-cloud_control_plane_backup.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Take care when sizing the directory that will receive the backup.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Monitor the space left on that directory.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Keep the system up to date on that server.
-    </p></li></ul></div></div></div><div class="sect1" id="topic-pth-st3-mw"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing Default Jobs</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-pth-st3-mw">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-change_default_backup_jobs.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-change_default_backup_jobs.xml</li><li><span class="ds-label">ID: </span>topic-pth-st3-mw</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section></section><section class="sect1" id="topic-pth-st3-mw" data-id-title="Changing Default Jobs"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.5 </span><span class="title-name">Changing Default Jobs</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-pth-st3-mw">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-change_default_backup_jobs.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The procedure to make changes to jobs created by default in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> is to
   edit the model file, <code class="literal">my_cloud/config/freezer/jobs.yml</code> and
   then re-run the <code class="literal">_freezer-manage-jobs.yml</code> playbook. (Note
   that the backup/restore component is called "Freezer" so you may see commands
   by that name.)
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Open jobs.yml in an editor, then change and save the file:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack
-<code class="prompt user">ardana &gt; </code>nano my_cloud/config/freezer/jobs.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>nano my_cloud/config/freezer/jobs.yml</pre></div></li><li class="step"><p>
     Commit the file to the local git repository:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "Backup job changes"</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "Backup job changes"</pre></div></li><li class="step"><p>
     Next, run the configuration processor followed by the ready-deployment
     playbooks:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible/
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
     Run _freezer_manage_jobs.yml:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></li></ol></div></div></div><div class="sect1" id="freezerUI"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup/Restore Via the Horizon UI</span> <a title="Permalink" class="permalink" href="bura-overview.html#freezerUI">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_ui.xml</li><li><span class="ds-label">ID: </span>freezerUI</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></li></ol></div></div></section><section class="sect1" id="freezerUI" data-id-title="Backup/Restore Via the Horizon UI"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.6 </span><span class="title-name">Backup/Restore Via the Horizon UI</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#freezerUI">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   A number of backup and restore tasks can be performed using the Horizon UI.
   This topic lists the available tasks, the access requirements, and
   limitations of using Horizon for backup and restore.
- </p><div class="sect2" id="access-ui"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Accessing the UI</span> <a title="Permalink" class="permalink" href="bura-overview.html#access-ui">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_ui.xml</li><li><span class="ds-label">ID: </span>access-ui</li></ul></div></div></div></div><div class="variablelist "><dl class="variablelist"><dt id="id-1.6.16.15.3.2.1"><span class="term ">User name</span></dt><dd><p>
+ </p><section class="sect2" id="access-ui" data-id-title="Accessing the UI"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.6.1 </span><span class="title-name">Accessing the UI</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#access-ui">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit source document"> </a></div></div></div></div></div><div class="variablelist"><dl class="variablelist"><dt id="id-1.6.16.15.3.2.1"><span class="term">User name</span></dt><dd><p>
       The only supported user in this version is "ardana_backup". The login
       credentials are available in <code class="literal">backup.osrc</code> located at
       <code class="literal">~/backup.osrc/</code>
-     </p></dd><dt id="id-1.6.16.15.3.2.2"><span class="term ">UI access</span></dt><dd><p>
+     </p></dd><dt id="id-1.6.16.15.3.2.2"><span class="term">UI access</span></dt><dd><p>
       To access the Horizon UI, follow the instructions shown in
       <span class="intraxref">Book “User Guide”, Chapter 3 “Cloud Admin Actions with the Dashboard”</span>. Once logged in as "ardana_backup",
       navigate to "Disaster Recovery" panel located in the left-hand menu where
       you should see "Backup and Restore."
-     </p></dd></dl></div></div><div class="sect2" id="idg-all-bura-freezer-ui-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Restore Operations Supported in the UI</span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-freezer-ui-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_ui.xml</li><li><span class="ds-label">ID: </span>idg-all-bura-freezer-ui-xml-7</li></ul></div></div></div></div><p>
+     </p></dd></dl></div></section><section class="sect2" id="idg-all-bura-freezer-ui-xml-7" data-id-title="Backup and Restore Operations Supported in the UI"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.6.2 </span><span class="title-name">Backup and Restore Operations Supported in the UI</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-freezer-ui-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following Operations are supported via the UI
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Ability to create new jobs to Backup/Restore files
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      List the freezer jobs that have completed
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Create sessions to link multiple jobs
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      List the various nodes ( hosts/servers) on which the freezer scheduler and
      freezer agent are installed
-    </p></li></ul></div></div><div class="sect2" id="id-1.6.16.15.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Limitations</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.15.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_ui.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ul></div></section><section class="sect2" id="id-1.6.16.15.5" data-id-title="Limitations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.6.3 </span><span class="title-name">Limitations</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.15.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_ui.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following limitations apply to Freezer backups in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The UI for backup and restore is supported only if you log in as
      "ardana_backup". All other users will see the UI panel but the UI will not
      work.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If Backup/Restore action fails via the UI, you must check the Freezer logs
      for details of the failure.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Job Status and Job Result on the UI and backend (CLI) are not in sync.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      For a given "Action" the following modes are not supported from the UI:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Microsoft SQL Server
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Cinder
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Nova
-      </p></li></ul></div></li><li class="listitem "><p>
+      </p></li></ul></div></li><li class="listitem"><p>
      There is a known issue which will be fixed in future releases while using
      Start and End dates and times in creating a job. Please refrain from using
      those fields.
-    </p></li></ul></div></div></div><div class="sect1" id="previous-backups"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore from a Specific Backup</span> <a title="Permalink" class="permalink" href="bura-overview.html#previous-backups">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-restore_previous_backup.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-restore_previous_backup.xml</li><li><span class="ds-label">ID: </span>previous-backups</li></ul></div></div></div></div><p>
+    </p></li></ul></div></section></section><section class="sect1" id="previous-backups" data-id-title="Restore from a Specific Backup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.7 </span><span class="title-name">Restore from a Specific Backup</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#previous-backups">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-restore_previous_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This topic describes how you can get a list of previous backups and how to
   restore from them.
- </p><div id="id-1.6.16.16.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+ </p><div id="id-1.6.16.16.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
    Note that the existing contents of the directory to which you will restore
    your data (and its children) will be completely overwritten. You must take
    that into account if there is data in that directory that you want to
@@ -472,7 +472,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
   </p></div><p>
   By default, freezer-agent restores only the latest (most recent) backup. Here
   is a manual procedure to restore from a list of backups
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Obtain the list of backups:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer backup-list
   [--limit]
@@ -486,7 +486,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 +----------------------------------+-------------+-----------------------------+-------------------------------------------------------------------------+---------------------+-------+
 | 75f8312788fa4e95bf975807905287f8 |             | ardana-qe202-cp1-c1-m3-mgmt | /var/lib/freezer/mount_94e03f120c9e4ae78ad50328d782cea6/.               | 2018-07-06 08:26:00 |     0 |
 | 4229d71c840e4ee1b78680131695a330 |             | ardana-qe202-cp1-c1-m2-mgmt | /var/lib/freezer/mount_77d3c7a76b16435181bcaf41837cc7fe/.               | 2018-07-06 08:26:01 |     0 |
-| 6fe59b58924e43f88729dc0a1fe1290b |             | ardana-qe202-cp1-c1-m1-mgmt | /var/lib/freezer/mount_4705ac61026c4e77b6bf59b7bcfc286a/.               | 2018-07-06 16:38:50 |     0 |</pre></div></li><li class="step "><p>
+| 6fe59b58924e43f88729dc0a1fe1290b |             | ardana-qe202-cp1-c1-m1-mgmt | /var/lib/freezer/mount_4705ac61026c4e77b6bf59b7bcfc286a/.               | 2018-07-06 16:38:50 |     0 |</pre></div></li><li class="step"><p>
     Use the "restore-from-date" option to restore a backup based on
     data/timestamp. The restore-from-data is an option available in
     freezer-agent. When using the parameter
@@ -520,29 +520,29 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
      restore_abs_path = ~/mydata_restore_dir
      restore_from_date = 2015-12-11T23:00:00</pre></div><p>
     The nearest oldest backup will be number 2, taken at 2015-12-11T02:00:00.
-   </p></li></ol></div></div></div><div class="sect1" id="topic-mlh-wtn-rt"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup/Restore Scheduler</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-mlh-wtn-rt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span>topic-mlh-wtn-rt</li></ul></div></div></div></div><div class="sect2" id="id-1.6.16.17.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Freezer (backup/restore service) Scheduler Overview</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></li></ol></div></div></section><section class="sect1" id="topic-mlh-wtn-rt" data-id-title="Backup/Restore Scheduler"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.8 </span><span class="title-name">Backup/Restore Scheduler</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-mlh-wtn-rt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="id-1.6.16.17.2" data-id-title="Freezer (backup/restore service) Scheduler Overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.1 </span><span class="title-name">Freezer (backup/restore service) Scheduler Overview</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.2">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This document explains, through examples, how to set up backup and restore
    jobs using the backup/restore service scheduler (referred to as Freezer
    Scheduler).
   </p><p>
    The scheduler is a long running process that executes the following:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Interact with the Freezer API
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Generate a client_id to register the client on to the API (to identify the
      node during the next executions)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Execute the freezer-agent according the jobs information retrieved from
      the API
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Write to the freezer API the outcome of the freezer-agent execution
-    </p></li></ul></div><div id="id-1.6.16.17.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p></li></ul></div><div id="id-1.6.16.17.2.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Freezer API maintains information about jobs in the Elasticsearch
     Database.
-   </p></div><div id="id-1.6.16.17.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p></div><div id="id-1.6.16.17.2.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     You must run as root to perform any tasks using the Freezer backup/restore
     service.
-   </p></div></div><div class="sect2" id="id-1.6.16.17.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Freezer (backup/restore service) Scheduler Client-ID</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect2" id="id-1.6.16.17.3" data-id-title="Freezer (backup/restore service) Scheduler Client-ID"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.2 </span><span class="title-name">Freezer (backup/restore service) Scheduler Client-ID</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, Freezer Scheduler is automatically installed on the
    Cloud Lifecycle Manager and controller nodes.
   </p><p>
@@ -562,9 +562,9 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 | ardana-qe202-cp1-c1-m2-mgmt    | 18041c2b12054802bdaf8cc458abc35d | ardana-qe202-cp1-c1-m2-mgmt    |             |
 | ardana-qe202-cp1-c1-m1-mgmt    | 884045a72026425dbcea754806d1022d | ardana-qe202-cp1-c1-m1-mgmt    |             |
 | ardana-qe202-cp1-comp0001-mgmt | e404b34e5f7844ed957ca5dd90e6446f | ardana-qe202-cp1-comp0001-mgmt |             |
-+--------------------------------+----------------------------------+--------------------------------+-------------+</pre></div></div><div class="sect2" id="id-1.6.16.17.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Scheduler Job</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
++--------------------------------+----------------------------------+--------------------------------+-------------+</pre></div></section><section class="sect2" id="id-1.6.16.17.4" data-id-title="Creating a Scheduler Job"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.3 </span><span class="title-name">Creating a Scheduler Job</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log in to a controller node and create the job.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Source the operating system variables and use the correct client_id. (The
      client-id corresponds to the node where the backup
      files/directory/database resides.) In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> the sourcing of the variable
@@ -597,24 +597,24 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
                         "schedule_interval": "24 hours"
                         },
                         "description": "backup for tmp dir"
-                        }</pre></div></li><li class="step "><p>
+                        }</pre></div></li><li class="step"><p>
      Upload it into the api using the correct client_id:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C <em class="replaceable ">CLIENT-ID</em> --file <em class="replaceable ">FREEZER-FILE</em></pre></div><div id="id-1.6.16.17.4.2.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C <em class="replaceable">CLIENT-ID</em> --file <em class="replaceable">FREEZER-FILE</em></pre></div><div id="id-1.6.16.17.4.2.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       Freezer file examples can be found in
       <a class="xref" href="bura-overview.html#idg-all-bura-freezer-scheduler-xml-6" title="14.8.6. Example Backup Job File">Section 14.8.6, “Example Backup Job File”</a>.
-     </p></div></li><li class="step "><p>
+     </p></div></li><li class="step"><p>
      The status of the jobs can be checked with:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-list -C <em class="replaceable ">CLIENT-ID</em></pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-list -C <em class="replaceable">CLIENT-ID</em></pre></div></li><li class="step"><p>
      If no scheduling information is provided, the job will be executed as soon
      as possible so its status will go into a "running" state, then
      "completed".
     </p></li></ol></div></div><p>
    You can find information about the scheduling and backup-execution in
    /var/log/freezer/freezer-scheduler.log and /var/log/freezer-api/freezer-api.log, respectively.
-  </p><div id="id-1.6.16.17.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.6.16.17.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Recurring jobs never go into a "completed" state, as they go back into
     "scheduled" state.
-   </p></div></div><div class="sect2" id="id-1.6.16.17.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore from a Different Node</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect2" id="id-1.6.16.17.5" data-id-title="Restore from a Different Node"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.4 </span><span class="title-name">Restore from a Different Node</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The scheduler can be used to restore from a different node using the
    hostname parameter that you see in the JSON below. Here is an example conf
    file.
@@ -637,11 +637,11 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
                     "description": "mysql test restore"
                     }</pre></div><p>
    Create the job like so:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C <em class="replaceable ">CLIENT-ID</em> --file job-restore-mysql.conf</pre></div></div><div class="sect2" id="id-1.6.16.17.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Differential Backup and Restore</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C <em class="replaceable">CLIENT-ID</em> --file job-restore-mysql.conf</pre></div></section><section class="sect2" id="id-1.6.16.17.6" data-id-title="Differential Backup and Restore"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.5 </span><span class="title-name">Differential Backup and Restore</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The difference is in the use of the parameter
    <code class="literal">always_level: 1</code>. We also specify a different container,
    so it is easier to spot the files created in the Swift container:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift list freezer_backup_devstack_1_alwayslevel</pre></div></div><div class="sect2" id="idg-all-bura-freezer-scheduler-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Backup Job File</span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-freezer-scheduler-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span>idg-all-bura-freezer-scheduler-xml-6</li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift list freezer_backup_devstack_1_alwayslevel</pre></div></section><section class="sect2" id="idg-all-bura-freezer-scheduler-xml-6" data-id-title="Example Backup Job File"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.6 </span><span class="title-name">Example Backup Job File</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-freezer-scheduler-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Here is a sample backup file:
   </p><div class="verbatim-wrap"><pre class="screen">{
                 "job_actions": [
@@ -667,7 +667,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
                 "description": "mysql backup"
                 }</pre></div><p>
    To create the job:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C client_node_1 --file job-backup.conf</pre></div></div><div class="sect2" id="id-1.6.16.17.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Restore Job File</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_scheduler.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C client_node_1 --file job-backup.conf</pre></div></section><section class="sect2" id="id-1.6.16.17.8" data-id-title="Example Restore Job File"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.8.7 </span><span class="title-name">Example Restore Job File</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.17.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_scheduler.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Here is an example of <code class="filename">job-restore.conf</code>
   </p><div class="verbatim-wrap"><pre class="screen">{
                     "job_actions": [
@@ -687,16 +687,16 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
                     "description": "mysql test restore"
                     }</pre></div><p>
    To create the job:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C client_node_1 --file job-restore.conf</pre></div></div></div><div class="sect1" id="topic-pgq-mnw-dt"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup/Restore Agent</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-pgq-mnw-dt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_agent.xml</li><li><span class="ds-label">ID: </span>topic-pgq-mnw-dt</li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-create -C client_node_1 --file job-restore.conf</pre></div></section></section><section class="sect1" id="topic-pgq-mnw-dt" data-id-title="Backup/Restore Agent"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.9 </span><span class="title-name">Backup/Restore Agent</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-pgq-mnw-dt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This topic describes how to configure backup jobs and restore jobs.
- </p><div class="sect2" id="id-1.6.16.18.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Introduction</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_agent.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="id-1.6.16.18.3" data-id-title="Introduction"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.9.1 </span><span class="title-name">Introduction</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The backup/restore service agent (Freezer Agent) is a tool that is used to
    manually back up and restore your data. It can be run from any place you
    want to take a backup (or do a restore) because all <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> nodes have the
    freezer-agent installed on them. To use it, you should run as root. The
    agent runs in conjunction with the <a class="xref" href="bura-overview.html#topic-mlh-wtn-rt" title="14.8. Backup/Restore Scheduler">Section 14.8, “Backup/Restore Scheduler”</a>. The
    following explains their relationship:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       The backup/restore scheduler (openstack-freezer-scheduler, also see
      <a class="xref" href="bura-overview.html#topic-mlh-wtn-rt" title="14.8. Backup/Restore Scheduler">Section 14.8, “Backup/Restore Scheduler”</a>) takes
      JSON-style config files, and can run them automatically according to a
@@ -705,59 +705,59 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
      requirements into an INI-style config file. Then it runs freezer-agent. As
      a user, you could also run the freezer agent using <code class="literal">freezer-agent
      --config file.ini</code>, which is exactly how the scheduler runs it.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The agent (freezer-agent) actually performs the jobs. Whenever any backup
      or restore action happens, the agent is the one doing the actual work. It
      can be run directly by the user, as noted above, or by the scheduler. It
      accepts either command-line flags (such as <code class="literal">--action
      backup</code>) or INI-style config files.
-    </p><div id="id-1.6.16.18.3.3.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.6.16.18.3.3.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       You can run <code class="literal">freezer-agent --help</code> to view a definitive
       list of all possible flags that can be used (with the transform rules
       mentioned) in these configuration files.
      </p></div></li></ul></div><p>
    For <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you must follow these steps to perform backups:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Define what you want to back up.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Define a mode for that backup. The following modes are available:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        fs (filesystem) (default)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        mysql
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        sqlserver
-      </p></li></ul></div><div id="id-1.6.16.18.3.5.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+      </p></li></ul></div><div id="id-1.6.16.18.3.5.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       It is recommended that you use snapshots if the mode is mysql or
       sqlserver.
-     </p></div></li><li class="step "><p>
+     </p></div></li><li class="step"><p>
      Define whether to use a snapshot in the file system for the backup:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        In Unix systems LVM is used (when available).
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        In Windows systems virtual shadow copies are used.
-      </p></li></ul></div></li><li class="step "><p>
+      </p></li></ul></div></li><li class="step"><p>
      Define a storage media in a job from the following list:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Swift (requires OpenStack credentials)(default)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Local (no credentials required)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        SSH (no credentials required) (not implemented on Windows)
-      </p></li></ul></div></li></ol></div></div></div><div class="sect2" id="id-1.6.16.18.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.9.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Basic Configuration for Backups</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_agent.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      </p></li></ul></div></li></ol></div></div></section><section class="sect2" id="id-1.6.16.18.4" data-id-title="Basic Configuration for Backups"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.9.2 </span><span class="title-name">Basic Configuration for Backups</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    There are several mandatory parameters you need to specify in order to
    execute a backup. Note storage is optional:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      action (backup by default)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      mode (fs by default)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      path-to-backup
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      backup-name
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      container (Swift container or local path)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      storage is not mandatory. It is Swift by default.
     </p></li></ul></div><p>
    For <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you can create a backup using only mandatory values, as
@@ -781,43 +781,43 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
    create a JSON configuration file for automated jobs to be run by the
    scheduler. Instructions on how to do that are found on the
    <a class="xref" href="bura-overview.html#topic-mlh-wtn-rt" title="14.8. Backup/Restore Scheduler">Section 14.8, “Backup/Restore Scheduler”</a> page.
-  </p></div><div class="sect2" id="id-1.6.16.18.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.9.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restoring your Data</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_agent.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.18.5" data-id-title="Restoring your Data"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.9.3 </span><span class="title-name">Restoring your Data</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you must do the following in order to restore data
    after a backup:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Select a backup to restore.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Define a mode for the restore: The following modes are available:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        fs (filesystem) (default)
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        mysql
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        sqlserver
-      </p></li></ul></div></li><li class="step "><p>
+      </p></li></ul></div></li><li class="step"><p>
      If the restore involves an application (such as MariaDB) remember to shut
      down the application or service and start it again after the restore.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.6.16.18.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.9.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Basic Configuration for Restoring</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-freezer_agent.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.6.16.18.6" data-id-title="Basic Configuration for Restoring"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.9.4 </span><span class="title-name">Basic Configuration for Restoring</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.18.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-freezer_agent.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To restore from a backup, note that in some cases you must stop the service
    (for instance, MariaDB) before the restore.
   </p><p>
    There are several parameters that are required and there are some optional
    parameters used to execute a restore:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      action (backup by default)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      mode (fs by default)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      restore-abs-path
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      backup-name
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      container (Swift container or local path)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      restore-from-host
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      restore-from-date (optional)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      storage is not mandatory. It is Swift by default
     </p></li></ul></div><p>
    You can create a restore using mandatory values, as in the following
@@ -846,47 +846,47 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
                     }
                     ],
                     "description": "backup for tmp dir"
-                    }</pre></div></div></div><div class="sect1" id="bu-limitations"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup and Restore Limitations</span> <a title="Permalink" class="permalink" href="bura-overview.html#bu-limitations">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-backup_limitations.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-backup_limitations.xml</li><li><span class="ds-label">ID: </span>bu-limitations</li></ul></div></div></div></div><p>
+                    }</pre></div></section></section><section class="sect1" id="bu-limitations" data-id-title="Backup and Restore Limitations"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.10 </span><span class="title-name">Backup and Restore Limitations</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#bu-limitations">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-backup_limitations.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The following limitations apply to backups created by the Freezer backup and
   restore service in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Recovery of the following services (or cloud topologies) will be partially
     supported as they need additional data (other than MariaDB) to return to
     fully functional.
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       ESX Cloud
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Network services - LBaaS and VPNaaS
-     </p></li></ul></div></li><li class="listitem "><p>
+     </p></li></ul></div></li><li class="listitem"><p>
     Logging data (that is, log files)
-   </p></li></ul></div></div><div class="sect1" id="topic-i4l-xhn-tt"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disabling Backup/Restore before Deployment</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-i4l-xhn-tt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-disable_bura_before_deployment.xml</li><li><span class="ds-label">ID: </span>topic-i4l-xhn-tt</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect1" id="topic-i4l-xhn-tt" data-id-title="Disabling Backup/Restore before Deployment"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.11 </span><span class="title-name">Disabling Backup/Restore before Deployment</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-i4l-xhn-tt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Backups are enabled by default. Therefore, you must take action if you want
    backups to be disabled for any reason. This topic explains how to disable
    default backup jobs before completing the installation of your cloud.
-  </p><div id="id-1.6.16.20.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+  </p><div id="id-1.6.16.20.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     You should make modifications in the <code class="literal">~/openstack/my_cloud/</code>
     directory before running the configuration processor and ready-deployment
     steps.
-   </p></div><div class="sect2" id="DisableFreezerDeploy"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disable backups before installation:</span> <a title="Permalink" class="permalink" href="bura-overview.html#DisableFreezerDeploy">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-disable_bura_before_deployment.xml</li><li><span class="ds-label">ID: </span>DisableFreezerDeploy</li></ul></div></div></div></div><p>
+   </p></div><section class="sect2" id="DisableFreezerDeploy" data-id-title="Disable backups before installation:"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.11.1 </span><span class="title-name">Disable backups before installation:</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#DisableFreezerDeploy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To disable deployment of the Freezer backup and restore service, remove the
    following lines in <code class="literal">control_plane.yml</code>:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      freezer-agent
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      freezer-api
-    </p></li></ul></div><div id="id-1.6.16.20.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p></li></ul></div><div id="id-1.6.16.20.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     This action is required even if you already removed Freezer lines from your
     model (<code class="filename">control_plane.yml</code>).
-   </p></div></div><div class="sect2" id="DisableFreezerCompletely"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deploy Freezer but disable backup/restore job creation:</span> <a title="Permalink" class="permalink" href="bura-overview.html#DisableFreezerCompletely">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-disable_bura_before_deployment.xml</li><li><span class="ds-label">ID: </span>DisableFreezerCompletely</li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect2" id="DisableFreezerCompletely" data-id-title="Deploy Freezer but disable backup/restore job creation:"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.11.2 </span><span class="title-name">Deploy Freezer but disable backup/restore job creation:</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#DisableFreezerCompletely">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    It is also possible to allow Freezer deployment yet prevent the lifecycle
    manager from creating automatic backup jobs. By default, the lifecycle
    manager deployment automatically creates jobs for the backup and restore of
    the following:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Lifecycle-manager node
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      MySQL database
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Swift rings
     </p></li></ul></div><p>
    Before running the configuration processor, you can prevent Freezer from
@@ -900,7 +900,7 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts site.yml -e '{ "freezer_create_backup_jobs": false }' -e '{ "freezer_create_restore_jobs": false }'</pre></div><p>
    When using these options, the Freezer infrastructure will still be deployed
    but will not execute any backups.
-  </p></div><div class="sect2" id="id-1.6.16.20.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.11.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Disable backup and restore jobs for a specific service</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.20.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-disable_bura_before_deployment.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.6.16.20.6" data-id-title="Disable backup and restore jobs for a specific service"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.11.3 </span><span class="title-name">Disable backup and restore jobs for a specific service</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.20.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To manage which jobs will be enabled, set the appropriate paramters in the
    <code class="literal">jobs.yml</code> freezer jobs configuration file:
   </p><div class="verbatim-wrap"><pre class="screen">~/openstack/my_cloud/config/freezer/jobs.yml</pre></div><p>
@@ -931,23 +931,23 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
    created by default. These jobs can be used to quickly restore the
    corresponding backup. To disable the creation of these restore jobs, change
    <code class="literal">also_create_restore_job</code> to <code class="literal">false</code>.
-  </p></div><div class="sect2" id="id-1.6.16.20.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.11.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Activating and deactivating jobs after cloud deployment</span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.20.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-disable_bura_before_deployment.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p></section><section class="sect2" id="id-1.6.16.20.7" data-id-title="Activating and deactivating jobs after cloud deployment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.11.4 </span><span class="title-name">Activating and deactivating jobs after cloud deployment</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#id-1.6.16.20.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-disable_bura_before_deployment.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Make modifications similar to those discussed above in <code class="literal">
      /openstack/my_cloud/config/freezer/jobs.yml</code>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Commit modifications to the git repo
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "A message that explains what modifications have been made"</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "A message that explains what modifications have been made"</pre></div></li><li class="step"><p>
      Run the configuration processor
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible/
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step"><p>
      Run the ready deployment playbook. (This will update the scratch/...
      directories with all of the above modifications).
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
      Change directories to scratch
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="step"><p>
      Run _freezer_manage_jobs.yml
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></li></ol></div></div></div></div><div class="sect1" id="topic-dsm-fbs-st"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling, Disabling and Restoring Backup/Restore Services</span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-dsm-fbs-st">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-start_stop_freezer_services.xml</li><li><span class="ds-label">ID: </span>topic-dsm-fbs-st</li></ul></div></div></div></div><div class="sect2" id="idg-all-bura-start-stop-freezer-services-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Stop, Start and Restart the Backup Services</span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-start-stop-freezer-services-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-start_stop_freezer_services.xml</li><li><span class="ds-label">ID: </span>idg-all-bura-start-stop-freezer-services-xml-6</li></ul></div></div></div></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div></li></ol></div></div></section></section><section class="sect1" id="topic-dsm-fbs-st" data-id-title="Enabling, Disabling and Restoring Backup/Restore Services"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.12 </span><span class="title-name">Enabling, Disabling and Restoring Backup/Restore Services</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#topic-dsm-fbs-st">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="idg-all-bura-start-stop-freezer-services-xml-6" data-id-title="Stop, Start and Restart the Backup Services"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.12.1 </span><span class="title-name">Stop, Start and Restart the Backup Services</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#idg-all-bura-start-stop-freezer-services-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To stop the Freezer backup and restore service globally, launch the
    following playbook from the Cloud Lifecycle Manager (this will stop all
    freezer-api and all freezer-agent running on your clusters):
@@ -964,11 +964,11 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts freezer-start.yml</pre></div><p>
    It is possible to target only specific nodes using the ansible --limit
    parameter.
-  </p></div><div class="sect2" id="manual"><div class="titlepage"><div><div><h3 class="title"><span class="number">14.12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manually</span> <a title="Permalink" class="permalink" href="bura-overview.html#manual">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bura-start_stop_freezer_services.xml</li><li><span class="ds-label">ID: </span>manual</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="manual" data-id-title="Manually"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">14.12.2 </span><span class="title-name">Manually</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#manual">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/bura-start_stop_freezer_services.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    <span class="emphasis"><em>For the freezer-agent: </em></span>
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Connect to the concerned host.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Run the following command to stop the freezer agent:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl stop openstack-freezer-scheduler</pre></div><p>
      or run the following command to start the freezer-agent:
@@ -976,17 +976,17 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
      or run the following command to restart the freezer-agent:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl restart openstack-freezer-scheduler</pre></div></li></ol></div></div><p>
    <span class="emphasis"><em>For the freezer-api:</em></span>
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Connect to the concerned host.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Run the following commands to stop the freezer-api:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo rm /etc/apache2/vhosts.d/freezer-modwsgi.conf</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl reload apache2</pre></div><p>
      or run the following commands to start the freezer-api:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo ln -s /etc/apache2/vhosts.d/freezer-modwsgi.vhost /etc/apache2/vhosts.d/freezer-modwsgi.conf</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl reload apache2</pre></div></li></ol></div></div></div></div><div class="sect1" id="backup-audit-logs"><div class="titlepage"><div><div><h2 class="title"><span class="number">14.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backing up and Restoring Audit Logs</span> <a title="Permalink" class="permalink" href="bura-overview.html#backup-audit-logs">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-audit_logs_backup.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-audit_logs_backup.xml</li><li><span class="ds-label">ID: </span>backup-audit-logs</li></ul></div></div></div></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo ln -s /etc/apache2/vhosts.d/freezer-modwsgi.vhost /etc/apache2/vhosts.d/freezer-modwsgi.conf</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo systemctl reload apache2</pre></div></li></ol></div></div></section></section><section class="sect1" id="backup-audit-logs" data-id-title="Backing up and Restoring Audit Logs"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">14.13 </span><span class="title-name">Backing up and Restoring Audit Logs</span></span> <a title="Permalink" class="permalink" href="bura-overview.html#backup-audit-logs">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-audit_logs_backup.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   To enable backup of the audit log directory, follow these steps. Before
   performing the following steps, run through
   <a class="xref" href="topic-ttn-5fg-4v.html#topic-enable-audit-logs" title="12.2.7.2. Enable Audit Logging">Section 12.2.7.2, “Enable Audit Logging”</a> .
- </p><div class="procedure "><div class="procedure-contents"><ul class="procedure"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ul class="procedure"><li class="step"><p>
     First, from the Cloud Lifecycle Manager node, run the following playbook:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo ansible-playbook -i hosts/verb_hosts _freezer_manage_jobs.yml</pre></div><p>
     This will create a job to back up the audit log directory on any node where
@@ -997,26 +997,26 @@ qpSTZjicKZCCl+J2+8lrKAaDWqWtIjSUs29kCL78QmaPOgEvfsw=
  </p><p>
   To restore from the node that made the backup to the same node directly in
   the audit log directory (for example, the folder has been deleted):
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Connect to the node
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Source OpenStack credentials
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/backup.osrc</pre></div></li><li class="step "><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/backup.osrc</pre></div></li><li class="step"><p>
     List pre-configured jobs
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-list -C `hostname`</pre></div></li><li class="step "><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-list -C `hostname`</pre></div></li><li class="step"><p>
     Note the id corresponding to the job: "Ardana Default: Audit log restore from
     ..."
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Schedule the restore
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-start <em class="replaceable ">JOB-ID</em></pre></div></li></ol></div></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>freezer job-start <em class="replaceable">JOB-ID</em></pre></div></li></ol></div></div><p>
   To restore the backup in another directory, or from another host,
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Connect to the node
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Source the OpenStack credentials
-   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/backup.osrc</pre></div></li><li class="step "><p>
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/backup.osrc</pre></div></li><li class="step"><p>
     Choose from where you will restore (from Swift or from and SSH backup)
-   </p><ol type="a" class="substeps "><li class="step "><p>
+   </p><ol type="a" class="substeps"><li class="step"><p>
       Swift: Create a restore config file (for example,
       <code class="filename">restore.ini</code>) with the following
       content to restore from a swift backup (make sure to fill in
@@ -1026,12 +1026,12 @@ action = restore
 backup_name = freezer_audit_log_backup
 container = freezer_audit_backup
 log_file = /freezer-agent/freezer-agent.log
-restore_abs_path = <em class="replaceable ">PATH TO THE DIRECTORY WHERE YOU WANT TO RESTORE</em>
-hostname = <em class="replaceable ">HOSTNAME OF THE HOST YOU WANT TO RESTORE THE BACKUP FROM</em></pre></div></li><li class="step "><p>
+restore_abs_path = <em class="replaceable">PATH TO THE DIRECTORY WHERE YOU WANT TO RESTORE</em>
+hostname = <em class="replaceable">HOSTNAME OF THE HOST YOU WANT TO RESTORE THE BACKUP FROM</em></pre></div></li><li class="step"><p>
       Or: Create a restore configuration file (for example,
       <code class="filename">restore.ini</code>) with the following
       content to restore from an SSH backup (make sure to fill in
-      <em class="replaceable ">VALUE</em>) SSH information is available in
+      <em class="replaceable">VALUE</em>) SSH information is available in
       <code class="literal">openstack/my_cloud/config/freezer/ssh_credentials.yml</code>
      </p><div class="verbatim-wrap"><pre class="screen">[default]
 action = restore
@@ -1039,13 +1039,12 @@ storage = ssh
 backup_name = freezer_audit_log_backup
 log_file = /freezer-agent/freezer-agent.log
 ssh_key = /etc/freezer/ssh_key
-restore_abs_path = <em class="replaceable ">PATH TO THE DIRECTORY WHERE YOU WANT TO RESTORE</em>
-hostname = <em class="replaceable ">HOSTNAME OF THE HOST YOU WANT TO RESTORE THE BACKUP FROM</em>
-ssh_host = <em class="replaceable ">YOUR SSH BACKUP HOST</em>
-ssh_port = <em class="replaceable ">YOUR SSH BACKUP PORT</em>
-ssh_username = <em class="replaceable ">YOUR SSH BACKUP USERNAME</em>
-container = <em class="replaceable ">YOUR SSH BACKUP BASEDIR</em>/freezer_audit_backup</pre></div></li></ol></li><li class="step "><p>
+restore_abs_path = <em class="replaceable">PATH TO THE DIRECTORY WHERE YOU WANT TO RESTORE</em>
+hostname = <em class="replaceable">HOSTNAME OF THE HOST YOU WANT TO RESTORE THE BACKUP FROM</em>
+ssh_host = <em class="replaceable">YOUR SSH BACKUP HOST</em>
+ssh_port = <em class="replaceable">YOUR SSH BACKUP PORT</em>
+ssh_username = <em class="replaceable">YOUR SSH BACKUP USERNAME</em>
+container = <em class="replaceable">YOUR SSH BACKUP BASEDIR</em>/freezer_audit_backup</pre></div></li></ol></li><li class="step"><p>
     Run the freezer-agent to restore
-   </p><div class="verbatim-wrap"><pre class="screen">freezer-agent --config restore.ini</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 15 </span>Troubleshooting Issues</span></a><a class="nav-link" href="system-maintenance.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 13 </span>System Maintenance</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+   </p><div class="verbatim-wrap"><pre class="screen">freezer-agent --config restore.ini</pre></div></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="system-maintenance.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 13 </span>System Maintenance</span></a> </div><div><a class="pagination-link next" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 15 </span>Troubleshooting Issues</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="bura-overview.html#id-1.6.16.10"><span class="title-number">14.1 </span><span class="title-name">Architecture</span></a></span></li><li><span class="section"><a href="bura-overview.html#idg-all-bura-bura-overview-xml-9"><span class="title-number">14.2 </span><span class="title-name">Architecture of the Backup/Restore Service</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-bxm-gxr-st"><span class="title-number">14.3 </span><span class="title-name">Default Automatic Backup Jobs</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-jsc-qps-qt"><span class="title-number">14.4 </span><span class="title-name">Enabling Default Backups of the Control Plane to an SSH Target</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-pth-st3-mw"><span class="title-number">14.5 </span><span class="title-name">Changing Default Jobs</span></a></span></li><li><span class="section"><a href="bura-overview.html#freezerUI"><span class="title-number">14.6 </span><span class="title-name">Backup/Restore Via the Horizon UI</span></a></span></li><li><span class="section"><a href="bura-overview.html#previous-backups"><span class="title-number">14.7 </span><span class="title-name">Restore from a Specific Backup</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-mlh-wtn-rt"><span class="title-number">14.8 </span><span class="title-name">Backup/Restore Scheduler</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-pgq-mnw-dt"><span class="title-number">14.9 </span><span class="title-name">Backup/Restore Agent</span></a></span></li><li><span class="section"><a href="bura-overview.html#bu-limitations"><span class="title-number">14.10 </span><span class="title-name">Backup and Restore Limitations</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-i4l-xhn-tt"><span class="title-number">14.11 </span><span class="title-name">Disabling Backup/Restore before Deployment</span></a></span></li><li><span class="section"><a href="bura-overview.html#topic-dsm-fbs-st"><span class="title-number">14.12 </span><span class="title-name">Enabling, Disabling and Restoring Backup/Restore Services</span></a></span></li><li><span class="section"><a href="bura-overview.html#backup-audit-logs"><span class="title-number">14.13 </span><span class="title-name">Backing up and Restoring Audit Logs</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

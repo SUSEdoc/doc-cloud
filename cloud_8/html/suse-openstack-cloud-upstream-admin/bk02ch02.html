@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Get started with OpenStack | OpenStack Administrator Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Get started with OpenStack | SUSE OpenStack Cloud 8" />
-<meta name="description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, and feature…" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="OpenStack Administrator Guide" />
-<meta name="chapter-title" content="Chapter 2. Get started with OpenStack" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Get started with OpenStack | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, and feature…" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Get started with OpenStack | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, and feature…" />
-<link rel="home" href="index.html" title="SUSE OpenStack Cloud Crowbar 8 Documentation" /><link rel="up" href="book-upstream-admin.html" title="OpenStack Administrator Guide" /><link rel="prev" href="bk02ch01.html" title="Chapter 1. Documentation Conventions" /><link rel="next" href="cha-identity.html" title="Chapter 3. Identity management" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | OpenStack Administrator Guide | Get started with OpenStack</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Get started with OpenStack | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, a…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="OpenStack Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 2. Get started with OpenStack"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Get started with OpenStack | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, a…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Get started with OpenStack | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="The OpenStack project is an open source cloud computing platform for all types of clouds, which aims to be simple to implement, massively scalable, a…"/>
+<link rel="prev" href="bk02ch01.html" title="Chapter 1. Documentation Conventions"/><link rel="next" href="cha-identity.html" title="Chapter 3. Identity management"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch02.html">Get started with OpenStack</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>OpenStack Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02ch01.html"><span class="number">1 </span><span class="name">Documentation Conventions</span></a></li><li class="inactive"><a href="bk02ch02.html"><span class="number">2 </span><span class="name">Get started with OpenStack</span></a></li><li class="inactive"><a href="cha-identity.html"><span class="number">3 </span><span class="name">Identity management</span></a></li><li class="inactive"><a href="bk02ch04.html"><span class="number">4 </span><span class="name">Dashboard</span></a></li><li class="inactive"><a href="bk02ch05.html"><span class="number">5 </span><span class="name">Compute</span></a></li><li class="inactive"><a href="bk02ch06.html"><span class="number">6 </span><span class="name">Object Storage</span></a></li><li class="inactive"><a href="bk02ch07.html"><span class="number">7 </span><span class="name">Block Storage</span></a></li><li class="inactive"><a href="bk02ch08.html"><span class="number">8 </span><span class="name">Shared File Systems</span></a></li><li class="inactive"><a href="networking.html"><span class="number">9 </span><span class="name">Networking</span></a></li><li class="inactive"><a href="bk02ch10.html"><span class="number">10 </span><span class="name">Telemetry</span></a></li><li class="inactive"><a href="bk02ch11.html"><span class="number">11 </span><span class="name">Database</span></a></li><li class="inactive"><a href="bk02ch12.html"><span class="number">12 </span><span class="name">Bare Metal</span></a></li><li class="inactive"><a href="bk02ch13.html"><span class="number">13 </span><span class="name">Orchestration</span></a></li><li class="inactive"><a href="osadm-os-cli.html"><span class="number">14 </span><span class="name">OpenStack command-line clients</span></a></li><li class="inactive"><a href="bk02ch15.html"><span class="number">15 </span><span class="name">Cross-project features</span></a></li><li class="inactive"><a href="bk02ch16.html"><span class="number">16 </span><span class="name">Appendix</span></a></li><li class="inactive"><a href="bk02go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Documentation Conventions" href="bk02ch01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Identity management" href="cha-identity.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="OpenStack Administrator Guide"><span class="book-icon">OpenStack Administrator Guide</span></a><span> › </span><a class="crumb" href="bk02ch02.html">Get started with OpenStack</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Documentation Conventions" href="bk02ch01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Identity management" href="cha-identity.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="id-1.4.4"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE OpenStack Cloud</span> <span class="productnumber ">8</span></div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Get started with OpenStack</span> <a title="Permalink" class="permalink" href="bk02ch02.html#">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="bk02ch02.html#get-started-conceptual-architecture"><span class="number">2.1 </span><span class="name">Conceptual architecture</span></a></span></dt><dt><span class="sect1"><a href="bk02ch02.html#id-1.4.4.8"><span class="number">2.2 </span><span class="name">Logical architecture</span></a></span></dt><dt><span class="sect1"><a href="bk02ch02.html#id-1.4.4.9"><span class="number">2.3 </span><span class="name">OpenStack services</span></a></span></dt><dt><span class="sect1"><a href="bk02ch02.html#id-1.4.4.10"><span class="number">2.4 </span><span class="name">Feedback</span></a></span></dt></dl></div></div><p>The OpenStack project is an open source cloud computing platform for all
+</script></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">OpenStack Administrator Guide</a><span> / </span><a class="crumb" href="bk02ch02.html">Get started with OpenStack</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">OpenStack Administrator Guide</div><ol><li><a href="bk02ch01.html" class=" "><span class="title-number">1 </span><span class="title-name">Documentation Conventions</span></a></li><li><a href="bk02ch02.html" class=" you-are-here"><span class="title-number">2 </span><span class="title-name">Get started with OpenStack</span></a></li><li><a href="cha-identity.html" class=" "><span class="title-number">3 </span><span class="title-name">Identity management</span></a></li><li><a href="bk02ch04.html" class=" "><span class="title-number">4 </span><span class="title-name">Dashboard</span></a></li><li><a href="bk02ch05.html" class=" "><span class="title-number">5 </span><span class="title-name">Compute</span></a></li><li><a href="bk02ch06.html" class=" "><span class="title-number">6 </span><span class="title-name">Object Storage</span></a></li><li><a href="bk02ch07.html" class=" "><span class="title-number">7 </span><span class="title-name">Block Storage</span></a></li><li><a href="bk02ch08.html" class=" "><span class="title-number">8 </span><span class="title-name">Shared File Systems</span></a></li><li><a href="networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Networking</span></a></li><li><a href="bk02ch10.html" class=" "><span class="title-number">10 </span><span class="title-name">Telemetry</span></a></li><li><a href="bk02ch11.html" class=" "><span class="title-number">11 </span><span class="title-name">Database</span></a></li><li><a href="bk02ch12.html" class=" "><span class="title-number">12 </span><span class="title-name">Bare Metal</span></a></li><li><a href="bk02ch13.html" class=" "><span class="title-number">13 </span><span class="title-name">Orchestration</span></a></li><li><a href="osadm-os-cli.html" class=" "><span class="title-number">14 </span><span class="title-name">OpenStack command-line clients</span></a></li><li><a href="bk02ch15.html" class=" "><span class="title-number">15 </span><span class="title-name">Cross-project features</span></a></li><li><a href="bk02ch16.html" class=" "><span class="title-number">16 </span><span class="title-name">Appendix</span></a></li><li><a href="bk02go01.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="id-1.4.4" data-id-title="Get started with OpenStack"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE OpenStack Cloud</span> <span class="productnumber">8</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Get started with OpenStack</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack project is an open source cloud computing platform for all
 types of clouds, which aims to be simple to implement, massively
 scalable, and feature rich. Developers and cloud computing technologists
 from around the world create the OpenStack project.</p><p>OpenStack provides an <a class="xref" href="bk02go01.html#term-infrastructure-as-a-service-iaas" title="Infrastructure-as-a-Service (IaaS)">Infrastructure-as-a-Service (IaaS)</a> solution
@@ -42,139 +42,139 @@ through a set of interrelated services. Each service offers an
 <a class="xref" href="bk02go01.html#term-application-programming-interface-api" title="Application Programming Interface (API)">Application Programming Interface (API)</a> that facilitates this
 integration. Depending on your needs, you can install some or all
 services.</p><p>The following table describes the OpenStack services that make up the
-OpenStack architecture:</p><div class="table" id="id-1.4.4.6"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.1: </span><span class="name">OpenStack Services </span><a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.6">#</a></h6></div><div class="table-contents"><table class="table" summary="OpenStack Services" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>
+OpenStack architecture:</p><div class="table" id="id-1.4.4.6" data-id-title="OpenStack Services"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 2.1: </span><span class="title-name">OpenStack Services </span></span><a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>Service</p>
-            </th><th>
+            </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>Project name</p>
-            </th><th>
+            </th><th style="border-bottom: 1px solid ; ">
               <p>Description</p>
-            </th></tr></thead><tbody><tr><td>
+            </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/horizon" target="_blank">Dashboard</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/horizon/" target="_blank">Horizon</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Provides a web-based self-service portal to interact with underlying
 OpenStack services, such as launching an instance, assigning IP
 addresses and configuring access controls.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/nova" target="_blank">Compute</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/nova/" target="_blank">Nova</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Manages the lifecycle of compute instances in an OpenStack environment.
 Responsibilities include spawning, scheduling and decommissioning of
 virtual machines on demand.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/neutron" target="_blank">Networking</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/neutron/" target="_blank">Neutron</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Enables Network-Connectivity-as-a-Service for other OpenStack services,
 such as OpenStack Compute. Provides an API for users to define networks
 and the attachments into them. Has a pluggable architecture that
 supports many popular networking vendors and technologies.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/swift" target="_blank">Object Storage</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/swift/" target="_blank">Swift</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Stores and retrieves arbitrary unstructured data objects via a RESTful,
 HTTP based API. It is highly fault tolerant with its data replication
 and scale-out architecture. Its implementation is not like a file server
 with mountable directories. In this case, it writes objects and files to
 multiple drives, ensuring the data is replicated across a server
 cluster.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/cinder" target="_blank">Block Storage</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/cinder/" target="_blank">Cinder</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Provides persistent block storage to running instances. Its pluggable
 driver architecture facilitates the creation and management of block
 storage devices.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/keystone" target="_blank">Identity service</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/keystone/" target="_blank">Keystone</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Provides an authentication and authorization service for other
 OpenStack services. Provides a catalog of endpoints for all
 OpenStack services.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/glance" target="_blank">Image service</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/glance/" target="_blank">Glance</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Stores and retrieves virtual machine disk images. OpenStack Compute
 makes use of this during instance provisioning.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/ceilometer" target="_blank">Telemetry</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/ceilometer/" target="_blank">Ceilometer</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Monitors and meters the OpenStack cloud for billing, benchmarking,
 scalability, and statistical purposes.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/heat" target="_blank">Orchestration</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/heat/" target="_blank">Heat</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Orchestrates multiple composite cloud applications by using either the
 native HOT template format or the AWS CloudFormation template format,
 through both an OpenStack-native REST API and a
 CloudFormation-compatible Query API.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/trove" target="_blank">Database service</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/trove/" target="_blank">Trove</a>
               </p>
-            </td><td>
+            </td><td style="border-bottom: 1px solid ; ">
               <p>Provides scalable and reliable Cloud Database-as-a-Service functionality
 for both relational and non-relational database engines.</p>
-            </td></tr><tr><td>
+            </td></tr><tr><td style="border-right: 1px solid ; ">
               <p>
                 <a class="link" href="http://www.openstack.org/software/releases/newton/components/sahara" target="_blank">Data processing service</a>
               </p>
-            </td><td>
+            </td><td style="border-right: 1px solid ; ">
               <p>
                 <a class="link" href="http://docs.openstack.org/developer/sahara/" target="_blank">Sahara</a>
               </p>
@@ -182,8 +182,8 @@ for both relational and non-relational database engines.</p>
               <p>Provides capabilities to provision and scale Hadoop clusters in OpenStack
 by specifying parameters like Hadoop version, cluster topology and nodes
 hardware details.</p>
-            </td></tr></tbody></table></div></div><div class="sect1 " id="get-started-conceptual-architecture"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Conceptual architecture</span> <a title="Permalink" class="permalink" href="bk02ch02.html#get-started-conceptual-architecture">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>get-started-conceptual-architecture</li></ul></div></div></div></div><p>The following diagram shows the relationships among the OpenStack
-services:</p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/openstack_kilo_conceptual_arch.png" target="_blank"><img src="images/openstack_kilo_conceptual_arch.png" width="" /></a></div></div></div><div class="sect1 " id="id-1.4.4.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Logical architecture</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To design, deploy, and configure OpenStack, administrators must
+            </td></tr></tbody></table></div></div><section class="sect1" id="get-started-conceptual-architecture" data-id-title="Conceptual architecture"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">Conceptual architecture</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#get-started-conceptual-architecture">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following diagram shows the relationships among the OpenStack
+services:</p><div class="informalfigure"><div class="mediaobject"><a href="images/openstack_kilo_conceptual_arch.png"><img src="images/openstack_kilo_conceptual_arch.png" width="99%" alt="Image" title="Image"/></a></div></div></section><section class="sect1" id="id-1.4.4.8" data-id-title="Logical architecture"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">Logical architecture</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To design, deploy, and configure OpenStack, administrators must
 understand the logical architecture.</p><p>As shown in <a class="xref" href="bk02ch02.html#get-started-conceptual-architecture" title="2.1. Conceptual architecture">Section 2.1, “Conceptual architecture”</a>, OpenStack consists of
 several independent parts, named the OpenStack services. All services
 authenticate through a common Identity service. Individual services interact
@@ -203,183 +203,183 @@ issuing API requests through tools like browser plug-ins or <code class="command
 For applications, <a class="link" href="http://developer.openstack.org/#sdk" target="_blank">several SDKs</a>
 are available. Ultimately, all these access methods issue REST API calls
 to the various OpenStack services.</p><p>The following diagram shows the most common, but not the only possible,
-architecture for an OpenStack cloud:</p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/openstack-arch-kilo-logical-v1.png" target="_blank"><img src="images/openstack-arch-kilo-logical-v1.png" width="" /></a></div></div></div><div class="sect1 " id="id-1.4.4.9"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OpenStack services</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>This section describes OpenStack services in detail.</p><div class="sect2 " id="id-1.4.4.9.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>Use OpenStack Compute to host and manage cloud computing systems.
+architecture for an OpenStack cloud:</p><div class="informalfigure"><div class="mediaobject"><a href="images/openstack-arch-kilo-logical-v1.png"><img src="images/openstack-arch-kilo-logical-v1.png" width="99%" alt="Image" title="Image"/></a></div></div></section><section class="sect1" id="id-1.4.4.9" data-id-title="OpenStack services"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">OpenStack services</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This section describes OpenStack services in detail.</p><section class="sect2" id="id-1.4.4.9.3" data-id-title="Compute service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.1 </span><span class="title-name">Compute service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Use OpenStack Compute to host and manage cloud computing systems.
 OpenStack Compute is a major part of an <a class="xref" href="bk02go01.html#term-infrastructure-as-a-service-iaas" title="Infrastructure-as-a-Service (IaaS)">Infrastructure-as-a-Service (IaaS)</a> system. The main modules are implemented in Python.</p><p>OpenStack Compute interacts with OpenStack Identity for authentication;
 OpenStack Image service for disk and server images; and OpenStack
 Dashboard for the user and administrative interface. Image access is
 limited by projects, and by users; quotas are limited per project (the
 number of instances, for example). OpenStack Compute can scale
 horizontally on standard hardware, and download images to launch
-instances.</p><p>OpenStack Compute consists of the following areas and their components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.3.5.1"><span class="term "><code class="literal">nova-api</code> service</span></dt><dd><p>Accepts and responds to end user compute API calls. The service
+instances.</p><p>OpenStack Compute consists of the following areas and their components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.3.5.1"><span class="term"><code class="literal">nova-api</code> service</span></dt><dd><p>Accepts and responds to end user compute API calls. The service
 supports the OpenStack Compute API, the Amazon EC2 API, and a
 special Admin API for privileged users to perform administrative
 actions. It enforces some policies and initiates most orchestration
-activities, such as running an instance.</p></dd><dt id="id-1.4.4.9.3.5.2"><span class="term "><code class="literal">nova-api-metadata</code> service</span></dt><dd><p>Accepts metadata requests from instances. The <code class="literal">nova-api-metadata</code>
+activities, such as running an instance.</p></dd><dt id="id-1.4.4.9.3.5.2"><span class="term"><code class="literal">nova-api-metadata</code> service</span></dt><dd><p>Accepts metadata requests from instances. The <code class="literal">nova-api-metadata</code>
 service is generally used when you run in multi-host mode with
 <code class="literal">nova-network</code> installations. For details, see <a class="link" href="http://docs.openstack.org/admin-guide/compute-networking-nova.html#metadata-service" target="_blank">Metadata
 service</a>
-in the OpenStack Administrator Guide.</p></dd><dt id="id-1.4.4.9.3.5.3"><span class="term "><code class="literal">nova-compute</code> service</span></dt><dd><p>A worker daemon that creates and terminates virtual machine
-instances through hypervisor APIs. For example:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>XenAPI for XenServer/XCP</p></li><li class="listitem "><p>libvirt for KVM or QEMU</p></li><li class="listitem "><p>VMwareAPI for VMware</p></li></ul></div><p>Processing is fairly complex. Basically, the daemon accepts actions
+in the OpenStack Administrator Guide.</p></dd><dt id="id-1.4.4.9.3.5.3"><span class="term"><code class="literal">nova-compute</code> service</span></dt><dd><p>A worker daemon that creates and terminates virtual machine
+instances through hypervisor APIs. For example:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>XenAPI for XenServer/XCP</p></li><li class="listitem"><p>libvirt for KVM or QEMU</p></li><li class="listitem"><p>VMwareAPI for VMware</p></li></ul></div><p>Processing is fairly complex. Basically, the daemon accepts actions
 from the queue and performs a series of system commands such as
-launching a KVM instance and updating its state in the database.</p></dd><dt id="id-1.4.4.9.3.5.4"><span class="term "><code class="literal">nova-scheduler</code> service</span></dt><dd><p>Takes a virtual machine instance request from the queue and
-determines on which compute server host it runs.</p></dd><dt id="id-1.4.4.9.3.5.5"><span class="term "><code class="literal">nova-conductor</code> module</span></dt><dd><p>Mediates interactions between the <code class="literal">nova-compute</code> service and the
+launching a KVM instance and updating its state in the database.</p></dd><dt id="id-1.4.4.9.3.5.4"><span class="term"><code class="literal">nova-scheduler</code> service</span></dt><dd><p>Takes a virtual machine instance request from the queue and
+determines on which compute server host it runs.</p></dd><dt id="id-1.4.4.9.3.5.5"><span class="term"><code class="literal">nova-conductor</code> module</span></dt><dd><p>Mediates interactions between the <code class="literal">nova-compute</code> service and the
 database. It eliminates direct accesses to the cloud database made
 by the <code class="literal">nova-compute</code> service. The <code class="literal">nova-conductor</code> module scales
 horizontally. However, do not deploy it on nodes where the
 <code class="literal">nova-compute</code> service runs. For more information, see <a class="link" href="http://docs.openstack.org/newton/config-reference/compute/conductor.html" target="_blank">Configuration
-Reference Guide</a>.</p></dd><dt id="id-1.4.4.9.3.5.6"><span class="term "><code class="literal">nova-cert</code> module</span></dt><dd><p>A server daemon that serves the Nova Cert service for X509
+Reference Guide</a>.</p></dd><dt id="id-1.4.4.9.3.5.6"><span class="term"><code class="literal">nova-cert</code> module</span></dt><dd><p>A server daemon that serves the Nova Cert service for X509
 certificates. Used to generate certificates for
-<code class="literal">euca-bundle-image</code>. Only needed for the EC2 API.</p></dd><dt id="id-1.4.4.9.3.5.7"><span class="term "><code class="literal">nova-consoleauth</code> daemon</span></dt><dd><p>Authorizes tokens for users that console proxies provide. See
+<code class="literal">euca-bundle-image</code>. Only needed for the EC2 API.</p></dd><dt id="id-1.4.4.9.3.5.7"><span class="term"><code class="literal">nova-consoleauth</code> daemon</span></dt><dd><p>Authorizes tokens for users that console proxies provide. See
 <code class="literal">nova-novncproxy</code>. This service must be running
 for console proxies to work. You can run proxies of either type
 against a single nova-consoleauth service in a cluster
 configuration. For information, see <a class="link" href="http://docs.openstack.org/admin-guide/compute-remote-console-access.html#about-nova-consoleauth" target="_blank">About
-nova-consoleauth</a>.</p></dd><dt id="id-1.4.4.9.3.5.8"><span class="term "><code class="literal">nova-novncproxy</code> daemon</span></dt><dd><p>Provides a proxy for accessing running instances through a VNC
-connection. Supports browser-based novnc clients.</p></dd><dt id="id-1.4.4.9.3.5.9"><span class="term "><code class="literal">nova-spicehtml5proxy</code> daemon</span></dt><dd><p>Provides a proxy for accessing running instances through a SPICE
-connection. Supports browser-based HTML5 client.</p></dd><dt id="id-1.4.4.9.3.5.10"><span class="term ">The queue</span></dt><dd><p>A central hub for passing messages between daemons. Usually
+nova-consoleauth</a>.</p></dd><dt id="id-1.4.4.9.3.5.8"><span class="term"><code class="literal">nova-novncproxy</code> daemon</span></dt><dd><p>Provides a proxy for accessing running instances through a VNC
+connection. Supports browser-based novnc clients.</p></dd><dt id="id-1.4.4.9.3.5.9"><span class="term"><code class="literal">nova-spicehtml5proxy</code> daemon</span></dt><dd><p>Provides a proxy for accessing running instances through a SPICE
+connection. Supports browser-based HTML5 client.</p></dd><dt id="id-1.4.4.9.3.5.10"><span class="term">The queue</span></dt><dd><p>A central hub for passing messages between daemons. Usually
 implemented with <a class="link" href="http://www.rabbitmq.com/" target="_blank">RabbitMQ</a>, also can be
-implemented with another AMQP message queue, such as <a class="link" href="http://www.zeromq.org/" target="_blank">ZeroMQ</a>.</p></dd><dt id="id-1.4.4.9.3.5.11"><span class="term ">SQL database</span></dt><dd><p>Stores most build-time and run-time states for a cloud
-infrastructure, including:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Available instance types</p></li><li class="listitem "><p>Instances in use</p></li><li class="listitem "><p>Available networks</p></li><li class="listitem "><p>Projects</p></li></ul></div><p>Theoretically, OpenStack Compute can support any database that
+implemented with another AMQP message queue, such as <a class="link" href="http://www.zeromq.org/" target="_blank">ZeroMQ</a>.</p></dd><dt id="id-1.4.4.9.3.5.11"><span class="term">SQL database</span></dt><dd><p>Stores most build-time and run-time states for a cloud
+infrastructure, including:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Available instance types</p></li><li class="listitem"><p>Instances in use</p></li><li class="listitem"><p>Available networks</p></li><li class="listitem"><p>Projects</p></li></ul></div><p>Theoretically, OpenStack Compute can support any database that
 SQLAlchemy supports. Common databases are SQLite3 for test and
-development work, MySQL, MariaDB, and PostgreSQL.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage concepts</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack stack uses the following storage types:</p><div class="table" id="id-1.4.4.9.4.3"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.2: </span><span class="name">Storage types </span><a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.4.3">#</a></h6></div><div class="table-contents"><table class="table" summary="Storage types" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /><col class="c4" /></colgroup><thead><tr><th>
+development work, MySQL, MariaDB, and PostgreSQL.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.4" data-id-title="Storage concepts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.2 </span><span class="title-name">Storage concepts</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack stack uses the following storage types:</p><div class="table" id="id-1.4.4.9.4.3" data-id-title="Storage types"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 2.2: </span><span class="title-name">Storage types </span></span><a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.4.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/><col class="c4"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>On-instance / ephemeral</p>
-                </th><th>
+                </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Block storage (cinder)</p>
-                </th><th>
+                </th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Object Storage (swift)</p>
-                </th><th>
+                </th><th style="border-bottom: 1px solid ; ">
                   <p>File Storage (manila)</p>
-                </th></tr></thead><tbody><tr><td>
+                </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Runs operating systems and provides scratch space</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Used for adding additional persistent storage to a virtual machine (VM)</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Used for storing virtual machine images and data</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Used for providing file shares to a virtual machine</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Persists until VM is terminated</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Persists until deleted</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Persists until deleted</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Persists until deleted</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Access associated with a VM</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Access associated with a VM</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Available from anywhere</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Access can be provided to a VM</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Implemented as a filesystem underlying OpenStack Compute</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Mounted via OpenStack Block Storage controlled protocol (for example, iSCSI)</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>REST API</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Provides Shared File System service via nfs, cifs, glusterfs, or hdfs protocol</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Encryption is available</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Encryption is available</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Work in progress - expected for the Mitaka release</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Encryption is not available yet</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Administrator configures size setting, based on flavors</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Sizings based on need</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
                   <p>Easily scalable for future growth</p>
-                </td><td>
+                </td><td style="border-bottom: 1px solid ; ">
                   <p>Sizing based on need</p>
-                </td></tr><tr><td>
+                </td></tr><tr><td style="border-right: 1px solid ; ">
                   <p>Example: 10 GB first disk, 30 GB/core second disk</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; ">
                   <p>Example: 1 TB "extra hard drive"</p>
-                </td><td>
+                </td><td style="border-right: 1px solid ; ">
                   <p>Example: 10s of TBs of data set storage</p>
                 </td><td>
                   <p>Example: 1 TB of file share</p>
-                </td></tr></tbody></table></div></div><div id="id-1.4.4.9.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="emphasis"><em>You cannot use OpenStack Object Storage like a traditional hard
+                </td></tr></tbody></table></div></div><div id="id-1.4.4.9.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="emphasis"><em>You cannot use OpenStack Object Storage like a traditional hard
 drive.</em></span> The Object Storage relaxes some of the constraints of a
 POSIX-style file system to get other gains. You can access the
 objects through an API which uses HTTP. Subsequently you don't have
 to provide atomic operations (that is, relying on eventual
 consistency), you can scale a storage system easily and avoid a
-central point of failure.</p></li><li class="listitem "><p><span class="emphasis"><em>The OpenStack Image service is used to manage the virtual machine
+central point of failure.</p></li><li class="listitem"><p><span class="emphasis"><em>The OpenStack Image service is used to manage the virtual machine
 images in an OpenStack cluster, not store them.</em></span> It provides an
 abstraction to different methods for storage - a bridge to the
-storage, not the storage itself.</p></li><li class="listitem "><p><span class="emphasis"><em>The OpenStack Object Storage can function on its own.</em></span> The Object
+storage, not the storage itself.</p></li><li class="listitem"><p><span class="emphasis"><em>The OpenStack Object Storage can function on its own.</em></span> The Object
 Storage (swift) product can be used independently of the Compute
-(nova) product.</p></li></ul></div></div></div><div class="sect2 " id="id-1.4.4.9.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Object Storage service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Object Storage is a multi-tenant object storage system. It
+(nova) product.</p></li></ul></div></div></section><section class="sect2" id="id-1.4.4.9.5" data-id-title="Object Storage service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.3 </span><span class="title-name">Object Storage service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Object Storage is a multi-tenant object storage system. It
 is highly scalable and can manage large amounts of unstructured data at
-low cost through a RESTful HTTP API.</p><p>It includes the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.5.4.1"><span class="term ">Proxy servers (swift-proxy-server)</span></dt><dd><p>Accepts OpenStack Object Storage API and raw HTTP requests to upload
+low cost through a RESTful HTTP API.</p><p>It includes the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.5.4.1"><span class="term">Proxy servers (swift-proxy-server)</span></dt><dd><p>Accepts OpenStack Object Storage API and raw HTTP requests to upload
 files, modify metadata, and create containers. It also serves file
 or container listings to web browsers. To improve performance, the
 proxy server can use an optional cache that is usually deployed with
-memcache.</p></dd><dt id="id-1.4.4.9.5.4.2"><span class="term ">Account servers (swift-account-server)</span></dt><dd><p>Manages accounts defined with Object Storage.</p></dd><dt id="id-1.4.4.9.5.4.3"><span class="term ">Container servers (swift-container-server)</span></dt><dd><p>Manages the mapping of containers or folders, within Object Storage.</p></dd><dt id="id-1.4.4.9.5.4.4"><span class="term ">Object servers (swift-object-server)</span></dt><dd><p>Manages actual objects, such as files, on the storage nodes.</p></dd><dt id="id-1.4.4.9.5.4.5"><span class="term ">Various periodic processes</span></dt><dd><p>Performs housekeeping tasks on the large data store. The replication
+memcache.</p></dd><dt id="id-1.4.4.9.5.4.2"><span class="term">Account servers (swift-account-server)</span></dt><dd><p>Manages accounts defined with Object Storage.</p></dd><dt id="id-1.4.4.9.5.4.3"><span class="term">Container servers (swift-container-server)</span></dt><dd><p>Manages the mapping of containers or folders, within Object Storage.</p></dd><dt id="id-1.4.4.9.5.4.4"><span class="term">Object servers (swift-object-server)</span></dt><dd><p>Manages actual objects, such as files, on the storage nodes.</p></dd><dt id="id-1.4.4.9.5.4.5"><span class="term">Various periodic processes</span></dt><dd><p>Performs housekeeping tasks on the large data store. The replication
 services ensure consistency and availability through the cluster.
-Other periodic processes include auditors, updaters, and reapers.</p></dd><dt id="id-1.4.4.9.5.4.6"><span class="term ">WSGI middleware</span></dt><dd><p>Handles authentication and is usually OpenStack Identity.</p></dd><dt id="id-1.4.4.9.5.4.7"><span class="term ">swift client</span></dt><dd><p>Enables users to submit commands to the REST API through a
+Other periodic processes include auditors, updaters, and reapers.</p></dd><dt id="id-1.4.4.9.5.4.6"><span class="term">WSGI middleware</span></dt><dd><p>Handles authentication and is usually OpenStack Identity.</p></dd><dt id="id-1.4.4.9.5.4.7"><span class="term">swift client</span></dt><dd><p>Enables users to submit commands to the REST API through a
 command-line client authorized as either a admin user, reseller
-user, or swift user.</p></dd><dt id="id-1.4.4.9.5.4.8"><span class="term ">swift-init</span></dt><dd><p>Script that initializes the building of the ring file, takes daemon
+user, or swift user.</p></dd><dt id="id-1.4.4.9.5.4.8"><span class="term">swift-init</span></dt><dd><p>Script that initializes the building of the ring file, takes daemon
 names as parameter and offers commands. Documented in
-<a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#managing-services" target="_blank">Managing Services</a>.</p></dd><dt id="id-1.4.4.9.5.4.9"><span class="term ">swift-recon</span></dt><dd><p>A cli tool used to retrieve various metrics and telemetry information
-about a cluster that has been collected by the swift-recon middleware.</p></dd><dt id="id-1.4.4.9.5.4.10"><span class="term ">swift-ring-builder</span></dt><dd><p>Storage ring build and rebalance utility. Documented in
-<a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#managing-the-rings" target="_blank">Managing the Rings</a>.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Block Storage service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.6">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Block Storage service (cinder) adds persistent storage
+<a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#managing-services" target="_blank">Managing Services</a>.</p></dd><dt id="id-1.4.4.9.5.4.9"><span class="term">swift-recon</span></dt><dd><p>A cli tool used to retrieve various metrics and telemetry information
+about a cluster that has been collected by the swift-recon middleware.</p></dd><dt id="id-1.4.4.9.5.4.10"><span class="term">swift-ring-builder</span></dt><dd><p>Storage ring build and rebalance utility. Documented in
+<a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#managing-the-rings" target="_blank">Managing the Rings</a>.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.6" data-id-title="Block Storage service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.4 </span><span class="title-name">Block Storage service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Block Storage service (cinder) adds persistent storage
 to a virtual machine. Block Storage provides an infrastructure for managing
 volumes, and interacts with OpenStack Compute to provide volumes for
 instances. The service also enables management of volume snapshots, and
-volume types.</p><p>The Block Storage service consists of the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.6.4.1"><span class="term ">cinder-api</span></dt><dd><p>Accepts API requests, and routes them to the <code class="literal">cinder-volume</code> for
-action.</p></dd><dt id="id-1.4.4.9.6.4.2"><span class="term ">cinder-volume</span></dt><dd><p>Interacts directly with the Block Storage service, and processes
+volume types.</p><p>The Block Storage service consists of the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.6.4.1"><span class="term">cinder-api</span></dt><dd><p>Accepts API requests, and routes them to the <code class="literal">cinder-volume</code> for
+action.</p></dd><dt id="id-1.4.4.9.6.4.2"><span class="term">cinder-volume</span></dt><dd><p>Interacts directly with the Block Storage service, and processes
 such as the <code class="literal">cinder-scheduler</code>. It also interacts with these processes
 through a message queue. The <code class="literal">cinder-volume</code> service responds to read
 and write requests sent to the Block Storage service to maintain
 state. It can interact with a variety of storage providers through a
-driver architecture.</p></dd><dt id="id-1.4.4.9.6.4.3"><span class="term ">cinder-scheduler daemon</span></dt><dd><p>Selects the optimal storage provider node on which to create the
-volume. A similar component to the <code class="literal">nova-scheduler</code>.</p></dd><dt id="id-1.4.4.9.6.4.4"><span class="term ">cinder-backup daemon</span></dt><dd><p>The <code class="literal">cinder-backup</code> service provides backing up volumes of any type to
+driver architecture.</p></dd><dt id="id-1.4.4.9.6.4.3"><span class="term">cinder-scheduler daemon</span></dt><dd><p>Selects the optimal storage provider node on which to create the
+volume. A similar component to the <code class="literal">nova-scheduler</code>.</p></dd><dt id="id-1.4.4.9.6.4.4"><span class="term">cinder-backup daemon</span></dt><dd><p>The <code class="literal">cinder-backup</code> service provides backing up volumes of any type to
 a backup storage provider. Like the <code class="literal">cinder-volume</code> service, it can
 interact with a variety of storage providers through a driver
-architecture.</p></dd><dt id="id-1.4.4.9.6.4.5"><span class="term ">Messaging queue</span></dt><dd><p>Routes information between the Block Storage processes.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Shared File Systems service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.7">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Shared File Systems service (manila) provides file storage to a
+architecture.</p></dd><dt id="id-1.4.4.9.6.4.5"><span class="term">Messaging queue</span></dt><dd><p>Routes information between the Block Storage processes.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.7" data-id-title="Shared File Systems service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.5 </span><span class="title-name">Shared File Systems service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Shared File Systems service (manila) provides file storage to a
 virtual machine. The Shared File Systems service provides an infrastructure
 for managing and provisioning of file shares. The service also enables
 management of share types as well as share snapshots if a driver supports
-them.</p><p>The Shared File Systems service consists of the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.7.4.1"><span class="term ">manila-api</span></dt><dd><p>A WSGI app that authenticates and routes requests throughout the Shared File
-Systems service. It supports the OpenStack APIs.</p></dd><dt id="id-1.4.4.9.7.4.2"><span class="term ">manila-data</span></dt><dd><p>A standalone service whose purpose is to receive requests, process data
+them.</p><p>The Shared File Systems service consists of the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.7.4.1"><span class="term">manila-api</span></dt><dd><p>A WSGI app that authenticates and routes requests throughout the Shared File
+Systems service. It supports the OpenStack APIs.</p></dd><dt id="id-1.4.4.9.7.4.2"><span class="term">manila-data</span></dt><dd><p>A standalone service whose purpose is to receive requests, process data
 operations such as copying, share migration or backup, and send back a
-response after an operation has been completed.</p></dd><dt id="id-1.4.4.9.7.4.3"><span class="term ">manila-scheduler</span></dt><dd><p>Schedules and routes requests to the appropriate share service. The
+response after an operation has been completed.</p></dd><dt id="id-1.4.4.9.7.4.3"><span class="term">manila-scheduler</span></dt><dd><p>Schedules and routes requests to the appropriate share service. The
 scheduler uses configurable filters and weighers to route requests. The
 Filter Scheduler is the default and enables filters on things like Capacity,
-Availability Zone, Share Types, and Capabilities as well as custom filters.</p></dd><dt id="id-1.4.4.9.7.4.4"><span class="term ">manila-share</span></dt><dd><p>Manages back-end devices that provide shared file systems. A manila-share
+Availability Zone, Share Types, and Capabilities as well as custom filters.</p></dd><dt id="id-1.4.4.9.7.4.4"><span class="term">manila-share</span></dt><dd><p>Manages back-end devices that provide shared file systems. A manila-share
 process can run in one of two modes, with or without handling of share
 servers. Share servers export file shares via share networks. When share
 servers are not used, the networking requirements are handled outside of
-Manila.</p></dd><dt id="id-1.4.4.9.7.4.5"><span class="term ">Messaging queue</span></dt><dd><p>Routes information between the Shared File Systems processes.</p></dd></dl></div><p>For more information, see <a class="link" href="http://docs.openstack.org/newton/config-reference/shared-file-systems/overview.html" target="_blank">OpenStack Configuration Reference</a>.</p></div><div class="sect2 " id="id-1.4.4.9.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Networking service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.8">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>OpenStack Networking (neutron) allows you to create and attach interface
+Manila.</p></dd><dt id="id-1.4.4.9.7.4.5"><span class="term">Messaging queue</span></dt><dd><p>Routes information between the Shared File Systems processes.</p></dd></dl></div><p>For more information, see <a class="link" href="http://docs.openstack.org/newton/config-reference/shared-file-systems/overview.html" target="_blank">OpenStack Configuration Reference</a>.</p></section><section class="sect2" id="id-1.4.4.9.8" data-id-title="Networking service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.6 </span><span class="title-name">Networking service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>OpenStack Networking (neutron) allows you to create and attach interface
 devices managed by other OpenStack services to networks. Plug-ins can be
 implemented to accommodate different networking equipment and software,
-providing flexibility to OpenStack architecture and deployment.</p><p>It includes the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.8.4.1"><span class="term ">neutron-server</span></dt><dd><p>Accepts and routes API requests to the appropriate OpenStack
-Networking plug-in for action.</p></dd><dt id="id-1.4.4.9.8.4.2"><span class="term ">OpenStack Networking plug-ins and agents</span></dt><dd><p>Plug and unplug ports, create networks or subnets, and provide
+providing flexibility to OpenStack architecture and deployment.</p><p>It includes the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.8.4.1"><span class="term">neutron-server</span></dt><dd><p>Accepts and routes API requests to the appropriate OpenStack
+Networking plug-in for action.</p></dd><dt id="id-1.4.4.9.8.4.2"><span class="term">OpenStack Networking plug-ins and agents</span></dt><dd><p>Plug and unplug ports, create networks or subnets, and provide
 IP addressing. These plug-ins and agents differ depending on the
 vendor and technologies used in the particular cloud. OpenStack
 Networking ships with plug-ins and agents for Cisco virtual and
 physical switches, NEC OpenFlow products, Open vSwitch, Linux
 bridging, and the VMware NSX product.</p><p>The common agents are L3 (layer 3), DHCP (dynamic host IP
-addressing), and a plug-in agent.</p></dd><dt id="id-1.4.4.9.8.4.3"><span class="term ">Messaging queue</span></dt><dd><p>Used by most OpenStack Networking installations to route information
+addressing), and a plug-in agent.</p></dd><dt id="id-1.4.4.9.8.4.3"><span class="term">Messaging queue</span></dt><dd><p>Used by most OpenStack Networking installations to route information
 between the neutron-server and various agents. Also acts as a database
 to store networking state for particular plug-ins.</p></dd></dl></div><p>OpenStack Networking mainly interacts with OpenStack Compute to provide
-networks and connectivity for its instances.</p></div><div class="sect2 " id="sec-dashboard"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dashboard overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#sec-dashboard">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span>sec-dashboard</li></ul></div></div></div></div><p>The OpenStack Dashboard is a modular <a class="link" href="https://www.djangoproject.com/" target="_blank">Django web
+networks and connectivity for its instances.</p></section><section class="sect2" id="sec-dashboard" data-id-title="Dashboard overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.7 </span><span class="title-name">Dashboard overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#sec-dashboard">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Dashboard is a modular <a class="link" href="https://www.djangoproject.com/" target="_blank">Django web
 application</a> that provides a
-graphical interface to OpenStack services.</p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/horizon-screenshot.png" target="_blank"><img src="images/horizon-screenshot.png" width="" /></a></div></div><p>The dashboard is usually deployed through
+graphical interface to OpenStack services.</p><div class="informalfigure"><div class="mediaobject"><a href="images/horizon-screenshot.png"><img src="images/horizon-screenshot.png" width="99%" alt="Image" title="Image"/></a></div></div><p>The dashboard is usually deployed through
 <a class="link" href="http://code.google.com/p/modwsgi/" target="_blank">mod_wsgi</a> in Apache. You can
 modify the dashboard code to make it suitable for different sites.</p><p>From a network architecture point of view, this service must be
 accessible to customers and the public API for each OpenStack service.
 To use the administrator functionality for other services, it must also
 connect to Admin API endpoints, which should not be accessible by
-customers.</p></div><div class="sect2 " id="id-1.4.4.9.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Identity service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.10">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack <a class="xref" href="bk02go01.html#term-identity-service-keystone" title="Identity service (keystone)">Identity service (keystone)</a>
+customers.</p></section><section class="sect2" id="id-1.4.4.9.10" data-id-title="Identity service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.8 </span><span class="title-name">Identity service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.10">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack <a class="xref" href="bk02go01.html#term-identity-service-keystone" title="Identity service (keystone)">Identity service (keystone)</a>
         provides a single point of integration for managing authentication,
         authorization, and a catalog of services.</p><p>
          The Identity service is typically the first service a user interacts
@@ -408,54 +408,54 @@ customers.</p></div><div class="sect2 " id="id-1.4.4.9.10"><div class="titlepage
         catalog for a deployment. Each OpenStack service in your deployment
         needs a service entry with corresponding endpoints stored in the
         Identity service. This can all be done after the Identity service has
-        been installed and configured.</p><p>The Identity service contains these components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.10.6.1"><span class="term ">Server</span></dt><dd><p>A centralized server provides authentication and authorization
-services using a RESTful interface.</p></dd><dt id="id-1.4.4.9.10.6.2"><span class="term ">Drivers</span></dt><dd><p>Drivers or a service back end are integrated to the centralized
+        been installed and configured.</p><p>The Identity service contains these components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.10.6.1"><span class="term">Server</span></dt><dd><p>A centralized server provides authentication and authorization
+services using a RESTful interface.</p></dd><dt id="id-1.4.4.9.10.6.2"><span class="term">Drivers</span></dt><dd><p>Drivers or a service back end are integrated to the centralized
 server. They are used for accessing identity information in
 repositories external to OpenStack, and may already exist in
 the infrastructure where OpenStack is deployed (for example, SQL
-databases or LDAP servers).</p></dd><dt id="id-1.4.4.9.10.6.3"><span class="term ">Modules</span></dt><dd><p>Middleware modules run in the address space of the OpenStack
+databases or LDAP servers).</p></dd><dt id="id-1.4.4.9.10.6.3"><span class="term">Modules</span></dt><dd><p>Middleware modules run in the address space of the OpenStack
 component that is using the Identity service. These modules
 intercept service requests, extract user credentials, and send them
 to the centralized server for authorization. The integration between
 the middleware modules and OpenStack components uses the Python Web
-Server Gateway Interface.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.11">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The OpenStack Image service is central to Infrastructure-as-a-Service
+Server Gateway Interface.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.11" data-id-title="Image service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.9 </span><span class="title-name">Image service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.11">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OpenStack Image service is central to Infrastructure-as-a-Service
 (IaaS) as shown in <a class="xref" href="bk02ch02.html#get-started-conceptual-architecture" title="2.1. Conceptual architecture">Section 2.1, “Conceptual architecture”</a>. It accepts API
 requests for disk or server images, and metadata definitions from end users or
 OpenStack Compute components. It also supports the storage of disk or server
 images on various repository types, including OpenStack Object Storage.</p><p>A number of periodic processes run on the OpenStack Image service to
 support caching. Replication services ensure consistency and
 availability through the cluster. Other periodic processes include
-auditors, updaters, and reapers.</p><p>The OpenStack Image service includes the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.11.5.1"><span class="term ">glance-api</span></dt><dd><p>Accepts Image API calls for image discovery, retrieval, and storage.</p></dd><dt id="id-1.4.4.9.11.5.2"><span class="term ">glance-registry</span></dt><dd><p>Stores, processes, and retrieves metadata about images. Metadata
-includes items such as size and type.</p><div id="id-1.4.4.9.11.5.2.2.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>The registry is a private internal service meant for use by
-OpenStack Image service. Do not expose this service to users.</p></div></dd><dt id="id-1.4.4.9.11.5.3"><span class="term ">Database</span></dt><dd><p>Stores image metadata and you can choose your database depending on
-your preference. Most deployments use MySQL or SQLite.</p></dd><dt id="id-1.4.4.9.11.5.4"><span class="term ">Storage repository for image files</span></dt><dd><p>Various repository types are supported including normal file
+auditors, updaters, and reapers.</p><p>The OpenStack Image service includes the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.11.5.1"><span class="term">glance-api</span></dt><dd><p>Accepts Image API calls for image discovery, retrieval, and storage.</p></dd><dt id="id-1.4.4.9.11.5.2"><span class="term">glance-registry</span></dt><dd><p>Stores, processes, and retrieves metadata about images. Metadata
+includes items such as size and type.</p><div id="id-1.4.4.9.11.5.2.2.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>The registry is a private internal service meant for use by
+OpenStack Image service. Do not expose this service to users.</p></div></dd><dt id="id-1.4.4.9.11.5.3"><span class="term">Database</span></dt><dd><p>Stores image metadata and you can choose your database depending on
+your preference. Most deployments use MySQL or SQLite.</p></dd><dt id="id-1.4.4.9.11.5.4"><span class="term">Storage repository for image files</span></dt><dd><p>Various repository types are supported including normal file
 systems (or any filesystem mounted on the glance-api controller
 node), Object Storage, RADOS block devices, VMware datastore,
 and HTTP. Note that some repositories will only support read-only
-usage.</p></dd><dt id="id-1.4.4.9.11.5.5"><span class="term ">Metadata definition service</span></dt><dd><p>A common API for vendors, admins, services, and users to meaningfully
+usage.</p></dd><dt id="id-1.4.4.9.11.5.5"><span class="term">Metadata definition service</span></dt><dd><p>A common API for vendors, admins, services, and users to meaningfully
 define their own custom metadata. This metadata can be used on
 different types of resources like images, artifacts, volumes,
 flavors, and aggregates. A definition includes the new property's key,
 description, constraints, and the resource types which it can be
-associated with.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Telemetry service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="sect3 " id="id-1.4.4.9.12.2"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.3.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Telemetry Data Collection service</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12.2">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Telemetry Data Collection services provide the following functions:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Efficiently polls metering data related to OpenStack services.</p></li><li class="listitem "><p>Collects event and metering data by monitoring notifications sent
-from services.</p></li><li class="listitem "><p>Publishes collected data to various targets including data stores and
-message queues.</p></li></ul></div><p>The Telemetry service consists of the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.12.2.5.1"><span class="term ">A compute agent (<code class="literal">ceilometer-agent-compute</code>)</span></dt><dd><p>Runs on each compute node and polls for resource utilization
+associated with.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.12" data-id-title="Telemetry service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.10 </span><span class="title-name">Telemetry service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="id-1.4.4.9.12.2" data-id-title="Telemetry Data Collection service"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.3.10.1 </span><span class="title-name">Telemetry Data Collection service</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12.2">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Telemetry Data Collection services provide the following functions:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Efficiently polls metering data related to OpenStack services.</p></li><li class="listitem"><p>Collects event and metering data by monitoring notifications sent
+from services.</p></li><li class="listitem"><p>Publishes collected data to various targets including data stores and
+message queues.</p></li></ul></div><p>The Telemetry service consists of the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.12.2.5.1"><span class="term">A compute agent (<code class="literal">ceilometer-agent-compute</code>)</span></dt><dd><p>Runs on each compute node and polls for resource utilization
 statistics. There may be other types of agents in the future, but
-for now our focus is creating the compute agent.</p></dd><dt id="id-1.4.4.9.12.2.5.2"><span class="term ">A central agent (<code class="literal">ceilometer-agent-central</code>)</span></dt><dd><p>Runs on a central management server to poll for resource utilization
+for now our focus is creating the compute agent.</p></dd><dt id="id-1.4.4.9.12.2.5.2"><span class="term">A central agent (<code class="literal">ceilometer-agent-central</code>)</span></dt><dd><p>Runs on a central management server to poll for resource utilization
 statistics for resources not tied to instances or compute nodes.
-Multiple agents can be started to scale service horizontally.</p></dd><dt id="id-1.4.4.9.12.2.5.3"><span class="term ">A notification agent (<code class="literal">ceilometer-agent-notification</code>)</span></dt><dd><p>Runs on a central management server(s) and consumes messages from
-the message queue(s) to build event and metering data.</p></dd><dt id="id-1.4.4.9.12.2.5.4"><span class="term ">A collector (<code class="literal">ceilometer-collector</code>)</span></dt><dd><p>Runs on central management server(s) and dispatches collected
+Multiple agents can be started to scale service horizontally.</p></dd><dt id="id-1.4.4.9.12.2.5.3"><span class="term">A notification agent (<code class="literal">ceilometer-agent-notification</code>)</span></dt><dd><p>Runs on a central management server(s) and consumes messages from
+the message queue(s) to build event and metering data.</p></dd><dt id="id-1.4.4.9.12.2.5.4"><span class="term">A collector (<code class="literal">ceilometer-collector</code>)</span></dt><dd><p>Runs on central management server(s) and dispatches collected
 telemetry data to a data store or external consumer without
-modification.</p></dd><dt id="id-1.4.4.9.12.2.5.5"><span class="term ">An API server (<code class="literal">ceilometer-api</code>)</span></dt><dd><p>Runs on one or more central management servers to provide data
-access from the data store.</p></dd></dl></div></div><div class="sect3 " id="id-1.4.4.9.12.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">2.3.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Telemetry Alarming service</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12.3">#</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Telemetry Alarming services trigger alarms when the collected metering
-or event data break the defined rules.</p><p>The Telemetry Alarming service consists of the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.12.3.4.1"><span class="term ">An API server (<code class="literal">aodh-api</code>)</span></dt><dd><p>Runs on one or more central management servers to provide access
-to the alarm information stored in the data store.</p></dd><dt id="id-1.4.4.9.12.3.4.2"><span class="term ">An alarm evaluator (<code class="literal">aodh-evaluator</code>)</span></dt><dd><p>Runs on one or more central management servers to determine when
+modification.</p></dd><dt id="id-1.4.4.9.12.2.5.5"><span class="term">An API server (<code class="literal">ceilometer-api</code>)</span></dt><dd><p>Runs on one or more central management servers to provide data
+access from the data store.</p></dd></dl></div></section><section class="sect3" id="id-1.4.4.9.12.3" data-id-title="Telemetry Alarming service"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.3.10.2 </span><span class="title-name">Telemetry Alarming service</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.12.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Telemetry Alarming services trigger alarms when the collected metering
+or event data break the defined rules.</p><p>The Telemetry Alarming service consists of the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.12.3.4.1"><span class="term">An API server (<code class="literal">aodh-api</code>)</span></dt><dd><p>Runs on one or more central management servers to provide access
+to the alarm information stored in the data store.</p></dd><dt id="id-1.4.4.9.12.3.4.2"><span class="term">An alarm evaluator (<code class="literal">aodh-evaluator</code>)</span></dt><dd><p>Runs on one or more central management servers to determine when
 alarms fire due to the associated statistic trend crossing a
-threshold over a sliding time window.</p></dd><dt id="id-1.4.4.9.12.3.4.3"><span class="term ">A notification listener (<code class="literal">aodh-listener</code>)</span></dt><dd><p>Runs on a central management server and determines when to fire alarms.
+threshold over a sliding time window.</p></dd><dt id="id-1.4.4.9.12.3.4.3"><span class="term">A notification listener (<code class="literal">aodh-listener</code>)</span></dt><dd><p>Runs on a central management server and determines when to fire alarms.
 The alarms are generated based on defined rules against events, which are
-captured by the Telemetry Data Collection service's notification agents.</p></dd><dt id="id-1.4.4.9.12.3.4.4"><span class="term ">An alarm notifier (<code class="literal">aodh-notifier</code>)</span></dt><dd><p>Runs on one or more central management servers to allow alarms to be
+captured by the Telemetry Data Collection service's notification agents.</p></dd><dt id="id-1.4.4.9.12.3.4.4"><span class="term">An alarm notifier (<code class="literal">aodh-notifier</code>)</span></dt><dd><p>Runs on one or more central management servers to allow alarms to be
 set based on the threshold evaluation for a collection of samples.</p></dd></dl></div><p>These services communicate by using the OpenStack messaging bus. Only
-the collector and API server have access to the data store.</p></div></div><div class="sect2 " id="id-1.4.4.9.13"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Orchestration service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.13">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Orchestration service provides a template-based orchestration for
+the collector and API server have access to the data store.</p></section></section><section class="sect2" id="id-1.4.4.9.13" data-id-title="Orchestration service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.11 </span><span class="title-name">Orchestration service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.13">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Orchestration service provides a template-based orchestration for
 describing a cloud application by running OpenStack API calls to
 generate running cloud applications. The software integrates other core
 components of OpenStack into a one-file template system. The templates
@@ -464,14 +464,14 @@ floating IPs, volumes, security groups, and users. It also provides
 advanced functionality such as instance high availability, instance
 auto-scaling, and nested stacks. This enables OpenStack core projects to
 receive a larger user base.</p><p>The service enables deployers to integrate with the Orchestration service
-directly or through custom plug-ins.</p><p>The Orchestration service consists of the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.13.5.1"><span class="term "><code class="literal">heat</code> command-line client</span></dt><dd><p>A CLI that communicates with the <code class="literal">heat-api</code> to run AWS
+directly or through custom plug-ins.</p><p>The Orchestration service consists of the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.13.5.1"><span class="term"><code class="literal">heat</code> command-line client</span></dt><dd><p>A CLI that communicates with the <code class="literal">heat-api</code> to run AWS
 CloudFormation APIs. End developers can directly use the Orchestration
-REST API.</p></dd><dt id="id-1.4.4.9.13.5.2"><span class="term "><code class="literal">heat-api</code> component</span></dt><dd><p>An OpenStack-native REST API that processes API requests by sending
-them to the <code class="literal">heat-engine</code> over <a class="xref" href="bk02go01.html#term-remote-procedure-call-rpc" title="Remote Procedure Call (RPC)">Remote Procedure Call (RPC)</a>.</p></dd><dt id="id-1.4.4.9.13.5.3"><span class="term "><code class="literal">heat-api-cfn</code> component</span></dt><dd><p>An AWS Query API that is compatible with AWS CloudFormation. It
-processes API requests by sending them to the <code class="literal">heat-engine</code> over RPC.</p></dd><dt id="id-1.4.4.9.13.5.4"><span class="term ">
+REST API.</p></dd><dt id="id-1.4.4.9.13.5.2"><span class="term"><code class="literal">heat-api</code> component</span></dt><dd><p>An OpenStack-native REST API that processes API requests by sending
+them to the <code class="literal">heat-engine</code> over <a class="xref" href="bk02go01.html#term-remote-procedure-call-rpc" title="Remote Procedure Call (RPC)">Remote Procedure Call (RPC)</a>.</p></dd><dt id="id-1.4.4.9.13.5.3"><span class="term"><code class="literal">heat-api-cfn</code> component</span></dt><dd><p>An AWS Query API that is compatible with AWS CloudFormation. It
+processes API requests by sending them to the <code class="literal">heat-engine</code> over RPC.</p></dd><dt id="id-1.4.4.9.13.5.4"><span class="term">
               <code class="literal">heat-engine</code>
             </span></dt><dd><p>Orchestrates the launching of templates and provides events back to
-the API consumer.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Database service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.14">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Database service provides scalable and reliable cloud provisioning
+the API consumer.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.14" data-id-title="Database service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.12 </span><span class="title-name">Database service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.14">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Database service provides scalable and reliable cloud provisioning
 functionality for both relational and non-relational database engines.
 Users can quickly and easily use database features without the burden of
 handling complex administrative tasks. Cloud users and database
@@ -480,37 +480,36 @@ needed.</p><p>The Database service provides resource isolation at high performan
 levels and automates complex administrative tasks such as deployment,
 configuration, patching, backups, restores, and monitoring.</p><p>
           <span class="bold"><strong>Process flow example</strong></span>
-        </p><p>This example is a high-level process flow for using Database services:</p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>The OpenStack Administrator configures the basic infrastructure using
-the following steps:</p><ol type="a" class="substeps "><li class="step "><p>Install the Database service.</p></li><li class="step "><p>Create an image for each type of database. For example, one for MySQL
-and one for MongoDB.</p></li><li class="step "><p>Use the <code class="command">trove-manage</code> command to import images and offer them
-to tenants.</p></li></ol></li><li class="step "><p>The OpenStack end user deploys the Database service using the following
-steps:</p><ol type="a" class="substeps "><li class="step "><p>Create a Database service instance using the <code class="command">trove create</code>
-command.</p></li><li class="step "><p>Use the <code class="command">trove list</code> command to get the ID of the instance,
+        </p><p>This example is a high-level process flow for using Database services:</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>The OpenStack Administrator configures the basic infrastructure using
+the following steps:</p><ol type="a" class="substeps"><li class="step"><p>Install the Database service.</p></li><li class="step"><p>Create an image for each type of database. For example, one for MySQL
+and one for MongoDB.</p></li><li class="step"><p>Use the <code class="command">trove-manage</code> command to import images and offer them
+to tenants.</p></li></ol></li><li class="step"><p>The OpenStack end user deploys the Database service using the following
+steps:</p><ol type="a" class="substeps"><li class="step"><p>Create a Database service instance using the <code class="command">trove create</code>
+command.</p></li><li class="step"><p>Use the <code class="command">trove list</code> command to get the ID of the instance,
 followed by the <code class="command">trove show</code> command to get the IP address of
-it.</p></li><li class="step "><p>Access the Database service instance using typical database access
+it.</p></li><li class="step"><p>Access the Database service instance using typical database access
 commands. For example, with MySQL:</p><div class="verbatim-wrap"><pre class="screen">$ mysql -u myuser -p -h TROVE_IP_ADDRESS mydb</pre></div></li></ol></li></ol></div></div><p>
           <span class="bold"><strong>Components</strong></span>
-        </p><p>The Database service includes the following components:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.4.4.9.14.9.1"><span class="term "><code class="literal">python-troveclient</code> command-line client</span></dt><dd><p>A CLI that communicates with the <code class="literal">trove-api</code> component.</p></dd><dt id="id-1.4.4.9.14.9.2"><span class="term "><code class="literal">trove-api</code> component</span></dt><dd><p>Provides an OpenStack-native RESTful API that supports JSON to
-provision and manage Trove instances.</p></dd><dt id="id-1.4.4.9.14.9.3"><span class="term "><code class="literal">trove-conductor</code> service</span></dt><dd><p>Runs on the host, and receives messages from guest instances that
-want to update information on the host.</p></dd><dt id="id-1.4.4.9.14.9.4"><span class="term "><code class="literal">trove-taskmanager</code> service</span></dt><dd><p>Instruments the complex system flows that support provisioning
+        </p><p>The Database service includes the following components:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.4.4.9.14.9.1"><span class="term"><code class="literal">python-troveclient</code> command-line client</span></dt><dd><p>A CLI that communicates with the <code class="literal">trove-api</code> component.</p></dd><dt id="id-1.4.4.9.14.9.2"><span class="term"><code class="literal">trove-api</code> component</span></dt><dd><p>Provides an OpenStack-native RESTful API that supports JSON to
+provision and manage Trove instances.</p></dd><dt id="id-1.4.4.9.14.9.3"><span class="term"><code class="literal">trove-conductor</code> service</span></dt><dd><p>Runs on the host, and receives messages from guest instances that
+want to update information on the host.</p></dd><dt id="id-1.4.4.9.14.9.4"><span class="term"><code class="literal">trove-taskmanager</code> service</span></dt><dd><p>Instruments the complex system flows that support provisioning
 instances, managing the lifecycle of instances, and performing
-operations on instances.</p></dd><dt id="id-1.4.4.9.14.9.5"><span class="term "><code class="literal">trove-guestagent</code> service</span></dt><dd><p>Runs within the guest instance. Manages and performs operations on
-the database itself.</p></dd></dl></div></div><div class="sect2 " id="id-1.4.4.9.15"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.3.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Data Processing service overview</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.15">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>The Data processing service for OpenStack (sahara) aims to provide users
+operations on instances.</p></dd><dt id="id-1.4.4.9.14.9.5"><span class="term"><code class="literal">trove-guestagent</code> service</span></dt><dd><p>Runs within the guest instance. Manages and performs operations on
+the database itself.</p></dd></dl></div></section><section class="sect2" id="id-1.4.4.9.15" data-id-title="Data Processing service overview"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.3.13 </span><span class="title-name">Data Processing service overview</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.9.15">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The Data processing service for OpenStack (sahara) aims to provide users
 with a simple means to provision data processing (Hadoop, Spark)
 clusters by specifying several parameters like Hadoop version, cluster
 topology, node hardware details and a few more. After a user fills in
 all the parameters, the Data processing service deploys the cluster in a
 few minutes. Sahara also provides a means to scale already provisioned
-clusters by adding or removing worker nodes on demand.</p><p>The solution addresses the following use cases:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Fast provisioning of Hadoop clusters on OpenStack for development and
-QA.</p></li><li class="listitem "><p>Utilization of unused compute power from general purpose OpenStack
-IaaS cloud.</p></li><li class="listitem "><p>Analytics-as-a-Service for ad-hoc or bursty analytic workloads.</p></li></ul></div><p>Key features are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Designed as an OpenStack component.</p></li><li class="listitem "><p>Managed through REST API with UI available as part of OpenStack
-Dashboard.</p></li><li class="listitem "><p>Support for different Hadoop distributions:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Pluggable system of Hadoop installation engines.</p></li><li class="listitem "><p>Integration with vendor specific management tools, such as Apache
-Ambari or Cloudera Management Console.</p></li></ul></div></li><li class="listitem "><p>Predefined templates of Hadoop configurations with the ability to
-modify parameters.</p></li><li class="listitem "><p>User-friendly UI for ad-hoc analytics queries based on Hive or Pig.</p></li></ul></div></div></div><div class="sect1 " id="id-1.4.4.10"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Feedback</span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.10">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>bk_openstack_admin.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>To provide feedback on documentation, join and use the
+clusters by adding or removing worker nodes on demand.</p><p>The solution addresses the following use cases:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Fast provisioning of Hadoop clusters on OpenStack for development and
+QA.</p></li><li class="listitem"><p>Utilization of unused compute power from general purpose OpenStack
+IaaS cloud.</p></li><li class="listitem"><p>Analytics-as-a-Service for ad-hoc or bursty analytic workloads.</p></li></ul></div><p>Key features are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Designed as an OpenStack component.</p></li><li class="listitem"><p>Managed through REST API with UI available as part of OpenStack
+Dashboard.</p></li><li class="listitem"><p>Support for different Hadoop distributions:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Pluggable system of Hadoop installation engines.</p></li><li class="listitem"><p>Integration with vendor specific management tools, such as Apache
+Ambari or Cloudera Management Console.</p></li></ul></div></li><li class="listitem"><p>Predefined templates of Hadoop configurations with the ability to
+modify parameters.</p></li><li class="listitem"><p>User-friendly UI for ad-hoc analytics queries based on Hive or Pig.</p></li></ul></div></section></section><section class="sect1" id="id-1.4.4.10" data-id-title="Feedback"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.4 </span><span class="title-name">Feedback</span></span> <a title="Permalink" class="permalink" href="bk02ch02.html#id-1.4.4.10">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To provide feedback on documentation, join and use the
 <a class="link" href="mailto:openstack-docs@lists.openstack.org" target="_blank">openstack-docs@lists.openstack.org</a> mailing list at <a class="link" href="http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-docs" target="_blank">OpenStack
 Documentation Mailing
 List</a>,
 or <a class="link" href="https://bugs.launchpad.net/openstack-manuals/+filebug" target="_blank">report a
-bug</a>.</p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha-identity.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Identity management</span></a><a class="nav-link" href="bk02ch01.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Documentation Conventions</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+bug</a>.</p></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="bk02ch01.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 1 </span>Documentation Conventions</span></a> </div><div><a class="pagination-link next" href="cha-identity.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>Identity management</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="bk02ch02.html#get-started-conceptual-architecture"><span class="title-number">2.1 </span><span class="title-name">Conceptual architecture</span></a></span></li><li><span class="sect1"><a href="bk02ch02.html#id-1.4.4.8"><span class="title-number">2.2 </span><span class="title-name">Logical architecture</span></a></span></li><li><span class="sect1"><a href="bk02ch02.html#id-1.4.4.9"><span class="title-number">2.3 </span><span class="title-name">OpenStack services</span></a></span></li><li><span class="sect1"><a href="bk02ch02.html#id-1.4.4.10"><span class="title-number">2.4 </span><span class="title-name">Feedback</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

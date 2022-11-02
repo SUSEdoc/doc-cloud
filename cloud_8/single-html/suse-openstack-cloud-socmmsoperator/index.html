@@ -8,7 +8,7 @@ body { background-image: url('static/images/draft.png');
        /* background-attachment: fixed; */
        /* background-position: center center; */
      }</style></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div xml:lang="en" class="book" lang="en"><div class="titlepage"><div><div><h1 class="title"><a id="book-socmmsoperator"></a>Monitoring Service Operator's Guide</h1></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="preface"><a href="#id1341">About this Manual</a></span></dt><dd><dl><dt><span class="sect1"><a href="#id1385">Intended Audience</a></span></dt><dt><span class="sect1"><a href="#id1393">Notational Conventions</a></span></dt><dt><span class="sect1"><a href="#id1425">Abbreviations</a></span></dt><dt><span class="sect1"><a href="#id1446">Available Documentation</a></span></dt><dt><span class="sect1"><a href="#id1466">Related Web References</a></span></dt><dt><span class="sect1"><a href="#id1482">Copyright</a></span></dt><dt><span class="sect1"><a href="#id1492">Export Restrictions</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-shared-intro-c-intro-xml-1">1. Introduction to <span class="phrase">SUSE OpenStack Cloud Monitoring</span></a></span></dt><dd><dl><dt><span class="section"><a href="#id1514">Basic Usage Scenario</a></span></dt><dt><span class="section"><a href="#id1561"><span class="phrase">SUSE OpenStack Cloud Monitoring</span> Architecture and Components</a></span></dt><dd><dl><dt><span class="section"><a href="#id1673">
-  Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#id1760">User Management</a></span></dt><dt><span class="section"><a href="#id1780">Distribution Media</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1">2. Installation</a></span></dt><dt><span class="chapter"><a href="#idg-msoperator-shared-operationmaintenance-c-operate-xml-1">3. Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id1805">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id1872">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id1931">Log File Handling</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-operationmaintenance-c-backup-xml-1">Backup and Recovery</a></span></dt><dd><dl><dt><span class="section"><a href="#id1963">Databases</a></span></dt><dt><span class="section"><a href="#id2117">Configuration Files</a></span></dt><dt><span class="section"><a href="#id2133">Dashboards</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-shared-monitor-c-monitor-xml-1">4. Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#id2169">Overview</a></span></dt><dt><span class="section"><a href="#concept-E8D43EB4494E41D2AB42D4A89396D1CMM">Working with Data Visualizations</a></span></dt><dt><span class="section"><a href="#sec-msoperator-alarms">Defining Alarms</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-monitor-c-monitor-alert-xml-1">Defining Notifications</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1">Status of Services, Servers, and Log Data</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-shared-logging-c-osologging-xml-1">5. Log Management</a></span></dt><dd><dl><dt><span class="section"><a href="#id2559">Working with the Log Management Window</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-logging-c-osolog-index-xml-1">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id2748">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#id2767">Troubleshooting</a></span></dt></dl></dd><dt><span class="appendix"><a href="#id2802">A. Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id2811">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id2825">Additional Metrics</a></span></dt></dl></dd><dt><span class="appendix"><a href="#reference-7A5FB297419F4787832C9125D7CAC80F">B. Glossary</a></span></dt></dl></div><div class="list-of-figures"><p><strong>List of Figures</strong></p><dl><dt>4.1. <a href="#fig-socm-monasca">SUSE OpenStack Cloud Horizon Dashboard—Monitoring</a></dt><dt>4.2. <a href="#id2202">Metrics Dashboard—Monitoring Service Operator's View</a></dt><dt>4.3. <a href="#id2284">A Graph Panel</a></dt><dt>4.4. <a href="#id2301">Editing a Text Panel</a></dt><dt>4.5. <a href="#fig-socm-msoperator-alarmdef-create">Creating an Alarm Definition</a></dt><dt>5.1. <a href="#id2584">The Kibana Dashboard—Discover Page</a></dt></dl></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a id="id1341"></a>About this Manual</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="#id1385">Intended Audience</a></span></dt><dt><span class="sect1"><a href="#id1393">Notational Conventions</a></span></dt><dt><span class="sect1"><a href="#id1425">Abbreviations</a></span></dt><dt><span class="sect1"><a href="#id1446">Available Documentation</a></span></dt><dt><span class="sect1"><a href="#id1466">Related Web References</a></span></dt><dt><span class="sect1"><a href="#id1482">Copyright</a></span></dt><dt><span class="sect1"><a href="#id1492">Export Restrictions</a></span></dt></dl></div><p>
+  Agents and Services</a></span></dt></dl></dd><dt><span class="section"><a href="#id1760">User Management</a></span></dt><dt><span class="section"><a href="#id1780">Distribution Media</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-cmmoperator-install-c-cmmoinstall-xml-1">2. Installation</a></span></dt><dt><span class="chapter"><a href="#idg-msoperator-shared-operationmaintenance-c-operate-xml-1">3. Operation and Maintenance</a></span></dt><dd><dl><dt><span class="section"><a href="#id1805">Removing Metrics Data</a></span></dt><dt><span class="section"><a href="#id1872">Removing Log Data</a></span></dt><dt><span class="section"><a href="#id1931">Log File Handling</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-operationmaintenance-c-backup-xml-1">Backup and Recovery</a></span></dt><dd><dl><dt><span class="section"><a href="#id1963">Databases</a></span></dt><dt><span class="section"><a href="#id2117">Configuration Files</a></span></dt><dt><span class="section"><a href="#id2133">Dashboards</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-shared-monitor-c-monitor-xml-1">4. Monitoring</a></span></dt><dd><dl><dt><span class="section"><a href="#id2169">Overview</a></span></dt><dt><span class="section"><a href="#concept-E8D43EB4494E41D2AB42D4A89396D1CMM">Working with Data Visualizations</a></span></dt><dt><span class="section"><a href="#sec-msoperator-alarms">Defining Alarms</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-monitor-c-monitor-alert-xml-1">Defining Notifications</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-monitor-c-monitor-statusinfo-xml-1">Status of Services, Servers, and Log Data</a></span></dt></dl></dd><dt><span class="chapter"><a href="#idg-msoperator-shared-logging-c-osologging-xml-1">5. Log Management</a></span></dt><dd><dl><dt><span class="section"><a href="#id2558">Working with the Log Management Window</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-logging-c-osolog-index-xml-1">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id2747">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#id2766">Troubleshooting</a></span></dt></dl></dd><dt><span class="appendix"><a href="#id2801">A. Supported Metrics</a></span></dt><dd><dl><dt><span class="section"><a href="#id2810">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id2824">Additional Metrics</a></span></dt></dl></dd><dt><span class="appendix"><a href="#reference-7A5FB297419F4787832C9125D7CAC80F">B. Glossary</a></span></dt></dl></div><div class="list-of-figures"><p><strong>List of Figures</strong></p><dl><dt>4.1. <a href="#fig-socm-monasca">SUSE OpenStack Cloud Horizon Dashboard—Monitoring</a></dt><dt>4.2. <a href="#id2202">Metrics Dashboard—Monitoring Service Operator's View</a></dt><dt>4.3. <a href="#id2283">A Graph Panel</a></dt><dt>4.4. <a href="#id2300">Editing a Text Panel</a></dt><dt>4.5. <a href="#fig-socm-msoperator-alarmdef-create">Creating an Alarm Definition</a></dt><dt>5.1. <a href="#id2583">The Kibana Dashboard—Discover Page</a></dt></dl></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a id="id1341"></a>About this Manual</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="sect1"><a href="#id1385">Intended Audience</a></span></dt><dt><span class="sect1"><a href="#id1393">Notational Conventions</a></span></dt><dt><span class="sect1"><a href="#id1425">Abbreviations</a></span></dt><dt><span class="sect1"><a href="#id1446">Available Documentation</a></span></dt><dt><span class="sect1"><a href="#id1466">Related Web References</a></span></dt><dt><span class="sect1"><a href="#id1482">Copyright</a></span></dt><dt><span class="sect1"><a href="#id1492">Export Restrictions</a></span></dt></dl></div><p>
   This manual describes how SUSE OpenStack Cloud operators can use <span class="phrase">SUSE OpenStack
   Cloud Monitoring</span> to monitor OpenStack services and servers.
 
@@ -81,6 +81,7 @@ body { background-image: url('static/images/draft.png');
   Copyright FUJITSU LIMITED 2015 - 2017
  </p><p>
   Copyright © 2022
+
   SUSE LLC and contributors. All rights reserved.
  </p><p>
   Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -951,7 +952,7 @@ Exit mariadb:
     (<code class="literal">process.mem.rss_mbytes.value</code>), or the number of
     processes that exist with the corresponding component name
     (<code class="literal">process.pid_count.value</code>).
-   </p></li></ul></div><h5><a id="id2250"></a>Building Dashboards</h5><p>
+   </p></li></ul></div><h5><a id="id2249"></a>Building Dashboards</h5><p>
   Each metrics dashboard is composed of one or more panels that are arranged in
   one or more rows. A row serves as a logical divider within a dashboard. It
   organizes your panels in groups. The panel is the basic building block for
@@ -968,7 +969,7 @@ Exit mariadb:
   and panels, and make you familiar with the first steps involved in building a
   dashboard. For additional information, you can also refer to the
   <a class="ulink" href="http://docs.grafana.org/" target="_top"> Grafana documentation </a>.
- </p><h5><a id="id2261"></a>Creating a Dashboard</h5><p>
+ </p><h5><a id="id2260"></a>Creating a Dashboard</h5><p>
   To create a new dashboard, use the <span class="guilabel">Open</span> icon in the
   top right corner of your dashboard window. The option provides access to
   various features for administrating dashboards. Click <span class="guilabel">New</span>
@@ -983,7 +984,7 @@ Exit mariadb:
   As soon as you have inserted an empty panel, you can add additional rows. For
   this purpose, use the <span class="guilabel">Add Row</span> option on the right side
   of the dashboard.
- </p><h5><a id="id2276"></a>Editing Rows</h5><p>
+ </p><h5><a id="id2275"></a>Editing Rows</h5><p>
   Features for editing rows can be accessed via the green rectangle that is
   displayed to the left of each row.
  </p><p>
@@ -991,14 +992,14 @@ Exit mariadb:
   the position of the row within your dashboard, or set the row height. Row
   settings allows you, for example, to insert a row title or to hide the
   <span class="guilabel">Row</span> menu so that the row can no longer be edited.
- </p><h5><a id="id2280"></a>Editing Panels</h5><p>
+ </p><h5><a id="id2279"></a>Editing Panels</h5><p>
   Grafana distinguishes between three panel types:
  </p><p>
   Panels of type <span class="guilabel">Graph</span> are used to visualize metrics data.
   A query editor is provided to define the data to be visualized. The editor
   allows you to combine multiple queries. This means that any number of metrics
   and data series can be visualized in one panel.
- </p><div class="figure"><a id="id2284"></a><p class="title"><strong>Figure 4.3. A Graph Panel</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-graph.png" width="100%" alt="A Graph Panel" /></td></tr></table></div></div></div><br class="figure-break" /><p>
+ </p><div class="figure"><a id="id2283"></a><p class="title"><strong>Figure 4.3. A Graph Panel</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-graph.png" width="100%" alt="A Graph Panel" /></td></tr></table></div></div></div><br class="figure-break" /><p>
   Panels of type <span class="guilabel">Singlestat</span> are also used to visualize
   metrics data, yet they reduce a single query to a single number. The single
   number can be, for example, the minimum, maximum, average, or sum of values
@@ -1016,7 +1017,7 @@ Exit mariadb:
     For panels of type <span class="guilabel">Text</span>, a simple text editor is
     displayed for entering text. Plain text, HTML, and markdown format are
     supported.
-   </p><div class="figure"><a id="id2301"></a><p class="title"><strong>Figure 4.4. Editing a Text Panel</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-text.png" width="100%" alt="Editing a Text Panel" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="listitem"><p>
+   </p><div class="figure"><a id="id2300"></a><p class="title"><strong>Figure 4.4. Editing a Text Panel</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-panel-text.png" width="100%" alt="Editing a Text Panel" /></td></tr></table></div></div></div><br class="figure-break" /></li><li class="listitem"><p>
     For panels of type <span class="guilabel">Graph</span> and
     <span class="guilabel">Singlestat</span>, a query editor is displayed to define
     which data it to be shown. You can add multiple metrics, and apply
@@ -1036,7 +1037,7 @@ Exit mariadb:
   Use the time picker in the top right corner of your dashboard window to
   define relative or absolute time ranges. You can also set an auto-refresh
   interval, or manually refresh the data that is displayed.
- </p><h5><a id="id2317"></a>Saving and Sharing Dashboards</h5><p>
+ </p><h5><a id="id2316"></a>Saving and Sharing Dashboards</h5><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> allows you to save a metrics
   dashboard and export it to a JSON file. The JSON file can be edited, it can
   be shared with other users, and it can be imported to <span class="phrase">SUSE OpenStack
@@ -1082,7 +1083,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   <span class="guilabel">Details</span>, <span class="guilabel">Expression</span>, and
   <span class="guilabel">Notifications</span>. They are described in the following
   sections.
- </p><h5><a id="id2342"></a>Details</h5><p>
+ </p><h5><a id="id2341"></a>Details</h5><p>
   For an alarm definition, you specify the following details:
  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
     <span class="guilabel">Name</span>. Mandatory identifier of the alarm. The name must
@@ -1105,7 +1106,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    </p><p>
     The severity level is subjective. Choose a level that is appropriate for
     prioritizing the alarms in your environment.
-   </p></li></ul></div><div class="figure"><a id="fig-socm-msoperator-alarmdef-create"></a><p class="title"><strong>Figure 4.5. Creating an Alarm Definition</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-alarmdef-create.png" width="100%" alt="Creating an Alarm Definition" /></td></tr></table></div></div></div><br class="figure-break" /><h5><a id="id2372"></a>Expression</h5><p>
+   </p></li></ul></div><div class="figure"><a id="fig-socm-msoperator-alarmdef-create"></a><p class="title"><strong>Figure 4.5. Creating an Alarm Definition</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-alarmdef-create.png" width="100%" alt="Creating an Alarm Definition" /></td></tr></table></div></div></div><br class="figure-break" /><h5><a id="id2371"></a>Expression</h5><p>
   The expression defines how to evaluate a metrics. The expression syntax is
   based on a simple expressive grammar. For details, refer to the
   <a class="ulink" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md" target="_top">Monasca API documentation</a>.
@@ -1208,7 +1209,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    alarm definition, you can change this interval. For syntax details, refer to
    the Monasca API documentation on
    <a class="ulink" href="https://github.com/openstack/monasca-api/blob/stable/ocata/docs/monasca-api-spec.md#alarm-definition-expressions" target="_top">Alarm Definition Expressions</a>.
-  </p></div><h5><a id="id2456"></a>Notifications</h5><p>
+  </p></div><h5><a id="id2455"></a>Notifications</h5><p>
   You can enable notifications for an alarm definition. As soon as an alarm is
   triggered, the enabled notifications will be sent.
  </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="90%"><tr><td><img src="images/socm-alarmdef-create-notifications.png" width="100%" /></td></tr></table></div></div><p>
@@ -1293,7 +1294,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   and the expression that is evaluated. For each alarm, you can drill down on
   the alarm history. To narrow down the problem, the history presents detailed
   information on the status transitions.
- </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idg-msoperator-shared-logging-c-osologging-xml-1"></a>Chapter 5. Log Management</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id2559">Working with the Log Management Window</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-logging-c-osolog-index-xml-1">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id2748">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#id2767">Troubleshooting</a></span></dt></dl></div><p>
+ </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="idg-msoperator-shared-logging-c-osologging-xml-1"></a>Chapter 5. Log Management</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id2558">Working with the Log Management Window</a></span></dt><dt><span class="section"><a href="#idg-msoperator-shared-logging-c-osolog-index-xml-1">Configuring Index Patterns</a></span></dt><dt><span class="section"><a href="#id2747">Monitoring Log Data</a></span></dt><dt><span class="section"><a href="#id2766">Troubleshooting</a></span></dt></dl></div><p>
   For managing the log data of your services and the virtual and physical
   servers on which they are provisioned, <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span> integrates with Kibana, an open source analytics and
@@ -1317,7 +1318,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   In the following sections, you will find information on the log management
   window where you search, visualize, and analyze your log data, as well as
   details on how to use the alerting features.
- </p><h5><a id="id2542"></a>Accessing <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
+ </p><h5><a id="id2541"></a>Accessing <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
  </h5><p>
   For accessing <span class="phrase">SUSE OpenStack Cloud Monitoring</span> and performing
   log management tasks, the following prerequisites must be fulfilled:
@@ -1338,7 +1339,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   Management</span> option at the top border of the
   <span class="guilabel">Overview</span> page displays the log management window where
   you can work on the log data.
- </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2559"></a>Working with the Log Management Window</h2></div></div></div><p>
+ </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2558"></a>Working with the Log Management Window</h2></div></div></div><p>
   Index patterns determine which data from the underlying Elasticsearch
   database can be viewed and analyzed in <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span>'s log management window. Index patterns are used to
@@ -1372,11 +1373,11 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   and dashboards. For additional details, refer to the
   <a class="ulink" href="https://www.elastic.co/guide/en/kibana/4.5/index.html" target="_top">Kibana
   documentation</a>.
- </p><h5><a id="id2581"></a>Querying Log Data</h5><p>
+ </p><h5><a id="id2580"></a>Querying Log Data</h5><p>
   For querying log data, you use the <span class="guilabel">Discover</span> page in the
   log management window. It is instantly displayed when you access the window.
   It shows the most recently collected log data:
- </p><div class="figure"><a id="id2584"></a><p class="title"><strong>Figure 5.1. The Kibana Dashboard—Discover Page</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/socm-kibana-dashboard.png" width="100%" alt="The Kibana Dashboard—Discover Page" /></td></tr></table></div></div></div><br class="figure-break" /><p>
+ </p><div class="figure"><a id="id2583"></a><p class="title"><strong>Figure 5.1. The Kibana Dashboard—Discover Page</strong></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/socm-kibana-dashboard.png" width="100%" alt="The Kibana Dashboard—Discover Page" /></td></tr></table></div></div></div><br class="figure-break" /><p>
   The <span class="guilabel">Discover</span> page allows you to access the log data in
   every index that matches the current index pattern. In addition to submitting
   queries, you can view, filter, and analyze the log data that is returned by
@@ -1448,7 +1449,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
     The option displays a direct link to the query that you can forward. As a
     prerequisite for using a direct link, a user must have <span class="phrase">SUSE
     OpenStack Cloud Monitoring</span> access.
-   </p></li></ul></div><h5><a id="id2637"></a>Visualizing Query Results</h5><p>
+   </p></li></ul></div><h5><a id="id2636"></a>Visualizing Query Results</h5><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports you in building
   graphical representations of your query results. You can choose from
   different visualization types, for example, pie charts, data tables, line
@@ -1481,7 +1482,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
     link to the visualization that you can forward. As a prerequisite for using
     an embedded visualization or a direct link, a user must have <span class="phrase">SUSE
     OpenStack Cloud Monitoring</span> access.
-   </p></li></ul></div><h5><a id="id2662"></a>Combining Visualizations in Dashboards</h5><p>
+   </p></li></ul></div><h5><a id="id2661"></a>Combining Visualizations in Dashboards</h5><p>
   For correlating related information or providing an overview, you can combine
   visualizations in dashboards. Use the <span class="guilabel">Dashboard</span> page in
   the log management window for this purpose:
@@ -1524,7 +1525,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   By default, dashboards are displayed with a light background. Using
   <span class="guilabel">Options</span> in the top right border of the log management
   window, you can switch to a dark color scheme.
- </p><h5><a id="id2686"></a>Filtering Query Results in Dashboards</h5><p>
+ </p><h5><a id="id2685"></a>Filtering Query Results in Dashboards</h5><p>
   By submitting a query on the data displayed in a dashboard, you can filter
   out specific sets of data that you want to aggregate while not changing the
   logic of the individual visualizations.
@@ -1532,7 +1533,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   Use the search box below the main navigation bar at the top of the log
   management window for entering a query on the whole dashboard. If a
   visualization is already based on a saved query, both queries apply.
- </p><h5><a id="id2689"></a>Sharing Dashboards</h5><p>
+ </p><h5><a id="id2688"></a>Sharing Dashboards</h5><p>
   Dashboards can be saved and re-used. They can also be shared with other
   users. For this purpose, use the options to the right of the search box at
   the top border of the log management window:
@@ -1613,7 +1614,7 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
   the <span class="guilabel">Settings</span> page. Select the pattern you want to set as
   the default from the <span class="guilabel">Index Patterns</span> field. The
   content of the log management window is instantly updated.
- </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2748"></a>Monitoring Log Data</h2></div></div></div><p>
+ </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2747"></a>Monitoring Log Data</h2></div></div></div><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> provides alerting features
   for monitoring your log data. Specific log metrics support you in checking
   the severity of the entries in your log files. Log metrics are handled like
@@ -1636,49 +1637,49 @@ max(disk.space_used_perc{service=monitoring}) &gt; 90</pre><p>
    </p></li></ul></div><p>
   For details on using the log metrics, refer to
   <a class="xref" href="#idg-msoperator-shared-monitor-c-monitor-xml-1" title="Chapter 4. Monitoring">Chapter 4, <em>Monitoring</em></a>.
- </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2767"></a>Troubleshooting</h2></div></div></div><p>
+ </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2766"></a>Troubleshooting</h2></div></div></div><p>
      Here are some common errors, and how to resolve them.
- </p><h5><a id="id2770"></a>Shard Failures</h5><p>
+ </p><h5><a id="id2769"></a>Shard Failures</h5><p>
  This problem may occur the first time the Log Management Window is opened. It occurs because the Elasticsearch index for the Monasca project does not yet exist. A browser reload should fix the problem in most cases.
- </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_shard_failure-2.jpg" width="100%" alt="Kibana shard failure" /></td></tr></table></div></div><h5><a id="id2780"></a>Oops! Looks like something went wrong</h5><p>
+ </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_shard_failure-2.jpg" width="100%" alt="Kibana shard failure" /></td></tr></table></div></div><h5><a id="id2779"></a>Oops! Looks like something went wrong</h5><p>
 This problem happens when you were previously logged into Horizon and the session expired, leaving a stale session state that confuses Kibana. In this case, re-login to Horizon and then reload Kibana to fix the problem.
- </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_oops.png" width="100%" alt="Oops!" /></td></tr></table></div></div><h5><a id="id2790"></a>No results found</h5><p>
+ </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_oops.png" width="100%" alt="Oops!" /></td></tr></table></div></div><h5><a id="id2789"></a>No results found</h5><p>
 This may be due to an overly narrow time window (that is, no logs were sent in the last 15 minutes, which is the default time window). Try increasing the time window with the drop-down box in the screen's top right corner. If the problem persists verify that log agents are running properly; make sure the <code class="literal">openstack-monasca-log-agent</code> service is running and check <code class="filename">/var/log/monasca-log-agent/agent.log</code> for errors on the agent nodes.
- </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_noresults.png" width="100%" alt="No results" /></td></tr></table></div></div></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="id2802"></a>Appendix A. Supported Metrics</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id2811">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id2825">Additional Metrics</a></span></dt></dl></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="images/kibana_noresults.png" width="100%" alt="No results" /></td></tr></table></div></div></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="id2801"></a>Appendix A. Supported Metrics</h1></div></div></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#id2810">Standard Metrics</a></span></dt><dt><span class="section"><a href="#id2824">Additional Metrics</a></span></dt></dl></div><p>
   The sections below describe the metrics supported by <span class="phrase">SUSE OpenStack
   Cloud Monitoring</span>:
  </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
      Standard metrics for general monitoring of servers and networks.
     </p></li><li class="listitem"><p>
      Additional metrics for monitoring specific servers and services.
-    </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2811"></a>Standard Metrics</h2></div></div></div><p>
+    </p></li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2810"></a>Standard Metrics</h2></div></div></div><p>
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> supports the following
   standard metrics for monitoring servers and networks. These metrics usually
   do not require specific settings. The metrics are grouped by metrics types.
   Each metrics type references a set of related metrics.
- </p><h5><a id="id2815"></a>cpu.yaml</h5><p>
+ </p><h5><a id="id2814"></a>cpu.yaml</h5><p>
   Metrics on CPU usage, e.g. the percentage of time the CPU is idle when no I/O
   requests are in progress, or the percentage of time the CPU is used at system
   level or user level.
- </p><h5><a id="id2817"></a>disk.yaml</h5><p>
+ </p><h5><a id="id2816"></a>disk.yaml</h5><p>
   Metrics on disk space, e.g. the percentage of disk space that is used on a
   device, or the total amount of disk space aggregated across all the disks on
   a particular node.
- </p><h5><a id="id2819"></a>load.yaml</h5><p>
+ </p><h5><a id="id2818"></a>load.yaml</h5><p>
   Metrics on the average system load over different periods (e.g. 1 minute, 5
   minutes, or 15 minutes).
- </p><h5><a id="id2821"></a>memory.yaml</h5><p>
+ </p><h5><a id="id2820"></a>memory.yaml</h5><p>
   Metrics on memory usage, e.g. the number of megabytes of total memory or free
   memory, or the percentage of free swap memory.
- </p><h5><a id="id2823"></a>network.yaml</h5><p>
+ </p><h5><a id="id2822"></a>network.yaml</h5><p>
   Metrics on the network, e.g. the number of network bytes received or sent per
   second, or the number of network errors on incoming or outgoing network
   traffic per second.
- </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2825"></a>Additional Metrics</h2></div></div></div><p>
+ </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2824"></a>Additional Metrics</h2></div></div></div><p>
   In addition to the standard metrics, SUSE OpenStack Cloud Monitoring
   automatically adds the following additional metrics to the monasca agent
   configuration on the Monitoring Node.
- </p><h5><a id="id2828"></a>elastic.yaml</h5><p>
+ </p><h5><a id="id2827"></a>elastic.yaml</h5><p>
   Elastic checks gather metrics for Elasticsearch databases, such as the Log
   Database of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. The
   configuration file must specify the URL for HTTP requests. If basic
@@ -1702,7 +1703,7 @@ instances:
     service: monitoring
   url: http://localhost:9200
   username: username
-  password: password</pre><h5><a id="id2838"></a>http_check.yaml</h5><p>
+  password: password</pre><h5><a id="id2837"></a>http_check.yaml</h5><p>
   HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
   list of URLs, the agent sends an HTTP request and reports success or failure
   to the Monitoring Service.
@@ -1716,47 +1717,47 @@ instances:
     Kibana
    </p></li><li class="listitem"><p>
     Monasca Persister
-   </p></li></ul></div><h5><a id="id2850"></a>http_metrics.yaml</h5><p>
+   </p></li></ul></div><h5><a id="id2849"></a>http_metrics.yaml</h5><p>
   HTTP metrics checks retrieve metrics from any URL that returns a JSON response.
   Based on a list of URLs, the agent can dispatch an HTTP request and parse the
   desired metrics from the JSON response.
  </p><p>
   Crowbar configures a HTTP metrics check for the monasca-persister service
   running on the Monitoring Node.
- </p><h5><a id="id2853"></a>kafka_consumer.yaml</h5><p>
+ </p><h5><a id="id2852"></a>kafka_consumer.yaml</h5><p>
   Kafka consumer checks gather metrics related to services consuming Kafka
   topics, such as the Persister or Notification Engine of <span class="phrase">SUSE
   OpenStack Cloud Monitoring</span>.
  </p><p>
   Crowbar configures Kafka consumer checks for the Kafka service running on
   the Monitoring Node.
- </p><h5><a id="id2857"></a>kibana.yaml </h5><p>
+ </p><h5><a id="id2856"></a>kibana.yaml </h5><p>
   Kibana checks gather various statistics such as load, heap size and usage, and
   various request performance statistics from a Kibana server. The checks
   retrieve these statistics from Kibana's status endpoint.
  </p><p>
   Crowbar configures Kibana checks for the Kibana service running on
   the Monitoring Node.
-  </p><h5><a id="id2860"></a>mysql.yaml</h5><p>
+  </p><h5><a id="id2859"></a>mysql.yaml</h5><p>
   MySQL checks gather various statistics such as buffer sizes and usage,
   reads/writes, network connections, etc. from a MySQL database server. MariaDB
   is also supported. The metrics are drawn from the server status variables of MySQL.
   </p><p>
   Crowbar configures the MySQL checks for the MariaDB database service running on
   the Monitoring Node.
- </p><h5><a id="id2863"></a>ntp.yaml</h5><p>
+ </p><h5><a id="id2862"></a>ntp.yaml</h5><p>
   Network Time Protocol checks monitor the time offset between an NTP server and
   the machine the agent is running on.
  </p><p>
   Crowbar configures the NTP check to monitor the offset between the Monitoring
   Node and the NTP server running on the Administration Server.
- </p><h5><a id="id2866"></a>postfix.yaml</h5><p>
+ </p><h5><a id="id2865"></a>postfix.yaml</h5><p>
   Postfix checks monitor the queue sizes (incoming, active, deferred) on a
   Postfix mail server.
  </p><p>
   Crowbar configures Postfix checks for the Postfix service running on the
   Monitoring Node.
- </p><h5><a id="id2869"></a>zk.yaml</h5><p>
+ </p><h5><a id="id2868"></a>zk.yaml</h5><p>
   ZooKeeper checks gather metrics on nodes and connections covered by
   ZooKeeper, a centralized service for maintaining configuration information,
   naming, providing distributed synchronization, and providing group services.
@@ -1765,11 +1766,11 @@ instances:
  </p><p>
   Crowbar configures ZooKeeper checks for the ZooKeeper instance running on the
   Monitoring Node.
- </p></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="reference-7A5FB297419F4787832C9125D7CAC80F"></a>Appendix B. Glossary</h1></div></div></div><h5><a id="id2875"></a>Application Operator</h5><p>
+ </p></div></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a id="reference-7A5FB297419F4787832C9125D7CAC80F"></a>Appendix B. Glossary</h1></div></div></div><h5><a id="id2874"></a>Application Operator</h5><p>
   A person with limited access to cloud resources in OpenStack. An application
   operator provides services to end users or hosts services for his own
   development activities.
- </p><h5><a id="id2877"></a>Dimension</h5><p>
+ </p><h5><a id="id2876"></a>Dimension</h5><p>
   A key/value pair that allows for a flexible and concise description of the
   data to be monitored, for example, region, availability zone, service tier,
   or resource ID. Each dimension describes a specific characteristic of the
@@ -1778,55 +1779,55 @@ instances:
   In <span class="phrase">SUSE OpenStack Cloud Monitoring</span>, metrics are uniquely
   identified by a name and a set of dimensions. Dimensions can serve as a
   filter for the monitoring data.
- </p><h5><a id="id2881"></a>Elasticsearch</h5><p>
+ </p><h5><a id="id2880"></a>Elasticsearch</h5><p>
   An open source application that provides a highly scalable full-text search
   and analytics engine. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   Elasticsearch as the underlying technology for storing, searching, and
   analyzing large volumes of log data.
- </p><h5><a id="id2884"></a>Grafana</h5><p>
+ </p><h5><a id="id2883"></a>Grafana</h5><p>
   An open source application for visualizing large-scale measurement data.
   <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates with Grafana for
   visualizing the monitoring data.
- </p><h5><a id="id2887"></a>Infrastructure as a Service (IaaS)</h5><p>
+ </p><h5><a id="id2886"></a>Infrastructure as a Service (IaaS)</h5><p>
   The delivery of computer infrastructure (typically a platform virtualization
   environment) as a service.
- </p><h5><a id="id2889"></a>InfluxDB</h5><p>
+ </p><h5><a id="id2888"></a>InfluxDB</h5><p>
   An open source time-series database that supports high write loads and large
   data set storage. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   InfluxDB as the underlying technology for storing metrics and the alarm
   history.
- </p><h5><a id="id2892"></a>Kibana</h5><p>
+ </p><h5><a id="id2891"></a>Kibana</h5><p>
   An open source analytics and visualization platform designed to work with
   Elasticsearch. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> integrates
   with Kibana for visualizing the log data.
- </p><h5><a id="id2895"></a>Logstash</h5><p>
+ </p><h5><a id="id2894"></a>Logstash</h5><p>
   An open source application that provides a data collection engine with
   pipelining capabilities. <span class="phrase">SUSE OpenStack Cloud Monitoring</span>
   integrates with Logstash for collecting, processing, and outputting logs.
- </p><h5><a id="id2898"></a>MariaDB</h5><p>
+ </p><h5><a id="id2897"></a>MariaDB</h5><p>
   An open source relational database that provides an SQL-compliant interface
   for accessing data. <span class="phrase">SUSE OpenStack Cloud Monitoring</span> uses
   MariaDB as the underlying technology for storing configuration information,
   alarm definitions, and notification methods.
- </p><h5><a id="id2901"></a>Metrics</h5><p>
+ </p><h5><a id="id2900"></a>Metrics</h5><p>
   Self-describing data structures that allow for a flexible and concise
   description of the data to be monitored. Metrics values represent the actual
   monitoring data that is collected and presented in <span class="phrase">SUSE OpenStack
   Cloud Monitoring</span>.
- </p><h5><a id="id2904"></a>Monasca</h5><p>
+ </p><h5><a id="id2903"></a>Monasca</h5><p>
   An open source Monitoring as a Service solution that integrates with
   OpenStack. It forms the core of <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span>.
- </p><h5><a id="id2907"></a>Monitoring Service Operator</h5><p>
+ </p><h5><a id="id2906"></a>Monitoring Service Operator</h5><p>
   A person responsible for maintaining and administrating <span class="phrase">SUSE
   OpenStack Cloud Monitoring</span>.
- </p><h5><a id="id2910"></a>OpenStack Operator</h5><p>
+ </p><h5><a id="id2909"></a>OpenStack Operator</h5><p>
   A person responsible for maintaining and administrating OpenStack, the
   underlying platform technology of <span class="phrase">SUSE OpenStack Cloud
   Monitoring</span>.
- </p><h5><a id="id2913"></a>Platform as a Service (PaaS)</h5><p>
+ </p><h5><a id="id2912"></a>Platform as a Service (PaaS)</h5><p>
   The delivery of a computing platform and solution stack as a service.
- </p><h5><a id="id2915"></a>Software as a Service (SaaS)</h5><p>
+ </p><h5><a id="id2914"></a>Software as a Service (SaaS)</h5><p>
   A model of software deployment where a provider licenses an application to
   customers for use as a service on demand.
  </p></div></div></body></html>

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Managing Object Storage | Operations Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Managing Object Storage | SUSE OpenStack Cloud 8" />
-<meta name="description" content="Information about managing and configuring the Object Storage service." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Operations Guide" />
-<meta name="chapter-title" content="Chapter 8. Managing Object Storage" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Managing Object Storage | SUSE OpenStack Cloud 8" />
-<meta property="og:description" content="Information about managing and configuring the Object Storage service." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Managing Object Storage | SUSE OpenStack Cloud 8" />
-<meta name="twitter:description" content="Information about managing and configuring the Object Storage service." />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-operations.html" title="Operations Guide" /><link rel="prev" href="ops-managing-blockstorage.html" title="Chapter 7. Managing Block Storage" /><link rel="next" href="ops-managing-networking.html" title="Chapter 9. Managing Networking" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Operations Guide | Managing Object Storage</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Managing Object Storage | SUSE OpenStack Cloud 8"/>
+<meta name="description" content="Information about managing and configuring the Object Storage service."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Operations Guide"/>
+<meta name="chapter-title" content="Chapter 8. Managing Object Storage"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Managing Object Storage | SUSE OpenStack Cloud 8"/>
+<meta property="og:description" content="Information about managing and configuring the Object Storage service."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing Object Storage | SUSE OpenStack Cloud 8"/>
+<meta name="twitter:description" content="Information about managing and configuring the Object Storage service."/>
+<link rel="prev" href="ops-managing-blockstorage.html" title="Chapter 7. Managing Block Storage"/><link rel="next" href="ops-managing-networking.html" title="Chapter 9. Managing Networking"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="ops-managing-objectstorage.html">Managing Object Storage</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Operations Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="gettingstarted-ops.html"><span class="number">1 </span><span class="name">Operations Overview</span></a></li><li class="inactive"><a href="tutorials.html"><span class="number">2 </span><span class="name">Tutorials</span></a></li><li class="inactive"><a href="third-party-integrations.html"><span class="number">3 </span><span class="name">Third-Party Integrations</span></a></li><li class="inactive"><a href="ops-managing-identity.html"><span class="number">4 </span><span class="name">Managing Identity</span></a></li><li class="inactive"><a href="ops-managing-compute.html"><span class="number">5 </span><span class="name">Managing Compute</span></a></li><li class="inactive"><a href="ops-managing-esx.html"><span class="number">6 </span><span class="name">Managing ESX</span></a></li><li class="inactive"><a href="ops-managing-blockstorage.html"><span class="number">7 </span><span class="name">Managing Block Storage</span></a></li><li class="inactive"><a href="ops-managing-objectstorage.html"><span class="number">8 </span><span class="name">Managing Object Storage</span></a></li><li class="inactive"><a href="ops-managing-networking.html"><span class="number">9 </span><span class="name">Managing Networking</span></a></li><li class="inactive"><a href="ops-managing-dashboards.html"><span class="number">10 </span><span class="name">Managing the Dashboard</span></a></li><li class="inactive"><a href="ops-managing-orchestration.html"><span class="number">11 </span><span class="name">Managing Orchestration</span></a></li><li class="inactive"><a href="topic-ttn-5fg-4v.html"><span class="number">12 </span><span class="name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li class="inactive"><a href="system-maintenance.html"><span class="number">13 </span><span class="name">System Maintenance</span></a></li><li class="inactive"><a href="bura-overview.html"><span class="number">14 </span><span class="name">Backup and Restore</span></a></li><li class="inactive"><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html"><span class="number">15 </span><span class="name">Troubleshooting Issues</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 7. Managing Block Storage" href="ops-managing-blockstorage.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Managing Networking" href="ops-managing-networking.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Operations Guide"><span class="book-icon">Operations Guide</span></a><span> › </span><a class="crumb" href="ops-managing-objectstorage.html">Managing Object Storage</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 7. Managing Block Storage" href="ops-managing-blockstorage.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 9. Managing Networking" href="ops-managing-networking.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="ops-managing-objectstorage"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Object Storage</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_objectstorage.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-managing_objectstorage.xml</li><li><span class="ds-label">ID: </span>ops-managing-objectstorage</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="ops-managing-objectstorage.html#swift-healthcheck"><span class="number">8.1 </span><span class="name">Running the Swift Dispersion Report</span></a></span></dt><dt><span class="section"><a href="ops-managing-objectstorage.html#swift-recon"><span class="number">8.2 </span><span class="name">Gathering Swift Data</span></a></span></dt><dt><span class="section"><a href="ops-managing-objectstorage.html#topic-pcv-fy4-nt"><span class="number">8.3 </span><span class="name">Gathering Swift Monitoring Metrics</span></a></span></dt><dt><span class="section"><a href="ops-managing-objectstorage.html#topic-m13-dgp-nt"><span class="number">8.4 </span><span class="name">Using the Swift Command-line Client (CLI)</span></a></span></dt><dt><span class="section"><a href="ops-managing-objectstorage.html#swift-ring-management"><span class="number">8.5 </span><span class="name">Managing Swift Rings</span></a></span></dt><dt><span class="section"><a href="ops-managing-objectstorage.html#topic-el2-cqv-mv"><span class="number">8.6 </span><span class="name">Configuring your Swift System to Allow Container Sync</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_objectstorage.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Operations Guide</a><span> / </span><a class="crumb" href="ops-managing-objectstorage.html">Managing Object Storage</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Operations Guide</div><ol><li><a href="gettingstarted-ops.html" class=" "><span class="title-number">1 </span><span class="title-name">Operations Overview</span></a></li><li><a href="tutorials.html" class=" "><span class="title-number">2 </span><span class="title-name">Tutorials</span></a></li><li><a href="third-party-integrations.html" class=" "><span class="title-number">3 </span><span class="title-name">Third-Party Integrations</span></a></li><li><a href="ops-managing-identity.html" class=" "><span class="title-number">4 </span><span class="title-name">Managing Identity</span></a></li><li><a href="ops-managing-compute.html" class=" "><span class="title-number">5 </span><span class="title-name">Managing Compute</span></a></li><li><a href="ops-managing-esx.html" class=" "><span class="title-number">6 </span><span class="title-name">Managing ESX</span></a></li><li><a href="ops-managing-blockstorage.html" class=" "><span class="title-number">7 </span><span class="title-name">Managing Block Storage</span></a></li><li><a href="ops-managing-objectstorage.html" class=" you-are-here"><span class="title-number">8 </span><span class="title-name">Managing Object Storage</span></a></li><li><a href="ops-managing-networking.html" class=" "><span class="title-number">9 </span><span class="title-name">Managing Networking</span></a></li><li><a href="ops-managing-dashboards.html" class=" "><span class="title-number">10 </span><span class="title-name">Managing the Dashboard</span></a></li><li><a href="ops-managing-orchestration.html" class=" "><span class="title-number">11 </span><span class="title-name">Managing Orchestration</span></a></li><li><a href="topic-ttn-5fg-4v.html" class=" "><span class="title-number">12 </span><span class="title-name">Managing Monitoring, Logging, and Usage Reporting</span></a></li><li><a href="system-maintenance.html" class=" "><span class="title-number">13 </span><span class="title-name">System Maintenance</span></a></li><li><a href="bura-overview.html" class=" "><span class="title-number">14 </span><span class="title-name">Backup and Restore</span></a></li><li><a href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html" class=" "><span class="title-number">15 </span><span class="title-name">Troubleshooting Issues</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="ops-managing-objectstorage" data-id-title="Managing Object Storage"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">Managing Object Storage</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-managing_objectstorage.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Information about managing and configuring the Object Storage service.
  </p><p>
   Managing your object storage environment includes tasks related to ensuring
@@ -43,7 +43,7 @@ hljs.configure({
  </p><p>
   You can verify the Swift object storage operational status using commands and
   utilities. This section covers the following topics:
- </p><div class="sect1" id="swift-healthcheck"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Running the Swift Dispersion Report</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-healthcheck">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_dispersion_report.xml</li><li><span class="ds-label">ID: </span>swift-healthcheck</li></ul></div></div></div></div><p>
+ </p><section class="sect1" id="swift-healthcheck" data-id-title="Running the Swift Dispersion Report"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.1 </span><span class="title-name">Running the Swift Dispersion Report</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-healthcheck">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Swift contains a tool called <code class="literal">swift-dispersion-report</code> that
   can be used to determine whether your containers and objects have three
   replicas like they are supposed to. This tool works by populating a
@@ -54,14 +54,14 @@ hljs.configure({
   please see
   <a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#cluster-health" target="_blank">OpenStack
   Swift - Administrator's Guide</a>.
- </p><div class="sect2" id="id-1.6.10.5.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the Swift dispersion populate</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.5.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_dispersion_report.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="id-1.6.10.5.3" data-id-title="Configuring the Swift dispersion populate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.1 </span><span class="title-name">Configuring the Swift dispersion populate</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.5.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Once a Swift system has been fully deployed in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you can
    setup the swift-dispersion-report using the default parameters found in
    <code class="literal">~/openstack/ardana/ansible/roles/swift-dispersion/templates/dispersion.conf.j2</code>.
    This populates 1% of the partitions on the system and if you are happy with
    this figure, please proceed to step 2 below. Otherwise, follow step 1 to
    edit the configuration file.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      If you wish to change the dispersion coverage percentage then edit the
      value of <code class="literal">dispersion_coverage</code> in the
      <code class="literal">~/openstack/ardana/ansible/roles/swift-dispersion/templates/dispersion.conf.j2</code>
@@ -78,23 +78,23 @@ auth_version = {{ disp_auth_version }}
 # of 1%. You can increase this to get more coverage. However, if you
 # decrease the value, the dispersion containers and objects are
 # not deleted.
-<span class="bold"><strong>dispersion_coverage = 5.0</strong></span></pre></div></li><li class="listitem "><p>
+<span class="bold"><strong>dispersion_coverage = 5.0</strong></span></pre></div></li><li class="listitem"><p>
      Commit your configuration to the Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Reconfigure the Swift servers:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem"><p>
      Run this playbook to populate your Swift system for the health check:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-dispersion-populate.yml</pre></div></li></ol></div></div><div class="sect2" id="id-1.6.10.5.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Running the Swift dispersion report</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.5.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_dispersion_report.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-dispersion-populate.yml</pre></div></li></ol></div></section><section class="sect2" id="id-1.6.10.5.4" data-id-title="Running the Swift dispersion report"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.2 </span><span class="title-name">Running the Swift dispersion report</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.5.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_dispersion_report.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Check the status of the Swift system by running the Swift dispersion report
    with this playbook:
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
@@ -126,20 +126,20 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
    When interpreting the results you get from this report, we recommend using
    <a class="link" href="http://docs.openstack.org/developer/swift/admin_guide.html#cluster-health" target="_blank">Swift
    Administrator's Guide - Cluster Health</a>
-  </p></div></div><div class="sect1" id="swift-recon"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gathering Swift Data</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-recon">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-validating_swift_recon.xml</li><li><span class="ds-label">ID: </span>swift-recon</li></ul></div></div></div></div><p>
+  </p></section></section><section class="sect1" id="swift-recon" data-id-title="Gathering Swift Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.2 </span><span class="title-name">Gathering Swift Data</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-recon">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <code class="literal">swift-recon</code> command retrieves data from Swift servers
   and displays the results. To use this command, log on as a root user to any
   node which is running the swift-proxy service.
- </p><div class="sect2" id="idg-all-operations-objectstorage-validating-swift-recon-xml-7"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Notes</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-validating-swift-recon-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-validating_swift_recon.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-validating-swift-recon-xml-7</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="idg-all-operations-objectstorage-validating-swift-recon-xml-7" data-id-title="Notes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.2.1 </span><span class="title-name">Notes</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-validating-swift-recon-xml-7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For help with the <code class="literal">swift-recon</code> command you can use this:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo swift-recon --help</pre></div><div id="id-1.6.10.6.3.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo swift-recon --help</pre></div><div id="id-1.6.10.6.3.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     The <code class="literal">--driveaudit</code> option is not supported.
-   </p></div><div id="id-1.6.10.6.3.5" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>
+   </p></div><div id="id-1.6.10.6.3.5" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
     <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> does not support ec_type <code class="literal">isa_l_rs_vand</code> and
     <code class="literal">ec_num_parity_fragments</code> greater than or equal to
     <span class="bold"><strong>5</strong></span> in the storage-policy configuration.
     This particular policy is known to harm data durability.
-   </p></div></div><div class="sect2" id="idg-all-operations-objectstorage-validating-swift-recon-xml-8"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the swift-recon Command</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-validating-swift-recon-xml-8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-validating_swift_recon.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-validating-swift-recon-xml-8</li></ul></div></div></div></div><p>
+   </p></div></section><section class="sect2" id="idg-all-operations-objectstorage-validating-swift-recon-xml-8" data-id-title="Using the swift-recon Command"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.2.2 </span><span class="title-name">Using the swift-recon Command</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-validating-swift-recon-xml-8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-validating_swift_recon.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following command retrieves and displays disk usage information:
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo swift-recon --diskusage</pre></div><p>
    For example:
@@ -191,7 +191,7 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
 ===============================================================================
 [2015-09-14 16:17:28] Checking swift.conf md5sum
 3/3 hosts matched, 0 error[s] while checking hosts.
-===============================================================================</pre></div></div></div><div class="sect1" id="topic-pcv-fy4-nt"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gathering Swift Monitoring Metrics</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-pcv-fy4-nt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-lm_scan_metering.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-lm_scan_metering.xml</li><li><span class="ds-label">ID: </span>topic-pcv-fy4-nt</li></ul></div></div></div></div><p>
+===============================================================================</pre></div></section></section><section class="sect1" id="topic-pcv-fy4-nt" data-id-title="Gathering Swift Monitoring Metrics"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.3 </span><span class="title-name">Gathering Swift Monitoring Metrics</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-pcv-fy4-nt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-lm_scan_metering.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <code class="literal">swiftlm-scan</code> command is the mechanism used to gather
   metrics for the Monasca system. These metrics are used to derive alarms. For
   a list of alarms that can be generated from this data, see
@@ -215,46 +215,46 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
       "msg": "No errors found on device: sdc"
     }
   },
-. . .</pre></div><div id="id-1.6.10.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+. . .</pre></div><div id="id-1.6.10.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    To make the JSON file easier to read, use the <code class="literal">--pretty</code>
    option.
   </p></div><p>
   The fields are as follows:
- </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /></colgroup><tbody><tr><td><code class="literal">metric</code>
-     </td><td>
+ </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">metric</code>
+     </td><td style="border-bottom: 1px solid ; ">
       <p>
        Specifies the name of the metric.
       </p>
-     </td></tr><tr><td><code class="literal">dimensions</code>
-     </td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">dimensions</code>
+     </td><td style="border-bottom: 1px solid ; ">
       <p>
        Provides information about the source or location of the metric. The
        dimensions differ depending on the metric in question. The following
        dimensions are used by <code class="literal">swiftlm-scan</code>:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          <span class="bold"><strong>service</strong></span>: This is always
          <span class="bold"><strong>object-storage</strong></span>.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>component</strong></span>: This identifies the
          component. For example,
          <span class="bold"><strong>swift-object-server</strong></span> indicates that
          the metric is about the swift-object-server process.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>hostname</strong></span>: This is the name of the
          node the metric relates to. This is not necessarily the name of the
          current node.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>url</strong></span>: If the metric is associated with
          a URL, this is the URL.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>port</strong></span>: If the metric relates to
          connectivity to a node, this is the port used.
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          <span class="bold"><strong>device</strong></span>: This is the block device a
          metric relates to.
         </p></li></ul></div>
-     </td></tr><tr><td><code class="literal">value</code></td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">value</code></td><td style="border-bottom: 1px solid ; ">
       <p>
        The value of the metric. For many metrics, this is simply the value of
        the metric. However, if the value indicates a status. If
@@ -262,64 +262,64 @@ Disk usage: lowest: 10.39%, highest: 12.96%, avg: 11.4614140152%
        <span class="bold"><strong>msg</strong></span> field, the value is a status. The
        following status values are used:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          0 - no error
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          1 - warning
-        </p></li><li class="listitem "><p>
+        </p></li><li class="listitem"><p>
          2 - failure
         </p></li></ul></div>
-     </td></tr><tr><td><code class="literal">value_meta</code>
+     </td></tr><tr><td style="border-right: 1px solid ; "><code class="literal">value_meta</code>
      </td><td>
       <p>
        Additional information. The <span class="bold"><strong>msg</strong></span> field
        is the most useful of this information.
       </p>
-     </td></tr></tbody></table></div><div class="sect2" id="id-1.6.10.7.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optional Parameters</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.7.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-lm_scan_metering.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-lm_scan_metering.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+     </td></tr></tbody></table></div><section class="sect2" id="id-1.6.10.7.8" data-id-title="Optional Parameters"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.3.1 </span><span class="title-name">Optional Parameters</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.7.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-lm_scan_metering.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can focus on specific sets of metrics by using one of the following
    optional parameters:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col /><col /></colgroup><tbody><tr><td><code class="literal">--replication</code></td><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/></colgroup><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--replication</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks replication and health status.
        </p>
-      </td></tr><tr><td><code class="literal">--file-ownership</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--file-ownership</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks that Swift owns its relevant files and directories.
        </p>
-      </td></tr><tr><td><code class="literal">--drive-audit</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--drive-audit</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks for logged events about corrupted sectors (unrecoverable read
         errors) on drives.
        </p>
-      </td></tr><tr><td><code class="literal">--connectivity</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--connectivity</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks connectivity to various servers used by the Swift system,
         including:
        </p>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           Checks this node can connect to all memcachd servers
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Checks that this node can connect to the Keystone service (only
           applicable if this is a proxy server node)
          </p></li></ul></div>
-      </td></tr><tr><td><code class="literal">--swift-services</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--swift-services</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Check that the relevant Swift processes are running.
        </p>
-      </td></tr><tr><td><code class="literal">--network-interface</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--network-interface</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks NIC speed and reports statistics for each interface.
        </p>
-      </td></tr><tr><td><code class="literal">--check-mounts</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">--check-mounts</code></td><td style="border-bottom: 1px solid ; ">
        <p>
         Checks that the node has correctly mounted drives used by Swift.
        </p>
-      </td></tr><tr><td><code class="literal">--hpssacli</code></td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; "><code class="literal">--hpssacli</code></td><td>
        <p>
         If this server uses a Smart Array Controller, this checks the operation
         of the controller and disk drives.
        </p>
-      </td></tr></tbody></table></div></div></div><div class="sect1" id="topic-m13-dgp-nt"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Swift Command-line Client (CLI)</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-m13-dgp-nt">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_cli.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_cli.xml</li><li><span class="ds-label">ID: </span>topic-m13-dgp-nt</li></ul></div></div></div></div><p>
+      </td></tr></tbody></table></div></section></section><section class="sect1" id="topic-m13-dgp-nt" data-id-title="Using the Swift Command-line Client (CLI)"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.4 </span><span class="title-name">Using the Swift Command-line Client (CLI)</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-m13-dgp-nt">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_cli.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <code class="literal">swift</code> utility (or Swift CLI) is installed on the
   Cloud Lifecycle Manager node and also on all other nodes running the Swift proxy
   service. To use this utility on the Cloud Lifecycle Manager, you can use the
@@ -363,7 +363,7 @@ X-Put-Timestamp: 1442249536.31989
      X-Trans-Id: tx5493faa15be44efeac2e6-0055f6fb3f
    Content-Type: text/plain; charset=utf-8</pre></div><p>
   Use the following command and create a container:
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post <em class="replaceable ">CONTAINER_NAME</em></pre></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post <em class="replaceable">CONTAINER_NAME</em></pre></div><p>
   Example, creating a container named <code class="literal">documents</code>:
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post documents</pre></div><p>
   The newly created container appears. But there are no objects:
@@ -383,34 +383,34 @@ X-Storage-Policy: General
       X-Trans-Id: tx1f59d5f7750f4ae8a3929-0055f6fbcc
     Content-Type: text/plain; charset=utf-8</pre></div><p>
   Upload a document:
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift upload <em class="replaceable ">CONTAINER_NAME</em> <em class="replaceable ">FILENAME</em></pre></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift upload <em class="replaceable">CONTAINER_NAME</em> <em class="replaceable">FILENAME</em></pre></div><p>
   Example:
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift upload documents mydocument
 mydocument</pre></div><p>
   List objects in the container:
- </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift list <em class="replaceable ">CONTAINER_NAME</em></pre></div><p>
+ </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift list <em class="replaceable">CONTAINER_NAME</em></pre></div><p>
   Example:
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift list documents
-mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    This is a brief introduction to the <code class="command">swift</code> CLI. Use the
    <code class="command">swift --help</code> command for more information. You can also
    use the OpenStack CLI, see <code class="command">openstack -h</code> for more
    information.
-  </p></div></div><div class="sect1" id="swift-ring-management"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Swift Rings</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ring-management">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-ring_management.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-ring_management.xml</li><li><span class="ds-label">ID: </span>swift-ring-management</li></ul></div></div></div></div><p>
+  </p></div></section><section class="sect1" id="swift-ring-management" data-id-title="Managing Swift Rings"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.5 </span><span class="title-name">Managing Swift Rings</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ring-management">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-ring_management.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Swift rings are a machine-readable description of which disk drives are used
   by the Object Storage service (for example, a drive is used to store account
   or object data). Rings also specify the policy for data storage (for example,
   defining the number of replicas). The rings are automatically built during
   the initial deployment of your cloud, with the configuration provided during
   setup of the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Input Model. For more information, see
-  <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”</span>.
+  <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 5 “Input Model”</span>.
  </p><p>
   After successful deployment of your cloud, you may want to change or modify
   the configuration for Swift. For example, you may want to add or remove Swift
   nodes, add additional storage policies, or upgrade the size of the disk
   drives. For instructions, see <a class="xref" href="ops-managing-objectstorage.html#change-swift-rings" title="8.5.5. Applying Input Model Changes to Existing Rings">Section 8.5.5, “Applying Input Model Changes to Existing Rings”</a> and
   <a class="xref" href="ops-managing-objectstorage.html#add-storage-policy" title="8.5.6. Adding a New Swift Storage Policy">Section 8.5.6, “Adding a New Swift Storage Policy”</a>.
- </p><div id="id-1.6.10.9.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+ </p><div id="id-1.6.10.9.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    The process of modifying or adding a configuration is similar to other
    configuration or topology changes in the cloud. Generally, you make the
    changes to the input model files at
@@ -421,10 +421,10 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
   need to run the playbooks several times over several days.
  </p><p>
   The following topics cover ring management.
- </p><div class="sect2" id="swift-ring-rebalance"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Rebalancing Swift Rings</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ring-rebalance">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-rebalanced_explained.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-rebalanced_explained.xml</li><li><span class="ds-label">ID: </span>swift-ring-rebalance</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="swift-ring-rebalance" data-id-title="Rebalancing Swift Rings"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.1 </span><span class="title-name">Rebalancing Swift Rings</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ring-rebalance">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-rebalanced_explained.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Swift ring building process tries to distribute data evenly among the
   available disk drives. The data is stored in partitions. (For more
-  information, see <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.10 “Understanding Swift Ring Specifications”</span>.) If you, for example,
+  information, see <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.10 “Understanding Swift Ring Specifications”</span>.) If you, for example,
   double the number of disk drives in a ring, you need to move 50% of the
   partitions to the new drives so that all drives contain the same number of
   partitions (and hence same amount of data). However, it is not possible to
@@ -443,26 +443,26 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
   all data has replicated. Then move another 16.6% of partitions. Wait again
   and then finally move the remaining 16.6% of partitions. For any given
   object, only one of the replicas is moved at a time.
- </p><div class="sect3" id="id-1.6.10.9.7.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Reasons to Move Partitions Gradually</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.9.7.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-rebalanced_explained.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-rebalanced_explained.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect3" id="id-1.6.10.9.7.4" data-id-title="Reasons to Move Partitions Gradually"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.1.1 </span><span class="title-name">Reasons to Move Partitions Gradually</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.9.7.4">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-rebalanced_explained.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Due to the following factors, you must move the partitions gradually:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Not all devices are of the same size. <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> automatically
      assigns different weights to drives so that smaller drives store fewer
      partitions than larger drives.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The process attempts to keep replicas of the same partition in different
      servers.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Making a large change in one step (for example, doubling the number of
      drives in the ring), would result in a lot of network traffic due to the
      replication process and the system performance suffers. There are two ways
      to mitigate this:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Add servers in smaller groups
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Set the weight-step attribute in the ring specification. For more
        information, see <a class="xref" href="ops-managing-objectstorage.html#swift-weight-att" title="8.5.2. Using the Weight-Step Attributes to Prepare for Ring Changes">Section 8.5.2, “Using the Weight-Step Attributes to Prepare for Ring Changes”</a>.
-      </p></li></ul></div></li></ul></div></div></div><div class="sect2" id="swift-weight-att"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Weight-Step Attributes to Prepare for Ring Changes</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-weight-att">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_weight_attribute.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_weight_attribute.xml</li><li><span class="ds-label">ID: </span>swift-weight-att</li></ul></div></div></div></div><p>
+      </p></li></ul></div></li></ul></div></section></section><section class="sect2" id="swift-weight-att" data-id-title="Using the Weight-Step Attributes to Prepare for Ring Changes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.2 </span><span class="title-name">Using the Weight-Step Attributes to Prepare for Ring Changes</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-weight-att">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_weight_attribute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Swift rings are built during a deployment and this process sets the weights
   of disk drives such that smaller disk drives have a smaller weight than
   larger disk drives. When making changes in the ring, you should limit the
@@ -493,11 +493,11 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
   an individual drive. For example, when adding X number of 4TB drives a value
   of 820 would be appropriate. As you gain more experience with your system,
   you may increase or reduce this value.
- </p><div class="sect3" id="setting-weight-step-attribute"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting the weight-step attribute</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#setting-weight-step-attribute">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_weight_attribute.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_weight_attribute.xml</li><li><span class="ds-label">ID: </span>setting-weight-step-attribute</li></ul></div></div></div></div><p>
+ </p><section class="sect3" id="setting-weight-step-attribute" data-id-title="Setting the weight-step attribute"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.2.1 </span><span class="title-name">Setting the weight-step attribute</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#setting-weight-step-attribute">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_weight_attribute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Perform the following steps to set the weight-step attribute:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the
      <code class="literal">~/openstack/my_cloud/definition/data/swift/rings.yml</code> file
      containing the ring-specifications for the account, container, and object
@@ -505,7 +505,7 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
     </p><p>
      Add the weight-step attribute to the ring in this format:
     </p><div class="verbatim-wrap"><pre class="screen">- name: account
-  weight-step: <em class="replaceable ">WEIGHT_STEP_VALUE</em>
+  weight-step: <em class="replaceable">WEIGHT_STEP_VALUE</em>
   display-name: Account Ring
   min-part-hours: 16
   ...</pre></div><p>
@@ -514,29 +514,29 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
   weight-step: <span class="bold"><strong>820</strong></span>
   display-name: Account Ring
   min-part-hours: 16
-  ...</pre></div></li><li class="listitem "><p>
+  ...</pre></div></li><li class="listitem"><p>
      Repeat step 2 for the other rings, if necessary (container, object-0,
      etc).
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Use the playbook to create a deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      To complete the configuration, use the ansible playbooks documented in
      <a class="xref" href="ops-managing-objectstorage.html#swift-ansible-playbooks" title="8.5.3. Managing Rings Using Swift Playbooks">Section 8.5.3, “Managing Rings Using Swift Playbooks”</a>.
-    </p></li></ol></div></div></div><div class="sect2" id="swift-ansible-playbooks"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Rings Using Swift Playbooks</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ansible-playbooks">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_ring_mgmt.xml</li><li><span class="ds-label">ID: </span>swift-ansible-playbooks</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section></section><section class="sect2" id="swift-ansible-playbooks" data-id-title="Managing Rings Using Swift Playbooks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.3 </span><span class="title-name">Managing Rings Using Swift Playbooks</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#swift-ansible-playbooks">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The following table describes how playbooks relate to ring management.
  </p><p>
   All of these playbooks will be run from the Cloud Lifecycle Manager from the
   <code class="literal">~/scratch/ansible/next/ardana/ansible</code> directory.
- </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /><col class="c3" /></colgroup><thead><tr><th>Playbook</th><th>Description</th><th>Notes</th></tr></thead><tbody><tr><td><code class="literal">swift-update-from-model-rebalance-rings.yml</code>
-     </td><td>
+ </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/><col class="c3"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Playbook</th><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Description</th><th style="border-bottom: 1px solid ; ">Notes</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">swift-update-from-model-rebalance-rings.yml</code>
+     </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <p>
        There are two steps in this playbook:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          Make delta
         </p><p>
          It processes the input model and compares it against the existing
@@ -545,7 +545,7 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
          delta. The ring delta covers drives being added, drives being
          removed, weight changes, and replica count changes.
         </p></li></ul></div>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          Rebalance
         </p><p>
          The ring delta is then converted into a series of commands (such as
@@ -553,7 +553,7 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
          the <code class="literal">rebalance</code> command is issued to the
          swift-ring-builder program.
         </p></li></ul></div>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <p>
        This playbook performs its actions on the first node running the
        swift-proxy service. (For more information, see
@@ -566,18 +566,18 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
        rings. If <code class="literal">min-part-hours</code> has not yet elapsed or if
        no partitions need to be moved, new rings are not written.
       </p>
-     </td></tr><tr><td><code class="literal">swift-compare-model-rings.yml</code>
-     </td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">swift-compare-model-rings.yml</code>
+     </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <p>
        There are two steps in this playbook:
       </p>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          Make delta
         </p><p>
          This is the same as described for
          <code class="literal">swift-update-from-model-rebalance-rings.yml</code>.
         </p></li></ul></div>
-      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+      <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
          Report
         </p><p>
          This prints a summary of the proposed changes that will be made to
@@ -594,14 +594,14 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
        you have added a server to the input model, but this playbook reports
        that no drives are being added, you should determine the cause.
       </p>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <p>
        There is troubleshooting information related to the information that
        you receive in this report that you can view on this page:
        <a class="xref" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html#sec-input-swift-error" title="15.6.2.3. Interpreting Swift Input Model Validation Errors">Section 15.6.2.3, “Interpreting Swift Input Model Validation Errors”</a>.
       </p>
-     </td></tr><tr><td><code class="literal">swift-deploy.yml</code>
-     </td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">swift-deploy.yml</code>
+     </td><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
       <p>
        <code class="literal">swift-deploy.yml</code> is responsible for installing
        software and configuring Swift on nodes. As part of installing and
@@ -609,15 +609,15 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
        <code class="literal">swift-update-from-model-rebalance-rings.yml</code> and
        <code class="literal">swift-reconfigure.yml</code> playbooks.
       </p>
-     </td><td>
+     </td><td style="border-bottom: 1px solid ; ">
       <p>
        This playbook is included in the <code class="literal">ardana-deploy.yml</code> and
        <code class="literal">site.yml</code> playbooks, so if you run either of those
        playbooks, the <code class="literal">swift-deploy.yml</code> playbook is also
        run.
       </p>
-     </td></tr><tr><td><code class="literal">swift-reconfigure.yml</code>
-     </td><td>
+     </td></tr><tr><td style="border-right: 1px solid ; "><code class="literal">swift-reconfigure.yml</code>
+     </td><td style="border-right: 1px solid ; ">
       <p>
        <code class="literal">swift-reconfigure.yml</code> takes rings that the
        <code class="literal">swift-update-from-model-rebalance-rings.yml</code>
@@ -633,12 +633,12 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
        twice, the process may move two replicates of some partitions at the
        same time.
       </p>
-     </td></tr></tbody></table></div><div class="sect3" id="variables"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Optional Ansible variables related to ring management</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#variables">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_ring_mgmt.xml</li><li><span class="ds-label">ID: </span>variables</li></ul></div></div></div></div><p>
+     </td></tr></tbody></table></div><section class="sect3" id="variables" data-id-title="Optional Ansible variables related to ring management"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.3.1 </span><span class="title-name">Optional Ansible variables related to ring management</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#variables">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The following optional variables may be specified when running the playbooks
    outlined above. They are specified using the <code class="literal">--extra-vars</code>
    option.
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Variable</th><th>Description and Use</th></tr></thead><tbody><tr><td><code class="literal">limit_ring</code>
-      </td><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Variable</th><th style="border-bottom: 1px solid ; ">Description and Use</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><code class="literal">limit_ring</code>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         Limit changes to the named ring. Other rings will not be examined or
         updated. This option may be used with any of the Swift playbooks. For
@@ -646,7 +646,7 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
         following command:
        </p>
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-update-from-model-rebalance-rings.yml --extra-vars "limit-ring=object-1"</pre></div>
-      </td></tr><tr><td>drive_detail</td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; ">drive_detail</td><td>
        <p>
         Used only with the swift-compare-model-rings.yml playbook. The playbook
         will include details of changes to every drive where the model and
@@ -655,7 +655,7 @@ mydocument</pre></div><div id="id-1.6.10.8.25" class="admonition note normal"><i
         drive_detail variable:
        </p>
 <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-compare-model-rings.yml --extra-vars "drive_detail=yes"</pre></div>
-      </td></tr></tbody></table></div></div><div class="sect3" id="id-1.6.10.9.9.6"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interpreting the report from the swift-compare-model-rings.yml playbook</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.9.9.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_ring_mgmt.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      </td></tr></tbody></table></div></section><section class="sect3" id="id-1.6.10.9.9.6" data-id-title="Interpreting the report from the swift-compare-model-rings.yml playbook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.3.2 </span><span class="title-name">Interpreting the report from the swift-compare-model-rings.yml playbook</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#id-1.6.10.9.9.6">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_ring_mgmt.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The <code class="literal">swift-compare-model-rings.yml</code> playbook compares the
    existing Swift rings with the input model and prints a report telling you
    how the rings and the model differ. Specifically, it will tell you what
@@ -690,37 +690,37 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
     }
 }</pre></div><p>
    The following describes the report in more detail:
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Message</th><th>Description</th></tr></thead><tbody><tr><td>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Message</th><th style="border-bottom: 1px solid ; ">Description</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         ring exists
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The ring already exists on the system.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         ring will be created
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The ring does not yet exist on the system.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         no device changes
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The devices in the ring exactly match the input model. There are no
         servers being added or removed and the weights are appropriate for the
         size of the drives.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         minimum time to next rebalance
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         If this time is <code class="literal">0:00:00</code>, if you run one of the Swift
         playbooks that update rings, the ring will be rebalanced.
@@ -732,11 +732,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         rebalance. This time is determined by the
         <code class="literal">min-part-hours</code> attribute.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         set-weight ardana-ccp-c1-m1-mgmt:disk0:/dev/sdc 8.00 &gt; 12.00 &gt; 18.63
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The weight of disk0 (mounted on /dev/sdc) on server
         <code class="literal">ardana-ccp-c1-m1-mgmt</code> is currently set to 8.0 but
@@ -748,11 +748,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         This information is only shown when you the
         <code class="literal">drive_detail=yes</code> argument when running the playbook.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         will change weight on 12 devices (6.00TB)
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The weight of 12 devices will be increased. This might happen for
         example, if a server had been added in a prior ring update. However,
@@ -767,11 +767,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         one copy of a given replica is moved in any given rebalance, it may not
         be possible to move this amount of data in a single ring rebalance.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         add: ardana-ccp-c1-m1-mgmt:disk0:/dev/sdc
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The disk0 device will be added to the ardana-ccp-c1-m1-mgmt server. This
         happens when a server is added to the input model or if a disk model is
@@ -782,11 +782,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         <code class="literal">drive_detail=yes</code> argument when running the
         playbook.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         remove: ardana-ccp-c1-m1-mgmt:disk0:/dev/sdc
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The device is no longer in the input model and will be removed from the
         ring. This happens if a server is removed from the model, a disk drive
@@ -798,11 +798,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         <code class="literal">drive_detail=yes</code> argument when running the
         playbook.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         will add 12 devices (6TB)
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         There are 12 devices in the input model that have not yet been added to
         the ring. Usually this is because one or more servers have been added.
@@ -819,11 +819,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         given rebalance, it may not be possible to move this amount of data in
         a single ring rebalance.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         will remove 12 devices (6TB)
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         There are 12 devices in rings that no longer appear in the input model.
         Usually this is because one or more servers have been removed. In this
@@ -836,25 +836,25 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         rebalanced, approximately 3TB of data must be moved by the replication
         process.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         min-part-hours will be changed
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The <code class="literal">min-part-hours</code> attribute has been changed in the
         ring specification in the input model.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
        <p>
         replica-count will be changed
        </p>
-      </td><td>
+      </td><td style="border-bottom: 1px solid ; ">
        <p>
         The <code class="literal">replica-count</code> attribute has been changed in the
         ring specification in the input model.
        </p>
-      </td></tr><tr><td>
+      </td></tr><tr><td style="border-right: 1px solid ; ">
        <p>
         ring will be rebalanced
        </p>
@@ -867,11 +867,11 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
         already well balanced, the swift-ring-builder will not rewrite the
         ring.
        </p>
-      </td></tr></tbody></table></div></div></div><div class="sect2" id="topic-ohx-j1t-4t"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Determining When to Rebalance and Deploy a New Ring</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-safe_rebalance_deploy_ring.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-safe_rebalance_deploy_ring.xml</li><li><span class="ds-label">ID: </span>topic-ohx-j1t-4t</li></ul></div></div></div></div><p>
+      </td></tr></tbody></table></div></section></section><section class="sect2" id="topic-ohx-j1t-4t" data-id-title="Determining When to Rebalance and Deploy a New Ring"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.4 </span><span class="title-name">Determining When to Rebalance and Deploy a New Ring</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-safe_rebalance_deploy_ring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Before deploying a new ring, you must be sure the change that has been
   applied to the last ring is complete (that is, all the partitions are in
   their correct location). There are three aspects to this:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Is the replication system busy?
    </p><p>
     You might want to postpone a ring change until after replication has
@@ -893,14 +893,14 @@ ok: [ardana-cp1-c1-m1-mgmt] =&gt; {
 [replication_time] low: 0, high: 0, avg: 0.0, total: 0, Failed: 0.0%, no_result: 0, reported: 3
 Oldest completion was 2015-10-02 15:31:32 (120 seconds ago) by 192.168.245.4:6000.
 Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3:6000.
-===============================================================================</pre></div></li></ul></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+===============================================================================</pre></div></li></ul></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Are there drive or server failures?
    </p><p>
     A drive failure does not preclude deploying a new ring. In principle, there
     should be two copies elsewhere. However, another drive failure in the
     middle of replication might make data temporary unavailable. If possible,
     postpone ring changes until all servers and drives are operating normally.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Has <code class="literal">min-part-hours</code> elapsed?
    </p><p>
     The <code class="literal">swift-ring-builder</code> will refuse to build a new ring
@@ -914,7 +914,7 @@ Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3
    </p><p>
     You can change the value of <code class="literal">min-part-hours</code>. (For
     instructions, see <a class="xref" href="ops-managing-objectstorage.html#min-part-hours" title="8.5.7. Changing min-part-hours in Swift">Section 8.5.7, “Changing min-part-hours in Swift”</a>).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Is the Swift dispersion report clean?
    </p><p>
     Run the <code class="literal">swift-dispersion-report.yml</code> playbook (as
@@ -934,67 +934,67 @@ Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3
     the report. The number of partitions missing one copy should have reduced.
     Continue to wait until this reaches zero before making any further ring
     rebalances.
-   </p><div id="id-1.6.10.9.10.4.3.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div id="id-1.6.10.9.10.4.3.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      It is normal to see partitions missing one copy if disk drives or
      servers are down. If all servers and disk drives are mounted, and you
      did not recently perform a ring rebalance, you should investigate
      whether there are problems with the replication process. You can use the
      Operations Console to investigate replication issues.
-    </p></div><div id="id-1.6.10.9.10.4.3.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+    </p></div><div id="id-1.6.10.9.10.4.3.8" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
      If there are any partitions missing two copies, you must reboot or repair
      any failed servers and disk drives as soon as possible. Do not shutdown
      any Swift nodes in this situation. Assuming a replica count of 3, if you
      are missing two copies you are in danger of losing the only remaining
      copy.
-    </p></div></li></ul></div></div><div class="sect2" id="change-swift-rings"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Applying Input Model Changes to Existing Rings</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#change-swift-rings">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>change-swift-rings</li></ul></div></div></div></div><p>
+    </p></div></li></ul></div></section><section class="sect2" id="change-swift-rings" data-id-title="Applying Input Model Changes to Existing Rings"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.5 </span><span class="title-name">Applying Input Model Changes to Existing Rings</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#change-swift-rings">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This page describes a general approach for making changes to your existing
   Swift rings. This approach applies to actions such as adding and removing a
   server and replacing and upgrading disk drives, and must be performed as a
   series of phases, as shown below:
- </p><div class="sect3" id="change-inputmodel"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing the Input Model Configuration Files</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#change-inputmodel">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>change-inputmodel</li></ul></div></div></div></div><p>
+ </p><section class="sect3" id="change-inputmodel" data-id-title="Changing the Input Model Configuration Files"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.5.1 </span><span class="title-name">Changing the Input Model Configuration Files</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#change-inputmodel">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The first step to apply new changes to the Swift environment is to update
    the configuration files. Follow these steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Set the weight-step attribute, as needed, for the nodes you are altering.
      (For instructions, see <a class="xref" href="ops-managing-objectstorage.html#swift-weight-att" title="8.5.2. Using the Weight-Step Attributes to Prepare for Ring Changes">Section 8.5.2, “Using the Weight-Step Attributes to Prepare for Ring Changes”</a>).
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the configuration files as part of the Input Model as appropriate.
      (For general information about the Input Model, see
-     <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 6 “Configuration Objects”, Section 6.14 “Networks”</span>. For more specific information about
+     <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 6 “Configuration Objects”, Section 6.14 “Networks”</span>. For more specific information about
      the Swift parts of the configuration files, see
-     <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”</span>)
-    </p></li><li class="listitem "><p>
+     <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”</span>)
+    </p></li><li class="listitem"><p>
      Once you have completed all of the changes, commit your configuration to
      the local git repository. (For more information,
-     see<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>.) :
+     see<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>.) :
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">root # </code>git commit -m "commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">root # </code>git commit -m "commit message"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Create a deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the Swift playbook that will validate your configuration files and
      give you a report as an output:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">root # </code>ansible-playbook -i hosts/verb_hosts swift-compare-model-rings.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">root # </code>ansible-playbook -i hosts/verb_hosts swift-compare-model-rings.yml</pre></div></li><li class="listitem"><p>
      Use the report to validate that the number of drives proposed to be added
      or deleted, or the weight change, is correct. Fix any errors in your input
      model. At this stage, no changes have been made to rings.
-    </p></li></ol></div></div><div class="sect3" id="first-rebalance"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">First phase of Ring Rebalance</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#first-rebalance">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>first-rebalance</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect3" id="first-rebalance" data-id-title="First phase of Ring Rebalance"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.5.2 </span><span class="title-name">First phase of Ring Rebalance</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#first-rebalance">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To begin the rebalancing of the Swift rings, follow these steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      After going through the steps in the section above, deploy your changes to
      all of the Swift nodes in your environment by running this playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li><li class="listitem"><p>
      Wait until replication has finished or <code class="literal">min-part-hours</code>
      has elapsed (whichever is longer). For more information, see
      <a class="xref" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t" title="8.5.4. Determining When to Rebalance and Deploy a New Ring">Section 8.5.4, “Determining When to Rebalance and Deploy a New Ring”</a>
-    </p></li></ol></div></div><div class="sect3" id="weight-change"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Weight Change Phase of Ring Rebalance</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#weight-change">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>weight-change</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect3" id="weight-change" data-id-title="Weight Change Phase of Ring Rebalance"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.5.3 </span><span class="title-name">Weight Change Phase of Ring Rebalance</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#weight-change">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    At this stage, no changes have been made to the input model. However, when
    you set the <code class="literal">weight-step</code> attribute, the rings that were
    rebuilt in the previous rebalance phase have weights that are different than
@@ -1004,17 +1004,17 @@ Most recent completion was 2015-10-02 15:31:43 (10 seconds ago) by 192.168.245.3
    <a class="xref" href="ops-managing-objectstorage.html#swift-weight-att" title="8.5.2. Using the Weight-Step Attributes to Prepare for Ring Changes">Section 8.5.2, “Using the Weight-Step Attributes to Prepare for Ring Changes”</a>.
   </p><p>
    To begin the re-balancing of the rings, follow these steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Rebalance the rings by running the playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-update-from-model-rebalance-rings.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-update-from-model-rebalance-rings.yml</pre></div></li><li class="listitem"><p>
      Run the reconfiguration:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem"><p>
      Wait until replication has finished or <code class="literal">min-part-hours</code>
      has elapsed (whichever is longer). For more information, see
      <a class="xref" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t" title="8.5.4. Determining When to Rebalance and Deploy a New Ring">Section 8.5.4, “Determining When to Rebalance and Deploy a New Ring”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run the following command and review the report:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-compare-model-rings.yml --limit SWF*</pre></div><p>
@@ -1030,18 +1030,18 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
             "<span class="bold"><strong>Need to set weight on 0 devices</strong></span>"
         ]
     }
-}</pre></div></li><li class="listitem "><p>
+}</pre></div></li><li class="listitem"><p>
      When there are no proposed weight changes, you proceed to the final phase.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If there are proposed weight changes repeat this phase again.
-    </p></li></ol></div></div><div class="sect3" id="final-rebalance"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Final Rebalance Phase</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#final-rebalance">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>final-rebalance</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect3" id="final-rebalance" data-id-title="Final Rebalance Phase"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.5.4 </span><span class="title-name">Final Rebalance Phase</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#final-rebalance">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The final rebalance phase moves all replicas to their final destination.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Rebalance the rings by running the playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-update-from-model-rebalance-rings.yml | tee /tmp/rebalance.log</pre></div><div id="id-1.6.10.9.11.6.3.1.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-update-from-model-rebalance-rings.yml | tee /tmp/rebalance.log</pre></div><div id="id-1.6.10.9.11.6.3.1.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       The output is saved for later reference.
-     </p></div></li><li class="listitem "><p>
+     </p></div></li><li class="listitem"><p>
      Review the output from the previous step. If the output for all rings is
      similar to the following, the rebalance had no effect. That is, the rings
      are balanced and no further changes are needed. In addition, the ring
@@ -1053,64 +1053,64 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
      The text <span class="bold"><strong>No partitions could be
      reassigned</strong></span> indicates that no further rebalances are necessary.
      If this is true for all the rings, you have completed the final phase.
-    </p><div id="id-1.6.10.9.11.6.3.2.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.6.10.9.11.6.3.2.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       You must have allowed enough time to elapse since the last rebalance.
       As mentioned in the above example, <code class="literal">min_part_hours [16]</code>
       means that you must wait at least 16 hours since the last rebalance. If
       not, you should wait until enough time has elapsed and repeat this
       phase.
-     </p></div></li><li class="listitem "><p>
+     </p></div></li><li class="listitem"><p>
      Run the <code class="literal">swift-reconfigure.yml</code> playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem"><p>
      Wait until replication has finished or <code class="literal">min-part-hours</code>
      has elapsed (whichever is longer). For more information see
      <a class="xref" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t" title="8.5.4. Determining When to Rebalance and Deploy a New Ring">Section 8.5.4, “Determining When to Rebalance and Deploy a New Ring”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Repeat the above steps until the ring is rebalanced.
-    </p></li></ol></div></div><div class="sect3" id="system-changes"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">System Changes that Change Existing Rings</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#system-changes">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-input_model_change_existing_rings.xml</li><li><span class="ds-label">ID: </span>system-changes</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect3" id="system-changes" data-id-title="System Changes that Change Existing Rings"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.5.5 </span><span class="title-name">System Changes that Change Existing Rings</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#system-changes">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-input_model_change_existing_rings.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    There are many system changes ranging from adding servers to replacing
    drives, which might require you to rebuild and rebalance your rings.
-  </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th><span class="bold"><strong>Actions</strong></span>
-      </th><th><span class="bold"><strong>Process</strong></span>
-      </th></tr></thead><tbody><tr><td>Adding Servers(s)</td><td>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; "><span class="bold"><strong>Actions</strong></span>
+      </th><th style="border-bottom: 1px solid ; "><span class="bold"><strong>Process</strong></span>
+      </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Adding Servers(s)</td><td style="border-bottom: 1px solid ; ">
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           If not already done, set the weight change attribute. For
           instructions, see <a class="xref" href="ops-managing-objectstorage.html#swift-weight-att" title="8.5.2. Using the Weight-Step Attributes to Prepare for Ring Changes">Section 8.5.2, “Using the Weight-Step Attributes to Prepare for Ring Changes”</a>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Add servers in phases:
-         </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
             This reduces the impact of the changes on your system.
-           </p></li><li class="listitem "><p>
+           </p></li><li class="listitem"><p>
             If your rings use Swift zones, ensure that you remove the same
             number of servers to each zone at each phase.
            </p></li></ul></div></li></ul></div>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           To add a server, see <a class="xref" href="system-maintenance.html#sec-swift-add-object-node" title="13.1.5.1.1. Adding a Swift Object Node">Section 13.1.5.1.1, “Adding a Swift Object Node”</a>.
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Incrementally change the weights and perform the final rebalance. For
           instructions, see <a class="xref" href="ops-managing-objectstorage.html#final-rebalance" title="8.5.5.4. Final Rebalance Phase">Section 8.5.5.4, “Final Rebalance Phase”</a>.
          </p></li></ul></div>
-      </td></tr><tr><td>Removing Server(s)</td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Removing Server(s)</td><td style="border-bottom: 1px solid ; ">
        <p>
         In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, when you remove servers from the input model, the
         disk drives are removed from the ring - the weight is not gradually
         reduced using the <code class="literal">weight-step</code> attribute.
        </p>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           Remove servers in phases:
-         </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
             This reduces the impact of the changes on your system.
-           </p></li><li class="listitem "><p>
+           </p></li><li class="listitem"><p>
             If your rings use Swift zones, ensure you remove the same number of
             servers for each zone at each phase.
            </p></li></ul></div></li></ul></div>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           To remove a server, see <a class="xref" href="system-maintenance.html#remove-swift-node" title="13.1.5.1.4. Removing a Swift Node">Section 13.1.5.1.4, “Removing a Swift Node”</a>.
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           To perform the final rebalance, see <a class="xref" href="ops-managing-objectstorage.html#final-rebalance" title="8.5.5.4. Final Rebalance Phase">Section 8.5.5.4, “Final Rebalance Phase”</a>.
          </p></li></ul></div>
-      </td></tr><tr><td>Replacing Disk Drive(s)</td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">Replacing Disk Drive(s)</td><td style="border-bottom: 1px solid ; ">
        <p>
         When a drive fails, replace it as soon as possible. Do not attempt to
         remove it from the ring - this creates operator overhead. Swift will
@@ -1129,54 +1129,54 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
         larger than the original drives, you do not need to rebalance the ring
         (however, the extra space on the drive will not be used).
        </p>
-      </td></tr><tr><td>Upgrading Disk Drives</td><td>
+      </td></tr><tr><td style="border-right: 1px solid ; ">Upgrading Disk Drives</td><td>
        <p>
         If the drives are different size (for example, you are upgrading your
         system), you can proceed as follows:
        </p>
-       <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       <div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           If not already done, set the weight-step attribute
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           Replace drives in phases:
-         </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
             Avoid replacing too many drives at once.
-           </p></li><li class="listitem "><p>
+           </p></li><li class="listitem"><p>
             If your rings use swift zones, upgrade a number of drives in the
             same zone at the same time - not drives in several zones.
-           </p></li><li class="listitem "><p>
+           </p></li><li class="listitem"><p>
             It is also safer to upgrade one server instead of drives in several
             servers at the same time.
-           </p></li><li class="listitem "><p>
+           </p></li><li class="listitem"><p>
             Remember that the final size of all Swift zones must be the same,
             so you may need to replace a small number of drives in one zone,
             then a small number in second zone, then return to the first zone
             and replace more drives, etc.
            </p></li></ul></div></li></ul></div>
-      </td></tr></tbody></table></div></div></div><div class="sect2" id="add-storage-policy"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding a New Swift Storage Policy</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#add-storage-policy">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-add_new_storage_policy.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-add_new_storage_policy.xml</li><li><span class="ds-label">ID: </span>add-storage-policy</li></ul></div></div></div></div><p>
+      </td></tr></tbody></table></div></section></section><section class="sect2" id="add-storage-policy" data-id-title="Adding a New Swift Storage Policy"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.6 </span><span class="title-name">Adding a New Swift Storage Policy</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#add-storage-policy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-add_new_storage_policy.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This page describes how to add an additional storage policy to an existing
   system. For an overview of storage policies, see
-  <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.11 “Designing Storage Policies”</span>.
+  <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.11 “Designing Storage Policies”</span>.
  </p><p>
   <span class="bold"><strong>To Add a Storage Policy</strong></span>
  </p><p>
   Perform the following steps to add the storage policy to an existing system.
- </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+ </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
     Log in to the Cloud Lifecycle Manager.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Select a storage policy index and ring name.
    </p><p>
     For example, if you already have object-0 and object-1 rings in your
     ring-specifications (usually in the
     <code class="literal">~/openstack/my_cloud/definition/data/swift/rings.yml</code> file),
     the next index is 2 and the ring name is object-2.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Select a user-visible name so that you can see when you examine container
     metadata or when you want to specify the storage policy used when you
     create a container. The name should be a single word (hyphen and dashes are
     allowed).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Decide if this new policy will be the default for all new containers.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Decide on other attributes such as <code class="literal">partition-power</code> and
     <code class="literal">replica-count</code> if you are using a standard replication
     ring. However, if you are using an erasure coded ring, you also need to
@@ -1184,22 +1184,22 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
     <code class="literal">ec-num-data-fragments</code>,
     <code class="literal">ec-num-parity-fragments</code>, and
     <code class="literal">ec-object-segment-size</code>. For more details on the required
-    attributes, see <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.10 “Understanding Swift Ring Specifications”</span>.
-   </p></li><li class="listitem "><p>
+    attributes, see <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 11 “Modifying Example Configurations for Object Storage using Swift”, Section 11.10 “Understanding Swift Ring Specifications”</span>.
+   </p></li><li class="listitem"><p>
     Edit the <code class="literal">ring-specifications</code> attribute (usually in the
     <code class="literal">~/openstack/my_cloud/definition/data/swift/rings.yml</code> file)
     and add the new ring specification. If this policy is to be the default
     storage policy for new containers, set the <code class="literal">default</code>
     attribute to <span class="bold"><strong>yes</strong></span>.
-   </p><div id="id-1.6.10.9.12.5.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><div class="orderedlist "><ol class="orderedlist" type="a"><li class="listitem "><p>
+   </p><div id="id-1.6.10.9.12.5.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>
        Ensure that only one object ring has the
        <code class="literal">default</code> attribute set to <code class="literal">yes</code>. If
        you set two rings as default, Swift processes will not start.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Do not specify the <code class="literal">weight-step</code> attribute for the new
        object ring. Since this is a new ring there is no need to gradually
        increase device weights.
-      </p></li></ol></div></div></li><li class="listitem "><p>
+      </p></li></ol></div></div></li><li class="listitem"><p>
     Update the appropriate disk model to use the new storage policy (for
     example, the <code class="literal">data/disks_swobj.yml</code> file). The following
     sample shows that the <span class="bold"><strong>object-2</strong></span> has been
@@ -1218,7 +1218,7 @@ ok: [padawan-ccp-c1-m1-mgmt] =&gt; {
             - object-0
             - object-1
             - <span class="bold"><strong>object-2</strong></span>
-  ...</pre></div><div id="id-1.6.10.9.12.5.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  ...</pre></div><div id="id-1.6.10.9.12.5.7.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      You must use the new object ring on at least one node that runs the
      <code class="literal">swift-object</code> service. If you skip this step and
      continue to run the <code class="literal">swift-compare-model-rings.yml</code> or
@@ -1235,16 +1235,16 @@ causes of failure are rings that are empty or do not
 have enough devices to accommodate the replica count.
 Original exception message:
 There are no devices in this ring, or all devices have been deleted
--------------------------------------------------------------------------------</pre></div></div></li><li class="listitem "><p>
+-------------------------------------------------------------------------------</pre></div></div></li><li class="listitem"><p>
     Commit your configuration:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "commit message"</pre></div></li><li class="listitem"><p>
     Run the configuration processor:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
     Create a deployment directory:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
     Validate the changes by running the
     <code class="literal">swift-compare-model-rings.yml</code> playbook:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
@@ -1253,7 +1253,7 @@ There are no devices in this ring, or all devices have been deleted
     <a class="xref" href="idg-all-operations-troubleshooting-troubleshooting-issues-xml-1.html#sec-input-swift-error" title="15.6.2.3. Interpreting Swift Input Model Validation Errors">Section 15.6.2.3, “Interpreting Swift Input Model Validation Errors”</a>. Then, re-run steps
     <span class="bold"><strong>5 - 10</strong></span>.
     
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Create the new ring (for example, object-2). Then verify the Swift service
     status and reconfigure the Swift node to use a new storage policy, by
     running these playbooks:
@@ -1261,7 +1261,7 @@ There are no devices in this ring, or all devices have been deleted
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-status.yml
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li></ol></div><p>
   After adding a storage policy, there is no need to rebalance the ring.
- </p></div><div class="sect2" id="min-part-hours"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing min-part-hours in Swift</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#min-part-hours">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_min_part_hours.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_min_part_hours.xml</li><li><span class="ds-label">ID: </span>min-part-hours</li></ul></div></div></div></div><p>
+ </p></section><section class="sect2" id="min-part-hours" data-id-title="Changing min-part-hours in Swift"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.7 </span><span class="title-name">Changing min-part-hours in Swift</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#min-part-hours">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_min_part_hours.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The <code class="literal">min-part-hours</code> parameter specifies the number of
   hours you must wait before Swift will allow a given partition to be moved.
   In other words, it constrains how often you perform ring rebalance
@@ -1271,44 +1271,44 @@ There are no devices in this ring, or all devices have been deleted
  </p><p>
   See <a class="xref" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t" title="8.5.4. Determining When to Rebalance and Deploy a New Ring">Section 8.5.4, “Determining When to Rebalance and Deploy a New Ring”</a> for more information about
   determining when replication has completed.
- </p><div class="sect3" id="idg-all-operations-objectstorage-swift-min-part-hours-xml-7"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing the min-part-hours Value</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-min-part-hours-xml-7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_min_part_hours.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_min_part_hours.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-swift-min-part-hours-xml-7</li></ul></div></div></div></div><p>
+ </p><section class="sect3" id="idg-all-operations-objectstorage-swift-min-part-hours-xml-7" data-id-title="Changing the min-part-hours Value"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.7.1 </span><span class="title-name">Changing the min-part-hours Value</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-min-part-hours-xml-7">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_min_part_hours.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    To change the <code class="literal">min-part-hours</code> value, following these
    steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit your
      <code class="literal">~/openstack/my_cloud/definition/data/swift/rings.yml</code> file
      and change the value(s) of <code class="literal">min-part-hours</code> for the rings
      you desire. The value is expressed in hours and a value of zero is not
      allowed.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Commit your configuration to the local Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update your deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Apply the changes by running this playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li></ol></div></div></div><div class="sect2" id="changing-swift-zone"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.5.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Changing Swift Zone Layout</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#changing-swift-zone">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-changing_swift_zone.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-changing_swift_zone.xml</li><li><span class="ds-label">ID: </span>changing-swift-zone</li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li></ol></div></section></section><section class="sect2" id="changing-swift-zone" data-id-title="Changing Swift Zone Layout"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.5.8 </span><span class="title-name">Changing Swift Zone Layout</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#changing-swift-zone">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-changing_swift_zone.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Before changing the number of Swift zones or the assignment of servers to
   specific zones, you must ensure that your system has sufficient storage
   available to perform the operation. Specifically, if you are adding a new
   zone, you may need additional storage. There are two reasons for this:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     You cannot simply change the Swift zone number of disk drives in the ring.
     Instead, you need to remove the server(s) from the ring and then re-add
     the server(s) with a new Swift zone number to the ring. At the point where
     the servers are removed from the ring, there must be sufficient spare
     capacity on the remaining servers to hold the data that was originally
     hosted on the removed servers.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     The total amount of storage in each Swift zone must be the same. This is
     because new data is added to each zone at the same rate. If one zone has a
     lower capacity than the other zones, once that zone becomes full, you
@@ -1318,36 +1318,36 @@ There are no devices in this ring, or all devices have been deleted
   As mentioned above, you cannot simply change the Swift zone number of disk
   drives in an existing ring. Instead, you must remove and then re-add
   servers. This is a summary of the process:
- </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+ </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
     Identify appropriate server groups that correspond to the desired Swift
     zone layout.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Remove the servers in a server group from the rings. This process may be
     protracted, either by removing servers in small batches or by using the
     weight-step attribute so that you limit the amount of replication traffic
     that happens at once.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Once all the targeted servers are removed, edit the
     <code class="literal">swift-zones</code> attribute in the ring specifications to add
     or remove a Swift zone.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Re-add the servers you had temporarily removed to the rings. Again you may
     need to do this in batches or rely on the weight-step attribute.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Continue removing and re-adding servers until you reach your final
     configuration.
-   </p></li></ol></div><div class="sect3" id="idg-all-operations-objectstorage-changing-swift-zone-xml-5"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.5.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Process for Changing Swift Zones</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-changing-swift-zone-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-changing_swift_zone.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-changing_swift_zone.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-changing-swift-zone-xml-5</li></ul></div></div></div></div><p>
+   </p></li></ol></div><section class="sect3" id="idg-all-operations-objectstorage-changing-swift-zone-xml-5" data-id-title="Process for Changing Swift Zones"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.5.8.1 </span><span class="title-name">Process for Changing Swift Zones</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-changing-swift-zone-xml-5">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-changing_swift_zone.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    This section describes the detailed process or reorganizing Swift zones. As
    a concrete example, we assume we start with a single Swift zone and the
    target is three Swift zones. The same general process would apply if you
    were reducing the number of zones as well.
   </p><p>
    The process is as follows:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Identify the appropriate server groups that represent the desired final
      state. In this example, we are going to change the Swift zone layout as
      follows:
-    </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="c1" /><col class="c2" /></colgroup><thead><tr><th>Original Layout</th><th>Target Layout</th></tr></thead><tbody><tr><td>
+    </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="c1"/><col class="c2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">Original Layout</th><th style="border-bottom: 1px solid ; ">Target Layout</th></tr></thead><tbody><tr><td style="border-right: 1px solid ; ">
 <div class="verbatim-wrap"><pre class="screen">swift-zones:
   - 1d: 1
     server-groups:
@@ -1367,10 +1367,10 @@ There are no devices in this ring, or all devices have been deleted
      The plan is to move servers from server groups <code class="literal">AZ2</code> and
      <code class="literal">AZ3</code> to a new Swift zone number. The servers in
      <code class="literal">AZ1</code> will remain in Swift zone 1.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If you have not already done so, consider setting the weight-step
      attribute as described in <a class="xref" href="ops-managing-objectstorage.html#swift-weight-att" title="8.5.2. Using the Weight-Step Attributes to Prepare for Ring Changes">Section 8.5.2, “Using the Weight-Step Attributes to Prepare for Ring Changes”</a>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Identify the servers in the <code class="literal">AZ2</code> server group. You may
      remove all servers at once or remove them in batches. If this is the first
      time you have performed a major ring change, we suggest you remove one or
@@ -1382,7 +1382,7 @@ There are no devices in this ring, or all devices have been deleted
      <a class="xref" href="system-maintenance.html#remove-swift-node" title="13.1.5.1.4. Removing a Swift Node">Section 13.1.5.1.4, “Removing a Swift Node”</a> ensuring that you
      do not remove the servers from the input model.
      
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      This process may take a number of ring rebalance cycles until the disk
      drives are removed from the ring files. Once this happens, you can edit
      the ring specifications and add Swift zone 2 as shown in this example:
@@ -1392,7 +1392,7 @@ There are no devices in this ring, or all devices have been deleted
       - AZ1
       - AZ3
   - id: 2
-       - AZ2</pre></div></li><li class="listitem "><p>
+       - AZ2</pre></div></li><li class="listitem"><p>
      The server removal process in step #3
      
      set the "remove" attribute in the
@@ -1401,28 +1401,28 @@ There are no devices in this ring, or all devices have been deleted
      <code class="literal">pass-through</code> attribute. This signals to the system that
      the servers should be used the next time we rebalance the rings (that is,
      the server should be added to the rings).
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Commit your configuration to the local Git repository
-     (<span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
+     (<span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 10 “Using Git for Configuration Management”</span>), as follows:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -m "My config or other commit message"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Use the playbook to create a deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Rebuild and deploy the Swift rings containing the re-added servers by
      running this playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-deploy.yml</pre></div></li><li class="listitem"><p>
      Wait until replication has finished. For more details, see
      <a class="xref" href="ops-managing-objectstorage.html#topic-ohx-j1t-4t" title="8.5.4. Determining When to Rebalance and Deploy a New Ring">Section 8.5.4, “Determining When to Rebalance and Deploy a New Ring”</a>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      You may need to continue to rebalance the rings. For instructions, see the
      "Final Rebalance Stage" steps at <a class="xref" href="ops-managing-objectstorage.html#change-swift-rings" title="8.5.5. Applying Input Model Changes to Existing Rings">Section 8.5.5, “Applying Input Model Changes to Existing Rings”</a>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      At this stage, the servers in server group <code class="literal">AZ2</code> are
      responsible for Swift zone 2. Repeat the process in steps #3-9 to remove
      the servers in server group <code class="literal">AZ3</code> from the rings and then
@@ -1435,10 +1435,10 @@ There are no devices in this ring, or all devices have been deleted
   - id: 2
       - AZ2
   - id: 3
-      - AZ3</pre></div></li><li class="listitem "><p>
+      - AZ3</pre></div></li><li class="listitem"><p>
      Once complete, all data should be dispersed (that is, each replica is
      located) in the Swift zones as specified in the input model.
-    </p></li></ol></div></div></div></div><div class="sect1" id="topic-el2-cqv-mv"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring your Swift System to Allow Container Sync</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-el2-cqv-mv">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_container_sync.xml</li><li><span class="ds-label">ID: </span>topic-el2-cqv-mv</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section></section></section><section class="sect1" id="topic-el2-cqv-mv" data-id-title="Configuring your Swift System to Allow Container Sync"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.6 </span><span class="title-name">Configuring your Swift System to Allow Container Sync</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#topic-el2-cqv-mv">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Swift has a feature where all the contents of a container can be mirrored to
   another container through background synchronization. Swift operators
   configure their system to allow/accept sync requests to/from other systems,
@@ -1446,7 +1446,7 @@ There are no devices in this ring, or all devices have been deleted
   synchronization key. For an overview of this feature, refer to
   <a class="link" href="http://docs.openstack.org/developer/swift/overview_container_sync.html" target="_blank">OpenStack
   Swift - Container to Container Synchronization</a>.
- </p><div class="sect2" id="idg-all-operations-objectstorage-swift-container-sync-xml-5"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Notes and limitations</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-container-sync-xml-5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_container_sync.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-swift-container-sync-xml-5</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="idg-all-operations-objectstorage-swift-container-sync-xml-5" data-id-title="Notes and limitations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.6.1 </span><span class="title-name">Notes and limitations</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-container-sync-xml-5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The container synchronization is done as a background action. When you put
    an object into the source container, it will take some time before it
    becomes visible in the destination container. Storage services will not
@@ -1472,23 +1472,23 @@ There are no devices in this ring, or all devices have been deleted
    re-create it, the destination container will eventually contain the most
    recently created object. However, if you also create and delete objects in
    the destination container, you get some subtle behaviours as follows:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      If an object is copied to the destination container and then deleted, it
      remains deleted in the destination even though there is still a copy in
      the source container. If you modify the object (replace or change its
      metadata) in the source container, it will reappear in the destination
      again.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The same applies to a replacement or metadata modification of an object in
      the destination container -- the object will remain as-is unless there is
      a replacement or modification in the source container.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If you replace or modify metadata of an object in the destination
      container and then delete it in the source container, it is
      <span class="bold"><strong>not</strong></span> deleted from the destination. This is
      because your modified object has a later timestamp than the object you
      deleted in the source.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If you create an object in the source container and before the system has
      a chance to copy it to the destination, you also create an object of the
      same name in the destination, then the object in the destination is
@@ -1505,11 +1505,11 @@ There are no devices in this ring, or all devices have been deleted
    containers, do not forget that both containers must be synchonized and that
    the container name of the object segments must be the same on both source
    and destination.
-  </p></div><div class="sect2" id="idg-all-operations-objectstorage-swift-container-sync-xml-6"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-container-sync-xml-6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_container_sync.xml</li><li><span class="ds-label">ID: </span>idg-all-operations-objectstorage-swift-container-sync-xml-6</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="idg-all-operations-objectstorage-swift-container-sync-xml-6" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.6.2 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#idg-all-operations-objectstorage-swift-container-sync-xml-6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Container to container synchronization requires that SSL certificates are
    configured on both the source and destination systems. For more information
-   on how to implement SSL, see <span class="intraxref">Book “<em class="citetitle ">Installing with Cloud Lifecycle Manager</em>”, Chapter 29 “Configuring Transport Layer Security (TLS)”</span>.
-  </p></div><div class="sect2" id="configure"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring container sync</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#configure">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_container_sync.xml</li><li><span class="ds-label">ID: </span>configure</li></ul></div></div></div></div><p>
+   on how to implement SSL, see <span class="intraxref">Book “<em class="citetitle">Installing with Cloud Lifecycle Manager</em>”, Chapter 29 “Configuring Transport Layer Security (TLS)”</span>.
+  </p></section><section class="sect2" id="configure" data-id-title="Configuring container sync"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.6.3 </span><span class="title-name">Configuring container sync</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#configure">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Container to container synchronization requires that both the source and
    destination Swift systems involved be configured to allow/accept this.  In
    the context of container to container synchronization, Swift uses the term
@@ -1522,7 +1522,7 @@ There are no devices in this ring, or all devices have been deleted
   </p><p>
    Gather information about the external/public URL used by each system, as
    follows:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      On the Cloud Lifecycle Manager of one system, get the public API endpoint of the
      system by running the following commands:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
@@ -1535,7 +1535,7 @@ There are no devices in this ring, or all devices have been deleted
      The portion that you want is the endpoint up to, but not including, the
      <code class="literal">AUTH</code> part. It is bolded in the above example,
      <code class="literal">https://10.13.120.105:8080/v1</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Repeat these steps on the other Swift system so you have both of the
      public API endpoints for them.
     </p></li></ol></div><p>
@@ -1549,27 +1549,27 @@ There are no devices in this ring, or all devices have been deleted
    For the sake of the examples, we will use the terms
    <span class="emphasis"><em>source</em></span> and <span class="emphasis"><em>destination</em></span> to notate
    the nodes doing the synchronization.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to a Swift node running the <code class="literal">swift-container</code>
      service on the source system. You can determine this by looking at the
      service list in your
      <code class="literal">~/openstack/my_cloud/info/service_info.yml</code> file for a list
      of the servers containing this service.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Verify the SSL certificates by running this command against the
      destination Swift server:
-    </p><div class="verbatim-wrap"><pre class="screen">echo | openssl s_client -connect <em class="replaceable ">PUBLIC_API_ENDPOINT</em>:8080 -CAfile /etc/ssl/certs/ca-certificates.crt</pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen">echo | openssl s_client -connect <em class="replaceable">PUBLIC_API_ENDPOINT</em>:8080 -CAfile /etc/ssl/certs/ca-certificates.crt</pre></div><p>
      If the connection was successful you should see a return code of
      <code class="literal">0 (ok)</code> similar to this:
     </p><div class="verbatim-wrap"><pre class="screen">...
 Timeout   : 300 (sec)
-Verify return code: 0 (ok)</pre></div></li><li class="listitem "><p>
+Verify return code: 0 (ok)</pre></div></li><li class="listitem"><p>
      Also verify that the source node can connect to the destination Swift
      system using this command:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl -k <em class="replaceable ">DESTINATION_IP OR HOSTNAME</em>:8080/healthcheck</pre></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>curl -k <em class="replaceable">DESTINATION_IP OR HOSTNAME</em>:8080/healthcheck</pre></div><p>
      If the connection was successful, you should see a response of
      <code class="literal">OK</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Repeat these verification steps on any system involved in your container
      synchronization setup.
     </p></li></ol></div><p>
@@ -1582,9 +1582,9 @@ Verify return code: 0 (ok)</pre></div></li><li class="listitem "><p>
    Swift - Configuring Container Sync</a>.
   </p><p>
    To configure one of the systems, follow these steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log in to the Cloud Lifecycle Manager.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Edit the
      <code class="literal">~/openstack/my_cloud/config/swift/container-sync-realms.conf.j2</code>
      file and uncomment the sync realm section.
@@ -1595,7 +1595,7 @@ Verify return code: 0 (ok)</pre></div></li><li class="listitem "><p>
 # key = realm1key
 # key2 = realm1key2
 # cluster_name1 = https://host1/v1/
-# cluster_name2 = https://host2/v1/</pre></div></li><li class="listitem "><p>
+# cluster_name2 = https://host2/v1/</pre></div></li><li class="listitem"><p>
      Add in the details for your source and destination systems. Each realm you
      define is a set of clusters that have agreed to allow container syncing
      between them. These values are case sensitive.
@@ -1605,19 +1605,19 @@ Verify return code: 0 (ok)</pre></div></li><li class="listitem "><p>
      values for the clusters must contain the prefix
      <code class="literal">cluster_</code> and will be populated with the public API
      endpoints for the systems.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Commit the changes to git:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>git add -A
-<code class="prompt user">ardana &gt; </code>git commit -a -m "Add node &lt;name&gt;"</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>git commit -a -m "Add node &lt;name&gt;"</pre></div></li><li class="listitem"><p>
      Run the configuration processor:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="listitem"><p>
      Update the deployment directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Run the Swift reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure.yml</pre></div></li><li class="listitem"><p>
      Run this command to validate that your container synchronization is
      configured:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>source ~/service.osrc
@@ -1627,10 +1627,10 @@ Verify return code: 0 (ok)</pre></div></li><li class="listitem "><p>
     </p><div class="verbatim-wrap"><pre class="screen">...
 Additional middleware: container_sync
  Options:
-  realms: {u'INTRACLUSTER': {u'clusters': {u'THISCLUSTER': {}}}}</pre></div></li><li class="listitem "><p>
+  realms: {u'INTRACLUSTER': {u'clusters': {u'THISCLUSTER': {}}}}</pre></div></li><li class="listitem"><p>
      Repeat these steps on any other Swift systems that will be involved in
      your sync realms.
-    </p></li></ol></div></div><div class="sect2" id="intra-cluster-sync"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Intra Cluster Container Sync</span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#intra-cluster-sync">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>operations-objectstorage-swift_container_sync.xml</li><li><span class="ds-label">ID: </span>intra-cluster-sync</li></ul></div></div></div></div><p>
+    </p></li></ol></div></section><section class="sect2" id="intra-cluster-sync" data-id-title="Configuring Intra Cluster Container Sync"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.6.4 </span><span class="title-name">Configuring Intra Cluster Container Sync</span></span> <a title="Permalink" class="permalink" href="ops-managing-objectstorage.html#intra-cluster-sync">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/operations-objectstorage-swift_container_sync.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    It is possible to use the swift container sync functionality to sync objects
    between containers within the same swift system. Swift is automatically
    configured to allow intra cluster container sync. Each swift PAC server will
@@ -1642,16 +1642,16 @@ Additional middleware: container_sync
 [intracluster]
 key = lQ8JjuZfO
 # key2 =
-cluster_thiscluster = http://<em class="replaceable ">SWIFT-PROXY-VIP</em>:8080/v1/</pre></div><p>
+cluster_thiscluster = http://<em class="replaceable">SWIFT-PROXY-VIP</em>:8080/v1/</pre></div><p>
    The keys defined in <code class="literal">/etc/swift/container-sync-realms.conf</code>
    are used by the container-sync daemon to determine trust. On top of this
    the containers that will be in sync will need a seperate shared key they
    both define in container metadata to establish their trust between each other.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Create two containers, for example container-src and container-dst. In
      this example we will sync one way from container-src to container-dst.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post container-src
-<code class="prompt user">ardana &gt; </code>swift post container-dst</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>swift post container-dst</pre></div></li><li class="listitem"><p>
      Determine your swift account. In the following example it is AUTH_1234
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift stat
                                  Account: AUTH_1234
@@ -1665,12 +1665,12 @@ Containers in policy "erasure-code-ring": 3
              X-Account-Project-Domain-Id: default
                              X-Timestamp: 1472651418.17025
                               X-Trans-Id: tx81122c56032548aeae8cd-0057cee40c
-                           Accept-Ranges: bytes</pre></div></li><li class="listitem "><p>
+                           Accept-Ranges: bytes</pre></div></li><li class="listitem"><p>
      Configure container-src to sync to container-dst using a key specified
-     by both containers. Replace <em class="replaceable ">KEY</em> with your key.
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post -t '//intracluster/thiscluster/AUTH_1234/container-dst' -k '<em class="replaceable ">KEY</em>' container-src</pre></div></li><li class="listitem "><p>
+     by both containers. Replace <em class="replaceable">KEY</em> with your key.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post -t '//intracluster/thiscluster/AUTH_1234/container-dst' -k '<em class="replaceable">KEY</em>' container-src</pre></div></li><li class="listitem"><p>
      Configure container-dst to accept synced objects with this key
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post -k '<em class="replaceable ">KEY</em>' container-dst</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post -k '<em class="replaceable">KEY</em>' container-dst</pre></div></li><li class="listitem"><p>
      Upload objects to container-src. Within a number of minutes the objects
      should be automatically synced to container-dst.
     </p></li></ol></div><p>
@@ -1682,7 +1682,7 @@ Containers in policy "erasure-code-ring": 3
    <a class="xref" href="ops-managing-identity.html#servicePasswords" title="4.7. Changing Service Passwords">Section 4.7, “Changing Service Passwords”</a>.
   </p><p>
    The steps to change the intracluster realm key are as follows.
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      On the Cloud Lifecycle Manager create a file called
      <code class="literal">~/openstack/change_credentials/swift_data_metadata.yml</code>
      with the contents included below. The <code class="literal">consuming-cp</code> and
@@ -1696,25 +1696,24 @@ Containers in policy "erasure-code-ring": 3
    component: swift-container
    consuming-cp: control-plane-1
    cp: control-plane-1
- version: '2.0'</pre></div></li><li class="listitem "><p>
+ version: '2.0'</pre></div></li><li class="listitem"><p>
      Run the following commands
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/openstack/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
      Reconfigure the swift credentials
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure-credentials-change.yml</pre></div></li><li class="listitem "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts swift-reconfigure-credentials-change.yml</pre></div></li><li class="listitem"><p>
      Delete
      <code class="literal">~/openstack/change_credentials/swift_data_metadata.yml</code>
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>rm ~/openstack/change_credentials/swift_data_metadata.yml</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>rm ~/openstack/change_credentials/swift_data_metadata.yml</pre></div></li><li class="listitem"><p>
      On a swift PAC server check that the intracluster realm key has been
      updated in <code class="literal">/etc/swift/container-sync-realms.conf</code>
     </p><div class="verbatim-wrap"><pre class="screen"># The intracluster realm facilitates syncing containers on this system
 [intracluster]
-key = aNlDn3kWK</pre></div></li><li class="listitem "><p>
+key = aNlDn3kWK</pre></div></li><li class="listitem"><p>
      Update any containers using the intracluster container sync to use the new
      intracluster realm key
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>swift post -k 'aNlDn3kWK' container-src
-<code class="prompt user">ardana &gt; </code>swift post -k 'aNlDn3kWK' container-dst</pre></div></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="ops-managing-networking.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 9 </span>Managing Networking</span></a><a class="nav-link" href="ops-managing-blockstorage.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 7 </span>Managing Block Storage</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+<code class="prompt user">ardana &gt; </code>swift post -k 'aNlDn3kWK' container-dst</pre></div></li></ol></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="ops-managing-blockstorage.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>Managing Block Storage</span></a> </div><div><a class="pagination-link next" href="ops-managing-networking.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 9 </span>Managing Networking</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="ops-managing-objectstorage.html#swift-healthcheck"><span class="title-number">8.1 </span><span class="title-name">Running the Swift Dispersion Report</span></a></span></li><li><span class="section"><a href="ops-managing-objectstorage.html#swift-recon"><span class="title-number">8.2 </span><span class="title-name">Gathering Swift Data</span></a></span></li><li><span class="section"><a href="ops-managing-objectstorage.html#topic-pcv-fy4-nt"><span class="title-number">8.3 </span><span class="title-name">Gathering Swift Monitoring Metrics</span></a></span></li><li><span class="section"><a href="ops-managing-objectstorage.html#topic-m13-dgp-nt"><span class="title-number">8.4 </span><span class="title-name">Using the Swift Command-line Client (CLI)</span></a></span></li><li><span class="section"><a href="ops-managing-objectstorage.html#swift-ring-management"><span class="title-number">8.5 </span><span class="title-name">Managing Swift Rings</span></a></span></li><li><span class="section"><a href="ops-managing-objectstorage.html#topic-el2-cqv-mv"><span class="title-number">8.6 </span><span class="title-name">Configuring your Swift System to Allow Container Sync</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

@@ -7,7 +7,7 @@ body { background-image: url('static/images/draft.png');
        /* I think that's just a bit too distracting for the reader... */
        /* background-attachment: fixed; */
        /* background-position: center center; */
-     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="prev" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="next" href="reference-7A5FB297419F4787832C9125D7CAC80F.html" title="Appendix B. Glossary" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Additional Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center">Appendix A. Supported Metrics</th><td width="20%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2825"></a>Additional Metrics</h2></div></div></div>
+     }</style><link rel="home" href="index.html" title="Monitoring Service Operator's Guide" /><link rel="up" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="prev" href="apa.html" title="Appendix A. Supported Metrics" /><link rel="next" href="reference-7A5FB297419F4787832C9125D7CAC80F.html" title="Appendix B. Glossary" /></head><body onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Additional Metrics</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apa.html">Prev</a> </td><th width="60%" align="center">Appendix A. Supported Metrics</th><td width="20%" align="right"> <a accesskey="n" href="reference-7A5FB297419F4787832C9125D7CAC80F.html">Next</a></td></tr></table><hr /></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2824"></a>Additional Metrics</h2></div></div></div>
  
  <p>
   In addition to the standard metrics, SUSE OpenStack Cloud Monitoring
@@ -15,7 +15,7 @@ body { background-image: url('static/images/draft.png');
   configuration on the Monitoring Node.
  </p>
 
- <h5><a id="id2828"></a>elastic.yaml</h5>
+ <h5><a id="id2827"></a>elastic.yaml</h5>
  <p>
   Elastic checks gather metrics for Elasticsearch databases, such as the Log
   Database of <span class="phrase">SUSE OpenStack Cloud Monitoring</span>. The
@@ -45,7 +45,7 @@ instances:
   username: username
   password: password</pre>
 
- <h5><a id="id2838"></a>http_check.yaml</h5>
+ <h5><a id="id2837"></a>http_check.yaml</h5>
  <p>
   HTTP endpoint checks perform up/down checks on HTTP endpoints. Based on a
   list of URLs, the agent sends an HTTP request and reports success or failure
@@ -73,7 +73,7 @@ instances:
    </p>
   </li></ul></div>
 
- <h5><a id="id2850"></a>http_metrics.yaml</h5>
+ <h5><a id="id2849"></a>http_metrics.yaml</h5>
  <p>
   HTTP metrics checks retrieve metrics from any URL that returns a JSON response.
   Based on a list of URLs, the agent can dispatch an HTTP request and parse the
@@ -84,7 +84,7 @@ instances:
   running on the Monitoring Node.
  </p>
 
- <h5><a id="id2853"></a>kafka_consumer.yaml</h5>
+ <h5><a id="id2852"></a>kafka_consumer.yaml</h5>
  <p>
   Kafka consumer checks gather metrics related to services consuming Kafka
   topics, such as the Persister or Notification Engine of <span class="phrase">SUSE
@@ -95,7 +95,7 @@ instances:
   the Monitoring Node.
  </p>
 
- <h5><a id="id2857"></a>kibana.yaml </h5>
+ <h5><a id="id2856"></a>kibana.yaml </h5>
  <p>
   Kibana checks gather various statistics such as load, heap size and usage, and
   various request performance statistics from a Kibana server. The checks
@@ -106,7 +106,7 @@ instances:
   the Monitoring Node.
   </p>
 
- <h5><a id="id2860"></a>mysql.yaml</h5>
+ <h5><a id="id2859"></a>mysql.yaml</h5>
  <p>
   MySQL checks gather various statistics such as buffer sizes and usage,
   reads/writes, network connections, etc. from a MySQL database server. MariaDB
@@ -117,7 +117,7 @@ instances:
   the Monitoring Node.
  </p>
 
- <h5><a id="id2863"></a>ntp.yaml</h5>
+ <h5><a id="id2862"></a>ntp.yaml</h5>
  <p>
   Network Time Protocol checks monitor the time offset between an NTP server and
   the machine the agent is running on.
@@ -127,7 +127,7 @@ instances:
   Node and the NTP server running on the Administration Server.
  </p>
 
- <h5><a id="id2866"></a>postfix.yaml</h5>
+ <h5><a id="id2865"></a>postfix.yaml</h5>
  <p>
   Postfix checks monitor the queue sizes (incoming, active, deferred) on a
   Postfix mail server.
@@ -137,7 +137,7 @@ instances:
   Monitoring Node.
  </p>
 
- <h5><a id="id2869"></a>zk.yaml</h5>
+ <h5><a id="id2868"></a>zk.yaml</h5>
  <p>
   ZooKeeper checks gather metrics on nodes and connections covered by
   ZooKeeper, a centralized service for maintaining configuration information,

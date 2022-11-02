@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installing ESX Computes and OVSvAPP | Installing with Cloud Lifecycle Manager | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…" />
-<meta name="description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP." />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Installing with Cloud Lifecycle Manager" />
-<meta name="chapter-title" content="Chapter 15. Installing ESX Computes and OVSvAPP" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…" />
-<meta property="og:description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP." />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…" />
-<meta name="twitter:description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP." />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="cloudinstallation.html" title="Part II. Cloud Installation" /><link rel="prev" href="MagnumOverview.html" title="Chapter 14. Magnum Overview" /><link rel="next" href="integrate-nsx-vsphere.html" title="Chapter 16. Integrating NSX for vSphere" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Installing with Cloud Lifecycle Manager | Installing ESX Computes and OVSvAPP</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…"/>
+<meta name="description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP."/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Installing with Cloud Lifecycle Manager"/>
+<meta name="chapter-title" content="Chapter 15. Installing ESX Computes and OVSvAPP"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…"/>
+<meta property="og:description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP."/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installing ESX Computes and OVSvAPP | SUSE OpenStack C…"/>
+<meta name="twitter:description" content="This section describes the installation step requirements for ESX Computes (nova-proxy) and OVSvAPP."/>
+<link rel="prev" href="MagnumOverview.html" title="Chapter 14. Magnum Overview"/><link rel="next" href="integrate-nsx-vsphere.html" title="Chapter 16. Integrating NSX for vSphere"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,61 +34,60 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Installing with Cloud Lifecycle Manager"><span class="book-icon">Installing with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-esx-ovsvapp.html">Installing ESX Computes and OVSvAPP</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Installing with Cloud Lifecycle Manager</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="install-overview.html"><span class="number"> </span><span class="name">Installation Overview</span></a></li><li class="inactive"><a href="preinstall.html"><span class="number">I </span><span class="name">Pre-Installation</span></a><ol><li class="inactive"><a href="preinstall-overview.html"><span class="number">1 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preinstall-checklist.html"><span class="number">2 </span><span class="name">Pre-Installation Checklist</span></a></li><li class="inactive"><a href="cha-depl-dep-inst.html"><span class="number">3 </span><span class="name">Installing the Cloud Lifecycle Manager server</span></a></li><li class="inactive"><a href="app-deploy-smt-lcm.html"><span class="number">4 </span><span class="name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li class="inactive"><a href="cha-depl-repo-conf-lcm.html"><span class="number">5 </span><span class="name">Software Repository Setup</span></a></li><li class="inactive"><a href="multipath-boot-from-san.html"><span class="number">6 </span><span class="name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="inactive"><a href="cloudinstallation.html"><span class="number">II </span><span class="name">Cloud Installation</span></a><ol><li class="inactive"><a href="cloudinstallation-overview.html"><span class="number">7 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="preparing-standalone.html"><span class="number">8 </span><span class="name">Preparing for Stand-Alone Deployment</span></a></li><li class="inactive"><a href="install-gui.html"><span class="number">9 </span><span class="name">Installing with the Install UI</span></a></li><li class="inactive"><a href="using-git.html"><span class="number">10 </span><span class="name">Using Git for Configuration Management</span></a></li><li class="inactive"><a href="install-standalone.html"><span class="number">11 </span><span class="name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li class="inactive"><a href="install-kvm.html"><span class="number">12 </span><span class="name">Installing Mid-scale and Entry-scale KVM</span></a></li><li class="inactive"><a href="DesignateInstallOverview.html"><span class="number">13 </span><span class="name">DNS Service Installation Overview</span></a></li><li class="inactive"><a href="MagnumOverview.html"><span class="number">14 </span><span class="name">Magnum Overview</span></a></li><li class="inactive"><a href="install-esx-ovsvapp.html"><span class="number">15 </span><span class="name">Installing ESX Computes and OVSvAPP</span></a></li><li class="inactive"><a href="integrate-nsx-vsphere.html"><span class="number">16 </span><span class="name">Integrating NSX for vSphere</span></a></li><li class="inactive"><a href="install-ironic-overview.html"><span class="number">17 </span><span class="name">Installing Baremetal (Ironic)</span></a></li><li class="inactive"><a href="install-swift.html"><span class="number">18 </span><span class="name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li class="inactive"><a href="install-sles-compute.html"><span class="number">19 </span><span class="name">Installing SLES Compute</span></a></li><li class="inactive"><a href="install-ardana-manila.html"><span class="number">20 </span><span class="name">Installing Manila and Creating Manila Shares</span></a></li><li class="inactive"><a href="install-heat-templates.html"><span class="number">21 </span><span class="name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li class="inactive"><a href="integrations.html"><span class="number">22 </span><span class="name">Integrations</span></a></li><li class="inactive"><a href="troubleshooting-installation.html"><span class="number">23 </span><span class="name">Troubleshooting the Installation</span></a></li><li class="inactive"><a href="esx-troubleshooting-installation.html"><span class="number">24 </span><span class="name">Troubleshooting the ESX</span></a></li></ol></li><li class="inactive"><a href="post-install.html"><span class="number">III </span><span class="name">Post-Installation</span></a><ol><li class="inactive"><a href="post-install-overview.html"><span class="number">25 </span><span class="name">Overview</span></a></li><li class="inactive"><a href="cloud-verification.html"><span class="number">26 </span><span class="name">Cloud Verification</span></a></li><li class="inactive"><a href="ui-verification.html"><span class="number">27 </span><span class="name">UI Verification</span></a></li><li class="inactive"><a href="install-openstack-clients.html"><span class="number">28 </span><span class="name">Installing OpenStack Clients</span></a></li><li class="inactive"><a href="tls30.html"><span class="number">29 </span><span class="name">Configuring Transport Layer Security (TLS)</span></a></li><li class="inactive"><a href="config-availability-zones.html"><span class="number">30 </span><span class="name">Configuring Availability Zones</span></a></li><li class="inactive"><a href="OctaviaInstall.html"><span class="number">31 </span><span class="name">Configuring Load Balancer as a Service</span></a></li><li class="inactive"><a href="postinstall-checklist.html"><span class="number">32 </span><span class="name">Other Common Post-Installation Tasks</span></a></li></ol></li><li class="inactive"><a href="cha-inst-trouble.html"><span class="number">33 </span><span class="name">Support</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 14. Magnum Overview" href="MagnumOverview.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 16. Integrating NSX for vSphere" href="integrate-nsx-vsphere.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Installing with Cloud Lifecycle Manager"><span class="book-icon">Installing with Cloud Lifecycle Manager</span></a><span> › </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> › </span><a class="crumb" href="install-esx-ovsvapp.html">Installing ESX Computes and OVSvAPP</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 14. Magnum Overview" href="MagnumOverview.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 16. Integrating NSX for vSphere" href="integrate-nsx-vsphere.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="install-esx-ovsvapp"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h2 class="title"><span class="number">15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing ESX Computes and OVSvAPP</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span>install-esx-ovsvapp</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="install-esx-ovsvapp.html#sec-ironic-prereqs"><span class="number">15.1 </span><span class="name">Before You Start</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#sec-ironic-setup-deployer"><span class="number">15.2 </span><span class="name">Setting Up the Cloud Lifecycle Manager</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#esxi-overview"><span class="number">15.3 </span><span class="name">Overview of ESXi and OVSvApp</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.6"><span class="number">15.4 </span><span class="name">VM Appliances Used in OVSvApp Implementation</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.7"><span class="number">15.5 </span><span class="name">Prerequisites for Installing ESXi and Managing with vCenter</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.8"><span class="number">15.6 </span><span class="name">ESXi/vCenter System Requirements</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#create-esx-cluster"><span class="number">15.7 </span><span class="name">Creating an ESX Cluster</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#config-dvs-pg"><span class="number">15.8 </span><span class="name">Configuring the Required Distributed vSwitches and Port Groups</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#create-vapp-template"><span class="number">15.9 </span><span class="name">Create a SUSE-based Virtual Appliance Template in vCenter</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.12"><span class="number">15.10 </span><span class="name">ESX Network Model Requirements</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#create-vms-vapp-template"><span class="number">15.11 </span><span class="name">Creating and Configuring Virtual Machines Based on Virtual Appliance
- Template</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#collect-vcenter-credentials"><span class="number">15.12 </span><span class="name">Collect vCenter Credentials and UUID</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#edit-input-models"><span class="number">15.13 </span><span class="name">Edit Input Models to Add and Configure Virtual Appliances</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#run-config-processor"><span class="number">15.14 </span><span class="name">Running the Configuration Processor With Applied Changes</span></a></span></dt><dt><span class="section"><a href="install-esx-ovsvapp.html#test-esx-environment"><span class="number">15.15 </span><span class="name">Test the ESX-OVSvApp Environment</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Installing with Cloud Lifecycle Manager</a><span> / </span><a class="crumb" href="cloudinstallation.html">Cloud Installation</a><span> / </span><a class="crumb" href="install-esx-ovsvapp.html">Installing ESX Computes and OVSvAPP</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title"><em class="citetitle">Installing with Cloud Lifecycle Manager</em></div><ol><li><a href="install-overview.html" class=" "><span class="title-number"> </span><span class="title-name">Installation Overview</span></a></li><li><a href="preinstall.html" class="has-children "><span class="title-number">I </span><span class="title-name">Pre-Installation</span></a><ol><li><a href="preinstall-overview.html" class=" "><span class="title-number">1 </span><span class="title-name">Overview</span></a></li><li><a href="preinstall-checklist.html" class=" "><span class="title-number">2 </span><span class="title-name">Pre-Installation Checklist</span></a></li><li><a href="cha-depl-dep-inst.html" class=" "><span class="title-number">3 </span><span class="title-name">Installing the Cloud Lifecycle Manager server</span></a></li><li><a href="app-deploy-smt-lcm.html" class=" "><span class="title-number">4 </span><span class="title-name">Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</span></a></li><li><a href="cha-depl-repo-conf-lcm.html" class=" "><span class="title-number">5 </span><span class="title-name">Software Repository Setup</span></a></li><li><a href="multipath-boot-from-san.html" class=" "><span class="title-number">6 </span><span class="title-name">Boot from SAN and Multipath Configuration</span></a></li></ol></li><li class="active"><a href="cloudinstallation.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Cloud Installation</span></a><ol><li><a href="cloudinstallation-overview.html" class=" "><span class="title-number">7 </span><span class="title-name">Overview</span></a></li><li><a href="preparing-standalone.html" class=" "><span class="title-number">8 </span><span class="title-name">Preparing for Stand-Alone Deployment</span></a></li><li><a href="install-gui.html" class=" "><span class="title-number">9 </span><span class="title-name">Installing with the Install UI</span></a></li><li><a href="using-git.html" class=" "><span class="title-number">10 </span><span class="title-name">Using Git for Configuration Management</span></a></li><li><a href="install-standalone.html" class=" "><span class="title-number">11 </span><span class="title-name">Installing a Stand-Alone Cloud Lifecycle Manager</span></a></li><li><a href="install-kvm.html" class=" "><span class="title-number">12 </span><span class="title-name">Installing Mid-scale and Entry-scale KVM</span></a></li><li><a href="DesignateInstallOverview.html" class=" "><span class="title-number">13 </span><span class="title-name">DNS Service Installation Overview</span></a></li><li><a href="MagnumOverview.html" class=" "><span class="title-number">14 </span><span class="title-name">Magnum Overview</span></a></li><li><a href="install-esx-ovsvapp.html" class=" you-are-here"><span class="title-number">15 </span><span class="title-name">Installing ESX Computes and OVSvAPP</span></a></li><li><a href="integrate-nsx-vsphere.html" class=" "><span class="title-number">16 </span><span class="title-name">Integrating NSX for vSphere</span></a></li><li><a href="install-ironic-overview.html" class=" "><span class="title-number">17 </span><span class="title-name">Installing Baremetal (Ironic)</span></a></li><li><a href="install-swift.html" class=" "><span class="title-number">18 </span><span class="title-name">Installation for <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> Entry-scale Cloud with Swift Only</span></a></li><li><a href="install-sles-compute.html" class=" "><span class="title-number">19 </span><span class="title-name">Installing SLES Compute</span></a></li><li><a href="install-ardana-manila.html" class=" "><span class="title-number">20 </span><span class="title-name">Installing Manila and Creating Manila Shares</span></a></li><li><a href="install-heat-templates.html" class=" "><span class="title-number">21 </span><span class="title-name">Installing SUSE CaaS Platform Heat Templates</span></a></li><li><a href="integrations.html" class=" "><span class="title-number">22 </span><span class="title-name">Integrations</span></a></li><li><a href="troubleshooting-installation.html" class=" "><span class="title-number">23 </span><span class="title-name">Troubleshooting the Installation</span></a></li><li><a href="esx-troubleshooting-installation.html" class=" "><span class="title-number">24 </span><span class="title-name">Troubleshooting the ESX</span></a></li></ol></li><li><a href="post-install.html" class="has-children "><span class="title-number">III </span><span class="title-name">Post-Installation</span></a><ol><li><a href="post-install-overview.html" class=" "><span class="title-number">25 </span><span class="title-name">Overview</span></a></li><li><a href="cloud-verification.html" class=" "><span class="title-number">26 </span><span class="title-name">Cloud Verification</span></a></li><li><a href="ui-verification.html" class=" "><span class="title-number">27 </span><span class="title-name">UI Verification</span></a></li><li><a href="install-openstack-clients.html" class=" "><span class="title-number">28 </span><span class="title-name">Installing OpenStack Clients</span></a></li><li><a href="tls30.html" class=" "><span class="title-number">29 </span><span class="title-name">Configuring Transport Layer Security (TLS)</span></a></li><li><a href="config-availability-zones.html" class=" "><span class="title-number">30 </span><span class="title-name">Configuring Availability Zones</span></a></li><li><a href="OctaviaInstall.html" class=" "><span class="title-number">31 </span><span class="title-name">Configuring Load Balancer as a Service</span></a></li><li><a href="postinstall-checklist.html" class=" "><span class="title-number">32 </span><span class="title-name">Other Common Post-Installation Tasks</span></a></li></ol></li><li><a href="cha-inst-trouble.html" class=" "><span class="title-number">33 </span><span class="title-name">Support</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="install-esx-ovsvapp" data-id-title="Installing ESX Computes and OVSvAPP"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">15 </span><span class="title-name">Installing ESX Computes and OVSvAPP</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   This section describes the installation step requirements for ESX
   Computes (nova-proxy) and OVSvAPP.
- </p><div class="sect1" id="sec-ironic-prereqs"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Before You Start</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#sec-ironic-prereqs">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span>sec-ironic-prereqs</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><section class="sect1" id="sec-ironic-prereqs" data-id-title="Before You Start"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.1 </span><span class="title-name">Before You Start</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#sec-ironic-prereqs">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Review the <a class="xref" href="preinstall-checklist.html" title="Chapter 2. Pre-Installation Checklist">Chapter 2, <em>Pre-Installation Checklist</em></a> about recommended
      pre-installation tasks.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Prepare the Cloud Lifecycle Manager node. The Cloud Lifecycle Manager must be accessible either directly or via
      <code class="literal">ssh</code>, and have SUSE Linux Enterprise Server 12 SP3 installed. All nodes must
      be accessible to the Cloud Lifecycle Manager. If the nodes do not have direct access to
      online Cloud subscription channels, the Cloud Lifecycle Manager node will need to host the
      Cloud repositories.
-    </p><ol type="a" class="substeps "><li class="step "><p>
+    </p><ol type="a" class="substeps"><li class="step"><p>
        If you followed the installation instructions for Cloud Lifecycle Manager server (see <a class="xref" href="cha-depl-dep-inst.html" title="Chapter 3. Installing the Cloud Lifecycle Manager server">Chapter 3, <em>Installing the Cloud Lifecycle Manager server</em></a>), <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> software should already be
        installed. Double-check whether SUSE Linux Enterprise and <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> are properly
-       registered at the SUSE Customer Center by starting YaST and running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
+       registered at the SUSE Customer Center by starting YaST and running <span class="guimenu">Software</span> › <span class="guimenu">Product
        Registration</span>.
       </p><p>
        If you have not yet installed <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>, do so by starting YaST and
-       running <span class="guimenu ">Software</span> › <span class="guimenu ">Product
-       Registration</span> › <span class="guimenu ">Select
-       Extensions</span>. Choose <span class="guimenu "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span>
+       running <span class="guimenu">Software</span> › <span class="guimenu">Product
+       Registration</span> › <span class="guimenu">Select
+       Extensions</span>. Choose <span class="guimenu"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span>
        and follow the on-screen instructions. Make sure to register
        <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> during the installation process and to install the software
        pattern <code class="literal">patterns-cloud-ardana</code>.
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo zypper -n in patterns-cloud-ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo zypper -n in patterns-cloud-ardana</pre></div></li><li class="step"><p>
        Ensure the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> media repositories and updates repositories are
        made available to all nodes in your deployment. This can be accomplished
        either by configuring the Cloud Lifecycle Manager server as an SMT mirror as described in
        <a class="xref" href="app-deploy-smt-lcm.html" title="Chapter 4. Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)">Chapter 4, <em>Installing and Setting Up an SMT Server on the Cloud Lifecycle Manager server (Optional)</em></a> or by syncing or mounting the
        Cloud and updates repositories to the Cloud Lifecycle Manager server as described in <a class="xref" href="cha-depl-repo-conf-lcm.html" title="Chapter 5. Software Repository Setup">Chapter 5, <em>Software Repository Setup</em></a>.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Configure passwordless <code class="command">sudo</code> for the user created when
        setting up the node (as described in <a class="xref" href="cha-depl-dep-inst.html#sec-depl-adm-inst-user" title="3.4. Creating a User">Section 3.4, “Creating a User”</a>). Note that this is
        <span class="emphasis"><em>not</em></span> the user <code class="systemitem">ardana</code> that will be used later in this
        procedure. In the following we assume you named the user <code class="systemitem">cloud</code>. Run the command
        <code class="command">visudo</code> as user <code class="systemitem">root</code> and add the following line
        to the end of the file:
-      </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable ">CLOUD</em> ALL = (root) NOPASSWD:ALL</pre></div><p>
-       Make sure to replace <em class="replaceable ">CLOUD</em> with your user name
+      </p><div class="verbatim-wrap"><pre class="screen"><em class="replaceable">CLOUD</em> ALL = (root) NOPASSWD:ALL</pre></div><p>
+       Make sure to replace <em class="replaceable">CLOUD</em> with your user name
        choice.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Set the password for the user
        <code class="systemitem">ardana</code>:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step"><p>
        Become the user <code class="systemitem">ardana</code>:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>su - ardana</pre></div></li><li class="step "><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>su - ardana</pre></div></li><li class="step"><p>
        Place a copy of the SUSE Linux Enterprise Server 12 SP3 <code class="filename">.iso</code> in the
        <code class="systemitem">ardana</code> home directory,
        <code class="filename">var/lib/ardana</code>, and rename it to
        <code class="filename">sles12sp3.iso</code>.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Install the templates, examples, and working model directories:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>/usr/bin/ardana-init</pre></div></li></ol></li></ol></div></div></div><div class="sect1" id="sec-ironic-setup-deployer"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Up the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#sec-ironic-setup-deployer">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span>sec-ironic-setup-deployer</li></ul></div></div></div></div><div class="sect2" id="id-1.4.5.10.4.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.4.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>/usr/bin/ardana-init</pre></div></li></ol></li></ol></div></div></section><section class="sect1" id="sec-ironic-setup-deployer" data-id-title="Setting Up the Cloud Lifecycle Manager"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.2 </span><span class="title-name">Setting Up the Cloud Lifecycle Manager</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#sec-ironic-setup-deployer">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="id-1.4.5.10.4.2" data-id-title="Installing the Cloud Lifecycle Manager"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.2.1 </span><span class="title-name">Installing the Cloud Lifecycle Manager</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.4.2">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Running the <code class="command">ARDANA_INIT_AUTO=1</code> command is optional to
     avoid stopping for authentication at any step. You can also run
     <code class="command">ardana-init</code>to launch the Cloud Lifecycle Manager.  You will be prompted to
@@ -105,48 +104,48 @@ hljs.configure({
     deploy your cloud. You can set up the Cloud Lifecycle Manager on a dedicated node or you do
     so on your first controller node. The default choice is to use the first
     controller node as the Cloud Lifecycle Manager.
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Download the product from:
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         <a class="link" href="https://scc.suse.com/" target="_blank">SUSE Customer Center</a>
-       </p></li></ol></li><li class="step "><p>
+       </p></li></ol></li><li class="step"><p>
       Boot your Cloud Lifecycle Manager from the SLES ISO contained in the download.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Enter <code class="literal">install</code> (all lower-case, exactly as spelled out
       here) to start installation.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Select the language. Note that only the English language selection is
       currently supported.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Select the location.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Select the keyboard layout.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Select the primary network interface, if prompted:
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Assign IP address, subnet mask, and default gateway
-       </p></li></ol></li><li class="step "><p>
+       </p></li></ol></li><li class="step"><p>
       Create new account:
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Enter a username.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Enter a password.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Enter time zone.
        </p></li></ol></li></ol></div></div><p>
     Once the initial installation is finished, complete the Cloud Lifecycle Manager setup with
     these steps:
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Ensure your Cloud Lifecycle Manager has a valid DNS nameserver specified in
       <code class="literal">/etc/resolv.conf</code>.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Set the environment variable LC_ALL:
-     </p><div class="verbatim-wrap"><pre class="screen">export LC_ALL=C</pre></div><div id="id-1.4.5.10.4.2.8.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+     </p><div class="verbatim-wrap"><pre class="screen">export LC_ALL=C</pre></div><div id="id-1.4.5.10.4.2.8.2.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
        This can be added to <code class="filename">~/.bashrc</code> or
        <code class="filename">/etc/bash.bashrc</code>.
       </p></div></li></ol></div></div><p>
     The node should now have a working SLES setup.
-   </p></div></div><div class="sect1" id="esxi-overview"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview of ESXi and OVSvApp</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#esxi-overview">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span>esxi-overview</li></ul></div></div></div></div><p>
+   </p></section></section><section class="sect1" id="esxi-overview" data-id-title="Overview of ESXi and OVSvApp"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.3 </span><span class="title-name">Overview of ESXi and OVSvApp</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#esxi-overview">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    ESXi is a hypervisor developed by VMware for deploying and serving virtual
    computers. OVSvApp is a service VM that allows for leveraging advanced
    networking capabilities that OpenStack Neutron provides. As a result,
@@ -160,26 +159,26 @@ hljs.configure({
    wiki</a>.
   </p><p>
    The diagram below illustrates the OVSvApp architecture.
-  </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/OVSvApp-Architecture.png" target="_blank"><img src="images/OVSvApp-Architecture.png" width="" /></a></div></div></div><div class="sect1" id="id-1.4.5.10.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">VM Appliances Used in OVSvApp Implementation</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><div class="informalfigure"><div class="mediaobject"><a href="images/OVSvApp-Architecture.png"><img src="images/OVSvApp-Architecture.png" alt="Image" title="Image"/></a></div></div></section><section class="sect1" id="id-1.4.5.10.6" data-id-title="VM Appliances Used in OVSvApp Implementation"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.4 </span><span class="title-name">VM Appliances Used in OVSvApp Implementation</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The default configuration deployed with the Cloud Lifecycle Manager for VMware ESX hosts uses
    service appliances that run as VMs on the VMware hypervisor. There is one
    OVSvApp VM per VMware ESX host and one nova Compute Proxy per VMware cluster
    or VMware vCenter Server. Instructions for how to create a template for the
    Nova Compute Proxy or ovsvapp can be found at 
    <a class="xref" href="install-esx-ovsvapp.html#create-vapp-template" title="15.9. Create a SUSE-based Virtual Appliance Template in vCenter">Section 15.9, “Create a SUSE-based Virtual Appliance Template in vCenter”</a>.
-  </p><div class="sect2" id="id-1.4.5.10.6.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OVSvApp VM</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><section class="sect2" id="id-1.4.5.10.6.3" data-id-title="OVSvApp VM"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.4.1 </span><span class="title-name">OVSvApp VM</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    OVSvApp implementation is comprised of:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      a service VM called OVSvApp VM hosted on each ESXi hypervisor within a
      cluster, and
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      two vSphere Distributed vSwitches (DVS).
     </p></li></ul></div><p>
    OVSvApp VMs run SUSE Linux Enterprise and have Open vSwitch installed with an agent called
    <code class="literal">OVSvApp agent</code>. The OVSvApp VM routes network traffic to
    the various VMware tenants and cooperates with the <span class="productname">OpenStack</span> deployment to
    configure the appropriate port and network settings for VMware tenants.
-  </p></div><div class="sect2" id="id-1.4.5.10.6.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Nova Compute Proxy VM</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.4.5.10.6.4" data-id-title="Nova Compute Proxy VM"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.4.2 </span><span class="title-name">Nova Compute Proxy VM</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.6.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    The Nova compute proxy is the <code class="literal">nova-compute</code> service
    for VMware ESX. Only one instance of this service is required for each ESX
    cluster that is deployed and is communicating with a single VMware vCenter
@@ -190,46 +189,46 @@ hljs.configure({
    <code class="literal">nova-compute</code> VM is the OVSvApp nova VCDriver that talks
    to the VMware vCenter server to perform VM operations such as VM creation
    and deletion.
-  </p></div></div><div class="sect1" id="id-1.4.5.10.7"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Prerequisites for Installing ESXi and Managing with vCenter</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section></section><section class="sect1" id="id-1.4.5.10.7" data-id-title="Prerequisites for Installing ESXi and Managing with vCenter"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.5 </span><span class="title-name">Prerequisites for Installing ESXi and Managing with vCenter</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.7">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    ESX/vCenter integration is not fully automatic. vCenter administrators are
    responsible for taking steps to ensure secure operation.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      The VMware administrator is responsible for administration of the vCenter
      servers and the ESX nodes using the VMware administration tools. These
      responsibilities include:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        Installing and configuring vCenter server
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Installing and configuring ESX server and ESX cluster
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Installing and configuring shared datastores
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        Establishing network connectivity between the ESX network and the Cloud Lifecycle Manager
        <span class="productname">OpenStack</span> management network
-      </p></li></ul></div></li><li class="listitem "><p>
+      </p></li></ul></div></li><li class="listitem"><p>
      The VMware administration staff is responsible for the review of vCenter
      logs. These logs are not automatically included in Cloud Lifecycle Manager <span class="productname">OpenStack</span> centralized logging.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The VMware administrator is responsible for administration of the vCenter
      servers and the ESX nodes using the VMware administration tools.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Logging levels for vCenter should be set appropriately to prevent logging
      of the password for the Cloud Lifecycle Manager <span class="productname">OpenStack</span> message queue.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The vCenter cluster and ESX Compute nodes must be appropriately backed up.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Backup procedures for vCenter should ensure that the file containing the
      Cloud Lifecycle Manager <span class="productname">OpenStack</span> configuration as part of Nova and Cinder volume
      services is backed up and the backups are protected appropriately.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Since the file containing the Cloud Lifecycle Manager <span class="productname">OpenStack</span> message queue password could
      appear in the swap area of a vCenter server, appropriate controls should
      be applied to the vCenter cluster to prevent discovery of the password via
      snooping of the swap area or memory dumps.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      It is recommended to have a common shared storage for all the ESXi hosts
      in a particular cluster.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Ensure that you have enabled HA (High Availability) and DRS (Distributed
      Resource Scheduler) settings in a cluster configuration before running the
      installation. DRS and HA are disabled only for OVSvApp. This is done so that it
@@ -237,99 +236,99 @@ hljs.configure({
      installation then you will not be able to disable it only for OVSvApp. As
      a result DRS or HA could migrate OVSvApp to a different host, which would create a
      network loop.
-    </p></li></ul></div><div id="id-1.4.5.10.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p></li></ul></div><div id="id-1.4.5.10.7.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
    No two clusters should have the same name across datacenters in a given
    vCenter.
-  </p></div></div><div class="sect1" id="id-1.4.5.10.8"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ESXi/vCenter System Requirements</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></div></section><section class="sect1" id="id-1.4.5.10.8" data-id-title="ESXi/vCenter System Requirements"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.6 </span><span class="title-name">ESXi/vCenter System Requirements</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For information about recommended hardware minimums, consult
-   <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 3 “Recommended Hardware Minimums for the Example Configurations”, Section 3.2 “Recommended Hardware Minimums for an Entry-scale ESX KVM Model”</span>.
-  </p></div><div class="sect1" id="create-esx-cluster"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating an ESX Cluster</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esx-cluster">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esx-cluster.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-esx-cluster.xml</li><li><span class="ds-label">ID: </span>create-esx-cluster</li></ul></div></div></div></div><p>
+   <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 3 “Recommended Hardware Minimums for the Example Configurations”, Section 3.2 “Recommended Hardware Minimums for an Entry-scale ESX KVM Model”</span>.
+  </p></section><section class="sect1" id="create-esx-cluster" data-id-title="Creating an ESX Cluster"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.7 </span><span class="title-name">Creating an ESX Cluster</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esx-cluster">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esx-cluster.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Steps to create an ESX Cluster:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Download the ESXi Hypervisor and vCenter Appliance from the VMware
      website.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Install the ESXi Hypervisor.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Configure the Management Interface.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Enable the CLI and Shell access.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Set the password and login credentials.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Extract the vCenter Appliance files.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      The vCenter Appliance offers two ways to install the vCenter. The
      directory <code class="filename">vcsa-ui-installer</code> contains the graphical
      installer. The <code class="filename">vcsa-cli-installer</code> directory contains
      the command line installer. The remaining steps demonstrate using the
      <code class="filename">vcsa-ui-installer</code> installer.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      In the <code class="filename">vcsa-ui-installer</code>, click the
-     <span class="guimenu ">installer</span> to start installing the vCenter Appliance in
+     <span class="guimenu">installer</span> to start installing the vCenter Appliance in
      the ESXi Hypervisor.
-    </p></li><li class="step "><p>
-     Note the <em class="replaceable ">MANAGEMENT IP</em>, <em class="replaceable ">USER
-     ID</em>, and <em class="replaceable ">PASSWORD</em> of the ESXi
+    </p></li><li class="step"><p>
+     Note the <em class="replaceable">MANAGEMENT IP</em>, <em class="replaceable">USER
+     ID</em>, and <em class="replaceable">PASSWORD</em> of the ESXi
      Hypervisor.
-    </p></li><li class="step "><p>
-     Assign an <em class="replaceable ">IP ADDRESS</em>, <em class="replaceable ">USER
-     ID</em>, and <em class="replaceable ">PASSWORD</em> to the vCenter
+    </p></li><li class="step"><p>
+     Assign an <em class="replaceable">IP ADDRESS</em>, <em class="replaceable">USER
+     ID</em>, and <em class="replaceable">PASSWORD</em> to the vCenter
      server.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Complete the installation.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      When the installation is finished, point your Web browser to the
-     <em class="replaceable ">IP ADDRESS</em> of the vCenter. Connect to the
+     <em class="replaceable">IP ADDRESS</em> of the vCenter. Connect to the
      vCenter by clicking on link in the browser.
-    </p></li><li class="step "><p>
-     Enter the information for the vCenter you just created: <em class="replaceable ">IP
-     ADDRESS</em>, <em class="replaceable ">USER ID</em>, and
-     <em class="replaceable ">PASSWORD</em>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
+     Enter the information for the vCenter you just created: <em class="replaceable">IP
+     ADDRESS</em>, <em class="replaceable">USER ID</em>, and
+     <em class="replaceable">PASSWORD</em>.
+    </p></li><li class="step"><p>
      When connected, configure the following:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <code class="literal">Datacenter</code>
-      </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
          Go to <code class="literal">Home</code> &gt; <code class="literal">Inventory</code> &gt;
          <code class="literal">Hosts and Clusters</code>
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
          Select File &gt; New &gt; Datacenter
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
          Rename the datacenter
-        </p></li></ol></div></div></li><li class="listitem "><p>
+        </p></li></ol></div></div></li><li class="listitem"><p>
        Cluster
-      </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
          Right-click a datacenter or directory in the vSphere Client and select
-         <span class="guimenu ">New Cluster</span>.
-        </p></li><li class="step "><p>
+         <span class="guimenu">New Cluster</span>.
+        </p></li><li class="step"><p>
          Enter a name for the cluster.
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
          Choose cluster features.
-        </p></li></ol></div></div></li><li class="listitem "><p>
+        </p></li></ol></div></div></li><li class="listitem"><p>
        Add a Host to Cluster
-      </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
          In the vSphere Web Client, navigate to a datacenter, cluster, or
          directory within a datacenter.
-        </p></li><li class="step "><p>
+        </p></li><li class="step"><p>
          Right-click the datacenter, cluster, or directory and select
-         <span class="guimenu ">Add Host</span>.
-        </p></li><li class="step "><p>
+         <span class="guimenu">Add Host</span>.
+        </p></li><li class="step"><p>
           Type the IP address or the name of the host and click
-          <span class="guimenu ">Next</span>.
-         </p></li><li class="step "><p>
-          Enter the administrator credentials and click <span class="guimenu ">Next</span>.
-         </p></li><li class="step "><p>
-          Review the host summary and click <span class="guimenu ">Next</span>.
-         </p></li><li class="step "><p>
+          <span class="guimenu">Next</span>.
+         </p></li><li class="step"><p>
+          Enter the administrator credentials and click <span class="guimenu">Next</span>.
+         </p></li><li class="step"><p>
+          Review the host summary and click <span class="guimenu">Next</span>.
+         </p></li><li class="step"><p>
           Assign a license key to the host.
-         </p></li></ol></div></div></li></ul></div></li></ol></div></div></div><div class="sect1" id="config-dvs-pg"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the Required Distributed vSwitches and Port Groups</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-dvs-pg">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-dvs-pg.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>config-dvs-pg.xml</li><li><span class="ds-label">ID: </span>config-dvs-pg</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+         </p></li></ol></div></div></li></ul></div></li></ol></div></div></section><section class="sect1" id="config-dvs-pg" data-id-title="Configuring the Required Distributed vSwitches and Port Groups"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.8 </span><span class="title-name">Configuring the Required Distributed vSwitches and Port Groups</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-dvs-pg">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-dvs-pg.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <a class="xref" href="install-esx-ovsvapp.html#create-esxi-trunk-dvs" title="15.8.1. Creating ESXi TRUNK DVS and Required Portgroup">Section 15.8.1, “Creating ESXi TRUNK DVS and Required Portgroup”</a>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <a class="xref" href="install-esx-ovsvapp.html#create-esxi-mgmt-dvs" title="15.8.2. Creating ESXi MGMT DVS and Required Portgroup">Section 15.8.2, “Creating ESXi MGMT DVS and Required Portgroup”</a>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <a class="xref" href="install-esx-ovsvapp.html#config-ansible-playbook" title="15.8.3. Configuring OVSvApp Network Resources Using Ansible-Playbook">Section 15.8.3, “Configuring OVSvApp Network Resources Using Ansible-Playbook”</a>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <a class="xref" href="install-esx-ovsvapp.html#config-ovsvapp-python-vsphere" title="15.8.4. Configuring OVSVAPP Using Python-Networking-vSphere">Section 15.8.4, “Configuring OVSVAPP Using Python-Networking-vSphere”</a>
    </p></li></ul></div><p>
   The required Distributed vSwitches (DVS) and port groups can be created by
@@ -356,10 +355,10 @@ hljs.configure({
  </p><p>
   The diagram below illustrates a typical configuration that uses OVSvApp and
   Distributed vSwitches.
- </p><div class="informalfigure"><div class="mediaobject"><a xmlns="" href="images/ovsapp-dvs-esx.png" target="_blank"><img src="images/ovsapp-dvs-esx.png" width="" /></a></div></div><p>
+ </p><div class="informalfigure"><div class="mediaobject"><a href="images/ovsapp-dvs-esx.png"><img src="images/ovsapp-dvs-esx.png" alt="Image" title="Image"/></a></div></div><p>
   Detailed instructions are shown in the following sections for four example
   installations and two command line procedures.
- </p><div class="sect2" id="create-esxi-trunk-dvs"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating ESXi TRUNK DVS and Required Portgroup</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esxi-trunk-dvs">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-trunk-dvs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-esxi-trunk-dvs.xml</li><li><span class="ds-label">ID: </span>create-esxi-trunk-dvs</li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="create-esxi-trunk-dvs" data-id-title="Creating ESXi TRUNK DVS and Required Portgroup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.8.1 </span><span class="title-name">Creating ESXi TRUNK DVS and Required Portgroup</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esxi-trunk-dvs">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-trunk-dvs.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     The process of creating an ESXi Trunk Distributed vSwitch (DVS) consists of three
     steps: create a switch, add host and physical adapters, and add a port
     group. Use the following detailed instructions to create a trunk DVS and a
@@ -367,227 +366,227 @@ hljs.configure({
     (GUI). The GUI menu options may vary slightly depending on the specific version
     of vSphere installed. Command line interface (CLI) instructions are below the GUI
     instructions.
-   </p><div class="sect3" id="id-1.4.5.10.10.10.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">15.8.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating ESXi Trunk DVS with vSphere Web Client</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.10.10.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-trunk-dvs.xml" title="Edit the source file for this section">Edit source</a></h4><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-esxi-trunk-dvs.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><section class="sect3" id="id-1.4.5.10.10.10.3" data-id-title="Creating ESXi Trunk DVS with vSphere Web Client"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">15.8.1.1 </span><span class="title-name">Creating ESXi Trunk DVS with vSphere Web Client</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.10.10.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-trunk-dvs.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Create the switch.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Using vSphere webclient, connect to the vCenter server.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Hosts and cluster</span>, right-click on the
-        appropriate datacenter. Select <span class="guimenu ">Distributed Switch</span>
-        &gt; <span class="guimenu ">New Distributed Switch</span>.
-       </p></li><li class="step "><p>
-        Name the switch <code class="literal">TRUNK</code>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Select version 6.0.0 or larger. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Edit settings</span>, lower the number of uplink
-        ports to the lowest possible number (0 or 1).  Uncheck <span class="guimenu ">Create a
-        default port group</span>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify the settings are
-        correct and click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Hosts and cluster</span>, right-click on the
+        appropriate datacenter. Select <span class="guimenu">Distributed Switch</span>
+        &gt; <span class="guimenu">New Distributed Switch</span>.
+       </p></li><li class="step"><p>
+        Name the switch <code class="literal">TRUNK</code>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Select version 6.0.0 or larger. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Edit settings</span>, lower the number of uplink
+        ports to the lowest possible number (0 or 1).  Uncheck <span class="guimenu">Create a
+        default port group</span>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify the settings are
+        correct and click <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add host and physical adapters.
-     </p><ol type="a" class="substeps "><li class="step "><p>
-       Under <span class="guimenu ">Networking</span> find the DVS named
+     </p><ol type="a" class="substeps"><li class="step"><p>
+       Under <span class="guimenu">Networking</span> find the DVS named
        <code class="literal">TRUNK</code> you just created. Right-click on it and select
-       <span class="guimenu ">Manage hosts</span>.
-      </p></li><li class="step "><p>
-        Under <span class="guimenu ">Select task</span>, select <span class="guimenu ">Add
-        hosts</span>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Click <span class="guimenu ">New hosts</span>.
-       </p></li><li class="step "><p>
+       <span class="guimenu">Manage hosts</span>.
+      </p></li><li class="step"><p>
+        Under <span class="guimenu">Select task</span>, select <span class="guimenu">Add
+        hosts</span>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Click <span class="guimenu">New hosts</span>.
+       </p></li><li class="step"><p>
         Select the <code class="literal">CURRENT ESXI HOST</code> and select
-        <span class="guimenu ">OK</span>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Select network adapter tasks</span>, select
-        <span class="guimenu ">Manage advanced host settings</span> and
+        <span class="guimenu">OK</span>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Select network adapter tasks</span>, select
+        <span class="guimenu">Manage advanced host settings</span> and
         <span class="bold"><strong>UNCHECK</strong></span> all other boxes. Click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Advanced host settings</span>, check that the <code class="literal">Maximum
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Advanced host settings</span>, check that the <code class="literal">Maximum
         Number of Ports</code> reads <code class="literal">(auto)</code>. There
-        is nothing else to do. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify that one and only
-        one host is being added and click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+        is nothing else to do. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify that one and only
+        one host is being added and click <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add port group.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Right-click on the TRUNK DVS that was just created (or modified) and
-        select <span class="guimenu ">Distributed Port Group</span> &gt; <span class="guimenu ">New
+        select <span class="guimenu">Distributed Port Group</span> &gt; <span class="guimenu">New
         Distributed Port Group</span>.
-       </p></li><li class="step "><p>
-        Name the port group <code class="literal">TRUNK-PG</code>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Configure settings</span> select:
-       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       </p></li><li class="step"><p>
+        Name the port group <code class="literal">TRUNK-PG</code>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Configure settings</span> select:
+       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           <code class="literal">port binding</code> &gt; <code class="literal">Static
           binding</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">port allocation</code> &gt; <code class="literal">Elastic</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">vlan type</code> &gt; <code class="literal">VLAN trunking</code> with
           range of 1–4094.
-         </p></li></ul></div></li><li class="step "><p>
+         </p></li></ul></div></li><li class="step"><p>
         Check <code class="literal">Customized default policies
-        configuration</code>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Security</span> use the following values:
-       </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><thead><tr><th><p>Setting</p></th><th><p>Value</p></th></tr></thead><tbody><tr><td><p>promiscuous mode</p></td><td><p>accept</p></td></tr><tr><td><p>MAC address changes</p></td><td><p>reject</p></td></tr><tr><td><p>Forged transmits</p></td><td><p>accept</p></td></tr></tbody></table></div></li><li class="step "><p>
-        Set <span class="guimenu ">Autoexpand</span> to <code class="literal">true</code> (port
+        configuration</code>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Security</span> use the following values:
+       </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="1"/><col class="2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>Setting</p></th><th style="border-bottom: 1px solid ; "><p>Value</p></th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>promiscuous mode</p></td><td style="border-bottom: 1px solid ; "><p>accept</p></td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; "><p>MAC address changes</p></td><td style="border-bottom: 1px solid ; "><p>reject</p></td></tr><tr><td style="border-right: 1px solid ; "><p>Forged transmits</p></td><td><p>accept</p></td></tr></tbody></table></div></li><li class="step"><p>
+        Set <span class="guimenu">Autoexpand</span> to <code class="literal">true</code> (port
         count growing).
-       </p></li><li class="step "><p>
-        Skip <span class="guimenu ">Traffic shaping</span> and click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Skip <span class="guimenu ">Teaming and fail over</span> and click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Skip <span class="guimenu ">Monitoring</span> and click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Miscellaneous</span> there is nothing to be
-        done. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Edit additional settings</span> add a description if
-        desired. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span> verify everything is as
-        expected and click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li></ol></div></div></div></div><div class="sect2" id="create-esxi-mgmt-dvs"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating ESXi MGMT DVS and Required Portgroup</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esxi-mgmt-dvs">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-mgmt-dvs.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-esxi-mgmt-dvs.xml</li><li><span class="ds-label">ID: </span>create-esxi-mgmt-dvs</li></ul></div></div></div></div><p>
+       </p></li><li class="step"><p>
+        Skip <span class="guimenu">Traffic shaping</span> and click
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Skip <span class="guimenu">Teaming and fail over</span> and click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Skip <span class="guimenu">Monitoring</span> and click
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Miscellaneous</span> there is nothing to be
+        done. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Edit additional settings</span> add a description if
+        desired. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span> verify everything is as
+        expected and click <span class="guimenu">Finish</span>.
+       </p></li></ol></li></ol></div></div></section></section><section class="sect2" id="create-esxi-mgmt-dvs" data-id-title="Creating ESXi MGMT DVS and Required Portgroup"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.8.2 </span><span class="title-name">Creating ESXi MGMT DVS and Required Portgroup</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-esxi-mgmt-dvs">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-esxi-mgmt-dvs.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     The process of creating an ESXi Mgmt Distributed vSwitch (DVS) consists of three
     steps: create a switch, add host and physical adapters, and add a port
     group. Use the following detailed instructions to create a mgmt DVS and a
     required portgroup.
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Create the switch.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Using the vSphere webclient, connect to the vCenter server.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Hosts and Cluster</span>, right-click on the
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Hosts and Cluster</span>, right-click on the
         appropriate datacenter, and select <code class="literal">Distributed
         Switch</code> &gt; <code class="literal">New Distributed Switch</code>
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Name the switch <code class="literal">MGMT</code>. Click 
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Select version 6.0.0 or higher. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Edit settings</span>, select the appropriate number
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Select version 6.0.0 or higher. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Edit settings</span>, select the appropriate number
         of uplinks. The <code class="literal">MGMT</code> DVS is what connects the ESXi
         host to the <span class="productname">OpenStack</span> management network. Uncheck <code class="literal">Create a default
-        port group</code>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify the settings are
-        correct. Click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+        port group</code>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify the settings are
+        correct. Click <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add host and physical adapters to Distributed Virtual Switch.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Under <code class="literal">Networking</code>, find the <code class="literal">MGMT</code>
-        DVS you just created. Right-click on it and select <span class="guimenu ">Manage
+        DVS you just created. Right-click on it and select <span class="guimenu">Manage
         hosts</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Select task</span>, select <span class="guimenu ">Add
-        hosts</span>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Click <span class="guimenu ">New hosts</span>.
-       </p></li><li class="step "><p>
-        Select the current ESXi host and select <span class="guimenu ">OK</span>. Click 
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Select network adapter tasks</span>, select
-        <span class="guimenu ">Manage physical adapters</span> and <span class="bold"><strong>UNCHECK</strong></span> all other boxes. Click 
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Manage physical network adapters</span>, click on the
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Select task</span>, select <span class="guimenu">Add
+        hosts</span>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Click <span class="guimenu">New hosts</span>.
+       </p></li><li class="step"><p>
+        Select the current ESXi host and select <span class="guimenu">OK</span>. Click 
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Select network adapter tasks</span>, select
+        <span class="guimenu">Manage physical adapters</span> and <span class="bold"><strong>UNCHECK</strong></span> all other boxes. Click 
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Manage physical network adapters</span>, click on the
         interface you are using to connect the ESXi to the <span class="productname">OpenStack</span> management
         network. The name is of the form <code class="literal">vmnic#</code> (for
         example, <code class="literal">vmnic0</code>, <code class="literal">vmnic1</code>, etc.). When the
-        interface is highlighted, select <span class="guimenu ">Assign uplink</span> then
+        interface is highlighted, select <span class="guimenu">Assign uplink</span> then
         select the uplink name to assign or auto assign. Repeat the process for
         each uplink physical NIC you will be using to connect to the <span class="productname">OpenStack</span>
-        data network.  Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Verify that you understand and accept the impact shown by <span class="guimenu ">Analyze
-        impact</span>. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
+        data network.  Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Verify that you understand and accept the impact shown by <span class="guimenu">Analyze
+        impact</span>. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
         Verify that everything is correct and click on
-        <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+        <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add MGMT port group to switch.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Right-click on the <code class="literal">MGMT</code> DVS and select
-        <span class="guimenu ">Distributed Port Group</span> &gt; <span class="guimenu ">New Distributed
+        <span class="guimenu">Distributed Port Group</span> &gt; <span class="guimenu">New Distributed
         Port Group</span>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Name the port group <code class="literal">MGMT-PG</code>. Click 
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Configure settings</span>, select:
-       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Configure settings</span>, select:
+       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           <code class="literal">port binding</code> &gt; <code class="literal">Static
           binding</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">port allocation</code> &gt; <code class="literal">Elastic</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">vlan type</code> &gt; <code class="literal">None</code>
          </p></li></ul></div><p>
-        Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify that everything is
-        as expected and click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+        Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify that everything is
+        as expected and click <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add GUEST port group to the switch.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Right-click on the DVS (MGMT) that was just created (or modified).
-        Select <span class="guimenu ">Distributed Port Group</span> &gt; <span class="guimenu ">New
+        Select <span class="guimenu">Distributed Port Group</span> &gt; <span class="guimenu">New
         Distributed Port Group</span>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Name the port group <code class="literal">GUEST-PG</code>. Click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Configure settings</span>, select:
-       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Configure settings</span>, select:
+       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           <code class="literal">port binding</code> &gt; <code class="literal">Static binding</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">port allocation</code> &gt; <code class="literal">Elastic</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">vlan type</code> &gt; <code class="literal">VLAN trunking</code> The
           VLAN range corresponds to the VLAN ids being used by the <span class="productname">OpenStack</span>
           underlay. This is the same VLAN range as configured in the
           <code class="filename">neutron.conf</code> configuration file for the Neutron
           server.
-         </p></li></ul></div></li><li class="step "><p>
-        Select <span class="guimenu ">Customize default policies configuration</span>.
-        Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Security</span>, use the following settings:
-       </p><div class="informaltable"><table class="informaltable" border="1"><colgroup><col class="1" /><col class="2" /></colgroup><thead><tr><th>
+         </p></li></ul></div></li><li class="step"><p>
+        Select <span class="guimenu">Customize default policies configuration</span>.
+        Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Security</span>, use the following settings:
+       </p><div class="informaltable"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="1"/><col class="2"/></colgroup><thead><tr><th style="border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p>
              setting
             </p>
-           </th><th>
+           </th><th style="border-bottom: 1px solid ; ">
             <p>
              value
             </p>
-           </th></tr></thead><tbody><tr><td>
+           </th></tr></thead><tbody><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p>
              promiscuous mode
             </p>
-           </td><td>
+           </td><td style="border-bottom: 1px solid ; ">
             <p>
              accept
             </p>
-           </td></tr><tr><td>
+           </td></tr><tr><td style="border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p>
              MAC address changes
             </p>
-           </td><td>
+           </td><td style="border-bottom: 1px solid ; ">
             <p>
              reject
             </p>
-           </td></tr><tr><td>
+           </td></tr><tr><td style="border-right: 1px solid ; ">
             <p>
              Forged transmits
             </p>
@@ -595,70 +594,70 @@ hljs.configure({
             <p>
              accept
             </p>
-           </td></tr></tbody></table></div></li><li class="step "><p>
-        Skip <span class="guimenu ">Traffic shaping</span> and click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Teaming and fail over</span>, make changes appropriate
+           </td></tr></tbody></table></div></li><li class="step"><p>
+        Skip <span class="guimenu">Traffic shaping</span> and click
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Teaming and fail over</span>, make changes appropriate
         for your network and deployment.
-       </p></li><li class="step "><p>
-        Skip <span class="guimenu ">Monitoring</span> and click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Skip <span class="guimenu ">Miscellaneous</span> and click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Edit addition settings</span>, add a description if
-        desired. Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify everything is as
-       expected. Click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li><li class="step "><p>
+       </p></li><li class="step"><p>
+        Skip <span class="guimenu">Monitoring</span> and click
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Skip <span class="guimenu">Miscellaneous</span> and click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Edit addition settings</span>, add a description if
+        desired. Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify everything is as
+       expected. Click <span class="guimenu">Finish</span>.
+       </p></li></ol></li><li class="step"><p>
       Add ESX-CONF port group.
-     </p><ol type="a" class="substeps "><li class="step "><p>
+     </p><ol type="a" class="substeps"><li class="step"><p>
         Right-click on the DVS (MGMT) that was just created (or
-        modified). Select <span class="guimenu ">Distributed Port Group</span> &gt;
-        <span class="guimenu ">New Distributed Port Group</span>.
-       </p></li><li class="step "><p>
+        modified). Select <span class="guimenu">Distributed Port Group</span> &gt;
+        <span class="guimenu">New Distributed Port Group</span>.
+       </p></li><li class="step"><p>
         Name the port group <code class="literal">ESX-CONF-PG</code>. Click
-        <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Configure settings</span>, select:
-       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Configure settings</span>, select:
+       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           <code class="literal">port binding</code> &gt; <code class="literal">Static
           binding</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">port allocation</code> &gt; <code class="literal">Elastic</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">vlan type</code> &gt; <code class="literal">None</code>
          </p></li></ul></div><p>
-        Click <span class="guimenu ">Next</span>.
-       </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+        Click <span class="guimenu">Next</span>.
+       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
           <code class="literal">port binding</code> &gt; <code class="literal">Static
           binding</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">port allocation</code> &gt; <code class="literal">Elastic</code>
-         </p></li><li class="listitem "><p>
+         </p></li><li class="listitem"><p>
           <code class="literal">vlan type</code> &gt; <code class="literal">None</code>
          </p></li></ul></div><p>
-        Click <span class="guimenu ">Next</span>.
-       </p></li><li class="step "><p>
-        Under <span class="guimenu ">Ready to complete</span>, verify that everything is
-        as expected and click <span class="guimenu ">Finish</span>.
-       </p></li></ol></li></ol></div></div></div><div class="sect2" id="config-ansible-playbook"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring OVSvApp Network Resources Using Ansible-Playbook</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-ansible-playbook">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-ansible_playbook.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>config-ansible_playbook.xml</li><li><span class="ds-label">ID: </span>config-ansible-playbook</li></ul></div></div></div></div><p>
+        Click <span class="guimenu">Next</span>.
+       </p></li><li class="step"><p>
+        Under <span class="guimenu">Ready to complete</span>, verify that everything is
+        as expected and click <span class="guimenu">Finish</span>.
+       </p></li></ol></li></ol></div></div></section><section class="sect2" id="config-ansible-playbook" data-id-title="Configuring OVSvApp Network Resources Using Ansible-Playbook"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.8.3 </span><span class="title-name">Configuring OVSvApp Network Resources Using Ansible-Playbook</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-ansible-playbook">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-ansible_playbook.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Ardana ansible playbook
   <code class="filename">neutron-create-ovsvapp-resources.yml</code> can be used to
   create Distributed Virtual Switches and Port Groups on a vCenter cluster.
  </p><p>
   The playbook requires the following inputs:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     <code class="literal">vcenter_username</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <code class="literal">vcenter_encrypted_password</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <code class="literal">vcenter_ip</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <code class="literal">vcenter_port</code> (default 443)
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     <code class="literal">vc_net_resources_location</code> This is the path to a file which
     contains the definition of the resources to be created. The definition is
     in JSON format.
@@ -669,11 +668,11 @@ hljs.configure({
   Running the playbook:
  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook neutron-create-ovsvapp-resources.yml \
 -i hosts/verb_hosts -vvv -e 'variable_host=localhost
-vcenter_username=<em class="replaceable ">USERNAME</em>
-vcenter_encrypted_password=<em class="replaceable ">ENCRYPTED_PASSWORD</em>
-vcenter_ip=<em class="replaceable ">IP_ADDRESS</em>
+vcenter_username=<em class="replaceable">USERNAME</em>
+vcenter_encrypted_password=<em class="replaceable">ENCRYPTED_PASSWORD</em>
+vcenter_ip=<em class="replaceable">IP_ADDRESS</em>
 vcenter_port=443
-vc_net_resources_location=<em class="replaceable ">LOCATION_TO_RESOURCE_DEFINITION_FILE</em>
+vc_net_resources_location=<em class="replaceable">LOCATION_TO_RESOURCE_DEFINITION_FILE</em>
 '</pre></div><p>
   The <code class="literal">RESOURCE_DEFINITION_FILE</code> is in JSON format and
   contains the resources to be created.
@@ -745,7 +744,7 @@ vc_net_resources_location=<em class="replaceable ">LOCATION_TO_RESOURCE_DEFINITI
       }
     ]
   }
-}</pre></div></div><div class="sect2" id="config-ovsvapp-python-vsphere"><div class="titlepage"><div><div><h3 class="title"><span class="number">15.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring OVSVAPP Using Python-Networking-vSphere</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-ovsvapp-python-vsphere">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-ovsvapp-python-vsphere.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>config-ovsvapp-python-vsphere.xml</li><li><span class="ds-label">ID: </span>config-ovsvapp-python-vsphere</li></ul></div></div></div></div><p>
+}</pre></div></section><section class="sect2" id="config-ovsvapp-python-vsphere" data-id-title="Configuring OVSVAPP Using Python-Networking-vSphere"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.8.4 </span><span class="title-name">Configuring OVSVAPP Using Python-Networking-vSphere</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#config-ovsvapp-python-vsphere">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/config-ovsvapp-python-vsphere.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Scripts can be used with the <a class="link" href="https://wiki.openstack.org/wiki/Neutron/Networking-vSphere" target="_blank">Networking-vSphere
   Project</a>. The scripts automate some of the process of configuring OVSvAPP
   from the command line. The following are help entries for two
@@ -831,64 +830,64 @@ optional arguments:
   --active_nics ACTIVE_NICS [ACTIVE_NICS ...]
                         Space separated list of active nics to use in DVPG nic
                         teaming
- -v                    Verbose output</pre></div></div></div><div class="sect1" id="create-vapp-template"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create a SUSE-based Virtual Appliance Template in vCenter</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-vapp-template">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-vapp_template-vcenter.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-vapp_template-vcenter.xml</li><li><span class="ds-label">ID: </span>create-vapp-template</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ -v                    Verbose output</pre></div></section></section><section class="sect1" id="create-vapp-template" data-id-title="Create a SUSE-based Virtual Appliance Template in vCenter"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.9 </span><span class="title-name">Create a SUSE-based Virtual Appliance Template in vCenter</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-vapp-template">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-vapp_template-vcenter.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Download the SLES12-SP3 ISO image
     (<code class="filename">SLE-12-SP4-Server-DVD-x86_64-GM-DVD1.iso</code>) from <a class="link" href="https://www.suse.com/products/server/download/" target="_blank">https://www.suse.com/products/server/download/</a>. You need to
     sign in or create a SUSE customer service account before downloading.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a new Virtual Machine in vCenter Resource Pool.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Configure the Storage selection.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Configure the Guest Operating System.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a Disk.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Ready to Complete.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Edit Settings before booting the VM with additional Memory, typically
     16GB or 32GB, though large scale environments may require larger memory
     allocations.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Edit Settings before booting the VM with additional Network Settings.
     Ensure there are four network adapters, one each for TRUNK, MGMT, 
     ESX-CONF, and GUEST.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Attach the ISO image to the DataStore.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Configure the 'disk.enableUUID=TRUE' flag in the General - Advanced
     Settings.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     After attaching the CD/DVD drive with the ISO image and completing the
     initial VM configuration, power on the VM by clicking the Play button on
     the VM's summary page.
-   </p></li><li class="step "><p>
-    Click <span class="guimenu ">Installation</span> when the VM boots from the console
+   </p></li><li class="step"><p>
+    Click <span class="guimenu">Installation</span> when the VM boots from the console
     window.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Accept the License agreement, language and Keyboard selection.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Select the System Role to Xen Virtualization Host.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Select the 'Proposed Partitions' in the Suggested Partition screen.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Edit the Partitions to select the 'LVM' Mode and then select the 'ext4'
     filesystem type.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Increase the size of the root partition from 10GB to 60GB.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create an additional logical volume to accommodate the LV_CRASH volume
     (15GB). Do not mount the volume at this time, it will be used later.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Configure the Admin User/Password and User name.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Installation Settings (Disable Firewall and enable SSH).
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     The operating system will be successfully installed and the VM will reboot.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Check that the contents of the ISO files are copied to the locations shown
     below on your Cloud Lifecycle Manager. This may already be completed on the Cloud Lifecycle Manager.
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       The contents of the SLES SDK ISO
       (<code class="filename">SLE-12-SP3-SDK-DVD-x86_64-GM-DVD1.iso</code>) must be
       mounted or copied to
@@ -897,42 +896,42 @@ optional arguments:
       choose to mount the ISO, we recommend creating an
       <code class="filename">/etc/fstab</code> entry to ensure the ISO is mounted after
       a reboot.
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Mount or copy the contents of
       <code class="filename">SLE-12-SP3-Server-DVD-x86_64-GM-DVD1.iso</code> to
       <code class="filename">/opt/ardana_packager/ardana/sles12/zypper/OS/</code>
       (create the directory if it is missing).
-     </p></li><li class="listitem "><p>
+     </p></li><li class="listitem"><p>
       Mount or copy the contents of
       <code class="filename">SLE-12-SP3-SDK-DVD-x86_64-GM-DVD1.iso</code> to
       <code class="filename">/opt/ardana_packager/ardana/sles12/zypper/SDK/</code>.
-     </p></li></ul></div></li><li class="step "><p>
+     </p></li></ul></div></li><li class="step"><p>
     Log in to the VM with the configured user credentials.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     The VM must be set up before a template can be created with it. The
     IP addresses configured here are temporary and will need to be
     reconfigured as VMs are created using this template. The temporary
     IP address should not overlap with the network range for
     the MGMT network.
-   </p><ol type="a" class="substeps "><li class="step "><p>
+   </p><ol type="a" class="substeps"><li class="step"><p>
       The VM should now have four network interfaces. Configure them as
       follows:
-     </p><ol type="i" class="substeps "><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd /etc/sysconfig/network
+     </p><ol type="i" class="substeps"><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd /etc/sysconfig/network
        <code class="prompt user">tux &gt; </code>sudo ls</pre></div><p>
         The directory will contain the files: <code class="filename">ifcfg-br0</code>,
         <code class="filename">ifcfg-br1</code>, <code class="filename">ifcfg-br2</code>,
         <code class="filename">ifcfg-br3</code>, <code class="filename">ifcfg-eth0</code>,
         <code class="filename">ifcfg-eth1</code>, <code class="filename">ifcfg-eth2</code>, and
         <code class="filename">ifcfg-eth3</code>.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         If you have configured a default route while installing the VM, then
         there will be a <code class="filename">routes</code> file.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
         Note the IP addresses configured for MGMT.
-       </p></li><li class="step "><p>
+       </p></li><li class="step"><p>
 	Configure the temporary IP for the MGMT network.
 	Edit the <code class="filename">ifcfg-eth1</code> file.
-       </p><ol type="A" class="substeps "><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth1
+       </p><ol type="A" class="substeps"><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth1
 BOOTPROTO='static'
 BROADCAST=''
 ETHTOOL_OPTIONS=''
@@ -940,11 +939,11 @@ IPADDR='192.168.24.132/24' (Configure the IP address of the MGMT Interface)
 MTU=''
 NETWORK=''
 REMOTE_IPADDR=''
-STARTMODE='auto'</pre></div></li></ol></li><li class="step "><p>
+STARTMODE='auto'</pre></div></li></ol></li><li class="step"><p>
         Edit the <code class="filename">ifcfg-eth0</code>,
         <code class="filename">ifcfg-eth2</code>, and
         <code class="filename">ifcfg-eth3</code> files.
-       </p><ol type="A" class="substeps "><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth0
+       </p><ol type="A" class="substeps"><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth0
 BOOTPROTO='static'
 BROADCAST=''
 ETHTOOL_OPTIONS=''
@@ -952,7 +951,7 @@ IPADDR=''
 MTU=''
 NETWORK=''
 REMOTE_IPADDR=''
-STARTMODE='auto'</pre></div></li><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth2
+STARTMODE='auto'</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth2
 BOOTPROTO=''
 BROADCAST=''
 ETHTOOL_OPTIONS=''
@@ -961,7 +960,7 @@ MTU=''
 NAME='VMXNET3 Ethernet Controller'
 NETWORK=''
 REMOTE_IPADDR=''
-STARTMODE='auto'</pre></div></li><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth3
+STARTMODE='auto'</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo vi /etc/sysconfig/network/ifcfg-eth3
 BOOTPROTO=''
 BROADCAST=''
 ETHTOOL_OPTIONS=''
@@ -970,35 +969,35 @@ MTU=''
 NAME='VMXNET3 Ethernet Controller'
 NETWORK=''
 REMOTE_IPADDR=''
-STARTMODE='auto'</pre></div></li><li class="step "><p>
+STARTMODE='auto'</pre></div></li><li class="step"><p>
           If the default route is not configured, add a default
           route file manually.
-         </p><ol type="I" class="substeps "><li class="step "><p>
+         </p><ol type="I" class="substeps"><li class="step"><p>
             Create a file <code class="filename">routes</code> in
             <code class="filename">/etc/sysconfig/network</code>.
-           </p></li><li class="step "><p>
+           </p></li><li class="step"><p>
             Edit the file to add your default route.
            </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo sudo vi routes
-           default 192.168.24.140 - -</pre></div></li></ol></li></ol></li><li class="step "><p>
+           default 192.168.24.140 - -</pre></div></li></ol></li></ol></li><li class="step"><p>
         Delete all the bridge configuration files, which are not required:
         <code class="filename">ifcfg-br0</code>, <code class="filename">ifcfg-br1</code>,
         <code class="filename">ifcfg-br2</code>, and <code class="filename">ifcfg-br3</code>.
-       </p></li></ol></li><li class="step "><p>
+       </p></li></ol></li><li class="step"><p>
       Add <code class="literal">ardana</code> user and home directory if that is not your
       default <code class="literal">user</code>. The username and password should be
       <code class="literal">ardana/ardana</code>.
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo useradd -m ardana
-      <code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step "><p>
+      <code class="prompt user">tux &gt; </code>sudo passwd ardana</pre></div></li><li class="step"><p>
       Create a <code class="literal">ardana</code> usergroup in the VM if it does not
       exist.
-     </p><ol type="i" class="substeps "><li class="step "><p>
+     </p><ol type="i" class="substeps"><li class="step"><p>
         Check for an existing <code class="literal">ardana</code> group.
-       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo groups ardana</pre></div></li><li class="step "><p>
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo groups ardana</pre></div></li><li class="step"><p>
         Add <code class="literal">ardana</code> group if necessary.
-       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo groupadd ardana</pre></div></li><li class="step "><p>
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo groupadd ardana</pre></div></li><li class="step"><p>
         Add <code class="literal">ardana</code> user to the <code class="literal">ardana</code>
         group.
-       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo gpasswd -a ardana ardana</pre></div></li></ol></li><li class="step "><p>
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo gpasswd -a ardana ardana</pre></div></li></ol></li><li class="step"><p>
       Allow the <code class="literal">ardana</code> user to <code class="literal">sudo</code>
       without password. Setting up <code class="literal">sudo</code> on SLES is covered
       in the SUSE documentation at <a class="link" href="https://documentation.suse.com/sles/12-SP5/single-html/SLES-admin/#sec-sudo-conf" target="_blank">https://documentation.suse.com/sles/12-SP5/single-html/SLES-admin/#sec-sudo-conf</a>.
@@ -1006,16 +1005,16 @@ STARTMODE='auto'</pre></div></li><li class="step "><p>
       <code class="filename">/etc/sudoers.d</code> directory. Create an
       <code class="filename">/etc/sudoers.d/ardana</code> config file with the following
       content to allow sudo commands without the requirement of a password.
-     </p><div class="verbatim-wrap"><pre class="screen">ardana ALL=(ALL) NOPASSWD:ALL</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen">ardana ALL=(ALL) NOPASSWD:ALL</pre></div></li><li class="step"><p>
       Add the Zypper repositories using the ISO-based repositories created
       previously. Change the value of <code class="literal">deployer_ip</code> if necessary.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo <em class="replaceable ">DEPLOYER_IP</em>=192.168.24.140
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>sudo <em class="replaceable">DEPLOYER_IP</em>=192.168.24.140
      <code class="prompt user">tux &gt; </code>sudo zypper addrepo --no-gpgcheck --refresh \
      http://$deployer_ip:79/ardana/sles12/zypper/OS SLES-OS
      <code class="prompt user">tux &gt; </code>sudo zypper addrepo --no-gpgcheck --refresh \
      http://$deployer_ip:79/ardana/sles12/zypper/SDK SLES-SDK</pre></div><p>
       Verify that the repositories have been added.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>zypper repos --detail</pre></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>zypper repos --detail</pre></div></li><li class="step"><p>
       Set up SSH access that does not require a password to the temporary
       IP address that was configured for <code class="literal">eth1</code> .
      </p><p>
@@ -1026,88 +1025,88 @@ STARTMODE='auto'</pre></div></li><li class="step "><p>
       in the cloud to the same location on the SLES node. If you are
       installing a new cloud, this file will be available on the nodes after
       running the <code class="filename">bm-reimage.yml</code> playbook.
-     </p><div id="id-1.4.5.10.11.2.24.2.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+     </p><div id="id-1.4.5.10.11.2.24.2.6.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
        Ensure that there is global read access to the
        file <code class="filename">~/.ssh/authorized_keys</code>.
       </p></div><p>
       Test passwordless ssh from the Cloud Lifecycle Manager and check your ability to remotely
       execute sudo commands.
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>ssh ardana@<em class="replaceable ">IP_OF_SLES_NODE_eth1</em>
-     "sudo tail -5 /var/log/messages"</pre></div></li></ol></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>ssh ardana@<em class="replaceable">IP_OF_SLES_NODE_eth1</em>
+     "sudo tail -5 /var/log/messages"</pre></div></li></ol></li><li class="step"><p>
     Shutdown the VM and create a template out of the VM appliance for future
     use.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     The VM Template will be saved in your vCenter Datacenter and you can view
-    it from <span class="guimenu ">VMS and Templates</span> menu. Note that menu options
+    it from <span class="guimenu">VMS and Templates</span> menu. Note that menu options
     will vary slightly depending on the version of vSphere that is deployed.
-   </p></li></ol></div></div></div><div class="sect1" id="id-1.4.5.10.12"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ESX Network Model Requirements</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.12">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>install-esx_computes-ovsvapp.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></li></ol></div></div></section><section class="sect1" id="id-1.4.5.10.12" data-id-title="ESX Network Model Requirements"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.10 </span><span class="title-name">ESX Network Model Requirements</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#id-1.4.5.10.12">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/install-esx_computes-ovsvapp.xml" title="Edit source document"> </a></div></div></div></div></div><p>
      For this model the following networks are needed:
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="literal">MANAGEMENT-NET</code> : This is an untagged network this is used for the control plane as well as the esx-compute proxy and ovsvapp VMware instance.  It is tied to the MGMT DVS/PG in vSphere. 
-     </p></li><li class="listitem "><p><code class="literal">EXTERNAL-API_NET</code> : This is a tagged network for the external/public API. There is no difference in this model from those without ESX and there is no additional setup needed in vSphere for this network.
-      </p></li><li class="listitem "><p><code class="literal">EXTERNAL-VM-NET</code> : This is a tagged network used for Floating IP (FIP) assignment to running instances. There is no difference in this model from those without ESX and there is no additional setup needed in vSphere for this network.
-      </p></li><li class="listitem "><p><code class="literal">GUEST-NET</code> : This is a tagged network used internally for neutron.  It is tied to the GUEST PG in vSphere.
-      </p></li><li class="listitem "><p><code class="literal">ESX-CONF-NET</code> : This is a separate configuration network for ESX that must be reachable via the MANAGEMENT-NET.  It is tied to the ESX-CONF PG in vSphere.
-      </p></li><li class="listitem "><p><code class="literal">TRUNK-NET</code> : This is an untagged network used internally for ESX. It is tied to the TRUNC DVS/PG in vSphere.
-      </p></li></ul></div></div><div class="sect1" id="create-vms-vapp-template"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating and Configuring Virtual Machines Based on Virtual Appliance
- Template</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-vms-vapp-template">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-vms-vapp_template.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>create-vms-vapp_template.xml</li><li><span class="ds-label">ID: </span>create-vms-vapp-template</li></ul></div></div></div></div><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="literal">MANAGEMENT-NET</code> : This is an untagged network this is used for the control plane as well as the esx-compute proxy and ovsvapp VMware instance.  It is tied to the MGMT DVS/PG in vSphere. 
+     </p></li><li class="listitem"><p><code class="literal">EXTERNAL-API_NET</code> : This is a tagged network for the external/public API. There is no difference in this model from those without ESX and there is no additional setup needed in vSphere for this network.
+      </p></li><li class="listitem"><p><code class="literal">EXTERNAL-VM-NET</code> : This is a tagged network used for Floating IP (FIP) assignment to running instances. There is no difference in this model from those without ESX and there is no additional setup needed in vSphere for this network.
+      </p></li><li class="listitem"><p><code class="literal">GUEST-NET</code> : This is a tagged network used internally for neutron.  It is tied to the GUEST PG in vSphere.
+      </p></li><li class="listitem"><p><code class="literal">ESX-CONF-NET</code> : This is a separate configuration network for ESX that must be reachable via the MANAGEMENT-NET.  It is tied to the ESX-CONF PG in vSphere.
+      </p></li><li class="listitem"><p><code class="literal">TRUNK-NET</code> : This is an untagged network used internally for ESX. It is tied to the TRUNC DVS/PG in vSphere.
+      </p></li></ul></div></section><section class="sect1" id="create-vms-vapp-template" data-id-title="Creating and Configuring Virtual Machines Based on Virtual Appliance Template"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.11 </span><span class="title-name">Creating and Configuring Virtual Machines Based on Virtual Appliance
+ Template</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#create-vms-vapp-template">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/create-vms-vapp_template.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The following process for creating and configuring VMs from the vApp template
   should be repeated for every cluster in the DataCenter. Each cluster should
   host a Nova Proxy VM, and each host in a cluster should have an OVSvApp
   VM running. The following method uses the <code class="literal">vSphere Client
   Management Tool</code> to deploy saved templates from the vCenter.
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Identify the cluster that you want Nova Proxy to manage.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a VM from the template on a chosen cluster.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     The first VM that was deployed will be the <code class="literal">Nova Compute Proxy
     VM</code>. This VM can reside on any <code class="literal">HOST</code> inside a
     cluster. There should be only one instance of this VM in a cluster.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     The <code class="literal">Nova Compute Proxy</code> will use only two of the
     four interfaces configured previously (<code class="literal">ESX_CONF</code> and
     <code class="literal">MANAGEMENT</code>).
-   </p><div id="id-1.4.5.10.13.3.4.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div id="id-1.4.5.10.13.3.4.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      Do not swap the interfaces. They must be in the specified order
      (<code class="literal">ESX_CONF</code> is <code class="literal">eth0</code>,
      <code class="literal">MGMT</code> is <code class="literal">eth1</code>).
-    </p></div></li><li class="step "><p>
+    </p></div></li><li class="step"><p>
     After the VM has been deployed, log in to it with
     <code class="literal">ardana/ardana</code> credentials. Log in to the VM with SSH using
     the <code class="literal">MGMT</code> IP address. Make sure that all root level
     commands work with <code class="literal">sudo</code>. This is required for the Cloud Lifecycle Manager
     to configure the appliance for services and networking.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Install another VM from the template and name it
     <code class="literal">OVSvApp-VM1-HOST1</code>. (You can add a suffix with the
     host name to identify the host it is associated with).
-   </p><div id="id-1.4.5.10.13.3.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div id="id-1.4.5.10.13.3.6.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     The VM must have four interfaces configured in the right order. The VM must
     be accessible from the Management Network through SSH from the Cloud Lifecycle Manager.
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        <code class="filename">/etc/sysconfig/network/ifcfg-eth0</code> is
        <code class="literal">ESX_CONF</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <code class="filename">/etc/sysconfig/network/ifcfg-eth1</code> is
        <code class="literal">MGMT</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <code class="filename">/etc/sysconfig/network/ifcfg-eth2</code> is
        <code class="literal">TRUNK</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        <code class="filename">/etc/sysconfig/network/ifcfg-eth3</code> is
        <code class="literal">GUEST</code>.
-      </p></li></ul></div></div></li><li class="step "><p>
+      </p></li></ul></div></div></li><li class="step"><p>
     If there is more than one <code class="literal">HOST</code> in the cluster, deploy
     another VM from the Template and name it
     <code class="literal">OVSvApp-VM2-HOST2</code>.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     If the OVSvApp VMs end up on the same <code class="literal">HOST</code>, then
     manually separate the VMs and follow the instructions below to add rules
     for High Availability (HA) and Distributed Resource Scheduler (DRS).
-   </p><div id="id-1.4.5.10.13.3.8.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
-     HA seeks to minimize system downtime and data loss. See also <span class="intraxref">Book “<em class="citetitle ">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 4 “High Availability”</span>. DRS is a utility that balances computing workloads
+   </p><div id="id-1.4.5.10.13.3.8.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+     HA seeks to minimize system downtime and data loss. See also <span class="intraxref">Book “<em class="citetitle">Planning an Installation with Cloud Lifecycle Manager</em>”, Chapter 4 “High Availability”</span>. DRS is a utility that balances computing workloads
      with available resources in a virtualized environment.
-    </p></div></li><li class="step "><p>
+    </p></div></li><li class="step"><p>
     When installed from a template to a cluster, the VM will not be bound to a
     particular host if you have more than one Hypervisor. The requirement for
     the OVSvApp is that there be only one OVSvApp Appliance per host and that
@@ -1115,126 +1114,126 @@ STARTMODE='auto'</pre></div></li><li class="step "><p>
     not be allowed to migrate the VMs from the existing HOST. This would cause
     major network interruption. In order to achieve this we need to configure
     rules in the cluster HA and DRS settings.
-   </p><div id="id-1.4.5.10.13.3.9.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div id="id-1.4.5.10.13.3.9.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
      VMotion enables the live migration of running virtual machines from one
      physical server to another with zero downtime, continuous service
      availability, and complete transaction integrity.
-    </p></div></li><li class="step "><p>
+    </p></div></li><li class="step"><p>
     Configure rules for OVSvApp VMs.
-   </p><ol type="a" class="substeps "><li class="step "><p>
-      Configure <span class="guimenu ">vSphere HA - Virtual Machine Options</span>.
-     </p></li><li class="step "><p>
-      <span class="guimenu ">Use Cluster Setting</span> must be disabled.
-     </p></li><li class="step "><p>
+   </p><ol type="a" class="substeps"><li class="step"><p>
+      Configure <span class="guimenu">vSphere HA - Virtual Machine Options</span>.
+     </p></li><li class="step"><p>
+      <span class="guimenu">Use Cluster Setting</span> must be disabled.
+     </p></li><li class="step"><p>
       VM should be <code class="literal">Power-On</code>.
-     </p></li></ol></li><li class="step "><p>
-    Configure <span class="guimenu ">Cluster DRS Groups/Rules</span>.
-   </p><ol type="a" class="substeps "><li class="step "><p>
-      Configure <span class="guimenu ">vSphere DRS - DRS Group Manager</span>.
-     </p></li><li class="step "><p>
+     </p></li></ol></li><li class="step"><p>
+    Configure <span class="guimenu">Cluster DRS Groups/Rules</span>.
+   </p><ol type="a" class="substeps"><li class="step"><p>
+      Configure <span class="guimenu">vSphere DRS - DRS Group Manager</span>.
+     </p></li><li class="step"><p>
       Create a DRS Group for the OVSvApp VMs.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Add VMs to the DRS Group.
-     </p></li><li class="step "><p>
-      Add appropriate <span class="guimenu ">Rules</span> to the DRS Groups.
-     </p></li></ol></li><li class="step "><p>
+     </p></li><li class="step"><p>
+      Add appropriate <span class="guimenu">Rules</span> to the DRS Groups.
+     </p></li></ol></li><li class="step"><p>
     All three VMs are up and running. Following the preceding process, there is
     one Nova Compute Proxy VM per cluster, and
     <code class="literal">OVSvAppVM1</code> and <code class="literal">OVSvAppVM2</code> on each
     HOST in the cluster.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Record the configuration attributes of the VMs.
-   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       Nova Compute Proxy VM:
-     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
         <code class="literal">Cluster Name</code> where this VM is located
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">Management IP Address</code>
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">VM Name</code> The actual name given to the VM to identify
         it.
-       </p></li></ul></div></li><li class="listitem "><p>
+       </p></li></ul></div></li><li class="listitem"><p>
       OVSvAppVM1
-     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
         <code class="literal">Cluster Name</code> where this VM is located
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">Management IP Address</code>
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">esx_hostname</code> that this OVSvApp is bound to
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">cluster_dvs_mapping</code> The Distributed vSwitch name
         created in the datacenter for this particular cluster.
        </p><p>
         Example format:
        </p><p>
-       <em class="replaceable ">DATA_CENTER</em>/host/<em class="replaceable ">CLUSTERNAME</em>:
-       <em class="replaceable ">DVS-NAME</em> Do not substitute for
+       <em class="replaceable">DATA_CENTER</em>/host/<em class="replaceable">CLUSTERNAME</em>:
+       <em class="replaceable">DVS-NAME</em> Do not substitute for
        <code class="literal">host</code>'. It is a constant.
-       </p></li></ul></div></li><li class="listitem "><p>
+       </p></li></ul></div></li><li class="listitem"><p>
       OVSvAppVM2:
-     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
         <code class="literal">Cluster Name</code> where this VM is located
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">Management IP Address</code>
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">esx_hostname</code> that this OVSvApp is bound to
-       </p></li><li class="listitem "><p>
+       </p></li><li class="listitem"><p>
         <code class="literal">cluster_dvs_mapping</code> The Distributed vSwitch name
         created in the datacenter for this particular cluster.
        </p><p>
         Example format:
        </p><p>
-       <em class="replaceable ">DATA_CENTER</em>/host/<em class="replaceable ">CLUSTERNAME</em>:
-       <em class="replaceable ">DVS-NAME</em> Do not substitute for
+       <em class="replaceable">DATA_CENTER</em>/host/<em class="replaceable">CLUSTERNAME</em>:
+       <em class="replaceable">DVS-NAME</em> Do not substitute for
        <code class="literal">host</code>'. It is a constant.
-       </p></li></ul></div></li></ul></div></li></ol></div></div></div><div class="sect1" id="collect-vcenter-credentials"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Collect vCenter Credentials and UUID</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#collect-vcenter-credentials">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/collect-vcenter-credentials.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>collect-vcenter-credentials.xml</li><li><span class="ds-label">ID: </span>collect-vcenter-credentials</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+       </p></li></ul></div></li></ul></div></li></ol></div></div></section><section class="sect1" id="collect-vcenter-credentials" data-id-title="Collect vCenter Credentials and UUID"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.12 </span><span class="title-name">Collect vCenter Credentials and UUID</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#collect-vcenter-credentials">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/collect-vcenter-credentials.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     Obtain the vCenter UUID from vSphere with the URL shown below:
-   </p><div class="verbatim-wrap"><pre class="screen">https://<em class="replaceable ">VCENTER-IP</em>/mob/?moid=ServiceInstance&amp;doPath=content.about</pre></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen">https://<em class="replaceable">VCENTER-IP</em>/mob/?moid=ServiceInstance&amp;doPath=content.about</pre></div><p>
     Select the field <code class="literal">instanceUUID</code>. Copy and paste the
     <span class="bold"><strong>value</strong></span> of <code class="literal"># field
     instanceUUID</code>.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">UUID</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">vCenter Password</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">vCenter Management IP</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">DataCenter Name</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">Cluster Name</code>
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Record the <code class="literal">DVS (Distributed vSwitch) Name</code>
-   </p></li></ul></div></div><div class="sect1" id="edit-input-models"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Edit Input Models to Add and Configure Virtual Appliances</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#edit-input-models">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/edit-input_models.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>edit-input_models.xml</li><li><span class="ds-label">ID: </span>edit-input-models</li></ul></div></div></div></div><p>
+   </p></li></ul></div></section><section class="sect1" id="edit-input-models" data-id-title="Edit Input Models to Add and Configure Virtual Appliances"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.13 </span><span class="title-name">Edit Input Models to Add and Configure Virtual Appliances</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#edit-input-models">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/edit-input_models.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The following steps should be used to edit the Ardana input model data to add
   and configure the Virtual Appliances that were just created. The process
   assumes that the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> is deployed and a valid Cloud Lifecycle Manager is in place.
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Edit the following files in
     <code class="filename">~/openstack/my_cloud/definition/data/</code>:
     <code class="filename">servers.yml</code>, <code class="filename">disks_app_vm.yml</code>,
     and <code class="filename">pass_through.yml</code>. Fill in attribute values
     recorded in the previous step.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Follow the instructions in <code class="filename">pass_through.yml</code> to encrypt
     your vCenter password using an encryption key.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Export an environment variable for the encryption key.
-   </p><div class="verbatim-wrap"><pre class="screen">ARDANA_USER_PASSWORD_ENCRYPT_KEY=ENCRYPTION_KEY</pre></div></li><li class="step "><p>
+   </p><div class="verbatim-wrap"><pre class="screen">ARDANA_USER_PASSWORD_ENCRYPT_KEY=ENCRYPTION_KEY</pre></div></li><li class="step"><p>
     Run <code class="filename">~ardana/openstack/ardana/ansible/ardanaencrypt.py</code> script. 
     It will prompt for <code class="literal">unencrypted value?</code>. Enter the unencrypted vCenter
     password and it will return an encrypted string.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Copy and paste the encrypted password string in the
     <code class="filename">pass_through.yml</code> file as a value for the
     <code class="literal">password</code> field <span class="bold"><strong>enclosed in double
     quotes</strong></span>.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Enter the <code class="literal">username</code>, <code class="literal">ip</code>, and
     <code class="literal">id</code> of the vCenter server in the Global section of the
     <code class="filename">pass_through.yml</code> file. Use the values recorded in the
     previous step.
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
      In the <code class="literal">servers</code> section of the
      <code class="filename">pass_through.yml</code> file, add the details about the
      Nova Compute Proxy and OVSvApp VMs that was recorded in the previous
@@ -1278,7 +1277,7 @@ STARTMODE='auto'</pre></div></li><li class="step "><p>
           vcenter_id: &lt;vcenter-uuid&gt;</pre></div><p>
      The VM <code class="literal">id</code> string should match exactly with the data
      written in the <code class="filename">servers.yml</code> file.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Edit the <code class="filename">servers.yml</code> file, adding the Nova Proxy
      VM and OVSvApp information recorded in the previous step.
     </p><div class="verbatim-wrap"><pre class="screen"># Below entries shall be added by the user
@@ -1400,7 +1399,7 @@ servers:
     role: OVSVAPP-ROLE
 baremetal:
   subnet: 192.168.24.0
-  netmask: 255.255.255.0</pre></div></li><li class="step "><p>
+  netmask: 255.255.255.0</pre></div></li><li class="step"><p>
      Edit the <code class="filename">disks_app_vm.yml</code> file based on your
      <code class="literal">lvm</code> configuration. The attributes of <code class="literal">Volume
      Group</code>, <code class="literal">Physical Volume</code>, and <code class="literal">Logical
@@ -1452,19 +1451,19 @@ baremetal:
     # I/O size (minimum/optimal): 512 bytes / 512 bytes
     # NOTE: Even though we have configured the SWAP partition, it is
     # not required to be configured in here. Just configure the root
-    # and the LV_CRASH partition</pre></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    # and the LV_CRASH partition</pre></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        The line with <code class="literal">/dev/mapper/system-root: 60 GiB, 64424509440
        bytes</code> indicates that the first logical partition is
        <code class="literal">root</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        The line with <code class="literal">/dev/mapper/system-LV_CRASH: 16 GiB, 17179869184
        bytes</code> indicates that the second logical partition is
        <code class="literal">LV_CRASH</code>.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        The line with <code class="literal">/dev/mapper/system-swap: 2 GiB, 2147483648 bytes,
        4194304 sectors</code> indicates that the third logical partition is
        <code class="literal">swap</code>.
-      </p></li></ul></div></li><li class="step "><p>
+      </p></li></ul></div></li><li class="step"><p>
      Edit the <code class="filename">disks_app_vm.yml</code> file. It is not necessary
      to configure the <code class="literal">swap</code> partition.
     </p><div class="verbatim-wrap"><pre class="screen">volume-groups:
@@ -1558,15 +1557,15 @@ baremetal:
             size: 20%
             mount: /var/crash
             fstype: ext4
-            mkfs-opts: -O large_file</pre></div></li></ol></div></div></div><div class="sect1" id="run-config-processor"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Running the Configuration Processor With Applied Changes</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#run-config-processor">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/run-config-processor.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>run-config-processor.xml</li><li><span class="ds-label">ID: </span>run-config-processor</li></ul></div></div></div></div><p>
+            mkfs-opts: -O large_file</pre></div></li></ol></div></div></section><section class="sect1" id="run-config-processor" data-id-title="Running the Configuration Processor With Applied Changes"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.14 </span><span class="title-name">Running the Configuration Processor With Applied Changes</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#run-config-processor">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/run-config-processor.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   If the changes are being applied to a previously deployed cloud, then after
   the previous section is completed, the Configuration Processor should be
   run with the changes that were applied.
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Run the Configuration Processor
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/ardana/ansible
 <code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml \
--e remove_deleted_servers="y" -e free_unused_addresses="y"</pre></div></li><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+-e remove_deleted_servers="y" -e free_unused_addresses="y"</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
     Run the <code class="filename">site.yml</code> playbook against only the VMs that
     were added.
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
@@ -1575,38 +1574,38 @@ baremetal:
 hlm004-cp1-esx-ovsvapp0001-mgmt,hlm004-cp1-esx-ovsvapp0002-mgmt</pre></div></li></ol></div></div><p>
   If the changes are being applied ahead of deploying a new (greenfield) cloud, then after
   the previous section is completed, the following steps should be run.
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     Run the Configuration Processor
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/ardana/ansible
-	<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+	<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
     Run the <code class="filename">site.yml</code> playbook against only the VMs that
     were added.
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible/
-	<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li></ol></div></div></div><div class="sect1" id="test-esx-environment"><div class="titlepage"><div><div><h2 class="title"><span class="number">15.15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Test the ESX-OVSvApp Environment</span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#test-esx-environment">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/test-esx-environment.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>test-esx-environment.xml</li><li><span class="ds-label">ID: </span>test-esx-environment</li></ul></div></div></div></div><p>
+	<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li></ol></div></div></section><section class="sect1" id="test-esx-environment" data-id-title="Test the ESX-OVSvApp Environment"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.15 </span><span class="title-name">Test the ESX-OVSvApp Environment</span></span> <a title="Permalink" class="permalink" href="install-esx-ovsvapp.html#test-esx-environment">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/test-esx-environment.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   When all of the preceding installation steps have been completed, test the
   ESX-OVSvApp environment with the following steps:
- </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
     SSH to the Controller
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Source the <code class="filename">service.osrc</code> file
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a Network
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a Subnet
-   </p></li><li class="step "><p>
+   </p></li><li class="step"><p>
     Create a VMware-based Glance image if there is not one available in the
     Glance repo. The following instructions can be used to create such an
     image that can be used by Nova to to create a VM in vCenter.
-   </p><ol type="a" class="substeps "><li class="step "><p>
+   </p><ol type="a" class="substeps"><li class="step"><p>
       Download a <code class="literal">vmdk</code> image file for the corresponding distro that
       you want for a VM.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Create a Nova image for VMware Hypervisor
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>glance image-create --name
-     <em class="replaceable ">DISTRO</em> --container-format bare --disk-format
+     <em class="replaceable">DISTRO</em> --container-format bare --disk-format
      vmdk --property vmware_disktype="sparse" --property
      vmware_adaptertype="ide" --property hypervisor_type=vmware &lt;
-     <em class="replaceable ">SERVER_CLOUDIMG.VMDK</em></pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------+--------------------------------------+
+     <em class="replaceable">SERVER_CLOUDIMG.VMDK</em></pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------+--------------------------------------+
 | Property           | Value                                |
 +--------------------+--------------------------------------+
 | checksum           | 45a4a06997e64f7120795c68beeb0e3c     |
@@ -1631,18 +1630,18 @@ hlm004-cp1-esx-ovsvapp0001-mgmt,hlm004-cp1-esx-ovsvapp0002-mgmt</pre></div></li>
 +--------------------+--------------------------------------+</pre></div><p>
       The image you created needs to be uploaded or saved. Otherwise the size
       will still be <code class="literal">0</code>.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Upload/save the image
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image save --file \
-     ./<em class="replaceable ">SERVER_CLOUDIMG.VMDK</em>
-     17e4915a-ada0-4b95-bacf-ba67133f39a7</pre></div></li><li class="step "><p>
+     ./<em class="replaceable">SERVER_CLOUDIMG.VMDK</em>
+     17e4915a-ada0-4b95-bacf-ba67133f39a7</pre></div></li><li class="step"><p>
       After saving the image, check that it is active and has a valid size.
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image list</pre></div><div class="verbatim-wrap"><pre class="screen">+--------------------------------------+------------------------+--------+
 | ID                                   | Name                   | Status |
 +--------------------------------------+------------------------+--------+
 | c48a9349-8e5c-4ca7-81ac-9ed8e2cab3aa | cirros-0.3.2-i386-disk | active |
 | 17e4915a-ada0-4b95-bacf-ba67133f39a7 | leap                   | active |
-+--------------------------------------+------------------------+--------+</pre></div></li><li class="step "><p>
++--------------------------------------+------------------------+--------+</pre></div></li><li class="step"><p>
       Check the details of the image
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>openstack image show 17e4915a-ada0-4b95-bacf-ba67133f39a7</pre></div><div class="verbatim-wrap"><pre class="screen">+------------------+------------------------------------------------------------------------------+
 | Field            | Value                                                                       |
@@ -1666,16 +1665,16 @@ hlm004-cp1-esx-ovsvapp0001-mgmt,hlm004-cp1-esx-ovsvapp0002-mgmt</pre></div></li>
 | updated_at       | 2018-02-17T10:42:23Z                                                        |
 | virtual_size     | None                                                                        |
 | visibility       | shared                                                                      |
-+------------------+------------------------------------------------------------------------------+</pre></div></li><li class="step "><p>
++------------------+------------------------------------------------------------------------------+</pre></div></li><li class="step"><p>
       Create a Nova instance with the VMware VMDK-based image and target it
       to the new cluster in the vCenter.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       The new VM will appear in the vCenter.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       The respective PortGroups for the OVSvApp on the Trunk-DVS will be
       created and connected.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Test the VM for connectivity and service.
-     </p></li></ol></li></ol></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="integrate-nsx-vsphere.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 16 </span>Integrating NSX for vSphere</span></a><a class="nav-link" href="MagnumOverview.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 14 </span>Magnum Overview</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+     </p></li></ol></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="MagnumOverview.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 14 </span>Magnum Overview</span></a> </div><div><a class="pagination-link next" href="integrate-nsx-vsphere.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 16 </span>Integrating NSX for vSphere</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="install-esx-ovsvapp.html#sec-ironic-prereqs"><span class="title-number">15.1 </span><span class="title-name">Before You Start</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#sec-ironic-setup-deployer"><span class="title-number">15.2 </span><span class="title-name">Setting Up the Cloud Lifecycle Manager</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#esxi-overview"><span class="title-number">15.3 </span><span class="title-name">Overview of ESXi and OVSvApp</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.6"><span class="title-number">15.4 </span><span class="title-name">VM Appliances Used in OVSvApp Implementation</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.7"><span class="title-number">15.5 </span><span class="title-name">Prerequisites for Installing ESXi and Managing with vCenter</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.8"><span class="title-number">15.6 </span><span class="title-name">ESXi/vCenter System Requirements</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#create-esx-cluster"><span class="title-number">15.7 </span><span class="title-name">Creating an ESX Cluster</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#config-dvs-pg"><span class="title-number">15.8 </span><span class="title-name">Configuring the Required Distributed vSwitches and Port Groups</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#create-vapp-template"><span class="title-number">15.9 </span><span class="title-name">Create a SUSE-based Virtual Appliance Template in vCenter</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#id-1.4.5.10.12"><span class="title-number">15.10 </span><span class="title-name">ESX Network Model Requirements</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#create-vms-vapp-template"><span class="title-number">15.11 </span><span class="title-name">Creating and Configuring Virtual Machines Based on Virtual Appliance
+ Template</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#collect-vcenter-credentials"><span class="title-number">15.12 </span><span class="title-name">Collect vCenter Credentials and UUID</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#edit-input-models"><span class="title-number">15.13 </span><span class="title-name">Edit Input Models to Add and Configure Virtual Appliances</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#run-config-processor"><span class="title-number">15.14 </span><span class="title-name">Running the Configuration Processor With Applied Changes</span></a></span></li><li><span class="section"><a href="install-esx-ovsvapp.html#test-esx-environment"><span class="title-number">15.15 </span><span class="title-name">Test the ESX-OVSvApp Environment</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>

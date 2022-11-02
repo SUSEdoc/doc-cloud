@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Transport Layer Security (TLS) Overview | Security Guide | SUSE OpenStack Cloud 8</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…" />
-<meta name="description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrit…" />
-<meta name="product-name" content="SUSE OpenStack Cloud" />
-<meta name="product-number" content="8" />
-<meta name="book-title" content="Security Guide" />
-<meta name="chapter-title" content="Chapter 7. Transport Layer Security (TLS) Overview" />
-<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" />
-<meta name="tracker-type" content="bsc" />
-<meta name="tracker-bsc-component" content="Documentation" />
-<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8" />
-<meta property="og:title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…" />
-<meta property="og:description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrit…" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…" />
-<meta name="twitter:description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, and integrit…" />
-<link rel="home" href="index.html" title="Documentation" /><link rel="up" href="book-security.html" title="Security Guide" /><link rel="prev" href="x509-certificate-auth.html" title="Chapter 6. Configuring Keystone and Horizon to use X.509 Client Certificates" /><link rel="next" href="header-poisoning.html" title="Chapter 8. SUSE® OpenStack Cloud: Preventing Host Header Poisoning" />
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><title>SUSE OpenStack Cloud 8 | Security Guide | Transport Layer Security (TLS) Overview</title><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<meta name="title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…"/>
+<meta name="description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, an…"/>
+<meta name="product-name" content="SUSE OpenStack Cloud"/>
+<meta name="product-number" content="8"/>
+<meta name="book-title" content="Security Guide"/>
+<meta name="chapter-title" content="Chapter 7. Transport Layer Security (TLS) Overview"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE OpenStack Cloud 8"/>
+<meta property="og:title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…"/>
+<meta property="og:description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, an…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Transport Layer Security (TLS) Overview | SUSE OpenSta…"/>
+<meta name="twitter:description" content="The Transport Layer Security (TLS) protocol, successor to SSL, provides the mechanisms to ensure authentication, non-repudiation, confidentiality, an…"/>
+<link rel="prev" href="x509-certificate-auth.html" title="Chapter 6. Configuring Keystone and Horizon to use X.509 Client Certificates"/><link rel="next" href="header-poisoning.html" title="Chapter 8. SUSE® OpenStack Cloud: Preventing Host Header Poisoning"/>
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -34,7 +34,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Security Guide"><span class="book-icon">Security Guide</span></a><span> › </span><a class="crumb" href="tls30overview.html">Transport Layer Security (TLS) Overview</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Security Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="newsecurity.html"><span class="number">1 </span><span class="name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Security Features Overview</span></a></li><li class="inactive"><a href="barbican.html"><span class="number">2 </span><span class="name">Key Management with the Barbican Service</span></a></li><li class="inactive"><a href="barbicanAdmin.html"><span class="number">3 </span><span class="name">Key Management Service Administration</span></a></li><li class="inactive"><a href="roleSegregation.html"><span class="number">4 </span><span class="name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Service Admin Role Segregation in the Identity Service</span></a></li><li class="inactive"><a href="cha-security-rbac.html"><span class="number">5 </span><span class="name">Role-Based Access Control in Neutron</span></a></li><li class="inactive"><a href="x509-certificate-auth.html"><span class="number">6 </span><span class="name">Configuring Keystone and Horizon to use X.509 Client Certificates</span></a></li><li class="inactive"><a href="tls30overview.html"><span class="number">7 </span><span class="name">Transport Layer Security (TLS) Overview</span></a></li><li class="inactive"><a href="header-poisoning.html"><span class="number">8 </span><span class="name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Preventing Host Header Poisoning</span></a></li><li class="inactive"><a href="password-encryption.html"><span class="number">9 </span><span class="name">Encryption of Passwords and Sensitive Data</span></a></li><li class="inactive"><a href="encryption-ephemeral.html"><span class="number">10 </span><span class="name">Encryption of Ephemeral Volumes</span></a></li><li class="inactive"><a href="topic-rmq-j1v-4t.html"><span class="number">11 </span><span class="name">Refining Access Control with AppArmor</span></a></li><li class="inactive"><a href="dar.html"><span class="number">12 </span><span class="name">Data at Rest Encryption</span></a></li><li class="inactive"><a href="glance-rate-limit.html"><span class="number">13 </span><span class="name">Glance-API Rate Limit (CVE-2016-8611)</span></a></li><li class="inactive"><a href="idg-all-security-middleware-auditing-xml-1.html"><span class="number">14 </span><span class="name">Security Audit Logs</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 6. Configuring Keystone and Horizon to use X.509 Client Certificates" href="x509-certificate-auth.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. SUSE® OpenStack Cloud: Preventing Host Header Poisoning" href="header-poisoning.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Security Guide"><span class="book-icon">Security Guide</span></a><span> › </span><a class="crumb" href="tls30overview.html">Transport Layer Security (TLS) Overview</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 6. Configuring Keystone and Horizon to use X.509 Client Certificates" href="x509-certificate-auth.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 8. SUSE® OpenStack Cloud: Preventing Host Header Poisoning" href="header-poisoning.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div class="chapter " id="tls30overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname "><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber "><span class="phrase"><span class="phrase">8</span></span></span></div><div><h1 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Transport Layer Security (TLS) Overview</span> <a title="Permalink" class="permalink" href="tls30overview.html#">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_overview.xml" title="Edit the source file for this section">Edit source</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_overview.xml</li><li><span class="ds-label">ID: </span>tls30overview</li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="tls30overview.html#id-1.5.9.6"><span class="number">7.1 </span><span class="name">Comparing Clean Installation and Upgrade of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span></a></span></dt><dt><span class="section"><a href="tls30overview.html#idg-all-security-tls-config-xml-1"><span class="number">7.2 </span><span class="name">TLS Configuration</span></a></span></dt><dt><span class="section"><a href="tls30overview.html#TLS-MySQL"><span class="number">7.3 </span><span class="name">Enabling TLS for MySQL Traffic</span></a></span></dt><dt><span class="section"><a href="tls30overview.html#TLS-RabbitMQ"><span class="number">7.4 </span><span class="name">Enabling TLS for RabbitMQ Traffic</span></a></span></dt><dt><span class="section"><a href="tls30overview.html#troubleshootng-tls"><span class="number">7.5 </span><span class="name">Troubleshooting TLS</span></a></span></dt></dl></div></div><p>
+</script><meta name="edit-url" content="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_overview.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Security Guide</a><span> / </span><a class="crumb" href="tls30overview.html">Transport Layer Security (TLS) Overview</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Security Guide</div><ol><li><a href="newsecurity.html" class=" "><span class="title-number">1 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Security Features Overview</span></a></li><li><a href="barbican.html" class=" "><span class="title-number">2 </span><span class="title-name">Key Management with the Barbican Service</span></a></li><li><a href="barbicanAdmin.html" class=" "><span class="title-number">3 </span><span class="title-name">Key Management Service Administration</span></a></li><li><a href="roleSegregation.html" class=" "><span class="title-number">4 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Service Admin Role Segregation in the Identity Service</span></a></li><li><a href="cha-security-rbac.html" class=" "><span class="title-number">5 </span><span class="title-name">Role-Based Access Control in Neutron</span></a></li><li><a href="x509-certificate-auth.html" class=" "><span class="title-number">6 </span><span class="title-name">Configuring Keystone and Horizon to use X.509 Client Certificates</span></a></li><li><a href="tls30overview.html" class=" you-are-here"><span class="title-number">7 </span><span class="title-name">Transport Layer Security (TLS) Overview</span></a></li><li><a href="header-poisoning.html" class=" "><span class="title-number">8 </span><span class="title-name"><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Preventing Host Header Poisoning</span></a></li><li><a href="password-encryption.html" class=" "><span class="title-number">9 </span><span class="title-name">Encryption of Passwords and Sensitive Data</span></a></li><li><a href="encryption-ephemeral.html" class=" "><span class="title-number">10 </span><span class="title-name">Encryption of Ephemeral Volumes</span></a></li><li><a href="topic-rmq-j1v-4t.html" class=" "><span class="title-number">11 </span><span class="title-name">Refining Access Control with AppArmor</span></a></li><li><a href="dar.html" class=" "><span class="title-number">12 </span><span class="title-name">Data at Rest Encryption</span></a></li><li><a href="glance-rate-limit.html" class=" "><span class="title-number">13 </span><span class="title-name">Glance-API Rate Limit (CVE-2016-8611)</span></a></li><li><a href="idg-all-security-middleware-auditing-xml-1.html" class=" "><span class="title-number">14 </span><span class="title-name">Security Audit Logs</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="tls30overview" data-id-title="Transport Layer Security (TLS) Overview"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname"><span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <span class="productnumber"><span class="phrase"><span class="phrase">8</span></span></span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">Transport Layer Security (TLS) Overview</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   The Transport Layer Security (TLS) protocol, successor to SSL, provides the
   mechanisms to ensure authentication, non-repudiation, confidentiality, and
   integrity of user communications to and between the <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> services from
@@ -46,46 +46,46 @@ hljs.configure({
   can be secured using TLS connections.
  </p><p>
   In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, the following are enabled for TLS
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+ </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
     API endpoints in the internal and admin VIPs can now be secured by TLS.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     API endpoints can be provided with their own certificates (this is shown in
     the model examples) or they can simply use the default certificate.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     The Barbican key management service API can be secured by TLS from the load
     balancer to the service endpoint.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     You can add multiple trust chains (certificate authority (CA)
     certificates).
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     Fully qualified domain names (FQDNs) can be used for public endpoints and
     now they can be changed. The external name in the input model files (in
     <code class="literal">~/openstack/my_cloud/definition/data/network_groups.yml</code>) is
     where the domain name is indicated and changed.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     There are two monitoring alarms specific to certificates, 14-days to
     certificate expiration and 1-day to expiration.
-   </p></li><li class="listitem "><p>
+   </p></li><li class="listitem"><p>
     TLS can be turned off/on for individual endpoints.
-   </p></li></ul></div><div class="sect1" id="id-1.5.9.6"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Comparing Clean Installation and Upgrade of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_overview.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_overview.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p></li></ul></div><section class="sect1" id="id-1.5.9.6" data-id-title="Comparing Clean Installation and Upgrade of SUSE OpenStack Cloud"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Comparing Clean Installation and Upgrade of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_overview.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Clean install: all TLS-encrypted services are already listed under
    tls-components in <code class="literal">network_groups.yml</code>
   </p><p>
    You just have to:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Add your self-signed CA cert and server cert (for testing)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Or add your public (or company) CA-signed server cert and the public (or
      company) CA cert (for production)
     </p></li></ul></div><p>
    Upgrade: you do not have TLS enabled already on the internal endpoints so
    you need to
-  </p><div class="itemizedlist " id="ul-j3y-k4t-vv"><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist" id="ul-j3y-k4t-vv"><ul class="itemizedlist"><li class="listitem"><p>
      Add your self-signed CA cert and server cert (for testing)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Or add your public (or company) CA-signed server cert and the public (or
      company) CA cert (for production)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Add all the services to tls-components in
      <code class="literal">network_groups.yml</code>
     </p></li></ul></div><p>
@@ -95,14 +95,14 @@ hljs.configure({
    For instructions on installing certificates, see
    <a class="xref" href="tls30overview.html#idg-all-security-tls-config-xml-1" title="7.2. TLS Configuration">Section 7.2, “TLS Configuration”</a>.
    
-  </p></div><div class="sect1" id="idg-all-security-tls-config-xml-1"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">TLS Configuration</span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-1">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span>idg-all-security-tls-config-xml-1</li></ul></div></div></div></div><p>
+  </p></section><section class="sect1" id="idg-all-security-tls-config-xml-1" data-id-title="TLS Configuration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.2 </span><span class="title-name">TLS Configuration</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-1">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   In <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>, you can provide your own certificate authority and
   certificates for internal and public virtual IP addresses (VIPs), and you
   should do so for any production cloud. The certificates automatically
   generated by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> are useful for testing and setup, but you should always
   install your own for production use. Certificate installation is discussed
   below.
- </p><div class="sect2" id="id-1.5.9.7.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using the Default My Public Cert</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><section class="sect2" id="id-1.5.9.7.3" data-id-title="Using the Default My Public Cert"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.1 </span><span class="title-name">Using the Default My Public Cert</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Read the following if you are using the default <code class="literal">cert-name:
    my-public-cert</code> in your model.
   </p><p>
@@ -115,36 +115,36 @@ hljs.configure({
   </p><p>
    You can verify the expiry by running this command:
   </p><div class="verbatim-wrap"><pre class="screen">openssl x509 -in ~/openstack/my_cloud/config/tls/certs/my-public-cert -noout -enddate
-notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5.9.7.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Certificate Terms</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+notAfter=Feb 12 01:18:46 2019 GMT</pre></div></section><section class="sect2" id="id-1.5.9.7.4" data-id-title="Certificate Terms"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.2 </span><span class="title-name">Certificate Terms</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Before you begin, the following list of terms will be helpful when
    generating and installing certificates.
-  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.9.7.4.3.1"><span class="term ">Openstack-generated public CA</span></dt><dd><p>
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.9.7.4.3.1"><span class="term">Openstack-generated public CA</span></dt><dd><p>
       An OpenStack-generated public CA
       (<code class="literal">openstack_frontend_cacert.crt</code>) is available for you
       in <code class="literal">/usr/local/share/ca-certificates</code>.
-     </p></dd><dt id="id-1.5.9.7.4.3.2"><span class="term ">Fully qualified domain name (FQDN) of the public VIP</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.2"><span class="term">Fully qualified domain name (FQDN) of the public VIP</span></dt><dd><p>
       The registered domain name. A FQDN is not mandatory. It is valid to have
       no FQDN and use IP addresses instead. You can use FQDNs on public
       endpoints, and you may change them whenever the need arises.
-     </p></dd><dt id="id-1.5.9.7.4.3.3"><span class="term ">Certificate authority (CA) certificate</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.3"><span class="term">Certificate authority (CA) certificate</span></dt><dd><p>
       Your certificates must be signed by a CA, such as your internal IT
       department or a public certificate authority. For this example we will
       use a self-signed certificate.
-     </p></dd><dt id="id-1.5.9.7.4.3.4"><span class="term ">Server certificate</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.4"><span class="term">Server certificate</span></dt><dd><p>
       It is easy to confuse server certificates and CA certificates. Server
       certificates reside on the server and CA certificates reside on the
       client. A server certificate affirms that the server that sent it serves
       a set of IP addresses, domain names, and set of services. A CA
       certificate is used by the client to authenticate this claim.
-     </p></dd><dt id="id-1.5.9.7.4.3.5"><span class="term ">SAN (subject-alt-name)</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.5"><span class="term">SAN (subject-alt-name)</span></dt><dd><p>
       The set of IP addresses and domain names in a server certificate request:
       A template for a server certificate.
-     </p></dd><dt id="id-1.5.9.7.4.3.6"><span class="term ">Certificate signing request (CSR)</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.6"><span class="term">Certificate signing request (CSR)</span></dt><dd><p>
       A blob of data generated from a certificate request and sent to a CA,
       which would then sign it, produce a server certificate, and send it back.
-     </p></dd><dt id="id-1.5.9.7.4.3.7"><span class="term ">External VIP</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.7"><span class="term">External VIP</span></dt><dd><p>
       External virtual IP address
-     </p></dd><dt id="id-1.5.9.7.4.3.8"><span class="term ">Internal VIP</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.9.7.4.3.8"><span class="term">Internal VIP</span></dt><dd><p>
       Internal virtual IP address
      </p></dd></dl></div><p>
    The major difference between an external VIP certificate and an internal VIP
@@ -154,7 +154,7 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
    certificate before running the configuration processor. But after a
    configuration processor run, a certificate request would be created for each
    of your cert-names.
-  </p></div><div class="sect2" id="id-1.5.9.7.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring TLS in the input model</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.5.9.7.5" data-id-title="Configuring TLS in the input model"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.3 </span><span class="title-name">Configuring TLS in the input model</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    For this example certificate configuration, let us assume there is no FQDN
    for the external VIP and that you are going to use the default IP address
    provided by <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span>. Let's also assume that for the internal VIP you
@@ -166,29 +166,29 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
    "example-internal-cert."
   </p><p>
    Any time you make a cert change when using your own CA:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      You should use a distinct name from those already existing in
      <code class="filename">config/tls/cacerts</code>. This also means you should not
      <span class="emphasis"><em>reuse</em></span> your CA names. You should use unique and
      distinguishable names such as MyCompanyXYZ_PrivateRootCA.crt. A new name
      is what indicates that a file is new or changed, so reusing a name means
      that the file is not considered changed even its contents have changed.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      You should not remove any existing CA files from
      <code class="filename">config/tls/cacerts</code>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If you want to remove an existing CA use the following steps:
-    </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
        Remove the file.
-      </p></li><li class="step "><p>
+      </p></li><li class="step"><p>
        Then run:
       </p><div class="verbatim-wrap"><pre class="screen">ansible -i hosts/verb_hosts FND-STN -a 'sudo keytool -delete -alias debian:&lt;filename to remove&gt; \
--keystore /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security/cacerts -storepass changeit'</pre></div></li></ol></div></div></li></ul></div><div id="id-1.5.9.7.5.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>
+-keystore /usr/lib/jvm/java-7-openjdk-amd64/jre/lib/security/cacerts -storepass changeit'</pre></div></li></ol></div></div></li></ul></div><div id="id-1.5.9.7.5.5" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
     Be sure to install your own certificate for all production clouds after
     installing and testing your cloud. If you ever want to test or troubleshoot
     later, you will be able to revert to the sample certificate to get back to
     a stable state for testing.
-   </p></div><div id="id-1.5.9.7.5.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p></div><div id="id-1.5.9.7.5.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Unless this is a new deployment, do not update both the certificate and the
     CA together. Add the CA first and then run a site deploy. Then update the
     certificate and run tls-reconfigure, FND-CLU-stop, FND-CLU-start and then
@@ -222,7 +222,7 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
    The configuration processor will also create a request template for each
    named certificate under <code class="filename">info/cert_reqs/</code>, which looks
    like:
-  </p><div class="verbatim-wrap"><pre class="screen">info/cert_reqs/customer-provided-internal-cert</pre></div></div><div class="sect2" id="id-1.5.9.7.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generating and Signing Certificates</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen">info/cert_reqs/customer-provided-internal-cert</pre></div></section><section class="sect2" id="id-1.5.9.7.6" data-id-title="Generating and Signing Certificates"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.4 </span><span class="title-name">Generating and Signing Certificates</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    These request templates contain the subject <code class="literal">Alt-names</code>
    that the certificates need. You can add to this template before generating
    your certificate signing request.
@@ -235,19 +235,19 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
    required if the CA is a public signer that is typically bundled with the
    operating system. However, we suggest you include it anyway by copying the
    file into the directory <code class="filename">config/cacerts/</code>.
-  </p></div><div class="sect2" id="idg-all-security-tls-config-xml-4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User-provided certificates and trust chains</span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span>idg-all-security-tls-config-xml-4</li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="idg-all-security-tls-config-xml-4" data-id-title="User-provided certificates and trust chains"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.5 </span><span class="title-name">User-provided certificates and trust chains</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> generates its own internal certificates but is designed to allow
    you to bring in your own certificates for the VIPs. Here is the general
    process.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      You must have a server certificate and a CA certificate to go with it
      (unless the signer is a public CA and it is already bundled with most
      distributions).
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      You must decide the names of the server certificates and configure the
      <code class="filename">network_groups.yml</code> file in the input model such that
      each load balancer provider has at least one cert-name associated with it.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Run the configuration processor. You may or may not have the certificate
      file at this point. The configuration processor would create certificate
      request file artefacts under <code class="filename">info/cert_reqs/</code> for each
@@ -258,18 +258,18 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
      internal VIP as there can be many of them and they will be service
      specific. Each of these needs to be in the Subject Alt Names attribute of
      the. certificate.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Create a certificate signing request for this request file and send it to
      your internal CA or a public CA to get it certified and issued with a
      certificate. You will now have a server certificate and possibly a trust
      chain or CA certificate.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Upload to the Cloud Lifecycle Manager. Server certificates should be added to
      <code class="filename">config/tls/certs</code> and CA certificates should be added
      to <code class="filename">config/tls/cacerts</code>. The file extension should be
      <code class="filename">.crt</code> for the CA certificate to be processed by
      <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>. Detailed steps are next.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.7.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Edit the Input Model to Include Your Certificate Files</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.5.9.7.8" data-id-title="Edit the Input Model to Include Your Certificate Files"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.6 </span><span class="title-name">Edit the Input Model to Include Your Certificate Files</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Edit the load balancer configuration in
      <code class="filename">openstack/my_cloud/definition/data/network_groups.yml</code>:
     </p><div class="verbatim-wrap"><pre class="screen">load-balancers:
@@ -292,20 +292,20 @@ notAfter=Feb 12 01:18:46 2019 GMT</pre></div></div><div class="sect2" id="id-1.5
  - default
  roles:
  - public
- cert-file: example-public-cert #&lt;&lt;&lt;-------- Certificate name for the external VIP</pre></div></li><li class="step "><p>
+ cert-file: example-public-cert #&lt;&lt;&lt;-------- Certificate name for the external VIP</pre></div></li><li class="step"><p>
      Commit your changes to the local git repository and run the configuration
      processor:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
 git add -A
 git commit -m "changed VIP certificates"
-ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step "><p>
+ansible-playbook -i hosts/localhost config-processor-run.yml</pre></div></li><li class="step"><p>
      Verify that certificate requests have been generated by the configuration
      processor for every certificate file configured in the
      <code class="filename">networks_groups.yml</code> file. In this example, there are
      two files, as shown from the list command:
     </p><div class="verbatim-wrap"><pre class="screen">ls ~/openstack/my_cloud/info/cert_reqs
 example-internal-cert
-example-public-cert</pre></div></li></ol></div></div></div><div class="sect2" id="self-signed"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generating a Self-signed CA</span> <a title="Permalink" class="permalink" href="tls30overview.html#self-signed">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span>self-signed</li></ul></div></div></div></div><div id="id-1.5.9.7.9.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+example-public-cert</pre></div></li></ol></div></div></section><section class="sect2" id="self-signed" data-id-title="Generating a Self-signed CA"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.7 </span><span class="title-name">Generating a Self-signed CA</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#self-signed">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.5.9.7.9.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     In a production setting you will not perform this step. You will use your
     company's CA or a valid public CA.
    </p></div><p>
@@ -314,7 +314,7 @@ example-public-cert</pre></div></li></ol></div></div></div><div class="sect2" id
    organization's IT internal CA that is self-signed and whose CA certificates
    are deployed on your organization's machines. This way the server
    certificate becomes legitimate.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Copy the commands below to the command line and execute. This will cause
      the two files to be created: <code class="filename">example-CA.key</code> and
      <code class="filename">example-CA.crt</code>.
@@ -327,14 +327,14 @@ openssl req -x509 -batch -newkey rsa:2048 -nodes -out "${EXAMPLE_CA_CERT_FILE}" 
      You can tweak the subj and days settings above to meet your needs, or to
      test. For instance, if you want to test what happens when a CA expires,
      you can set 'days' to a very low value.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Select the configuration processor-generated request file from
      <code class="filename">info/cert_reqs/</code>:
-    </p><div class="verbatim-wrap"><pre class="screen">cat ~/openstack/my_cloud/info/cert_reqs/example-internal-cert</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">cat ~/openstack/my_cloud/info/cert_reqs/example-internal-cert</pre></div></li><li class="step"><p>
      Copy this file to your working directory and append a
      <code class="filename">.req</code> extension to it.
     </p><div class="verbatim-wrap"><pre class="screen">cp ~/openstack/my_cloud/info/cert_reqs/example-internal-cert \
-  example-internal-cert.req</pre></div></li></ol></div></div><div class="complex-example"><div class="example" id="privateMetadata"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 7.1: </span><span class="name">Certificate request file </span><a title="Permalink" class="permalink" href="tls30overview.html#privateMetadata">#</a></h6></div><div class="example-contents"><p>
+  example-internal-cert.req</pre></div></li></ol></div></div><div class="complex-example"><div class="example" id="privateMetadata" data-id-title="Certificate request file"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 7.1: </span><span class="title-name">Certificate request file </span></span><a title="Permalink" class="permalink" href="tls30overview.html#privateMetadata">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div><div class="example-contents"><p>
     The certificate request file should look similar to the following example:
    </p><div class="verbatim-wrap"><pre class="screen">[req]
 distinguished_name = req_distinguished_name
@@ -357,7 +357,7 @@ DNS.3 = "deployerincloud-ccp-vip-CND-API-mgmt"
 DNS.47 = "192.168.245.5"
 IP.1 = "192.168.245.5"
 
-=============end of certificate request file.</pre></div></div></div></div><div id="id-1.5.9.7.9.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+=============end of certificate request file.</pre></div></div></div></div><div id="id-1.5.9.7.9.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     In the case of a public VIP certificate, please add all the FQDNs you
     want it to support Currently, <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> does not add the hostname for
     the external-name specified in <code class="literal">network_groups.yml</code> to
@@ -366,7 +366,7 @@ IP.1 = "192.168.245.5"
     <code class="literal">myopenstack.test</code> is your external-name. In that case you
     would add this line (to the full sample certificate request file shown in
     <a class="xref" href="tls30overview.html#privateMetadata" title="Certificate request file">Example 7.1, “Certificate request file”</a>):
-   </p><div class="verbatim-wrap"><pre class="screen">DNS.48 = "myopenstack.test"</pre></div></div><div id="id-1.5.9.7.9.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p><div class="verbatim-wrap"><pre class="screen">DNS.48 = "myopenstack.test"</pre></div></div><div id="id-1.5.9.7.9.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Any attempt to use IP addresses rather than FQDNs in certificates must use
     subject alternate name entries that list both the IP address (needed for
     Google) and DNS with an IP (needed for a Python bug workaround). Failure to
@@ -381,20 +381,20 @@ IP.1 = "192.168.245.5"
    that <code class="filename">myopenstack.test</code> is your external-name. In that
    case you would add this line to the full sample certificate request file
    shown above.
-  </p><div class="verbatim-wrap"><pre class="screen">DNS.48 = "myopenstack.test"</pre></div><div id="id-1.5.9.7.9.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div class="verbatim-wrap"><pre class="screen">DNS.48 = "myopenstack.test"</pre></div><div id="id-1.5.9.7.9.10" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Any attempt to use IP addresses rather than FQDNs in certificates must use
     subject alternate name entries that list both the IP address (needed for
     Google) and DNS with an IP (needed for a Python bug workaround). Failure to
     create the certificates in this manner will cause future installations of
     Go-based tools (such as Cloud Foundry, Stackato and other PaaS components)
     to fail.
-   </p></div></div><div class="sect2" id="id-1.5.9.7.10"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate a Certificate Signing Request</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.10">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.5.9.7.10.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+   </p></div></section><section class="sect2" id="id-1.5.9.7.10" data-id-title="Generate a Certificate Signing Request"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.8 </span><span class="title-name">Generate a Certificate Signing Request</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.10">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.5.9.7.10.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     In a production setting you will not perform this step. You will use your
     company's CA or a valid public CA.
    </p></div><p>
    Now that you have a CA and a certificate request file, it is time to generate
    a CSR.
-  </p><div id="id-1.5.9.7.10.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.5.9.7.10.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Please use a unique CN for your example Certificate Authority and do not
     install multiple CA certificates with the same CN into your cloud.
    </p></div><div class="verbatim-wrap"><pre class="screen">export EXAMPLE_SERVER_KEY_FILE='example-internal-cert.key'
@@ -406,7 +406,7 @@ openssl req -newkey rsa:2048 -nodes -keyout "$EXAMPLE_SERVER_KEY_FILE" \
    <code class="filename">example-internal-cert.csr</code> file to your IT department.
    But in this example you are your own CA, so sign and generate a server
    certificate.
-  </p></div><div class="sect2" id="id-1.5.9.7.11"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Generate a Server Certificate</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.11">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.5.9.7.11.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p></section><section class="sect2" id="id-1.5.9.7.11" data-id-title="Generate a Server Certificate"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.9 </span><span class="title-name">Generate a Server Certificate</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.11">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><div id="id-1.5.9.7.11.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     In a production setting you will not perform this step. You will send the
     CSR created in the previous section to your company CA or a to a valid
     public CA and have them sign and send you back the certificate.
@@ -424,7 +424,7 @@ openssl req -newkey rsa:2048 -nodes -keyout "$EXAMPLE_SERVER_KEY_FILE" \
    When the CA signs the certificate, it uses a configuration file that tells
    it to verify the CSR. Note that in a production scenario the CA takes care
    of this for you.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Create a file called <code class="filename">openssl.cnf</code> and add the
      following contents to it.
     </p><div class="verbatim-wrap"><pre class="screen"># Copyright 2010 United States Government as represented by the
@@ -503,7 +503,7 @@ subjectKeyIdentifier = hash
 
 [ alt_names ]
 
-######### end of openssl.cnf #########</pre></div></li><li class="step "><p>
+######### end of openssl.cnf #########</pre></div></li><li class="step"><p>
      Sign the server certificate with your CA. Copy the comands below to the
      command line and execute. This will cause the file,
      <code class="filename">example-internal-cert.crt</code>, to be created.
@@ -519,42 +519,42 @@ openssl ca -batch -notext -md sha256 -in "$EXAMPLE_SERVER_CSR_FILE" \
 -cert "$EXAMPLE_CA_CERT_FILE" \
 -keyfile "$EXAMPLE_CA_KEY_FILE" \
 -out "$EXAMPLE_SERVER_CERT_FILE" \
--config openssl.cnf -extensions v3_req</pre></div></li><li class="step "><p>
+-config openssl.cnf -extensions v3_req</pre></div></li><li class="step"><p>
      Concatenate both the server key and certificate in preparation for
      uploading to the Cloud Lifecycle Manager.
-    </p><div class="verbatim-wrap"><pre class="screen">cat example-internal-cert.key example-internal-cert.crt &gt; example-internal-cert</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">cat example-internal-cert.key example-internal-cert.crt &gt; example-internal-cert</pre></div></li><li class="step"><p>
      You have only created the <code class="literal">internal-cert</code> in this
      example. Repeat the above sequence for
      <code class="literal">example-public-cert</code>. Make sure you use the appropriate
      certificate request generated by the configuration processor.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.7.12"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upload to the Cloud Lifecycle Manager</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.12">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.5.9.7.12" data-id-title="Upload to the Cloud Lifecycle Manager"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.10 </span><span class="title-name">Upload to the Cloud Lifecycle Manager</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.12">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      The two files created from the example above will need to be uploaded to
      the Cloud Lifecycle Manager and copied into <code class="filename">config/tls</code>:
-    </p><div class="itemizedlist " id="idg-all-security-tls-config-xml-7"><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist" id="idg-all-security-tls-config-xml-7"><ul class="itemizedlist"><li class="listitem"><p>
        example-internal-cert
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        example-CA.crt
-      </p></li></ul></div></li><li class="step "><p>
+      </p></li></ul></div></li><li class="step"><p>
      On the Cloud Lifecycle Manager, execute the following copy commands. If you created an
      external cert, copy that in a similar manner.
     </p><div class="verbatim-wrap"><pre class="screen">cp example-internal-cert ~/openstack/my_cloud/config/tls/certs/
-cp example-CA.crt ~/openstack/my_cloud/config/tls/cacerts/</pre></div></li><li class="step "><p>
+cp example-CA.crt ~/openstack/my_cloud/config/tls/cacerts/</pre></div></li><li class="step"><p>
      Log into the Cloud Lifecycle Manager node. Save and commit the changes to the local Git
      repository:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
 git add -A
-git commit -m "updated certificate and CA"</pre></div></li><li class="step "><p>
+git commit -m "updated certificate and CA"</pre></div></li><li class="step"><p>
      Rerun the <code class="literal">config-processor-run</code> playbook, and run
      <code class="filename">ready-deployment.yml</code>:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible
 ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
      If you receive any prompts, enter the required information.
-    </p><div id="id-1.5.9.7.12.2.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+    </p><div id="id-1.5.9.7.12.2.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
       For automated installation (for example, CI) you can specify the required
       passwords on the Ansible command line. For example, the command below
       will disable encryption by the configuration processor:
-     </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre></div></div></li><li class="step "><p>
+     </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="" -e rekey=""</pre></div></div></li><li class="step"><p>
      Run this series of runbooks to complete the deployment:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
 ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml
@@ -562,7 +562,7 @@ ansible-playbook -i hosts/verb_hosts FND-CLU-stop.yml
 ansible-playbook -i hosts/verb_hosts FND-CLU-start.yml
 ansible-playbook -i hosts/verb_hosts monasca-stop.yml
 ansible-playbook -i hosts/verb_hosts monasca-start.yml
-ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="idg-all-security-tls-config-xml-8"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring the Cipher Suite</span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-8">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span>idg-all-security-tls-config-xml-8</li></ul></div></div></div></div><p>
+ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></section><section class="sect2" id="idg-all-security-tls-config-xml-8" data-id-title="Configuring the Cipher Suite"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.11 </span><span class="title-name">Configuring the Cipher Suite</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#idg-all-security-tls-config-xml-8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    By default, the cipher suite is set to:
    <code class="literal">HIGH:!aNULL:!eNULL:!DES:!3DES</code>. This setting is
    recommended in the
@@ -573,7 +573,7 @@ ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol
   </p><div class="verbatim-wrap"><pre class="screen">- "ssl-default-bind-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"
 - "ssl-default-server-ciphers HIGH:!aNULL:!eNULL:!DES:!3DES"</pre></div><p>
    Make the changes as needed. Keep the two options identical.
-  </p></div><div class="sect2" id="id-1.5.9.7.14"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.14">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.5.9.7.14" data-id-title="Testing"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.12 </span><span class="title-name">Testing</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.14">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can determine if an endpoint is behind TLS by running the following
    command, which probes a Keystone identity service endpoint that is behind
    TLS:
@@ -594,7 +594,7 @@ SHA1 Fingerprint=C6:46:1E:59:C6:11:BF:72:5E:DD:FC:FF:B0:66:A7:A2:CC:32:1C:B8</pr
   </p><div class="verbatim-wrap"><pre class="screen">echo | openssl s_client -connect 192.168.245.5:3306 | openssl x509 -fingerprint -noout
 140448358213264:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:s23_clnt.c:795:
 unable to load certificate
-140454148159120:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE</pre></div></div><div class="sect2" id="id-1.5.9.7.15"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Verifying That the Trust Chain is Correctly Deployed</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.15">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+140454148159120:error:0906D06C:PEM routines:PEM_read_bio:no start line:pem_lib.c:703:Expecting: TRUSTED CERTIFICATE</pre></div></section><section class="sect2" id="id-1.5.9.7.15" data-id-title="Verifying That the Trust Chain is Correctly Deployed"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.13 </span><span class="title-name">Verifying That the Trust Chain is Correctly Deployed</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.15">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You can determine if the trust chain is correctly deployed by running the
    following commands:
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code>echo | openssl s_client -connect 192.168.245.9:5000 2&gt;/dev/null \
@@ -607,7 +607,7 @@ Verify return code: 0 (ok)</pre></div><p>
    The first command produces error 21, which is then fixed by providing
    the CA certificate file. This verifies that the CA certificate matches the
    server certificate.
-  </p></div><div class="sect2" id="id-1.5.9.7.16"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Turning TLS on or off</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.16">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_config.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.5.9.7.16" data-id-title="Turning TLS on or off"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.14 </span><span class="title-name">Turning TLS on or off</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.7.16">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_config.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    You should leave TLS enabled in production. However, if you need to disable
    it for any reason, you must change <code class="literal">tls-components</code> to
    <code class="literal">components</code> in <code class="filename">network_groups.yml</code> (as
@@ -626,34 +626,34 @@ Verify return code: 0 (ok)</pre></div><p>
    TLS services will be enabled before deployment of your cloud. If you want to
    change this setting later, such as when upgrading, you can change the input
    model and reconfigure the system. The process is as follows:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Edit the input model <code class="filename">network_groups.yml</code> file
      appropriately as described above, changing
      <code class="literal">tls-components</code> to <code class="literal">components</code>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Commit the changes to the Git repository:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible/
 git add -A
-git commit -m "TLS change"</pre></div></li><li class="step "><p>
+git commit -m "TLS change"</pre></div></li><li class="step"><p>
      Change directories again and run the configuration processor and ready
      deployment playbooks:
     </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/localhost config-processor-run.yml
-ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step "><p>
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="step"><p>
      Change directories again and run the reconfigure playbook:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
-ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div></div><div class="sect1" id="TLS-MySQL"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling TLS for MySQL Traffic</span> <a title="Permalink" class="permalink" href="tls30overview.html#TLS-MySQL">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span>TLS-MySQL</li></ul></div></div></div></div><p>
+ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></section></section><section class="sect1" id="TLS-MySQL" data-id-title="Enabling TLS for MySQL Traffic"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.3 </span><span class="title-name">Enabling TLS for MySQL Traffic</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#TLS-MySQL">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   MySQL traffic can be encrypted using TLS. For completely new <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span>
   deployments using the supplied input model example files, you will have to
   uncomment the commented entries for
   <code class="literal">tls-component-endpoints:</code>. For upgrades from a previous
   version, you will have to add the entries to your input model files if you
   have not already done so. This topic explains how to do both.
- </p><div class="sect2" id="client"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling TLS on the database server for client access</span> <a title="Permalink" class="permalink" href="tls30overview.html#client">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span>client</li></ul></div></div></div></div><div class="procedure " id="start"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+ </p><section class="sect2" id="client" data-id-title="Enabling TLS on the database server for client access"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.1 </span><span class="title-name">Enabling TLS on the database server for client access</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#client">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure" id="start"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Edit <code class="literal">network_groups.yml</code> to either add mysql under
      tls-component-endpoints in your existing file from a previous version, or
      uncomment it if installing from scratch.
     </p><div class="verbatim-wrap"><pre class="screen">tls-component-endpoints:
-  - mysql</pre></div></li><li class="step " id="deployReconfig"><p>
+  - mysql</pre></div></li><li class="step" id="deployReconfig"><p>
      After making the necessary changes, commit the changed file to git and run
      the config-processor-run and reconfigure Ansible playbooks:
     </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack
@@ -662,18 +662,18 @@ git commit -m "My changed config"
 cd ~/openstack/ardana/ansible/
 ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="&lt;encryption key&gt;" -e rekey=""
 ansible-playbook -i hosts/localhost ready-deployment.yml
-cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="step "><p>
+cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="step"><p>
      Next, either run <code class="filename">site.yml</code> if you are installing a
      new system:
-    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li><li class="step "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li><li class="step"><p>
      or ardana-reconfigure if you are reconfiguring an existing one:
-    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.5.9.8.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">MySQL replication over TLS</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div></div></section><section class="sect2" id="id-1.5.9.8.4" data-id-title="MySQL replication over TLS"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.2 </span><span class="title-name">MySQL replication over TLS</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    MySQL replication over TLS is disabled. This is true even if you followed
    the instruction to turn on Mysql TLS in the previous section. Those steps
    turn on the service interactions to the database.
   </p><p>
    <span class="bold"><strong>Turning on MySQL replication over TLS</strong></span>
-  </p><div id="id-1.5.9.8.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+  </p><div id="id-1.5.9.8.4.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
     Using TLS connections for MySQL replication will incur a performance cost.
    </p></div><p>
    You should have already enabled TLS for MySQL client interactions in the
@@ -682,51 +682,51 @@ cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="step "><p>
    TLS for MySQL replication is not turned on by default. Therefore, you will
    need to follow a manual process. Again, the steps are different for new
    systems and upgrades.
-  </p></div><div class="sect2" id="replicationNew"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling TLS for MySQL replication on a new deployment</span> <a title="Permalink" class="permalink" href="tls30overview.html#replicationNew">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span>replicationNew</li></ul></div></div></div></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p></section><section class="sect2" id="replicationNew" data-id-title="Enabling TLS for MySQL replication on a new deployment"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.3 </span><span class="title-name">Enabling TLS for MySQL replication on a new deployment</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#replicationNew">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Log in to the Cloud Lifecycle Manager node and before running the config
      processor, edit the
      <code class="literal">~/openstack/my_cloud/config/mariadb/defaults.yml</code> file.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Search for mysql_gcomms_bind_tls. You should find this section:
     </p><div class="verbatim-wrap"><pre class="screen"># TLS disabled for cluster
 #mysql_gcomms_bind_tls: "{{ host.bind['FND_MDB'].mysql_gcomms.tls }}"
-mysql_gcomms_bind_tls: False</pre></div></li><li class="step "><p>
+mysql_gcomms_bind_tls: False</pre></div></li><li class="step"><p>
      Uncomment the appropriate line so the file looks like this:
     </p><div class="verbatim-wrap"><pre class="screen"># TLS disabled for cluster
 mysql_gcomms_bind_tls: "{{ host.bind['FND_MDB'].mysql_gcomms.tls }}"
-#mysql_gcomms_bind_tls: False</pre></div></li><li class="step "><p>
+#mysql_gcomms_bind_tls: False</pre></div></li><li class="step"><p>
      Follow the steps to deploy or reconfigure your cloud:
      <a class="xref" href="tls30overview.html#deployReconfig" title="Step 2">Step 2</a> in <a class="xref" href="tls30overview.html#client" title="7.3.1. Enabling TLS on the database server for client access">Section 7.3.1, “Enabling TLS on the database server for client access”</a>.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.8.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling TLS for MySQL replication on an existing system</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.5.9.8.6" data-id-title="Enabling TLS for MySQL replication on an existing system"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.4 </span><span class="title-name">Enabling TLS for MySQL replication on an existing system</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    If your cluster is already up, perform these steps to enable MySQL
    replication over TLS:
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Edit the following two files:
      <code class="literal">~/openstack/my_cloud/config/mariadb/defaults.yml</code> and
      <code class="literal">~/scratch/ansible/next/ardana/ansible/roles/FND-MDB/defaults/main.yml</code>.
      Note that these files are identical. The first is a master file and the
      second is a scratch version that is used for the current deployment. Make
      the same changes as explained in <a class="xref" href="tls30overview.html#replicationNew" title="7.3.3. Enabling TLS for MySQL replication on a new deployment">Section 7.3.3, “Enabling TLS for MySQL replication on a new deployment”</a>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Then run the following command:
     </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts tls-percona-reconfigure.yml</pre></div><p>
      After this your MySQL should come up and replicate over TLS. You need to
      follow this section again if you ever want to switch TLS off for MySQL
      replication. You also must repeat these steps if any lifecycle operation
      changes the mysql_gcomms_bind_tls option.
-    </p></li></ol></div></div></div><div class="sect2" id="id-1.5.9.8.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing whether a service is using TLS</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.7">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_mysql.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ol></div></div></section><section class="sect2" id="id-1.5.9.8.7" data-id-title="Testing whether a service is using TLS"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.5 </span><span class="title-name">Testing whether a service is using TLS</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.8.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_mysql.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Almost all services that have a database are able to communicate over TLS.
    You can test whether a service, in this example the Identity service
    (Keystone), is communicating with MySQL over TLS by executing the following
    steps:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      Log into the Cloud Lifecycle Manager as root and run the mysql command.
     </p><div class="verbatim-wrap"><pre class="screen">root@&lt;server&gt;:~# mysql</pre></div><p>
      Type 'help;' or '\h' for help. Type '\c' to clear the current input
      statement.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Run:
-    </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; select * from information_schema.user_statistics where user='keystone'\G</pre></div></li><li class="listitem "><p>
+    </p><div class="verbatim-wrap"><pre class="screen">mysql&gt; select * from information_schema.user_statistics where user='keystone'\G</pre></div></li><li class="listitem"><p>
      Note the results. TOTAL_SSL_CONNECTIONS should not be zero:
     </p><div class="verbatim-wrap"><pre class="screen">*************************** 1. row ***************************
                   USER: keystone
@@ -753,32 +753,32 @@ CONCURRENT_CONNECTIONS: 0
  TOTAL_SSL_CONNECTIONS: 298
 1 row in set (0.00 sec)
 
-mysql&gt;</pre></div></li></ol></div></div></div><div class="sect1" id="TLS-RabbitMQ"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Enabling TLS for RabbitMQ Traffic</span> <a title="Permalink" class="permalink" href="tls30overview.html#TLS-RabbitMQ">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_rabbit_mq.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_rabbit_mq.xml</li><li><span class="ds-label">ID: </span>TLS-RabbitMQ</li></ul></div></div></div></div><p>
+mysql&gt;</pre></div></li></ol></div></section></section><section class="sect1" id="TLS-RabbitMQ" data-id-title="Enabling TLS for RabbitMQ Traffic"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.4 </span><span class="title-name">Enabling TLS for RabbitMQ Traffic</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#TLS-RabbitMQ">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_rabbit_mq.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   RabbitMQ traffic can be encrypted using TLS. To enable it, you will have to
   add entries for <code class="literal">tls-component-endpoints:</code> in your input
   model files if you have not already done so. This topic explains how.
- </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+ </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
     Edit <code class="literal">openstack/my_cloud/definition/data/network_groups.yml</code>,
     adding <code class="literal">rabbitmq</code> to the
     <code class="literal">tls-component-endpoints</code> section:
    </p><div class="verbatim-wrap"><pre class="screen">tls-component-endpoints:
      - barbican-api
      - mysql
-     - rabbitmq</pre></div></li><li class="listitem "><p>
+     - rabbitmq</pre></div></li><li class="listitem"><p>
     Commit the changes:
    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack
 git add -A
-git commit -m "My changed config"</pre></div></li><li class="listitem "><p>
+git commit -m "My changed config"</pre></div></li><li class="listitem"><p>
     Then run the typical deployment steps:
    </p><div class="verbatim-wrap"><pre class="screen">cd ~/openstack/ardana/ansible/
 ansible-playbook -i hosts/localhost config-processor-run.yml -e encrypt="&lt;encryption key&gt;" -e rekey=""
-ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem "><p>
+ansible-playbook -i hosts/localhost ready-deployment.yml</pre></div></li><li class="listitem"><p>
     Change directories:
-   </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="listitem "><p>
+   </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible</pre></div></li><li class="listitem"><p>
     Then for a fresh TLS install run:
-   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li><li class="listitem "><p>
+   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts site.yml</pre></div></li><li class="listitem"><p>
     Or, to reconfigure an existing system run:
-   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div><div class="sect2" id="id-1.5.9.9.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.9.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_rabbit_mq.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-tls_rabbit_mq.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts ardana-reconfigure.yml</pre></div></li></ol></div><section class="sect2" id="id-1.5.9.9.4" data-id-title="Testing"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.4.1 </span><span class="title-name">Testing</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.9.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-tls_rabbit_mq.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    On the one of the rabbitmq nodes you can list the clients and their TLS
    status by running:
   </p><div class="verbatim-wrap"><pre class="screen">$ sudo rabbitmqctl -q list_connections ssl state ssl_protocol user name</pre></div><p>
@@ -791,43 +791,43 @@ rmq_barbican_user       false</pre></div><p>
    Other indicators will be <code class="literal">rabbit_use_ssl = True</code> in the
    Oslo messaging section of client configurations. The list of clients that
    support TLS are as follows:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Barbican
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Ceilometer
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Cinder
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Designate
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Eon
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Glance
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Heat
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Ironic
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Keystone
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Monasca
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Neutron
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Nova
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Octavia
-    </p></li></ul></div></div></div><div class="sect1" id="troubleshootng-tls"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting TLS</span> <a title="Permalink" class="permalink" href="tls30overview.html#troubleshootng-tls">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span>troubleshootng-tls</li></ul></div></div></div></div><div class="sect2" id="id-1.5.9.10.2"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting TLS certificate errors when running playbooks with a limit</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.2">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></li></ul></div></section></section><section class="sect1" id="troubleshootng-tls" data-id-title="Troubleshooting TLS"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.5 </span><span class="title-name">Troubleshooting TLS</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#troubleshootng-tls">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="id-1.5.9.10.2" data-id-title="Troubleshooting TLS certificate errors when running playbooks with a limit"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.1 </span><span class="title-name">Troubleshooting TLS certificate errors when running playbooks with a limit</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.2">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Has the deployer been restarted after the original site installation or is
    this a new deployer? If so, TLS certificates need to be bootstrapped before
    a playbook is run with limits. You can do this by running the following
    command.
   </p><div class="verbatim-wrap"><pre class="screen">cd ~/scratch/ansible/next/ardana/ansible
-ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit TLS-CA</pre></div></div><div class="sect2" id="id-1.5.9.10.3"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Certificate Update Failure</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.3">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit TLS-CA</pre></div></section><section class="sect2" id="id-1.5.9.10.3" data-id-title="Certificate Update Failure"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.2 </span><span class="title-name">Certificate Update Failure</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.3">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    In general, if a certificate update fails, it is because of the following:
    Haproxy has not restarted or the Trust chain is not installed. This is the
    certificate of the CA that signed the server certificate.
-  </p></div><div class="sect2" id="id-1.5.9.10.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting trust chain installation</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.4">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></section><section class="sect2" id="id-1.5.9.10.4" data-id-title="Troubleshooting trust chain installation"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.3 </span><span class="title-name">Troubleshooting trust chain installation</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.4">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    It is important to note that while <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> allows you to add new
    trust chains, it would be better if you add all the required trust chains
    during the initial deploy. Trust chain changes can impact services.
@@ -882,52 +882,51 @@ ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit TLS-CA</pre></d
    with a new file name. If you get Monasca errors but find that the
    fingerprints match, try stopping and restarting Monasca.
   </p><div class="verbatim-wrap"><pre class="screen">ansible-playbook -i hosts/verb_hosts monasca-stop.yml
-ansible-playbook -i hosts/verb_hosts monasca-start.yml</pre></div></div><div class="sect2" id="id-1.5.9.10.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Expired TLS Certificates</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.5">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ansible-playbook -i hosts/verb_hosts monasca-start.yml</pre></div></section><section class="sect2" id="id-1.5.9.10.5" data-id-title="Expired TLS Certificates"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.4 </span><span class="title-name">Expired TLS Certificates</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Use the following steps to re-create expired TLS certificates for MySQL
    Percona clusters.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Determine if the TLS certificates for MySQL / Percsona have expired.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd /etc/mysql/
 <code class="prompt user">ardana &gt; </code>openssl x509 -noout -enddate -in control-plane-1-mysql-internal-cert.pem
- Not After : Jul 24 12:24:17 2021 GMT</pre></div></li><li class="step "><p>
+ Not After : Jul 24 12:24:17 2021 GMT</pre></div></li><li class="step"><p>
      Regenerate the TLS certificates on the deployer.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/hos/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit DEPLOYER_HOST</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit DEPLOYER_HOST</pre></div></li><li class="step"><p>
      Distribute the regenerated TLS certificates to the MySQL Percona clusters.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/hos/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts --extra-vars "mysql_certs_needs_regeneration=true" tls-percona-reconfigure.yml</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts --extra-vars "mysql_certs_needs_regeneration=true" tls-percona-reconfigure.yml</pre></div></li><li class="step"><p>
      Verify Percona cluster status on a controller node
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>sudo mysql -e 'show status'</pre></div></li></ol></div></div><p>
    Use the following steps to re-create expired TLS certificates for RabbitMQ.
-  </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Determine if SSL certificate for RabbitMQ is expired
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">root # </code>cd /etc/rabbitmq
 <code class="prompt user">root # </code>openssl x509 -noout -text -in control-plane-1-rabbitmq.pem | grep After
-Not After : Nov 6 15:15:38 2018 GMT</pre></div></li><li class="step "><p>
+Not After : Nov 6 15:15:38 2018 GMT</pre></div></li><li class="step"><p>
      Regenerate the TLS certificates on the deployer.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/hos/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit DEPLOYER_HOST</pre></div></li><li class="step "><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts tls-reconfigure.yml --limit DEPLOYER_HOST</pre></div></li><li class="step"><p>
      Reconfigure RabbitMQ. Certificate will be re-created if the input model is
      correct.
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">ardana &gt; </code>cd ~/scratch/ansible/next/ardana/ansible
-<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts --extra-vars "rabbitmq_tls_certs_force_regeneration=true" rabbitmq-reconfigure.yml</pre></div></li></ol></div></div></div><div class="sect2" id="id-1.5.9.10.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting certificates</span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.6">#</a><a class="report-bug" rel="nofollow" target="_blank" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit the source file for this section">Edit source</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>security-troubleshooting_tls.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+<code class="prompt user">ardana &gt; </code>ansible-playbook -i hosts/verb_hosts --extra-vars "rabbitmq_tls_certs_force_regeneration=true" rabbitmq-reconfigure.yml</pre></div></li></ol></div></div></section><section class="sect2" id="id-1.5.9.10.6" data-id-title="Troubleshooting certificates"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.5.5 </span><span class="title-name">Troubleshooting certificates</span></span> <a title="Permalink" class="permalink" href="tls30overview.html#id-1.5.9.10.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE-Cloud/doc-cloud/blob/maintenance/cloud_8/xml/security-troubleshooting_tls.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Certificates can fail in <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span> <span class="phrase"><span class="phrase">8</span></span> due to the following.
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Trust chain issue. This is dealt with in the previous section
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Wrong certificate: Compare the fingerprints. If they differ, then you have
      a wrong certificate somewhere.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Date range of the certificate is either in the future or expired: Check
      the dates and change certificates as necessary, observing the naming
      cautions above.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      TLS handshake fails because the client does not support the ciphers the
      server offers. It is possible that you reused a certificate created for a
      different network model. Make sure the request file found under
      <code class="filename">info/cert_req/</code> are used to create the certificate.
      If not, the service VIP
      names may not match.
-    </p></li></ul></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="header-poisoning.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 8 </span><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Preventing Host Header Poisoning</span></a><a class="nav-link" href="x509-certificate-auth.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 6 </span>Configuring Keystone and Horizon to use X.509 Client Certificates</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></li></ul></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="x509-certificate-auth.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Configuring Keystone and Horizon to use X.509 Client Certificates</span></a> </div><div><a class="pagination-link next" href="header-poisoning.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 8 </span><span class="phrase"><span class="phrase">SUSE® <span class="productname">OpenStack</span> Cloud</span></span>: Preventing Host Header Poisoning</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="section"><a href="tls30overview.html#id-1.5.9.6"><span class="title-number">7.1 </span><span class="title-name">Comparing Clean Installation and Upgrade of <span class="phrase"><span class="phrase">SUSE <span class="productname">OpenStack</span> Cloud</span></span></span></a></span></li><li><span class="section"><a href="tls30overview.html#idg-all-security-tls-config-xml-1"><span class="title-number">7.2 </span><span class="title-name">TLS Configuration</span></a></span></li><li><span class="section"><a href="tls30overview.html#TLS-MySQL"><span class="title-number">7.3 </span><span class="title-name">Enabling TLS for MySQL Traffic</span></a></span></li><li><span class="section"><a href="tls30overview.html#TLS-RabbitMQ"><span class="title-number">7.4 </span><span class="title-name">Enabling TLS for RabbitMQ Traffic</span></a></span></li><li><span class="section"><a href="tls30overview.html#troubleshootng-tls"><span class="title-number">7.5 </span><span class="title-name">Troubleshooting TLS</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2022</span></div></div></footer></body></html>
